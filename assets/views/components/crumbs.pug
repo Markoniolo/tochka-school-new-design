@@ -1,0 +1,10 @@
+mixin crumbs(list)
+  .crumbs
+    .crumbs__cont.cont
+      .crumbs__list
+        each item, index in list
+          if index === list.length - 1
+            span.crumbs__item= item
+          else
+            a.crumbs__item(href="#")= item
+

@@ -1,0 +1,130 @@
+.modal-order {
+  display: none;
+  max-width: 590px;
+  border-radius: 10px;
+  @include media(md) {
+    padding: 30px 20px;
+  }
+  .iti {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
+
+.modal-order__title {
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 142%;
+  text-align: center;
+  color: #222;
+  @include media(md) {
+    margin-bottom: 25px;
+    font-size: 24px;
+  }
+}
+
+.modal-order__input {
+  margin-bottom: 20px;
+  @include media(md) {
+    padding: 14px 26px;
+  }
+}
+
+.modal-order__checkbox {
+  cursor: pointer;
+  margin-top: 18px;
+  display: flex;
+  align-items: flex-start;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.modal-order__checkbox-input {
+  display: none;
+  &:checked ~ .modal-order__checkbox-view {
+    &::before {
+      content: '';
+      border-radius: 1px;
+      width: 8px;
+      height: 8px;
+      background-color: #ffca42;
+    }
+  }
+}
+
+.modal-order__checkbox-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 10px;
+  border: 2px solid #e6e6e6;
+  border-radius: 3px;
+  width: 16px;
+  height: 16px;
+  margin-top: 3px;
+}
+
+.modal-order__checkbox-text {
+  font-size: 14px;
+  line-height: 144%;
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+.modal-order__button {
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+  padding: 17px 28px;
+  @include media(sm) {
+    margin-top: 20px;
+  }
+}
+
+.modal-order__list {
+  padding: 0;
+  list-style-type: none;
+  max-width: 430px;
+  width: 100%;
+  margin: 30px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px 0;
+  @include media(md) {
+    margin: 25px auto 0;
+    max-width: 305px;
+  }
+}
+
+.modal-order__item {
+  position: relative;
+  padding-left: 53px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 144%;
+  min-height: 33px;
+  display: flex;
+  align-items: center;
+  @include media(md) {
+    padding-left: 40px;
+    font-size: 14px;
+    min-height: 24px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 33px;
+    height: 33px;
+    @include bg-icon('icons/check_blue.svg');
+    @include media(md) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

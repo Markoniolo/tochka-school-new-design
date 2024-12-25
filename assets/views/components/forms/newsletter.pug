@@ -1,0 +1,26 @@
+form.newsletter
+  .newsletter__title Подпишитесь на нашу рассылку
+  img.newsletter__image(src=staticImg('newsletter/newsletter_1.svg') alt='')
+  .newsletter__line
+    input.input_utm(name='utm' type='hidden' value='')
+    input.newsletter__input.input-white(type='email' name='email' placeholder='Ваш e-mail' required)
+    button.newsletter__button.btn-orange Подписаться
+  label.newsletter__label.checkbox-label
+    input.newsletter__checkbox.checkbox-input(name='policy' type='checkbox')
+    .newsletter__checkbox-view.checkbox-input-view
+    .newsletter__checkbox-text.checkbox-text
+      | Даю
+      |
+      a(href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target='_blank') Согласие
+      |
+      | на обработку персональных
+      | данных в соответствие с
+      |
+      a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf' target='_blank') Политикой
+  label.newsletter__label.checkbox-label
+    input.newsletter__checkbox.checkbox-input(name='news' type='checkbox')
+    .newsletter__checkbox-view.checkbox-input-view
+    .newsletter__checkbox-text.checkbox-text
+      | Согласен на
+      |
+      a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf' target='_blank') получение рекламы

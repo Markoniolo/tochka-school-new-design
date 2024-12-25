@@ -1,0 +1,41 @@
+.btn-blue {
+  display: flex;
+  align-items: center;
+  border-radius: 37px;
+  padding: 13px 24px 15px;
+  background-color: #6683c2;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: $white;
+  transition-property: background-color;
+  transition-duration: $transition-duration;
+  &:hover {
+    background-color: #435171;
+    color: $white;
+  }
+  &_arrow {
+    &::after {
+      content: '';
+      margin-left: 10px;
+      @include bg-icon('icons/ic_arrow_btn_white.svg');
+      width: 11px;
+      height: 9px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.btn-orange {
+  border-radius: 34px;
+  background: $orange;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 15px;
+  color: $white;
+  padding: 14px 30px 16px;
+  text-align: center;
+  &:hover {
+    color: $white;
+  }
+}

@@ -1,0 +1,63 @@
+$black: #000000;
+$white: #FFFFFF;
+$orange: #f37e60;
+
+$transition-duration: 0.3s;
+
+$font-main: "WixMadeforDisplay", Arial, sans-serif;
+
+$img-path: '../img/';
+
+$breakpoints: (xxs: 0, xs: 360px, sm: 744px, md: 992px, lg: 1200px, xl: 1440px, xxl: 1920px);
+
+@mixin media($bp-size) {
+  $max: _breakpoint-max($bp-size);
+  @media (max-width: $max) {
+    @content
+  }
+}
+
+@function _breakpoint-next($bp) {
+  @if map-has-key($breakpoints, $bp) {
+    $breakpoint-bps: map-keys($breakpoints);
+    $n: index($breakpoint-bps, $bp);
+
+    @return if($n < length($breakpoint-bps), nth($breakpoint-bps, $n + 1), null);
+  }
+  @else {
+    @return "Unfortunately, no value could be retrieved from `#{$bp}`. Available containers are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@function _breakpoint-min($bp) {
+  @if map-has-key($breakpoints, $bp) {
+    $min: map-get($breakpoints, $bp);
+
+    @return if($min != 0, $min, null);
+  }
+  @else {
+    @return "Unfortunately, no value could be retrieved from `#{$bp}`. Available containers are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@function _breakpoint-max($bp) {
+  @if map-has-key($breakpoints, $bp) {
+    $next: _breakpoint-next($bp);
+
+    @return if($next, _breakpoint-min($next) - 0.02px, null);
+  }
+  @else {
+    @return "Unfortunately, no value could be retrieved from `#{$bp}`. Available containers are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin bg-img($img) {
+  background-image: url($img-path + $img);
+}
+
+@mixin bg-icon($img, $w: 100%, $h: 100%) {
+  background-image: url($img-path + $img);
+  background-size: $w $h;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

@@ -1,0 +1,9 @@
+extends ../components/_layout/layout
+
+block head
+  +title('Страница блога')
+
+block body
+  include ../components/crumbs
+  +crumbs(['Главная','Блог','Вопросы для подростков'])
+  include ../components/blog

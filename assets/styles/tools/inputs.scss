@@ -1,0 +1,76 @@
+.input-gray {
+  display: block;
+  width: 100%;
+  font-weight: 500;
+  font-size: 15px;
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 18px 28px;
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.24);
+  }
+}
+
+.input-white {
+  border-radius: 34px;
+  border: none;
+  font-size: 14px;
+  line-height: 15px;
+  color: $black;
+  padding: 13px 30px 15px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
+  &:placeholder {
+    color: rgba(0, 0, 0, 0.42);
+  }
+}
+
+.checkbox-label {
+  max-width: 348px;
+  width: 100%;
+  display: flex;
+  cursor: pointer;
+  &:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+}
+
+.checkbox-input {
+  display: none;
+  &:checked ~ .checkbox-input-view::before {
+    content: "";
+    border-radius: 1px;
+    width: 8px;
+    height: 8px;
+    background-color: #ffca42;
+  }
+}
+
+.checkbox-input-view {
+  margin-right: 15px;
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include media(md) {
+    margin-right: 10px;
+  }
+}
+
+.checkbox-text {
+  font-size: 15px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.5);
+  @include media(xs) {
+    font-size: 12px;
+    line-height: 125%;
+  }
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}

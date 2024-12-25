@@ -1,0 +1,68 @@
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.cont {
+  max-width: calc(1344px + 30px + 30px);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+  @include media(lg) {
+    max-width: calc(1100px + 30px + 30px);
+  }
+  @include media(md) {
+    max-width: calc(684px + 30px + 30px);
+  }
+  @include media(xs) {
+    max-width: calc(500px + 20px + 20px);
+    padding: 0 20px;
+  }
+}
+
+.caption {
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 112%;
+  color: #003c56;
+  @include media(md) {
+    font-size: 25px;
+    line-height: 100%;
+  }
+}
+
+.iti {
+  --iti-path-flags-1x: url('../img/intl-tell-input/flags.webp');
+  --iti-path-flags-2x: url('../img/intl-tell-input/flags@2x.webp');
+  --iti-path-globe-1x: url('../img/intl-tell-input/globe.webp');
+  --iti-path-globe-2x: url('../img/intl-tell-input/globe@2x.webp');
+}
+
+.fancybox-can-pan .fancybox-content, .fancybox-can-swipe .fancybox-content {
+  cursor: default;
+}
+
+.error {
+  border: 1px solid red !important;
+}
+
+.error-text {
+  color: red !important;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.layer {
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}

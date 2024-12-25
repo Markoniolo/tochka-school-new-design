@@ -1,0 +1,60 @@
+-
+  const footerList1 = [
+    'Начальная школа 1-4 класс', 'Средняя школа 5-8 класс', 'Старшая школа 9-11 класс', 'Курсы для учителей'
+  ]
+  const footerList2 = [
+    'Политика обработки персональных данных',
+    'Согласие на обработку персональных данных',
+    'Согласие на получение информационной и рекламной рассылки',
+    'Пользовательское соглашение',
+    'Публичная Оферта',
+    'Соглашение на экстернат',
+    'Правила акции',
+  ]
+  const socialList = [
+    { link: 'https://t.me/+WMCtnpy5ClRiZWQy', icon: 'https://tochka-school.ru/themes/school-point/assets/img/social-icon3.svg' },
+    { link: 'https://vk.com/matematik_andrei', icon: 'https://tochka-school.ru/themes/school-point/assets/img/social-icon4.svg' },
+    { link: 'http://www.youtube.com/@matematik_andrei', icon: 'https://tochka-school.ru/themes/school-point/assets/img/social-icon2.svg' },
+    { link: 'https://www.tiktok.com/@matematik_andrei', icon: 'https://tochka-school.ru/themes/school-point/assets/img/social-icon1.svg' },
+  ]
+
+footer.footer
+  .cont
+    .footer__area
+      .footer__box
+        .footer__logo
+          img.footer__logo-image(src=staticImg('logo_white.svg') alt='')
+        p.footer__text Общество с ограниченной ответственностью онлайн-школа "Точка Знаний" ИНН 2311347344
+        p.footer__text 350016, Краснодарский край, г. Краснодар, ул. Зиповская, д. 45, помещ. 24, ком. 2
+      .footer__box
+        .footer__title(data-element="footer__title") Направления
+        .footer__list
+          each item in footerList1
+            a.footer__link(href='#')= item
+      .footer__box
+        .footer__title(data-element="footer__title") Документация
+        .footer__list
+          each item in footerList2
+            a.footer__link(href='#')= item
+      .footer__contacts
+        .footer__title Контакты
+        .footer__contacts-box
+          a.footer__phone(href='tel:88003503268') 8 800 350 32 68
+          .footer__phone-note Звонок по России бесплатный
+        .footer__contacts-box
+          a.footer__whatsapp(href='https://wa.me/79182172497') 8 (918) 217-24-97
+          a.footer__email(href='mailto:sale@matematik-andrei.ru') school-matematik-andrei@yandex.ru
+        .footer__social
+          .footer__headline Социальные сети:
+          .footer__social-list
+            each item in socialList
+              a.footer__social-link(href=item.link target='_blank')
+                img.footer__social-icon(src=item.icon alt='')
+    .footer__bottom
+      a.footer__organization(href='https://tochka-school.ru/info' target='_blank') Сведения об образовательной организации
+      .footer__license
+        | Дата предоставления лицензии: 11 мая 2023
+        br
+        | Лицензия № Л035-01218-23/00650937
+      a.footer__resident(href='https://sk.ru/' target='_blank')
+        img.footer__resident-image(src='https://tochka-school.ru/themes/school-point/assets/img/sk-logo.svg' alt='')

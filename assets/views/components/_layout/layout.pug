@@ -1,0 +1,17 @@
+include ../../_variables
+include _connect-style
+include _title
+
+doctype html
+html(lang='ru')
+  head
+    include _head
+    block head
+  body
+    .sticky-header
+      include header
+    main.wrapper
+      block body
+    include ../modals/modal-order
+    include footer
+    include scripts

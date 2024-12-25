@@ -1,0 +1,20 @@
+form.trial(data-element='trial' data-request-validate)
+  .trial__title Получите пробный урок в онлайн-школе Точка Знаний
+  .trial__text Бесплатный пробный по любому предмету
+  img.trial__image(src=staticImg('trial/trial_1.svg') alt='')
+  .trial__line
+    input.input_utm(name='utm' type='hidden' value='')
+    input.trial__input.input-white(name='name' placeholder='Ваше имя' type='text')
+    input.trial__input.input-white(name='phone' placeholder='Номер телефона' type='tel' required data-element='input-phone-intl')
+    input(name='tel' type='hidden' required data-element='input-phone-hidden')
+    button.trial__button.btn-orange Получить урок!
+  label.newsletter__label.checkbox-label
+    input.newsletter__checkbox.checkbox-input(name='policy' type='checkbox')
+    .newsletter__checkbox-view.checkbox-input-view
+    .newsletter__checkbox-text.checkbox-text.
+      Даю Согласие на обработку персональных
+      данных в соответствие с Политикой
+  label.newsletter__label.checkbox-label
+    input.newsletter__checkbox.checkbox-input(name='news' type='checkbox')
+    .newsletter__checkbox-view.checkbox-input-view
+    .newsletter__checkbox-text.checkbox-text Согласен на получение рекламы

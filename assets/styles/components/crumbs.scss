@@ -1,0 +1,57 @@
+.crumbs {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  @include media(md) {
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+}
+
+.crumbs__cont {
+
+}
+
+.crumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.crumbs__item {
+  &:not(:first-child) {
+    position: relative;
+    margin-left: 27px;
+    &::before {
+      content: '';
+      @include bg-icon('icons/ic_crumbs_arrow.svg');
+      position: absolute;
+      left: -18px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 9px;
+      height: 8px;
+      pointer-events: none;
+    }
+  }
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+}
+
+span.crumbs__item {
+  color: rgba(#000, .25);
+  &::before {
+    opacity: 0.25;
+  }
+}
+
+a.crumbs__item {
+  color: rgba(#000, .6);
+  transition-duration: $transition-duration;
+  transition-property: color;
+  &:hover {
+    color: rgba(#000, 1);
+  }
+  &::before {
+    opacity: 0.6;
+  }
+}
