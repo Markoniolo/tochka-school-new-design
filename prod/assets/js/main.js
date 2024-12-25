@@ -298,6 +298,8 @@ const header = document.querySelector('[data-element="header"]')
 if (header) headerInit()
 
 function headerInit () {
+  const body = document.querySelector('body')
+
   window.addEventListener('scroll', checkHeader, { passive: true })
 
   checkHeader()
@@ -314,10 +316,16 @@ function headerInit () {
   const layer = document.querySelector('.header__layer')
 
   menuBtn.addEventListener('click', toggleMenu)
-  layer.addEventListener('click', () => header.classList.remove('open'))
+  layer.addEventListener('click', closeMenu)
 
   function toggleMenu () {
     header.classList.toggle('open')
+    body.classList.toggle('no-scroll')
+  }
+
+  function closeMenu () {
+    header.classList.remove('open')
+    body.classList.remove('no-scroll')
   }
 }
 
