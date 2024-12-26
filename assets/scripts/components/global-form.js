@@ -14,10 +14,10 @@ const orderFormTeacher = document.querySelector("[data-element='order-form-teach
 if (orderFormTeacher) globalFormInit(orderFormTeacher, 'onSendTeacherOrderMessage', 'orderFormTeacherData')
 
 const trialForm = document.querySelector("[data-element='trial']")
-if (trialForm) globalFormInit(trialForm, 'onSendTrialMessage', 'trialFormData')
+if (trialForm) globalFormInit(trialForm, 'onSendBlogMessage', 'trialFormData')
 
 const newsletterForm = document.querySelector("[data-element='newsletter']")
-if (newsletterForm) globalFormInit(newsletterForm, 'onSendNewsletterMessage', 'newsletterFormData')
+if (newsletterForm) globalFormInit(newsletterForm, 'onSendSubscribeMessage', 'newsletterFormData')
 
 function newsletterFormData (globalForm) {
   return {
@@ -25,6 +25,7 @@ function newsletterFormData (globalForm) {
     'email': globalForm.querySelector("[name='email']").value,
     'policy': globalForm.querySelector("[name='policy']").checked,
     'news': globalForm.querySelector("[name='news']").checked,
+    'page_name': globalForm.querySelector("[name='page_name']").value,
   };
 }
 
@@ -35,6 +36,7 @@ function trialFormData (globalForm) {
     'tel': globalForm.querySelector("[name='tel']").value,
     'policy': globalForm.querySelector("[name='policy']").checked,
     'news': globalForm.querySelector("[name='news']").checked,
+    'page_name': globalForm.querySelector("[name='page_name']").value,
   };
 }
 
@@ -46,6 +48,7 @@ function orderFormTeacherData (globalForm) {
     'email': globalForm.querySelector("[name='email']").value,
     'policy': globalForm.querySelector("[name='policy']").checked,
     'news': globalForm.querySelector("[name='news']").checked,
+    'page_name': globalForm.querySelector("[name='page_name']").value,
   };
 }
 function orderFormData (globalForm) {
@@ -56,6 +59,7 @@ function orderFormData (globalForm) {
     'class_name': globalForm.querySelector("[name='class_name']").options[globalForm.querySelector("[name='class_name']").selectedIndex].value,
     'policy': globalForm.querySelector("[name='policy']").checked,
     'news': globalForm.querySelector("[name='news']").checked,
+    'page_name': globalForm.querySelector("[name='page_name']").value,
   };
 }
 function externalFormData (globalForm) {
@@ -66,6 +70,7 @@ function externalFormData (globalForm) {
     'email': globalForm.querySelector("[name='email']").value,
     'policy': globalForm.querySelector("[name='policy']").checked,
     'news': globalForm.querySelector("[name='news']").checked,
+    'page_name': globalForm.querySelector("[name='page_name']").value,
   };
 }
 function consultFormData (globalForm) {
@@ -76,6 +81,7 @@ function consultFormData (globalForm) {
     'messenger': globalForm.querySelector("[name='messenger']:checked").value,
     'policy': globalForm.querySelector("[name='policy']").checked,
     'news': globalForm.querySelector("[name='news']").checked,
+    'page_name': globalForm.querySelector("[name='page_name']").value,
   };
 }
 
