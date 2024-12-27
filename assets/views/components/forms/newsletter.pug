@@ -1,7 +1,8 @@
-form.newsletter
+form.newsletter(data-element='newsletter' data-request-validate)
   .newsletter__title Подпишитесь на нашу рассылку
   img.newsletter__image(src=staticImg('newsletter/newsletter_1.svg') alt='')
   .newsletter__line
+    input(type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru/blog/voprosy-dlya-podrostkov-chto-polezno-i-interesno-obsudit-do-15-let")
     input.input_utm(name='utm' type='hidden' value='')
     input.newsletter__input.input-white(type='email' name='email' placeholder='Ваш e-mail' required)
     button.newsletter__button.btn-orange Подписаться

@@ -198,31 +198,35 @@ function globalFormInit (form, func_name, type) {
   if (policy) policy.addEventListener('change',() => policy.closest('label').classList.remove('error-text'))
   if (classSelect) classSelect.addEventListener('change',() => classSelect.closest('.custom-select-container').querySelector('.custom-select-opener').classList.remove('error'))
 
-  const iti = window.intlTelInput(input, {
-    utilsScript: "../libs/intlTelInputWithUtils.min",
-    initialCountry: 'ru',
-    separateDialCode: true
-  })
+  let iti
 
-  input.addEventListener('input', function () {
-    this.value = this.value.replace(/\D+/g, '')
-    inputHidden.value = input.value
-    if (iti.selectedCountryData.dialCode === "7" && input.value.length > 10) {
-      inputHidden.value = input.value.substring(input.value.length - 10)
-    }
-    inputHidden.value = iti.selectedCountryData.dialCode + inputHidden.value
-  })
+  if (input) {
+    iti = window.intlTelInput(input, {
+      utilsScript: "../libs/intlTelInputWithUtils.min",
+      initialCountry: 'ru',
+      separateDialCode: true
+    })
+
+    input.addEventListener('input', function () {
+      this.value = this.value.replace(/\D+/g, '')
+      inputHidden.value = input.value
+      if (iti.selectedCountryData.dialCode === "7" && input.value.length > 10) {
+        inputHidden.value = input.value.substring(input.value.length - 10)
+      }
+      inputHidden.value = iti.selectedCountryData.dialCode + inputHidden.value
+    })
+  }
 
   function resetError () {
-    input.classList.remove("error")
+    if (input) input.classList.remove("error")
   }
 
   globalForm.addEventListener('submit', async (e) => {
     resetError()
     e.preventDefault()
-    if (!input.value.trim()) {
+    if (input && !input?.value?.trim()) {
       input.classList.add("error")
-    } else if (iti.isValidNumber()) {
+    } else if (iti?.isValidNumber() || !input) {
 
       if (type == 'externalFormData') {
         var form_data = externalFormData(globalForm);
@@ -286,7 +290,8 @@ function globalFormInit (form, func_name, type) {
       inputs[i].value = ''
     }
   }
-  input.addEventListener('input', resetError)
+
+  if (input) input.addEventListener('input', resetError)
 
   function validateEmail (email) {
     if (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.value)) {

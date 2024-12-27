@@ -3,6 +3,7 @@ form.trial(data-element='trial' data-request-validate)
   .trial__text Бесплатный пробный по любому предмету
   img.trial__image(src=staticImg('trial/trial_1.svg') alt='')
   .trial__line
+    input(type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru/blog/voprosy-dlya-podrostkov-chto-polezno-i-interesno-obsudit-do-15-let")
     input.input_utm(name='utm' type='hidden' value='')
     input.trial__input.input-white(name='name' placeholder='Ваше имя' type='text')
     input.trial__input.input-white(name='phone' placeholder='Номер телефона' type='tel' required data-element='input-phone-intl')
