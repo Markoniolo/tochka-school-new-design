@@ -20,7 +20,7 @@
   color: $black;
   padding: 13px 30px 15px;
   box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
-  &:placeholder {
+  &::placeholder {
     color: rgba(0, 0, 0, 0.42);
   }
 }
@@ -66,6 +66,53 @@
   font-size: 15px;
   line-height: 100%;
   @include media(xs) {
+    font-size: 12px;
+    line-height: 125%;
+  }
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+.checkbox-white-label {
+  display: flex;
+  cursor: pointer;
+  color: $white;
+}
+
+.checkbox-white-input {
+  display: none;
+  &:checked ~ .checkbox-white-input-view::before {
+    content: "";
+    border-radius: 1px;
+    width: 8px;
+    height: 8px;
+    background-color: $white;
+  }
+}
+
+.checkbox-white-input-view {
+  margin-top: 2px;
+  margin-right: 15px;
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid $white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include media(lg) {
+    margin-top: 0;
+    margin-right: 10px;
+  }
+}
+
+.checkbox-white-text {
+  font-size: 14px;
+  line-height: 129%;
+  @include media(lg) {
     font-size: 12px;
     line-height: 125%;
   }

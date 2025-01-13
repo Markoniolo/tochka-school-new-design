@@ -1,0 +1,42 @@
+-
+  const preStudySlider = [
+    {
+      title: 'Сильные учителя, лучшие в стране',
+      text: 'Наши педагоги — победители конкурса “Учитель года”, председатели экспертных комиссий ОГЭ и ЕГЭ, кандидаты наук. <span>Они объяснят любую тему простым языком и покажут, что учёба может быть увлекательной.</span>',
+    },
+    {
+      title: 'Личный тьютор — каждому!',
+      text: 'Сопровождать ребёнка будет личный тьютор: 5 дней в неделю он будет проверять задания, поможет исправить ошибки, ответит на неограниченное количество вопросов и “добьётся” понимания каждой темы',
+    },
+    {
+      title: 'Обучающая платформа',
+      text: 'Личные кабинеты для родителя и ребёнка: здесь проходят онлайн-уроки, хранятся записи занятий, конспекты, тесты и учебные материалы. Учитесь со смартфона, ноутбука или планшета.',
+    },
+    {
+      title: 'Интерес с первого урока',
+      text: 'На уроках мы проводим опыты, эксперименты, раскрываем тайны мира.',
+    },
+  ]
+
+.pre-study
+  .pre-study__cont.cont
+    h2.pre-study__caption.pre-caption Как проходит обучение
+    .pre-study__area
+      .pre-study__slider(data-element="pre-study-slider")
+        .pre-study__wrapper.swiper-wrapper
+          each slide, index in preStudySlider
+            .pre-study__slide.swiper-slide(class=`pre-study__slide_${index+1}`)
+              .pre-study__picture
+                each item in [1,2,3]
+                  .pre-study__decor(class=`pre-study__decor_${item}`)
+                .pre-study__number
+                  .pre-study__number-value= index+1
+                  svg(width='112' height='119' viewbox='0 0 112 119' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    path(d='M101.017 88.0193C83.2556 116.682 48.6483 127.345 23.7117 111.833C-1.22293 96.3201 -7.03568 60.5139 10.7254 31.8501C28.4874 3.18609 63.0966 -7.47457 88.0322 8.03671C112.968 23.5497 118.781 59.3564 101.017 88.0193Z')
+              .pre-study__line
+                h4.pre-study__title= slide.title
+                p.pre-study__text!= slide.text
+      img.pre-study__image(src=staticImg('pre-study/pre-study-1.svg') alt='')
+      .pre-study__pagination
+    .pre-study__button-box
+      a.pre-study__button.btn-orange(href='#pre-reg' data-role='scroll-to-anchor') Мне нравится!

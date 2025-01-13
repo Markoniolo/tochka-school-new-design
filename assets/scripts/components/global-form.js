@@ -19,6 +19,24 @@ if (trialForm) globalFormInit(trialForm, 'onSendBlogMessage', 'trialFormData')
 const newsletterForm = document.querySelector("[data-element='newsletter']")
 if (newsletterForm) globalFormInit(newsletterForm, 'onSendSubscribeMessage', 'newsletterFormData')
 
+const preCapForm = document.querySelector("[data-element='pre-cap__form']")
+if (preCapForm) globalFormInit(preCapForm, 'onSendPreMessage', 'preFormData')
+
+const preRegForm = document.querySelector("[data-element='pre-reg__form']")
+if (preRegForm) globalFormInit(preRegForm, 'onSendPreMessage', 'preFormData')
+
+function preFormData (globalForm) {
+  return {
+    'name': globalForm.querySelector("[name='name']").value,
+    'utm': globalForm.querySelector("[name='utm']").value,
+    'tel': globalForm.querySelector("[name='tel']").value,
+    'email': globalForm.querySelector("[name='email']").value,
+    'policy': globalForm.querySelector("[name='policy']").checked,
+    'news': globalForm.querySelector("[name='news']").checked,
+    'page_name': globalForm.querySelector("[name='page_name']").value,
+  };
+}
+
 function newsletterFormData (globalForm) {
   return {
     'utm': globalForm.querySelector("[name='utm']").value,
@@ -51,6 +69,7 @@ function orderFormTeacherData (globalForm) {
     'page_name': globalForm.querySelector("[name='page_name']").value,
   };
 }
+
 function orderFormData (globalForm) {
   return {
     'name': globalForm.querySelector("[name='name']").value,

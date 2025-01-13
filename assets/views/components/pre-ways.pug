@@ -1,0 +1,20 @@
+.pre-ways
+  .pre-ways__cont.cont
+    h2.pre-ways__caption.pre-caption Предзапись распространяется на все направления
+    .pre-ways__slider(data-element="pre-ways__slider")
+      .pre-ways__wrapper.swiper-wrapper
+        each slide, index in ['Школьные предметы, 1-11 кл','Подготовка к ОГЭ и ЕГЭ','Семейное обучение, 1-11 класс','Направление IT','Дополнительные предметы']
+          .pre-ways__slide.swiper-slide(data-element="pre-ways-slide")
+            picture.pre-ways__picture
+              img.pre-ways__image(src=staticImg(`pre-ways/pre-ways-${index+1}.svg`) alt='')
+            .pre-ways__title= slide
+            ul.pre-ways__list(data-element="pre-ways-list")
+              each item in ['Математика','Русский язык','Физика','Информатика','Математика','Русский язык','Физика']
+                li.pre-ways__item= item
+            button.pre-ways__more(data-element="pre-ways-more") Показать все предметы
+    .pre-ways__line
+      .pre-ways__pagination
+      .pre-ways__scrollbar.swiper-scrollbar
+      .pre-ways__nav
+        button.pre-ways__nav-btn.pre-ways__nav-btn_left
+        button.pre-ways__nav-btn.pre-ways__nav-btn_right

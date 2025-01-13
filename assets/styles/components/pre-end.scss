@@ -1,0 +1,155 @@
+.pre-end {
+  margin-bottom: 75px;
+  overflow: hidden;
+  @include media(lg) {
+    margin-bottom: 50px;
+  }
+}
+
+.pre-end__cont {
+
+}
+
+.pre-end__wrap {
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    border-radius: 32px;
+    @include media(lg) {
+      border-radius: 10px;
+    }
+  }
+}
+
+.pre-end__area {
+  position: relative;
+  z-index: 1;
+  padding: 45px 55px;
+  border-radius: 32px;
+  backdrop-filter: blur(120px);
+  background: rgba(255, 255, 255, 0.38);
+  @include media(lg) {
+    padding: 20px;
+    border-radius: 10px;
+  }
+}
+
+.pre-end__decor {
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}
+
+.pre-end__decor_1 {
+  width: 164px;
+  height: 164px;
+  top: 18px;
+  left: -60px;
+  background-color: #7fcbb4;
+  @include media(lg) {
+    width: 90px;
+    height: 90px;
+    top: 12px;
+    left: -19px;
+  }
+}
+
+.pre-end__decor_2 {
+  width: 60px;
+  height: 60px;
+  top: 171px;
+  left: -78px;
+  background-color: #f2c45b;
+  @include media(lg) {
+    width: 34px;
+    height: 34px;
+    top: 95px;
+    left: -29px;
+  }
+}
+
+.pre-end__decor_3 {
+  width: 125px;
+  height: 125px;
+  top: 200px;
+  left: 25px;
+  background-color: #f2c45b;
+  @include media(lg) {
+    width: 68px;
+    height: 68px;
+    top: 111px;
+    left: 27px;
+  }
+}
+
+.pre-end__decor_4 {
+  z-index: 3;
+  width: 42px;
+  height: 42px;
+  top: 153px;
+  right: -32px;
+  background-color: #68ccea;
+  @include media(lg) {
+    width: 21px;
+    height: 21px;
+    top: unset;
+    bottom: 86px;
+    right: -12px;
+  }
+}
+
+.pre-end__decor_5 {
+  z-index: 3;
+  width: 115px;
+  height: 115px;
+  bottom: 12px;
+  right: -50px;
+  background-color: #f37e60;
+  @include media(lg) {
+    width: 57px;
+    height: 57px;
+    top: unset;
+    bottom: 25px;
+    right: -21px;
+  }
+}
+
+.pre-end__caption {
+  margin-bottom: 40px;
+  @include media(lg) {
+    margin-bottom: 18px;
+  }
+}
+
+.pre-end__text {
+  margin-bottom: 35px;
+  font-weight: 500;
+  font-size: 24px;
+  color: #003c56;
+  max-width: 1028px;
+  width: 100%;
+  @include media(lg) {
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+}
+
+.pre-end__button {
+  display: inline-block;
+  font-size: 16px;
+  padding: 20px 60px;
+  @include media(lg) {
+    max-width: 313px;
+    width: 100%;
+    padding: 15px 60px;
+    font-size: 14px;
+  }
+}

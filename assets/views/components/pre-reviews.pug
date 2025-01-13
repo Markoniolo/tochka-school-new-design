@@ -1,0 +1,31 @@
+.pre-reviews
+  .pre-reviews__cont.cont
+    h2.pre-reviews__caption.pre-caption Говорят ученики и родители
+    .pre-reviews__slider(data-element="pre-reviews-slider")
+      .pre-reviews__wrapper.swiper-wrapper
+        each item in [1,2,3,4]
+          .pre-reviews__slide.swiper-slide
+            .pre-reviews__box
+              p.
+                На обучение записались, чтобы подтянуть геометрию, алгебру, выйти на “пятерки” по геометрии. Своих
+                целей достигли. Улучшились оценки, по геометрии вышли на “5”.
+              p.
+                Темы на курсе разбираем раньше, чем в школе. Соответственно, ребёнок уже готов к изучению новой темы.
+                На обучение записались, чтобы подтянуть геометрию, алгебру, выйти на “пятерки” по геометрии. Своих
+                целей достигли. Улучшились оценки, по геометрии вышли на “5”.
+              p.
+                Темы на курсе разбираем раньше, чем в школе. Соответственно, ребёнок уже готов к изучению новой темы.
+              .pre-reviews__video-wrap(data-element='pre-reviews-video-wrap')
+                video.pre-reviews__video(src=`${pathStatics}/files/Shevchenko_1_klass.mov`
+                  poster=staticImg('Shevchenko_prevyu.jpg') data-element='pre-reviews-video')
+                .pre-reviews__play
+            .pre-reviews__author
+              img.pre-reviews__image(src=staticImg('pre-reviews/pre-reviews-author.png') alt='')
+              .pre-reviews__info
+                .pre-reviews__name Пушкарева Анна
+                .pre-reviews__note Математика, 8 класс, г. Москва
+    .pre-reviews__bottom
+      .pre-reviews__scrollbar.swiper-scrollbar
+      .pre-reviews__nav
+        button.pre-reviews__nav-btn.pre-reviews__nav-btn_left
+        button.pre-reviews__nav-btn.pre-reviews__nav-btn_right

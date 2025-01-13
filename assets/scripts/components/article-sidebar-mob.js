@@ -6,15 +6,33 @@ function articleSidebarMobInit () {
   const name = articleSidebarMob.querySelector('.article__name')
   const layer = articleSidebarMob.querySelector('.article__layer')
 
+  window.addEventListener('scroll', togglePosition, {passive: true})
+  let lastScrollTop = 0;
+  function togglePosition () {
+    let st = window.scrollY
+    if (st > lastScrollTop) {
+      articleSidebarMob.classList.remove('fixed')
+    } else if (st < lastScrollTop) {
+      articleSidebarMob.classList.add('fixed')
+    }
+    lastScrollTop = st <= 0 ? 0 : st
+  }
+
   name.addEventListener('click', toggleSidebar)
   layer.addEventListener('click', closeSidebar)
 
   function toggleSidebar () {
-    name.classList.toggle('active')
+    if (name.classList.contains('active')) {
+      closeSidebar()
+    } else {
+      window.removeEventListener('scroll', togglePosition)
+      name.classList.add('active')
+    }
   }
 
   function closeSidebar () {
     name.classList.remove('active')
+    window.addEventListener('scroll', togglePosition, {passive: true})
   }
 
   const articleLinkArray = articleSidebarMob.querySelectorAll('.article__link')

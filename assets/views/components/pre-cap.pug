@@ -1,0 +1,48 @@
+.pre-cap
+  .pre-cap__cont.cont
+    .pre-cap__wrap
+      each item in [1,2,3,4,5]
+        .pre-cap__decor(class=`pre-cap__decor_${item}`)
+      .pre-cap__area
+        .pre-cap__box
+          .pre-cap__stats
+            img.pre-cap__stats-icon(src=staticImg('pre-cap/pre-cap-stats-icon.png') alt='')
+            .pre-cap__stats-span Более 24 000 счастливых учеников
+          h1.pre-cap__title
+            | Предварительная запись на занятия в следующем учебном году
+            |
+            span (2025-2026)
+          ul.pre-cap__list
+            li.pre-cap__item!= 'Вы сэкономите от <span>10 до 50 тысяч рублей</span>'
+            li.pre-cap__item!= 'Получите <span>приоритетный</span> доступ к курсам'
+          .pre-cap__gallery
+            each item in [1,2,3]
+              img.pre-cap__image(src=staticImg(`pre-cap/pre-cap-${item}.svg`) alt='')
+        form.pre-cap__form(data-element='pre-cap__form' data-request-validate)
+          .pre-cap__headline Оставьте заявку
+          .pre-cap__inner
+            input(type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru/blog/voprosy-dlya-podrostkov-chto-polezno-i-interesno-obsudit-do-15-let")
+            input.pre-cap__input.input-white(placeholder='Имя родителя' type='text')
+            input.pre-cap__input.input-white(placeholder='Номер телефона' type='tel' required data-element='input-phone-intl' name='phone')
+            input(name='tel' type='hidden' required data-element='input-phone-hidden')
+            input.pre-cap__input.input-white(placeholder='E-mail адрес' type='email' name='email')
+            button.pre-cap__submit.btn-orange Записаться
+            label.pre-cap__label.checkbox-white-label
+              input.pre-cap__checkbox.checkbox-white-input(name='policy' type='checkbox')
+              .pre-cap__checkbox-view.checkbox-white-input-view
+              .pre-cap__checkbox-text.checkbox-white-text
+                | Даю
+                |
+                a(href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target='_blank') Согласие
+                |
+                | на обработку персональных
+                | данных в соответствие с
+                |
+                a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf' target='_blank') Политикой
+            label.pre-cap__label.checkbox-white-label
+              input.pre-cap__checkbox.checkbox-white-input(name='news' type='checkbox')
+              .pre-cap__checkbox-view.checkbox-white-input-view
+              .pre-cap__checkbox-text.checkbox-white-text
+                | Согласен на
+                |
+                a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf' target='_blank') получение рекламы

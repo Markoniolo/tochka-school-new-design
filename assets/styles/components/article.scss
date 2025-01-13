@@ -26,6 +26,7 @@
   margin-right: 40px;
   max-width: 760px;
   width: 100%;
+  line-height: 56px;
   @include media(lg) {
     font-size: 25px;
     line-height: 100%;
@@ -89,7 +90,7 @@
 }
 
 .article__source {
-  margin-top: 10px;
+  margin-top: 2px;
   font-size: 15px;
   color: rgba(0, 0, 0, 0.65);
   @include media(md) {
@@ -103,29 +104,27 @@
 }
 
 .article__box {
-  margin-top: 36px;
+  margin-top: 30px;
   @include media(md) {
-    margin-top: 28px;
+    margin-top: 18px;
   }
 }
 
 .article__title {
-  margin-bottom: 24px;
+  margin-bottom: 10px;
   font-weight: 500;
   font-size: 24px;
   @include media(md) {
     font-size: 18px;
-    margin-bottom: 18px;
   }
 }
 
 .article__text {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 18px;
   line-height: 167%;
   color: #454545;
   @include media(md) {
-    margin-bottom: 16px;
     font-size: 15px;
   }
   a {
@@ -189,12 +188,11 @@
 }
 
 .article__headline {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-weight: 500;
   font-size: 18px;
   @include media(md) {
     font-size: 15px;
-    margin-bottom: 16px;
   }
 }
 
@@ -209,7 +207,9 @@
   color: #454545;
   position: relative;
   @include media(md) {
+    padding-left: 22px;
     font-size: 15px;
+    line-height: 180%;
   }
   a {
     text-decoration: underline;
@@ -229,6 +229,7 @@
       width: 4px;
       height: 4px;
       top: 10px;
+      left: 10px;
     }
   }
 }
@@ -237,7 +238,7 @@
   margin-bottom: 25px;
   background: rgba(102, 131, 194, 0.15);
   border-radius: 10px;
-  padding: 30px 95px 30px 42px;
+  padding: 24px 95px 24px 42px;
   font-size: 18px;
   line-height: 167%;
   color: #454545;
@@ -313,7 +314,7 @@
 
 .article__author {
   border-top: 2px solid #afbddd;
-  padding-top: 28px;
+  padding-top: 20px;
   margin-top: 36px;
 }
 
@@ -383,15 +384,21 @@
   &_mob {
     display: none;
     @include media(md) {
+      position: static;
+      top: 117px;
       display: block;
       max-width: 100%;
       z-index: 10;
       padding: 0;
-      top: 117px;
       background-color: $white;
     }
     @include media(xs) {
       top: 99px;
+    }
+    &.fixed {
+      @include media(md) {
+        position: sticky;
+      }
     }
   }
 }

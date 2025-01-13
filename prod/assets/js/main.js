@@ -34,15 +34,33 @@ function articleSidebarMobInit () {
   const name = articleSidebarMob.querySelector('.article__name')
   const layer = articleSidebarMob.querySelector('.article__layer')
 
+  window.addEventListener('scroll', togglePosition, {passive: true})
+  let lastScrollTop = 0;
+  function togglePosition () {
+    let st = window.scrollY
+    if (st > lastScrollTop) {
+      articleSidebarMob.classList.remove('fixed')
+    } else if (st < lastScrollTop) {
+      articleSidebarMob.classList.add('fixed')
+    }
+    lastScrollTop = st <= 0 ? 0 : st
+  }
+
   name.addEventListener('click', toggleSidebar)
   layer.addEventListener('click', closeSidebar)
 
   function toggleSidebar () {
-    name.classList.toggle('active')
+    if (name.classList.contains('active')) {
+      closeSidebar()
+    } else {
+      window.removeEventListener('scroll', togglePosition)
+      name.classList.add('active')
+    }
   }
 
   function closeSidebar () {
     name.classList.remove('active')
+    window.addEventListener('scroll', togglePosition, {passive: true})
   }
 
   const articleLinkArray = articleSidebarMob.querySelectorAll('.article__link')
@@ -116,6 +134,24 @@ if (trialForm) globalFormInit(trialForm, 'onSendBlogMessage', 'trialFormData')
 const newsletterForm = document.querySelector("[data-element='newsletter']")
 if (newsletterForm) globalFormInit(newsletterForm, 'onSendSubscribeMessage', 'newsletterFormData')
 
+const preCapForm = document.querySelector("[data-element='pre-cap__form']")
+if (preCapForm) globalFormInit(preCapForm, 'onSendPreMessage', 'preFormData')
+
+const preRegForm = document.querySelector("[data-element='pre-reg__form']")
+if (preRegForm) globalFormInit(preRegForm, 'onSendPreMessage', 'preFormData')
+
+function preFormData (globalForm) {
+  return {
+    'name': globalForm.querySelector("[name='name']").value,
+    'utm': globalForm.querySelector("[name='utm']").value,
+    'tel': globalForm.querySelector("[name='tel']").value,
+    'email': globalForm.querySelector("[name='email']").value,
+    'policy': globalForm.querySelector("[name='policy']").checked,
+    'news': globalForm.querySelector("[name='news']").checked,
+    'page_name': globalForm.querySelector("[name='page_name']").value,
+  };
+}
+
 function newsletterFormData (globalForm) {
   return {
     'utm': globalForm.querySelector("[name='utm']").value,
@@ -148,6 +184,7 @@ function orderFormTeacherData (globalForm) {
     'page_name': globalForm.querySelector("[name='page_name']").value,
   };
 }
+
 function orderFormData (globalForm) {
   return {
     'name': globalForm.querySelector("[name='name']").value,
@@ -338,6 +375,191 @@ function headerInit () {
     header.classList.remove('open')
     body.classList.remove('no-scroll')
   }
+}
+
+const preAboutVideo = document.querySelector("[data-element='pre-about-video']")
+
+if (preAboutVideo) preAboutVideoInit()
+
+function preAboutVideoInit () {
+  const videoWrap = document.querySelector("[data-element='pre-about-video-wrap']")
+  const timeNode = document.querySelector("[data-element='pre-about-time']")
+
+  preAboutVideo.addEventListener("timeupdate", timeupdateHandler)
+
+  function timeupdateHandler () {
+    const date = new Date(null)
+    date.setSeconds(Math.round(preAboutVideo.currentTime))
+    timeNode.innerHTML = date.toISOString().slice(14, 19)
+  }
+
+  videoWrap.addEventListener('click', playVideo)
+
+  function playVideo (e) {
+    e.stopPropagation()
+    if (preAboutVideo.muted) {
+      preAboutVideo.muted = false
+      preAboutVideo.currentTime = 0
+      preAboutVideo.play()
+    } else {
+      muteVideo()
+    }
+  }
+
+  window.addEventListener('scroll', checkVideoInView, {passive: true})
+  window.addEventListener('click', muteVideo, {passive: true})
+
+  function muteVideo () {
+    preAboutVideo.muted = true
+    console.log(preAboutVideo.duration)
+  }
+
+  function checkVideoInView () {
+    if (preAboutVideo.getBoundingClientRect().top < window.innerHeight/2) {
+      preAboutVideo.play()
+    }
+  }
+}
+
+const preFaqItems = document.querySelectorAll("[data-element='pre-faq-item']")
+
+for (let i = 0; i < preFaqItems.length; i++) {
+  preFaqItems[i].addEventListener("click", toggleFaqItem)
+
+  function toggleFaqItem () {
+    this.classList.toggle('active')
+  }
+}
+
+const preReviewsSlider = document.querySelector('[data-element="pre-reviews-slider"]')
+
+if (preReviewsSlider) preReviewsSliderInit()
+
+function preReviewsSliderInit () {
+  const preReviewsSliderSwiper = new Swiper(preReviewsSlider, {
+    slidesPerView: 'auto',
+    spaceBetween: 25,
+    navigation: {
+      nextEl: '.pre-reviews__nav-btn_right',
+      prevEl: '.pre-reviews__nav-btn_left',
+    },
+    scrollbar: {
+      el: '.pre-reviews__scrollbar',
+      draggable: true,
+    },
+    breakpoints: {
+      1440: {
+        spaceBetween: 30,
+      }
+    }
+  })
+}
+
+const preReviewsVideoWraps = document.querySelectorAll("[data-element='pre-reviews-video-wrap']")
+
+if (preReviewsVideoWraps.length) preReviewsVideoWrapsInit()
+
+function preReviewsVideoWrapsInit () {
+  for (let i = 0; i < preReviewsVideoWraps.length; i++) {
+    videoInit(preReviewsVideoWraps[i])
+  }
+
+  function videoInit (wrap) {
+    const video = wrap.querySelector("[data-element='pre-reviews-video']")
+    wrap.addEventListener('click', playVideo, {once: true})
+
+    function playVideo () {
+      wrap.classList.add('active')
+      video.controls = true
+      setTimeout(() => video.play(), 100)
+    }
+  }
+}
+
+const preStudySlider = document.querySelector('[data-element="pre-study-slider"]')
+let preStudySliderSwiper
+
+if (preStudySlider) {
+  const swiperWrapper = document.querySelector('.pre-study__wrapper')
+  window.addEventListener('resize', watchSlider)
+  watchSlider()
+
+  function initSlider () {
+    preStudySliderSwiper = new Swiper(preStudySlider, {
+      slidesPerView: 'auto',
+      spaceBetween: 25,
+      pagination: {
+        el: ".pre-study__pagination",
+      },
+    })
+  }
+
+  function watchSlider () {
+    if (window.innerWidth < 1440) {
+      initSlider()
+    } else {
+      preStudySliderSwiper?.destroy()
+      swiperWrapper.style.transform = 'none'
+    }
+  }
+}
+
+const preWaysSlideArray = document.querySelectorAll('[data-element="pre-ways-slide"]')
+
+if (preWaysSlideArray.length) preWaysSlideArrayInit()
+
+function preWaysSlideArrayInit () {
+  for (let i = 0; i < preWaysSlideArray.length; i++) {
+    preWaysSlideInit(preWaysSlideArray[i])
+  }
+
+  function preWaysSlideInit (slide) {
+    const list = slide.querySelector('[data-element="pre-ways-list"]')
+    const btn = slide.querySelector('[data-element="pre-ways-more"]')
+
+    if (list.clientHeight > 140) {
+      btn.classList.add('show')
+      btn.addEventListener('click', toggleList)
+      slide.classList.add('hide')
+    }
+
+    function toggleList () {
+      if (slide.classList.contains('hide')) {
+        slide.classList.remove('hide')
+        btn.textContent = 'Свернуть'
+      } else {
+        slide.classList.add('hide')
+        btn.textContent = 'Показать все предметы'
+      }
+    }
+  }
+}
+
+const preWaysSlider = document.querySelector('[data-element="pre-ways__slider"]')
+
+if (preWaysSlider) preWaysSliderInit()
+
+function preWaysSliderInit () {
+  const preWaysSliderSwiper = new Swiper(preWaysSlider, {
+    slidesPerView: 'auto',
+    spaceBetween: 25,
+    pagination: {
+      el: ".pre-ways__pagination",
+    },
+    navigation: {
+      nextEl: '.pre-ways__nav-btn_right',
+      prevEl: '.pre-ways__nav-btn_left',
+    },
+    scrollbar: {
+      el: '.pre-ways__scrollbar',
+      draggable: true,
+    },
+    breakpoints: {
+      1440: {
+        spaceBetween: 30,
+      }
+    }
+  })
 }
 
 if (document.querySelector('[data-role="scroll-to-anchor"]')) setTimeout(initScrollToAnchor, 0)

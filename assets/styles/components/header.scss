@@ -273,6 +273,7 @@
 }
 
 .header__link-note {
+  flex-shrink: 0;
   font-size: 14px;
   line-height: 10px;
   color: #6683c2;

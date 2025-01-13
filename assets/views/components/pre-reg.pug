@@ -1,0 +1,34 @@
+.pre-reg#pre-reg
+  .pre-reg__cont.cont
+    .pre-reg__area
+      .pre-reg__decor.pre-reg__decor_1
+      .pre-reg__decor.pre-reg__decor_2
+      .pre-reg__decor.pre-reg__decor_3
+      h2.pre-reg__caption.pre-caption Простая регистрация
+      .pre-reg__text Вы получите Ваш номер предзаписи на email
+      form.pre-reg__form(data-element='pre-reg__form' data-request-validate)
+        input(type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru/blog/voprosy-dlya-podrostkov-chto-polezno-i-interesno-obsudit-do-15-let")
+        input.pre-reg__input.input-white(placeholder='Имя родителя' type='text')
+        input.pre-reg__input.input-white(placeholder='Номер телефона' type='tel' required data-element='input-phone-intl' name='phone')
+        input(name='tel' type='hidden' required data-element='input-phone-hidden')
+        input.pre-reg__input.input-white(placeholder='E-mail адрес' type='email' name='email')
+        button.pre-reg__submit.btn-orange Записаться
+        label.pre-reg__label.checkbox-white-label
+          input.pre-reg__checkbox.checkbox-white-input(name='policy' type='checkbox')
+          .pre-reg__checkbox-view.checkbox-white-input-view
+          .pre-reg__checkbox-text.checkbox-white-text
+            | Даю
+            |
+            a(href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target='_blank') Согласие
+            |
+            | на обработку персональных
+            | данных в соответствие с
+            |
+            a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf' target='_blank') Политикой
+        label.pre-reg__label.checkbox-white-label
+          input.pre-reg__checkbox.checkbox-white-input(name='news' type='checkbox')
+          .pre-reg__checkbox-view.checkbox-white-input-view
+          .pre-reg__checkbox-text.checkbox-white-text
+            | Согласен на
+            |
+            a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf' target='_blank') получение рекламы

@@ -1,0 +1,34 @@
+-
+  const prePlusInner = [
+    {
+      title: 'Отчёты об успеваемости ребёнка',
+      text: 'Онлайн-журнал с информацией о выполненных заданиях, прогрессе на курсе и результатах тестирований'
+    },
+    {
+      title: 'Обновлённое расписание',
+      text: 'Меньше “окон” и более удобный график занятий (в т.ч. уроки в первой половине дня)'
+    },
+    {
+      title: 'Новые курсы',
+      text: 'Пока оставим их в секрете ;)'
+    }
+  ]
+
+.pre-plus
+  .pre-plus__cont.cont
+    h2.pre-plus__caption.pre-caption Ещё в следующем учебном году Вас ждут:
+    .pre-plus__area
+      .pre-plus__inner
+        each item, index in prePlusInner
+          .pre-plus__box(class=`pre-plus__box_${index+1}`)
+            .pre-plus__title= item.title
+            .pre-plus__text= item.text
+            picture.pre-plus__picture
+              source(srcset=staticImg(`pre-plus/pre-plus-${index+1}_mob.svg`) media="(max-width: 1440px)")
+              img.pre-plus__image(src=staticImg(`pre-plus/pre-plus-${index+1}.svg`) alt='')
+      .pre-plus__box.pre-plus__box_big
+        .pre-plus__title Семейное обучение для 9-11 кл
+        .pre-plus__text Со сдачей ОГЭ и ЕГЭ, аттестацией и  бесплатным прикреплением к школе
+        picture.pre-plus__picture
+          source(srcset=staticImg(`pre-plus/pre-plus-4_mob.svg`) media="(max-width: 1440px)")
+          img.pre-plus__image(src=staticImg('pre-plus/pre-plus-4.svg') alt='')

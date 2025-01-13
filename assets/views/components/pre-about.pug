@@ -1,0 +1,25 @@
+.pre-about
+  .pre-about__cont.cont
+    .pre-about__area
+      .pre-about__box
+        .pre-about__inner
+          p.pre-about__text «Уже 4-й год мы заранее открываем запись на занятия следующего учебного года.
+          p.pre-about__text.
+            Зачем? Чтобы все, кто хочет учиться в «Точке Знаний», точно заняли свои места. А мы спрогнозировали
+            нагрузку на учителей и тьюторов так, чтобы качество обучения осталось на высоком уровне.
+          p.pre-about__text.
+            Наши ученики знают, как скрупулёзно мы подходим к выбору учителей. На поиск действительно хороших
+            педагогов уходят месяцы. Благодаря предзаписи мы понимаем, по каким предметам нам нужны учителя. И
+            находим лучших из них»
+      .pre-about__author
+        each item in [1,2,3]
+          .pre-about__decor(class=`pre-about__decor_${item}`)
+        .pre-about__video-wrap(data-element='pre-about-video-wrap')
+          video.pre-about__video(src=`${pathStatics}/files/Shevchenko_1_klass.mov`
+            poster=staticImg('Shevchenko_prevyu.jpg') data-element='pre-about-video' muted)
+          .pre-about__sound
+          .pre-about__time(data-element='pre-about-time') 00:52
+          .pre-about__smile
+        .pre-about__info
+          .pre-about__note Основатель онлайн-школы «Точка Знаний»
+          .pre-about__name Андрей Александрович Шелудько

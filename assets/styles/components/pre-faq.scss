@@ -1,0 +1,123 @@
+.pre-faq {
+  @include bg-icon('pre-faq/pre-faq-bg.png');
+  padding: 80px 0 40px;
+  @include media(lg) {
+    margin-bottom: 40px;
+    background: none;
+    padding: 0;
+  }
+}
+
+.pre-faq__cont {
+
+}
+
+.pre-faq__caption {
+
+}
+
+.pre-faq__wrap {
+  display: flex;
+  gap: 30px;
+  @include media(lg) {
+    gap: 15px;
+  }
+  @include media(md) {
+    flex-direction: column;
+  }
+}
+
+.pre-faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px 0;
+  width: calc(50% - 15px);
+  @include media(lg) {
+    gap: 15px 0;
+  }
+  @include media(md) {
+    width: 100%;
+  }
+}
+
+.pre-faq__item {
+  cursor: pointer;
+  border-radius: 32px;
+  @include media(lg) {
+    border-radius: 10px;
+  }
+  @include media(md) {
+    width: 100%;
+  }
+  &.active {
+    color: $white;
+    background: #5b6784;
+    .pre-faq__top {
+      background-color: #657392;
+      box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
+      &::before {
+        transform: translateY(-50%) rotate(45deg);
+        color: $white;
+      }
+    }
+    .pre-faq__answer {
+      max-height: 1000px;
+      transition: max-height 1s ease-in-out;
+    }
+  }
+}
+
+.pre-faq__top {
+  border-radius: 32px;
+  background-color: $white;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
+  padding: 20px 107px 20px 30px;
+  font-weight: 500;
+  font-size: 16px;
+  position: relative;
+  @include media(lg) {
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 16px 74px 16px 18px;
+  }
+  &::before {
+    content: '+';
+    font-size: 35px;
+    color: rgba(0, 0, 0, 0.41);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 45px;
+    transition-property: transform;
+    transition-duration: $transition-duration;
+    @include media(lg) {
+      right: 20px;
+    }
+  }
+}
+
+.pre-faq__answer {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.pre-faq__answer-inner {
+  padding: 25px 30px;
+  @include media(lg) {
+    padding: 16px 18px;
+  }
+}
+
+.pre-faq__text {
+  font-size: 16px;
+  @include media(lg) {
+    font-size: 15px;
+  }
+  &:not(:last-child) {
+    margin-bottom: 15px;
+    @include media(lg) {
+      margin-bottom: 10px;
+    }
+  }
+}
