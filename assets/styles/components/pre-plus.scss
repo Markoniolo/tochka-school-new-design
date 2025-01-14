@@ -176,4 +176,6 @@
 
 .pre-plus__image {
   position: absolute;
+  object-fit: contain;
+  object-position: right;
 }
