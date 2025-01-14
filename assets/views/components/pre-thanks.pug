@@ -1,0 +1,44 @@
+.pre-thanks
+  .pre-thanks__cont.cont
+    .pre-thanks__wrap
+      each item in [1,2,3,4,5]
+        .pre-thanks__decor(class=`pre-thanks__decor_${item}`)
+      .pre-thanks__steps
+        .pre-thanks__step
+          .pre-thanks__step-number 1
+          .pre-thanks__step-note Шаг
+        .pre-thanks__step
+          .pre-thanks__step-number 2
+          .pre-thanks__step-note Шаг
+      .pre-thanks__caption Поздравляем!
+      .pre-thanks__text.pre-thanks__text_short Вы прошли регистрацию и попали в предзапись на 2025-2026 учебный год.
+      .pre-thanks__number
+        | Ваш номер в предзаписи:
+        |
+        span 567
+      .pre-thanks__note.pre-thanks__note_short Этот номер и другую информацию мы отправили на Ваш email
+      .pre-thanks__title Что нужно сделать сейчас?
+      .pre-thanks__text
+        | Нажимайте на кнопку ниже.
+        |
+        a(href='#') Откроется закрытый Телеграм-канал для участников предзаписи.
+      .pre-thanks__note
+        span Обязательно
+        |
+        | присоединитесь к каналу, чтобы быть в курсе всех новостей, мест на курсах,
+        | а также получить самую низкую цену.
+      a.pre-thanks__button.btn-orange(href='#') Присоединиться
+      .pre-thanks__span Переход в закрытый канал
+      .pre-thanks__area
+        .pre-thanks__box
+          .pre-thanks__tag
+            .pre-thanks__tag-span Шаг 1
+          picture.pre-thanks__picture
+            img.pre-thanks__image(src=staticImg('pre-thanks/pre-thanks-1.png') alt='')
+          .pre-thanks__gallery-note Оставить заявку
+        .pre-thanks__box
+          .pre-thanks__tag
+            .pre-thanks__tag-span Шаг 2
+          picture.pre-thanks__picture
+            img.pre-thanks__image(src=staticImg('pre-thanks/pre-thanks-2.png') alt='')
+          .pre-thanks__gallery-note Перейти в закрытый Телеграм-канал

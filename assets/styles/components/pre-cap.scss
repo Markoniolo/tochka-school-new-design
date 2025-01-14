@@ -204,9 +204,12 @@
     max-width: 100%;
   }
   span {
+    display: inline-flex;
+    height: 45px;
+    align-items: center;
     border-radius: 33px;
     background: rgba(102, 131, 194, 0.08);
-    padding: 10px 20px;
+    padding: 0 20px;
     font-weight: 500;
     font-size: 14px;
     color: #003c56;
@@ -214,6 +217,7 @@
       padding: 6px 8px;
       font-size: 12px;
       font-weight: 400;
+      height: 35px;
     }
   }
 }

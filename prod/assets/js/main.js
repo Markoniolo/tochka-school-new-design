@@ -135,10 +135,10 @@ const newsletterForm = document.querySelector("[data-element='newsletter']")
 if (newsletterForm) globalFormInit(newsletterForm, 'onSendSubscribeMessage', 'newsletterFormData')
 
 const preCapForm = document.querySelector("[data-element='pre-cap__form']")
-if (preCapForm) globalFormInit(preCapForm, 'onSendPreMessage', 'preFormData')
+if (preCapForm) globalFormInit(preCapForm, 'onSendPreSubscribeMessage', 'preFormData')
 
 const preRegForm = document.querySelector("[data-element='pre-reg__form']")
-if (preRegForm) globalFormInit(preRegForm, 'onSendPreMessage', 'preFormData')
+if (preRegForm) globalFormInit(preRegForm, 'onSendPreSubscribeMessage', 'preFormData')
 
 function preFormData (globalForm) {
   return {
@@ -275,6 +275,12 @@ function globalFormInit (form, func_name, type) {
         var form_data = orderFormTeacherData(globalForm);
       } else if (type == 'trialFormData') {
         var form_data = trialFormData(globalForm);
+      } else if (type == 'newsletterFormData') {
+        var form_data = newsletterFormData(globalForm);
+      } else if (type == 'preFormData') {
+        var form_data = preFormData(globalForm);
+      } else if (type == 'preFormData') {
+        var form_data = preFormData(globalForm);
       }
 
       const email = globalForm.querySelector('[name="email"]')
