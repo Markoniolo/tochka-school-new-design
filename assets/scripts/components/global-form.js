@@ -202,7 +202,11 @@ function globalFormInit (form, func_name, type) {
         btnSubmit.disabled = true
         setTimeout(() => {
           clearForm()
-          location.assign(linkTo)
+          if (preFormData) {
+            location.assign(linkTo + `?email=${email}`)
+          } else {
+            location.assign(linkTo)
+          }
         }, 100)
       }
 

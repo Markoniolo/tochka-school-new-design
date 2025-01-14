@@ -317,7 +317,11 @@ function globalFormInit (form, func_name, type) {
         btnSubmit.disabled = true
         setTimeout(() => {
           clearForm()
-          location.assign(linkTo)
+          if (preFormData) {
+            location.assign(linkTo + `?email=${email}`)
+          } else {
+            location.assign(linkTo)
+          }
         }, 100)
       }
 
@@ -417,7 +421,6 @@ function preAboutVideoInit () {
 
   function muteVideo () {
     preAboutVideo.muted = true
-    console.log(preAboutVideo.duration)
   }
 
   function checkVideoInView () {
@@ -508,6 +511,16 @@ if (preStudySlider) {
       swiperWrapper.style.transform = 'none'
     }
   }
+}
+
+const preThanks = document.querySelector('.pre-thanks')
+
+if (preThanks) preThanksInit()
+
+function preThanksInit () {
+  const url = new URL(window.location.href)
+  url.searchParams.delete('email')
+  history.replaceState(null, "", url.toString())
 }
 
 const preWaysSlideArray = document.querySelectorAll('[data-element="pre-ways-slide"]')

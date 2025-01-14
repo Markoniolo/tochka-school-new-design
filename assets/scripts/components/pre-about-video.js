@@ -32,7 +32,6 @@ function preAboutVideoInit () {
 
   function muteVideo () {
     preAboutVideo.muted = true
-    console.log(preAboutVideo.duration)
   }
 
   function checkVideoInView () {
