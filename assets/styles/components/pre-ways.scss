@@ -87,8 +87,9 @@
 
 .pre-ways__image {
   width: auto;
+  height: 264px;
   @include media(lg) {
-    max-height: 175px;
+    height: 175px;
   }
 }
 

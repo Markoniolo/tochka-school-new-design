@@ -3,17 +3,29 @@ const header = document.querySelector('[data-element="header"]')
 if (header) headerInit()
 
 function headerInit () {
+  const stickyHeader = document.querySelector('.sticky-header')
   const body = document.querySelector('body')
 
   window.addEventListener('scroll', checkHeader, { passive: true })
+  window.addEventListener('resize', checkHeader, { passive: true })
 
   checkHeader()
 
   function checkHeader () {
     if (window.scrollY > 10) {
       header.classList.add('header_white')
+      stickyHeader.classList.add('white')
     } else {
       header.classList.remove('header_white')
+      stickyHeader.classList.remove('white')
+    }
+
+    if (window.scrollY > 200 && window.innerWidth >= 1200) {
+      header.classList.add('thin')
+    } else if (window.scrollY < 100 && window.innerWidth >= 1200) {
+      header.classList.remove('thin')
+    } else if (window.innerWidth < 1200) {
+      header.classList.remove('thin')
     }
   }
 

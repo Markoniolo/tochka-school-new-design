@@ -7,7 +7,7 @@ html(lang='ru')
   head
     include _head
     block head
-  body
+  body(class=VIEW === 'preregistration-thanks' ? 'page-thanks' : false)
     .sticky-header
       include header
     main.wrapper

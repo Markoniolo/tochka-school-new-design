@@ -20,8 +20,16 @@ function clickOnTheScrollElement (event) {
 }
 
 function animateScrollToAnchor (theElement) {
+  let offset
+  if (window.innerWidth < 744) {
+    offset = 79
+  } else if (window.innerWidth < 1200) {
+    offset = 97
+  } else {
+    offset = 114
+  }
   const positionNow = window.pageYOffset
-  const positionElement = theElement.getBoundingClientRect().top + pageYOffset - 180
+  const positionElement = theElement.getBoundingClientRect().top + pageYOffset - offset
   const duration = 200
   const step = positionElement - positionNow
   const start = performance.now()

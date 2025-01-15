@@ -166,7 +166,10 @@
   box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
   width: 39px;
   height: 39px;
-  @include bg-icon('icons/ic_sound_blue.svg', 17px, 15px);
+  @include bg-icon('icons/ic_sound_mute.svg', 17px, 16px);
+  &.active {
+    @include bg-icon('icons/ic_sound_blue.svg', 17px, 15px);
+  }
 }
 
 .pre-about__time {
@@ -193,8 +196,10 @@
 }
 
 .pre-about__info {
-  @include media(sm) {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  @include media(xs) {
+    flex-direction: row;
   }
 }
 
@@ -211,6 +216,9 @@
   @include media(sm) {
     max-width: 115px;
     margin-right: 52px;
+  }
+  @include media(xs) {
+    margin-right: 26px;
   }
 }
 

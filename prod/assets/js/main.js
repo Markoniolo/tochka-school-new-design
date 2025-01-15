@@ -241,16 +241,16 @@ function globalFormInit (form, func_name, type) {
     iti = window.intlTelInput(input, {
       utilsScript: "../libs/intlTelInputWithUtils.min",
       initialCountry: 'ru',
-      separateDialCode: true
+      separateDialCode: true,
+      strictMode: true
     })
 
     input.addEventListener('input', function () {
-      this.value = this.value.replace(/\D+/g, '')
       inputHidden.value = input.value
-      if (iti.selectedCountryData.dialCode === "7" && input.value.length > 10) {
-        inputHidden.value = input.value.substring(input.value.length - 10)
+      if (iti.selectedCountryData.dialCode === "7" && input.value.length > 12) {
+        inputHidden.value = input.value.substring(input.value.length - 12)
       }
-      inputHidden.value = iti.selectedCountryData.dialCode + inputHidden.value
+      inputHidden.value = iti.selectedCountryData.dialCode + ' ' + inputHidden.value
     })
   }
 
@@ -313,12 +313,14 @@ function globalFormInit (form, func_name, type) {
       }
 
       if (isValid) {
+        email_value = email.value;
         globalForm.submit()
         btnSubmit.disabled = true
         setTimeout(() => {
           clearForm()
           if (type === 'preFormData') {
-            location.assign(linkTo + `?email=${email}`)
+            location.assign(linkTo + `?cemail=${email_value}`)
+            // location.assign(linkTo + '?email='+email_value)
           } else {
             location.assign(linkTo)
           }
@@ -356,17 +358,29 @@ const header = document.querySelector('[data-element="header"]')
 if (header) headerInit()
 
 function headerInit () {
+  const stickyHeader = document.querySelector('.sticky-header')
   const body = document.querySelector('body')
 
   window.addEventListener('scroll', checkHeader, { passive: true })
+  window.addEventListener('resize', checkHeader, { passive: true })
 
   checkHeader()
 
   function checkHeader () {
     if (window.scrollY > 10) {
       header.classList.add('header_white')
+      stickyHeader.classList.add('white')
     } else {
       header.classList.remove('header_white')
+      stickyHeader.classList.remove('white')
+    }
+
+    if (window.scrollY > 200 && window.innerWidth >= 1200) {
+      header.classList.add('thin')
+    } else if (window.scrollY < 100 && window.innerWidth >= 1200) {
+      header.classList.remove('thin')
+    } else if (window.innerWidth < 1200) {
+      header.classList.remove('thin')
     }
   }
 
@@ -394,6 +408,8 @@ if (preAboutVideo) preAboutVideoInit()
 function preAboutVideoInit () {
   const videoWrap = document.querySelector("[data-element='pre-about-video-wrap']")
   const timeNode = document.querySelector("[data-element='pre-about-time']")
+  const soundBtn = document.querySelector(".pre-about__sound")
+  let firstPlay = false
 
   preAboutVideo.addEventListener("timeupdate", timeupdateHandler)
 
@@ -408,24 +424,23 @@ function preAboutVideoInit () {
   function playVideo (e) {
     e.stopPropagation()
     if (preAboutVideo.muted) {
+      firstPlay = true
       preAboutVideo.muted = false
+      preAboutVideo.loop = false
       preAboutVideo.currentTime = 0
       preAboutVideo.play()
+      soundBtn.classList.add('active')
     } else {
-      muteVideo()
+      preAboutVideo.muted = true
+      soundBtn.classList.remove('active')
     }
   }
 
   window.addEventListener('scroll', checkVideoInView, {passive: true})
-  window.addEventListener('click', muteVideo, {passive: true})
-
-  function muteVideo () {
-    preAboutVideo.muted = true
-  }
 
   function checkVideoInView () {
     if (preAboutVideo.getBoundingClientRect().top < window.innerHeight/2) {
-      preAboutVideo.play()
+      if (!firstPlay) preAboutVideo.play()
     }
   }
 }
@@ -490,7 +505,7 @@ let preStudySliderSwiper
 
 if (preStudySlider) {
   const swiperWrapper = document.querySelector('.pre-study__wrapper')
-  window.addEventListener('resize', watchSlider)
+  window.addEventListener('resize', watchSlider, {passive: true})
   watchSlider()
 
   function initSlider () {
@@ -505,10 +520,10 @@ if (preStudySlider) {
 
   function watchSlider () {
     if (window.innerWidth < 1440) {
+      preStudySliderSwiper?.destroy()
       initSlider()
     } else {
       preStudySliderSwiper?.destroy()
-      swiperWrapper.style.transform = 'none'
     }
   }
 }
@@ -519,7 +534,8 @@ if (preThanks) preThanksInit()
 
 function preThanksInit () {
   const url = new URL(window.location.href)
-  url.searchParams.delete('email')
+  //url.searchParams.delete('email')
+  url.searchParams.delete('cemail')
   history.replaceState(null, "", url.toString())
 }
 
@@ -603,8 +619,16 @@ function clickOnTheScrollElement (event) {
 }
 
 function animateScrollToAnchor (theElement) {
+  let offset
+  if (window.innerWidth < 744) {
+    offset = 79
+  } else if (window.innerWidth < 1200) {
+    offset = 97
+  } else {
+    offset = 114
+  }
   const positionNow = window.pageYOffset
-  const positionElement = theElement.getBoundingClientRect().top + pageYOffset - 180
+  const positionElement = theElement.getBoundingClientRect().top + pageYOffset - offset
   const duration = 200
   const step = positionElement - positionNow
   const start = performance.now()

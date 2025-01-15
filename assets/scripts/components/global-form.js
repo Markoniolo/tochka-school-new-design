@@ -126,16 +126,16 @@ function globalFormInit (form, func_name, type) {
     iti = window.intlTelInput(input, {
       utilsScript: "../libs/intlTelInputWithUtils.min",
       initialCountry: 'ru',
-      separateDialCode: true
+      separateDialCode: true,
+      strictMode: true
     })
 
     input.addEventListener('input', function () {
-      this.value = this.value.replace(/\D+/g, '')
       inputHidden.value = input.value
-      if (iti.selectedCountryData.dialCode === "7" && input.value.length > 10) {
-        inputHidden.value = input.value.substring(input.value.length - 10)
+      if (iti.selectedCountryData.dialCode === "7" && input.value.length > 12) {
+        inputHidden.value = input.value.substring(input.value.length - 12)
       }
-      inputHidden.value = iti.selectedCountryData.dialCode + inputHidden.value
+      inputHidden.value = iti.selectedCountryData.dialCode + ' ' + inputHidden.value
     })
   }
 
@@ -198,12 +198,14 @@ function globalFormInit (form, func_name, type) {
       }
 
       if (isValid) {
+        email_value = email.value;
         globalForm.submit()
         btnSubmit.disabled = true
         setTimeout(() => {
           clearForm()
           if (type === 'preFormData') {
-            location.assign(linkTo + `?email=${email}`)
+            location.assign(linkTo + `?cemail=${email_value}`)
+            // location.assign(linkTo + '?email='+email_value)
           } else {
             location.assign(linkTo)
           }

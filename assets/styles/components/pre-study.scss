@@ -53,7 +53,8 @@
   }
   @include media(lg) {
     background-color: transparent;
-    width: 343px;
+    max-width: 343px;
+    width: 100%;
     padding: 25px 14px 20px;
     border-radius: 10px;
     @include bg-icon('pre-study/pre-study-slide-bg.png');
@@ -61,7 +62,7 @@
     height: auto;
   }
   @include media(sm) {
-    width: 100%;
+    max-width: 100%;
   }
 }
 

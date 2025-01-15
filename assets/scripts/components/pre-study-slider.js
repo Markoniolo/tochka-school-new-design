@@ -3,7 +3,7 @@ let preStudySliderSwiper
 
 if (preStudySlider) {
   const swiperWrapper = document.querySelector('.pre-study__wrapper')
-  window.addEventListener('resize', watchSlider)
+  window.addEventListener('resize', watchSlider, {passive: true})
   watchSlider()
 
   function initSlider () {
@@ -18,10 +18,10 @@ if (preStudySlider) {
 
   function watchSlider () {
     if (window.innerWidth < 1440) {
+      preStudySliderSwiper?.destroy()
       initSlider()
     } else {
       preStudySliderSwiper?.destroy()
-      swiperWrapper.style.transform = 'none'
     }
   }
 }
