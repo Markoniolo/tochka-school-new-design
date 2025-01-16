@@ -22,11 +22,11 @@ function clickOnTheScrollElement (event) {
 function animateScrollToAnchor (theElement) {
   let offset
   if (window.innerWidth < 744) {
-    offset = 79
+    offset = 84
   } else if (window.innerWidth < 1200) {
-    offset = 97
+    offset = 102
   } else {
-    offset = 114
+    offset = 65
   }
   const positionNow = window.pageYOffset
   const positionElement = theElement.getBoundingClientRect().top + pageYOffset - offset

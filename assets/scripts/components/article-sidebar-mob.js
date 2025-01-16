@@ -46,5 +46,6 @@ function articleSidebarMobInit () {
     if (oldActive) oldActive.classList.remove('active')
     this.classList.add('active')
     name.classList.remove('active')
+    articleSidebarMob.classList.remove('fixed')
   }
 }
