@@ -14,11 +14,11 @@
 
 .input-white {
   border-radius: 34px;
-  border: none;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 15px;
   color: $black;
-  padding: 13px 30px 15px;
+  padding: 12px 30px;
+  border: 1px solid $white;
   box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
   &::placeholder {
     color: rgba(0, 0, 0, 0.42);

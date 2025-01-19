@@ -61,9 +61,6 @@
     flex-direction: column;
     align-items: center;
   }
-  @include media(sm) {
-    max-width: 100%;
-  }
   &_1 {
     width: 717px;
     .pre-study__line {

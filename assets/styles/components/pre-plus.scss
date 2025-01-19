@@ -11,7 +11,10 @@
 }
 
 .pre-plus__caption {
-
+  @include media(xs) {
+    max-width: 215px;
+    width: 100%;
+  }
 }
 
 .pre-plus__area {

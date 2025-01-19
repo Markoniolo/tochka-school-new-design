@@ -73,11 +73,18 @@
   padding: 20px 107px 20px 30px;
   font-weight: 500;
   font-size: 16px;
+  line-height: 20px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
   position: relative;
   @include media(lg) {
     border-radius: 10px;
     font-size: 15px;
     padding: 16px 74px 16px 18px;
+  }
+  @include media(md) {
+    min-height: auto;
   }
   &::before {
     content: '+';

@@ -125,6 +125,10 @@
   @include media(lg) {
     margin-bottom: 18px;
   }
+  @include media(xs) {
+    max-width: 242px;
+    width: 100%;
+  }
 }
 
 .pre-end__text {

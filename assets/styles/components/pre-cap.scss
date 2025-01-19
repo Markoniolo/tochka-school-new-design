@@ -149,12 +149,15 @@
 
 .pre-cap__box {
   flex-grow: 1;
-  padding: 60px 72px 45px 60px;
+  padding: 52px 72px 45px 60px;
   @include media(lg) {
-    padding: 25px 25px 28px;
+    padding: 25px 25px 23px;
   }
   @include media(xs) {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -187,32 +190,42 @@
 }
 
 .pre-cap__title {
-  margin-bottom: 35px;
+  margin-bottom: 19px;
   font-weight: 600;
   font-size: 58px;
   line-height: 107%;
   color: #003c56;
   @include media(lg) {
-    margin-bottom: 13px;
+    margin-bottom: 17px;
     font-size: 30px;
     line-height: 113%;
     max-width: 560px;
     width: 100%;
   }
   @include media(xs) {
-    margin-bottom: 20px;
-    max-width: 100%;
+    max-width: 393px;
+    margin: 0 -25px 20px;
+    width: calc(100% + 50px);
+    font-size: 27px;
+  }
+  br {
+    display: none;
+    @include media(xs) {
+      display: initial;
+    }
   }
 }
 
 .pre-cap__list {
-  margin-bottom: 40px;
+  margin-bottom: 82px;
+  margin-left: 5px;
   display: flex;
   flex-direction: column;
-  gap: 15px 0;
+  gap: 8px 0;
   @include media(lg) {
+    margin-left: 3px;
     margin-bottom: 0;
-    gap: 10px 0;
+    gap: 6px 0;
   }
   @include media(xs) {
     max-width: 275px;
@@ -271,8 +284,8 @@
 }
 
 .pre-cap__form {
-  padding: 45px 85px 50px;
-  max-width: 464px;
+  padding: 45px 46px 50px;
+  max-width: 392px;
   width: 100%;
   flex-shrink: 0;
   border-radius: 0 31px 31px 0;
@@ -280,7 +293,7 @@
   @include media(lg) {
     border-radius: 10px;
     max-width: 100%;
-    padding: 20px 20px 30px;
+    padding: 12px 20px 30px;
   }
   .iti {
     margin-bottom: 20px;
@@ -300,7 +313,7 @@
 }
 
 .pre-cap__headline {
-  margin-bottom: 30px;
+  margin-bottom: 24px;
   font-weight: 500;
   font-size: 24px;
   color: #fff;
@@ -352,7 +365,7 @@
   @include media(xs) {
     width: 100%;
     margin-top: 25px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 }
 

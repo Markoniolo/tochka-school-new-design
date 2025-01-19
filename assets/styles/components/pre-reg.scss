@@ -19,7 +19,7 @@
   box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
   overflow: hidden;
   @include media(lg) {
-    padding: 20px 25px;
+    padding: 20px;
     border-radius: 10px;
   }
 }
@@ -57,6 +57,7 @@
     @include bg-icon('pre-reg/pre-reg-decor-2_tablet.svg');
   }
   @include media(sm) {
+    display: none;
     top: 25px;
     width: 73px;
     height: 98px;
@@ -66,7 +67,7 @@
 
 .pre-reg__decor_3 {
   bottom: 90px;
-  left: 480px;
+  left: 445px;
   transform: rotate(165deg);
   width: 303px;
   height: 238px;
@@ -80,22 +81,7 @@
   margin-bottom: 28px;
   color: $white;
   @include media(lg) {
-    margin-bottom: 10px;
-  }
-}
-
-.pre-reg__text {
-  margin-bottom: 38px;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 121%;
-  color: $white;
-  @include media(lg) {
-    margin-bottom: 25px;
-    font-size: 18px;
-  }
-  @include media(sm) {
-    max-width: 230px;
+    margin-bottom: 24px;
   }
 }
 

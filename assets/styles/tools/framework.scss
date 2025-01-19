@@ -61,11 +61,15 @@
 }
 
 .error {
-  border: 1px solid red !important;
+  border: 1px solid #efa08b !important;
+  background-color: #efa08b;
 }
 
 .error-text {
-  color: red !important;
+  color: #efa08b !important;
+  .modal-order__checkbox-view, .checkbox-white-input-view {
+    border: 2px solid #efa08b;
+  }
 }
 
 .no-scroll {

@@ -410,7 +410,6 @@ function preAboutVideoInit () {
   const videoWrap = document.querySelector("[data-element='pre-about-video-wrap']")
   const timeNode = document.querySelector("[data-element='pre-about-time']")
   const soundBtn = document.querySelector(".pre-about__sound")
-  let firstPlay = false
 
   preAboutVideo.addEventListener("timeupdate", timeupdateHandler)
 
@@ -425,7 +424,6 @@ function preAboutVideoInit () {
   function playVideo (e) {
     e.stopPropagation()
     if (preAboutVideo.muted) {
-      firstPlay = true
       preAboutVideo.muted = false
       preAboutVideo.loop = false
       preAboutVideo.currentTime = 0
@@ -434,14 +432,6 @@ function preAboutVideoInit () {
     } else {
       preAboutVideo.muted = true
       soundBtn.classList.remove('active')
-    }
-  }
-
-  window.addEventListener('scroll', checkVideoInView, {passive: true})
-
-  function checkVideoInView () {
-    if (preAboutVideo.getBoundingClientRect().top < window.innerHeight/2) {
-      if (!firstPlay) preAboutVideo.play()
     }
   }
 }
