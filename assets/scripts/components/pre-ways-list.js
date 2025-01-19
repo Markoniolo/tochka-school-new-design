@@ -11,7 +11,7 @@ function preWaysSlideArrayInit () {
     const list = slide.querySelector('[data-element="pre-ways-list"]')
     const btn = slide.querySelector('[data-element="pre-ways-more"]')
 
-    if (list.clientHeight > 140) {
+    if (window.innerWidth >= 1200 ? list?.clientHeight > 140 : list?.clientHeight > 70) {
       btn.classList.add('show')
       btn.addEventListener('click', toggleList)
       slide.classList.add('hide')

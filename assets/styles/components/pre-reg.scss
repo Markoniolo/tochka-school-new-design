@@ -1,7 +1,9 @@
 .pre-reg {
-  margin-bottom: 80px;
+  padding-bottom: 80px;
+  background-color: $white;
   @include media(lg) {
-    margin-bottom: 40px;
+    padding-bottom: 40px;
+    background-color: transparent;
   }
 }
 

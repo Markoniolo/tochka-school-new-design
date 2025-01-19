@@ -502,11 +502,13 @@ function preReviewsVideoWrapsInit () {
 }
 
 const preStudySlider = document.querySelector('[data-element="pre-study-slider"]')
-let preStudySliderSwiper
 
 if (preStudySlider) {
-  const swiperWrapper = document.querySelector('.pre-study__wrapper')
+  let preStudySliderSwiper
+  let animationPlayed = false
+  const wrapper = preStudySlider.querySelector('.pre-study__wrapper')
   window.addEventListener('resize', watchSlider, {passive: true})
+  window.addEventListener('scroll', animateSlider, {passive: true})
   watchSlider()
 
   function initSlider () {
@@ -525,6 +527,17 @@ if (preStudySlider) {
       initSlider()
     } else {
       preStudySliderSwiper?.destroy()
+    }
+  }
+
+  function animateSlider () {
+    if (preStudySlider.getBoundingClientRect().top < window.innerHeight/2 && !animationPlayed && window.innerWidth < 992) {
+      animationPlayed = true
+      wrapper.style.transitionDuration = '0.5s'
+      wrapper.style.transform = 'translate3d(-160px, 0, 0)'
+      setTimeout(function () {
+        wrapper.style.transform = 'translate3d(0, 0, 0)'
+      }, 500)
     }
   }
 }
@@ -553,7 +566,7 @@ function preWaysSlideArrayInit () {
     const list = slide.querySelector('[data-element="pre-ways-list"]')
     const btn = slide.querySelector('[data-element="pre-ways-more"]')
 
-    if (list.clientHeight > 140) {
+    if (window.innerWidth >= 1200 ? list?.clientHeight > 140 : list?.clientHeight > 70) {
       btn.classList.add('show')
       btn.addEventListener('click', toggleList)
       slide.classList.add('hide')
@@ -576,26 +589,41 @@ const preWaysSlider = document.querySelector('[data-element="pre-ways__slider"]'
 if (preWaysSlider) preWaysSliderInit()
 
 function preWaysSliderInit () {
-  const preWaysSliderSwiper = new Swiper(preWaysSlider, {
-    slidesPerView: 'auto',
-    spaceBetween: 25,
-    pagination: {
-      el: ".pre-ways__pagination",
-    },
-    navigation: {
-      nextEl: '.pre-ways__nav-btn_right',
-      prevEl: '.pre-ways__nav-btn_left',
-    },
-    scrollbar: {
-      el: '.pre-ways__scrollbar',
-      draggable: true,
-    },
-    breakpoints: {
-      1440: {
-        spaceBetween: 30,
-      }
+  let preWaysSliderSwiper
+  window.addEventListener('resize', watchSlider, {passive: true})
+  watchSlider()
+
+  function watchSlider () {
+    if (window.innerWidth < 1200) {
+      preWaysSliderSwiper?.destroy()
+    } else {
+      preWaysSliderSwiper?.destroy()
+      initSlider()
     }
-  })
+  }
+
+  function initSlider () {
+    preWaysSliderSwiper = new Swiper(preWaysSlider, {
+      slidesPerView: 'auto',
+      spaceBetween: 25,
+      pagination: {
+        el: ".pre-ways__pagination",
+      },
+      navigation: {
+        nextEl: '.pre-ways__nav-btn_right',
+        prevEl: '.pre-ways__nav-btn_left',
+      },
+      scrollbar: {
+        el: '.pre-ways__scrollbar',
+        draggable: true,
+      },
+      breakpoints: {
+        1440: {
+          spaceBetween: 30,
+        }
+      }
+    })
+  }
 }
 
 if (document.querySelector('[data-role="scroll-to-anchor"]')) setTimeout(initScrollToAnchor, 0)

@@ -8,25 +8,22 @@
           .pre-cap__stats
             img.pre-cap__stats-icon(src=staticImg('pre-cap/pre-cap-stats-icon.png') alt='')
             .pre-cap__stats-span Более 24 000 счастливых учеников
-          h1.pre-cap__title
-            | Предварительная запись на занятия в следующем учебном году
-            |
-            span (2025-2026)
+          h1.pre-cap__title Предзапись на занятия в&nbsp;следующем учебном году
           ul.pre-cap__list
-            li.pre-cap__item!= 'Вы сэкономите от <span>10 до 50 тысяч рублей</span>'
-            li.pre-cap__item!= 'Получите <span>приоритетный</span> доступ к курсам'
+            li.pre-cap__item!= 'Сэкономить от&nbsp;8&nbsp;000&nbsp;до&nbsp;53&nbsp;000&nbsp;рублей'
+            li.pre-cap__item!= 'Занять место на обучении раньше остальных'
           .pre-cap__gallery
             each item in [1,2,3]
               img.pre-cap__image(src=staticImg(`pre-cap/pre-cap-${item}.svg`) alt='')
         form.pre-cap__form(data-element='pre-cap__form' data-request-validate)
-          .pre-cap__headline Оставьте заявку
+          .pre-cap__headline Записаться в предзапись
           .pre-cap__inner
             input.input_utm(name='utm' type='hidden' value='')
             input(type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru/blog/voprosy-dlya-podrostkov-chto-polezno-i-interesno-obsudit-do-15-let")
             input.pre-cap__input.input-white(placeholder='Имя родителя' type='text' name='name')
-            input.pre-cap__input.input-white(placeholder='Номер телефона' type='tel' required data-element='input-phone-intl' name='phone')
+            input.pre-cap__input.input-white(placeholder='Телефон родителя' type='tel' required data-element='input-phone-intl' name='phone')
             input(name='tel' type='hidden' required data-element='input-phone-hidden')
-            input.pre-cap__input.input-white(placeholder='E-mail адрес' type='email' name='email')
+            input.pre-cap__input.input-white(placeholder='E-mail родителя' type='email' name='email')
             button.pre-cap__submit.btn-orange.btn-warning Записаться
             label.pre-cap__label.checkbox-white-label
               input.pre-cap__checkbox.checkbox-white-input(name='policy' type='checkbox')

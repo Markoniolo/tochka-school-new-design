@@ -1,16 +1,37 @@
+-
+  const preWaysAdditionalSubjects = [
+    'Олимпиадная математика и развитие логики',
+    'Эмоциональный интеллект',
+    'Ораторское искусство',
+    'Финансовая грамотность',
+    'Шахматы',
+    'Другие курсы, которые будут открыты при достаточном количестве желающих.'
+  ]
+
 .pre-ways
   .pre-ways__cont.cont
     h2.pre-ways__caption.pre-caption Предзапись распространяется на все направления
     .pre-ways__slider(data-element="pre-ways__slider")
       .pre-ways__wrapper.swiper-wrapper
         each slide, index in ['Школьные предметы, 1-11 кл','Подготовка к ОГЭ и ЕГЭ','Семейное обучение, 1-11 класс','Направление IT','Дополнительные предметы']
-          .pre-ways__slide.swiper-slide(data-element="pre-ways-slide")
+          .pre-ways__slide.swiper-slide(data-element="pre-ways-slide" class=index === 2 || index === 3 || index === 4 ? 'pre-ways__slide_tag' : false)
             picture.pre-ways__picture
+              source(srcset=staticImg(`pre-ways/pre-ways-${index+1}_mob.svg`) media="(max-width: 1200px)")
               img.pre-ways__image(src=staticImg(`pre-ways/pre-ways-${index+1}.svg`) alt='')
+            if index === 2 || index === 3 || index === 4
+              .pre-ways__tag New
             .pre-ways__title= slide
-            ul.pre-ways__list(data-element="pre-ways-list")
-              each item in ['Математика','Русский язык','Физика','Информатика','Математика','Русский язык','Физика']
-                li.pre-ways__item= item
+            if index === 2
+              p.pre-ways__text С бесплатным прикреплением к школе и&nbsp;аттестацией.
+              p.pre-ways__text Поможем оформить документы и перейти на СО максимально комфортно.
+            else if index === 4
+              ul.pre-ways__list(data-element="pre-ways-list")
+                each item in preWaysAdditionalSubjects
+                  li.pre-ways__item= item
+            else
+              ul.pre-ways__list(data-element="pre-ways-list")
+                each item in ['Математика','Русский язык','Физика','Информатика','Математика','Русский язык','Физика']
+                  li.pre-ways__item= item
             button.pre-ways__more(data-element="pre-ways-more") Показать все предметы
     .pre-ways__line
       .pre-ways__pagination

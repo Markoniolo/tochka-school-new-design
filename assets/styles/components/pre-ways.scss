@@ -1,6 +1,6 @@
 .pre-ways {
   overflow: hidden;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
   @include media(lg) {
     margin-bottom: 40px;
   }
@@ -24,27 +24,42 @@
     margin-top: 60px;
     margin-bottom: 30px;
   }
+  @include media(md) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 .pre-ways__wrapper {
-
+  @include media(md) {
+    flex-direction: column;
+    gap: 20px 0;
+  }
 }
 
 .pre-ways__slide {
   border-radius: 32px;
   background-color: $white;
-  padding: 0 40px 25px;
+  padding: 0 30px 25px;
   text-align: center;
   min-height: 540px;
   max-width: 428px;
   width: 100%;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
   @include media(lg) {
     border-radius: 10px;
-    min-height: 346px;
+    min-height: 429px;
     max-width: 353px;
     padding: 0 20px 20px;
+  }
+  @include media(md) {
+    max-width: 100%;
+    min-height: 176px;
+    padding: 16px 18px;
+    display: block;
+    text-align: left;
   }
   @include media(sm) {
     max-width: 100%;
@@ -58,6 +73,9 @@
     .pre-ways__list {
       max-height: 140px;
       transition: max-height 1s ease-in-out;
+      @include media(md) {
+        max-height: 70px;
+      }
       &:before {
         content: '';
         position: absolute;
@@ -66,6 +84,9 @@
         right: 0;
         height: 90px;
         background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+        @include media(md) {
+          height: 62px;
+        }
       }
     }
     .pre-ways__more {
@@ -74,14 +95,50 @@
       }
     }
   }
+  &_tag {
+    @include media(md) {
+      margin-top: 10px;
+    }
+  }
 }
 
 .pre-ways__picture {
-  margin: -80px 0 40px;
+  margin: -80px 0 0;
   display: flex;
   justify-content: center;
   @include media(lg) {
-    margin: -40px 0 20px;
+    margin: -40px 0 0;
+  }
+  @include media(md) {
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  & + .pre-ways__title {
+    margin-top: 42px;
+    @include media(md) {
+      margin-top: 0;
+    }
+  }
+}
+
+.pre-ways__tag {
+  align-self: center;
+  margin-top: 14px;
+  margin-bottom: 4px;
+  border-radius: 33px;
+  padding: 3px 12px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
+  background: $orange;
+  color: $white;
+  font-size: 12px;
+  line-height: 15px;
+  @include media(md) {
+    position: absolute;
+    margin: 0;
+    top: -10px;
+    right: 20px;
   }
 }
 
@@ -90,6 +147,12 @@
   height: 264px;
   @include media(lg) {
     height: 175px;
+  }
+  @include media(md) {
+    height: 160px;
+  }
+  @include media(xs) {
+    height: 100px;
   }
 }
 
@@ -101,17 +164,50 @@
     margin-bottom: 16px;
     font-size: 18px;
   }
+  @include media(md) {
+    margin-bottom: 12px;
+  }
 }
 
 .pre-ways__list {
   position: relative;
   overflow: hidden;
   transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+  @include media(md) {
+    max-width: 400px;
+  }
+  @include media(xs) {
+    max-width: 200px;
+  }
 }
 
 .pre-ways__item {
   font-size: 16px;
   line-height: 150%;
+  @include media(md) {
+    font-size: 15px;
+  }
+}
+
+.pre-ways__text {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 150%;
+  @include media(md) {
+    margin-bottom: 10px;
+    max-width: 315px;
+    font-size: 15px;
+  }
+  &:first-of-type {
+    @include media(xs) {
+      max-width: 235px;
+    }
+  }
+  &:last-of-type {
+    @include media(xs) {
+      max-width: 200px;
+    }
+  }
 }
 
 .pre-ways__more {
@@ -123,6 +219,9 @@
   font-weight: 500;
   font-size: 14px;
   color: #6683c2;
+  @include media(md) {
+    padding: 14px 0;
+  }
   &.show {
     display: flex;
   }
@@ -139,6 +238,9 @@
 .pre-ways__line {
   display: flex;
   align-items: center;
+  @include media(md) {
+    display: none;
+  }
 }
 
 .pre-ways__pagination {

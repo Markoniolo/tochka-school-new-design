@@ -1,7 +1,7 @@
 .pre-study {
   overflow: hidden;
   background: $white;
-  padding: 80px 0 40px;
+  padding: 80px 0;
   @include media(lg) {
     padding: 0;
     background-color: transparent;
@@ -18,14 +18,7 @@
 }
 
 .pre-study__area {
-  margin-bottom: 50px;
   position: relative;
-  @include media(lg) {
-    margin-bottom: 40px;
-  }
-  @include media(sm) {
-    margin-bottom: 30px;
-  }
 }
 
 .pre-study__slider {
@@ -33,85 +26,114 @@
 }
 
 .pre-study__wrapper {
-  pointer-events: none;
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 634px;
+  gap: 30px;
   @include media(lg) {
-    display: flex;
     margin-bottom: 20px;
     pointer-events: auto;
+    gap: 0;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
 }
 
 .pre-study__slide {
-  margin-left: auto;
-  border-radius: 123px;
-  &:not(:last-child) {
-    margin-bottom: 25px;
-    @include media(lg) {
-      margin-bottom: 0;
-    }
-  }
+  border-radius: 32px;
+  height: auto;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.07);
+  background: #fff;
+  padding: 28px 38px 40px;
+  overflow: hidden;
   @include media(lg) {
     background-color: transparent;
-    max-width: 343px;
+    max-width: 330px;
     width: 100%;
-    padding: 25px 14px 20px;
+    padding: 18px 14px 20px;
     border-radius: 10px;
     @include bg-icon('pre-study/pre-study-slide-bg.png');
     box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
     height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   @include media(sm) {
     max-width: 100%;
   }
-}
-
-.pre-study__slide_1 {
-  background: #f37e60;
-  max-width: 1220px;
-  .pre-study__number path {
-    fill: #f37e60;
-  }
-}
-
-.pre-study__slide_2 {
-  background: #68cceb;
-  max-width: 1093px;
-  .pre-study__number path {
-    fill: #68cceb;
-  }
-}
-
-.pre-study__slide_3 {
-  background: #7fcbb4;
-  max-width: 994px;
-  .pre-study__line {
-    padding-left: 70px;
-    @include media(lg) {
-      padding-left: 0;
+  &_1 {
+    width: 717px;
+    .pre-study__line {
+      max-width: 502px;
+    }
+    svg {
+      fill: #68CCEB;
+    }
+    .pre-study__title {
+      max-width: 312px;
+      @include media(lg) {
+        max-width: 100%;
+      }
     }
   }
-  .pre-study__number path {
-    fill: #7fcbb4;
+  &_2 {
+    width: 717px;
+    .pre-study__line {
+      max-width: 502px;
+    }
+    svg {
+      fill: #7fcbb4;
+    }
+    .pre-study__text + .pre-study__text {
+      margin-top: 48px;
+    }
+    .pre-study__decor_2 {
+      background-color: #6683C2;
+    }
   }
-}
-
-.pre-study__slide_4 {
-  background: #6683c2;
-  .pre-study__text {
-    max-width: 330px;
-    width: 100%;
+  &_3 {
+    width: 597px;
+    .pre-study__line {
+      max-width: 424px;
+    }
+    svg {
+      fill: #6683c2;
+    }
   }
-  .pre-study__number path {
-    fill: #6683c2;
+  &_4 {
+    width: 597px;
+    .pre-study__text {
+      &:first-of-type {
+        max-width: 485px;
+      }
+      &:last-of-type {
+        max-width: 424px;
+      }
+    }
+    svg {
+      fill: #f2c45b;
+    }
+    .pre-study__decor_3 {
+      background-color: #F37E60;
+    }
+  }
+  &_5 {
+    width: 597px;
+    .pre-study__line {
+      max-width: 424px;
+    }
+    svg {
+      fill: #f37e60;
+    }
   }
 }
 
 .pre-study__picture {
-  display: none;
   @include media(lg) {
     position: relative;
-    display: block;
     margin: 0 auto 20px;
     width: 150px;
     height: 124px;
@@ -121,6 +143,10 @@
 .pre-study__decor {
   position: absolute;
   border-radius: 50%;
+  display: none;
+  @include media(lg) {
+    display: block;
+  }
 }
 
 .pre-study__decor_1 {
@@ -161,40 +187,43 @@
     height: 118px;
     margin: 4px 14px 0 25px;
   }
+  svg {
+    display: none;
+    @include media(lg) {
+      display: block;
+    }
+  }
 }
 
-.pre-study__number-value {
+.pre-study__number-picture {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: 800;
-  font-size: 44px;
-  color: $white;
+  bottom: 0;
+  right: 0;
+  @include media(lg) {
+    bottom: unset;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+}
+
+.pre-study__number-image {
+
 }
 
 .pre-study__line {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  min-height: 142px;
-  padding: 30px 50px;
   @include media(lg) {
-    display: block;
-    padding: 0;
-    min-height: auto;
+    text-align: center;
   }
 }
 
 .pre-study__title {
-  margin-right: 35px;
+  margin-bottom: 20px;
   flex-shrink: 0;
   font-weight: 500;
-  font-size: 36px;
-  color: $white;
+  font-size: 24px;
   @include media(lg) {
-    margin-bottom: 20px;
-    margin-right: 0;
+    margin-bottom: 12px;
     color: $black;
     font-size: 18px;
     line-height: 23px;
@@ -207,14 +236,70 @@
 
 .pre-study__text {
   font-size: 16px;
-  color: $white;
+  line-height: 20px;
+  color: #454545;
   @include media(lg) {
-    color: #454545;
     font-size: 15px;
+    line-height: 19px;
     text-align: center;
+    display: inline;
   }
-  span {
-    font-weight: 600;
+  & + & {
+    margin-top: 20px;
+  }
+}
+
+.pre-study__list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+  @include media(lg) {
+    display: inline;
+  }
+}
+
+.pre-study__item {
+  position: relative;
+  padding-left: 18px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #454545;
+  @include media(lg) {
+    padding-left: 0;
+    display: inline;
+    font-size: 15px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: lowercase;
+  }
+  &::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: $orange;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    border-radius: 50%;
+    @include media(lg) {
+      content: none;
+    }
+  }
+  &:not(:last-child) {
+    &::after {
+      @include media(lg) {
+        content: ',';
+      }
+    }
+  }
+  &:last-child {
+    &::after {
+      @include media(lg) {
+        content: '.';
+      }
+    }
   }
 }
 
@@ -239,21 +324,5 @@
       background-color: #F37E60;
       transform: scale(1.2);
     }
-  }
-}
-
-.pre-study__button-box {
-  display: flex;
-  justify-content: center;
-}
-
-.pre-study__button {
-  font-size: 16px;
-  padding: 20px 60px;
-  @include media(sm) {
-    max-width: 313px;
-    width: 100%;
-    padding: 15px 60px;
-    font-size: 14px;
   }
 }

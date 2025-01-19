@@ -1,9 +1,11 @@
 const preStudySlider = document.querySelector('[data-element="pre-study-slider"]')
-let preStudySliderSwiper
 
 if (preStudySlider) {
-  const swiperWrapper = document.querySelector('.pre-study__wrapper')
+  let preStudySliderSwiper
+  let animationPlayed = false
+  const wrapper = preStudySlider.querySelector('.pre-study__wrapper')
   window.addEventListener('resize', watchSlider, {passive: true})
+  window.addEventListener('scroll', animateSlider, {passive: true})
   watchSlider()
 
   function initSlider () {
@@ -22,6 +24,17 @@ if (preStudySlider) {
       initSlider()
     } else {
       preStudySliderSwiper?.destroy()
+    }
+  }
+
+  function animateSlider () {
+    if (preStudySlider.getBoundingClientRect().top < window.innerHeight/2 && !animationPlayed && window.innerWidth < 992) {
+      animationPlayed = true
+      wrapper.style.transitionDuration = '0.5s'
+      wrapper.style.transform = 'translate3d(-160px, 0, 0)'
+      setTimeout(function () {
+        wrapper.style.transform = 'translate3d(0, 0, 0)'
+      }, 500)
     }
   }
 }
