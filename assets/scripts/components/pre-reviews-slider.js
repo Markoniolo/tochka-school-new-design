@@ -6,6 +6,7 @@ function preReviewsSliderInit () {
   const preReviewsSliderSwiper = new Swiper(preReviewsSlider, {
     slidesPerView: 'auto',
     spaceBetween: 25,
+    a11y: false,
     navigation: {
       nextEl: '.pre-reviews__nav-btn_right',
       prevEl: '.pre-reviews__nav-btn_left',

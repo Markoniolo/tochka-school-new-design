@@ -247,9 +247,11 @@ function globalFormInit (form, func_name, type) {
     })
 
     input.addEventListener('input', function () {
+      let tempValue = input.value
       inputHidden.value = input.value
-      if (iti.selectedCountryData.dialCode === "7" && input.value.length > 12) {
-        inputHidden.value = input.value.substring(input.value.length - 12)
+      const cleanNumber = tempValue.replace(/[^+\d]/g, '')
+      if (iti.selectedCountryData.dialCode === "7" && cleanNumber.length > 10) {
+        inputHidden.value = cleanNumber.substring(cleanNumber.length - 10)
       }
       inputHidden.value = iti.selectedCountryData.dialCode + ' ' + inputHidden.value
     })
@@ -454,6 +456,7 @@ function preReviewsSliderInit () {
   const preReviewsSliderSwiper = new Swiper(preReviewsSlider, {
     slidesPerView: 'auto',
     spaceBetween: 25,
+    a11y: false,
     navigation: {
       nextEl: '.pre-reviews__nav-btn_right',
       prevEl: '.pre-reviews__nav-btn_left',
@@ -477,6 +480,18 @@ if (preReviewsVideoWraps.length) preReviewsVideoWrapsInit()
 function preReviewsVideoWrapsInit () {
   for (let i = 0; i < preReviewsVideoWraps.length; i++) {
     videoInit(preReviewsVideoWraps[i])
+    const video = preReviewsVideoWraps[i].querySelector("[data-element='pre-reviews-video']")
+    video.addEventListener('play', stopOtherVideo)
+  }
+
+  function stopOtherVideo () {
+    const index = this.getAttribute('data-index')
+    for (let i = 0; i < preReviewsVideoWraps.length; i++) {
+      if (index != i) {
+        let videoOther = preReviewsVideoWraps[i].querySelector("[data-element='pre-reviews-video']")
+        videoOther.pause()
+      }
+    }
   }
 
   function videoInit (wrap) {
@@ -494,8 +509,8 @@ function preReviewsVideoWrapsInit () {
 const preStudySlider = document.querySelector('[data-element="pre-study-slider"]')
 
 if (preStudySlider) {
-  let preStudySliderSwiper
-  let animationPlayed = false
+  var preStudySliderSwiper
+  var animationPlayed = false
   const wrapper = preStudySlider.querySelector('.pre-study__wrapper')
   window.addEventListener('resize', watchSlider, {passive: true})
   window.addEventListener('scroll', animateSlider, {passive: true})
@@ -505,6 +520,7 @@ if (preStudySlider) {
     preStudySliderSwiper = new Swiper(preStudySlider, {
       slidesPerView: 'auto',
       spaceBetween: 25,
+      loop: true,
       pagination: {
         el: ".pre-study__pagination",
       },

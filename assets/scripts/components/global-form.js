@@ -131,9 +131,11 @@ function globalFormInit (form, func_name, type) {
     })
 
     input.addEventListener('input', function () {
+      let tempValue = input.value
       inputHidden.value = input.value
-      if (iti.selectedCountryData.dialCode === "7" && input.value.length > 12) {
-        inputHidden.value = input.value.substring(input.value.length - 12)
+      const cleanNumber = tempValue.replace(/[^+\d]/g, '')
+      if (iti.selectedCountryData.dialCode === "7" && cleanNumber.length > 10) {
+        inputHidden.value = cleanNumber.substring(cleanNumber.length - 10)
       }
       inputHidden.value = iti.selectedCountryData.dialCode + ' ' + inputHidden.value
     })

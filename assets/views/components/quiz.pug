@@ -1,0 +1,11 @@
+.quiz
+  .quiz__cont.cont
+    .quiz__header
+      .quiz__logo
+        img.quiz__logo-image(src=staticImg('logo.svg') alt='')
+    .quiz__wrap
+      each item in [1,2,3,4,5]
+        .quiz__decor(class=`quiz__decor_${item}`)
+      form.quiz__area
+        include ./quiz/quiz-slide
+        +quiz-slide(1)

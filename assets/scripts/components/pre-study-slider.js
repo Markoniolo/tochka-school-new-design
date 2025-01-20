@@ -1,8 +1,8 @@
 const preStudySlider = document.querySelector('[data-element="pre-study-slider"]')
 
 if (preStudySlider) {
-  let preStudySliderSwiper
-  let animationPlayed = false
+  var preStudySliderSwiper
+  var animationPlayed = false
   const wrapper = preStudySlider.querySelector('.pre-study__wrapper')
   window.addEventListener('resize', watchSlider, {passive: true})
   window.addEventListener('scroll', animateSlider, {passive: true})
@@ -12,6 +12,7 @@ if (preStudySlider) {
     preStudySliderSwiper = new Swiper(preStudySlider, {
       slidesPerView: 'auto',
       spaceBetween: 25,
+      loop: true,
       pagination: {
         el: ".pre-study__pagination",
       },

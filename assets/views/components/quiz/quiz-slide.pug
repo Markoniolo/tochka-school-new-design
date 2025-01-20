@@ -1,0 +1,30 @@
+mixin quiz-slide(mod, title, list, type)
+  .quiz-slide(class=`quiz-slide_${mod}`)
+    if mod === 1
+      .quiz-slide__inner
+        .quiz-slide__caption Самый важный опрос!
+        .quiz-slide__text-big Эта страница доступна только участникам предзаписи.
+        .quiz-slide__text-big Здесь мы подготовили небольшой опрос для Вас.
+        .quiz-slide__text.
+          Пожалуйста, ответьте на вопросы ниже. Исходя из Ваших ответов, мы спрогнозируем нагрузку на учителей и
+          тьюторов, а также найдём новых учителей из разряда лучших в стране.
+        .quiz-slide__text.
+          Если у Вас несколько детей, тогда пройдите опрос на каждого ребёнка отдельно.
+        .quiz-slide__text Итак, начнём.
+        .quiz-slide__box
+          .quiz-slide__headline Имя ребенка
+          .quiz-slide__line
+            input.quiz-slide__input.input-white(type='text' placeholder="Введите имя ребенка")
+            button.quiz-slide__button.btn-orange Дальше
+    else
+      .quiz-slide__progress
+        .quiz-slide__progress-text Прогресс опроса
+        .quiz-slide__progress-bar
+          .quiz-slide__progress-bar-fill
+      .quiz-slide__title= title
+      .quiz-slide__list
+        each item in list
+          label.quiz-slide__label
+            input.quiz-slide__input(type=type name=title value=item.value)
+            .quiz-slide__input-view(class=`quiz-slide__input-view_${type}`)
+            .quiz-slide__input-text= item.value

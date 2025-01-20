@@ -3,7 +3,7 @@
     h2.pre-reviews__caption.pre-caption Говорят ученики и родители
     .pre-reviews__slider(data-element="pre-reviews-slider")
       .pre-reviews__wrapper.swiper-wrapper
-        each item in [1,2,3,4]
+        each item, index in [1,2,3,4]
           .pre-reviews__slide.swiper-slide
             .pre-reviews__box
               p.
@@ -16,7 +16,7 @@
               p.
                 Темы на курсе разбираем раньше, чем в школе. Соответственно, ребёнок уже готов к изучению новой темы.
               .pre-reviews__video-wrap(data-element='pre-reviews-video-wrap')
-                video.pre-reviews__video(src=`${pathStatics}/files/Shevchenko_1_klass.mov`
+                video.pre-reviews__video(src=`${pathStatics}/files/Shevchenko_1_klass.mov` data-index = index
                   poster=staticImg('Shevchenko_prevyu.jpg') data-element='pre-reviews-video')
                 .pre-reviews__play
             .pre-reviews__author
