@@ -47,4 +47,8 @@
     color: $white;
     background-color: #ff9e85;
   }
+  &:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
 }

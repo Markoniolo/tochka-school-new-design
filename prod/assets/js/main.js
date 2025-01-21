@@ -632,7 +632,153 @@ function preWaysSliderInit () {
   }
 }
 
-if (document.querySelector('[data-role="scroll-to-anchor"]')) setTimeout(initScrollToAnchor, 0)
+const quiz = document.querySelector('[data-element="quiz"]')
+
+if (quiz) quizInit()
+
+function quizInit () {
+  const generateData = {
+    list_4: [
+      ['Подготовка к школе'],
+      ['Математика','Русский язык','Окружающий мир','Литературное чтение','Английский язык','Музыка','Физическая культура','ИЗО и технология'],
+      ['Математика','Русский язык','Окружающий мир','Литературное чтение','Английский язык','Музыка','Физическая культура','ИЗО и технология'],
+      ['Математика','Русский язык','Окружающий мир','Литературное чтение','Английский язык','Музыка','Физическая культура','ИЗО и технология'],
+      ['Математика','Русский язык','Окружающий мир','Литературное чтение','Английский язык','Музыка','Физическая культура','ИЗО и технология'],
+      ['Математика','Русский язык','Литература','Биология','История','География','Английский язык','Музыка','Физическая культура','ИЗО и технология'],
+      ['Математика','Русский язык','Литература','Биология','История','География','Английский язык','Музыка','Физическая культура','ИЗО и технология','Обществознание'],
+      ['Математика','Русский язык','Литература','Биология','История','География','Английский язык','Музыка',
+        'Физическая культура','ИЗО и технология','Обществознание','Физика','Химия','Информатика'],
+      ['Математика','Русский язык','Литература','Биология','История','География','Английский язык','Музыка',
+        'Физическая культура','ИЗО и технология','Обществознание','Физика','Химия','Информатика'],
+      ['Подготовка к ОГЭ по математике','Подготовка к ОГЭ по русскому языку','Подготовка к ОГЭ по биологии','Подготовка к ОГЭ по истории',
+        'Подготовка к ОГЭ по английскому языку','Подготовка к ОГЭ по обществознанию','Подготовка к ОГЭ по физике','Подготовка к ОГЭ по химии',
+        'Подготовка к ОГЭ по информатике'],
+      ['Подготовка к ОГЭ по математике','Подготовка к ОГЭ по русскому языку','Подготовка к ОГЭ по биологии','Подготовка к ОГЭ по истории',
+        'Подготовка к ОГЭ по английскому языку','Подготовка к ОГЭ по обществознанию','Подготовка к ОГЭ по физике','Подготовка к ОГЭ по химии',
+        'Подготовка к ОГЭ по информатике'],
+      ['Подготовка к ЕГЭ по профильной математике','Подготовка к ЕГЭ по базовой математике','Подготовка к ЕГЭ по русскому языку',
+        'Подготовка к ЕГЭ по биологии','Подготовка к ЕГЭ по истории','Подготовка к ЕГЭ по английскому языку','Подготовка к ЕГЭ по обществознанию',
+        'Подготовка к ЕГЭ по физике','Подготовка к ЕГЭ по химии','Подготовка к ЕГЭ по информатике']
+    ],
+    list_5: [
+      [],
+      ['Китайский язык','Французский язык','Компьютерная грамотность','Программирование в Minecraft','Программирование в Scratch',
+        'Шахматы','Блогинг'],
+      ['Китайский язык','Французский язык','Математика и логика. Первые шаги в олимпиадах','Компьютерная грамотность',
+        'Программирование в Minecraft','Программирование в Scratch','Шахматы','Блогинг'],
+      ['Китайский язык','Французский язык','Математика и логика. Первые шаги в олимпиадах','Компьютерная грамотность',
+        'Программирование в Minecraft','Программирование в Scratch','Курс по разработке игр в Roblox','Ораторское мастерство',
+        'Финансовая грамотность','Эмоциональный интеллект','Шахматы','Блогинг'],
+      ['Китайский язык','Французский язык','Математика и логика. Первые шаги в олимпиадах','Компьютерная грамотность',
+        'Программирование в Minecraft','Программирование в Scratch','Курс по разработке игр в Roblox','Ораторское мастерство',
+        'Финансовая грамотность','Эмоциональный интеллект','Шахматы','Блогинг'],
+      ['Китайский язык','Французский язык','Математика и логика. Первые шаги в олимпиадах','Программирование на Python',
+        'Создание сайтов','Компьютерная грамотность','Программирование в Minecraft','Программирование в Scratch',
+        'Курс по разработке игр в Roblox','Графический дизайн в Figma','Ораторское мастерство','Финансовая грамотность',
+        'Эмоциональный интеллект','Шахматы','Блогинг'],
+      ['Китайский язык','Французский язык','Математика и логика. Первые шаги в олимпиадах','Программирование на Python',
+        'Создание сайтов','Компьютерная грамотность','Программирование в Minecraft','Программирование в Scratch',
+        'Курс по разработке игр в Roblox','Графический дизайн в Figma','Ораторское мастерство','Финансовая грамотность',
+        'Эмоциональный интеллект','Шахматы','Блогинг'],
+      ['Китайский язык','Французский язык','Математика и логика. Первые шаги в олимпиадах','Программирование на Python',
+        'Создание сайтов','Компьютерная грамотность','Курс по разработке игр в Roblox','Графический дизайн в Figma',
+        'Ораторское мастерство','Финансовая грамотность','Эмоциональный интеллект','Шахматы','Блогинг'],
+      ['Китайский язык','Французский язык','Математика и логика. Первые шаги в олимпиадах','Программирование на Python',
+        'Создание сайтов','Компьютерная грамотность','Курс по разработке игр в Roblox','Графический дизайн в Figma',
+        'Ораторское мастерство','Финансовая грамотность','Эмоциональный интеллект','Шахматы','Блогинг'],
+      ['Китайский язык','Французский язык','Программирование на Python','Создание сайтов','Компьютерная грамотность',
+        'Курс по разработке игр в Roblox','Графический дизайн в Figma','Ораторское мастерство','Финансовая грамотность',
+        'Эмоциональный интеллект','Шахматы','Блогинг','Цифровые профессии'],
+      ['Китайский язык','Французский язык','Программирование на Python','Создание сайтов','Графический дизайн в Figma',
+        'Ораторское мастерство','Финансовая грамотность','Эмоциональный интеллект','Шахматы','Блогинг','Цифровые профессии'],
+      ['Китайский язык','Французский язык','Программирование на Python','Создание сайтов','Графический дизайн в Figma',
+        'Ораторское мастерство','Финансовая грамотность','Эмоциональный интеллект','Шахматы','Блогинг','Цифровые профессии']
+    ]
+  }
+
+  let currentSlide = 0
+  let classChosen
+  const nextBtns = quiz.querySelectorAll('[data-element="quiz-next"]')
+  const slides = quiz.querySelectorAll('[data-element="quiz-inner"]')
+  const form = quiz.querySelector('[data-element="quiz-form"]')
+  const progress = quiz.querySelector('[data-element="quiz-progress"]')
+  const progressFill = quiz.querySelector('[data-element="quiz-progress-bar-fill"]')
+
+  function initValidate () {
+    const button = slides[currentSlide].querySelector("[data-element='quiz-next']")
+    const input = slides[currentSlide].getElementsByTagName('input')
+    if (input.length === 1) {
+      input[0].addEventListener('input', function () {
+        button.disabled = !this.value
+      })
+    } else {
+      for (let i = 0; i < input.length; i++) {
+        input[i].addEventListener('input', function () {
+          const checked = slides[currentSlide].querySelector("input:checked")
+          button.disabled = !checked
+        })
+      }
+    }
+  }
+
+  for (let i = 0; i < nextBtns.length; i++) {
+    nextBtns[i].addEventListener('click', nextSlide)
+  }
+
+  initValidate()
+
+  function nextSlide () {
+    if (currentSlide === 0) progress.classList.remove('hide')
+    if (currentSlide === 1) {
+      classChosen = slides[currentSlide].querySelector('input:checked').value
+    }
+    if (currentSlide === 2) {
+      if (classChosen === "0") {
+        currentSlide += 2
+      } else {
+        if (slides[currentSlide].querySelector('input:checked').value === "Да") {
+          currentSlide += 1
+        } else {
+          const notes = slides[currentSlide + 2].querySelectorAll('.quiz__note')
+          for (let i = 0; i < notes.length; i++) {
+            notes[i].style.display = "none"
+          }
+        }
+      }
+    }
+
+    if (currentSlide < slides.length - 1) {
+      const generateListNode = slides[currentSlide + 1].querySelector('[data-element="quiz-generate"]')
+      if (generateListNode) generateList(generateListNode)
+
+      const oldActiveSlide = quiz.querySelector('.quiz__inner.active')
+      oldActiveSlide.classList.remove('active')
+      currentSlide += 1
+      slides[currentSlide].classList.add('active')
+      initValidate()
+    } else {
+      form.submit()
+    }
+    progressFill.style.width = Math.round(currentSlide/(slides.length - 1) * 100) + '%'
+  }
+
+  function generateList (list) {
+    const type = list.getAttribute('data-type')
+    const name = list.getAttribute('data-name')
+    const array = (generateData[list.getAttribute('data-list')])[classChosen]
+
+    for (let i = 0; i < array.length; i++) {
+      const item = `<label class="quiz__label">
+        <input class="quiz__input" type="${type}" name="${name}" value="${array[i]}">
+        <div class="${'quiz__input-view quiz__input-view_' + type}"></div>
+        <div class="quiz__input-text">${array[i]}</div>
+      </label>`
+      list.innerHTML += item
+    }
+  }
+}
+
+if (document.querySelector('[data-role="scroll-to-anchor"]')) initScrollToAnchor()
 
 function initScrollToAnchor () {
   const anchorElements = document.querySelectorAll('[data-role="scroll-to-anchor"]')
@@ -647,20 +793,22 @@ function initScrollToAnchor () {
 function clickOnTheScrollElement (event) {
   event.preventDefault()
   let elementId
-  if (this.dataset.link) elementId = this.dataset.link.substr(1)
-  else elementId = this.hash.substr(1)
+  if (this.hash) elementId = this.hash.substr(1)
+  else elementId = this.getAttribute('scroll-to-anchor-id')?.substr(1)
   const element = document.getElementById(elementId)
-  if (element) animateScrollToAnchor(element)
+  const offset = this.getAttribute('scroll-offset')
+  if (element) animateScrollToAnchor(element, offset)
 }
 
-function animateScrollToAnchor (theElement) {
-  let offset
-  if (window.innerWidth < 744) {
-    offset = 84
-  } else if (window.innerWidth < 1200) {
-    offset = 102
-  } else {
-    offset = 65
+function animateScrollToAnchor (theElement, offset) {
+  if (!offset) {
+    if (window.innerWidth < 744) {
+      offset = 84
+    } else if (window.innerWidth < 1200) {
+      offset = 102
+    } else {
+      offset = 65
+    }
   }
   const positionNow = window.pageYOffset
   const positionElement = theElement.getBoundingClientRect().top + pageYOffset - offset

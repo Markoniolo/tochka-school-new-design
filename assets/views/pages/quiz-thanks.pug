@@ -1,0 +1,15 @@
+include ../_variables
+include ../components/_layout/_connect-style
+include ../components/_layout/_title
+
+doctype html
+html(lang='ru')
+  head
+    include ../components/_layout/_head
+    block head
+  body
+    main.wrapper
+      block body
+        include ../components/quiz-thanks
+    include ../components/_layout/scripts
+

@@ -30,7 +30,7 @@
 
 <body>
   <main class="wrapper">
-    <div class="quiz">
+    <div class="quiz" id="quiz" data-element="quiz">
       <div class="quiz__cont cont">
         <div class="quiz__header">
           <div class="quiz__logo">
@@ -43,25 +43,208 @@
           <div class="quiz__decor quiz__decor_3"></div>
           <div class="quiz__decor quiz__decor_4"></div>
           <div class="quiz__decor quiz__decor_5"></div>
-          <form class="quiz__area">
-            <div class="quiz-slide quiz-slide_1">
-              <div class="quiz-slide__inner">
-                <div class="quiz-slide__caption">Самый важный опрос!</div>
-                <div class="quiz-slide__text-big">Эта страница доступна только участникам предзаписи.</div>
-                <div class="quiz-slide__text-big">Здесь мы подготовили небольшой опрос для Вас.</div>
-                <div class="quiz-slide__text">
-                  Пожалуйста, ответьте на вопросы ниже. Исходя из Ваших ответов, мы спрогнозируем нагрузку на учителей и
-                  тьюторов, а также найдём новых учителей из разряда лучших в стране.
+          <form class="quiz__form" id="quiz__form" data-element="quiz-form" action="send-quiz">
+            <div class="quiz__progress hide" data-element="quiz-progress">
+              <div class="quiz__progress-text">Прогресс опроса</div>
+              <div class="quiz__progress-bar">
+                <div class="quiz__progress-bar-fill" data-element="quiz-progress-bar-fill"></div>
+              </div>
+            </div>
+            <div class="quiz__slide quiz__slide_1">
+              <div class="quiz__inner active" data-element="quiz-inner">
+                <div class="quiz__info">
+                  <div class="quiz__caption">Важный опрос для участников предзаписи</div>
+                  <div class="quiz__text">
+                    Пожалуйста, ответьте на вопросы ниже. Исходя из Ваших ответов, мы спрогнозируем нагрузку на учителей и
+                    тьюторов, а также найдём новых учителей, лучших в стране.
+                  </div>
+                  <div class="quiz__text">Если у Вас несколько детей, тогда пройдите опрос на каждого ребёнка отдельно.</div>
+                  <div class="quiz__text">Итак, начнём.</div>
                 </div>
-                <div class="quiz-slide__text">Если у Вас несколько детей, тогда пройдите опрос на каждого ребёнка отдельно.</div>
-                <div class="quiz-slide__text">Итак, начнём.</div>
-                <div class="quiz-slide__box">
-                  <div class="quiz-slide__headline">Имя ребенка</div>
-                  <div class="quiz-slide__line">
-                    <input class="quiz-slide__input input-white" type="text" placeholder="Введите имя ребенка">
-                    <button class="quiz-slide__button btn-orange">Дальше</button>
+                <div class="quiz__box">
+                  <div class="quiz__headline">Имя ребенка</div>
+                  <div class="quiz__line">
+                    <input class="quiz__input input-white" type="text" placeholder="Введите имя ребенка" name="Имя ребенка">
+                    <button class="quiz__button btn-orange" data-element="quiz-next" type="button" disabled data-role="scroll-to-anchor" scroll-to-anchor-id="#quiz" scroll-offset="0">Дальше</button>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div class="quiz__slide quiz__slide_2">
+              <div class="quiz__inner" data-element="quiz-inner">
+                <div class="quiz__title quiz__title_radio">В какой класс Ваш ребёнок идёт в следующем году</div>
+                <div class="quiz__list" data-type="radio" data-list="[&quot;Дошкольник&quot;,&quot;в 1 класс&quot;,&quot;в 2 класс&quot;,&quot;в 3 класс&quot;,&quot;в 4 класс&quot;,&quot;в 5 класс&quot;,&quot;в 6 класс&quot;,&quot;в 7 класс&quot;,&quot;в 8 класс&quot;,&quot;в 9 класс&quot;,&quot;в 10 класс&quot;,&quot;в 11 класс&quot;]" data-name="В какой класс Ваш ребёнок идёт в следующем году">
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="radio" name="В какой класс Ваш ребёнок идёт в следующем году" value="0">
+                    <div class="quiz__input-view quiz__input-view_radio"></div>
+                    <div class="quiz__input-text">Дошкольник</div>
+                  </label>
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="radio" name="В какой класс Ваш ребёнок идёт в следующем году" value="1">
+                    <div class="quiz__input-view quiz__input-view_radio"></div>
+                    <div class="quiz__input-text">в 1 класс</div>
+                  </label>
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="radio" name="В какой класс Ваш ребёнок идёт в следующем году" value="2">
+                    <div class="quiz__input-view quiz__input-view_radio"></div>
+                    <div class="quiz__input-text">в 2 класс</div>
+                  </label>
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="radio" name="В какой класс Ваш ребёнок идёт в следующем году" value="3">
+                    <div class="quiz__input-view quiz__input-view_radio"></div>
+                    <div class="quiz__input-text">в 3 класс</div>
+                  </label>
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="radio" name="В какой класс Ваш ребёнок идёт в следующем году" value="4">
+                    <div class="quiz__input-view quiz__input-view_radio"></div>
+                    <div class="quiz__input-text">в 4 класс</div>
+                  </label>
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="radio" name="В какой класс Ваш ребёнок идёт в следующем году" value="5">
+                    <div class="quiz__input-view quiz__input-view_radio"></div>
+                    <div class="quiz__input-text">в 5 класс</div>
+                  </label>
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="radio" name="В какой класс Ваш ребёнок идёт в следующем году" value="6">
+                    <div class="quiz__input-view quiz__input-view_radio"></div>
+                    <div class="quiz__input-text">в 6 класс</div>
+                  </label>
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="radio" name="В какой класс Ваш ребёнок идёт в следующем году" value="7">
+                    <div class="quiz__input-view quiz__input-view_radio"></div>
+                    <div class="quiz__input-text">в 7 класс</div>
+                  </label>
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="radio" name="В какой класс Ваш ребёнок идёт в следующем году" value="8">
+                    <div class="quiz__input-view quiz__input-view_radio"></div>
+                    <div class="quiz__input-text">в 8 класс</div>
+                  </label>
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="radio" name="В какой класс Ваш ребёнок идёт в следующем году" value="9">
+                    <div class="quiz__input-view quiz__input-view_radio"></div>
+                    <div class="quiz__input-text">в 9 класс</div>
+                  </label>
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="radio" name="В какой класс Ваш ребёнок идёт в следующем году" value="10">
+                    <div class="quiz__input-view quiz__input-view_radio"></div>
+                    <div class="quiz__input-text">в 10 класс</div>
+                  </label>
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="radio" name="В какой класс Ваш ребёнок идёт в следующем году" value="11">
+                    <div class="quiz__input-view quiz__input-view_radio"></div>
+                    <div class="quiz__input-text">в 11 класс</div>
+                  </label>
+                </div>
+                <button class="quiz__button btn-orange" data-element="quiz-next" type="button" disabled data-role="scroll-to-anchor" scroll-to-anchor-id="#quiz" scroll-offset="0">Дальше
+                </button>
+              </div>
+            </div>
+            <div class="quiz__slide quiz__slide_3">
+              <div class="quiz__inner" data-element="quiz-inner">
+                <div class="quiz__title quiz__title_radio">Вы планируете обучаться на семейном обучении с сентября 2025 года?</div>
+                <div class="quiz__note">Учиться дома, онлайн. Изучать все предметы, как в обычной школе, сдавать контрольные и аттестацию онлайн.</div>
+                <div class="quiz__list" data-type="radio" data-list="[&quot;Да&quot;,&quot;Нет&quot;,&quot;Ещё не решили&quot;]" data-name="Вы планируете обучаться на семейном обучении с сентября 2025 года?">
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="radio" name="Вы планируете обучаться на семейном обучении с сентября 2025 года?" value="Да">
+                    <div class="quiz__input-view quiz__input-view_radio"></div>
+                    <div class="quiz__input-text">Да</div>
+                  </label>
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="radio" name="Вы планируете обучаться на семейном обучении с сентября 2025 года?" value="Нет">
+                    <div class="quiz__input-view quiz__input-view_radio"></div>
+                    <div class="quiz__input-text">Нет</div>
+                  </label>
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="radio" name="Вы планируете обучаться на семейном обучении с сентября 2025 года?" value="Ещё не решили">
+                    <div class="quiz__input-view quiz__input-view_radio"></div>
+                    <div class="quiz__input-text">Ещё не решили</div>
+                  </label>
+                </div>
+                <button class="quiz__button btn-orange" data-element="quiz-next" type="button" disabled data-role="scroll-to-anchor" scroll-to-anchor-id="#quiz" scroll-offset="0">Дальше
+                </button>
+              </div>
+            </div>
+            <div class="quiz__slide quiz__slide_4">
+              <div class="quiz__inner" data-element="quiz-inner">
+                <div class="quiz__title quiz__title_checkbox">На курсы по каким школьным предметам Вы планируете записаться?</div>
+                <div class="quiz__list" data-element="quiz-generate" data-type="checkbox" data-list="list_4" data-name="На курсы по каким школьным предметам Вы планируете записаться?">
+                </div>
+                <button class="quiz__button btn-orange" data-element="quiz-next" type="button" disabled data-role="scroll-to-anchor" scroll-to-anchor-id="#quiz" scroll-offset="0">Дальше
+                </button>
+              </div>
+            </div>
+            <div class="quiz__slide quiz__slide_5">
+              <div class="quiz__inner" data-element="quiz-inner">
+                <div class="quiz__title quiz__title_checkbox">Отметьте дополнительные курсы, которые Вам интересны:</div>
+                <div class="quiz__note">На семейном обучении 2 дополнительных предмета на выбор будут доступны Вам бесплатно, остальные — платно.</div>
+                <div class="quiz__note">Сейчас можно выбрать неограниченное количество курсов. </div>
+                <div class="quiz__list" data-element="quiz-generate" data-type="checkbox" data-list="list_5" data-name="Отметьте дополнительные курсы, которые Вам интересны:">
+                </div>
+                <button class="quiz__button btn-orange" data-element="quiz-next" type="button" disabled data-role="scroll-to-anchor" scroll-to-anchor-id="#quiz" scroll-offset="0">Дальше
+                </button>
+              </div>
+            </div>
+            <div class="quiz__slide quiz__slide_6">
+              <div class="quiz__inner" data-element="quiz-inner">
+                <div class="quiz__title quiz__title_radio">Вы учились у нас ранее?</div>
+                <div class="quiz__list" data-type="radio" data-list="[&quot;Да&quot;,&quot;Нет&quot;]" data-name="Вы учились у нас ранее?">
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="radio" name="Вы учились у нас ранее?" value="Да">
+                    <div class="quiz__input-view quiz__input-view_radio"></div>
+                    <div class="quiz__input-text">Да</div>
+                  </label>
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="radio" name="Вы учились у нас ранее?" value="Нет">
+                    <div class="quiz__input-view quiz__input-view_radio"></div>
+                    <div class="quiz__input-text">Нет</div>
+                  </label>
+                </div>
+                <button class="quiz__button btn-orange" data-element="quiz-next" type="button" disabled data-role="scroll-to-anchor" scroll-to-anchor-id="#quiz" scroll-offset="0">Дальше
+                </button>
+              </div>
+            </div>
+            <div class="quiz__slide quiz__slide_7">
+              <div class="quiz__inner" data-element="quiz-inner">
+                <div class="quiz__title quiz__title_checkbox">В каких мероприятиях «Точки Знаний» Вы уже принимали участие</div>
+                <div class="quiz__list" data-type="checkbox" data-list="[&quot;Пробная неделя&quot;,&quot;Осенний марафон&quot;,&quot;IT-марафон&quot;,&quot;Пробные уроки&quot;,&quot;Открытые уроки&quot;,&quot;Вебинары&quot;,&quot;Не принимал участия&quot;]" data-name="В каких мероприятиях «Точки Знаний» Вы уже принимали участие">
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="checkbox" name="В каких мероприятиях «Точки Знаний» Вы уже принимали участие" value="Пробная неделя">
+                    <div class="quiz__input-view quiz__input-view_checkbox"></div>
+                    <div class="quiz__input-text">Пробная неделя</div>
+                  </label>
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="checkbox" name="В каких мероприятиях «Точки Знаний» Вы уже принимали участие" value="Осенний марафон">
+                    <div class="quiz__input-view quiz__input-view_checkbox"></div>
+                    <div class="quiz__input-text">Осенний марафон</div>
+                  </label>
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="checkbox" name="В каких мероприятиях «Точки Знаний» Вы уже принимали участие" value="IT-марафон">
+                    <div class="quiz__input-view quiz__input-view_checkbox"></div>
+                    <div class="quiz__input-text">IT-марафон</div>
+                  </label>
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="checkbox" name="В каких мероприятиях «Точки Знаний» Вы уже принимали участие" value="Пробные уроки">
+                    <div class="quiz__input-view quiz__input-view_checkbox"></div>
+                    <div class="quiz__input-text">Пробные уроки</div>
+                  </label>
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="checkbox" name="В каких мероприятиях «Точки Знаний» Вы уже принимали участие" value="Открытые уроки">
+                    <div class="quiz__input-view quiz__input-view_checkbox"></div>
+                    <div class="quiz__input-text">Открытые уроки</div>
+                  </label>
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="checkbox" name="В каких мероприятиях «Точки Знаний» Вы уже принимали участие" value="Вебинары">
+                    <div class="quiz__input-view quiz__input-view_checkbox"></div>
+                    <div class="quiz__input-text">Вебинары</div>
+                  </label>
+                  <label class="quiz__label">
+                    <input class="quiz__input" type="checkbox" name="В каких мероприятиях «Точки Знаний» Вы уже принимали участие" value="Не принимал участия">
+                    <div class="quiz__input-view quiz__input-view_checkbox"></div>
+                    <div class="quiz__input-text">Не принимал участия</div>
+                  </label>
+                </div>
+                <button class="quiz__button btn-orange" data-element="quiz-next" type="button" disabled data-role="scroll-to-anchor" scroll-to-anchor-id="#quiz" scroll-offset="0">Отправить ответы
+                </button>
               </div>
             </div>
           </form>

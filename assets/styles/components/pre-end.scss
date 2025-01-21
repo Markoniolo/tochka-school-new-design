@@ -36,6 +36,7 @@
   border-radius: 32px;
   backdrop-filter: blur(120px);
   background: rgba(255, 255, 255, 0.38);
+  box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
   @include media(lg) {
     padding: 20px;
     border-radius: 10px;

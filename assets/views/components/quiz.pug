@@ -1,4 +1,10 @@
-.quiz
+-
+  const list_2 = [
+    'Дошкольник', 'в 1 класс', 'в 2 класс', 'в 3 класс', 'в 4 класс', 'в 5 класс', 'в 6 класс', 'в 7 класс',
+    'в 8 класс', 'в 9 класс', 'в 10 класс', 'в 11 класс',
+  ]
+
+.quiz#quiz(data-element="quiz")
   .quiz__cont.cont
     .quiz__header
       .quiz__logo
@@ -6,6 +12,22 @@
     .quiz__wrap
       each item in [1,2,3,4,5]
         .quiz__decor(class=`quiz__decor_${item}`)
-      form.quiz__area
-        include ./quiz/quiz-slide
-        +quiz-slide(1)
+      form.quiz__form#quiz__form(data-element='quiz-form' action='send-quiz')
+        .quiz__progress.hide(data-element='quiz-progress')
+          .quiz__progress-text Прогресс опроса
+          .quiz__progress-bar
+            .quiz__progress-bar-fill(data-element='quiz-progress-bar-fill')
+        include ./quiz/quiz__slide
+        +quiz__slide(1)
+        +quiz__slide(2, 'В какой класс Ваш ребёнок идёт в следующем году', list_2, 'radio')
+        +quiz__slide(3, 'Вы планируете обучаться на семейном обучении с сентября 2025 года?', ['Да','Нет','Ещё не решили'],
+          'radio', false,
+          ['Учиться дома, онлайн. Изучать все предметы, как в обычной школе, сдавать контрольные и аттестацию онлайн.'])
+        +quiz__slide(4, 'На курсы по каким школьным предметам Вы планируете записаться?', 'list_4', 'checkbox', 'generate')
+        +quiz__slide(5, 'Отметьте дополнительные курсы, которые Вам интересны:', 'list_5', 'checkbox', 'generate',
+          ['На семейном обучении 2 дополнительных предмета на выбор будут доступны Вам бесплатно, остальные — платно.',
+            'Сейчас можно выбрать неограниченное количество курсов. '])
+        +quiz__slide(6, 'Вы учились у нас ранее?', ['Да','Нет'], 'radio')
+        +quiz__slide(7, 'В каких мероприятиях «Точки Знаний» Вы уже принимали участие',
+          ['Пробная неделя','Осенний марафон','IT-марафон','Пробные уроки',
+          'Открытые уроки','Вебинары','Не принимал участия'], 'checkbox', false)

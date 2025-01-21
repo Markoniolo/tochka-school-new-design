@@ -32,9 +32,12 @@ mixin pre-thanks(mod)
             br
             | для участников предзаписи, чтобы завершить регистрацию.
           p.pre-thanks__text.pre-thanks__text_info Именно в канале откроется закрытая продажа курсов с самой большой скидкой.
-          picture.pre-thanks__picture
-            img.pre-thanks__image(src=staticImg('pre-thanks/pre-thanks-icon.png') alt='')
-          .pre-thanks__note.
-            Телеграм-канал – главный источник информации. Закрепите его и включите уведомления,
-            чтобы использовать возможности предзаписи.
+          .pre-thanks__inner
+            picture.pre-thanks__picture
+              img.pre-thanks__image(src=staticImg('pre-thanks/pre-thanks-icon.png') alt='')
+            .pre-thanks__note
+              span Телеграм-канал
+              |
+              | – главный источник информации. Закрепите его и включите уведомления,
+              | чтобы использовать возможности предзаписи.
           a.pre-thanks__button.btn-orange(href='#') Завершить регистрацию

@@ -1,0 +1,16 @@
+.quiz-thanks
+  .quiz-thanks__cont.cont
+    .quiz-thanks__header
+      .quiz-thanks__logo
+        img.quiz-thanks__logo-image(src=staticImg('logo.svg') alt='')
+    .quiz-thanks__wrap
+      each item in [1,2,3,4,5]
+        .quiz-thanks__decor(class=`quiz__decor_${item}`)
+      .quiz-thanks__area
+        .quiz-thanks__box
+          .quiz-thanks__caption!= 'Опрос завершён! <br> Благодарим за участие.'
+          .quiz-thanks__text Чтобы пройти опрос за следующего ребенка, жмите&nbsp;по кнопке ниже.
+          a.quiz-thanks__button.btn-orange(href='#') Пройти опрос ещё раз
+        .quiz-thanks__box
+          .quiz-thanks__text Давайте продолжим общение в&nbsp;закрытом Телеграм-канале для&nbsp;участников предзаписи.
+          a.quiz-thanks__tg(href='#') Перейти в канал

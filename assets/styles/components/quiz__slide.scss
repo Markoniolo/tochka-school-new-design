@@ -1,0 +1,369 @@
+.quiz__slide {
+  &_1 {
+    .quiz__inner {
+      max-width: 900px;
+    }
+  }
+  &_2 {
+    .quiz__title {
+      @include media(lg) {
+        max-width: 440px;
+      }
+    }
+  }
+  &_4 {
+    .quiz__title {
+      max-width: 935px;
+    }
+    .quiz__label {
+      @include media(xs) {
+        width: 100%;
+      }
+    }
+  }
+  &_5 {
+    .quiz__title {
+      max-width: 980px;
+    }
+    .quiz__label {
+      @include media(xs) {
+        width: 100%;
+      }
+    }
+  }
+  &_7 {
+    .quiz__title {
+      max-width: 950px;
+      @include media(lg) {
+        max-width: 572px;
+      }
+    }
+  }
+}
+
+.quiz__inner {
+  position: absolute;
+  top: 126px;
+  left: 60px;
+  right: 60px;
+  z-index: -1;
+  opacity: 0;
+  transition-duration: $transition-duration;
+  transition-property: opacity;
+  @include media(lg) {
+    top: 111px;
+  }
+  @include media(md) {
+    top: 77px;
+    left: 24px;
+    right: 24px;
+  }
+  @include media(xs) {
+    left: 15px;
+    right: 15px;
+  }
+  &.active {
+    position: static;
+    opacity: 1;
+    z-index: 1;
+  }
+}
+
+.quiz__info {
+  @include media(xs) {
+    text-align: center;
+  }
+}
+
+.quiz__caption {
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 107%;
+  color: #003c56;
+  @include media(md) {
+    margin-bottom: 10px;
+    font-size: 30px;
+    line-height: 113%;
+  }
+  @include media(xs) {
+    font-size: 27px;
+  }
+}
+
+.quiz__text {
+  margin-bottom: 17px;
+  max-width: 674px;
+  font-size: 16px;
+  line-height: 20px;
+  @include media(md) {
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+  @include media(xs) {
+    text-align: center;
+  }
+}
+
+.quiz__note {
+  margin-top: -20px;
+  margin-bottom: 30px;
+  max-width: 674px;
+  font-size: 16px;
+  line-height: 20px;
+  @include media(md) {
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+  @include media(xs) {
+    text-align: center;
+  }
+}
+
+.quiz__box {
+  margin-top: 40px;
+  max-width: 660px;
+  border-radius: 22px;
+  background-color: $white;
+  box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
+  padding: 24px 31px;
+  @include media(md) {
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 20px 25px 25px;
+  }
+  @include media(xs) {
+    padding: 20px 20px 25px;
+  }
+}
+
+.quiz__headline {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 137%;
+  color: #003c56;
+  @include media(xs) {
+    text-align: center;
+  }
+}
+
+.quiz__line {
+  display: flex;
+  justify-content: space-between;
+  @include media(xs) {
+    flex-direction: column;
+    gap: 15px 0;
+  }
+  .quiz__input {
+    max-width: 313px;
+    width: 100%;
+    display: block;
+    @include media(xs) {
+      max-width: 100%;
+    }
+  }
+  .quiz__button {
+    max-width: 262px;
+    width: 100%;
+    min-width: auto;
+    font-size: 14px;
+    padding: 14px 30px 16px;
+    @include media(xs) {
+      max-width: 100%;
+    }
+  }
+}
+
+.quiz__button {
+  min-width: 262px;
+  font-size: 16px;
+  padding: 19px 30px 21px;
+  @include media(xs) {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.quiz__progress {
+  margin-bottom: 40px;
+  @include media(lg) {
+    margin-bottom: 25px;
+  }
+  &.hide {
+    display: none;
+  }
+}
+
+.quiz__progress-text {
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  @include media(md) {
+    margin-bottom: 5px;
+  }
+}
+
+.quiz__progress-bar {
+  position: relative;
+  height: 10px;
+  background-color: #ebe1de;
+  border-radius: 34px;
+  @include media(md) {
+    height: 6px;
+  }
+}
+
+.quiz__progress-bar-fill {
+  border-radius: 34px;
+  background-color: $orange;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  transition-property: width;
+  transition-duration: $transition-duration;
+}
+
+.quiz__title {
+  margin-bottom: 38px;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 138%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 20px;
+    font-size: 27px;
+    line-height: 126%;
+  }
+  @include media(xs) {
+    text-align: center;
+  }
+  &_checkbox {
+    &::after {
+      content: 'можно выбрать несколько';
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.5);
+      margin-left: 10px;
+      vertical-align: middle;
+      @include media(xs) {
+        display: block;
+      }
+    }
+  }
+}
+
+.quiz__list {
+  margin-bottom: 45px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  @include media(lg) {
+    margin-bottom: 25px;
+    gap: 11px;
+  }
+}
+
+.quiz__label {
+  border-radius: 10px;
+  box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
+  background-color: $white;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  min-width: 210px;
+  min-height: 60px;
+  @include media(md) {
+    min-width: 156px;
+    min-height: 55px;
+  }
+  @include media(xs) {
+    width: calc(50% - 6px);
+  }
+}
+
+.quiz__input {
+  display: none;
+  &:checked + .quiz__input-view {
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.quiz__input-view {
+  position: relative;
+  margin-right: 10px;
+  flex-shrink: 0;
+  &_radio {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background-color: #EAEAEA;
+    @include media(md) {
+      width: 15px;
+      height: 15px;
+    }
+    &::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background-color: $orange;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition-property: opacity;
+      transition-duration: $transition-duration;
+      @include media(md) {
+        width: 7px;
+        height: 7px;
+      }
+    }
+  }
+  &_checkbox {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    width: 18px;
+    height: 18px;
+    background-color: #EAEAEA;
+    @include media(md) {
+      width: 15px;
+      height: 15px;
+    }
+    &::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background-color: $orange;
+      border-radius: 2px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition-property: opacity;
+      transition-duration: $transition-duration;
+      @include media(md) {
+        width: 9px;
+        height: 9px;
+      }
+    }
+  }
+}
+
+.quiz__input-text {
+  font-size: 16px;
+  line-height: 18px;
+  @include media(md) {
+    font-size: 15px;
+    line-height: 15px;
+  }
+}
+
