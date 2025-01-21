@@ -21,6 +21,7 @@
   justify-content: space-between;
   @include media(md) {
     flex-direction: column;
+    gap: 15px;
   }
 }
 
