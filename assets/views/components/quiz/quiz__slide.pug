@@ -19,6 +19,8 @@ mixin quiz__slide(mod, title, list, type, generate, note=[], inputName)
               scroll-to-anchor-id="#quiz" scroll-offset=0) Дальше
     else
       .quiz__inner(data-element="quiz-inner")
+        if type === 'checkbox'
+          input.quiz__hidden-checkbox(type='hidden' name=inputName)
         .quiz__title(class=`quiz__title_${type}`)!= title
         each item in note
           .quiz__note= item
@@ -26,14 +28,12 @@ mixin quiz__slide(mod, title, list, type, generate, note=[], inputName)
           if !generate
             each item, index in list
               label.quiz__label
-                input.quiz__input(type=type name=inputName value=mod === 2 ? index : item)
+                input.quiz__input(type=type name=type==='radio' ? inputName : false value=mod === 2 ? index : item)
                 .quiz__input-view(class=`quiz__input-view_${type}`)
                 .quiz__input-text= item
         .quiz__buttons
-          button.quiz__button.btn-orange(data-element='quiz-next' type="button" disabled data-role="scroll-to-anchor"
-            scroll-to-anchor-id="#quiz" scroll-offset=0)
-            if mod === 7
-              | Отправить ответы
-            else
-              | Дальше
+          if mod === 7
+            button.quiz__button.btn-orange(data-element='quiz-next' type="submit" disabled) Отправить ответы
+          else
+            button.quiz__button.btn-orange(data-element='quiz-next' type="button" disabled) Дальше
           button.quiz__back(type='button' data-element='quiz-prev') Вернуться назад
