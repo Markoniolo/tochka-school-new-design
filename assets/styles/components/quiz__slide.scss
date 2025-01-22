@@ -317,6 +317,9 @@
     padding: 6px 11px;
     width: calc(50% - 6px);
   }
+  @media (max-width: 393px) {
+    width: 100%;
+  }
   &.disable {
     opacity: 0.3;
   }
