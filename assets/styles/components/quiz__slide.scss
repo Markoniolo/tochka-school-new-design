@@ -284,11 +284,6 @@
       }
     }
   }
-  &_hide-after {
-    &::after {
-      content: none;
-    }
-  }
 }
 
 .quiz__list {
