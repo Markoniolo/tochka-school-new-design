@@ -1,4 +1,4 @@
-mixin quiz__slide(mod, title, list, type, generate, note=[])
+mixin quiz__slide(mod, title, list, type, generate, note=[], inputName)
   .quiz__slide(class=`quiz__slide_${mod}`)
     if mod === 1
       .quiz__inner.active(data-element="quiz-inner")
@@ -11,9 +11,10 @@ mixin quiz__slide(mod, title, list, type, generate, note=[])
             Если у Вас несколько детей, тогда пройдите опрос на каждого ребёнка отдельно.
           .quiz__text Итак, начнём.
         .quiz__box
-          .quiz__headline Имя ребенка
+          .quiz__headline Имя и фамилия ребенка
           .quiz__line
-            input.quiz__input.input-white(type='text' placeholder="Введите имя ребенка" name="Имя ребенка")
+            input.quiz__input.input-white(type='text' placeholder="Имя" name="name")
+            input.quiz__input.input-white(type='text' placeholder="Фамилия" name="surname")
             button.quiz__button.btn-orange(data-element="quiz-next" type="button" disabled data-role="scroll-to-anchor"
               scroll-to-anchor-id="#quiz" scroll-offset=0) Дальше
     else
@@ -21,16 +22,18 @@ mixin quiz__slide(mod, title, list, type, generate, note=[])
         .quiz__title(class=`quiz__title_${type}`)!= title
         each item in note
           .quiz__note= item
-        .quiz__list(data-element=generate ? "quiz-generate" : false data-type=type data-list=list data-name=title)
+        .quiz__list(data-element=generate ? "quiz-generate" : false data-type=type data-list=list data-name=inputName)
           if !generate
             each item, index in list
               label.quiz__label
-                input.quiz__input(type=type name=title value=mod === 2 ? index : item)
+                input.quiz__input(type=type name=inputName value=mod === 2 ? index : item)
                 .quiz__input-view(class=`quiz__input-view_${type}`)
                 .quiz__input-text= item
-        button.quiz__button.btn-orange(data-element='quiz-next' type="button" disabled data-role="scroll-to-anchor"
-          scroll-to-anchor-id="#quiz" scroll-offset=0)
-          if mod === 7
-            | Отправить ответы
-          else
-            | Дальше
+        .quiz__buttons
+          button.quiz__button.btn-orange(data-element='quiz-next' type="button" disabled data-role="scroll-to-anchor"
+            scroll-to-anchor-id="#quiz" scroll-offset=0)
+            if mod === 7
+              | Отправить ответы
+            else
+              | Дальше
+          button.quiz__back(type='button' data-element='quiz-prev') Вернуться назад

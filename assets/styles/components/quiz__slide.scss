@@ -1,9 +1,4 @@
 .quiz__slide {
-  &_1 {
-    .quiz__inner {
-      max-width: 900px;
-    }
-  }
   &_2 {
     .quiz__title {
       @include media(lg) {
@@ -11,9 +6,19 @@
       }
     }
   }
+  &_3 {
+    .quiz__label {
+      @include media(xs) {
+        padding-right: 7px;
+      }
+    }
+  }
   &_4 {
     .quiz__title {
       max-width: 935px;
+      @include media(lg) {
+        max-width: 565px;
+      }
     }
     .quiz__label {
       @include media(xs) {
@@ -72,6 +77,11 @@
 .quiz__info {
   @include media(xs) {
     text-align: center;
+    backdrop-filter: blur(120px);
+    background: rgba(255, 255, 255, 0.38);
+    border-radius: 10px;
+    padding: 20px 5px;
+    box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
   }
 }
 
@@ -82,7 +92,7 @@
   line-height: 107%;
   color: #003c56;
   @include media(md) {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 30px;
     line-height: 113%;
   }
@@ -99,6 +109,7 @@
   @include media(md) {
     margin-bottom: 8px;
     font-size: 15px;
+    max-width: 535px;
   }
   @include media(xs) {
     text-align: center;
@@ -107,23 +118,25 @@
 
 .quiz__note {
   margin-top: -20px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   max-width: 674px;
   font-size: 16px;
   line-height: 20px;
-  @include media(md) {
-    margin-bottom: 8px;
+  @include media(lg) {
+    margin-bottom: 20px;
+    margin-top: -5px;
     font-size: 15px;
   }
   @include media(xs) {
-    margin-top: -2px;
+    margin: -2px auto 20px;
     text-align: center;
+    max-width: 323px;
   }
 }
 
 .quiz__box {
   margin-top: 40px;
-  max-width: 660px;
+  max-width: 1000px;
   border-radius: 22px;
   background-color: $white;
   box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
@@ -134,6 +147,7 @@
     padding: 20px 25px 25px;
   }
   @include media(xs) {
+    margin-top: 40px;
     padding: 20px 20px 25px;
   }
 }
@@ -152,6 +166,10 @@
 .quiz__line {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
+  @include media(md) {
+    flex-wrap: wrap;
+  }
   @include media(xs) {
     flex-direction: column;
     gap: 15px 0;
@@ -160,8 +178,12 @@
     max-width: 313px;
     width: 100%;
     display: block;
-    @include media(xs) {
+    @include media(md) {
       max-width: 100%;
+      width: calc(50% - 10px);
+    }
+    @include media(xs) {
+      width: 100%;
     }
   }
   .quiz__button {
@@ -170,8 +192,12 @@
     min-width: auto;
     font-size: 14px;
     padding: 14px 30px 16px;
-    @include media(xs) {
+    @include media(md) {
+      width: calc(50% - 10px);
       max-width: 100%;
+    }
+    @include media(xs) {
+      width: 100%;
     }
   }
 }
@@ -190,6 +216,9 @@
   margin-bottom: 40px;
   @include media(lg) {
     margin-bottom: 25px;
+  }
+  @include media(xs) {
+    margin-bottom: 16px;
   }
   &.hide {
     display: none;
@@ -239,18 +268,25 @@
     line-height: 126%;
   }
   @include media(xs) {
+    margin-bottom: 18px;
     text-align: center;
   }
   &_checkbox {
     &::after {
-      content: 'можно выбрать несколько';
-      font-size: 14px;
+      content: 'Можно выбрать несколько';
+      display: block;
+      font-size: 16px;
       color: rgba(0, 0, 0, 0.5);
-      margin-left: 10px;
-      vertical-align: middle;
-      @include media(xs) {
-        display: block;
+      margin-top: -5px;
+      @include media(lg) {
+        margin-top: 0;
+        font-size: 15px;
       }
+    }
+  }
+  &_hide-after {
+    &::after {
+      content: none;
     }
   }
 }
@@ -278,11 +314,16 @@
   min-width: 210px;
   min-height: 60px;
   @include media(md) {
+    padding: 10px 15px;
     min-width: 156px;
     min-height: 55px;
   }
   @include media(xs) {
+    padding: 6px 11px;
     width: calc(50% - 6px);
+  }
+  &.disable {
+    opacity: 0.3;
   }
 }
 
@@ -368,3 +409,34 @@
   }
 }
 
+.quiz__buttons {
+  display: flex;
+  gap: 0 30px;
+  @include media(xs) {
+    justify-content: center;
+  }
+}
+
+.quiz__back {
+  border-radius: 34px;
+  box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
+  background: $white;
+  padding: 15px 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #484848;
+  @include media(xs) {
+    position: absolute;
+    bottom: -75px;
+  }
+  &::before {
+    content: '';
+    @include bg-icon('icons/ic_arrow_btn_black.svg');
+    width: 12px;
+    height: 9px;
+    flex-shrink: 0;
+    margin-right: 10px;
+  }
+}
