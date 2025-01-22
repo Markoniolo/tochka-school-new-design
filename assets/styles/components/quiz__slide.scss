@@ -116,6 +116,7 @@
     font-size: 15px;
   }
   @include media(xs) {
+    margin-top: -2px;
     text-align: center;
   }
 }
