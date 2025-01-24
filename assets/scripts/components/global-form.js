@@ -201,17 +201,33 @@ function globalFormInit (form, func_name, type) {
 
       if (isValid) {
         email_value = email.value;
-        globalForm.submit()
-        btnSubmit.disabled = true
-        setTimeout(() => {
-          clearForm()
-          if (type === 'preFormData') {
-            location.assign(linkTo + `?cemail=${email_value}`)
+
+        btnSubmit.disabled = true;
+        if (type === 'preFormData') {
+          e.stopPropagation();
+          const loader = document.querySelector('.form-loader')
+          if (loader) loader.classList.add('active')
+          $.request('MainFunctions::onSendPreSubscribeMessage', {
+            data: form_data,
+          });
+          location.assign(linkTo + `?cemail=${email_value}`);
+          // setTimeout(() => {
+          //     globalForm.submit();
+          //     setTimeout(() => {
+          //       clearForm();
+          //         location.assign(linkTo + `?cemail=${email_value}`);
+          //         // location.assign(linkTo + '?email='+email_value)
+          //     }, 100)
+          // }, 100)
+        } else {
+          globalForm.submit();
+          setTimeout(() => {
+            clearForm();
+            location.assign(linkTo + `?cemail=${email_value}`);
             // location.assign(linkTo + '?email='+email_value)
-          } else {
-            location.assign(linkTo)
-          }
-        }, 100)
+            location.assign(linkTo);
+          }, 100)
+        }
       }
 
     } else {
