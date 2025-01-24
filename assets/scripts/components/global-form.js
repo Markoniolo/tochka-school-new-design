@@ -205,8 +205,7 @@ function globalFormInit (form, func_name, type) {
         btnSubmit.disabled = true;
         if (type === 'preFormData') {
           e.stopPropagation();
-          const loader = document.querySelector('.form-loader')
-          if (loader) loader.classList.add('active')
+          btnSubmit.classList.add('loading')
           $.request('MainFunctions::onSendPreSubscribeMessage', {
             data: form_data,
           });
