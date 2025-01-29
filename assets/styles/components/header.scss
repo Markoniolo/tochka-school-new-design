@@ -410,10 +410,10 @@
 }
 
 .header__contacts-box {
+  display: flex;
+  flex-direction: column;
   @include media(lg) {
     width: calc(50% - 15px);
-    display: flex;
-    flex-direction: column;
   }
   @include media(md) {
     width: 100%;
