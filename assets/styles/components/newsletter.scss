@@ -43,6 +43,7 @@
   @include media(xs) {
     margin-bottom: 0;
     font-size: 25px;
+    max-width: 280px;
   }
 }
 

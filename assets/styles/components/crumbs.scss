@@ -1,9 +1,9 @@
 .crumbs {
   margin-top: 10px;
-  margin-bottom: 32px;
+  margin-bottom: 27px;
   @include media(md) {
     margin-top: 25px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 }
 
@@ -11,12 +11,34 @@
 
 }
 
+.crumbs__area {
+  margin: 0 -20px;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    background: linear-gradient(to right, transparent, #f8f8f8);
+  }
+}
+
 .crumbs__list {
   display: flex;
-  flex-wrap: wrap;
+  overflow-x: auto;
+  padding-bottom: 5px;
+  &::before, &::after {
+    content: '';
+    flex-shrink: 0;
+    width: 20px;
+  }
 }
 
 .crumbs__item {
+  flex-shrink: 0;
   &:not(:first-child) {
     position: relative;
     margin-left: 27px;
@@ -25,7 +47,7 @@
       @include bg-icon('icons/ic_crumbs_arrow.svg');
       position: absolute;
       left: -18px;
-      top: 50%;
+      top: calc(50% + 1px);
       transform: translateY(-50%);
       width: 9px;
       height: 8px;
