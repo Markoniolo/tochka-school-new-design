@@ -47,5 +47,6 @@ function articleSidebarMobInit () {
     this.classList.add('active')
     name.classList.remove('active')
     articleSidebarMob.classList.remove('fixed')
+    window.addEventListener('scroll', togglePosition, {passive: true})
   }
 }

@@ -75,6 +75,7 @@ function articleSidebarMobInit () {
     this.classList.add('active')
     name.classList.remove('active')
     articleSidebarMob.classList.remove('fixed')
+    window.addEventListener('scroll', togglePosition, {passive: true})
   }
 }
 
@@ -570,8 +571,8 @@ if (preThanks) preThanksInit()
 function preThanksInit () {
   const url = new URL(window.location.href)
   //url.searchParams.delete('email')
-  url.searchParams.delete('cemail')
-  history.replaceState(null, "", url.toString())
+//   url.searchParams.delete('cemail')
+//   history.replaceState(null, "", url.toString())
 }
 
 const preWaysSlideArray = document.querySelectorAll('[data-element="pre-ways-slide"]')
