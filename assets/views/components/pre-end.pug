@@ -1,11 +1,10 @@
-.pre-end
-  .pre-end__cont.cont
-    .pre-end__wrap
-      each item in [1,2,3,4,5]
-        .pre-end__decor(class=`pre-end__decor_${item}`)
-      .pre-end__area
-        h2.pre-end__caption.pre-caption Страница подошла к концу :)
-        p.pre-end__text.
-          Время принять решение: оставить всё как есть, или зарегистрироваться в предзапись
-          и получить приоритетное место на курсе, а также самую низкую цену.
-        a.pre-end__button.btn-orange(href='#pre-reg' data-role='scroll-to-anchor') Запишите меня
+mixin pre-end(mod, text, button)
+  .pre-end(class = mod ? `pre-end_${mod}` : false)
+    .pre-end__cont.cont
+      .pre-end__wrap
+        each item in [1,2,3,4,5]
+          .pre-end__decor(class=`pre-end__decor_${item}`)
+        .pre-end__area
+          h2.pre-end__caption.pre-caption Страница подошла к концу :)
+          p.pre-end__text!= text
+          a.pre-end__button.btn-orange(href= mod === 'trial' ? '#trial-tile' : '#pre-reg' data-role='scroll-to-anchor')= button

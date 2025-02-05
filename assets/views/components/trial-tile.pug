@@ -1,0 +1,44 @@
+.trial-tile#trial-tile
+  .trial-tile__cont.cont
+    h2.trial-tile__title.trial-title Любой курс за 290 ₽
+    .trial-tile__filters
+      .trial-tile__filter.trial-tile__filter_class
+        .trial-tile__filter-top(data-element='trial-tile-filter-opener' data-default-text='Выберите класс')
+          .trial-tile__filter-top-text Выберите класс
+        .trial-tile__filter-wrap
+          .trial-tile__filter-list
+            each item in ['1','2','3','4','5','6','7','8','9','10','11']
+              label.trial-tile__filter-item
+                input.trial-tile__filter-input(type='checkbox' name='class' value=`class-id-${item}` data-element='trial-tile-filter-input')
+                .trial-tile__filter-view= `${item} класс`
+          button.trial-tile__filter-save.btn-orange(data-element='trial-tile-filter-save') Выбрать
+      .trial-tile__filter.trial-tile__filter_subject
+        .trial-tile__filter-top(data-element='trial-tile-filter-opener' data-default-text='Выберите предмет')
+          .trial-tile__filter-top-text Выберите предмет
+        .trial-tile__filter-wrap
+          .trial-tile__filter-list
+            each item, index in ['Математика','Русский язык','Физика','Химия','Математика','Русский язык','Физика','Химия','Математика','Русский язык','Физика']
+              label.trial-tile__filter-item
+                input.trial-tile__filter-input(type='checkbox' name='class' value=`subject-id-${index+1}` data-element='trial-tile-filter-input')
+                .trial-tile__filter-view= `${item}`
+          button.trial-tile__filter-save.btn-orange(data-element='trial-tile-filter-save') Выбрать
+      button.trial-tile__reset.btn-blue(data-element='trial-tile-filter-reset') Отменить выбор
+    .trial-tile__tile
+      each item in [1,2,3,4,5,6,7,8,9]
+        .trial-tile__item(class = item === 1 ? 'trial-tile__item_family' : false)
+          .trial-tile__picture
+            if item !== 1
+              img.trial-tile__image(src=staticImg('') alt='')
+          .trial-tile__inner
+            .trial-tile__class-number 1 класс
+            if item !== 1
+              .trial-tile__name Курс по подготовке к ОГЭ по математике «Стандарт»
+              .trial-tile__author Екатерина Щербакова
+              .trial-tile__text Учитель года Кубани 2022. ТОП-15 учителей России в 2022 году. Педагогический стаж ー 6 лет.
+            else
+              .trial-tile__name Семейное обучение
+              .trial-tile__text Получайте школьное образование дома. Онлайн. С лучшими учителями РФ, внимательными тьюторами и аттестацией.
+            .trial-tile__bottom
+              a.trial-tile__link.btn-orange(href='#') Начать обучение
+              .trial-tile__price-current 290 ₽
+              .trial-tile__price-old 1 750 ₽

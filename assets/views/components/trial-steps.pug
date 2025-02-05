@@ -1,0 +1,16 @@
+-
+  const trialStepsList = [
+    'Закрыть «пробелы» по старым темам',
+    'Вернуть интерес и&nbsp;почувствовать удовольствие от&nbsp;учёбы',
+    'Задать вопросы и&nbsp;наконец-то понять то, что давалось с трудом',
+    'Перестать «буксовать» и&nbsp;повысить уровень знаний',
+  ]
+
+article.trial-steps
+  .trial-steps__cont.cont
+    h2.trial-steps__title.trial-title За неделю можно сделать очень много!
+    ul.trial-steps__list
+      each item, index in trialStepsList
+        li.trial-steps__item(class=`trial-steps__item_${index+1}`)
+          .trial-steps__number= index+1
+          .trial-steps__box!= item

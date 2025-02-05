@@ -17,6 +17,9 @@
   @include media(md) {
     margin-bottom: 25px;
   }
+  @include media(xs) {
+    max-width: 300px;
+  }
 }
 
 .blog__list {

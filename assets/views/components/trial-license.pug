@@ -1,0 +1,17 @@
+article.trial-license
+  .trial-license__cont.cont
+    h2.trial-license__title.trial-title Наша лицензия
+    .trial-license__area
+      .trial-license__inner
+        p.trial-license__text.
+          Работаем согласно лицензии на осуществление образовательной деятельности.
+        p.trial-license__text.
+          Это даёт Вам право получить налоговый вычет за обучение. Поможем оформить документы и подать заявление.
+        img.trial-license__image(src=staticImg('trial-license/trial-license-doc.png') alt='')
+        a.trial-license__button.btn-blue.btn-blue_arrow(href="https://cms-dev.tochka-school.ru/storage/app/media/reestrovaia_vypiska/reestrovaia-vypiska.pdf" data-fancybox="production") Открыть лицензию
+        .trial-license__box
+          span.trial-license__note Регистрационный номер лицензии: № Л035-01218-23/00650937
+          span.trial-license__note Дата предоставления лицензии: 11 мая 2023
+      .trial-license__wrap
+        each item in [1,2,3,4,5]
+          .trial-license__decor(class=`trial-license__decor_${item}`)

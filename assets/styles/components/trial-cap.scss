@@ -1,0 +1,254 @@
+.trial-cap {
+  margin-top: 20px;
+  margin-bottom: 64px;
+  @include media(lg) {
+    margin-top: 30px;
+    margin-bottom: 74px;
+  }
+  @include media(xs) {
+    margin-bottom: 40px;
+  }
+}
+
+.trial-cap__cont {
+
+}
+
+.trial-cap__wrap {
+  position: relative;
+}
+
+.trial-cap__decor {
+  position: absolute;
+  border-radius: 50%;
+  &_1 {
+    width: 164px;
+    height: 164px;
+    top: 27px;
+    left: -60px;
+    background-color: #7fcbb4;
+    @include media(lg) {
+      width: 81px;
+      height: 81px;
+      top: 31px;
+      left: -21px;
+    }
+    @include media(xs) {
+      width: 76px;
+      height: 76px;
+      top: 27px;
+      left: -12px;
+      background-color: #6683C2;
+    }
+  }
+  &_2 {
+    width: 60px;
+    height: 60px;
+    top: 180px;
+    left: -79px;
+    background-color: #f2c45b;
+    @include media(lg) {
+      width: 30px;
+      height: 30px;
+      top: 114px;
+      left: -17px;
+    }
+    @include media(xs) {
+      width: 21px;
+      height: 21px;
+      top: 102px;
+      left: -16px;
+      background-color: #7fcbb4;
+    }
+  }
+  &_3 {
+    width: 68px;
+    height: 68px;
+    bottom: 52px;
+    right: -32px;
+    background-color: #68ccea;
+    @include media(lg) {
+      width: 28px;
+      height: 28px;
+      bottom: 139px;
+      right: -14px;
+    }
+    @include media(xs) {
+      width: 21px;
+      height: 21px;
+      bottom: 210px;
+      right: -10px;
+    }
+  }
+  &_4 {
+    width: 127px;
+    height: 127px;
+    bottom: -34px;
+    right: 31px;
+    background-color: #f37e60;
+    @include media(lg) {
+      width: 77px;
+      height: 77px;
+      bottom: 60px;
+      right: -18px;
+    }
+    @include media(xs) {
+      width: 115px;
+      height: 115px;
+      right: -13px;
+      bottom: 96px;
+    }
+  }
+}
+
+.trial-cap__area {
+  position: relative;
+  overflow: hidden;
+  @include bg-icon('trial-cap/trial-cap-bg.png');
+  border-radius: 31px;
+  padding: 52px 72px 45px 60px;
+  border: 1px solid white;
+  box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
+  @include media(lg) {
+    border-radius: 10px;
+    padding: 20px 24px;
+    @include bg-icon('trial-cap/trial-cap-bg_tablet.png');
+  }
+  @include media(xs) {
+    padding: 26px 36px;
+    @include bg-icon('trial-cap/trial-cap-bg_mob.png');
+  }
+  &::before {
+    content: '';
+    @include bg-icon('trial-cap/trial-cap-decor.svg');
+    position: absolute;
+    top: -92px;
+    right: -125px;
+    width: 862px;
+    height: 823px;
+    @include media(lg) {
+      @include bg-icon('trial-cap/trial-cap-decor_tablet.svg');
+      width: 359px;
+      height: 465px;
+      right: -30px;
+    }
+    @include media(xs) {
+      content: none;
+    }
+  }
+}
+
+.trial-cap__box {
+  position: relative;
+  z-index: 1;
+}
+
+.trial-cap__title {
+  margin-bottom: 40px;
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 107%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 20px;
+    font-size: 30px;
+    line-height: 113%;
+  }
+  @include media(xs) {
+    max-width: 220px;
+    margin: 0 auto 20px;
+    font-size: 27px;
+    line-height: 122%;
+    text-align: center;
+  }
+}
+
+.trial-cap__list {
+  margin-bottom: 40px;
+  @include media(lg) {
+    margin-bottom: 26px;
+  }
+  @include media(xs) {
+    max-width: 281px;
+    width: 100%;
+    margin: 0 auto 24px;
+  }
+}
+
+.trial-cap__item {
+  display: flex;
+  align-items: center;
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+
+.trial-cap__icon {
+  margin-right: 15px;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  @include media(lg) {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.trial-cap__span {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 26px;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.trial-cap__bottom {
+  display: flex;
+  align-items: center;
+  @include media(xs) {
+    flex-direction: column;
+  }
+}
+
+.trial-cap__button {
+  font-size: 16px;
+  padding: 20px 50px;
+  @include media(xs) {
+    margin-bottom: 12px;
+  }
+}
+
+.trial-cap__price {
+  margin-left: 25px;
+  display: flex;
+  align-items: center;
+  @include media(xs) {
+    margin-left: 0;
+  }
+}
+
+.trial-cap__price-current {
+  font-weight: 600;
+  font-size: 24px;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 18px;
+  }
+}
+
+.trial-cap__price-old {
+  margin-left: 15px;
+  font-size: 16px;
+  text-decoration: line-through;
+  color: rgba(0, 60, 86, 0.5);
+  @include media(lg) {
+    font-size: 15px;
+  }
+  @include media(xs) {
+    margin-left: 10px;
+  }
+}

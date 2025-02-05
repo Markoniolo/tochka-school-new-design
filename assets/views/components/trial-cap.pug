@@ -1,0 +1,18 @@
+article.trial-cap
+  .trial-cap__cont.cont
+    .trial-cap__wrap
+      each item in [1,2,3,4]
+        .trial-cap__decor(class=`trial-cap__decor_${item}`)
+      .trial-cap__area
+        .trial-cap__box
+          h1.trial-cap__title 7 дней занятий за 290 рублей
+          ul.trial-cap__list
+            each item, index in ['Любой предмет, 1-11 класс','Онлайн-уроки','Персональная проверка заданий','Записи всех уроков по предмету с сентября']
+              li.trial-cap__item
+                img.trial-cap__icon(src=staticImg(`trial-cap/trial-cap-icon-${index+1}.png`) alt='')
+                .trial-cap__span= item
+          .trial-cap__bottom
+            a.trial-cap__button.btn-orange(href='#trial-tile' data-role='scroll-to-anchor') Начать обучение
+            .trial-cap__price
+              .trial-cap__price-current 290 ₽
+              .trial-cap__price-old 1 750 ₽

@@ -1,0 +1,31 @@
+article.trial-school
+  .trial-school__cont.cont
+    .trial-school__top
+      h2.trial-school__caption.trial-title!= 'Точка Знаний — онлайн-школа, <br class="mob"> где всё-всё получится. <br> Потому&nbsp;что&nbsp;интересно!'
+      .trial-school__aside
+        p.trial-school__aside-text.
+          Найдём подход к ученику любого уровня подготовки.
+          Увлечём с первых минут.
+        p.trial-school__aside-text.
+          Сделаем так, чтобы ребёнок точно понял тему и мог справиться с заданием. Без зубрёжки и списывания.
+        each item in [1,2,3]
+          .trial-school__aside-decor(class=`trial-school__aside-decor_${item}`)
+    .trial-school__area
+      .trial-school__box
+        .trial-school__inner
+          p.trial-school__text.
+            Самая сильная черта нашей школы — умение объяснять любую, даже самую сложную, тему простым языком.
+          p.trial-school__text.
+            Так, чтобы после урока каждый ученик мог самостоятельно выполнить задание
+            и улучшить оценки. Именно поэтому нам доверяют более 40 000 школьников и их родителей в России и за границей.
+      .trial-school__author
+        each item in [1,2,3]
+          .trial-school__decor(class=`trial-school__decor_${item}`)
+        .trial-school__image-wrap
+          img.trial-school__image(src=staticImg(`trial-school/trial-school-teacher.png`))
+        .trial-school__info
+          .trial-school__note!= 'Учитель математики <br> Основатель онлайн-школы «Точка Знаний»'
+          .trial-school__name Андрей Александрович Шелудько
+      .trial-school__info.trial-school__info_mob
+        .trial-school__note!= 'Учитель математики <br> Основатель онлайн-школы «Точка Знаний»'
+        .trial-school__name Андрей Александрович Шелудько

@@ -1,0 +1,18 @@
+extends ../components/_layout/layout
+
+block head
+  +title('Пробная неделя')
+
+block body
+  include ../components/trial-cap
+  include ../components/trial-facts
+  include ../components/trial-about
+  include ../components/trial-steps
+  include ../components/trial-school
+  include ../components/trial-after
+  include ../components/trial-tile
+  include ../components/trial-license
+  include ../components/pre-reviews
+  include ../components/pre-end
+  +pre-end('trial','Время принять решение: оставить всё как есть или разобраться в 1-2 темах по&nbsp;предмету за 7 дней.',
+  'Начать обучение за 290 руб')

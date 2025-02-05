@@ -1,0 +1,133 @@
+.trial-after {
+  padding-top: 74px;
+  padding-bottom: 80px;
+  margin-bottom: 80px;
+  @include bg-icon('trial-after/trial-after-bg.png');
+  @include media(lg) {
+    background-color: $white;
+    padding-top: 36px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+.trial-after__cont {
+
+}
+
+.trial-after__area {
+  display: flex;
+  justify-content: space-between;
+  @include media(lg) {
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+  @include media(xs) {
+    display: block;
+  }
+}
+
+.trial-after__inner {
+  max-width: 656px;
+  @include media(lg) {
+    max-width: 355px;
+  }
+  @include media(xs) {
+    max-width: 100%;
+  }
+}
+
+.trial-after__title {
+  margin-bottom: 40px;
+  max-width: 560px;
+  @include media(lg) {
+    max-width: 312px;
+    margin-bottom: 26px;
+  }
+}
+
+.trial-after__wrap {
+  border-radius: 32px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
+  background: #fff;
+  padding: 20px;
+  @include media(lg) {
+    padding: 0;
+    box-shadow: none;
+  }
+}
+
+.trial-after__cage {
+  background: #f9f9f9;
+  border-radius: 22px;
+  padding: 26px 28px;
+  @include media(lg) {
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+}
+
+.trial-after__text {
+  font-size: 16px;
+  line-height: 20px;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+  }
+  &:first-child {
+    margin-bottom: 10px;
+    @include media(lg) {
+      max-width: 660px;
+    }
+  }
+  &:last-child {
+    max-width: 525px;
+    @include media(lg) {
+      max-width: 625px;
+    }
+  }
+  span {
+    font-weight: 600;
+    color: #f37e60;
+  }
+}
+
+.trial-after__box {
+  width: 514px;
+  flex-shrink: 0;
+  margin-left: 134px;
+  margin-right: 39px;
+  display: flex;
+  align-items: flex-end;
+  @include media(lg) {
+    display: none;
+  }
+}
+
+.trial-after__decor {
+  flex-shrink: 0;
+  width: 655px;
+  height: 349px;
+  @include bg-icon('trial-after/trial-after-decor.svg');
+  @include media(lg) {
+    margin-left: 20px;
+    width: 316px;
+    height: 196px;
+  }
+  @include media(xs) {
+    display: none;
+  }
+}
+
+.trial-after__decor-mob {
+  display: none;
+  @include media(xs) {
+    display: block;
+    margin-bottom: -8px;
+    margin-left: 20px;
+    width: 310px;
+    height: 168px;
+    @include bg-icon('trial-after/trial-after-decor_mob.svg');
+  }
+}
+

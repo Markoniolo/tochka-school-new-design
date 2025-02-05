@@ -1,0 +1,23 @@
+-
+  const trialAboutList = [
+    'Пройдёт входное тестирование по&nbsp;выбранному предмету',
+    'Посетит 1-2 онлайн-урока&nbsp;от&nbsp;лучших учителей РФ',
+    'Разберётся в темах, которые вызывают трудности в школе',
+    'Скачает конспект, задание и тест для проверки знаний к каждому уроку',
+    'Получит разбор заданий и помощь в исправлении ошибок от личного тьютора-наставника',
+  ]
+
+article.trial-about
+  .trial-about__cont.cont
+    h2.trial-about__title.trial-title Станьте нашим учеником на 7 дней!
+    .trial-about__text На пробной неделе Ваш ребёнок:
+    .trial-about__list
+      each item, index in trialAboutList
+        .trial-about__item(class=`trial-about__item_${index+1}`)
+          .trial-about__descr!= item
+    .trial-about__line
+      .trial-about__icon
+      .trial-about__line-text Получит доступ ко всем урокам по предмету с начала учебного года, чтобы повторить прошедшие темы.
+      .trial-about__box
+        a.trial-about__button(href='#trial-tile' data-role='scroll-to-anchor') Выбрать курс!
+        .trial-about__note Начать обучение: 290 ₽
