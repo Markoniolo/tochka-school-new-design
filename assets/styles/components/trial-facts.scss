@@ -54,6 +54,18 @@
   @include media(xs) {
     max-width: 215px;
     margin-bottom: 58px;
+    position: relative;
+    z-index: 2;
+  }
+  &::before {
+    @include media(xs) {
+      content: '';
+      @include bg-icon('trial-facts/trial-facts-title-shadow.svg');
+      width: 114px;
+      height: 95px;
+      position: absolute;
+      z-index: -1;
+    }
   }
 }
 

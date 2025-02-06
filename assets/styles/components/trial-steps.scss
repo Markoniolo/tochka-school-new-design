@@ -56,7 +56,7 @@
       width: 215px;
     }
     @include media(xs) {
-      margin-right: 15px;
+      margin-right: 10px;
       width: 136px;
     }
     .trial-steps__box {
@@ -111,7 +111,7 @@
     }
     @include media(xs) {
       width: 208px;
-      margin-right: -8px;
+      margin-right: -12px;
     }
     &::before {
       content: '';

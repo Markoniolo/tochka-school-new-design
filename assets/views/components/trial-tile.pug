@@ -24,6 +24,7 @@
           button.trial-tile__filter-save.btn-orange(data-element='trial-tile-filter-save') Выбрать
       button.trial-tile__reset.btn-blue(data-element='trial-tile-filter-reset') Отменить выбор
     .trial-tile__tile
+      .tile-loader
       each item in [1,2,3,4,5,6,7,8,9]
         .trial-tile__item(class = item === 1 ? 'trial-tile__item_family' : false)
           .trial-tile__picture

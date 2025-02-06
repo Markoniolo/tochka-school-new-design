@@ -46,7 +46,7 @@
     .trial-tile__filter-wrap {
       width: 657px;
       @include media(lg) {
-        width: 300px;
+        width: 100%;
         top: calc(100% - 4px);
       }
       @include media(xs) {
@@ -243,6 +243,8 @@
 }
 
 .trial-tile__tile {
+  position: relative;
+  min-height: 300px;
   display: flex;
   flex-wrap: wrap;
   gap: 30px 30px;
@@ -325,6 +327,7 @@
   height: 255px;
   @include media(xs) {
     height: 100px;
+    object-fit: contain;
   }
 }
 
@@ -392,12 +395,14 @@
 }
 
 .trial-tile__link {
+  flex-shrink: 0;
   @include media(xs) {
     padding: 14px 27px 16px;
   }
 }
 
 .trial-tile__price-current {
+  flex-shrink: 0;
   margin-left: 20px;
   font-weight: 600;
   font-size: 24px;
@@ -409,6 +414,7 @@
 }
 
 .trial-tile__price-old {
+  flex-shrink: 0;
   margin-left: 14px;
   font-size: 16px;
   text-decoration: line-through;

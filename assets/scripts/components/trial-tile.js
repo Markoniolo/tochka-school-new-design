@@ -3,7 +3,17 @@ const trialTile = document.getElementById("trial-tile")
 if (trialTile) trialTileInit()
 
 function trialTileInit () {
+  const config = { attributes: true, childList: true, characterData: true, subtree: true }
+
   const openers = trialTile.querySelectorAll("[data-element='trial-tile-filter-opener']")
+
+  const observer = new MutationObserver(function() {
+    const wrap = openers[1].nextElementSibling
+    const items = wrap.querySelectorAll("[data-element='trial-tile-filter-input']")
+    items.forEach((item) => {
+      item.addEventListener('change', () => updateFilter(openers[1], wrap))
+    })
+  })
 
   const reset = trialTile.querySelector("[data-element='trial-tile-filter-reset']")
   reset.addEventListener('click', resetFilters)
@@ -28,6 +38,11 @@ function trialTileInit () {
     items.forEach((item) => {
       item.addEventListener('change', () => updateFilter(openers[i], wrap))
     })
+    if (i === 1) {
+      window.onload = function() {
+        observer.observe(wrap, config)
+      }
+    }
   }
 
   function updateFilter (opener, wrap) {
@@ -73,4 +88,5 @@ function trialTileInit () {
       console.log(result)
     }
   }
+
 }
