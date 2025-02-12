@@ -9,9 +9,8 @@
           .trial-tile__filter-list
             each item in ['1','2','3','4','5','6','7','8','9','10','11']
               label.trial-tile__filter-item
-                input.trial-tile__filter-input(type='checkbox' name='class' value=`class-id-${item}` data-element='trial-tile-filter-input')
+                input.trial-tile__filter-input(type='radio' name='class' value=`class-id-${item}` data-element='trial-tile-filter-input')
                 .trial-tile__filter-view= `${item} класс`
-          button.trial-tile__filter-save.btn-orange(data-element='trial-tile-filter-save') Выбрать
       .trial-tile__filter.trial-tile__filter_subject
         .trial-tile__filter-top(data-element='trial-tile-filter-opener' data-default-text='Выберите предмет')
           .trial-tile__filter-top-text Выберите предмет

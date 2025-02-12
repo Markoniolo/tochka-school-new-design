@@ -993,10 +993,11 @@ function trialTileInit () {
     openers[i].addEventListener("click", ()=> openFilter(openers[i]))
     const wrap = openers[i].nextElementSibling
     const button = wrap.querySelector("[data-element='trial-tile-filter-save']")
-    button.addEventListener("click", ()=> closeFilter(openers[i], wrap))
+    if (button) button.addEventListener("click", ()=> closeFilter(openers[i], wrap))
     const items = wrap.querySelectorAll("[data-element='trial-tile-filter-input']")
     items.forEach((item) => {
       item.addEventListener('change', () => updateFilter(openers[i], wrap))
+      if (!button) item.addEventListener('change', () => closeFilter(openers[i], wrap))
     })
     if (i === 1) {
       window.onload = function() {
