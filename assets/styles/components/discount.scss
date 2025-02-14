@@ -1,0 +1,275 @@
+.discount {
+  @include bg-icon('discount/discount-bg.svg');
+  background-size: cover;
+  @include media(lg) {
+    @include bg-icon('discount/discount-bg_tablet.svg');
+    background-size: cover;
+  }
+  @include media(xs) {
+    @include bg-icon('discount/discount-bg_mob.svg');
+    background-size: cover;
+  }
+
+  &_new-year, &_new-year-no-promo {
+    @include bg-icon('discount/discount-new-year-bg.svg');
+    background-size: cover;
+    @include media(lg) {
+      @include bg-icon('discount/discount-new-year-bg_tablet.svg');
+      background-size: cover;
+    }
+    @include media(xs) {
+      @include bg-icon('discount/discount-new-year-bg_mob.svg');
+      background-size: cover;
+      padding: 3px 0 0;
+      text-align: center;
+    }
+
+    .discount__text {
+      @include media(lg) {
+        margin-top: 0;
+        margin-bottom: -3px;
+        font-size: 20px;
+      }
+      @include media(xs) {
+        margin-top: 0;
+        font-size: 13px;
+      }
+    }
+
+    .discount__text, .discount__time {
+      color: $white;
+    }
+    .discount__time {
+      @include media(xs) {
+        font-size: 9px;
+      }
+    }
+    .discount__text-price {
+      color: #222222;
+      @include media(xs) {
+        display: block;
+        font-size: 13px;
+        margin: -5px 0 0;
+        &::before {
+          top: -1px;
+          right: -1px;
+          left: -1px;
+          bottom: -1px;
+        }
+      }
+      &_mobile {
+        @include media(xs) {
+          display: none;
+        }
+      }
+    }
+    .discount__box {
+      @include media(xs) {
+        display: block;
+      }
+    }
+    .discount__text-big {
+      @include media(lg) {
+        display: block;
+      }
+      @include media(lg) {
+        text-align: center;
+      }
+      @include media(xs) {
+        font-size: 13px;
+      }
+    }
+    .discount__close {
+      @include media(xs) {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        margin: 0;
+        top: 20px;
+        right: 5px;
+        @include bg-icon('discount/ic_discount_close_mob.svg');
+      }
+    }
+  }
+  &_new-year-no-promo {
+    @include media(xs) {
+      padding: 0;
+    }
+    .discount__area {
+      @include media(lg) {
+        flex-direction: row;
+      }
+      @include media(xs) {
+        flex-direction: column;
+      }
+    }
+    .discount__time {
+      font-weight: 500;
+      font-size: 13px;
+      color: #fff;
+      padding: 8px 11px;
+      border: 2px solid #fff;
+      border-radius: 4px;
+      background-color: transparent;
+      @include media(lg) {
+        padding: 6px 8px;
+      }
+      @include media(xs) {
+        margin-top: 7px;
+        padding: 4px 6px;
+      }
+    }
+    .discount__text {
+      @include media(lg) {
+        text-align: center;
+        font-size: 19px;
+      }
+      @include media(md) {
+        margin-right: 20px;
+      }
+      @include media(xs) {
+        margin-right: 0;
+      }
+    }
+    .discount__text-hide-mob {
+      @include media(xs) {
+        display: none;
+      }
+    }
+    .discount__text-price {
+      @include media(lg) {
+        display: block;
+      }
+      @include media(xs) {
+        margin-top: -2px;
+      }
+      &_mobile {
+        @include media(lg) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.discount__area {
+  position: relative;
+  padding-right: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80px;
+  @include media(lg) {
+    padding-right: 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.discount__box {
+  @include media(xs) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.discount__text {
+  margin-right: 20px;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 144%;
+  color: #222;
+  @include media(md) {
+    margin-right: 0;
+    margin-top: 8px;
+    margin-bottom: 9px;
+    font-size: 18px;
+  }
+  @include media(xs) {
+    margin-bottom: 6px;
+    position: relative;
+    font-size: 10px;
+  }
+  span {
+    font-weight: 700;
+  }
+}
+
+.discount__text-big {
+  @include media(xs) {
+    margin-bottom: 4px;
+    display: block;
+    font-size: 18px;
+  }
+}
+
+.discount__text-price {
+  position: relative;
+  padding: 0 5px;
+  margin: 0 7px;
+  @include media(md) {
+    margin: 0 4px;
+  }
+  @include media(xs) {
+    font-size: 22px;
+    line-height: 136%;
+    display: none;
+  }
+  &::before {
+    content: '';
+    background: #ffca42;
+    border-radius: 1px;
+    position: absolute;
+    z-index: -1;
+    top: -2px;
+    right: -2px;
+    left: -2px;
+    bottom: -2px;
+  }
+  &_mobile {
+    display: none;
+    @include media(xs) {
+      display: block;
+      font-size: 22px;
+      line-height: 136%;
+      font-weight: 700;
+      margin-left: 10px;
+    }
+  }
+}
+
+.discount__text-small {
+  @include media(xs) {
+    width: 100%;
+  }
+}
+
+.discount__time {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 155%;
+  color: #000;
+  @include media(md) {
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.discount__close {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  @include bg-icon('discount/ic_discount_close.svg');
+  border: none;
+  background-color: transparent;
+  @include media(md) {
+    position: static;
+    transform: none;
+    flex-shrink: 0;
+    margin-left: 12px;
+  }
+}

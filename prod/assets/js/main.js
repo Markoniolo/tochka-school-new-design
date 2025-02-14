@@ -101,6 +101,20 @@ for (let i = 0; i < selectArray.length; i++) {
   customSelect(selectArray[i])
 }
 
+const discount = document.querySelector('[data-element="discount"]')
+
+if (discount) discountInit()
+
+function discountInit () {
+  const close = document.querySelector('[data-element="discount__close"]')
+  close.addEventListener('click', removeDiscount)
+
+  function removeDiscount (e) {
+    e.preventDefault()
+    discount.remove()
+  }
+}
+
 const footerTitleArray = document.querySelectorAll('[data-element="footer__title"]')
 
 if (footerTitleArray.length) footerTitleArrayInit()

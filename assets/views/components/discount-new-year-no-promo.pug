@@ -1,0 +1,9 @@
+.discount.discount_new-year-no-promo(data-element="discount")
+  .container
+    .discount__area
+      .discount__box
+        .discount__text!= '<span class="discount__text-big">Новогодняя акция!</span> <span class="discount__text-price">-50% на первый месяц обучения</span> <span class="discount__text-hide-mob">на все курсы!</span>'
+        .discount__text-price.discount__text-price_mobile -50% на первый месяц обучения
+      button.discount__time(data-promo="NEWYEAR72" data-element="discount-promo-activate")
+        | Активировать скидку
+      button.discount__close(data-element="discount__close")

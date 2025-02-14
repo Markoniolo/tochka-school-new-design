@@ -1,0 +1,9 @@
+.discount(data-element="discount")
+  .container
+    .discount__area
+      .discount__box
+        .discount__text!= '<span class="discount__text-big">Для Вас скидка</span> <span class="discount__text-price">30%</span> на первый месяц обучения!'
+        .discount__text-price.discount__text-price_mobile 30%
+      .discount__time
+        | Акция действует до 11.11.24 включительно
+        button.discount__close(data-element="discount__close")
