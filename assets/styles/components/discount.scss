@@ -10,6 +10,10 @@
     background-size: cover;
   }
 
+  .cont {
+    position: relative;
+  }
+
   &_new-year, &_new-year-no-promo {
     @include bg-icon('discount/discount-new-year-bg.svg');
     background-size: cover;

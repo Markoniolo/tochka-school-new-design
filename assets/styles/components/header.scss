@@ -105,9 +105,12 @@
   }
 }
 
-.header__cont {
+.header__cont.cont {
   position: relative;
   z-index: 101;
+  @include media(md) {
+    padding: 0 15px;
+  }
 }
 
 .header__layer {
@@ -237,12 +240,13 @@
   position: relative;
   margin-top: 50px;
   @include media(lg) {
+    position: relative;
     margin-top: 50px;
     padding: 30px 35px;
     border-radius: 10px;
-    flex-wrap: wrap;
   }
-  @include media(md) {
+  @include media(xs) {
+    flex-wrap: wrap;
     padding: 20px;
   }
 }
@@ -259,6 +263,10 @@
     max-width: 100%;
   }
   @include media(md) {
+    width: auto;
+    flex-grow: 1;
+  }
+  @include media(xs) {
     width: 100%;
     margin-bottom: 30px;
   }
@@ -275,7 +283,7 @@
   transition-duration: $transition-duration;
   transition-property: background-color;
   @include media(lg) {
-    padding: 14px 25px;
+    padding: 11px 25px;
   }
   &:hover {
     background-color: #e8ecf7;
@@ -286,6 +294,18 @@
   &_teacher {
     svg {
       margin-left: auto;
+    }
+  }
+  &:nth-child(5) {
+    .header__link-name {
+      @include media(sm) {
+        margin-right: 0;
+      }
+    }
+    svg {
+      @include media(sm) {
+        display: none;
+      }
     }
   }
 }
@@ -326,13 +346,17 @@
   max-width: 291px;
   width: 100%;
   @include media(lg) {
-    width: calc(50% - 15px);
     max-width: 100%;
-    display: flex;
-    flex-direction: column;
+    width: calc(50% - 15px);
   }
   @include media(md) {
-    margin-bottom: 30px;
+    width: 289px;
+    flex-shrink: 0;
+    margin-left: 30px;
+  }
+  @include media(xs) {
+    margin-left: 0;
+    margin-bottom: 20px;
     width: 100%;
   }
 }
@@ -346,6 +370,9 @@
   @include media(lg) {
     font-size: 18px;
   }
+  @include media(md) {
+    margin-bottom: 10px;
+  }
 }
 
 .header__text {
@@ -354,43 +381,49 @@
   line-height: 144%;
   color: #222;
   @include media(lg) {
-    margin-bottom: 45px;
+    margin-bottom: 20px;
     font-size: 15px;
+    max-width: 240px;
   }
   @include media(md) {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
   }
 }
 
 .header__button {
   margin-bottom: 20px;
-  display: block;
   font-size: 16px;
   @include media(lg) {
-    margin-top: auto;
+    margin-bottom: 0;
   }
 }
 
 .header__wp {
-  border: 1px solid $orange;
-  border-radius: 34px;
-  padding: 10px;
-  font-weight: 600;
-  font-size: 16px;
-  color: $orange;
+  margin-bottom: 8px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  font-size: 16px;
+  line-height: 150%;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #6683c2;
+  @include media(lg) {
+    font-size: 15px;
+  }
+  @include media(xs) {
+    margin-bottom: 3px;
+  }
   &:hover {
-    color: $orange;
+    text-decoration: none;
+    color: #6683c2;
   }
   &::after {
     content: '';
-    @include bg-icon('icons/ic_wp_orange.svg');
-    width: 22px;
-    height: 22px;
+    @include bg-icon('icons/ic_arrow_btn_blue.svg');
+    width: 11px;
+    height: 8px;
     flex-shrink: 0;
-    margin-left: 10px;
+    margin-left: 7px;
   }
 }
 
@@ -399,19 +432,27 @@
   width: 100%;
   @include media(lg) {
     max-width: 100%;
-    margin-top: 35px;
-    display: flex;
-    justify-content: space-between;
+    position: absolute;
+    bottom: 30px;
+    right: 35px;
+    width: 500px;
   }
   @include media(md) {
+    width: 289px;
+    bottom: 86px;
+  }
+  @include media(xs) {
     display: block;
     margin-top: 0;
+    position: static;
+    width: 100%;
   }
 }
 
 .header__contacts-box {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   @include media(lg) {
     width: calc(50% - 15px);
   }
@@ -421,10 +462,10 @@
   &:first-child {
     margin-bottom: 40px;
     @include media(lg) {
-      margin-bottom: 0;
+      margin-bottom: 32px;
     }
-    @include media(md) {
-      margin-bottom: 20px;
+    @include media(xs) {
+      margin-bottom: 18px;
     }
   }
 }
@@ -446,7 +487,12 @@
   font-size: 16px;
   line-height: 150%;
   color: #222;
+  transition-property: color;
+  transition-duration: $transition-duration;
   @include media(lg) {
     font-size: 15px;
+  }
+  &:hover {
+    color: #6683c2;
   }
 }
