@@ -61,6 +61,7 @@
   text-align: center;
   transition-duration: $transition-duration;
   transition-property: background-color;
+  border: none;
   &:focus {
     border: none;
     background-color: #ff9e85;
@@ -69,6 +70,7 @@
   }
   &:hover, &:active {
     color: $white;
+    border: none;
     background-color: #ff9e85;
   }
   &:disabled {
@@ -161,11 +163,14 @@
   color: #fff;
   border: 1px solid #fff;
   border-radius: 34px;
-  padding: 10px 20px;
+  padding: 9px 20px 11px;
   display: inline-block;
   text-align: center;
   @include media(lg) {
     font-size: 15px;
+  }
+  &:hover {
+    color: #fff;
   }
   &_arrow {
     display: flex;

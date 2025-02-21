@@ -1,0 +1,19 @@
+footer.footer-new
+  .footer-new__cont.cont
+    .footer-new__area
+      .footer-new__logo
+        img.footer-new__logo-image(src=staticImg('logo_white.svg') alt='')
+      .footer-new__box
+        .footer-new__doc.btn-border(data-element="footer-new-doc") Документация
+        a.footer-new__whatsapp.btn-border.btn-border_arrow(href='https://api.whatsapp.com/send/?phone=79182293194&text&type=phone_number&app_absent=0') Написать в WhatsApp
+        .footer-new__wrap
+          .footer-new__list
+            each item in ['Политика обработки персональных данных','Согласие на обработку персональных данных','Согласие на получение информационной и рекламной рассылки','Пользовательское соглашение']
+              a.footer-new__link(href='#')= item
+          .footer-new__list
+            each item in ['Публичная Оферта','Соглашение на семейное обучение','Правила акции','Сведения об образовательной организации']
+              a.footer-new__link(href='#')= item
+      a.footer-new__resident(href='https://sk.ru/' target='_blank')
+        img.footer-new__resident-image(src='https://tochka-school.ru/themes/school-point/assets/img/sk-logo.svg' alt='')
+    .footer-new__bottom
+      .footer-new__copyright ООО "Точка Знаний" ИНН 2311347344

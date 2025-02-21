@@ -115,6 +115,14 @@ function discountInit () {
   }
 }
 
+const footerNewDoc = document.querySelector('[data-element="footer-new-doc"]')
+
+if (footerNewDoc) footerNewDocInit()
+
+function footerNewDocInit () {
+  footerNewDoc.addEventListener('click', () => footerNewDoc.classList.toggle('active'))
+}
+
 const footerTitleArray = document.querySelectorAll('[data-element="footer__title"]')
 
 if (footerTitleArray.length) footerTitleArrayInit()
@@ -382,6 +390,22 @@ function globalFormInit (form, func_name, type) {
     } else {
       email.classList.add('error')
       return false
+    }
+  }
+}
+
+const headerNew = document.querySelector('[data-element="header-new"]')
+
+if (headerNew) headerNewInit()
+
+function headerNewInit () {
+  window.addEventListener('scroll', toggleHeader, {passive: true})
+
+  function toggleHeader () {
+    if (window.scrollY > 0) {
+      headerNew.classList.add('thin')
+    } else {
+      headerNew.classList.remove('thin')
     }
   }
 }

@@ -180,3 +180,12 @@
     }
   }
 }
+
+.fancybox-container {
+  backdrop-filter: blur(10px);
+}
+
+.fancybox-is-open .fancybox-bg {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.25);
+}

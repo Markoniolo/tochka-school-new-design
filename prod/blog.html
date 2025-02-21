@@ -109,7 +109,7 @@
               Оставьте заявку. Ответим на все
               вопросы и поможем в выборе.
             </div>
-            <a class="header__button btn-orange btn-orange_arrow" href="#modal-order" data-fancybox data-options="{&quot;touch&quot;: false}">Оставить заявку</a>
+            <a class="header__button btn-orange btn-orange_arrow" href="#modal-order-new" data-fancybox data-options="{&quot;touch&quot;: false}">Оставить заявку</a>
           </div>
           <div class="header__contacts">
             <div class="header__contacts-box">
@@ -117,7 +117,7 @@
               <div class="header__note">Звонок по России бесплатный</div>
             </div>
             <div class="header__contacts-box">
-              <a class="header__wp" href="https://wa.me/79182172497" target="_blank">Написать в WhatsApp</a>
+              <a class="header__wp" href="https://api.whatsapp.com/send/?phone=79182293194&amp;text&amp;type=phone_number&amp;app_absent=0" target="_blank">Написать в WhatsApp</a>
               <a class="header__mail" href="mailto:tochka-school@yandex.ru">tochka-school@yandex.ru</a>
             </div>
           </div>
@@ -328,17 +328,14 @@
       </div>
     </div>
   </main>
-  <form class="modal-order" id="modal-order" data-element="order-form" data-docex="/_thanks" data-request-validate>
-    <div class="modal-order__title">Подберём занятия для ребёнка.
-      <br />Оставьте заявку
-    </div>
+  <form class="modal-order-new" id="modal-order-new" data-element="order-form" data-docex="/_thanks" data-request-validate>
+    <div class="modal-order-new__title">Подобрать занятия</div>
     <input class="input_utm" name="utm" type="hidden" value="">
-    <input class="modal-order__input input-gray" name="phone" placeholder="Номер телефона" type="tel" required data-element="input-phone-intl">
+    <input class="modal-order-new__input" name="name" placeholder="Имя родителя" type="text">
+    <input class="modal-order-new__input" name="phone" placeholder="Номер телефона" type="tel" required data-element="input-phone-intl">
     <input name="tel" type="hidden" required data-element="input-phone-hidden">
-    <input class="modal-order__input input-gray" name="name" placeholder="Имя родителя" type="text">
-    <input class="modal-order__input input-gray" name="email" placeholder="Ваш e-mail" type="email" required>
-    <select class="modal-order__select" data-role="custom-select" name="class_name">
-      <option value="" selected>Выберите класс</option>
+    <select class="modal-order-new__select" data-role="custom-select" name="class_name">
+      <option value="" selected>Класс</option>
       <option value="1">1 класс</option>
       <option value="2">2 класс</option>
       <option value="3">3 класс</option>
@@ -351,30 +348,25 @@
       <option value="10">10 класс</option>
       <option value="11">11 класс</option>
     </select>
-    <label class="modal-order__checkbox">
-      <input class="modal-order__checkbox-input" name="policy" type="checkbox">
-      <div class="modal-order__checkbox-view"></div>
-      <div class="modal-order__checkbox-text">
+    <button class="modal-order-new__button btn-warning">Записаться</button>
+    <label class="modal-order-new__checkbox">
+      <input class="modal-order-new__checkbox-input" name="policy" type="checkbox">
+      <div class="modal-order-new__checkbox-view"></div>
+      <div class="modal-order-new__checkbox-text">
         Даю
         <a href="https://tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target="_blank">Согласие</a>
         на обработку персональных данных в соответствие с
         <a href="https://tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf" target="_blank">Политикой.</a>
       </div>
     </label>
-    <label class="modal-order__checkbox">
-      <input class="modal-order__checkbox-input" name="news" type="checkbox">
-      <div class="modal-order__checkbox-view"></div>
-      <div class="modal-order__checkbox-text">
+    <label class="modal-order-new__checkbox">
+      <input class="modal-order-new__checkbox-input" name="news" type="checkbox">
+      <div class="modal-order-new__checkbox-view"></div>
+      <div class="modal-order-new__checkbox-text">
         Согласен на
         <a href="https://tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf" target="_blank">получение рекламы</a>
       </div>
     </label>
-    <button class="modal-order__button btn-warning">Оставить заявку</button>
-    <ul class="modal-order__list">
-      <li class="modal-order__item">Познакомим с форматом обучения</li>
-      <li class="modal-order__item">Покажем, как проходят занятия</li>
-      <li class="modal-order__item">Поможем подобрать обучение</li>
-    </ul>
   </form>
   <footer class="footer">
     <div class="footer__cont cont">
@@ -420,7 +412,7 @@
             <div class="footer__phone-note">Звонок по России бесплатный</div>
           </div>
           <div class="footer__contacts-box">
-            <a class="footer__whatsapp btn-border btn-border_arrow" href="https://wa.me/79182172497">Написать в WhatsApp</a>
+            <a class="footer__whatsapp btn-border btn-border_arrow" href="https://api.whatsapp.com/send/?phone=79182293194&amp;text&amp;type=phone_number&amp;app_absent=0">Написать в WhatsApp</a>
             <a class="footer__email" href="mailto:tochka-school@yandex.ru">tochka-school@yandex.ru</a>
           </div>
           <div class="footer__social">
