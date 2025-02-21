@@ -73,14 +73,16 @@
 }
 
 .error {
-  border: 1px solid #efa08b !important;
-  background-color: #efa08b;
+  border: 1px solid red !important;
+  background-color: red;
 }
 
 .error-text {
-  color: #efa08b !important;
-  .modal-order__checkbox-view, .checkbox-white-input-view {
-    border: 2px solid #efa08b;
+  .modal-order-new__checkbox-text  {
+    color: red !important;
+  }
+  .modal-order__checkbox-view, .checkbox-white-input-view, .modal-order-new__checkbox-view {
+    border: 1px solid red;
   }
 }
 
