@@ -2,8 +2,6 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  overflow-y: auto;
-  max-height: 100vh;
   &.white {
     box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
   }
