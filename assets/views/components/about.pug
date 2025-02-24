@@ -1,0 +1,17 @@
+-
+  const aboutWrap = [
+    'Резидент «Сколково»',
+    'Онлайн-школа года по версии «GetCourse»',
+    'Аккредитованная IT-компания',
+    'Партнёр «SmartRanking» — исследователя рынка онлайн-образования',
+    'Школа №1 в рейтинге школ на внешних платформахпо версии «SmartRanking» (2024)',
+  ]
+
+.about
+  .about__cont.cont
+    h2.about__title Не просто школа. «Точка Знаний» — это:
+    .about__wrap
+      each box, index in aboutWrap
+        .about__box(class=`about__box_${index+1}`)= box
+      each decor in [1,2,3,4,5,6,7,8,9,10]
+        .about__decor(class=`about__decor_${decor}`)

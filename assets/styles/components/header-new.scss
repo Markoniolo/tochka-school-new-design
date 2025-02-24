@@ -5,10 +5,18 @@
   @include media(md) {
     padding: 20px 0;
   }
+  @include media(xs) {
+    height: 80px;
+  }
   &.thin {
     .header-new__logo {
       @include media(xs) {
-        display: none;
+        transform: translateX(-50%) translateY(-300px);
+      }
+    }
+    .header-new__button {
+      @include media(xs) {
+        transform: translateX(-50%) translateY(0);
       }
     }
   }
@@ -24,6 +32,7 @@
   justify-content: space-between;
   @include media(xs) {
     flex-direction: column;
+    position: relative;
   }
 }
 
@@ -34,6 +43,12 @@
     width: 100px;
     height: 43px;
     margin-bottom: 15px;
+    transition-duration: $transition-duration;
+    transition-property: transform;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -59,6 +74,12 @@
   @include media(xs) {
     font-size: 12px;
     padding: 10px 18px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(200px);
+    transition-property: transform;
+    transition-duration: $transition-duration;
   }
   &:focus {
     border: none;

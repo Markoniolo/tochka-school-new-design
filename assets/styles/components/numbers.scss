@@ -1,0 +1,192 @@
+.numbers {
+  @include bg-icon('numbers/numbers-bg.png');
+  padding: 80px 0 59px;
+  margin-bottom: 38px;
+  background-size: cover;
+  @include media(lg) {
+    @include bg-icon('numbers/numbers-bg_tablet.png');
+    padding: 40px 0;
+    margin-bottom: 40px;
+  }
+  @include media(xs) {
+    @include bg-icon('numbers/numbers-bg_mob.png');
+  }
+}
+
+.numbers__cont {
+
+}
+
+.numbers__wrap {
+  display: flex;
+  @include media(lg) {
+    display: block;
+  }
+}
+
+.numbers__title {
+  margin-right: 140px;
+  flex-shrink: 0;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 121%;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 25px;
+    line-height: 100%;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+  @include media(xs) {
+    margin-bottom: 30px;
+  }
+}
+
+.numbers__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 88px 58px;
+  @include media(lg) {
+    gap: 44px 40px;
+    max-width: 570px;
+    width: 100%;
+    margin-left: 116px;
+  }
+  @include media(xs) {
+    gap: 34px 50px;
+    margin-left: 11px;
+    justify-content: center;
+    max-width: 332px;
+  }
+}
+
+.numbers__item {
+  &_1 {
+    @include media(xs) {
+      order: 3;
+      flex-basis: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .numbers__count {
+      color: #68ccea;
+      @include media(xs) {
+        max-width: 171px;
+      }
+    }
+    .numbers__note {
+      max-width: 228px;
+      width: 100%;
+      @include media(lg) {
+        max-width: 168px;
+      }
+      @include media(xs) {
+        max-width: 171px;
+      }
+    }
+  }
+  &_2 {
+    @include media(xs) {
+      order: 5;
+    }
+    .numbers__count {
+      color: #7fcbb4;
+    }
+  }
+  &_3 {
+    @include media(xs) {
+      order: 2;
+    }
+    .numbers__count {
+      color: #7fcbb4;
+    }
+  }
+  &_4 {
+    margin-left: 149px;
+    @include media(lg) {
+      margin-left: 88px;
+    }
+    @include media(xs) {
+      margin-left: 0;
+      order: 1;
+    }
+    .numbers__count {
+      color: #f37e60;
+    }
+    .numbers__note {
+      max-width: 214px;
+      @include media(lg) {
+        max-width: 100%;
+      }
+      @include media(xs) {
+        max-width: 100px;
+      }
+    }
+  }
+  &_5 {
+    @include media(xs) {
+      order: 4;
+    }
+    .numbers__count {
+      color: #6683c2;
+    }
+    .numbers__note {
+      max-width: 150px;
+      @include media(lg) {
+        max-width: 100px;
+      }
+    }
+    position: relative;
+    &::before {
+      content: '';
+      width: 67px;
+      height: 67px;
+      position: absolute;
+      top: -40px;
+      right: -9px;
+      box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
+      border-radius: 50%;
+      @include bg-icon('icons/ic_yandex_zoon.svg');
+      @include media(lg) {
+        width: 31px;
+        height: 31px;
+        top: -9px;
+        right: -18px;
+      }
+      @include media(xs) {
+        width: 27px;
+        height: 27px;
+        top: -16px;
+        right: 11px;
+      }
+    }
+  }
+}
+
+.numbers__count {
+  font-weight: 800;
+  font-size: 130px;
+  line-height: 93px;
+  margin-bottom: 35px;
+  @include media(lg) {
+    font-size: 78px;
+    line-height: 56px;
+    margin-bottom: 18px;
+  }
+  @include media(xs) {
+    margin-bottom: 14px;
+    font-size: 53px;
+    line-height: 38px;
+  }
+}
+
+.numbers__note {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  @include media(lg) {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

@@ -1,0 +1,33 @@
+-
+  const numbersList = [
+    {
+      count: '4 года',
+      note: 'Помогаем улучшить оценки и полюбить учёбу'
+    },
+    {
+      count: '198',
+      note: 'Тьюторов'
+    },
+    {
+      count: '31',
+      note: 'Преподаватель'
+    },
+    {
+      count: '44 000',
+      note: 'Учеников прошли&nbsp;наше&nbsp;обучение'
+    },
+    {
+      count: '4,9',
+      note: 'Средняя оценка родителями'
+    },
+  ]
+
+.numbers
+  .numbers__cont.cont
+    .numbers__wrap
+      h2.numbers__title Мы в цифрах
+      .numbers__list
+        each item, index in numbersList
+          .numbers__item(class=`numbers__item_${index+1}`)
+            .numbers__count= item.count
+            .numbers__note!= item.note
