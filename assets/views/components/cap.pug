@@ -42,12 +42,12 @@ article.cap
         img.cap__count-image(src=staticImg('cap/cap-count.png') alt='')
         .cap__count-text Более 44 000 счастливых учеников
       .cap__title Выберите направление
-      .cap__list
+      .directions-list
         each item, index in capList
-          .cap__item(class=`cap__item_${index+1}`)
-            .cap__item-box
-              .cap__headline= item.headline
-              .cap__tags
+          .directions-item(class=`directions-item_${index+1}`)
+            .directions-item-box
+              .directions-headline= item.headline
+              .directions-tags
                 each tag in item.tags
-                  .cap__tag= tag
-            a.cap__button.btn-orange(href='#') Выбрать
+                  .directions-tag= tag
+            a.directions-button.btn-orange(href='#') Выбрать

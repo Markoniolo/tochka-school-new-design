@@ -1,0 +1,28 @@
+.directions {
+  padding: 80px 0 120px;
+  @include media(lg) {
+    padding: 40px 0 60px;
+  }
+  .directions-item {
+    max-width: 428px;
+    @include media(lg) {
+      max-width: 100%;
+    }
+  }
+}
+
+.directions__cont {
+
+}
+
+.directions__caption {
+  margin-bottom: 50px;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 30px;
+    font-size: 25px;
+  }
+}

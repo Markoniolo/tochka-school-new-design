@@ -172,8 +172,15 @@
   background-color: #6683c2;
   @include bg-icon('icons/ic_arrow_slider_white.svg');
   background-size: auto;
+  opacity: 0.5;
+  transition-property: opacity;
+  transition-duration: $transition-duration;
+  &:hover {
+    opacity: 1;
+  }
   &:disabled {
     opacity: 0.25;
+    pointer-events: none;
   }
 }
 

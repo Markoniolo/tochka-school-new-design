@@ -203,7 +203,7 @@
   }
 }
 
-.cap__list {
+.directions-list {
   display: flex;
   gap: 0 27px;
   position: relative;
@@ -214,7 +214,7 @@
   }
 }
 
-.cap__item {
+.directions-item {
   position: relative;
   overflow: hidden;
   padding: 30px;
@@ -326,7 +326,7 @@
   }
 }
 
-.cap__item-box {
+.directions-item-box {
   @include media(lg) {
     display: flex;
     align-items: center;
@@ -339,7 +339,7 @@
   }
 }
 
-.cap__headline {
+.directions-headline {
   font-size: 24px;
   margin-bottom: 25px;
   @include media(lg) {
@@ -351,7 +351,7 @@
   }
 }
 
-.cap__tags {
+.directions-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
@@ -365,7 +365,7 @@
   }
 }
 
-.cap__tag {
+.directions-tag {
   margin-bottom: 20px;
   border-radius: 33px;
   background: rgba(102, 131, 194, 0.08);
@@ -382,7 +382,7 @@
   }
 }
 
-.cap__button {
+.directions-button {
   margin-top: auto;
   display: inline-block;
 }
