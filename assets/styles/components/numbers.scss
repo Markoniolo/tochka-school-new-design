@@ -1,10 +1,10 @@
 .numbers {
   @include bg-icon('numbers/numbers-bg.png');
-  padding: 80px 0 59px;
+  padding: 66px 0 46px;
   background-size: cover;
   @include media(lg) {
     @include bg-icon('numbers/numbers-bg_tablet.png');
-    padding: 40px 0;
+    padding: 36px 0;
   }
   @include media(xs) {
     @include bg-icon('numbers/numbers-bg_mob.png');
@@ -33,7 +33,7 @@
     font-size: 25px;
     line-height: 100%;
     margin-right: 0;
-    margin-bottom: 40px;
+    margin-bottom: 34px;
   }
   @include media(xs) {
     margin-bottom: 30px;
@@ -43,16 +43,20 @@
 .numbers__list {
   display: flex;
   flex-wrap: wrap;
-  gap: 88px 58px;
+  gap: 80px 58px;
+  margin-top: 10px;
+  position: relative;
+  left: 16px;
   @include media(lg) {
     gap: 44px 40px;
     max-width: 570px;
     width: 100%;
-    margin-left: 116px;
+    margin-left: 98px;
+    margin-top: 0;
   }
   @include media(xs) {
     gap: 34px 50px;
-    margin-left: 11px;
+    margin-left: -6px;
     justify-content: center;
     max-width: 332px;
   }
@@ -66,6 +70,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
+      top: -10px;
     }
     .numbers__count {
       color: #68ccea;

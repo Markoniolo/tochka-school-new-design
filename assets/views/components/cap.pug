@@ -20,7 +20,7 @@
   const capInner = [
     {text: 'Лучшие учителя РФ*', hover: 'По результатам всероссийский конкурсов'},
     {text: 'Твердые знания', hover: ''},
-    {text: 'Интерес к учёбе', hover: ''},
+    {text: 'Интерес к&nbsp;учёбе', hover: ''},
     {text: 'Отличные оценки', hover: ''},
     {text: 'Успешное будущее', hover: ''},
   ]
@@ -35,7 +35,7 @@ article.cap
       .cap__inner
         each box, index in capInner
           .cap__box(class=`cap__box_${index+1}`)
-            .cap__text= box.text
+            .cap__text!= box.text
             if box.hover
               .cap__hover= box.hover
       .cap__count

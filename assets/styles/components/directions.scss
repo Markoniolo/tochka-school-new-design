@@ -1,12 +1,101 @@
 .directions {
-  padding: 80px 0 120px;
+  padding: 72px 0 120px;
   @include media(lg) {
-    padding: 40px 0 60px;
+    padding: 36px 0 60px;
+  }
+  .directions-list {
+    gap: 0 30px;
+    @include media(lg) {
+      gap: 20px 0;
+    }
   }
   .directions-item {
     max-width: 428px;
     @include media(lg) {
       max-width: 100%;
+    }
+    &_1 {
+      &::before {
+        @include bg-icon('cap/cap-item-1.svg');
+        width: 105px;
+        height: 153px;
+        top: 41px;
+        right: 0;
+        @include media(lg) {
+          width: 137px;
+          height: 131px;
+          top: 1px;
+          right: 0;
+          @include bg-icon('cap/cap-item-1_tablet.svg');
+        }
+        @include media(xs) {
+          width: 77px;
+          height: 112px;
+          top: 46px;
+          @include bg-icon('cap/cap-item-1_mob.svg');
+        }
+      }
+    }
+    &_2 {
+      &::before {
+        @include bg-icon('cap/cap-item-2.svg');
+        width: 162px;
+        height: 144px;
+        top: 50px;
+        right: 0;
+        @include media(lg) {
+          width: 125px;
+          height: 120px;
+          top: 0;
+          right: 0;
+          @include bg-icon('cap/cap-item-2_tablet.svg');
+        }
+        @include media(xs) {
+          width: 127px;
+          height: 111px;
+          top: 47px;
+          @include bg-icon('cap/cap-item-2_mob.svg');
+        }
+      }
+    }
+    &_3 {
+      &::before {
+        @include bg-icon('cap/cap-item-3.svg');
+        width: 109px;
+        height: 152px;
+        bottom: 0;
+        right: 0;
+        @include media(lg) {
+          width: 117px;
+          height: 132px;
+          @include bg-icon('cap/cap-item-3_tablet.svg');
+        }
+        @include media(xs) {
+          width: 66px;
+          height: 92px;
+          @include bg-icon('cap/cap-item-3_mob.svg');
+        }
+      }
+    }
+    &_4 {
+      display: none;
+      @include media(lg) {
+        display: flex;
+      }
+      &::before {
+        @include media(lg) {
+          width: 169px;
+          height: 132px;
+          bottom: 0;
+          right: 0;
+          @include bg-icon('cap/cap-item-4_tablet.svg');
+        }
+        @include media(xs) {
+          width: 128px;
+          height: 106px;
+          @include bg-icon('cap/cap-item-4_mob.svg');
+        }
+      }
     }
   }
 }
@@ -22,7 +111,7 @@
   line-height: 100%;
   color: #003c56;
   @include media(lg) {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     font-size: 25px;
   }
 }

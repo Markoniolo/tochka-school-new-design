@@ -96,13 +96,13 @@
 .quote__box-inner {
   border-radius: 22px;
   background: #f9f9f9;
-  padding: 40px;
+  padding: 35px 40px 36px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   @include media(lg) {
     border-radius: 7px;
-    padding: 20px;
+    padding: 15px 20px 16px;
   }
 }
 
@@ -130,12 +130,12 @@
 }
 
 .quote__author-span {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   font-size: 16px;
   line-height: 132%;
   color: #626262;
   @include media(lg) {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     font-size: 15px;
   }
   @include media(xs) {

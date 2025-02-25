@@ -14,11 +14,11 @@
     },
     {
       title: 'Персональный тьютор всегда на связи',
-      text: ['Проверит задание, поможет исправить ошибки и объяснит непонятные моменты. 5 дней в неделю.','Тьютор – опытный педагог по выбранному предмету. Среди наших тьюторов есть кандидаты наук, эксперты ОГЭ и ЕГЭ.']
+      text: ['Проверит задание, поможет исправить ошибки и объяснит непонятные моменты. 5 дней в&nbsp;неделю.','Тьютор – опытный педагог по выбранному предмету. Среди наших тьюторов есть кандидаты наук, эксперты ОГЭ и ЕГЭ.']
     },
   ]
 
-.cards
+.cards(data-element='cards')
   .cards__cont.cont
     h2.cards__caption
       | Онлайн-школа, в которую
@@ -26,8 +26,9 @@
       | Вы влюбитесь
     .cards__area
       each box, index in cardsArea
-        .cards__box(class=`cards__box_${index+1}`)
-          .cards__title= box.title
-          .cards__inner
-            each text in box.text
-              .cards__text= text
+        .cards__box(class = index === 0 ? `cards__box_${index+1} active` : `cards__box_${index+1}` data-element='cards-box')
+          .cards__wrap
+            .cards__title= box.title
+            .cards__inner
+              each text in box.text
+                .cards__text!= text

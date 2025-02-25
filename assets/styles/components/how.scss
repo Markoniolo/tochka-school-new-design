@@ -1,10 +1,14 @@
 .how {
+  position: relative;
   padding-top: 32px;
   background-color: #FFFFFF;
   overflow: hidden;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
   @include media(lg) {
     background: transparent;
+  }
+  @include media(xs) {
+    padding-top: 38px;
   }
   & ~ .pre-reviews {
     margin-bottom: 0;
@@ -16,6 +20,25 @@
     .trial-license__decor_5 {
       top: -188px;
     };
+    .trial-license__inner {
+      @include media(lg) {
+        background-color: #FFFFFF;
+      }
+    }
+  }
+  &.active {
+    .how__slider {
+      &::before {
+        @include media(lg) {
+          content: none;
+        }
+      }
+    }
+    .how__slide {
+      @include media(lg) {
+        display: block;
+      }
+    }
   }
 }
 
@@ -24,20 +47,31 @@
 }
 
 .how__caption {
-  margin-bottom: 50px;
+  margin-bottom: 38px;
   font-weight: 500;
   font-size: 45px;
   line-height: 121%;
   color: #003c56;
   @include media(lg) {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     font-size: 25px;
     line-height: 100%;
   }
 }
 
 .how__slider {
-
+  &::before {
+    @include media(lg) {
+      content: '';
+      background: linear-gradient(180deg, rgba(248, 248, 248, 0) 0%, #f8f8f8 100%);
+      position: absolute;
+      z-index: 10;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      height: 400px;
+    }
+  }
 }
 
 .how__wrapper {
@@ -57,23 +91,27 @@
   border-radius: 32px;
   box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
   background: #f37e60;
-  padding: 40px;
+  padding: 34px 40px 45px;
   width: 478px;
   height: auto;
   @include media(lg) {
     width: 100%;
     border-radius: 10px;
-    padding: 20px 15px;
+    padding: 16px 15px;
+    display: none;
+    &:nth-child(1),&:nth-child(2),&:nth-child(3) {
+      display: block;
+    }
   }
 }
 
 .how__title {
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   font-size: 24px;
   line-height: 30px;
   color: #fff;
   @include media(lg) {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-size: 18px;
     line-height: 23px;
   }
@@ -81,7 +119,7 @@
 
 .how__text {
   margin-left: 50px;
-  padding: 20px;
+  padding: 20px 25px;
   font-size: 18px;
   line-height: 23px;
   color: #fff;
@@ -90,6 +128,7 @@
   background: rgba(0, 0, 0, 0.06);
   min-height: 111px;
   @include media(lg) {
+    padding: 15px 20px;
     margin-left: 0;
     margin-right: 110px;
     min-height: 70px;
@@ -116,8 +155,8 @@
   text-align: center;
   @include media(lg) {
     left: unset;
-    bottom: 18px;
-    right: 32px;
+    bottom: 23px;
+    right: 26px;
   }
   @include media(xs) {
     right: -15px;
@@ -178,4 +217,29 @@
 
 .how__nav-btn_next {
 
+}
+
+.how__button-box {
+  display: none;
+  @include media(lg) {
+    position: relative;
+    z-index: 20;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.how__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 26px 15px;
+  &::after {
+    content: '';
+    width: 8px;
+    height: 11px;
+    margin-left: 10px;
+    @include bg-icon('icons/ic_arrow_btn_down_white.svg');
+  }
 }
