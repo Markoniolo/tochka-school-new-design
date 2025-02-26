@@ -95,6 +95,24 @@ function articleVideoBoxArrayInit () {
   }
 }
 
+const cards = document.querySelector("[data-element='cards']")
+
+if (cards) cardsInit()
+
+function cardsInit () {
+  const cardsBoxes = cards.querySelectorAll("[data-element='cards-box']")
+
+  cardsBoxes.forEach((box) => {
+    box.addEventListener('click', toggleBox)
+  })
+
+  function toggleBox () {
+    const oldActive = cards.querySelector('.active')
+    if (oldActive) oldActive.classList.remove('active')
+    this.classList.add('active')
+  }
+}
+
 const selectArray = document.querySelectorAll('[data-role="custom-select"]')
 
 for (let i = 0; i < selectArray.length; i++) {
@@ -492,6 +510,18 @@ function howSliderInit () {
       howSliderSwiper?.destroy()
     }
   }
+}
+
+const how = document.querySelector("[data-element='how']")
+
+if (how) howInit()
+
+function howInit () {
+  const btn = document.querySelector("[data-element='how-button']")
+  btn.addEventListener('click', function () {
+    this.style.display = "none"
+    how.classList.add('active')
+  })
 }
 
 const modalOrderNewSelect = document.querySelector('.modal-order-new__select')
