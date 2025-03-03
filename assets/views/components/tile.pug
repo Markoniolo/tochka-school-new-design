@@ -1,0 +1,39 @@
+.tile#tile
+  .tile__cont.cont
+    .tile__caption Выберите класс
+    .tile__nav
+      .tile__tabs
+        each item, index in [1,2,3,4]
+          .tile__tab(class = item === 1 ? 'active' : false data-id=index)= item
+      .tile__nav-links
+        a.tile__nav-link(href='#') 5-8
+        a.tile__nav-link(href='#') 9-11
+    .tile__wrap
+      each tile, index in [1,2,3,4]
+        .tile__tile(class = tile === 1 ? 'active' : false)
+          each item in [0,1,2,3,4,5,6]
+            if item === 0
+              .tile__family
+                picture.tile__family-picture
+                  source(srcset=staticImg('tile/tile-family_mob.svg') media="(max-width: 743px)")
+                  source(srcset=staticImg('tile/tile-family_tablet.svg') media="(max-width: 1439px)")
+                  img.tile__family-image(src=staticImg('tile/tile-family.svg') alt='')
+                .tile__family-inner
+                  .tile__family-number= `${tile} класс`
+                  .tile__family-top
+                    .tile__family-title Семейное обучение
+                    .tile__family-tag Аттестация онлайн
+                    .tile__family-tag Бесплатное прикрепление к школе
+                  .tile__family-text Получайте школьное образование дома. Онлайн. С лучшими учителями РФ, внимательными тьюторами и аттестацией.
+                  a.tile__family-button.btn-orange(href='#') Перейти
+            else
+              .tile__item
+                .tile__picture
+                  img.tile__image(src=staticImg('') alt='')
+                .tile__inner
+                  .tile__class-number!= `${tile} класс`
+                  .tile__name Курс по подготовке к ОГЭ по математике «Стандарт»
+                  .tile__author Екатерина Щербакова
+                  .tile__text Учитель года Кубани 2022. ТОП-15 учителей России в 2022 году. Педагогический стаж ー 6 лет.
+                  .tile__bottom
+                    a.tile__link.btn-orange(href='#') Перейти

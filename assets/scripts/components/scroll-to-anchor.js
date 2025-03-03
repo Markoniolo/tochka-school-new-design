@@ -22,12 +22,14 @@ function clickOnTheScrollElement (event) {
 
 function animateScrollToAnchor (theElement, offset) {
   if (!offset) {
+    const banner = document.querySelector('.discount')
+    const bannerHeight = banner ? banner.clientHeight : 0
     if (window.innerWidth < 744) {
-      offset = 84
+      offset = 84 + bannerHeight
     } else if (window.innerWidth < 1200) {
-      offset = 102
+      offset = 102 + bannerHeight
     } else {
-      offset = 65
+      offset = 120 + bannerHeight
     }
   }
   const positionNow = window.pageYOffset

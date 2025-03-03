@@ -1,0 +1,131 @@
+.cap-school {
+  margin-top: 20px;
+  margin-bottom: 80px;
+  @include media(lg) {
+    margin-top: 30px;
+    margin-bottom: 36px;
+  }
+  @include media(xs) {
+    margin-top: 20px;
+  }
+  &_first {
+    .cap-school__area::before {
+      @include bg-icon('cap-school/cap-school-decor-1.png');
+      @include media(xs) {
+        @include bg-icon('cap-school/cap-school-decor-1_mob.png');
+      }
+    }
+  }
+  &_second {
+    .cap-school__area::before {
+      @include bg-icon('cap-school/cap-school-decor-2.png');
+      @include media(xs) {
+        @include bg-icon('cap-school/cap-school-decor-2_mob.png');
+        top: 12px;
+      }
+    }
+  }
+  &_third {
+    .cap-school__area::before {
+      @include bg-icon('cap-school/cap-school-decor-3.png');
+      @include media(xs) {
+        @include bg-icon('cap-school/cap-school-decor-3_mob.png');
+        top: 12px;
+      }
+    }
+  }
+}
+
+.cap-school__cont {
+
+}
+
+.cap-school__area {
+  position: relative;
+  border-radius: 31px;
+  padding: 56px 60px 50px;
+  box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
+  @include bg-icon('cap-school/cap-school-bg.png');
+  min-height: 518px;
+  @include media(lg) {
+    @include bg-icon('cap-school/cap-school-bg_tablet.png');
+    border-radius: 10px;
+    padding: 30px;
+    min-height: 304px;
+  }
+  @include media(xs) {
+    @include bg-icon('cap-school/cap-school-bg_mob.png');
+    min-height: 309px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 26px 30px 30px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 39px;
+    right: 72px;
+    width: 452px;
+    height: 440px;
+    @include media(lg) {
+      top: 36px;
+      right: 35px;
+      width: 238px;
+      height: 232px;
+    }
+    @include media(xs) {
+      pointer-events: none;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 336px;
+      height: 228px;
+    }
+  }
+}
+
+.cap-school__number {
+  margin-bottom: 28px;
+  font-size: 24px;
+  line-height: 92%;
+  @include media(lg) {
+    margin-bottom: 14px;
+    font-size: 18px;
+  }
+}
+
+.cap-school__caption {
+  margin-bottom: 50px;
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 112%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 30px;
+    font-size: 30px;
+  }
+  @include media(xs) {
+    margin-bottom: 22px;
+    font-size: 27px;
+    line-height: 126%;
+    text-align: center;
+  }
+  .mob-disable {
+    @include media(xs) {
+      display: none;
+    }
+  }
+  .mob-able {
+    display: none;
+    @include media(xs) {
+      display: inline;
+    }
+  }
+}
+
+.cap-school__button {
+  padding: 20px 59px;
+  font-size: 16px;
+  display: inline-block;
+}

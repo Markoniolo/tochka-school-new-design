@@ -1,0 +1,7 @@
+mixin cap-school(mod, number, caption)
+  .cap-school(class=`cap-school_${mod}`)
+    .cap-school__cont.cont
+      .cap-school__area
+        .cap-school__number= number
+        h1.cap-school__caption!= caption
+        a.cap-school__button.btn-orange(href="#tile" data-role="scroll-to-anchor") Выбрать класс

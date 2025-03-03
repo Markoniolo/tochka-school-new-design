@@ -1,0 +1,131 @@
+.consult {
+  padding-bottom: 53px;
+  background-color: #FFFFFF;
+  @include media(lg) {
+    padding-bottom: 0;
+    background-color: transparent;
+    margin-bottom: 40px;
+  }
+  & + .pre-reviews {
+    background-color: transparent;
+    padding-top: 70px;
+    @include media(lg) {
+      padding-top: 0;
+    }
+  }
+}
+
+.consult__cont {
+
+}
+
+.consult__area {
+  position: relative;
+  z-index: 1;
+  border-radius: 10px;
+  padding: 36px 44px 45px;
+  min-height: 322px;
+  overflow: hidden;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
+  @include bg-icon('consult/consult-bg.png');
+  @include media(lg) {
+    min-height: 353px;
+    padding: 30px 25px;
+    @include bg-icon('consult/consult-bg_tablet.png');
+  }
+  @include media(xs) {
+    min-height: 573px;
+    padding: 30px 20px 40px;
+    @include bg-icon('consult/consult-bg_mob.png');
+    max-width: 353px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.consult__title {
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 121%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 16px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+  @include media(xs) {
+    text-align: center;
+  }
+}
+
+.consult__text {
+  margin-bottom: 35px;
+  max-width: 295px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 132%;
+  @include media(lg) {
+    margin-bottom: 36px;
+  }
+  @include media(xs) {
+    text-align: center;
+    margin-bottom: 26px;
+  }
+}
+
+.consult__decor {
+  width: 1108px;
+  height: 303px;
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  right: 0;
+  @include media(lg) {
+    width: 684px;
+    height: 323px;
+  }
+  @include media(xs) {
+    margin-bottom: 30px;
+    position: static;
+    width: 353px;
+    height: auto;
+    margin-left: -20px;
+  }
+}
+
+.consult__buttons {
+  display: flex;
+  gap: 0 30px;
+  @include media(lg) {
+    flex-direction: column;
+    gap: 20px 0;
+    max-width: 283px;
+  }
+  @include media(xs) {
+    margin: 0 auto;
+  }
+}
+
+.consult__btn {
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  &_order {
+    padding: 17px 52px 18px;
+  }
+  &_wp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 17px 34px 18px;
+    &::after {
+      content: '';
+      @include bg-icon('icons/ic_wp_white.svg');
+      width: 18px;
+      height: 19px;
+      margin-left: 10px;
+      flex-shrink: 0;
+    }
+  }
+}

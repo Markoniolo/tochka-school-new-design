@@ -260,7 +260,6 @@
   display: flex;
   padding: 30px;
   border-radius: 32px;
-  align-items: flex-start;
   @include media(lg) {
     width: 100%;
     padding: 15px;
@@ -312,6 +311,7 @@
   width: 180px;
   flex-shrink: 0;
   margin-right: 25px;
+  align-self: flex-start;
   @include media(lg) {
     border-radius: 5px;
   }
