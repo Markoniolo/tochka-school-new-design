@@ -1050,12 +1050,14 @@ function clickOnTheScrollElement (event) {
 
 function animateScrollToAnchor (theElement, offset) {
   if (!offset) {
+    const banner = document.querySelector('.discount')
+    const bannerHeight = banner ? banner.clientHeight : 0
     if (window.innerWidth < 744) {
-      offset = 84
+      offset = 84 + bannerHeight
     } else if (window.innerWidth < 1200) {
-      offset = 102
+      offset = 102 + bannerHeight
     } else {
-      offset = 65
+      offset = 120 + bannerHeight
     }
   }
   const positionNow = window.pageYOffset
@@ -1074,6 +1076,34 @@ function animateScrollToAnchor (theElement, offset) {
       requestAnimationFrame(animate)
     }
   })
+}
+
+const tile = document.querySelector('.tile')
+
+if (tile) tileInit()
+
+function tileInit () {
+  const tileTabs = tile.querySelectorAll('.tile__tab')
+  const tiles = tile.querySelectorAll('.tile__tile')
+
+  tileTabs.forEach((tab) => {
+    tab.addEventListener('click', toggleTab)
+  })
+
+  function toggleTab () {
+    const oldTab = tile.querySelector('.tile__tab.active')
+    if (oldTab) oldTab.classList.remove('active')
+    this.classList.add('active')
+
+    const oldTile = tile.querySelector('.tile__tile.active')
+    if (oldTile) oldTile.classList.remove('active')
+    // oldTile.style.opacity = '0'
+    // setTimeout(() => oldTile.style.display = 'none', 200)
+
+
+    const id = this.getAttribute('data-id')
+    tiles[id].classList.add('active')
+  }
 }
 
 const trialTile = document.getElementById("trial-tile")
