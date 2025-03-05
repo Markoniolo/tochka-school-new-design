@@ -57,7 +57,7 @@
     margin-left: -4px;
     position: relative;
     overflow: hidden;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     transition-property: width;
     cursor: pointer;
   }
@@ -213,14 +213,14 @@
     &::before {
       opacity: 1;
       @include media(lg) {
-        transition-delay: 1s;
+        transition-delay: 0.5s;
       }
     }
     .cards__wrap {
       @include media(lg) {
         opacity: 1;
         position: static;
-        transition-delay: 1s;
+        transition-delay: 0.5s;
       }
     }
   }
