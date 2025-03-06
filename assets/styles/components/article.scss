@@ -226,69 +226,76 @@
   }
 }
 
-.article__list {
+ul.article__list {
   display: flex;
   flex-direction: column;
   gap: 25px 0;
   margin-bottom: 34px;
-  &_number {
+
+  li {
     padding-left: 28px;
-    gap: 10px 0;
+    font-size: 18px;
+    line-height: 156%;
+    color: #454545;
+    position: relative;
     @include media(md) {
       padding-left: 22px;
+      font-size: 15px;
+      line-height: 180%;
+    }
+    a {
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: #6683c2;
+    }
+    &::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: #454545;
+      position: absolute;
+      top: 11px;
+      left: 12px;
+      @include media(md) {
+        width: 4px;
+        height: 4px;
+        top: 10px;
+        left: 10px;
+      }
+    }
+  }
+}
+
+ol.article__list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 34px;
+  padding-left: 28px;
+  gap: 10px 0;
+  @include media(md) {
+    padding-left: 22px;
+  }
+  li {
+    list-style-type: decimal;
+    font-size: 18px;
+    line-height: 156%;
+    color: #454545;
+    position: relative;
+    @include media(md) {
+      font-size: 15px;
+      line-height: 180%;
+    }
+    a {
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: #6683c2;
     }
   }
 }
 
 .article__item {
-  padding-left: 28px;
-  font-size: 18px;
-  line-height: 156%;
-  color: #454545;
-  position: relative;
-  @include media(md) {
-    padding-left: 22px;
-    font-size: 15px;
-    line-height: 180%;
-  }
-  a {
-    text-decoration: underline;
-    text-decoration-skip-ink: none;
-    color: #6683c2;
-  }
-  &::before {
-    content: '';
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background-color: #454545;
-    position: absolute;
-    top: 11px;
-    left: 12px;
-    @include media(md) {
-      width: 4px;
-      height: 4px;
-      top: 10px;
-      left: 10px;
-    }
-  }
-}
 
-.article__item-number {
-  list-style-type: decimal;
-  font-size: 18px;
-  line-height: 156%;
-  color: #454545;
-  position: relative;
-  @include media(md) {
-    font-size: 15px;
-    line-height: 180%;
-  }
-  a {
-    text-decoration: underline;
-    text-decoration-skip-ink: none;
-    color: #6683c2;
-  }
 }
 
 .article__info {
