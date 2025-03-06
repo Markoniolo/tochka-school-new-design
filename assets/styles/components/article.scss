@@ -233,6 +233,7 @@
   margin-bottom: 34px;
   &_number {
     padding-left: 28px;
+    gap: 10px 0;
     @include media(md) {
       padding-left: 22px;
     }
