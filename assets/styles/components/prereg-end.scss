@@ -1,0 +1,143 @@
+.prereg-end {
+  margin-top: 22px;
+  margin-bottom: 80px;
+  overflow: hidden;
+  @include media(lg) {
+    margin-bottom: 40px;
+    margin-top: 31px;
+  }
+  @include media(xs) {
+    margin-top: 27px;
+  }
+  & + .consult {
+    background-color: #f8f8f8;
+  }
+}
+
+.prereg-end__cont {
+
+}
+
+.prereg-end__wrap {
+  position: relative;
+}
+
+.prereg-end__decor {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.prereg-end__decor_1 {
+  background-color: #7fcbb4;
+  top: 27px;
+  left: -60px;
+  width: 164px;
+  height: 164px;
+  @include media(lg) {
+    width: 81px;
+    height: 81px;
+    top: 31px;
+    left: -21px;
+  }
+  @include media(xs) {
+    left: -15px;
+    top: 44px;
+  }
+}
+
+.prereg-end__decor_2 {
+  background-color: #f2c45b;
+  top: 180px;
+  left: -79px;
+  width: 60px;
+  height: 60px;
+  @include media(lg) {
+    width: 30px;
+    height: 30px;
+    left: -17px;
+    top: 114px;
+  }
+  @include media(xs) {
+    top: 125px;
+  }
+}
+
+.prereg-end__decor_3 {
+  background-color: #68ccea;
+  top: 377px;
+  right: -32px;
+  width: 68px;
+  height: 68px;
+  @include media(lg) {
+    width: 28px;
+    height: 28px;
+    top: 171px;
+    right: -14px;
+  }
+}
+
+.prereg-end__area {
+  position: relative;
+  z-index: 1;
+  padding: 58px 60px 65px;
+  border-radius: 31px;
+  box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
+  @include bg-icon('prereg-end/prereg-end-bg.png');
+  @include media(lg) {
+    padding: 25px;
+    border-radius: 10px;
+    @include bg-icon('prereg-end/prereg-end-bg_tablet.png');
+  }
+  @include media(xs) {
+    @include bg-icon('prereg-end/prereg-end-bg_mob.png');
+    padding: 23px 20px 20px;
+  }
+}
+
+.prereg-end__caption {
+  margin-bottom: 28px;
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 107%;
+  text-align: center;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 16px;
+    font-size: 30px;
+    line-height: 113%;
+  }
+  @include media(xs) {
+    margin-bottom: 20px;
+    line-height: 93%;
+  }
+}
+
+.prereg-end__text {
+  position: relative;
+  margin: 0 auto 84px;
+  max-width: 655px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 108%;
+  text-align: center;
+  color: #003c56;
+  @include media(lg) {
+    margin: 0 auto 40px;
+    font-size: 18px;
+    line-height: 111%;
+    max-width: 360px;
+  }
+  &::before {
+    content: '';
+    @include bg-icon('prereg-end/ic_decor.svg');
+    position: absolute;
+    bottom: -57px;
+    right: -82px;
+    width: 49px;
+    height: 91px;
+    @include media(lg) {
+      content: none;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+-
+  const preregEndList = [
+    {
+      headline: 'Начальная школа',
+      tags: ['1-4 класс', 'Семейное обучение'],
+    },
+    {
+      headline: 'Средняя школа',
+      tags: ['5-8 класс', 'Семейное обучение'],
+    },
+    {
+      headline: 'Старшая школа',
+      tags: ['9-11 класс', 'Подготовка к ОГЭ и ЕГЭ'],
+    },
+    {
+      headline: 'Курсы для учителей',
+      tags: ['Повышение квалификации'],
+    },
+  ]
+
+.prereg-end
+  .prereg-end__cont.cont
+    .prereg-end__wrap
+      .prereg-end__decor.prereg-end__decor_1
+      .prereg-end__decor.prereg-end__decor_2
+      .prereg-end__decor.prereg-end__decor_3
+      .prereg-end__area
+        h1.prereg-end__caption Пробная неделя завершилась
+        .prereg-end__text Чтобы ознакомиться с актуальными курсами, выберите направление ниже
+        .directions-list
+          each item, index in preregEndList
+            .directions-item(class=`directions-item_${index + 1}`)
+              .directions-item-box
+                .directions-headline= item.headline
+                .directions-tags
+                  each tag in item.tags
+                    .directions-tag= tag
+              a.directions-button.btn-orange(href='#') Выбрать
