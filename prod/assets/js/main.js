@@ -113,6 +113,31 @@ function cardsInit () {
   }
 }
 
+const courseAboutVideo = document.querySelector("[data-element='course-about-video']")
+
+if (courseAboutVideo) courseAboutVideoInit()
+
+function courseAboutVideoInit () {
+  const videoWrap = document.querySelector("[data-element='course-about-video-wrap']")
+  const soundBtn = document.querySelector(".course-about__sound")
+
+  videoWrap.addEventListener('click', playVideo)
+
+  function playVideo (e) {
+    e.stopPropagation()
+    if (courseAboutVideo.muted) {
+      courseAboutVideo.muted = false
+      courseAboutVideo.loop = false
+      courseAboutVideo.currentTime = 0
+      courseAboutVideo.play()
+      soundBtn.classList.add('hide')
+    } else {
+      courseAboutVideo.muted = true
+      soundBtn.classList.remove('hide')
+    }
+  }
+}
+
 const selectArray = document.querySelectorAll('[data-role="custom-select"]')
 
 for (let i = 0; i < selectArray.length; i++) {
@@ -130,6 +155,16 @@ function discountInit () {
   function removeDiscount (e) {
     e.preventDefault()
     discount.remove()
+  }
+}
+
+const faqItems = document.querySelectorAll("[data-element='faq-item']")
+
+for (let i = 0; i < faqItems.length; i++) {
+  faqItems[i].addEventListener("click", toggleFaqItem)
+
+  function toggleFaqItem () {
+    this.classList.toggle('active')
   }
 }
 
