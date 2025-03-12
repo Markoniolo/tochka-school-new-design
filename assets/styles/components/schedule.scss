@@ -1,0 +1,127 @@
+.schedule {
+  background: #FFFFFF;
+  padding-bottom: 80px;
+  @include media(lg) {
+    padding-bottom: 40px;
+  }
+}
+
+.schedule__cont {
+
+}
+
+.schedule__area {
+  display: flex;
+  align-items: center;
+  @include media(lg) {
+    display: block;
+  }
+}
+
+.schedule__title {
+  max-width: 360px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 99%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 30px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+}
+
+.schedule__line {
+  margin-left: auto;
+  display: flex;
+  @include media(lg) {
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+  @include media(xs) {
+    gap: 20px;
+  }
+}
+
+.schedule__box {
+  margin-right: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
+  background: #fff;
+  padding: 20px;
+  flex-shrink: 0;
+  @include media(lg) {
+    border-radius: 10px;
+    margin-right: 0;
+    width: calc(50% - 13px);
+  }
+  @include media(xs) {
+    width: 100%;
+  }
+}
+
+.schedule__tag {
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 14px;
+  line-height: 10px;
+  color: #6683c2;
+  padding: 12px 14px;
+  border-radius: 33px;
+  background: rgba(102, 131, 194, 0.08);
+}
+
+.schedule__bottom {
+  display: flex;
+  gap: 0 20px;
+}
+
+.schedule__item {
+
+}
+
+.schedule__note {
+  font-size: 16px;
+  line-height: 137%;
+}
+
+b.schedule__note {
+  font-weight: 500;
+}
+
+.schedule__orange {
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px 0;
+  background: #f37e60;
+  max-width: 288px;
+  width: 100%;
+  @include media(lg) {
+    border-radius: 10px;
+    max-width: 100%;
+    gap: 10px 0;
+  }
+}
+
+.schedule__orange-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 137%;
+  color: #fff;
+  @include media(lg) {
+    font-size: 15px;
+  }
+}
+
+.schedule__orange-text {
+  font-size: 16px;
+  line-height: 137%;
+  color: #fff;
+  @include media(lg) {
+    font-size: 15px;
+  }
+}

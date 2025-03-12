@@ -26,20 +26,21 @@
     },
   ]
 
-.how(data-element='how')
-  .how__cont.cont
-    h2.how__caption Как проходит обучение
-    .how__slider(data-element='how-slider')
-      .how__wrapper.swiper-wrapper
-        each item, index in howList
-          .how__slide.swiper-slide
-            .how__title= item.title
-            .how__text= item.text
-            .how__number= index+1
-      .how__bottom
-        .how__scrollbar
-        .how__nav
-          button.how__nav-btn.how__nav-btn_prev
-          button.how__nav-btn.how__nav-btn_next
-    .how__button-box
-      button.how__button.btn-blue(data-element='how-button') Показать все
+mixin how(mod)
+  .how(data-element='how' class = mod ? `how_${mod}` : false)
+    .how__cont.cont
+      h2.how__caption Как проходит обучение
+      .how__slider(data-element='how-slider')
+        .how__wrapper.swiper-wrapper
+          each item, index in howList
+            .how__slide.swiper-slide
+              .how__title= item.title
+              .how__text= item.text
+              .how__number= index+1
+        .how__bottom
+          .how__scrollbar
+          .how__nav
+            button.how__nav-btn.how__nav-btn_prev
+            button.how__nav-btn.how__nav-btn_next
+      .how__button-box
+        button.how__button.btn-blue(data-element='how-button') Показать все

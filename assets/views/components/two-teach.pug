@@ -1,0 +1,37 @@
+-
+  const twoTeachArea = [
+    {
+      mod: 'teacher',
+      title: 'Учитель:',
+      text: 'понятно и интересно объяснит тему на уроке'
+    },
+    {
+      mod: 'child',
+      title: 'Ребёнок:',
+      text: 'увлечется учёбой, получит отличные оценки и твёрдые знания'
+    },
+    {
+      mod: 'tutor',
+      title: 'Тьютор:',
+      text: 'проверит задания и&nbsp;поможет исправить ошибки'
+    },
+  ]
+
+.two-teach
+  .two-teach__cont.cont
+    .two-teach__top
+      .two-teach__caption С ребёнком занимаются сразу 2 педагога
+      .two-teach__note.
+        Помогаем на всех этапах: от разбора темы до выполнения заданий.
+        Что&nbsp;приводит к твёрдым знаниям, отличным оценкам и интересу к учёбе.
+    .two-teach__area
+      .two-teach__decor.two-teach__decor_1
+      .two-teach__decor.two-teach__decor_2
+      each box, index in twoTeachArea
+        .two-teach__box(class=`two-teach__box_${box.mod}`)
+          .two-teach__info
+            .two-teach__title= box.title
+            .two-teach__text!= box.text
+          .two-teach__picture
+            img.two-teach__image(src=staticImg(`two-teach/two-teach-${index+1}.png`) alt='')
+

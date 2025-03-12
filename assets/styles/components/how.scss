@@ -40,6 +40,40 @@
       }
     }
   }
+  &_blue {
+    padding-top: 80px;
+    padding-bottom: 40px;
+    @include media(lg) {
+      padding-top: 40px;
+      background: #FFFFFF;
+    }
+    .how__title {
+      color: #000;
+    }
+    .how__slider::before {
+      background: linear-gradient(180deg,rgba(248,248,248,0) 0,#ffffff 100%);
+    }
+    .how__slide {
+      background: #f3f5fb;
+      box-shadow: none;
+    }
+    .how__text {
+      background: #ebeef5;
+      color: #000;
+    }
+    .how__number {
+      color: #6683c2;
+    }
+    .how__scrollbar {
+      background: #eceff4;
+      .swiper-scrollbar-drag {
+        background: #6683c2;
+      }
+    }
+    .how__nav-btn {
+      background-color: #6683C2;
+    }
+  }
 }
 
 .how__cont {

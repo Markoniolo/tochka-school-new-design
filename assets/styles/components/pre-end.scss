@@ -17,6 +17,28 @@
       }
     }
   }
+  &_course {
+    padding-top: 80px;
+    @include media(lg) {
+      padding-top: 40px;
+    }
+    .pre-end__text {
+      max-width: 820px;
+      @include media(lg) {
+        max-width: 512px;
+      }
+    }
+    .pre-end__button {
+      @include media(lg) {
+        font-size: 16px;
+        padding: 20px 35px;
+        max-width: 235px;
+      }
+      @include media(xs) {
+        max-width: 100%;
+      }
+    }
+  }
 }
 
 .pre-end__cont {

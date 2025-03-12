@@ -1,0 +1,21 @@
+extends ../components/_layout/layout
+
+block head
+  +title('Курс')
+
+block body
+  include ../components/course-cap
+  include ../components/course-about
+  include ../components/how
+  +how('blue')
+  include ../components/schedule
+  include ../components/two-teach
+  include ../components/teacher
+  include ../components/tutor
+  include ../components/cost
+  include ../components/info
+  include ../components/pre-reviews
+  include ../components/faq
+  include ../components/pre-end
+  +pre-end('course','Время принять решение: оставить всё как есть или начать обучение, получить твёрдые знания и отличные оценки.',
+    'Начать обучение')

@@ -1,0 +1,296 @@
+.two-teach {
+  padding-top: 119px;
+  margin-bottom: 82px;
+  @include media(lg) {
+    padding-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+.two-teach__cont {
+
+}
+
+.two-teach__top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  @include media(lg) {
+    margin-bottom: 30px;
+    display: block;
+  }
+  @include media(xs) {
+    margin-bottom: 76px;
+  }
+}
+
+.two-teach__caption {
+  margin-right: 80px;
+  max-width: 553px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 104%;
+  color: #003c56;
+  @include media(lg) {
+    max-width: 100%;
+    margin-right: 0;
+    font-size: 25px;
+    line-height: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+.two-teach__note {
+  font-size: 18px;
+  line-height: 23px;
+  @include media(lg) {
+    max-width: 540px;
+    width: 100%;
+    font-size: 15px;
+    line-height: 19px;
+  }
+}
+
+.two-teach__area {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  @include media(lg) {
+    justify-content: space-between;
+    max-width: 684px;
+    width: 100%;
+  }
+  @include media(xs) {
+    display: block;
+  }
+}
+
+.two-teach__decor {
+  position: absolute;
+  border-radius: 50%;
+  width: 84px;
+  height: 84px;
+  @include media(lg) {
+    width: 49px;
+    height: 49px;
+  }
+  @include media(xs) {
+    width: 60px;
+    height: 60px;
+  }
+  &_1 {
+    background: #68CCEA;
+    top: 52px;
+    left: 408px;
+    @include media(lg) {
+      top: 30px;
+      left: 187px;
+    }
+    @include media(xs) {
+      top: 208px;
+      left: 208px;
+    }
+  }
+  &_2 {
+    background: #6683C2;
+    top: 52px;
+    left: 850px;
+    @include media(lg) {
+      top: 30px;
+      left: 448px;
+    }
+    @include media(xs) {
+      top: 500px;
+      left: unset;
+      right: 205px;
+    }
+  }
+}
+
+.two-teach__box {
+  padding: 30px 26px;
+  width: 284px;
+  height: 498px;
+  border-radius: 250px;
+  position: relative;
+  @include media(lg) {
+    border-radius: 146px;
+    width: 166px;
+    height: 290px;
+    padding: 20px 12px;
+  }
+  @include media(xs) {
+    border-radius: 173px;
+    width: 196px;
+    height: 259px;
+  }
+  &_teacher {
+    margin-right: 159px;
+    margin-top: 56px;
+    background: #6683C2;
+    @include media(lg) {
+      margin-right: 0;
+      margin-top: 33px;
+    }
+    @include media(xs) {
+      margin-bottom: 35px;
+      margin-top: 0;
+    }
+    .two-teach__image {
+      width: 373px;
+      height: 352px;
+      bottom: -5px;
+      left: -36px;
+      @include media(lg) {
+        width: 218px;
+        height: 206px;
+        bottom: -3px;
+        left: -21px;
+      }
+      @include media(xs) {
+        width: 257px;
+        height: 243px;
+        bottom: -3px;
+        left: -25px;
+      }
+    }
+    .two-teach__info {
+      @include media(xs) {
+        top: -46px;
+        left: 140px;
+        text-align: left;
+        width: 203px;
+      }
+    }
+  }
+  &_child {
+    margin-right: 159px;
+    background: #F37E60;
+    @include media(lg) {
+      margin-right: 0;
+    }
+    @include media(xs) {
+      margin-bottom: 54px;
+      margin-left: auto;
+    }
+    .two-teach__image {
+      width: 373px;
+      height: 352px;
+      bottom: -8px;
+      left: -50px;
+      @include media(lg) {
+        width: 218px;
+        height: 206px;
+        bottom: -5px;
+        left: -29px;
+      }
+      @include media(xs) {
+        width: 257px;
+        height: 243px;
+        bottom: -5px;
+        left: -35px;
+      }
+    }
+    .two-teach__info {
+      @include media(xs) {
+        top: -20px;
+        left: -146px;
+        text-align: left;
+        width: 158px;
+      }
+    }
+  }
+  &_tutor {
+    margin-top: 56px;
+    background: #68CCEA;
+    @include media(lg) {
+      margin-top: 33px;
+    }
+    @include media(xs) {
+      margin-top: 0;
+    }
+    .two-teach__image {
+      width: 373px;
+      height: 380px;
+      bottom: -16px;
+      left: -65px;
+      @include media(lg) {
+        width: 218px;
+        height: 222px;
+        bottom: -9px;
+        left: -38px;
+      }
+      @include media(xs) {
+        width: 257px;
+        height: 262px;
+        bottom: -11px;
+        left: -45px;
+      }
+    }
+    .two-teach__info {
+      @include media(xs) {
+        top: -39px;
+        left: 145px;
+        text-align: left;
+        width: 182px;
+      }
+    }
+  }
+}
+
+.two-teach__info {
+  text-align: center;
+  @include media(xs) {
+    box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
+    background: #fff;
+    border-radius: 10px;
+    padding: 12px;
+    position: absolute;
+  }
+}
+
+.two-teach__title {
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  @include media(lg) {
+    font-size: 11px;
+  }
+  @include media(xs) {
+    font-size: 15px;
+    color: #000;
+  }
+}
+
+.two-teach__text {
+  font-size: 18px;
+  color: #fff;
+  @include media(lg) {
+    font-size: 11px;
+  }
+  @include media(xs) {
+    font-size: 15px;
+    color: #000;
+  }
+}
+
+.two-teach__picture {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 250px;
+  @include media(lg) {
+    border-radius: 146px;
+  }
+  @include media(xs) {
+    border-radius: 173px;
+  }
+}
+
+.two-teach__image {
+  position: absolute;
+}
