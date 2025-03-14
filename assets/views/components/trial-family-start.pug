@@ -1,0 +1,37 @@
+-
+  const trialFamilyStartList = [
+    'Доступ ко всем школьным предметам',
+    'Входное тестирование по каждому предмету',
+    'Онлайн-уроки с лучшими учителями РФ',
+    'Поддержка тьютора по каждому предмету',
+    'Личный кабинет на учебной платформе: записи уроков, конспекты, учебные материалы',
+    'Шаблоны документов и помощь методиста в переходе на семейное обучение',
+  ]
+
+.trial-family-start#trial-family-start
+  .trial-family-start__cont.cont
+    h2.trial-family-start__caption Начните пробную неделю семейного обучения в «Точке Знаний»
+    .trial-family-start__area
+      .trial-family-start__decor
+      .trial-family-start__select
+        .trial-family-start__filter-top(data-element='trial-family-start-filter-opener' data-default-text='Выберите класс')
+          .trial-family-start__filter-top-text Выберите класс
+        .trial-family-start__filter-wrap
+          .trial-family-start__filter-list
+            each item in ['1','2','3','4','5','6','7','8']
+              label.trial-family-start__filter-item
+                input.trial-family-start__filter-input(type='radio' name='class' value=`class-link-${item}` data-number=`${item} класс` data-element='trial-family-start-filter-input')
+                .trial-family-start__filter-view= `${item} класс`
+      .trial-family-start__card
+        .trial-family-start__box
+          .trial-family-start__top
+            .trial-family-start__name Пробная неделя
+            .trial-family-start__number 1 класс
+          .trial-family-start__text Доступ к обучению на 7 дней
+          .trial-family-start__price 790 ₽
+        .trial-family-start__title Что включено
+        .trial-family-start__list
+          each item in trialFamilyStartList
+            .trial-family-start__item= item
+        a.trial-family-start__button.btn-orange(href='#class-link-1') Начать обучение
+

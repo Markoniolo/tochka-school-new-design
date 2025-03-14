@@ -1,0 +1,127 @@
+.trial-family-about {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+  @include media(lg) {
+    padding: 40px 0;
+  }
+}
+
+.trial-family-about__cont {
+
+}
+
+.trial-family-about__title {
+  margin-bottom: 50px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 104%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 30px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+}
+
+.trial-family-about__list {
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px 24px;
+  @include media(lg) {
+    gap: 15px 0;
+    flex-direction: column;
+  }
+  @include media(xs) {
+    gap: 20px 0;
+  }
+}
+
+.trial-family-about__item {
+  display: flex;
+  align-items: center;
+  width: calc(50% - 12px);
+  border-radius: 77px;
+  padding: 22px 35px;
+  min-height: 128px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
+  font-size: 24px;
+  line-height: 30px;
+  color: #fff;
+  @include media(lg) {
+    font-size: 18px;
+    line-height: 100%;
+    border-radius: 43px;
+    min-height: 55px;
+    width: 100%;
+    padding: 10px 35px;
+  }
+  @include media(xs) {
+    padding: 16px 18px;
+  }
+  &:last-child {
+    width: 100%;
+    padding: 22px 170px;
+    @include media(lg) {
+      padding: 25px 35px;
+    }
+    @include media(xs) {
+      padding: 26px 18px;
+    }
+  }
+  &_light-blue {
+    background: #68ccea;
+    path {
+      fill: #68ccea;
+    }
+  }
+  &_green {
+    background: #7fcbb4;
+    path {
+      fill: #7fcbb4;
+    }
+  }
+  &_yellow {
+    background: #F2C45B;
+    path {
+      fill: #F2C45B;
+    }
+  }
+  &_blue {
+    background: #6683C2;
+    path {
+      fill: #6683C2;
+    }
+  }
+  svg {
+    margin-right: 36px;
+    flex-shrink: 0;
+    order: -1;
+    width: 36px;
+    height: 36px;
+    @include media(lg) {
+      margin-right: 13px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.trial-family-about__text {
+  border-radius: 20px;
+  background: #f3f5fb;
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 97%;
+  text-align: center;
+  color: #003c56;
+  padding: 50px 245px;
+  @include media(lg) {
+    padding: 30px 40px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+  @include media(xs) {
+    padding: 40px 35px;
+  }
+}
