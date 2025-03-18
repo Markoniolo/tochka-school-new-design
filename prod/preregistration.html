@@ -144,13 +144,13 @@
                 <img class="pre-cap__image" src="assets/img/pre-cap/pre-cap-3.svg" alt="">
               </div>
             </div>
-            <form class="pre-cap__form" data-element="pre-cap__form" data-request-validate>
+            <form class="pre-cap__form" data-request-validate>
               <div class="pre-cap__headline">Записаться в предзапись</div>
               <div class="pre-cap__inner">
                 <input class="input_utm" name="utm" type="hidden" value="">
                 <input type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru/blog/voprosy-dlya-podrostkov-chto-polezno-i-interesno-obsudit-do-15-let">
                 <input class="pre-cap__input input-white" placeholder="Имя родителя" type="text" name="name">
-                <input class="pre-cap__input input-white" placeholder="Телефон родителя" type="tel" required data-element="input-phone-intl" name="phone">
+                <input class="pre-cap__input input-white" placeholder="Телефон родителя" data-phone-pattern type="tel" required data-element="input-phone-intl" name="phone">
                 <input name="tel" type="hidden" required data-element="input-phone-hidden">
                 <input class="pre-cap__input input-white" placeholder="E-mail родителя" type="email" name="email">
                 <button class="pre-cap__submit btn-orange btn-warning">Записаться</button>
@@ -464,11 +464,11 @@
           <div class="pre-reg__decor pre-reg__decor_2"></div>
           <div class="pre-reg__decor pre-reg__decor_3"></div>
           <h2 class="pre-reg__caption pre-caption">Записаться в предзапись</h2>
-          <form class="pre-reg__form" data-element="pre-reg__form" data-request-validate>
+          <form class="pre-reg__form" data-request-validate>
             <input class="input_utm" name="utm" type="hidden" value="">
             <input type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru/blog/voprosy-dlya-podrostkov-chto-polezno-i-interesno-obsudit-do-15-let">
             <input class="pre-reg__input input-white" placeholder="Имя родителя" type="text" name="name">
-            <input class="pre-reg__input input-white" placeholder="Телефон родителя" type="tel" required data-element="input-phone-intl" name="phone">
+            <input class="pre-reg__input input-white" placeholder="Телефон родителя" type="tel" data-phone-pattern required data-element="input-phone-intl" name="phone">
             <input name="tel" type="hidden" required data-element="input-phone-hidden">
             <input class="pre-reg__input input-white" placeholder="E-mail родителя" type="email" name="email">
             <button class="pre-reg__submit btn-orange loading">Записаться</button>

@@ -158,6 +158,160 @@ function discountInit () {
   }
 }
 
+const familyHowSlider = document.querySelector('[data-element="family-how-slider"]')
+
+if (familyHowSlider) familyHowSliderInit()
+
+function familyHowSliderInit () {
+  let familyHowSliderSwiper
+
+  function initSlider () {
+    familyHowSliderSwiper = new Swiper(familyHowSlider, {
+      slidesPerView: 'auto',
+      spaceBetween: 40,
+      a11y: false,
+      navigation: {
+        nextEl: '.family-how__nav-btn_next',
+        prevEl: '.family-how__nav-btn_prev',
+      },
+      scrollbar: {
+        el: '.family-how__scrollbar',
+        draggable: true,
+      },
+    })
+  }
+
+  window.addEventListener('resize', checkSlider)
+
+  checkSlider()
+
+  function checkSlider () {
+    if (window.innerWidth >= 744) {
+      initSlider()
+    } else {
+      familyHowSliderSwiper?.destroy()
+    }
+  }
+}
+
+const scheduleFamily = document.querySelector('[data-element="family-schedule"]')
+
+if (scheduleFamily) scheduleFamilyInit()
+
+function scheduleFamilyInit () {
+  let offsetHeader = window.innerWidth >= 744 ? 102 : 84
+
+  const toggleBottom = scheduleFamily.querySelector('[data-element="family-schedule__toggle-bottom"]')
+  const table = scheduleFamily.querySelector('[data-element="family-schedule__box"]')
+  const row = scheduleFamily.querySelector('[data-element="family-schedule__row"]')
+  const cells = scheduleFamily.querySelectorAll('[data-element="family-schedule__cell"]')
+  const cellTime = scheduleFamily.querySelector('[data-element="family-schedule__time"]')
+
+  function tableFixedCalculate() {
+    offsetHeader = window.innerWidth > 574 ? 68 : 60
+    if (window.innerWidth < 1440) {
+      for (let i = 0; i < cells.length; i++) {
+        cells[i].style.height = cells[i].parentNode.offsetHeight + 'px'
+      }
+    } else {
+      for (let i = 0; i < cells.length; i++) {
+        cells[i].style.height = 'auto'
+      }
+    }
+  }
+
+  window.addEventListener('scroll', rowFixedCalculate)
+  window.addEventListener('resize', tableFixedCalculate)
+
+  rowFixedCalculate()
+
+  function rowFixedCalculate () {
+    if (window.innerWidth >= 1440) {
+      row.style.transform = 'none'
+      cellTime.style.transform = 'none'
+    } else {
+      const topCoord = table.getBoundingClientRect().top
+      const bottomCoord = table.getBoundingClientRect().bottom
+      if (topCoord < offsetHeader && bottomCoord > 100) {
+        row.style.transform = row.style.transform.slice(0, row.style.transform.length - 2) - 400 + 'px'
+        cellTime.style.transform = cellTime.style.transform.slice(0, cellTime.style.transform.length - 2) - 400 + 'px'
+        window.requestAnimationFrame(updateRowFixedTop)
+      } else {
+        row.style.transform = ''
+        cellTime.style.transform = ''
+      }
+    }
+  }
+
+  function updateRowFixedTop () {
+    row.style.transform = 'translateY(' + (offsetHeader - table.getBoundingClientRect().top) + 'px' + ')'
+    cellTime.style.transform = 'translateY(' + (offsetHeader - table.getBoundingClientRect().top) + 'px' + ')'
+  }
+
+  toggleBottom.addEventListener('click', toggleTable)
+  toggleBottom.addEventListener('click', scrollToTable)
+
+  function toggleTable () {
+    if (table.classList.contains('hide')) {
+      showTable()
+    } else {
+      hideTable()
+    }
+  }
+
+  function scrollToTable () {
+    const y = scheduleFamily.getBoundingClientRect().top + window.scrollY - 100
+    window.scrollTo({top: y, behavior: 'smooth'})
+  }
+
+  function hideTable () {
+    table.classList.add('hide')
+    toggleBottom.classList.add('reverse')
+    toggleBottom.innerHTML = "Развернуть расписание"
+  }
+
+  function showTable () {
+    table.classList.remove('hide')
+    toggleBottom.classList.remove('reverse')
+    toggleBottom.innerHTML = "Свернуть расписание"
+    row.style.transform = 'none'
+    cellTime.style.transform = 'none'
+    setTimeout(() => tableFixedCalculate(), 100)
+  }
+}
+
+const familyTeachersSlider = document.querySelector('.family-teachers__slider')
+
+if (familyTeachersSlider) familyTeachersSliderInit()
+
+function familyTeachersSliderInit () {
+  new Swiper(familyTeachersSlider, {
+      slidesPerView: 'auto',
+      spaceBetween: 40,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      a11y: false,
+      pagination: {
+        el: '.family-teachers__pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        744: {
+          navigation: {
+            nextEl: '.family-teachers__nav-btn_next',
+            prevEl: '.family-teachers__nav-btn_prev',
+          },
+          scrollbar: {
+            el: '.family-teachers__scrollbar',
+            draggable: true,
+          },
+        }
+      }
+    })
+}
+
 const faqItems = document.querySelectorAll("[data-element='faq-item']")
 
 for (let i = 0; i < faqItems.length; i++) {
@@ -572,6 +726,47 @@ function modalOrderNewSelectInit () {
     }
   })
 }
+
+// try {
+//   const mask = (selector) => {
+//     function setMask() {
+//       let matrix = '+###############';
+//
+//       maskList.forEach(item => {
+//         let code = item.code.replace(/[\s#]/g, ''),
+//           phone = this.value.replace(/[\s#-)(]/g, '');
+//
+//         if (phone.includes(code)) {
+//           //console.log(phone, code);
+//           matrix = item.code;
+//         }
+//       });
+//
+//       let i = 0,
+//         val = this.value.replace(/\D/g, '');
+//
+//       this.value = matrix.replace(/(?!\+)./g, function(a) {
+//         return /[#\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? '' : a;
+//       });
+//     }
+//
+//     let inputs = document.querySelectorAll(selector);
+//
+//     inputs.forEach(input => {
+//       input.addEventListener('focus', () => initInputHandlers(input), {once: true});
+//     });
+//
+//     function initInputHandlers (input) {
+//       if (!input.value) input.value = '+';
+//       input.addEventListener('input', setMask);
+//       input.addEventListener('focus', setMask);
+//       input.addEventListener('blur', setMask);
+//     }
+//   };
+//   mask("[data-phone-pattern]");
+// } catch (error) {
+//
+// }
 
 const preAboutVideo = document.querySelector("[data-element='pre-about-video']")
 
