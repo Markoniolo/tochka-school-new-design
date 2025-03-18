@@ -1,0 +1,23 @@
+-
+  const familyHowList = [
+    { text: 'Учитесь онлайн на учебной платформе по расписанию, взаимодействуя с учителем в чате' },
+    { text: 'Изучаете учебные материалы, прикрепленные к каждому уроку' },
+    { text: 'Тьютор помогает усваивать материал и поддерживает по каждому предмету.'  },
+    { text: 'Проходите программу, соответствующую школьной программе обучения' },
+    { text: 'Выполняете домашние работы, контрольные работы и проходите аттестацию онлайн' },
+  ]
+
+.family-how(data-element='family-how')
+  .family-how__cont.cont
+    h2.family-how__caption Как проходит обучение
+    .family-how__slider(data-element='family-how-slider')
+      .family-how__wrapper.swiper-wrapper
+        each item, index in familyHowList
+          .family-how__slide.swiper-slide
+            .family-how__text= item.text
+            .family-how__number= index+1
+      .family-how__bottom
+        .family-how__scrollbar
+        .family-how__nav
+          button.family-how__nav-btn.family-how__nav-btn_prev
+          button.family-how__nav-btn.family-how__nav-btn_next

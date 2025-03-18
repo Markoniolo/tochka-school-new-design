@@ -1,0 +1,88 @@
+.family-point {
+  margin-bottom: 80px;
+  @include media(lg) {
+    margin-bottom: 40px;
+  }
+}
+
+.family-point__cont {
+
+}
+
+.family-point__area {
+  border-radius: 20px;
+  background: #fff;
+  padding: 59px 124px 59px 190px;
+  display: flex;
+  align-items: center;
+  min-height: 177px;
+  overflow: hidden;
+  position: relative;
+  @include media(lg) {
+    padding: 30px 47px 30px 48px;
+    min-height: 147px;
+  }
+  @include media(xs) {
+    padding: 40px 18px;
+    min-height: auto;
+    display: block;
+    text-align: center;
+  }
+  &::after {
+    content: '';
+    @include bg-icon('family-point/family-point-decor-1.svg');
+    width: 121px;
+    height: 125px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @include media(lg) {
+      width: 121px;
+      height: 125px;
+      @include bg-icon('family-point/family-point-decor-1_tablet.svg');
+    }
+    @include media(xs) {
+      content: none;
+    }
+  }
+  &::before {
+    content: '';
+    @include bg-icon('family-point/family-point-decor-2.svg');
+    width: 65px;
+    height: 86px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    @include media(lg) {
+      content: none;
+    }
+  }
+}
+
+.family-point__title {
+  margin-right: 60px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 97%;
+  color: #003c56;
+  flex-shrink: 0;
+  @include media(lg) {
+    margin-right: 35px;
+    font-size: 25px;
+  }
+  @include media(xs) {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
+
+.family-point__text {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+  }
+}

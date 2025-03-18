@@ -1,0 +1,165 @@
+.family-docs {
+  padding-bottom: 80px;
+  background-color: #fff;
+  @include media(lg) {
+    padding-bottom: 33px;
+  }
+}
+
+.family-docs__cont {
+
+}
+
+.family-docs__wrap {
+  display: flex;
+  gap: 30px;
+  @include media(lg) {
+    gap: 25px;
+    flex-direction: column;
+  }
+  @include media(xs) {
+    gap: 20px;
+  }
+}
+
+.family-docs__area {
+  position: relative;
+  border-radius: 20px;
+  padding: 40px 60px;
+  background: #f3f5fb;
+  min-height: 307px;
+  flex-grow: 1;
+  @include media(lg) {
+    padding: 30px;
+    width: 100%;
+    min-height: 285px;
+  }
+  @include media(xs) {
+    min-height: auto;
+    text-align: center;
+  }
+}
+
+.family-docs__caption {
+  margin-bottom: 45px;
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 97%;
+  color: #003c56;
+  max-width: 412px;
+  width: 100%;
+  @include media(lg) {
+    max-width: 314px;
+    margin-bottom: 30px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+  @include media(xs) {
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
+.family-docs__picture {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 333px;
+  height: 307px;
+  @include media(lg) {
+    width: 262px;
+    height: 231px;
+    bottom: 30px;
+    right: 30px;
+  }
+  @include media(xs) {
+    position: static;
+    margin: 0 auto 30px;
+  }
+}
+
+.family-docs__image {
+  height: 100%;
+}
+
+.family-docs__text {
+  margin-bottom: 20px;
+  max-width: 462px;
+  width: 100%;
+  @include media(lg) {
+    margin-bottom: 15px;
+    max-width: 320px;
+  }
+  @include media(xs) {
+    max-width: 100%;
+  }
+}
+
+.family-docs__note {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.65);
+  @include media(lg) {
+    font-size: 13px;
+    max-width: 284px;
+    width: 100%;
+  }
+  @include media(xs) {
+    max-width: 100%;
+  }
+}
+
+.family-docs__box {
+  width: 400px;
+  flex-shrink: 0;
+  background: #f3f5fb;
+  border-radius: 20px;
+  padding: 40px 37px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include media(lg) {
+    position: relative;
+    width: 100%;
+    padding: 22px 30px 38px;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  @include media(xs) {
+    padding: 30px 20px;
+    flex-direction: column;
+  }
+}
+
+.family-docs__school {
+  width: 148px;
+  height: 137px;
+  margin: 0 auto 25px;
+  @include media(lg) {
+    width: 182px;
+    height: 168px;
+    position: absolute;
+    top: -8px;
+    right: 74px;
+  }
+  @include media(xs) {
+    position: static;
+  }
+}
+
+.family-docs__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 99%;
+  text-align: center;
+  color: #003c56;
+  @include media(lg) {
+    text-align: left;
+    max-width: 300px;
+    width: 100%;
+  }
+  @include media(xs) {
+    max-width: 100%;
+    text-align: center;
+  }
+}

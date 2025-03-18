@@ -1,0 +1,36 @@
+-
+  const familyTeachersList = [
+    'Победитель конкурса «Лучшие учителя России» в Тверской области 2024',
+    'Учитель года Твери 2023',
+    'Учитель года Тверской области 2023',
+    'Финалист заключительного этапа Всероссийского конкурса «Учитель года России» 2023',
+    'Благодарность Губернатора Тверской области «За значительный личный вклад в развитие системы образования в Тверской области, а также повышение социальной значимости и престижа профессий сферы образования» 2023 г ',
+    'Почетная грамота Управления образования Администрации города Твери « За высокие результаты педагогического труда, методическое мастерство и профессионализм» 2023 г',
+    'Педагогический стаж ー 5 лет',
+  ]
+
+.family-teachers
+  .family-teachers__cont.cont
+    .family-teachers__caption Кто будет вести уроки для&nbsp;Вас
+    .family-teachers__slider
+      .family-teachers__wrapper.swiper-wrapper
+        each item in ['Екатерина Александровна Горошенкина','Анна Юрьевна','Галина Валерьевна','Елена Юрьевна']
+          .family-teachers__slide.swiper-slide
+            .family-teachers__area
+              picture.family-teachers__picture
+                img.family-teachers__image(src=staticImg('teacher/teacher.png') alt='')
+              .family-teachers__inner
+                .family-teachers__box
+                  .family-teachers__name!= item
+                  .family-teachers__tags
+                    .family-teachers__tag Литература
+                    .family-teachers__tag Русский язык
+                  .family-teachers__list
+                    each item in familyTeachersList
+                      .family-teachers__item= item
+      .family-teachers__bottom
+        .family-teachers__scrollbar
+        .family-teachers__nav
+          button.family-teachers__nav-btn.family-teachers__nav-btn_prev
+          button.family-teachers__nav-btn.family-teachers__nav-btn_next
+      .family-teachers__pagination

@@ -1,0 +1,30 @@
+-
+  const familyProgramTags = [
+    'Русский язык',
+    'Литература',
+    'Английский язык',
+    'Математика',
+    'Обществознание',
+    'География',
+    'Биология',
+    'Физика',
+    'Химия',
+    'Информатика',
+    'ИЗО и технология',
+    'Физкультура',
+    'Музыка',
+    'ОБЗР*',
+    'История',
+  ]
+
+.family-program
+  .family-program__cont.cont
+    .family-program__wrap
+      .family-program__box
+        h2.family-program__caption Программа 5 класса
+        .family-program__text Составлена на основе государственного образовательного стандарта. Все предметы — как в обычной школе.
+      .family-program__inner
+        .family-program__overlay
+          .family-program__tags
+            each tag in familyProgramTags
+              .family-program__tag= tag

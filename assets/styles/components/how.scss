@@ -114,6 +114,7 @@
     flex-direction: column;
     margin-bottom: 0;
     gap: 20px;
+    transform: none !important;
   }
   @include media(xs) {
     gap: 25px;

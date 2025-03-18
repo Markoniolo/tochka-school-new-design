@@ -160,7 +160,7 @@
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    @include bg-icon('teacher/ic_teacher_point.svg');
+    @include bg-icon('icons/ic_point_orange.svg');
     @include media(lg) {
       width: 14px;
       height: 14px;

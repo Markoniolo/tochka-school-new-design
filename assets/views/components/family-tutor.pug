@@ -1,0 +1,16 @@
+.family-tutor
+  .family-tutor__cont.cont
+    .family-tutor__caption Персональный тьютор каждому ученику!
+    .family-tutor__wrap
+      each item in [1,2,3,4,5,6]
+        .family-tutor__decor(class=`family-tutor__decor_${item}`)
+      .family-tutor__area
+        picture.family-tutor__picture
+          img.family-tutor__image(src=staticImg('family-tutor/family-tutor.png') alt='')
+        .family-tutor__list
+          .family-tutor__item.
+            Каждый предмет ребёнку будет помогать усваивать тьютор. Тьютор - профессиональный преподаватель по выбранному предмету.
+          .family-tutor__item.
+            Тьютор проверит домашнюю работу, разберет вместе с ребенком ошибки, поможет их исправить и всегда будет на связи.
+          .family-tutor__item.
+            С тьютором невозможна ситуация «я не понял тему»

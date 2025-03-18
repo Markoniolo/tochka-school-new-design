@@ -52,6 +52,7 @@
   &::before {
     content: '';
     position: absolute;
+    z-index: -1;
     bottom: 0;
     left: 0;
     @include bg-icon('info/info-decor-circles.svg');

@@ -1,0 +1,25 @@
+extends ../components/_layout/layout
+
+block head
+  +title('Семейное обучение')
+
+block body
+  include ../components/family-cap
+  include ../components/family-point
+  include ../components/family-about
+  include ../components/family-how
+  include ../components/family-program
+  include ../components/family-schedule
+  include ../components/family-teachers
+  include ../components/family-tutor
+  include ../components/family-steps
+  include ../components/family-manual
+  include ../components/family-docs
+  include ../components/family-cost
+  +cost('short')
+  include ../components/pre-reviews
+  include ../components/faq
+  include ../components/trial-license
+  include ../components/pre-end
+  +pre-end('course','Время принять решение: оставить всё как есть или начать обучение, получить твёрдые знания и отличные оценки.',
+    'Начать обучение')

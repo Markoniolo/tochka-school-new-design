@@ -1,0 +1,131 @@
+.family-cap {
+  margin-bottom: 50px;
+  @include media(lg) {
+    margin-bottom: 40px;
+  }
+  & ~ .trial-license {
+    background: transparent;
+    @include media(lg) {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      .trial-license__inner {
+        background: #f2f2f2;
+      }
+    }
+  }
+  & ~ .pre-reviews {
+    margin-bottom: 0;
+  }
+}
+
+.family-cap__cont {
+
+}
+
+.family-cap__area {
+  position: relative;
+  box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
+  @include bg-icon('family-cap/family-cap-bg.png');
+  border-radius: 31px;
+  padding: 60px;
+  min-height: 518px;
+  @include media(lg) {
+    min-height: 347px;
+    border-radius: 10px;
+    padding: 25px;
+    @include bg-icon('family-cap/family-cap-bg_tablet.png');
+  }
+  @include media(xs) {
+    min-height: auto;
+    padding: 30px 16px 40px;
+    @include bg-icon('family-cap/family-cap-bg_mob.png');
+  }
+}
+
+.family-cap__number {
+  margin-bottom: 40px;
+  font-size: 24px;
+  line-height: 92%;
+  @include media(lg) {
+    margin-bottom: 23px;
+    font-size: 18px;
+  }
+  @include media(xs) {
+    text-align: center;
+  }
+}
+
+.family-cap__caption {
+  margin-bottom: 50px;
+  max-width: 600px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 112%;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 30px;
+    margin-bottom: 28px;
+    max-width: 312px;
+  }
+  @include media(xs) {
+    font-size: 27px;
+    margin-bottom: 25px;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+.family-cap__text {
+  margin-bottom: 63px;
+  max-width: 590px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 60px;
+    font-size: 18px;
+    line-height: 23px;
+    max-width: 312px;
+  }
+  @include media(xs) {
+    margin-bottom: 25px;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+.family-cap__picture {
+  position: absolute;
+  top: 51px;
+  right: 70px;
+  width: 519px;
+  height: 416px;
+  @include media(lg) {
+    top: 61px;
+    right: 24px;
+    width: 314px;
+    height: 252px;
+  }
+  @include media(xs) {
+    position: static;
+    width: 234px;
+    height: 188px;
+    margin: 0 auto 19px;
+  }
+}
+
+.family-cap__image {
+  height: 100%;
+}
+
+.family-cap__button {
+  display: inline-block;
+  font-size: 16px;
+  padding: 17px 50px 18px;
+  @include media(xs) {
+    display: block;
+  }
+}

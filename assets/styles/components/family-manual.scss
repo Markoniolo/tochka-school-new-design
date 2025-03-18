@@ -1,0 +1,129 @@
+.family-manual {
+  margin-bottom: 50px;
+  background-color: #FFFFFF;
+  @include media(lg) {
+    margin-bottom: 40px;
+  }
+  @include media(md) {
+    margin-bottom: 3px;
+  }
+  @include media(xs) {
+    margin-bottom: 40px;
+  }
+}
+
+.family-manual__cont {
+
+}
+
+.family-manual__area {
+  border-radius: 31px;
+  overflow: hidden;
+  display: flex;
+  @include bg-icon('family-manual/family-manual-bg.png');
+  @include media(lg) {
+    border-radius: 10px;
+    background: none;
+    align-items: flex-start;
+  }
+  @include media(xs) {
+    flex-direction: column;
+    @include bg-icon('family-manual/family-manual-bg_mob.png');
+  }
+}
+
+.family-manual__box {
+  padding: 50px 90px 0 60px;
+  @include media(lg) {
+    padding: 0 17px 0 0;
+  }
+  @include media(xs) {
+    padding: 30px 0 0;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.family-manual__caption {
+  margin-bottom: 17px;
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 104%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 7px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+  @include media(xs) {
+    margin-bottom: 5px;
+    padding: 0 18px;
+  }
+}
+
+.family-manual__picture {
+  @include media(lg) {
+    width: 328px;
+    height: 358px;
+    margin-left: -12px;
+  }
+  @include media(xs) {
+    margin: 0 auto -174px;
+  }
+}
+
+.family-manual__image {
+
+}
+
+.family-manual__form {
+  width: 400px;
+  flex-shrink: 0;
+  background: #6683c2;
+  @include media(lg) {
+    width: 353px;
+    border-radius: 10px;
+  }
+  @include media(xs) {
+    width: 100%;
+  }
+}
+
+.family-manual__inner {
+  padding: 46px 55px;
+  @include media(lg) {
+    padding: 35px 32px;
+  }
+}
+
+.family-manual__input {
+  margin-bottom: 20px;
+  width: 100%;
+  &:last-of-type {
+    margin-bottom: 30px;
+  }
+}
+
+.family-manual__submit {
+  margin-bottom: 25px;
+  display: block;
+  width: 100%;
+}
+
+.family-manual__label {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.family-manual__checkbox {
+
+}
+
+.family-manual__checkbox-view {
+
+}
+
+.family-manual__checkbox-text {
+
+}

@@ -1,0 +1,16 @@
+-
+  const familyStepsList = [
+    'Уведомите Ваш орган образования по месту жительства. Предоставим текст заявления и все необходимые инструкции.',
+    'Заберите личное дело и другие документы из текущей школы.',
+    'Выберите школу и «прикрепитесь» к ней для прохождения аттестации.',
+    'Начните учиться на семейном обучении «Точки Знаний» и проходите аттестацию онлайн.',
+  ]
+
+.family-steps
+  .family-steps__cont.cont
+    .family-steps__caption 4 шага к поступлению на семейное обучение
+    .family-steps__list
+      each item, index in familyStepsList
+        .family-steps__item
+          .family-steps__number= index+1
+          .family-steps__text= item

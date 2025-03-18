@@ -30,7 +30,8 @@
 .cost__wrap {
   display: flex;
   justify-content: center;
-  gap: 0 30px;
+  flex-wrap: wrap;
+  gap: 50px 30px;
   @include media(lg) {
     gap: 30px;
     flex-direction: column;
@@ -38,6 +39,63 @@
   }
   @include media(xs) {
     gap: 20px;
+  }
+  &_short {
+    .info__area {
+      @include media-up(xl) {
+        background: #FFFFFF;
+        max-width: 428px;
+        padding: 35px;
+        min-height: 596px;
+      }
+    }
+    .info__text {
+      @include media-up(xl) {
+        margin-bottom: 25px;
+      }
+    }
+    .info__buttons {
+      @include media-up(xl) {
+        gap: 20px;
+      }
+    }
+    .info__capital {
+      @include media-up(xl) {
+        min-height: 215px;
+        width: 100%;
+        @include bg-icon('info/info-short-bg.png');
+        &::before {
+          content: '';
+          @include bg-icon('info/info-short-decor.svg');
+          width: 253px;
+          height: 203px;
+          position: absolute;
+          top: 0;
+          right: 285px;
+        }
+        .info__text {
+          position: absolute;
+          max-width: 480px;
+          bottom: 49px;
+          left: 372px;
+          margin-bottom: 0;
+          span {
+            display: block;
+          }
+        }
+        .info__title {
+          margin-bottom: 30px;
+        }
+      }
+    }
+    .info__capital-decor {
+      @include media-up(xl) {
+        width: 305px;
+        height: 215px;
+        bottom: 0;
+        right: 74px;
+      }
+    }
   }
 }
 
@@ -48,6 +106,8 @@
   padding: 15px;
   display: flex;
   flex-direction: column;
+  max-width: 428px;
+  width: 100%;
   @include media(lg) {
     max-width: 428px;
     width: 100%;
@@ -183,6 +243,10 @@
       width: 14px;
       height: 14px;
     }
+  }
+  span {
+    font-weight: 600;
+    color: #F37E60;
   }
   &_minus {
     &::before {
