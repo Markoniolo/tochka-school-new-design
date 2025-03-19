@@ -295,7 +295,9 @@ ol.article__list {
 }
 
 .article__item {
-
+  .article__text {
+    margin-bottom: 0;
+  }
 }
 
 .article__info {
