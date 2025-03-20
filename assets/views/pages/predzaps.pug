@@ -1,7 +1,22 @@
-extends ../components/_layout/layout
+include ../_variables
+include ../components/_layout/_connect-style
+include ../components/_layout/_title
 
-block head
-  +title('Предзапись короткая')
+doctype html
+html(lang='ru')
+  head
+    include ../components/_layout/_head
+    +title('Предзапись короткая')
+  body
+    .sticky-header
+      include ../components/_layout/header-new
+    main.wrapper
+      include ../components/pre-cap
+      +pre-cap('short')
+    include ../components/modals/modal-order-new
+    include ../components/_layout/footer-new
+    include ../components/_layout/scripts
 
-block body
-  include ../components/pre-cap
+
+
+
