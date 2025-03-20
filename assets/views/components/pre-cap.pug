@@ -1,5 +1,5 @@
-mixin pre-cap(mod)
-  .pre-cap(class=mod ? `pre-cap_${mod}` : false)
+mixin pre-cap
+  .pre-cap
     .pre-cap__cont.cont
       .pre-cap__wrap
         each item in [1,2,3,4,5]
@@ -13,10 +13,9 @@ mixin pre-cap(mod)
             ul.pre-cap__list
               li.pre-cap__item!= 'Сэкономить от&nbsp;8&nbsp;000&nbsp;до&nbsp;53&nbsp;000&nbsp;рублей'
               li.pre-cap__item!= 'Занять место на обучении раньше остальных'
-            if mod !== 'short'
-              .pre-cap__gallery
-                each item in [1,2,3]
-                  img.pre-cap__image(src=staticImg(`pre-cap/pre-cap-${item}.svg`) alt='')
+            .pre-cap__gallery
+              each item in [1,2,3]
+                img.pre-cap__image(src=staticImg(`pre-cap/pre-cap-${item}.svg`) alt='')
           form.pre-cap__form(data-request-validate)
             .pre-cap__headline Записаться в предзапись
             .pre-cap__inner
