@@ -4,6 +4,53 @@
   @include media(lg) {
     padding-bottom: 40px;
   }
+  &.small {
+    b.schedule__note {
+      margin-bottom: 6px;
+      font-size: 24px;
+    }
+    .schedule__orange-title {
+      font-size: 24px;
+    }
+    .schedule__orange {
+      max-width: 384px;
+      padding: 18px 30px;
+      gap: 0;
+      @include media(lg) {
+        max-width: 300px;
+      }
+      @include media(xs) {
+        max-width: 100%;
+        padding: 17px 20px;
+      }
+    }
+    .schedule__line {
+      @include media(lg) {
+        gap: 0;
+      }
+      @include media(xs) {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+    .schedule__bottom {
+      gap: 0 30px;
+    }
+    .schedule__box {
+      margin-right: 35px;
+      padding: 18px 30px;
+      @include media(lg) {
+        margin-right: 25px;
+        width: calc(100% - 325px);
+      }
+      @include media(xs) {
+        width: 100%;
+        margin-right: 0;
+        padding: 17px 20px;
+      }
+    }
+  }
 }
 
 .schedule__cont {
@@ -49,8 +96,12 @@
   border-radius: 20px;
   box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
   background: #fff;
-  padding: 20px;
+  padding: 17px 20px;
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   @include media(lg) {
     border-radius: 10px;
     margin-right: 0;
@@ -63,7 +114,7 @@
 
 .schedule__tag {
   display: inline-block;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-size: 14px;
   line-height: 10px;
   color: #6683c2;
@@ -87,6 +138,8 @@
 }
 
 b.schedule__note {
+  display: inline-block;
+  margin-bottom: 4px;
   font-weight: 500;
 }
 
@@ -96,7 +149,7 @@ b.schedule__note {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 15px 0;
+  gap: 8px 0;
   background: #f37e60;
   max-width: 288px;
   width: 100%;

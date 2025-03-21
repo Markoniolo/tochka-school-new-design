@@ -14,10 +14,12 @@ function courseAboutVideoInit () {
       courseAboutVideo.muted = false
       courseAboutVideo.loop = false
       courseAboutVideo.currentTime = 0
-      courseAboutVideo.play()
+      courseAboutVideo.controls = true
       soundBtn.classList.add('hide')
+      setTimeout(() => courseAboutVideo.play(), 100)
     } else {
       courseAboutVideo.muted = true
+      courseAboutVideo.controls = false
       soundBtn.classList.remove('hide')
     }
   }
