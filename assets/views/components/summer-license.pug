@@ -1,0 +1,17 @@
+article.summer-license
+  .summer-license__cont.cont
+    h2.summer-license__title.trial-title Наша лицензия
+    .summer-license__area
+      .summer-license__inner
+        p.summer-license__text.
+          Работаем согласно лицензии на осуществление образовательной деятельности.
+        p.summer-license__text.
+          Это даёт Вам право получить налоговый вычет за обучение. Поможем оформить документы и подать заявление.
+        img.summer-license__image(src=staticImg('trial-license/trial-license-doc.png') alt='')
+        a.summer-license__button.btn-blue.btn-blue_arrow(href="https://cms-dev.tochka-school.ru/storage/app/media/reestrovaia_vypiska/reestrovaia-vypiska.pdf" data-fancybox="production") Открыть лицензию
+        .summer-license__box
+          span.summer-license__note Регистрационный номер лицензии: № Л035-01218-23/00650937
+          span.summer-license__note Дата предоставления лицензии: 11 мая 2023
+      .summer-license__wrap
+        each item in [1,2,3,4]
+          .summer-license__decor(class=`summer-license__decor_${item}`)

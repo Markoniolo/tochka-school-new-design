@@ -6,6 +6,21 @@
     padding-top: 40px;
     padding-bottom: 40px;
   }
+  &.summer {
+    background: transparent;
+    .faq__item.active {
+      background: #d6f3ba;
+      .faq__top {
+        background: #d6f3ba;
+        &::before {
+          @include bg-icon('faq/ic_faq_minus_green.svg');
+        }
+      }
+    }
+    .faq__top::before {
+      @include bg-icon('faq/ic_faq_plus_green.svg');
+    }
+  }
 }
 
 .faq__cont {
@@ -71,6 +86,7 @@
 }
 
 .faq__top {
+  cursor: pointer;
   border-radius: 43px;
   padding: 21px 109px 21px 35px;
   font-weight: 500;

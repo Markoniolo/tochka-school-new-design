@@ -1,0 +1,91 @@
+.summer-important {
+
+}
+
+.summer-important__cont {
+
+}
+
+.summer-important__caption {
+  margin-bottom: 50px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 121%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 30px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+  @include media(xs) {
+    max-width: 215px;
+    width: 100%;
+  }
+}
+
+.summer-important__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px 45px;
+  @include media(lg) {
+    border-radius: 10px;
+    background: #D6F3BA;
+    gap: 15px 0;
+    padding: 20px 12px 10px 20px;
+  }
+}
+
+.summer-important__item {
+  border-radius: 32px;
+  padding: 10px 15px 10px 54px;
+  background: #D6F3BA;
+  font-size: 24px;
+  line-height: 104%;
+  width: calc(50% - 28px);
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  @include media(lg) {
+    border-radius: 0;
+    padding: 0 0 0 18px;
+    width: 100%;
+    font-size: 15px;
+    line-height: 113%;
+    min-height: unset;
+  }
+  &:last-child {
+    @include media(lg) {
+      margin-top: -10px;
+    }
+  }
+  &::before {
+    content: '';
+    background: #A0D76A;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    left: 31px;
+    top: 50%;
+    transform: translateY(-50%);
+    @include media(lg) {
+      width: 6px;
+      height: 6px;
+      left: 0;
+    }
+  }
+}
+
+.summer-important__icon {
+  margin-left: 10px;
+  width: 67px;
+  height: 67px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 50%;
+  @include media(lg) {
+    margin-left: 8px;
+    width: 32px;
+    height: 32px;
+  }
+}

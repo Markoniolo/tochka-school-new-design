@@ -42,6 +42,9 @@
   }
   &_short {
     .info__area {
+      &::before {
+        z-index: 1;
+      }
       @include media-up(xl) {
         background: #FFFFFF;
         max-width: 428px;

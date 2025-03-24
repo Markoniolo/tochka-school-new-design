@@ -51,6 +51,7 @@
   padding: 30px;
   width: 478px;
   height: auto;
+  overflow: hidden;
   @include media(lg) {
     width: 365px;
     border-radius: 10px;

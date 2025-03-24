@@ -1,0 +1,20 @@
+-
+  const summerImportantList = [
+    'Онлайн-школа года 2024 по версии «GetCourse»',
+    'Аккредитованная IT-компания',
+    'Школа №1 в 2024 в рейтинге школ на внешних платформах по версии «SmartRanking»',
+    'Школа №1 по математике 2023 согласно рейтингу «GetCourse»',
+    'Образовательная лицензия',
+    '44 000+ учеников',
+    'Резидент «Сколково»',
+    'Средняя оценка родителями: 4,9',
+  ]
+
+.summer-important
+  .summer-important__cont.cont
+    h2.summer-important__caption Самое важное о&nbsp;«Точке Знаний»
+    .summer-important__list
+      each item, index in summerImportantList
+        .summer-important__item= item
+          if index === 7
+            img.summer-important__icon(src=staticImg('icons/ic_yandex_zoon.svg') alt='')

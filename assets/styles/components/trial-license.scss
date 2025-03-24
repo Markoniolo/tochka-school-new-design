@@ -8,6 +8,35 @@
     padding-bottom: 40px;
     margin-bottom: 40px;
   }
+  &.summer {
+    background: transparent;
+    padding-top: 80px;
+    @include media(lg) {
+      padding-top: 40px;
+    }
+    .trial-license__inner {
+      background-color: #D6F3BA;
+    }
+    .trial-license__decor_1 {
+      top: 18px;
+      left: 140px;
+    }
+    .trial-license__decor_2 {
+      top: 131px;
+      left: 128px;
+    }
+    .trial-license__decor_3 {
+      top: 139px;
+      left: 326px;
+    }
+    .trial-license__decor_4 {
+      top: 44px;
+      left: 314px;
+    }
+    .trial-license__decor_5 {
+      display: none;
+    }
+  }
 }
 
 .trial-license__cont {

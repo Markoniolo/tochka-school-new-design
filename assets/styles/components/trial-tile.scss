@@ -3,6 +3,33 @@
   @include media(lg) {
     padding-bottom: 40px;
   }
+  &.summer {
+    padding-bottom: 0;
+    .trial-tile__item {
+      background: #d6f3ba;
+      &_family {
+        background: #a1d86a;
+        .trial-tile__picture {
+          @include bg-icon('trial-tile/trial-tile-family-green.svg');
+          @include media(xs) {
+            @include bg-icon('trial-tile/trial-tile-family-green_mob.svg');
+          }
+        }
+      }
+    }
+    .tile-loader {
+      color: #A0D76A;
+    }
+    .trial-tile__filter-top, .trial-tile__filter-wrap {
+      background: #d6f3ba;
+    }
+    .trial-tile__filter-view {
+      background: #a1d86a;
+    }
+    .trial-tile__picture {
+      background: rgba(255,255,255,.26);
+    }
+  }
 }
 
 .trial-tile__cont {

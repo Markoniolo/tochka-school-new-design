@@ -1,0 +1,14 @@
+-
+  const summerOptionsList = [
+    'Закрыть <br> пробелы по <br> предмету',
+    'Повторить материал текущего учебного года',
+    'Изучить нужные предметы на следующий год',
+    'Новые горизонты: написание кода, шахматы, языки, математика',
+  ]
+
+.summer-options
+  .summer-options__cont.cont
+    h2.summer-options__caption 4 варианта провести лето с пользой
+    .summer-options__list
+      each item, index in summerOptionsList
+        .summer-options__item(class=`summer-options__item_${index+1}`)!= item

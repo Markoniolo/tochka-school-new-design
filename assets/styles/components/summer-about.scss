@@ -1,0 +1,200 @@
+.summer-about {
+  margin-bottom: 70px;
+}
+
+.summer-about__cont {
+
+}
+
+.summer-about__caption {
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 121%;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 25px;
+    line-height: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.summer-about__text {
+  margin-bottom: 50px;
+  font-size: 24px;
+  line-height: 30px;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 35px;
+    font-size: 18px;
+    line-height: 139%;
+  }
+  @include media(xs) {
+    margin-bottom: 30px;
+  }
+}
+
+.summer-about__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  @include media(lg) {
+    gap: 20px;
+    flex-direction: column;
+  }
+}
+
+.summer-about__item {
+  border-radius: 20px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
+  background: #d6f3ba;
+  width: calc(50% - 15px);
+  min-height: 117px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  padding: 10px 45px;
+  position: relative;
+  @include media(lg) {
+    min-height: 76px;
+    border-radius: 10px;
+    font-size: 18px;
+    line-height: 23px;
+    padding: 10px 20px;
+    width: 100%;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  &_1 {
+    padding-right: 294px;
+    @include media(lg) {
+      padding-right: 129px;
+    }
+    @include media(xs) {
+      padding-right: 133px;
+      min-height: 122px;
+    }
+    &::before {
+      @include bg-icon('summer-about/summer-about-1.svg');
+      width: 206px;
+      height: 117px;
+      @include media(lg) {
+        @include bg-icon('summer-about/summer-about-1_tablet.svg');
+        height: 76px;
+      }
+      @include media(xs) {
+        @include bg-icon('summer-about/summer-about-1_mob.svg');
+        width: 206px;
+        height: 117px;
+      }
+    }
+  }
+  &_2 {
+    padding-right: 200px;
+    @include media(lg) {
+      padding-right: 168px;
+    }
+    @include media(xs) {
+      padding-right: 130px;
+      min-height: 145px;
+    }
+    &::before {
+      @include bg-icon('summer-about/summer-about-2.svg');
+      width: 153px;
+      height: 117px;
+      @include media(lg) {
+        @include bg-icon('summer-about/summer-about-2_tablet.svg');
+        width: 206px;
+        height: 76px;
+      }
+      @include media(xs) {
+        @include bg-icon('summer-about/summer-about-2_mob.svg');
+        width: 206px;
+        height: 140px;
+      }
+    }
+  }
+  &_3 {
+    padding-right: 193px;
+    @include media(lg) {
+      padding-right: 344px;
+    }
+    @include media(xs) {
+      padding-right: 158px;
+      min-height: 122px;
+    }
+    &::before {
+      @include bg-icon('summer-about/summer-about-3.svg');
+      width: 206px;
+      height: 117px;
+      @include media(lg) {
+        @include bg-icon('summer-about/summer-about-3_tablet.svg');
+        width: 206px;
+        height: 71px;
+      }
+      @include media(xs) {
+        @include bg-icon('summer-about/summer-about-3_mob.svg');
+        width: 206px;
+        height: 117px;
+      }
+    }
+  }
+  &_4 {
+    padding-right: 201px;
+    @include media(lg) {
+      padding-right: 175px;
+      min-height: 53px;
+    }
+    @include media(xs) {
+      padding-right: 161px;
+      min-height: 97px;
+    }
+    &::before {
+      @include bg-icon('summer-about/summer-about-4.svg');
+      width: 167px;
+      height: 111px;
+      @include media(lg) {
+        @include bg-icon('summer-about/summer-about-4_tablet.svg');
+        width: 206px;
+        height: 52px;
+      }
+      @include media(xs) {
+        @include bg-icon('summer-about/summer-about-4_mob.svg');
+        width: 206px;
+        height: 96px;
+      }
+    }
+  }
+  &_5 {
+    padding-right: 608px;
+    width: 100%;
+    @include media(lg) {
+      padding-right: 425px;
+      min-height: 122px;
+    }
+    @include media(xs) {
+      padding-right: 94px;
+    }
+    &::before {
+      @include bg-icon('summer-about/summer-about-5.svg');
+      width: 416px;
+      height: 108px;
+      @include media(lg) {
+        @include bg-icon('summer-about/summer-about-5_tablet.svg');
+        width: 295px;
+        height: 121px;
+      }
+      @include media(xs) {
+        @include bg-icon('summer-about/summer-about-5_mob.svg');
+        width: 206px;
+        height: 121px;
+      }
+    }
+  }
+}

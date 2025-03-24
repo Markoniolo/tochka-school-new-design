@@ -1,0 +1,35 @@
+include ../_variables
+include ../components/_layout/_connect-style
+include ../components/_layout/_title
+
+doctype html
+html(lang='ru')
+  head
+    include ../components/_layout/_head
+    +title('Летние курсы')
+  body.summer
+    .sticky-header
+      include ../components/_layout/header
+    main.wrapper
+      block body
+        include ../components/summer-cap
+        include ../components/summer-info
+        include ../components/summer-about
+        include ../components/summer-informer
+        include ../components/summer-options
+        include ../components/trial-tile
+        +trial-tile('summer', 'Выберите курс')
+        include ../components/faq
+        +faq('summer')
+        include ../components/summer-important
+        include ../components/trial-license
+        +trial-license('summer')
+        include ../components/pre-reviews
+        +pre-reviews('summer')
+        include ../components/pre-end
+        +pre-end('summer','Время принять решение: оставить всё как есть или начать обучение, получить твёрдые знания и отличные оценки.',
+          'Выбрать предмет')
+    include ../components/modals/modal-order-new
+    include ../components/_layout/footer
+    include ../components/_layout/scripts
+

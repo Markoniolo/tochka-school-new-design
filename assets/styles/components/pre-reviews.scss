@@ -10,6 +10,27 @@
     margin-bottom: 40px;
     padding-bottom: 0;
   }
+  &.summer {
+    background-color: transparent;
+    .pre-reviews__slide {
+      background: #d6f3ba;
+    }
+    .pre-reviews__box {
+      background: rgba(255, 255, 255, 0.26);
+    }
+    .pre-reviews__play {
+      @include bg-icon('icons/ic_video_play_green.svg');
+    }
+    .pre-reviews__scrollbar {
+      background-color: rgba(#A0D76A, .17);
+      .swiper-scrollbar-drag {
+        background-color: #A0D76A;
+      }
+    }
+    .pre-reviews__nav-btn {
+      background-color: #A0D76A;
+    }
+  }
 }
 
 .pre-reviews__cont {

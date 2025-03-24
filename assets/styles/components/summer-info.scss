@@ -1,0 +1,82 @@
+.summer-info {
+  position: relative;
+  z-index: 1;
+  margin-top: -190px;
+  margin-bottom: 80px;
+  @include media(lg) {
+    margin-top: -60px;
+    margin-bottom: 40px;
+  }
+  @include media(xs) {
+    margin-top: 0;
+  }
+  &::before {
+    content: '';
+    @include bg-img('summer-info/summer-info-clip-path.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    left: 0;
+    height: 195px;
+    @include media(lg) {
+      content: none;
+    }
+  }
+}
+
+.summer-info__cont {
+  position: relative;
+  z-index: 2;
+}
+
+.summer-info__list {
+  @include bg-icon('summer-info/summer-info-bg.svg');
+  border-radius: 32px;
+  padding: 30px;
+  gap: 25px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  @include media(lg) {
+    background: #a1d86a;
+    border-radius: 10px;
+    padding: 20px;
+    gap: 15px;
+  }
+  @include media(xs) {
+    padding: 15px 10px;
+  }
+}
+
+.summer-info__item {
+  border-radius: 43px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
+  background: #fff;
+  padding: 6px 30px;
+  font-weight: 500;
+  font-size: 16px;
+  min-height: 57px;
+  display: flex;
+  align-items: center;
+  @include media(lg) {
+    min-height: 55px;
+    width: 100%;
+    font-size: 15px;
+    padding: 6px 10px;
+  }
+  &::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-right: 13px;
+    @include bg-icon('icons/ic_point_summer.svg');
+    @include media(lg) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

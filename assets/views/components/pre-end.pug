@@ -7,4 +7,4 @@ mixin pre-end(mod, text, button)
         .pre-end__area
           h2.pre-end__caption.pre-caption Страница подошла к концу :)
           p.pre-end__text!= text
-          a.pre-end__button.btn-orange(href= mod === 'trial' ? '#trial-tile' : '#pre-reg' data-role='scroll-to-anchor')= button
+          a.pre-end__button.btn-orange(href= mod === 'trial' || mod === 'summer' ? '#trial-tile' : '#pre-reg' data-role='scroll-to-anchor')= button

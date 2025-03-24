@@ -1,0 +1,141 @@
+.summer-cap {
+  margin-top: -114px;
+  @include bg-img('summer-cap/summer-cap-bg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  padding-top: 207px;
+  padding-bottom: 200px;
+  @include media(lg) {
+    padding-top: 108px;
+    padding-bottom: 50px;
+    @include bg-img('summer-cap/summer-cap-bg_tablet.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+  }
+  @include media(md) {
+    margin-top: -97px;
+  }
+  @include media(xs) {
+    margin-bottom: 40px;
+    margin-top: -79px;
+    padding-top: 95px;
+    padding-bottom: 0;
+    @include bg-img('summer-cap/summer-cap-bg_mob.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+  }
+}
+
+.summer-cap__cont {
+
+}
+
+.summer-cap__area {
+  max-width: 458px;
+  width: 100%;
+  min-height: calc(100vw * 710 / 1920);
+  @include media(lg) {
+    max-width: 344px;
+    min-height: calc(100vw * 400 / 744);
+  }
+  @include media(xs) {
+    max-width: 100%;
+    min-height: calc(100vw * 593 / 532);
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.summer-cap__caption {
+  margin-bottom: 40px;
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 112%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 20px;
+    font-size: 27px;
+    line-height: 122%;
+  }
+  @include media(xs) {
+    text-align: center;
+  }
+}
+
+.summer-cap__text {
+  margin-bottom: 50px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 100%;
+  }
+  @include media(xs) {
+    max-width: 300px;
+    margin: 0 auto 20px;
+    text-align: center;
+  }
+}
+
+.summer-cap__list {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  @include media(lg) {
+    margin-bottom: 30px;
+    gap: 4px;
+  }
+  @include media(xs) {
+    max-width: 238px;
+    margin: 0 auto 187px;
+  }
+}
+
+.summer-cap__item {
+  font-size: 24px;
+  line-height: 30px;
+  color: #003c56;
+  padding-left: 28px;
+  position: relative;
+  @include media(lg) {
+    padding-left: 25px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+  &::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    @include bg-icon('icons/ic_point_summer.svg');
+    @include media(lg) {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+.summer-cap__button {
+  font-size: 16px;
+  padding: 20px 25px;
+  max-width: 262px;
+  width: 100%;
+  display: block;
+  @include media(lg) {
+    max-width: 236px;
+  }
+  @include media(xs) {
+    max-width: 313px;
+    margin: auto auto 0;
+  }
+}
