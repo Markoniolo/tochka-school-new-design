@@ -4,11 +4,11 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
-  padding-top: 207px;
-  padding-bottom: 200px;
+  padding-top: 195px;
+  padding-bottom: 112px;
   @include media(lg) {
-    padding-top: 108px;
-    padding-bottom: 50px;
+    padding-top: 100px;
+    padding-bottom: 12px;
     @include bg-img('summer-cap/summer-cap-bg_tablet.svg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -20,7 +20,7 @@
   @include media(xs) {
     margin-bottom: 40px;
     margin-top: -79px;
-    padding-top: 95px;
+    padding-top: 86px;
     padding-bottom: 0;
     @include bg-img('summer-cap/summer-cap-bg_mob.svg');
     background-repeat: no-repeat;
@@ -34,7 +34,7 @@
 }
 
 .summer-cap__area {
-  max-width: 458px;
+  max-width: 660px;
   width: 100%;
   min-height: calc(100vw * 710 / 1920);
   @include media(lg) {
@@ -43,20 +43,20 @@
   }
   @include media(xs) {
     max-width: 100%;
-    min-height: calc(100vw * 593 / 532);
+    min-height: calc(100vw * 576 / 532);
     display: flex;
     flex-direction: column;
   }
 }
 
 .summer-cap__caption {
-  margin-bottom: 40px;
+  margin-bottom: 22px;
   font-weight: 600;
   font-size: 58px;
   line-height: 112%;
   color: #003c56;
   @include media(lg) {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     font-size: 27px;
     line-height: 122%;
   }
@@ -66,19 +66,21 @@
 }
 
 .summer-cap__text {
-  margin-bottom: 50px;
+  margin-bottom: 36px;
+  max-width: 458px;
+  width: 100%;
   font-weight: 600;
   font-size: 24px;
   line-height: 30px;
   color: #003c56;
   @include media(lg) {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     font-size: 18px;
     line-height: 100%;
   }
   @include media(xs) {
     max-width: 300px;
-    margin: 0 auto 20px;
+    margin: 0 auto 16px;
     text-align: center;
   }
 }
@@ -94,7 +96,7 @@
   }
   @include media(xs) {
     max-width: 238px;
-    margin: 0 auto 187px;
+    margin: 0 auto 20px;
   }
 }
 

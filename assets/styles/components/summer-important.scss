@@ -61,7 +61,7 @@
   }
   &::before {
     content: '';
-    background: #A0D76A;
+    background: #F37E60;
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -70,6 +70,7 @@
     top: 50%;
     transform: translateY(-50%);
     @include media(lg) {
+      background: #A0D76A;
       width: 6px;
       height: 6px;
       left: 0;

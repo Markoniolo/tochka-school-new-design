@@ -40,6 +40,10 @@ mixin trial-tile(mod, title = 'Любой курс за 290 ₽')
                 .trial-tile__name Семейное обучение
                 .trial-tile__text Получайте школьное образование дома. Онлайн. С лучшими учителями РФ, внимательными тьюторами и аттестацией.
               .trial-tile__bottom
-                a.trial-tile__link.btn-orange(href='#') Начать обучение
-                .trial-tile__price-current 290 ₽
-                .trial-tile__price-old 1 750 ₽
+                if mod === 'summer'
+                  a.trial-tile__link.btn-orange(href='#') Записаться за 3 090 ₽
+                  a.trial-tile__course(href='#') О курсе
+                else
+                  a.trial-tile__link.btn-orange(href='#') Начать обучение
+                  .trial-tile__price-current 290 ₽
+                  .trial-tile__price-old 1 750 ₽

@@ -29,6 +29,16 @@
     .trial-tile__picture {
       background: rgba(255,255,255,.26);
     }
+    .trial-tile__bottom {
+      @include media(xs) {
+        justify-content: space-between;
+      }
+    }
+    .trial-tile__link {
+      @include media(xs) {
+        margin-right: 5px;
+      }
+    }
   }
 }
 
@@ -450,5 +460,36 @@
   @include media(lg) {
     font-size: 15px;
     line-height: 19px;
+  }
+}
+
+.trial-tile__course {
+  position: relative;
+  margin-left: 40px;
+  font-size: 16px;
+  line-height: 16px;
+  color: #003c56;
+  padding-right: 18px;
+  flex-shrink: 0;
+  transition-duration: $transition-duration;
+  transition-property: color;
+  @include media(lg) {
+    margin-left: 30px;
+    font-size: 15px;
+    line-height: 15px;
+  }
+  @include media(xs) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &::before {
+    content: '';
+    @include bg-icon('trial-tile/ic_trial-tile_arrow_right.svg');
+    position: absolute;
+    width: 13px;
+    height: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
   }
 }
