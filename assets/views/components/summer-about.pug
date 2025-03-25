@@ -1,6 +1,6 @@
 -
   const summerAboutList = [
-    'Входное тестирование (по школьным предметам)',
+    'Входное тестирование (по&nbsp;школьным предметам)',
     'Индивидуальный курс на лето с учётом тестирования, пробелов, целей и графика ребёнка.',
     'Доступ ко всем урокам курса, если захочется изучить всё-всё-всё',
     'Проверка всех домашних заданий и помощь тьютора',
@@ -13,4 +13,4 @@
     .summer-about__text С 5 июня по 31 августа
     .summer-about__list
       each item, index in summerAboutList
-        .summer-about__item(class=`summer-about__item_${index+1}`)= item
+        .summer-about__item(class=`summer-about__item_${index+1}`)!= item
