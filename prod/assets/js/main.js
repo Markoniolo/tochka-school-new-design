@@ -196,6 +196,19 @@ function familyHowSliderInit () {
   }
 }
 
+const familyProgram = document.querySelector('.family-program')
+
+if (familyProgram) familyProgramInit()
+
+function familyProgramInit () {
+  const wrap = document.querySelector('.family-program__wrap')
+  const overlay = document.querySelector('.family-program__overlay')
+
+  overlay.addEventListener('scroll', function () {
+    wrap.classList.add('hide-hint')
+  }, {once: true})
+}
+
 const scheduleFamily = document.querySelector('[data-element="family-schedule"]')
 
 if (scheduleFamily) scheduleFamilyInit()
@@ -253,6 +266,8 @@ function scheduleFamilyInit () {
   toggleBottom.addEventListener('click', toggleTable)
   toggleBottom.addEventListener('click', scrollToTable)
 
+  toggleBottom.click()
+
   function toggleTable () {
     if (table.classList.contains('hide')) {
       showTable()
@@ -289,6 +304,7 @@ if (familyTeachersSlider) familyTeachersSliderInit()
 function familyTeachersSliderInit () {
   new Swiper(familyTeachersSlider, {
       slidesPerView: 'auto',
+      autoHeight: true,
       spaceBetween: 40,
       effect: 'fade',
       fadeEffect: {

@@ -5,6 +5,7 @@ if (familyTeachersSlider) familyTeachersSliderInit()
 function familyTeachersSliderInit () {
   new Swiper(familyTeachersSlider, {
       slidesPerView: 'auto',
+      autoHeight: true,
       spaceBetween: 40,
       effect: 'fade',
       fadeEffect: {
