@@ -7,14 +7,15 @@
     'Благодарность Губернатора Тверской области «За значительный личный вклад в развитие системы образования в Тверской области, а также повышение социальной значимости и престижа профессий сферы образования» 2023 г',
   ]
 
-.teacher
-  .teacher__cont.cont
-    h2.teacher__caption Учитель курса
-    .teacher__wrap
-      .teacher__picture
-        img.teacher__image(src=staticImg('teacher/teacher.png') alt='')
-      .teacher__area
-        .teacher__name Галина Валерьевна Шевченко
-        .teacher__list
-          each item in teacherList
-            .teacher__item= item
+mixin teacher(mod)
+  .teacher(class = `teacher_${mod}` : false)
+    .teacher__cont.cont
+      h2.teacher__caption Учитель курса
+      .teacher__wrap
+        .teacher__picture
+          img.teacher__image(src=staticImg('teacher/teacher.png') alt='')
+        .teacher__area
+          .teacher__name Галина Валерьевна Шевченко
+          .teacher__list
+            each item in teacherList
+              .teacher__item= item

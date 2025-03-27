@@ -1,0 +1,27 @@
+.summer-schedule
+  .summer-schedule__cont.cont
+    .summer-schedule__area
+      .summer-schedule__info
+        h2.summer-schedule__caption Бонус! Занятия в&nbsp;четвёртой четверти бесплатно!🤩
+        ul.summer-schedule__list
+          each item in ['онлайн-уроки','полный курс в записи','обратная связь от тьютора','проверка ДЗ']
+            li.summer-schedule__item= item
+      .summer-schedule__gallery
+        .summer-schedule__decor_1
+        .summer-schedule__decor_2
+        .summer-schedule__decor_3
+    .summer-schedule__line
+      .summer-schedule__title Расписание онлайн-уроков до конца мая:
+      each box in ['Параллель 1','Параллель 2']
+        .summer-schedule__box
+          .summer-schedule__parallel= box
+          .summer-schedule__bottom
+            .summer-schedule__data
+              .summer-schedule__data-day Понедельник
+              .summer-schedule__data-time в 16:30 Мск
+            .summer-schedule__data
+              .summer-schedule__data-day Среда
+              .summer-schedule__data-time в 15:30 Мск
+      .summer-schedule__orange
+        .summer-schedule__orange-title Занятия в записи
+        .summer-schedule__orange-text доступны через 1,5 часа после окончания онлайн трансляции

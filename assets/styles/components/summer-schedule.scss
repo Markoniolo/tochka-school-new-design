@@ -1,0 +1,328 @@
+.summer-schedule {
+  background: rgba(219, 248, 191, 0.4);
+  padding: 50px 0;
+  margin-bottom: 80px;
+  @include media(lg) {
+    background: transparent;
+    padding: 0 0 40px;
+    margin-bottom: 0;
+  }
+}
+
+.summer-schedule__cont {
+
+}
+
+.summer-schedule__area {
+  margin-bottom: 31px;
+  display: flex;
+  border-radius: 32px;
+  padding: 44px 54px 39px 48px;
+  @include bg-icon('summer-informer/summer-informer-bg.png');
+  background-size: cover;
+  @include media(lg) {
+    margin-bottom: 40px;
+    display: block;
+    border-radius: 10px;
+    background: #a1d86a;
+    padding: 20px 18px 20px 24px;
+  }
+  @include media(xs) {
+    padding: 20px 10px 15px;
+    @include bg-icon('summer-informer/summer-informer-bg_mob.png');
+    background-size: cover;
+  }
+}
+
+.summer-schedule__info {
+  margin-right: 27px;
+  width: 488px;
+  flex-shrink: 0;
+  @include media(lg) {
+    display: flex;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 25px;
+  }
+  @include media(xs) {
+    display: block;
+    margin-bottom: 30px;
+  }
+}
+
+.summer-schedule__caption {
+  margin-bottom: 39px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 120%;
+  color: #003c56;
+  max-width: 488px;
+  width: 100%;
+  position: relative;
+  @include media(lg) {
+    font-size: 25px;
+    line-height: 100%;
+    margin-bottom: 0;
+    max-width: 272px;
+    margin-right: 80px;
+  }
+  @include media(xs) {
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+  &::before {
+    content: '';
+    width: 64px;
+    height: 17px;
+    @include bg-icon('summer-informer/summer-informer-caption-decor.svg');
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    @include media(lg) {
+      width: 44px;
+      height: 11px;
+      top: 10px;
+      right: 5px;
+    }
+  }
+}
+
+.summer-schedule__list {
+  border-radius: 10px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
+  background: #fff;
+  max-width: 296px;
+  width: 100%;
+  padding: 20px 20px 20px 10px;
+  @include media(lg) {
+    max-width: 239px;
+    padding: 15px 10px 15px 5px;
+  }
+}
+
+.summer-schedule__item {
+  padding-left: 20px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 122%;
+  color: #003c56;
+  position: relative;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 113%;
+  }
+  &::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    position: absolute;
+    top: 11px;
+    left: 8px;
+    background: #003c56;
+    @include media(lg) {
+      top: 8px;
+    }
+  }
+}
+
+.summer-schedule__gallery {
+  display: flex;
+  gap: 42px 6px;
+  flex-wrap: wrap;
+  @include media(lg) {
+    gap: 20px 7px;
+  }
+  @include media(xs) {
+    gap: 0;
+  }
+}
+
+.summer-schedule__decor_1 {
+  width: 302px;
+  height: 179px;
+  @include bg-icon('summer-informer/summer-informer-decor-1.svg');
+  @include media(xs) {
+    margin: 0 auto 20px;
+    max-width: 302px;
+    width: 100%;
+    background-size: contain;
+  }
+}
+
+.summer-schedule__decor_2 {
+  width: 417px;
+  height: 179px;
+  @include bg-icon('summer-informer/summer-informer-decor-2.svg');
+  @include media(lg) {
+    width: 333px;
+    height: 180px;
+    @include bg-icon('summer-informer/summer-informer-decor-2_tablet.svg');
+  }
+  @include media(xs) {
+    margin: 0 auto 16px;
+    @include bg-icon('summer-informer/summer-informer-decor-2_mob.svg');
+    max-width: 333px;
+    width: 100%;
+    background-size: contain;
+    height: 163px;
+  }
+}
+
+.summer-schedule__decor_3 {
+  margin-left: 20px;
+  width: 655px;
+  height: 78px;
+  @include bg-icon('summer-informer/summer-informer-decor-3.svg');
+  @include media(lg) {
+    @include bg-icon('summer-informer/summer-informer-decor-3_tablet.svg');
+    width: 620px;
+    height: 79px;
+    margin-left: 15px;
+  }
+  @include media(xs) {
+    @include bg-icon('summer-informer/summer-informer-decor-3_mob.svg');
+    margin: 0 auto;
+    max-width: 324px;
+    width: 100%;
+    height: 42px;
+    background-size: contain;
+  }
+}
+
+.summer-schedule__line {
+  border-radius: 32px;
+  background: #FFFFFF;
+  padding: 30px 25px;
+  display: flex;
+  align-items: center;
+  @include media(lg) {
+    background: transparent;
+    flex-wrap: wrap;
+    padding: 0;
+    gap: 0 24px;
+  }
+}
+
+.summer-schedule__title {
+  margin-right: 55px;
+  flex-shrink: 0;
+  max-width: 355px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 90%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 30px;
+    font-size: 25px;
+    line-height: 100%;
+    margin-right: 0;
+    max-width: 100%;
+  }
+  @include media(xs) {
+    margin-bottom: 10px;
+  }
+}
+
+.summer-schedule__box {
+  flex-shrink: 0;
+  margin-right: 30px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
+  background: #c3e672;
+  padding: 18px;
+  border-radius: 20px;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  @include media(lg) {
+    margin-right: 0;
+    border-radius: 10px;
+    width: calc(50% - 12px);
+  }
+  @include media(xs) {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+.summer-schedule__parallel {
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+  line-height: 18px;
+  padding: 10px 14px;
+  border-radius: 33px;
+  display: inline-block;
+}
+
+.summer-schedule__bottom {
+  display: flex;
+  gap: 0 20px;
+  @include media(lg) {
+    gap: 0 30px;
+  }
+}
+
+.summer-schedule__data {
+  flex-shrink: 0;
+}
+
+.summer-schedule__data-day {
+  margin-bottom: 4px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 137%;
+  @include media(lg) {
+    font-size: 15px;
+  }
+}
+
+.summer-schedule__data-time {
+  font-size: 16px;
+  line-height: 137%;
+  @include media(lg) {
+    font-size: 15px;
+  }
+}
+
+.summer-schedule__orange {
+  border-radius: 20px;
+  background: #f37e60;
+  padding: 18px;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  @include media(lg) {
+    border-radius: 10px;
+    margin-top: 25px;
+    width: 100%;
+  }
+  @include media(xs) {
+    margin-top: 20px;
+  }
+}
+
+.summer-schedule__orange-title {
+  margin-bottom: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 137%;
+  color: #fff;
+  @include media(lg) {
+    font-size: 15px;
+  }
+}
+
+.summer-schedule__orange-text {
+  font-size: 16px;
+  line-height: 137%;
+  color: #fff;
+  @include media(lg) {
+    font-size: 15px;
+  }
+}

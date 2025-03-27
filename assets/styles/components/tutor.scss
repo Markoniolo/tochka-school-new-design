@@ -6,6 +6,15 @@
     padding-top: 40px;
     padding-bottom: 40px;
   }
+  &_summer {
+    background: transparent;
+    .tutor__wrap {
+      background: #EFFFDF;
+    }
+    .tutor__text {
+      background: #E4FCCD;
+    }
+  }
 }
 
 .tutor__cont {

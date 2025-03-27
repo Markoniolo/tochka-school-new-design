@@ -5,6 +5,33 @@
     padding-top: 40px;
     margin-bottom: 40px;
   }
+  &.shortest {
+    margin-bottom: 40px;
+    .info__capital {
+      background: #efffdf;
+      &::before {
+        content: '';
+        @include bg-icon('info/info-decor-circles-2.svg');
+        width: 187px;
+        height: 183px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        @include media(lg) {
+          content: none;
+        }
+      }
+    }
+    .info__area {
+      @include bg-icon('info/info-bg-green.png');
+      @include media(lg) {
+        @include bg-icon('info/info-bg-green_tablet.png');
+      }
+      @include media(xs) {
+        @include bg-icon('info/info-bg-green_mob.png');
+      }
+    }
+  }
 }
 
 .cost__cont {

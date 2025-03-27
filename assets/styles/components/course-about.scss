@@ -4,6 +4,13 @@
   @include media(lg) {
     padding-bottom: 40px;
   }
+  &_summer {
+    .course-about__sound {
+      @include bg-img('icons/ic_course_sound_mute_summer.svg');
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+  }
 }
 
 .course-about__cont {
@@ -186,6 +193,18 @@
     background: #7fcbb4;
     path {
       fill: #7fcbb4;
+    }
+  }
+  &_green-summer {
+    background: #A0D76A;
+    path {
+      fill: #A0D76A;
+    }
+  }
+  &_orange {
+    background: #EFAA5C;
+    path {
+      fill: #EFAA5C;
     }
   }
   svg {

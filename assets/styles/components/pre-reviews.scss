@@ -11,7 +11,13 @@
     padding-bottom: 0;
   }
   &.summer {
+    position: relative;
+    z-index: 1;
     background-color: transparent;
+    margin-bottom: 0;
+    @include media(lg) {
+      margin-bottom: 40px;
+    }
     .pre-reviews__slide {
       background: #d6f3ba;
     }

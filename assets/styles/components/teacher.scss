@@ -3,6 +3,29 @@
   @include media(lg) {
     padding-bottom: 40px;
   }
+  &_summer {
+    background: rgba(255, 255, 255, 0.39);
+    @include media(lg) {
+      padding-bottom: 0;
+    }
+    .teacher__picture {
+      &::after {
+        background: #EFAA5C;
+      }
+      &::before {
+        background: #A0D76A;
+      }
+    }
+    .teacher__area {
+      background: #efffdf;
+      &::before {
+        content: none;
+      }
+    }
+    .teacher__item::before {
+      @include bg-icon('icons/ic_point_summer.svg');
+    }
+  }
 }
 
 .teacher__cont {

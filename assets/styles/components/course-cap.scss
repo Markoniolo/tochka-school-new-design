@@ -5,6 +5,25 @@
   @include media(lg) {
     margin-bottom: 40px;
   }
+  &_summer {
+    .course-cap__area {
+      @include bg-icon('course-cap/course-cap-bg-summer.png');
+      @include media(lg) {
+        @include bg-icon('course-cap/course-cap-bg-summer_tablet.png');
+      }
+      @include media(xs) {
+        @include bg-icon('course-cap/course-cap-bg-summer_mob.png');
+      }
+    }
+    .course-cap__decor {
+      &_1 {
+        @include bg-icon('course-cap/course-cap-decor-summer_1.svg');
+      }
+      &_2 {
+        @include bg-icon('course-cap/course-cap-decor-summer_2.svg');
+      }
+    }
+  }
 }
 
 .course-cap__cont {

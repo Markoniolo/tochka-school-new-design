@@ -5,6 +5,30 @@
     padding-top: 40px;
     margin-bottom: 40px;
   }
+  &_summer {
+    background: rgba(255, 255, 255, 0.39);
+    margin-bottom: 0;
+    padding-bottom: 82px;
+    @include media(lg) {
+      margin-bottom: 0;
+      padding-bottom: 40px;
+    }
+    .two-teach__box_teacher {
+      background: #EFAA5C;
+    }
+    .two-teach__box_child {
+      background: #A0D76A;
+    }
+    .two-teach__box_tutor {
+      background: #B4D388;
+    }
+    .two-teach__decor_1 {
+      background: #B4D388;
+    }
+    .two-teach__decor_2 {
+      background: #EFAA5C;
+    }
+  }
 }
 
 .two-teach__cont {
@@ -138,18 +162,18 @@
       margin-top: 0;
     }
     .two-teach__image {
-      width: 373px;
+      width: 344px;
       height: 352px;
       bottom: -5px;
-      left: -36px;
+      left: -30px;
       @include media(lg) {
-        width: 218px;
+        width: 202px;
         height: 206px;
         bottom: -3px;
-        left: -21px;
+        left: -18px;
       }
       @include media(xs) {
-        width: 257px;
+        width: 238px;
         height: 243px;
         bottom: -3px;
         left: -25px;

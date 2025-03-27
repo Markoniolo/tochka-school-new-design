@@ -1,0 +1,261 @@
+.summer-how-2 {
+  padding-bottom: 80px;
+  @include media(lg) {
+    padding-bottom: 40px;
+  }
+}
+
+.summer-how-2__cont {
+
+}
+
+.summer-how-2__caption {
+  margin-bottom: 35px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 121%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 18px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+}
+
+.summer-how-2__note {
+  margin-bottom: 46px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 28px;
+    font-size: 18px;
+    line-height: 139%;
+  }
+}
+
+.summer-how-2__wrap {
+  display: flex;
+  @include media(lg) {
+    display: block;
+  }
+}
+
+.summer-how-2__list {
+  margin-right: 30px;
+  max-width: 657px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px 0;
+  @include media(lg) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.summer-how-2__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
+  background: #d6f3ba;
+  min-height: 117px;
+  display: flex;
+  align-items: center;
+  padding: 15px 35px 15px 45px;
+  @include media(lg) {
+    border-radius: 10px;
+    min-height: 99px;
+    padding: 15px 20px;
+    width: calc(50% - 10px);
+  }
+  @include media(xs) {
+    width: 100%;
+  }
+  &_1 {
+    .summer-how-2__text {
+      max-width: 464px;
+      @include media(lg) {
+        max-width: 186px;
+      }
+    }
+    .summer-how-2__image {
+      bottom: -5px;
+      right: 0;
+      width: 141px;
+      height: 105px;
+      @include media(lg) {
+        width: 123px;
+        height: 92px;
+        right: -4px;
+        bottom: -13px;
+      }
+    }
+  }
+  &_2 {
+    .summer-how-2__text {
+      max-width: 330px;
+      @include media(lg) {
+        max-width: 180px;
+      }
+    }
+    .summer-how-2__image {
+      bottom: -5px;
+      right: 0;
+      width: 130px;
+      height: 115px;
+      @include media(lg) {
+        bottom: -9px;
+        right: -6px;
+        width: 119px;
+        height: 106px;
+      }
+    }
+  }
+  &_3 {
+    .summer-how-2__text {
+      max-width: 340px;
+      @include media(lg) {
+        max-width: 200px;
+      }
+    }
+    .summer-how-2__image {
+      top: 6px;
+      right: -7px;
+      width: 169px;
+      height: 156px;
+      @include media(lg) {
+        width: 126px;
+        height: 116px;
+        top: 8px;
+        right: -23px;
+      }
+    }
+  }
+  &_4 {
+    .summer-how-2__text {
+      max-width: 400px;
+      @include media(lg) {
+        max-width: 185px;
+      }
+      @include media(xs) {
+        max-width: 232px;
+      }
+    }
+    .summer-how-2__image {
+      top: 5px;
+      right: -5px;
+      width: 136px;
+      height: 136px;
+      @include media(lg) {
+        width: 103px;
+        height: 103px;
+        top: 10px;
+        right: -15px;
+      }
+    }
+  }
+  &_5 {
+    min-height: 177px;
+    @include media(lg) {
+      width: 100%;
+      min-height: 90px;
+    }
+    .summer-how-2__text {
+      max-width: 410px;
+      @include media(lg) {
+        max-width: 435px;
+      }
+      @include media(xs) {
+        max-width: 230px;
+      }
+    }
+    .summer-how-2__image {
+      bottom: 0;
+      right: 0;
+      width: 211px;
+      height: 177px;
+      @include media(lg) {
+        width: 113px;
+        height: 106px;
+        right: -7px;
+        bottom: -10px;
+      }
+      @include media(xs) {
+        bottom: 0;
+        right: -12px;
+      }
+    }
+  }
+  &_6 {
+    min-height: 351px;
+    align-items: flex-end;
+    padding-bottom: 30px;
+    @include media(lg) {
+      width: 100%;
+      min-height: 361px;
+    }
+    &::before {
+      content: '';
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #e6f9d9 60%, #e6f9d9 100%);
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 301px;
+    }
+    .summer-how-2__image {
+      top: 17px;
+      right: 48px;
+      width: 438px;
+      height: 327px;
+      @include media(lg) {
+        width: 299px;
+        height: 226px;
+        top: 33px;
+        right: unset;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    .summer-how-2__text {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+
+.summer-how-2__image {
+  position: absolute;
+  object-fit: cover;
+}
+
+.summer-how-2__text {
+  width: 100%;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  @include media(lg) {
+    font-size: 18px;
+    line-height: 23px;
+  }
+}
+
+.summer-how-2__box {
+  max-width: 657px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px 0;
+  @include media(lg) {
+    max-width: 100%;
+    gap: 20px 0;
+  }
+}

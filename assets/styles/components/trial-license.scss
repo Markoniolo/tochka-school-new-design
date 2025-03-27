@@ -9,6 +9,8 @@
     margin-bottom: 40px;
   }
   &.summer {
+    position: relative;
+    z-index: 1;
     background: transparent;
     padding-top: 80px;
     @include media(lg) {

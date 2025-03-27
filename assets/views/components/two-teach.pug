@@ -3,7 +3,8 @@
     {
       mod: 'teacher',
       title: 'Учитель:',
-      text: 'понятно и интересно объяснит тему на уроке'
+      text: 'понятно и интересно объяснит тему на уроке',
+      image: 'https://tochka-school.ru/storage/app/media/Stranica_kursov/Foto_blok_2_pedagoga/Babenko_blok_2%20pedpgoga2.webp'
     },
     {
       mod: 'child',
@@ -17,21 +18,24 @@
     },
   ]
 
-.two-teach
-  .two-teach__cont.cont
-    .two-teach__top
-      .two-teach__caption С ребёнком занимаются сразу 2 педагога
-      .two-teach__note.
-        Помогаем на всех этапах: от разбора темы до выполнения заданий.
-        Что&nbsp;приводит к твёрдым знаниям, отличным оценкам и интересу к учёбе.
-    .two-teach__area
-      .two-teach__decor.two-teach__decor_1
-      .two-teach__decor.two-teach__decor_2
-      each box, index in twoTeachArea
-        .two-teach__box(class=`two-teach__box_${box.mod}`)
-          .two-teach__info
-            .two-teach__title= box.title
-            .two-teach__text!= box.text
-          .two-teach__picture
-            img.two-teach__image(src=staticImg(`two-teach/two-teach-${index+1}.png`) alt='')
-
+mixin two-teach(mod)
+  .two-teach(class = mod ? `two-teach_${mod}` : false)
+    .two-teach__cont.cont
+      .two-teach__top
+        .two-teach__caption С ребёнком занимаются сразу 2 педагога
+        .two-teach__note.
+          Помогаем на всех этапах: от разбора темы до выполнения заданий.
+          Что&nbsp;приводит к твёрдым знаниям, отличным оценкам и интересу к учёбе.
+      .two-teach__area
+        .two-teach__decor.two-teach__decor_1
+        .two-teach__decor.two-teach__decor_2
+        each box, index in twoTeachArea
+          .two-teach__box(class=`two-teach__box_${box.mod}`)
+            .two-teach__info
+              .two-teach__title= box.title
+              .two-teach__text!= box.text
+            .two-teach__picture
+              if box.image
+                img.two-teach__image(src=box.image alt='')
+              else
+                img.two-teach__image(src=staticImg(`two-teach/two-teach-${index+1}.png`) alt='')

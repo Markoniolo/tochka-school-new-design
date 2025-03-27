@@ -1,0 +1,27 @@
+-
+  const summerHowList2 = [
+    'Уроки в записи на учебной платформе. Доступ с любого устройства',
+    'Занятия в удобном для вас  темпе',
+    'Доступ ко всем темам курса (26 уроков)',
+    'Доступ в личный кабинет: уроки, конспекты, задания.',
+  ]
+
+.summer-how-2
+  .summer-how-2__cont.cont
+    h2.summer-how-2__caption Как будет проходить обучение
+    .summer-how-2__note С 5 июня по 31 августа
+    .summer-how-2__wrap
+      .summer-how-2__list
+        each item, index in summerHowList2
+          .summer-how-2__item(class=`summer-how-2__item_${index+1}`)
+            img.summer-how-2__image(src=staticImg(`summer-how-2/summer-how-${index+1}.svg`) alt='')
+            .summer-how-2__text!= item
+      .summer-how-2__box
+        .summer-how-2__item.summer-how-2__item_5
+          img.summer-how-2__image(src=staticImg('summer-how-2/summer-how-5.svg') alt='')
+          .summer-how-2__text Тьютор будет проверять задания к каждому уроку, давать обратную связь разбирать ошибки и помогать их исправить.
+        .summer-how-2__item.summer-how-2__item_6
+          img.summer-how-2__image(src=staticImg('summer-how-2/summer-how-6.svg') alt='')
+          .summer-how-2__text.
+            Темп обучения зависит от цели, свободного времени ребёнка и ваших планов на лето.
+            Выбирайте: от 1 урока в неделю до занятий каждый день с возможностью сделать перерыв.

@@ -1,0 +1,336 @@
+.summer-cost {
+  background: #daf0c9;
+  padding: 80px 0;
+  @include media(lg) {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 40px;
+  }
+}
+
+.summer-cost__cont {
+
+}
+
+.summer-cost__wrap {
+  max-width: 1181px;
+  width: 100%;
+}
+
+.summer-cost__caption {
+  margin-bottom: 54px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 97%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 30px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+}
+
+.summer-cost__area {
+  position: relative;
+  min-height: 616px;
+  background: #FFFFFF;
+  padding: 15px;
+  border-radius: 20px;
+  @include media(lg) {
+    min-height: auto;
+    padding: 10px;
+    border-radius: 10px;
+  }
+}
+
+.summer-cost__decor {
+  position: absolute;
+  @include media(lg) {
+    display: none;
+  }
+  &_1 {
+    width: 15px;
+    height: 10px;
+    @include bg-icon('summer-cost/ic_decor.svg');
+    left: 50%;
+    top: -5px;
+    transform: translateX(-17px);
+  }
+  &_2 {
+    top: 10px;
+    bottom: 10px;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-10px);
+    @include bg-icon('summer-cost/ic_decor_line.svg');
+  }
+  &_3 {
+    width: 15px;
+    height: 10px;
+    @include bg-icon('summer-cost/ic_decor.svg');
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-17px) rotate(180deg);
+  }
+}
+
+.summer-cost__inner {
+  max-width: 537px;
+  width: 100%;
+  @include media(lg) {
+    max-width: 100%;
+  }
+}
+
+.summer-cost__top {
+  margin-bottom: 20px;
+  border-radius: 20px;
+  background: #A0D76A;
+  padding: 20px;
+  @include media(lg) {
+    margin-bottom: 16px;
+    border-radius: 7px;
+    padding: 18px 20px;
+  }
+}
+
+.summer-cost__title {
+  margin-bottom: 28px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+
+.summer-cost__date {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 137%;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+}
+
+.summer-cost__price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 92%;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 24px;
+  }
+}
+
+.summer-cost__headline {
+  margin: 0 25px 20px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 122%;
+  @include media(lg) {
+    font-size: 18px;
+    margin: 0 15px 18px;
+  }
+  @include media(xs) {
+    margin: 0 5px 18px;
+  }
+}
+
+.summer-cost__list {
+  margin: 0 25px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px 0;
+  @include media(lg) {
+    margin: 0 15px 16px;
+    gap: 15px 0;
+  }
+  @include media(xs) {
+    margin: 0 5px 16px;
+    gap: 10px 0;
+  }
+}
+
+.summer-cost__item {
+  position: relative;
+  padding-left: 31px;
+  font-size: 16px;
+  line-height: 20px;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+    padding-left: 27px;
+  }
+  &::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    @include bg-icon('icons/ic_point_orange.svg');
+    @include media(lg) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.summer-cost__bonus {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  bottom: 15px;
+  width: 560px;
+  background: radial-gradient(103.74% 82.22% at 84.67% 37.89%, #d8ee76 0%, #a1d86a 100%);
+  border-radius: 20px;
+  padding: 27px 48px;
+  overflow: hidden;
+  @include media(lg) {
+    position: relative;
+    top: unset;
+    right: unset;
+    bottom: unset;
+    margin-bottom: 25px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+  }
+  @include media(xs) {
+    padding: 10px;
+    display: block;
+    min-height: 148px;
+  }
+}
+
+.summer-cost__bonus-title {
+  margin-bottom: 10px;
+  font-weight: 800;
+  font-size: 154px;
+  line-height: 69%;
+  text-align: center;
+  color: #FFFFFF;
+  @include media(lg) {
+    margin-bottom: 0;
+    font-size: 24px;
+    line-height: 100%;
+    margin-right: 35px;
+    flex-shrink: 0;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #003c56;
+  }
+  @include media(xs) {
+    padding-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 0;
+    text-align: left;
+  }
+}
+
+.summer-cost__bonus-date {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 48px;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 92%;
+  color: #FFFFFF;
+  @include media(lg) {
+    display: none;
+  }
+}
+
+.summer-cost__bonus-list {
+  position: relative;
+  z-index: 1;
+  border-radius: 10px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
+  background: #fff;
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto 30px;
+  padding: 16px;
+  @include media(lg) {
+    max-width: 350px;
+    padding: 10px 15px;
+    margin: 0;
+  }
+  @include media(xs) {
+    padding: 8px 10px;
+    max-width: 313px;
+  }
+}
+
+.summer-cost__bonus-item {
+  padding-left: 10px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 139%;
+  color: #003c56;
+  position: relative;
+  @include media(lg) {
+    font-size: 15px;
+    padding-left: 15px;
+  }
+  @include media(xs) {
+    font-size: 14px;
+    padding-left: 10px;
+  }
+  &::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #003c56;
+  }
+}
+
+.summer-cost__bonus-decor {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  width: 302px;
+  height: 179px;
+  @include media(lg) {
+    display: none;
+  }
+}
+
+.summer-cost__bonus-prize {
+  width: 521px;
+  height: 531px;
+  position: absolute;
+  top: 132px;
+  left: 281px;
+  @include bg-icon('summer-cost/summer-cost-prize.svg');
+  @include media(lg) {
+    width: 165px;
+    height: 169px;
+    top: 5px;
+    left: unset;
+    right: -54px;
+  }
+}
+
+.summer-cost__button {
+  padding: 20px 30px 20px;
+  display: block;
+  max-width: 537px;
+  font-size: 16px;
+  @include media(lg) {
+    max-width: 100%;
+  }
+}

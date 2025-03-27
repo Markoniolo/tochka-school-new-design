@@ -1,9 +1,13 @@
 .summer-important {
-
+  padding-top: 80px;
+  @include media(lg) {
+    padding-top: 0;
+  }
 }
 
 .summer-important__cont {
-
+  position: relative;
+  z-index: 1;
 }
 
 .summer-important__caption {
