@@ -61,6 +61,29 @@
     @include media(lg) {
       content: none;
     }
+    @include media(xs) {
+      width: 28px;
+      height: 28px;
+      background: #68ccea;
+      border-radius: 50%;
+      content: '';
+      bottom: unset;
+      top: 161px;
+      left: 60px;
+    }
+  }
+  &::after {
+    @include media(xs) {
+      content: '';
+      width: 55px;
+      height: 55px;
+      background: #7fcbb4;
+      border-radius: 50%;
+      bottom: unset;
+      top: 138px;
+      right: 40px;
+      position: absolute;
+    }
   }
 }
 
@@ -92,6 +115,12 @@
   @include media(xs) {
     text-align: center;
     margin-bottom: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    span {
+      display: block;
+    }
   }
 }
 
@@ -137,6 +166,13 @@
   display: inline-block;
   &_order {
     padding: 17px 52px 18px;
+    @include media(xs) {
+      padding: 17px 20px 18px;
+      max-width: 283px;
+      width: 100%;
+      display: block;
+      margin: 0 auto;
+    }
   }
   &_wp {
     display: flex;
@@ -189,10 +225,15 @@
     height: 248px;
   }
   @include media(xs) {
-    position: static;
-    width: 353px;
+    position: relative;
+    max-width: 353px;
     height: auto;
-    margin: 0 -25px 30px;
+    margin: 0 0 30px;
+    bottom: unset;
+    right: unset;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 50px);
   }
 }
 

@@ -17,6 +17,20 @@
       tags: ['Повышение квалификации'],
     },
   ]
+  const capListSummer = [
+    {
+      headline: 'Летняя начальная школа',
+      tags: ['1-4 класс', 'Семейное обучение'],
+    },
+    {
+      headline: 'Летняя средняя школа',
+      tags: ['5-8 класс', 'Семейное обучение'],
+    },
+    {
+      headline: 'Летняя старшая школа',
+      tags: ['9-11 класс', 'Подготовка к ОГЭ и ЕГЭ'],
+    },
+  ]
   const capInner = [
     {text: 'Лучшие учителя РФ*', hover: 'По результатам всероссийский конкурсов'},
     {text: 'Твердые знания', hover: ''},
@@ -25,29 +39,42 @@
     {text: 'Успешное будущее', hover: ''},
   ]
 
-article.cap
-  .cap__cont.cont
-    .cap__wrap
-      h1.cap__caption
-        | Занятия для детей
-        br
-        | с 1 по 11 класс
-      .cap__inner
-        each box, index in capInner
-          .cap__box(class=`cap__box_${index+1}`)
-            .cap__text!= box.text
-            if box.hover
-              .cap__hover= box.hover
-      .cap__count
-        img.cap__count-image(src=staticImg('cap/cap-count.png') alt='')
-        .cap__count-text Более 44 000 счастливых учеников
-      .cap__title Выберите направление
-      .directions-list
-        each item, index in capList
-          .directions-item(class=`directions-item_${index+1}`)
-            .directions-item-box
-              .directions-headline= item.headline
-              .directions-tags
-                each tag in item.tags
-                  .directions-tag= tag
-            a.directions-button.btn-orange(href='#') Выбрать
+mixin cap(mod)
+  article.cap(class = mod ? mod : false)
+    .cap__cont.cont
+      .cap__wrap
+        h1.cap__caption
+          | Занятия для детей
+          br
+          | с 1 по 11 класс
+        .cap__inner
+          each box, index in capInner
+            .cap__box(class=`cap__box_${index+1}`)
+              .cap__text!= box.text
+              if box.hover
+                .cap__hover= box.hover
+        .cap__count
+          img.cap__count-image(src=staticImg('cap/cap-count.png') alt='')
+          .cap__count-text Более 44 000 счастливых учеников
+        if mod === 'summer'
+          .cap__title Выберите летние курсы
+          .directions-list
+            each item, index in capListSummer
+              .directions-item(class=`directions-item_${index + 1}`)
+                .directions-item-box
+                  .directions-headline= item.headline
+                  .directions-tags
+                    each tag in item.tags
+                      .directions-tag= tag
+                a.directions-button.btn-orange(href='#') Выбрать
+        else
+          .cap__title Выберите направление
+          .directions-list
+            each item, index in capList
+              .directions-item(class=`directions-item_${index+1}`)
+                .directions-item-box
+                  .directions-headline= item.headline
+                  .directions-tags
+                    each tag in item.tags
+                      .directions-tag= tag
+                a.directions-button.btn-orange(href='#') Выбрать

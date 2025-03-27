@@ -19,6 +19,43 @@
   align-items: flex-start;
   @include media(md) {
     display: block;
+    position: relative;
+  }
+  &::before {
+    @include media(md) {
+      content: '';
+      @include bg-icon('icons/ic_scroll_cursor_hint.svg');
+      background-size: 31px 31px;
+      background-color: #FFFFFF;
+      width: 51px;
+      height: 51px;
+      border-radius: 50%;
+      position: absolute;
+      z-index: 1;
+      bottom: 46px;
+      right: 0;
+      animation: family-program-scroll-hint 2s linear infinite;
+      transform: translateX(5px);
+      transition-property: opacity;
+      transition-duration: $transition-duration;
+    }
+  }
+  @keyframes family-program-scroll-hint {
+    0% {
+      transform: translateX(5px);
+    }
+    50% {
+      transform: translateX(-5px);
+    }
+    100% {
+      transform: translateX(5px);
+    }
+  }
+  &.hide-hint {
+    &::before {
+      opacity: 0;
+      pointer-events: none;
+    }
   }
 }
 

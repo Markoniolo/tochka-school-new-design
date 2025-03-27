@@ -9,6 +9,18 @@
     margin-top: 10px;
     margin-bottom: 34px;
   }
+  &.summer {
+    .directions-item {
+      background: radial-gradient(325.78% 149.47% at 96.41% 102.68%, #a1e39a 0%, #eef4c9 100%);
+    }
+    .directions-headline {
+      color: #003c56;
+    }
+    .directions-tag {
+      background: rgba(255, 255, 255, 0.39);
+      color: #003c56;
+    }
+  }
 }
 
 .cap__cont {
@@ -444,7 +456,7 @@
   background: rgba(102, 131, 194, 0.08);
   font-size: 14px;
   color: #6683c2;
-  padding: 4px 14px;
+  padding: 6px 14px 7px;
   @include media(lg) {
     margin-bottom: 0;
     padding: 3px 14px;

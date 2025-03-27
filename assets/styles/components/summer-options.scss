@@ -46,10 +46,24 @@
   font-weight: 500;
   font-size: 24px;
   line-height: 30px;
-  padding: 27px 27px 20px;
+  padding: 27px 26px 20px;
   @include media(xs) {
     max-width: 352px;
     width: 100%;
+    font-size: 18px;
+    line-height: 120%;
+    min-height: 288px;
+  }
+  br.desk {
+    @include media(xs) {
+      display: none;
+    }
+  }
+  br.mob {
+    display: none;
+    @include media(xs) {
+      display: block;
+    }
   }
   &_1 {
     @include bg-img('summer-options/summer-options-1.svg');
@@ -85,6 +99,7 @@
     background-position: top center;
     @include media(xs) {
       @include bg-img('summer-options/summer-options-4_mob.svg');
+      padding-right: 91px;
     }
   }
 }

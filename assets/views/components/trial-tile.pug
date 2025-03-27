@@ -12,16 +12,17 @@ mixin trial-tile(mod, title = 'Любой курс за 290 ₽')
                 label.trial-tile__filter-item
                   input.trial-tile__filter-input(type='radio' name='class' value=`class-id-${item}` data-element='trial-tile-filter-input')
                   .trial-tile__filter-view= `${item} класс`
-        .trial-tile__filter.trial-tile__filter_subject
-          .trial-tile__filter-top(data-element='trial-tile-filter-opener' data-default-text='Выберите предмет')
-            .trial-tile__filter-top-text Выберите предмет
-          .trial-tile__filter-wrap
-            .trial-tile__filter-list
-              each item, index in ['Математика','Русский язык','Физика','Химия','Математика','Русский язык','Физика','Химия','Математика','Русский язык','Физика']
-                label.trial-tile__filter-item
-                  input.trial-tile__filter-input(type='checkbox' name='class' value=`subject-id-${index+1}` data-element='trial-tile-filter-input')
-                  .trial-tile__filter-view= `${item}`
-            button.trial-tile__filter-save.btn-orange(data-element='trial-tile-filter-save') Выбрать
+        if mod !== 'summer'
+          .trial-tile__filter.trial-tile__filter_subject
+            .trial-tile__filter-top(data-element='trial-tile-filter-opener' data-default-text='Выберите предмет')
+              .trial-tile__filter-top-text Выберите предмет
+            .trial-tile__filter-wrap
+              .trial-tile__filter-list
+                each item, index in ['Математика','Русский язык','Физика','Химия','Математика','Русский язык','Физика','Химия','Математика','Русский язык','Физика']
+                  label.trial-tile__filter-item
+                    input.trial-tile__filter-input(type='checkbox' name='class' value=`subject-id-${index+1}` data-element='trial-tile-filter-input')
+                    .trial-tile__filter-view= `${item}`
+              button.trial-tile__filter-save.btn-orange(data-element='trial-tile-filter-save') Выбрать
         button.trial-tile__reset.btn-blue(data-element='trial-tile-filter-reset') Отменить выбор
       .trial-tile__tile
         .tile-loader

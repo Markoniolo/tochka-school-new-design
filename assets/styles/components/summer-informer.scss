@@ -135,7 +135,7 @@
 .summer-informer__decor_1 {
   width: 302px;
   height: 179px;
-  @include bg-icon('summer-informer/summer-informer-decor-1.svg');
+  @include bg-icon('summer-informer/summer-informer-decor-1.png');
   @include media(xs) {
     margin: 0 auto 20px;
     max-width: 302px;
@@ -147,15 +147,15 @@
 .summer-informer__decor_2 {
   width: 417px;
   height: 179px;
-  @include bg-icon('summer-informer/summer-informer-decor-2.svg');
+  @include bg-icon('summer-informer/summer-informer-decor-2.png');
   @include media(lg) {
     width: 333px;
     height: 180px;
-    @include bg-icon('summer-informer/summer-informer-decor-2_tablet.svg');
+    @include bg-icon('summer-informer/summer-informer-decor-2_tablet.png');
   }
   @include media(xs) {
     margin: 0 auto 16px;
-    @include bg-icon('summer-informer/summer-informer-decor-2_mob.svg');
+    @include bg-icon('summer-informer/summer-informer-decor-2_mob.png');
     max-width: 333px;
     width: 100%;
     background-size: contain;
@@ -167,15 +167,15 @@
   margin-left: 20px;
   width: 655px;
   height: 78px;
-  @include bg-icon('summer-informer/summer-informer-decor-3.svg');
+  @include bg-icon('summer-informer/summer-informer-decor-3.png');
   @include media(lg) {
-    @include bg-icon('summer-informer/summer-informer-decor-3_tablet.svg');
+    @include bg-icon('summer-informer/summer-informer-decor-3_tablet.png');
     width: 620px;
     height: 79px;
     margin-left: 15px;
   }
   @include media(xs) {
-    @include bg-icon('summer-informer/summer-informer-decor-3_mob.svg');
+    @include bg-icon('summer-informer/summer-informer-decor-3_mob.png');
     margin: 0 auto;
     max-width: 324px;
     width: 100%;

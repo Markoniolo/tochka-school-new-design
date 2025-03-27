@@ -36,10 +36,41 @@
 }
 
 .family-teachers__area {
+  position: relative;
   display: flex;
   align-items: flex-start;
   @include media(xs) {
     display: block;
+  }
+  &::before {
+    @include media(xs) {
+      content: '';
+      @include bg-icon('icons/ic_scroll_cursor_hint.svg');
+      background-size: 31px 31px;
+      background-color: rgba(0, 0, 0, 0.04);
+      width: 51px;
+      height: 51px;
+      border-radius: 50%;
+      position: absolute;
+      z-index: 1;
+      top: -25px;
+      right: 0;
+      animation: family-program-scroll-hint 2s linear infinite;
+      transform: translateX(5px);
+      transition-property: opacity;
+      transition-duration: $transition-duration;
+    }
+  }
+  @keyframes family-program-scroll-hint {
+    0% {
+      transform: translateX(5px);
+    }
+    50% {
+      transform: translateX(-5px);
+    }
+    100% {
+      transform: translateX(5px);
+    }
   }
 }
 
@@ -112,6 +143,7 @@
 
 .family-teachers__inner {
   padding-bottom: 138px;
+  min-height: 650px;
   @include media(lg) {
     padding-bottom: 59px;
   }

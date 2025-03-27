@@ -98,6 +98,18 @@
       }
     }
   }
+  &.summer {
+    .directions-item {
+      background: radial-gradient(325.78% 149.47% at 96.41% 102.68%, #a1e39a 0%, #eef4c9 100%);
+    }
+    .directions-headline {
+      color: #003c56;
+    }
+    .directions-tag {
+      background: rgba(255, 255, 255, 0.39);
+      color: #003c56;
+    }
+  }
 }
 
 .directions__cont {
@@ -105,7 +117,7 @@
 }
 
 .directions__caption {
-  margin-bottom: 50px;
+  margin-bottom: 45px;
   font-weight: 500;
   font-size: 32px;
   line-height: 100%;

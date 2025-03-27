@@ -1,10 +1,12 @@
 mixin study-tags(mod, title, text, tags, image)
-  .study-tags
+  .study-tags(class = mod ? mod : false)
     .study-tags__cont.cont
       .study-tags__area
         .study-tags__title!= title
-        .study-tags__text!= text
-        .study-tags__note Поэтому наши уроки проходят:
+        each textContent in text
+          .study-tags__text!= textContent
+        if mod === 'first'
+          .study-tags__note Поэтому наши уроки проходят:
         .study-tags__tags
           each tag in tags
             .study-tags__tag= tag

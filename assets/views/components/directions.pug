@@ -1,12 +1,16 @@
-.directions
-  .directions__cont.cont
-    .directions__caption Выберите направление
-    .directions-list
-      each item, index in capList
-        .directions-item(class=`directions-item_${index + 1}`)
-          .directions-item-box
-            .directions-headline= item.headline
-            .directions-tags
-              each tag in item.tags
-                .directions-tag= tag
-          a.directions-button.btn-orange(href='#') Выбрать
+mixin directions(mod)
+  .directions(class = mod ? mod : false)
+    .directions__cont.cont
+      if mod === 'summer'
+        .directions__caption Выберите летние курсы
+      else
+        .directions__caption Выберите направление
+      .directions-list
+        each item, index in capListSummer
+          .directions-item(class=`directions-item_${index + 1}`)
+            .directions-item-box
+              .directions-headline= item.headline
+              .directions-tags
+                each tag in item.tags
+                  .directions-tag= tag
+            a.directions-button.btn-orange(href='#') Выбрать
