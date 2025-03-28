@@ -10,6 +10,23 @@
   @include media(xs) {
     padding-bottom: 40px;
   }
+  &.summer {
+    background: transparent;
+    .family-manual__area {
+      @include bg-icon('family-manual/family-manual-bg-summer.png');
+      background-size: cover;
+      @include media(lg) {
+        background: none;
+      }
+      @include media(xs) {
+        @include bg-icon('family-manual/family-manual-bg-summer_mob.png');
+        background-size: cover;
+      }
+    }
+    .family-manual__inner {
+      background: #8bbe5a;
+    }
+  }
 }
 
 .family-manual__cont {
@@ -21,6 +38,7 @@
   overflow: hidden;
   display: flex;
   @include bg-icon('family-manual/family-manual-bg.png');
+  background-size: cover;
   @include media(lg) {
     border-radius: 10px;
     background: none;
@@ -29,6 +47,7 @@
   @include media(xs) {
     flex-direction: column;
     @include bg-icon('family-manual/family-manual-bg_mob.png');
+    background-size: cover;
   }
 }
 

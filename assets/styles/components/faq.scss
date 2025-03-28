@@ -37,6 +37,27 @@
       @include bg-icon('faq/ic_faq_plus_green.svg');
     }
   }
+  &.summer-family {
+    padding-top: 40px;
+    padding-bottom: 80px;
+    background: transparent;
+    @include media(lg) {
+      padding-top: 0;
+      padding-bottom: 40px;
+    }
+    .faq__item.active {
+      background: #d6f3ba;
+      .faq__top {
+        background: #d6f3ba;
+        &::before {
+          @include bg-icon('faq/ic_faq_minus_green.svg');
+        }
+      }
+    }
+    .faq__top::before {
+      @include bg-icon('faq/ic_faq_plus_green.svg');
+    }
+  }
 }
 
 .faq__cont {

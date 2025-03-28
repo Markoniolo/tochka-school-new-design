@@ -1,6 +1,15 @@
 .family-schedule {
   background-color: #FFFFFF;
   padding-bottom: 80px;
+  @include media(lg) {
+    padding-bottom: 40px;
+  }
+  &.summer {
+    background: transparent;
+    .family-schedule__toggle {
+      background: #f37e60;
+    }
+  }
 }
 
 .family-schedule__area {
@@ -86,8 +95,8 @@
     .family-schedule__cell {
       height: 55px;
       min-height: auto;
-      background: #6683c2;
-      color: #fff;
+      background: #cceaa1;
+      color: #003c56;
       font-size: 15px;
       line-height: 100%;
       font-weight: 500;
@@ -122,7 +131,7 @@
     border-radius: 20px;
   }
   &:first-child {
-    background: #eff3fe;
+    background: #e3f5d1;
     font-size: 18px;
     color: #003c56;
     box-shadow: none;

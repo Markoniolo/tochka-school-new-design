@@ -4,6 +4,12 @@
   @include media(lg) {
     padding-bottom: 33px;
   }
+  &.summer {
+    background: transparent;
+    .family-docs__area, .family-docs__box {
+      background: #d6f3ba;
+    }
+  }
 }
 
 .family-docs__cont {

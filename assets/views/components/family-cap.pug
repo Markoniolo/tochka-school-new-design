@@ -1,9 +1,10 @@
-.family-cap
-  .family-cap__cont.cont
-    .family-cap__area
-      .family-cap__number 10 класс
-      h1.family-cap__caption Семейное обучение
-      .family-cap__text Получайте школьное образование дома. Онлайн. С лучшими учителями РФ, внимательными тьюторами и аттестацией.
-      picture.family-cap__picture
-        img.family-cap__image(src=staticImg('family-cap/family-cap.svg') alt='')
-      a.family-cap__button.btn-orange(href='#pre-reg' data-role="scroll-to-anchor") Начать обучение
+mixin family-cap(mod, title = 'Семейное обучение', id='pre-reg')
+  .family-cap(class = mod ? mod : false)
+    .family-cap__cont.cont
+      .family-cap__area
+        .family-cap__number 10 класс
+        h1.family-cap__caption= title
+        .family-cap__text Получайте школьное образование дома. Онлайн. С лучшими учителями РФ, внимательными тьюторами и аттестацией.
+        picture.family-cap__picture
+          img.family-cap__image(src=staticImg('family-cap/family-cap.svg') alt='')
+        a.family-cap__button.btn-orange(href=`#${id}` data-role="scroll-to-anchor") Начать обучение

@@ -9,31 +9,47 @@
     'Набор полезных материалов для учёбы и развития ребёнка',
     '1 урок — 260 ₽',
   ]
+  const summerCostListFamily = [
+    'Входное тестирование по каждому предмету',
+    'Составление индивидуальной программы занятий',
+    'Индивидуально подобранный курс занятий по каждому предмету в записи',
+    'Тьютор-педагог по каждому предмету 5 дней в неделю',
+    'Проверка домашних заданий по каждому уроку',
+    'Доступ ко всем урокам с начала учебного года по каждому предмету',
+    'Доступ к 2 дополнительным предметам по выбору',
+    'Набор полезных материалов для учёбы и развития ребёнка',
+    '1 урок — 260 руб',
+  ]
 
-.summer-cost#summer-cost
-  .summer-cost__cont.cont
-    .summer-cost__wrap
-      h2.summer-cost__caption Стоимость летнего абонемента
-      .summer-cost__area
-        .summer-cost__decor.summer-cost__decor_1
-        .summer-cost__decor.summer-cost__decor_2
-        .summer-cost__decor.summer-cost__decor_3
-        .summer-cost__inner
-          .summer-cost__top
-            .summer-cost__title Летний курс
-            .summer-cost__date С 5 июня по 31 августа
-            .summer-cost__price 6 000 ₽
-          .summer-cost__headline Что включено
-          .summer-cost__list
-            each item in summerCostList
-              .summer-cost__item= item
-        .summer-cost__bonus
-          .summer-cost__bonus-title бонус
-          .summer-cost__bonus-date 2 месяца: апрель + май
-          .summer-cost__bonus-list
-            each item in ['2 месяца онлайн-занятий в апреле и мае','Все занятия в записи','Проверка домашних заданий','Тьютор-педагог 5 дней в неделю']
-              .summer-cost__bonus-item= item
-          img.summer-cost__bonus-decor(src=staticImg('summer-cost/summer-cost-1.svg') alt='')
-          .summer-cost__bonus-prize
-        a.summer-cost__button.btn-orange(href="#") Начать обучение
-
+mixin summer-cost(mod, title='Летний курс', price='6 000 ₽')
+  .summer-cost#summer-cost(class = mod ? mod : false)
+    .summer-cost__cont.cont
+      .summer-cost__wrap
+        h2.summer-cost__caption Стоимость летнего абонемента
+        .summer-cost__area
+          .summer-cost__decor.summer-cost__decor_1
+          .summer-cost__decor.summer-cost__decor_2
+          .summer-cost__decor.summer-cost__decor_3
+          .summer-cost__inner
+            .summer-cost__top
+              .summer-cost__title= title
+              .summer-cost__date С 5 июня по 31 августа
+              .summer-cost__price= price
+            .summer-cost__headline Что включено
+            if mod === 'family'
+              .summer-cost__list
+                each item in summerCostListFamily
+                  .summer-cost__item= item
+            else
+              .summer-cost__list
+                each item in summerCostList
+                  .summer-cost__item= item
+          .summer-cost__bonus
+            .summer-cost__bonus-title бонус
+            .summer-cost__bonus-date 2 месяца: апрель + май
+            .summer-cost__bonus-list
+              each item in ['2 месяца онлайн-занятий в апреле и мае','Все занятия в записи','Проверка домашних заданий','Тьютор-педагог 5 дней в неделю']
+                .summer-cost__bonus-item= item
+            img.summer-cost__bonus-decor(src=staticImg('summer-cost/summer-cost-1.png') alt='')
+            .summer-cost__bonus-prize
+          a.summer-cost__button.btn-orange(href="#") Начать обучение

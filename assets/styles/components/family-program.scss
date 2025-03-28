@@ -8,6 +8,13 @@
     overflow: hidden;
     padding-bottom: 25px;
   }
+  &.summer {
+    background: transparent;
+    .family-program__tag {
+      background: rgba(161, 216, 106, 0.54);
+      color: #003c56;
+    }
+  }
 }
 
 .family-program__cont {

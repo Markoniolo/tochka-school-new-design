@@ -16,6 +16,21 @@
   & ~ .pre-reviews {
     margin-bottom: 0;
   }
+  &.summer {
+    margin-bottom: 80px;
+    @include media(lg) {
+      margin-bottom: 40px;
+    }
+    .family-cap__area {
+      @include bg-icon('family-cap/family-cap-bg-summer.png');
+      @include media(lg) {
+        @include bg-icon('family-cap/family-cap-bg-summer_tablet.png');
+      }
+      @include media(xs) {
+        @include bg-icon('family-cap/family-cap-bg-summer_mob.png');
+      }
+    }
+  }
 }
 
 .family-cap__cont {
@@ -99,12 +114,12 @@
 
 .family-cap__picture {
   position: absolute;
-  top: 51px;
+  top: 50%;
+  transform: translateY(-50%);
   right: 70px;
   width: 519px;
   height: 416px;
   @include media(lg) {
-    top: 61px;
     right: 24px;
     width: 314px;
     height: 252px;
@@ -113,6 +128,7 @@
     position: static;
     width: 234px;
     height: 188px;
+    transform: none;
     margin: 0 auto 19px;
   }
 }

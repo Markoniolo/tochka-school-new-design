@@ -26,13 +26,14 @@
     },
   ]
 
-.family-about
-  .family-about__cont.cont
-    h2.family-about__title Выбирайте семейное обучение, чтобы:
-    .family-about__list
-      each item in familyAboutList
-        .family-about__item(class=`family-about__item_${item.mod}`)
-          svg(width='37' height='36' viewbox='0 0 37 36' fill='none' xmlns='http://www.w3.org/2000/svg')
-            circle(cx='18.5' cy='18' r='18' fill='white')
-            path(d='M27.9627 11.3306C27.3385 10.7057 26.325 10.7061 25.7001 11.3306L15.5167 21.5144L10.9906 16.9884C10.3656 16.3634 9.35255 16.3634 8.72758 16.9884C8.10261 17.6134 8.10261 18.6264 8.72758 19.2514L14.3849 24.9088C14.6972 25.221 15.1067 25.3776 15.5162 25.3776C15.9258 25.3776 16.3357 25.2214 16.6479 24.9088L27.9627 13.5936C28.5877 12.9691 28.5877 11.9556 27.9627 11.3306Z' fill='#68CCEA')
-          .family-about__text!= item.text
+mixin family-about(mod)
+  .family-about(class = mod ? mod : false)
+    .family-about__cont.cont
+      h2.family-about__title Выбирайте семейное обучение, чтобы:
+      .family-about__list
+        each item in familyAboutList
+          .family-about__item(class=`family-about__item_${item.mod}`)
+            svg(width='37' height='36' viewbox='0 0 37 36' fill='none' xmlns='http://www.w3.org/2000/svg')
+              circle(cx='18.5' cy='18' r='18' fill='white')
+              path(d='M27.9627 11.3306C27.3385 10.7057 26.325 10.7061 25.7001 11.3306L15.5167 21.5144L10.9906 16.9884C10.3656 16.3634 9.35255 16.3634 8.72758 16.9884C8.10261 17.6134 8.10261 18.6264 8.72758 19.2514L14.3849 24.9088C14.6972 25.221 15.1067 25.3776 15.5162 25.3776C15.9258 25.3776 16.3357 25.2214 16.6479 24.9088L27.9627 13.5936C28.5877 12.9691 28.5877 11.9556 27.9627 11.3306Z' fill='#68CCEA')
+            .family-about__text!= item.text

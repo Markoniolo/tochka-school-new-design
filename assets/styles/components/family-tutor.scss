@@ -4,6 +4,53 @@
   @include media(lg) {
     padding: 40px 0;
   }
+  &.summer {
+    .family-tutor__area {
+      min-height: 360px;
+      @include bg-icon('family-tutor/family-tutor-bg-summer.png');
+      @include media(lg) {
+        @include bg-icon('family-tutor/family-tutor-bg-summer_tablet.png');
+      }
+      @include media(xs) {
+        @include bg-icon('family-tutor/family-tutor-bg-summer_mob.png');
+      }
+    }
+    .family-tutor__picture {
+      width: 393px;
+      height: 279px;
+      @include media(lg) {
+        width: 338px;
+        height: 240px;
+      }
+      @include media(xs) {
+        width: 267px;
+        height: 268px;
+      }
+    }
+    .family-tutor__decor {
+      &_1 {
+        background: #A0D76A;
+      }
+      &_2 {
+        background: #F37E60;
+      }
+      &_3 {
+        display: none;
+        @include media(lg) {
+          display: block;
+        }
+      }
+      &_4 {
+        background: #A0D76A;
+      }
+      &_5 {
+        background: #F2C45B;
+      }
+      &_6 {
+        @include bg-icon('family-tutor/family-tutor-decor-summer.svg');
+      }
+    }
+  }
 }
 
 .family-tutor__cont {
@@ -118,7 +165,7 @@
   border-radius: 31px;
   min-height: 417px;
   @include bg-icon('family-tutor/family-tutor-bg.png');
-  @include media(md) {
+  @include media(lg) {
     @include bg-icon('family-tutor/family-tutor-bg_tablet.png');
     display: block;
     padding: 30px 25px;

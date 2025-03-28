@@ -4,6 +4,16 @@
   @include media(xs) {
     padding-bottom: 30px;
   }
+  &.summer {
+    background: rgba(255, 255, 255, 0.39);
+    .family-teachers__box {
+      background: #d6f3ba;
+    }
+    .family-teachers__tag {
+      background: rgba(161, 216, 106, 0.54);
+      color: #003c56;
+    }
+  }
 }
 
 .family-teachers__cont {

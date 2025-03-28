@@ -1,0 +1,46 @@
+include ../_variables
+include ../components/_layout/_connect-style
+include ../components/_layout/_title
+
+doctype html
+html(lang='ru')
+  head
+    include ../components/_layout/_head
+    +title('Летнее семейное обучение')
+  body.family-summer
+    .sticky-header
+      include ../components/_layout/header
+    main.wrapper
+      block body
+        include ../components/family-cap
+        +family-cap('summer', 'Занятия летом на семейном обучении', 'summer-cost')
+        include ../components/summer-how
+        include ../components/summer-informer
+        include ../components/family-program
+        +family-program('summer')
+        include ../components/family-schedule
+        +family-schedule('summer')
+        include ../components/family-about
+        +family-about('summer')
+        include ../components/family-teachers
+        +family-teachers('summer')
+        include ../components/family-tutor
+        +family-tutor('summer')
+        include ../components/family-manual
+        +family-manual('summer')
+        include ../components/family-docs
+        +family-docs('summer')
+        include ../components/summer-cost
+        +summer-cost('family','Летний курс семейного обучения','12 000 ₽')
+        include ../components/cost
+        +cost('shortest')
+        include ../components/faq
+        +faq('summer-family')
+        include ../components/pre-reviews
+        +pre-reviews('summer-family')
+        include ../components/pre-end
+        +pre-end('summer','Время принять решение: оставить всё как есть или начать обучение, получить твёрдые знания и отличные оценки.',
+          'Начать обучение','summer-cost')
+    include ../components/modals/modal-order-new
+    include ../components/_layout/footer
+    include ../components/_layout/scripts

@@ -3,6 +3,36 @@
   @include media(lg) {
     margin-bottom: 40px;
   }
+  &.summer {
+    margin-bottom: 0;
+    padding-top: 80px;
+    padding-bottom: 82px;
+    background: rgba(255, 255, 255, 0.39);
+    @include media(lg) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    .family-about__item {
+      &_light-blue {
+        background: #efaa5c;
+        path {
+          fill: #efaa5c;
+        }
+      }
+      &_yellow, &_green {
+        background: #8bbe5a;
+        path {
+          fill: #8bbe5a;
+        }
+      }
+      &_blue {
+        background: #a0d76a;
+        path {
+          fill: #a0d76a;
+        }
+      }
+    }
+  }
 }
 
 .family-about__cont {

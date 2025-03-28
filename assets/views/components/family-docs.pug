@@ -1,15 +1,16 @@
-.family-docs
-  .family-docs__cont.cont
-    .family-docs__wrap
-      .family-docs__area
-        h2.family-docs__caption Какие документы получит ребёнок в конце учебного года?
-        picture.family-docs__picture
-          source(srcset=staticImg('family-docs/family-docs-1_tablet.png') media="(max-width: 1439px)")
-          img.family-docs__image(src=staticImg('family-docs/family-docs-1.png') alt='')
-        .family-docs__text.
-          После прохождения аттестации (выполнения контрольных работ) ребёнок получит аттестационный лист с оценками
-          по каждому предмету от нашей школы-партнёра
-        .family-docs__note (гимназия «Суханово», Московская область, ОГРН: 1205000076710).
-      .family-docs__box
-        img.family-docs__school(src=staticImg('family-docs/family-docs-2.png') alt='')
-        .family-docs__title Бесплатное прикрепление к гимназии «Суханово», Московская область
+mixin family-docs(mod)
+  .family-docs(class = mod ? mod : false)
+    .family-docs__cont.cont
+      .family-docs__wrap
+        .family-docs__area
+          h2.family-docs__caption Какие документы получит ребёнок в конце учебного года?
+          picture.family-docs__picture
+            source(srcset=staticImg('family-docs/family-docs-1_tablet.png') media="(max-width: 1439px)")
+            img.family-docs__image(src=staticImg('family-docs/family-docs-1.png') alt='')
+          .family-docs__text.
+            После прохождения аттестации (выполнения контрольных работ) ребёнок получит аттестационный лист с оценками
+            по каждому предмету от нашей школы-партнёра
+          .family-docs__note (гимназия «Суханово», Московская область, ОГРН: 1205000076710).
+        .family-docs__box
+          img.family-docs__school(src=staticImg('family-docs/family-docs-2.png') alt='')
+          .family-docs__title Бесплатное прикрепление к гимназии «Суханово», Московская область

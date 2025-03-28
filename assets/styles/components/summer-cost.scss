@@ -6,6 +6,23 @@
     padding: 0;
     margin-bottom: 40px;
   }
+  &.family {
+    @include media(lg) {
+      margin-bottom: 0;
+    }
+    .summer-cost__area {
+      min-height: 665px;
+      @include media(lg) {
+        min-height: auto;
+      }
+    }
+    .summer-cost__title {
+      font-size: 24px;
+    }
+    .summer-cost__bonus-date {
+      margin-bottom: 72px;
+    }
+  }
 }
 
 .summer-cost__cont {
@@ -142,7 +159,7 @@
 }
 
 .summer-cost__list {
-  margin: 0 25px 30px;
+  margin: 0 0 30px 25px;
   display: flex;
   flex-direction: column;
   gap: 18px 0;

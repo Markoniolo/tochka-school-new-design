@@ -9,29 +9,30 @@
     'Педагогический стаж ー 5 лет',
   ]
 
-.family-teachers
-  .family-teachers__cont.cont
-    .family-teachers__caption Кто будет вести уроки для&nbsp;Вас
-    .family-teachers__slider
-      .family-teachers__wrapper.swiper-wrapper
-        each item in ['Екатерина Александровна Горошенкина','Анна Юрьевна','Галина Валерьевна','Елена Юрьевна']
-          .family-teachers__slide.swiper-slide
-            .family-teachers__area
-              picture.family-teachers__picture
-                img.family-teachers__image(src=staticImg('teacher/teacher.png') alt='')
-              .family-teachers__inner
-                .family-teachers__box
-                  .family-teachers__name!= item
-                  .family-teachers__tags
-                    .family-teachers__tag Литература
-                    .family-teachers__tag Русский язык
-                  .family-teachers__list
-                    ul
-                      each item in familyTeachersList
-                        .family-teachers__item= item
-      .family-teachers__bottom
-        .family-teachers__scrollbar
-        .family-teachers__nav
-          button.family-teachers__nav-btn.family-teachers__nav-btn_prev
-          button.family-teachers__nav-btn.family-teachers__nav-btn_next
-      .family-teachers__pagination
+mixin family-teachers(mod)
+  .family-teachers(class = mod ? mod : false)
+    .family-teachers__cont.cont
+      .family-teachers__caption Кто будет вести уроки для&nbsp;Вас
+      .family-teachers__slider
+        .family-teachers__wrapper.swiper-wrapper
+          each item in ['Екатерина Александровна Горошенкина','Анна Юрьевна','Галина Валерьевна','Елена Юрьевна']
+            .family-teachers__slide.swiper-slide
+              .family-teachers__area
+                picture.family-teachers__picture
+                  img.family-teachers__image(src=staticImg('teacher/teacher.png') alt='')
+                .family-teachers__inner
+                  .family-teachers__box
+                    .family-teachers__name!= item
+                    .family-teachers__tags
+                      .family-teachers__tag Литература
+                      .family-teachers__tag Русский язык
+                    .family-teachers__list
+                      ul
+                        each item in familyTeachersList
+                          .family-teachers__item= item
+        .family-teachers__bottom
+          .family-teachers__scrollbar
+          .family-teachers__nav
+            button.family-teachers__nav-btn.family-teachers__nav-btn_prev
+            button.family-teachers__nav-btn.family-teachers__nav-btn_next
+        .family-teachers__pagination

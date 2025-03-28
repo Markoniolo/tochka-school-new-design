@@ -30,20 +30,21 @@
     ['География (Лысенко Н.Б.)'],
   ]
 
-.family-schedule(data-element="family-schedule")
-  .family-schedule__cont.cont
-    .family-schedule__area
-      .family-schedule__box(data-element="family-schedule__box")
-        .family-schedule__time(data-element="family-schedule__time") Время
-        .family-schedule__table
-          .family-schedule__row(data-element="family-schedule__row")
-            each item, index in familyScheduleHead
-              .family-schedule__cell(class = index === 0 ? 'family-schedule__cell_time' : false)!= item
-          each item in [1,2,3,4,5,6,7]
-            .family-schedule__row
-              each item, index in familyScheduleBodyNew
-                .family-schedule__cell(data-element = index === 0 ? "family-schedule__cell" : false)
-                  each cell in item
-                    span= cell
-      .family-schedule__toggle-box
-        button.family-schedule__toggle.btn-blue(data-element="family-schedule__toggle-bottom") Скрыть расписание
+mixin family-schedule(mod)
+  .family-schedule(data-element="family-schedule" class = mod ? mod : false)
+    .family-schedule__cont.cont
+      .family-schedule__area
+        .family-schedule__box(data-element="family-schedule__box")
+          .family-schedule__time(data-element="family-schedule__time") Время
+          .family-schedule__table
+            .family-schedule__row(data-element="family-schedule__row")
+              each item, index in familyScheduleHead
+                .family-schedule__cell(class = index === 0 ? 'family-schedule__cell_time' : false)!= item
+            each item in [1,2,3,4,5,6,7]
+              .family-schedule__row
+                each item, index in familyScheduleBodyNew
+                  .family-schedule__cell(data-element = index === 0 ? "family-schedule__cell" : false)
+                    each cell in item
+                      span= cell
+        .family-schedule__toggle-box
+          button.family-schedule__toggle.btn-blue(data-element="family-schedule__toggle-bottom") Скрыть расписание

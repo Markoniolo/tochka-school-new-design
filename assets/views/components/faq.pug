@@ -34,7 +34,7 @@ mixin faq(mod)
                 .faq__answer
                   .faq__answer-inner
                     p.faq__text= item.answer
-        if mod === 'summer'
+        if mod === 'summer' || mod === 'summer-course' || mod === 'summer-family'
           img.faq__image(src=staticImg('faq/faq-decor-green.svg') alt='')
         else
           img.faq__image(src=staticImg('faq/faq-decor.svg') alt='')
