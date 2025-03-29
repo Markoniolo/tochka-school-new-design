@@ -184,9 +184,6 @@
   }
   &:nth-child(4) {
     background: #f2c45b;
-    @include media(xs) {
-      padding-left: 34px;
-    }
     path {
       fill: #f2c45b;
     }

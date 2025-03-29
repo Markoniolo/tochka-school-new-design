@@ -212,6 +212,30 @@
   .info__text {
     max-width: 390px;
   }
+  &::before {
+    @include media(xs) {
+      content: '';
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      background: #6683c2;
+      border-radius: 50%;
+      top: 230px;
+      left: 27px;
+    }
+  }
+  &::after {
+    @include media(xs) {
+      content: '';
+      position: absolute;
+      width: 55px;
+      height: 55px;
+      background: #7fcbb4;
+      border-radius: 50%;
+      top: 170px;
+      right: 16px;
+    }
+  }
 }
 
 .info__capital-decor {

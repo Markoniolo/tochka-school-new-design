@@ -48,7 +48,7 @@
 .family-teachers__area {
   position: relative;
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   @include media(xs) {
     display: block;
   }

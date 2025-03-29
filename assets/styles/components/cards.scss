@@ -87,9 +87,10 @@
     &::before {
       content: '';
       @include bg-icon('cards/cards-1.png');
+      background-size: cover;
       width: 335px;
-      height: 337px;
       position: absolute;
+      top: 0;
       bottom: 0;
       right: 0;
       @include media(lg) {

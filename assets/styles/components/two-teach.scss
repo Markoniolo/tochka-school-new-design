@@ -235,21 +235,18 @@
       margin-top: 0;
     }
     .two-teach__image {
-      width: 373px;
-      height: 380px;
-      bottom: -16px;
-      left: -65px;
+      width: 284px;
+      height: 355px;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
       @include media(lg) {
-        width: 218px;
-        height: 222px;
-        bottom: -9px;
-        left: -38px;
+        width: 166px;
+        height: 208px;
       }
       @include media(xs) {
-        width: 257px;
-        height: 262px;
-        bottom: -11px;
-        left: -45px;
+        width: 194px;
+        height: 243px;
       }
     }
     .two-teach__info {

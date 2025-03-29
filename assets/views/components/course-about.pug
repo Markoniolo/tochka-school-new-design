@@ -39,7 +39,7 @@ mixin course-about(mod)
         .course-about__video-box(data-element='course-about-video-wrap')
           .course-about__sound
           video.course-about__video(src=`${pathStatics}/files/Shevchenko_1_klass.mov` loop=true controls=false pip="false"
-            data-element='course-about-video' muted playsinline autoplay)
+            data-element='course-about-video' muted playsinline autoplay data-play-start="35")
         .course-about__box
           ul.course-about__list
             each item, index in courseAboutList
@@ -50,6 +50,21 @@ mixin course-about(mod)
                   img.course-about__icon(src=staticImg(`course-about/course-about-icon-${index+1}.svg`) alt='')
                 .course-about__text= item
       .course-about__tags
+        each box in [1,2]
+          .course-about__tags-box
+            if mod === 'summer'
+              each item in courseAboutTagsSummer
+                .course-about__tag(class=`course-about__tag_${item.mod}`)= item.text
+                  svg(viewbox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    circle(cx='9.5' cy='9.5' r='9' fill='white')
+                    path(d='M14.2308 6.16532C13.9188 5.85283 13.412 5.85303 13.0995 6.16532L8.00782 11.2572L5.74478 8.99419C5.43229 8.68171 4.92576 8.68171 4.61327 8.99419C4.30078 9.30668 4.30078 9.81322 4.61327 10.1257L7.44195 12.9544C7.59809 13.1105 7.80284 13.1888 8.0076 13.1888C8.21237 13.1888 8.41731 13.1107 8.57346 12.9544L14.2308 7.29681C14.5433 6.98454 14.5433 6.47779 14.2308 6.16532Z' fill='#6683C2')
+            else
+              each item in courseAboutTags
+                .course-about__tag(class=`course-about__tag_${item.mod}`)= item.text
+                  svg(viewbox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    circle(cx='9.5' cy='9.5' r='9' fill='white')
+                    path(d='M14.2308 6.16532C13.9188 5.85283 13.412 5.85303 13.0995 6.16532L8.00782 11.2572L5.74478 8.99419C5.43229 8.68171 4.92576 8.68171 4.61327 8.99419C4.30078 9.30668 4.30078 9.81322 4.61327 10.1257L7.44195 12.9544C7.59809 13.1105 7.80284 13.1888 8.0076 13.1888C8.21237 13.1888 8.41731 13.1107 8.57346 12.9544L14.2308 7.29681C14.5433 6.98454 14.5433 6.47779 14.2308 6.16532Z' fill='#6683C2')
+      .course-about__tags.mob
         each box in [1,2]
           .course-about__tags-box
             if mod === 'summer'

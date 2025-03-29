@@ -144,6 +144,16 @@
   @include media(lg) {
     gap: 0 15px;
   }
+  &.mob {
+    display: none;
+    @include media(lg) {
+      margin-top: 20px;
+      display: flex;
+    }
+    .course-about__tags-box {
+      flex-direction: row-reverse;
+    }
+  }
 }
 
 .course-about__tags-box {

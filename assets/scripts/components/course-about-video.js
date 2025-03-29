@@ -5,6 +5,8 @@ if (courseAboutVideo) courseAboutVideoInit()
 function courseAboutVideoInit () {
   const videoWrap = document.querySelector("[data-element='course-about-video-wrap']")
   const soundBtn = document.querySelector(".course-about__sound")
+  let startPlayTime = courseAboutVideo.getAttribute('data-play-start')
+  if (!startPlayTime) startPlayTime = 0
 
   videoWrap.addEventListener('click', playVideo)
 
@@ -15,6 +17,12 @@ function courseAboutVideoInit () {
       courseAboutVideo.loop = false
       courseAboutVideo.currentTime = 0
       courseAboutVideo.controls = true
+      try {
+        courseAboutVideo.currentTime = startPlayTime
+      } catch (e) {
+        console.log(e)
+      }
+
       soundBtn.classList.add('hide')
       setTimeout(() => courseAboutVideo.play(), 100)
     } else {

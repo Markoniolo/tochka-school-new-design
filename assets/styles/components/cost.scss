@@ -21,6 +21,11 @@
           content: none;
         }
       }
+      &::after {
+        @include media(lg) {
+          content: none;
+        }
+      }
     }
     .info__area {
       @include bg-icon('info/info-bg-green.png');
