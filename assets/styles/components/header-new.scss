@@ -21,6 +21,14 @@
       }
     }
   }
+  &.no-btn {
+    .header-new__logo {
+      @include media(xs) {
+        transform: none;
+        position: static;
+      }
+    }
+  }
 }
 
 .header-new__cont {

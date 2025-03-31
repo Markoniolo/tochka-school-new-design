@@ -55,8 +55,6 @@ function scheduleFamilyInit () {
   toggleBottom.addEventListener('click', toggleTable)
   toggleBottom.addEventListener('click', scrollToTable)
 
-  toggleBottom.click()
-
   function toggleTable () {
     if (table.classList.contains('hide')) {
       showTable()

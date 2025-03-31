@@ -34,7 +34,7 @@ mixin family-schedule(mod)
   .family-schedule(data-element="family-schedule" class = mod ? mod : false)
     .family-schedule__cont.cont
       .family-schedule__area
-        .family-schedule__box(data-element="family-schedule__box")
+        .family-schedule__box.hide(data-element="family-schedule__box")
           .family-schedule__time(data-element="family-schedule__time") Время
           .family-schedule__table
             .family-schedule__row(data-element="family-schedule__row")
@@ -47,4 +47,4 @@ mixin family-schedule(mod)
                     each cell in item
                       span= cell
         .family-schedule__toggle-box
-          button.family-schedule__toggle.btn-blue(data-element="family-schedule__toggle-bottom") Скрыть расписание
+          button.family-schedule__toggle.btn-orange.reverse(data-element="family-schedule__toggle-bottom") Развернуть расписание

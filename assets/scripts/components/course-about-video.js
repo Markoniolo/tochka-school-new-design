@@ -8,6 +8,12 @@ function courseAboutVideoInit () {
   let startPlayTime = courseAboutVideo.getAttribute('data-play-start')
   if (!startPlayTime) startPlayTime = 0
 
+  try {
+    courseAboutVideo.currentTime = startPlayTime
+  } catch (e) {
+    console.log(e)
+  }
+
   videoWrap.addEventListener('click', playVideo)
 
   function playVideo (e) {
@@ -17,12 +23,6 @@ function courseAboutVideoInit () {
       courseAboutVideo.loop = false
       courseAboutVideo.currentTime = 0
       courseAboutVideo.controls = true
-      try {
-        courseAboutVideo.currentTime = startPlayTime
-      } catch (e) {
-        console.log(e)
-      }
-
       soundBtn.classList.add('hide')
       setTimeout(() => courseAboutVideo.play(), 100)
     } else {
