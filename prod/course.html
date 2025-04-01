@@ -32,7 +32,17 @@
 
 <body>
   <div class="sticky-header">
-    <!--include ../discount-trial-->
+    <div class="predzaps-top">
+      <div class="predzaps-top__cont cont">
+        <div class="predzaps-top__area">
+          <div class="predzaps-top__decor"></div>
+          <div class="predzaps-top__title">Предзапись на следующий учебный год</div>
+          <div class="predzaps-top__text">Запишитесь, чтобы сэкономить от 8 000 до 53 000 ₽ на занятиях!</div>
+          <a class="predzaps-top__button btn-orange btn-orange_arrow" href="#">Записаться</a>
+          <button class="predzaps-top__close"></button>
+        </div>
+      </div>
+    </div>
     <header class="header short" data-element="header">
       <div class="header__cont cont">
         <div class="header__layer layer"></div>
@@ -122,26 +132,24 @@
         <div class="course-cap__area">
           <div class="course-cap__decor course-cap__decor_1"></div>
           <div class="course-cap__decor course-cap__decor_2"></div>
-          <div class="course-cap__number">10 класс</div>
-          <h1 class="course-cap__caption">Курс по математике по&nbsp;программе М.И. Моро «Школа России»</h1>
-          <picture class="course-cap__picture">
-            <img class="course-cap__image" src="assets/img/course-cap/Kostileva.png" alt="">
-          </picture>
-          <div class="course-cap__buttons">
-            <a class="course-cap__button btn-orange" href="#pre-reg" data-role="scroll-to-anchor">Начать обучение</a>
-            <div class="course-cap__author">Галина Валерьевна Шевченко</div>
+          <div class="course-cap__box">
+            <div class="course-cap__number">10 класс</div>
+            <h1 class="course-cap__caption">Курс по математике по&nbsp;программе М.И. Моро «Школа России»</h1>
+            <picture class="course-cap__picture">
+              <img class="course-cap__image" src="assets/img/course-cap/Kostileva.png" alt="">
+            </picture>
+            <div class="course-cap__buttons">
+              <a class="course-cap__button btn-orange" href="#pre-reg" data-role="scroll-to-anchor">Начать обучение</a>
+              <div class="course-cap__author">Галина Валерьевна Шевченко</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="course-about">
+    <div class="course-about no-video">
       <div class="course-about__cont cont">
         <h2 class="course-about__caption">Как проходит этот курс</h2>
         <div class="course-about__area">
-          <div class="course-about__video-box" data-element="course-about-video-wrap">
-            <div class="course-about__sound"></div>
-            <video class="course-about__video" src="assets/files/Shevchenko_1_klass.mov" loop pip="false" data-element="course-about-video" muted playsinline autoplay data-play-start="35"></video>
-          </div>
           <div class="course-about__box">
             <ul class="course-about__list">
               <li class="course-about__item">
@@ -157,6 +165,45 @@
                 <div class="course-about__text">Узнаем о числах и действиях с ними, величинах, геометрических фигурах. Научимся выявлять количественные и пространственные отношения, определять взаимосвязь между фактами, событиями и явлениями.</div>
               </li>
             </ul>
+          </div>
+          <div class="course-about__decor"></div>
+        </div>
+        <div class="course-about__lines">
+          <div class="course-about__line course-about__line_light-blue">Объясним сложное просто
+            <svg viewbox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9.5" cy="9.5" r="9" fill="white"></circle>
+              <path d="M14.2308 6.16532C13.9188 5.85283 13.412 5.85303 13.0995 6.16532L8.00782 11.2572L5.74478 8.99419C5.43229 8.68171 4.92576 8.68171 4.61327 8.99419C4.30078 9.30668 4.30078 9.81322 4.61327 10.1257L7.44195 12.9544C7.59809 13.1105 7.80284 13.1888 8.0076 13.1888C8.21237 13.1888 8.41731 13.1107 8.57346 12.9544L14.2308 7.29681C14.5433 6.98454 14.5433 6.47779 14.2308 6.16532Z" fill="#6683C2"></path>
+            </svg>
+          </div>
+          <div class="course-about__line course-about__line_blue">Добьёмся понимания без зубрёжки
+            <svg viewbox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9.5" cy="9.5" r="9" fill="white"></circle>
+              <path d="M14.2308 6.16532C13.9188 5.85283 13.412 5.85303 13.0995 6.16532L8.00782 11.2572L5.74478 8.99419C5.43229 8.68171 4.92576 8.68171 4.61327 8.99419C4.30078 9.30668 4.30078 9.81322 4.61327 10.1257L7.44195 12.9544C7.59809 13.1105 7.80284 13.1888 8.0076 13.1888C8.21237 13.1888 8.41731 13.1107 8.57346 12.9544L14.2308 7.29681C14.5433 6.98454 14.5433 6.47779 14.2308 6.16532Z" fill="#6683C2"></path>
+            </svg>
+          </div>
+          <div class="course-about__line course-about__line_yellow">Бережно укажем на ошибки и поможем их исправить
+            <svg viewbox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9.5" cy="9.5" r="9" fill="white"></circle>
+              <path d="M14.2308 6.16532C13.9188 5.85283 13.412 5.85303 13.0995 6.16532L8.00782 11.2572L5.74478 8.99419C5.43229 8.68171 4.92576 8.68171 4.61327 8.99419C4.30078 9.30668 4.30078 9.81322 4.61327 10.1257L7.44195 12.9544C7.59809 13.1105 7.80284 13.1888 8.0076 13.1888C8.21237 13.1888 8.41731 13.1107 8.57346 12.9544L14.2308 7.29681C14.5433 6.98454 14.5433 6.47779 14.2308 6.16532Z" fill="#6683C2"></path>
+            </svg>
+          </div>
+          <div class="course-about__line course-about__line_green">Найдём подход к ребёнку любого уровня подготовки
+            <svg viewbox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9.5" cy="9.5" r="9" fill="white"></circle>
+              <path d="M14.2308 6.16532C13.9188 5.85283 13.412 5.85303 13.0995 6.16532L8.00782 11.2572L5.74478 8.99419C5.43229 8.68171 4.92576 8.68171 4.61327 8.99419C4.30078 9.30668 4.30078 9.81322 4.61327 10.1257L7.44195 12.9544C7.59809 13.1105 7.80284 13.1888 8.0076 13.1888C8.21237 13.1888 8.41731 13.1107 8.57346 12.9544L14.2308 7.29681C14.5433 6.98454 14.5433 6.47779 14.2308 6.16532Z" fill="#6683C2"></path>
+            </svg>
+          </div>
+          <div class="course-about__line course-about__line_blue">Поможем развить самостоятельность и логическое мышление
+            <svg viewbox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9.5" cy="9.5" r="9" fill="white"></circle>
+              <path d="M14.2308 6.16532C13.9188 5.85283 13.412 5.85303 13.0995 6.16532L8.00782 11.2572L5.74478 8.99419C5.43229 8.68171 4.92576 8.68171 4.61327 8.99419C4.30078 9.30668 4.30078 9.81322 4.61327 10.1257L7.44195 12.9544C7.59809 13.1105 7.80284 13.1888 8.0076 13.1888C8.21237 13.1888 8.41731 13.1107 8.57346 12.9544L14.2308 7.29681C14.5433 6.98454 14.5433 6.47779 14.2308 6.16532Z" fill="#6683C2"></path>
+            </svg>
+          </div>
+          <div class="course-about__line course-about__line_light-blue">Приведём к результату через нескучные уроки с игровым подходом
+            <svg viewbox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9.5" cy="9.5" r="9" fill="white"></circle>
+              <path d="M14.2308 6.16532C13.9188 5.85283 13.412 5.85303 13.0995 6.16532L8.00782 11.2572L5.74478 8.99419C5.43229 8.68171 4.92576 8.68171 4.61327 8.99419C4.30078 9.30668 4.30078 9.81322 4.61327 10.1257L7.44195 12.9544C7.59809 13.1105 7.80284 13.1888 8.0076 13.1888C8.21237 13.1888 8.41731 13.1107 8.57346 12.9544L14.2308 7.29681C14.5433 6.98454 14.5433 6.47779 14.2308 6.16532Z" fill="#6683C2"></path>
+            </svg>
           </div>
         </div>
         <div class="course-about__tags">
@@ -285,7 +332,34 @@
             </div>
           </div>
         </div>
-        <div class="course-about__tags mob">
+      </div>
+    </div>
+    <div class="course-about">
+      <div class="course-about__cont cont">
+        <h2 class="course-about__caption">Как проходит этот курс</h2>
+        <div class="course-about__area">
+          <div class="course-about__video-box" data-element="course-about-video-wrap">
+            <div class="course-about__sound"></div>
+            <video class="course-about__video" src="assets/files/Shevchenko_1_klass.mov" loop pip="false" data-element="course-about-video" muted playsinline autoplay data-play-start="35"></video>
+          </div>
+          <div class="course-about__box">
+            <ul class="course-about__list">
+              <li class="course-about__item">
+                <img class="course-about__icon" src="assets/img/course-about/course-about-icon-1.svg" alt="">
+                <div class="course-about__text">Занятия проходят в игровой форме. Сначала проводится разминка на устный счет и математические игры. Затем разбираем тему и решаем задачи.</div>
+              </li>
+              <li class="course-about__item">
+                <img class="course-about__icon" src="assets/img/course-about/course-about-icon-2.svg" alt="">
+                <div class="course-about__text">Мы не только разберём материал школьной программы, но и научимся решать логические задачи, будем развивать пространственное мышление, познавательные и алгоритмические способности.</div>
+              </li>
+              <li class="course-about__item">
+                <img class="course-about__icon" src="assets/img/course-about/course-about-icon-3.svg" alt="">
+                <div class="course-about__text">Узнаем о числах и действиях с ними, величинах, геометрических фигурах. Научимся выявлять количественные и пространственные отношения, определять взаимосвязь между фактами, событиями и явлениями.</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="course-about__tags">
           <div class="course-about__tags-box">
             <div class="course-about__tag course-about__tag_light-blue">Бережно укажем на ошибки и поможем их исправить
               <svg viewbox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -983,20 +1057,25 @@
           <div class="footer__logo">
             <img class="footer__logo-image" src="assets/img/logo_white.svg" alt="">
           </div>
-          <p class="footer__text">Общество с ограниченной ответственностью онлайн-школа "Точка Знаний" ИНН 2311347344</p>
+          <p class="footer__text">ООО «Точка Знаний»
+            <br>ИНН 2311347344
+          </p>
           <p class="footer__text">350016, Краснодарский край,
             <br>г. Краснодар, ул. Зиповская,
             <br>д. 45, помещ. 24, ком. 2
           </p>
+          <p class="footer__text">Точка Знаний - образовательная
+            <br>платформа, разработанная
+            <br>ООО «Точка Знаний»
+          </p>
+          <a class="footer__about" href="#">Подробнее о платформе</a>
         </div>
         <div class="footer__box">
           <div class="footer__title" data-element="footer__title">Направления</div>
           <div class="footer__list">
-            <a class="footer__link" href="#">Начальная школа 1-4 класс</a>
-            <a class="footer__link" href="#">Средняя школа 5-8 класс</a>
-            <a class="footer__link" href="#">Старшая школа 9-11 класс</a>
+            <a class="footer__link" href="#">Летние курсы</a>
             <a class="footer__link" href="#">Курсы для учителей</a>
-            <a class="footer__link" href="#">Предзапись на учебный год 25/26 </a>
+            <a class="footer__link" href="#">Предзапись на учебный год 25/26</a>
           </div>
           <a class="footer__blog btn-border" href="#">Блог</a>
         </div>
@@ -1021,7 +1100,7 @@
           </div>
           <div class="footer__contacts-box">
             <a class="footer__whatsapp btn-border btn-border_arrow" href="https://api.whatsapp.com/send/?phone=79182293194&amp;text&amp;type=phone_number&amp;app_absent=0">Написать в WhatsApp</a>
-            <a class="footer__email" href="mailto:tochka-school@yandex.ru">tochka-school@yandex.ru</a>
+            <a class="footer__email" href="mailto:support@tochka-school.ru">support@tochka-school.ru</a>
           </div>
           <div class="footer__social">
             <div class="footer__headline">Социальные сети:</div>

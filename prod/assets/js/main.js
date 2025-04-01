@@ -274,10 +274,13 @@ function scheduleFamilyInit () {
   let offsetHeader = window.innerWidth >= 744 ? 102 : 84
 
   const toggleBottom = scheduleFamily.querySelector('[data-element="family-schedule__toggle-bottom"]')
+  const toggleTop = document.querySelector('[data-element="family-schedule__toggle-top"]')
   const table = scheduleFamily.querySelector('[data-element="family-schedule__box"]')
   const row = scheduleFamily.querySelector('[data-element="family-schedule__row"]')
   const cells = scheduleFamily.querySelectorAll('[data-element="family-schedule__cell"]')
   const cellTime = scheduleFamily.querySelector('[data-element="family-schedule__time"]')
+
+  const isSummer = toggleTop.classList.contains('summer')
 
   function tableFixedCalculate() {
     offsetHeader = window.innerWidth > 574 ? 68 : 60
@@ -321,6 +324,7 @@ function scheduleFamilyInit () {
   }
 
   toggleBottom.addEventListener('click', toggleTable)
+  toggleTop.addEventListener('click', toggleTable)
   toggleBottom.addEventListener('click', scrollToTable)
 
   function toggleTable () {
@@ -339,13 +343,23 @@ function scheduleFamilyInit () {
   function hideTable () {
     table.classList.add('hide')
     toggleBottom.classList.add('reverse')
-    toggleBottom.innerHTML = "Развернуть расписание"
+    toggleTop.classList.add('reverse')
+    if (!isSummer) {
+      toggleBottom.innerHTML = "Развернуть расписание"
+      toggleTop.innerHTML = "Развернуть расписание"
+    }
+    toggleBottom.classList.add('hide')
   }
 
   function showTable () {
     table.classList.remove('hide')
     toggleBottom.classList.remove('reverse')
-    toggleBottom.innerHTML = "Свернуть расписание"
+    toggleTop.classList.remove('reverse')
+    if (!isSummer) {
+      toggleBottom.innerHTML = "Свернуть расписание"
+      toggleTop.innerHTML = "Свернуть расписание"
+    }
+    toggleBottom.classList.remove('hide')
     row.style.transform = 'none'
     cellTime.style.transform = 'none'
     setTimeout(() => tableFixedCalculate(), 100)
@@ -357,10 +371,12 @@ const familyTeachersSlider = document.querySelector('.family-teachers__slider')
 if (familyTeachersSlider) familyTeachersSliderInit()
 
 function familyTeachersSliderInit () {
-  new Swiper(familyTeachersSlider, {
+  let swiper
+  if (window.innerWidth >= 744) {
+    swiper = new Swiper(familyTeachersSlider, {
       slidesPerView: 'auto',
       autoHeight: true,
-      spaceBetween: 40,
+      spaceBetween: 500,
       effect: 'fade',
       fadeEffect: {
         crossFade: true
@@ -372,6 +388,7 @@ function familyTeachersSliderInit () {
       },
       breakpoints: {
         744: {
+          effect: 'fade',
           navigation: {
             nextEl: '.family-teachers__nav-btn_next',
             prevEl: '.family-teachers__nav-btn_prev',
@@ -383,6 +400,59 @@ function familyTeachersSliderInit () {
         }
       }
     })
+  } else {
+    swiper = new Swiper(familyTeachersSlider, {
+      slidesPerView: 'auto',
+      autoHeight: true,
+      spaceBetween: 200,
+      fadeEffect: {
+        crossFade: true
+      },
+      a11y: false,
+      pagination: {
+        el: '.family-teachers__pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        744: {
+          effect: 'fade',
+          navigation: {
+            nextEl: '.family-teachers__nav-btn_next',
+            prevEl: '.family-teachers__nav-btn_prev',
+          },
+          scrollbar: {
+            el: '.family-teachers__scrollbar',
+            draggable: true,
+          },
+        }
+      }
+    })
+  }
+
+  const boxes = familyTeachersSlider.querySelectorAll('.family-teachers__box')
+
+  for (let i = 0; i < boxes.length; i++) {
+    const list = boxes[i].querySelector('.family-teachers__list')
+    if (list.clientHeight > 150) moreBtnInit(boxes[i])
+  }
+
+  function moreBtnInit (box) {
+    box.classList.add('hide')
+    const btn = box.querySelector('.family-teachers__more')
+    btn.classList.add('active')
+    btn.addEventListener('click', toggleBox)
+
+    function toggleBox () {
+      if (box.classList.contains('hide')) {
+        box.classList.remove('hide')
+        btn.innerHTML = 'Свернуть'
+      } else {
+        box.classList.add('hide')
+        btn.innerHTML = 'Показать полностью'
+      }
+      swiper.update()
+    }
+  }
 }
 
 const faqItems = document.querySelectorAll("[data-element='faq-item']")
@@ -1069,6 +1139,30 @@ function preWaysSliderInit () {
   }
 }
 
+const predzapsTop = document.querySelector('.predzaps-top')
+
+if (predzapsTop) predzapsTopInit()
+
+function predzapsTopInit () {
+  const close = predzapsTop.querySelector('.predzaps-top__close')
+  close.addEventListener('click', removePredzapsTop)
+
+  window.addEventListener('scroll', checkScroll, { passive: true })
+
+  function checkScroll () {
+    if (window.scrollY > 0) {
+      predzapsTop.style.display = 'none'
+    } else {
+      predzapsTop.style.display = 'block'
+    }
+  }
+
+  function removePredzapsTop (e) {
+    e.preventDefault()
+    predzapsTop.remove()
+  }
+}
+
 const quiz = document.querySelector('[data-element="quiz"]')
 
 if (quiz) quizInit()
@@ -1473,7 +1567,7 @@ function trialTileInit () {
   })
 
   const reset = trialTile.querySelector("[data-element='trial-tile-filter-reset']")
-  reset.addEventListener('click', resetFilters)
+  if (reset) reset.addEventListener('click', resetFilters)
 
   function resetFilters () {
     for (let i = 0; i < openers.length; i++) {
@@ -1517,9 +1611,9 @@ function trialTileInit () {
     }
     const itemsAll = trialTile.querySelectorAll(["input:checked"])
     if (itemsAll.length) {
-      reset.style.display = 'flex'
+      if (reset) reset.style.display = 'flex'
     } else {
-      reset.style.display = 'none'
+      if (reset) reset.style.display = 'none'
     }
   }
 
