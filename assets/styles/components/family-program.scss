@@ -14,6 +14,12 @@
       background: rgba(161, 216, 106, 0.54);
       color: #003c56;
     }
+    .family-program__inner::after {
+      background: linear-gradient(to left,#fffee3,transparent);
+    }
+    .family-program__inner::before {
+      background: linear-gradient(to right, #fffee3, transparent);
+    }
   }
 }
 
@@ -23,10 +29,10 @@
 
 .family-program__wrap {
   display: flex;
-  align-items: flex-start;
   @include media(md) {
     display: block;
     position: relative;
+    padding-bottom: 75px;
   }
   &::before {
     @include media(md) {
@@ -78,23 +84,25 @@
 }
 
 .family-program__caption {
-  margin-bottom: 50px;
+  margin-bottom: 32px;
   font-weight: 500;
   font-size: 45px;
   line-height: 121%;
   color: #003c56;
   @include media(lg) {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     font-size: 25px;
     line-height: 100%;
   }
 }
 
 .family-program__text {
+  margin-bottom: 40px;
   max-width: 428px;
   width: 100%;
   font-weight: 500;
   font-size: 18px;
+  line-height: 130%;
   color: #003c56;
   @include media(lg) {
     font-size: 15px;
@@ -104,11 +112,53 @@
   @include media(md) {
     margin-bottom: 30px;
   }
+  @include media(xs) {
+    margin-bottom: 25px;
+  }
+}
+
+.family-program__toggle {
+  font-size: 16px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 19px 33px 20px;
+  min-width: 278px;
+  @include media(md) {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &::after {
+    content: '';
+    margin-left: 10px;
+    flex-shrink: 0;
+    width: 13px;
+    height: 13px;
+    transition-duration: $transition-duration;
+    transition-property: transform;
+    @include bg-icon('icons/ic_arrow_btn_white_top.svg');
+  }
+  &.reverse {
+    &::after {
+      transform: rotate(180deg);
+    }
+  }
 }
 
 .family-program__inner {
+  margin-top: 10px;
   position: relative;
+  margin-left: auto;
+  align-self: center;
+  @include media(lg) {
+    max-width: 660px;
+  }
   @include media(md) {
+    margin-top: 0;
+    max-width: unset;
     &::before, &::after {
       content: '';
       position: absolute;
@@ -145,7 +195,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px 25px;
-  justify-content: center;
   @include media(lg) {
     gap: 10px;
   }
@@ -159,17 +208,23 @@
 
 .family-program__tag {
   border-radius: 33px;
-  padding: 11px 31px 13px;
+  padding: 11px 5px 13px;
   font-weight: 500;
   font-size: 14px;
   color: #23617c;
   background-color: #EFF3FE;
-  min-width: 155px;
+  width: 155px;
   text-align: center;
   @include media(lg) {
-    min-width: 135px;
+    width: 135px;
     font-size: 12px;
     line-height: 15px;
-    padding: 9px 28px 11px;
+    padding: 9px 5px 11px;
+  }
+  &:nth-child(8n + 1) {
+    margin-left: 90px;
+    @include media(md) {
+      margin-left: 0;
+    }
   }
 }

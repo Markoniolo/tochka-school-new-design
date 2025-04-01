@@ -31,43 +31,63 @@
     {text: 'Поможем развить самостоятельность и логическое мышление', mod: 'orange'},
   ]
 
-mixin course-about(mod)
-  .course-about(class = mod ? `course-about_${mod}` : false)
+  const courseAboutTagsStatic = [
+    { text: 'Объясним сложное просто', mod: 'light-blue' },
+    { text: 'Добьёмся понимания без зубрёжки', mod: 'blue' },
+    { text: 'Бережно укажем на ошибки и поможем их исправить', mod: 'yellow' },
+    { text: 'Найдём подход к ребёнку любого уровня подготовки', mod: 'green' },
+    { text: 'Поможем развить самостоятельность и логическое мышление', mod: 'blue' },
+    { text: 'Приведём к результату через нескучные уроки с игровым подходом', mod: 'light-blue' },
+  ]
+
+  const courseAboutTagsStaticSummer = [
+    {text: 'Объясним сложное просто', mod: 'light-green'},
+    {text: 'Добьёмся понимания без зубрёжки', mod: 'orange'},
+    {text: 'Бережно укажем на ошибки и поможем их исправить', mod: 'yellow'},
+    {text: 'Найдём подход к ребёнку любого уровня подготовки', mod: 'green-summer'},
+    {text: 'Поможем развить самостоятельность и логическое мышление', mod: 'orange'},
+    {text: 'Приведём к результату через нескучные уроки с игровым подходом', mod: 'light-green'},
+  ]
+
+mixin course-about(mod, title='Как проходит этот курс')
+  .course-about(class = mod ? mod : false)
     .course-about__cont.cont
-      h2.course-about__caption Как проходит этот курс
+      h2.course-about__caption= title
       .course-about__area
-        .course-about__video-box(data-element='course-about-video-wrap')
-          .course-about__sound
-          video.course-about__video(src=`${pathStatics}/files/Shevchenko_1_klass.mov` loop=true controls=false pip="false"
-            data-element='course-about-video' muted playsinline autoplay data-play-start="35")
+        if mod !== 'no-video' && mod !== 'no-video-summer'
+          .course-about__video-box(data-element='course-about-video-wrap')
+            .course-about__sound
+            video.course-about__video(src=`${pathStatics}/files/Shevchenko_1_klass.mov` loop=true controls=false pip="false"
+              data-element='course-about-video' muted playsinline autoplay data-play-start="35")
         .course-about__box
           ul.course-about__list
             each item, index in courseAboutList
               li.course-about__item
-                if mod === 'summer'
+                if mod === 'summer' || mod === 'no-video-summer'
                   img.course-about__icon(src=staticImg(`course-about/course-about-icon-summer-${index+1}.svg`) alt='')
                 else
                   img.course-about__icon(src=staticImg(`course-about/course-about-icon-${index+1}.svg`) alt='')
                 .course-about__text= item
+        if mod === 'no-video' || mod === 'no-video-summer'
+          .course-about__decor
+      if mod === 'no-video'
+        .course-about__lines
+          each line in courseAboutTagsStatic
+            .course-about__line(class=`course-about__line_${line.mod}`)= line.text
+              svg(viewbox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg')
+                circle(cx='9.5' cy='9.5' r='9' fill='white')
+                path(d='M14.2308 6.16532C13.9188 5.85283 13.412 5.85303 13.0995 6.16532L8.00782 11.2572L5.74478 8.99419C5.43229 8.68171 4.92576 8.68171 4.61327 8.99419C4.30078 9.30668 4.30078 9.81322 4.61327 10.1257L7.44195 12.9544C7.59809 13.1105 7.80284 13.1888 8.0076 13.1888C8.21237 13.1888 8.41731 13.1107 8.57346 12.9544L14.2308 7.29681C14.5433 6.98454 14.5433 6.47779 14.2308 6.16532Z' fill='#6683C2')
+      if mod === 'no-video-summer'
+        .course-about__lines
+          each line in courseAboutTagsStaticSummer
+            .course-about__line(class=`course-about__line_${line.mod}`)= line.text
+              svg(viewbox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg')
+                circle(cx='9.5' cy='9.5' r='9' fill='white')
+                path(d='M14.2308 6.16532C13.9188 5.85283 13.412 5.85303 13.0995 6.16532L8.00782 11.2572L5.74478 8.99419C5.43229 8.68171 4.92576 8.68171 4.61327 8.99419C4.30078 9.30668 4.30078 9.81322 4.61327 10.1257L7.44195 12.9544C7.59809 13.1105 7.80284 13.1888 8.0076 13.1888C8.21237 13.1888 8.41731 13.1107 8.57346 12.9544L14.2308 7.29681C14.5433 6.98454 14.5433 6.47779 14.2308 6.16532Z' fill='#6683C2')
       .course-about__tags
         each box in [1,2]
           .course-about__tags-box
-            if mod === 'summer'
-              each item in courseAboutTagsSummer
-                .course-about__tag(class=`course-about__tag_${item.mod}`)= item.text
-                  svg(viewbox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg')
-                    circle(cx='9.5' cy='9.5' r='9' fill='white')
-                    path(d='M14.2308 6.16532C13.9188 5.85283 13.412 5.85303 13.0995 6.16532L8.00782 11.2572L5.74478 8.99419C5.43229 8.68171 4.92576 8.68171 4.61327 8.99419C4.30078 9.30668 4.30078 9.81322 4.61327 10.1257L7.44195 12.9544C7.59809 13.1105 7.80284 13.1888 8.0076 13.1888C8.21237 13.1888 8.41731 13.1107 8.57346 12.9544L14.2308 7.29681C14.5433 6.98454 14.5433 6.47779 14.2308 6.16532Z' fill='#6683C2')
-            else
-              each item in courseAboutTags
-                .course-about__tag(class=`course-about__tag_${item.mod}`)= item.text
-                  svg(viewbox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg')
-                    circle(cx='9.5' cy='9.5' r='9' fill='white')
-                    path(d='M14.2308 6.16532C13.9188 5.85283 13.412 5.85303 13.0995 6.16532L8.00782 11.2572L5.74478 8.99419C5.43229 8.68171 4.92576 8.68171 4.61327 8.99419C4.30078 9.30668 4.30078 9.81322 4.61327 10.1257L7.44195 12.9544C7.59809 13.1105 7.80284 13.1888 8.0076 13.1888C8.21237 13.1888 8.41731 13.1107 8.57346 12.9544L14.2308 7.29681C14.5433 6.98454 14.5433 6.47779 14.2308 6.16532Z' fill='#6683C2')
-      .course-about__tags.mob
-        each box in [1,2]
-          .course-about__tags-box
-            if mod === 'summer'
+            if mod === 'summer' || mod === 'no-video-summer'
               each item in courseAboutTagsSummer
                 .course-about__tag(class=`course-about__tag_${item.mod}`)= item.text
                   svg(viewbox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg')

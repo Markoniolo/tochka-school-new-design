@@ -6,10 +6,13 @@ function scheduleFamilyInit () {
   let offsetHeader = window.innerWidth >= 744 ? 102 : 84
 
   const toggleBottom = scheduleFamily.querySelector('[data-element="family-schedule__toggle-bottom"]')
+  const toggleTop = document.querySelector('[data-element="family-schedule__toggle-top"]')
   const table = scheduleFamily.querySelector('[data-element="family-schedule__box"]')
   const row = scheduleFamily.querySelector('[data-element="family-schedule__row"]')
   const cells = scheduleFamily.querySelectorAll('[data-element="family-schedule__cell"]')
   const cellTime = scheduleFamily.querySelector('[data-element="family-schedule__time"]')
+
+  const isSummer = toggleTop.classList.contains('summer')
 
   function tableFixedCalculate() {
     offsetHeader = window.innerWidth > 574 ? 68 : 60
@@ -53,6 +56,7 @@ function scheduleFamilyInit () {
   }
 
   toggleBottom.addEventListener('click', toggleTable)
+  toggleTop.addEventListener('click', toggleTable)
   toggleBottom.addEventListener('click', scrollToTable)
 
   function toggleTable () {
@@ -71,13 +75,23 @@ function scheduleFamilyInit () {
   function hideTable () {
     table.classList.add('hide')
     toggleBottom.classList.add('reverse')
-    toggleBottom.innerHTML = "Развернуть расписание"
+    toggleTop.classList.add('reverse')
+    if (!isSummer) {
+      toggleBottom.innerHTML = "Развернуть расписание"
+      toggleTop.innerHTML = "Развернуть расписание"
+    }
+    toggleBottom.classList.add('hide')
   }
 
   function showTable () {
     table.classList.remove('hide')
     toggleBottom.classList.remove('reverse')
-    toggleBottom.innerHTML = "Свернуть расписание"
+    toggleTop.classList.remove('reverse')
+    if (!isSummer) {
+      toggleBottom.innerHTML = "Свернуть расписание"
+      toggleTop.innerHTML = "Свернуть расписание"
+    }
+    toggleBottom.classList.remove('hide')
     row.style.transform = 'none'
     cellTime.style.transform = 'none'
     setTimeout(() => tableFixedCalculate(), 100)

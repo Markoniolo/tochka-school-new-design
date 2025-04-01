@@ -60,9 +60,10 @@
   }
   @include media(xs) {
     gap: 34px 50px;
-    margin-left: -6px;
     justify-content: center;
     max-width: 332px;
+    margin: 0 auto;
+    left: -6px;
   }
 }
 

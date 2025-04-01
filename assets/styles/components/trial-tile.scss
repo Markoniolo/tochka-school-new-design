@@ -20,14 +20,43 @@
     .tile-loader {
       color: #A0D76A;
     }
-    .trial-tile__filter-top, .trial-tile__filter-wrap {
+    .trial-tile__filter-top {
+      position: relative;
+      z-index: 20;
       background: #d6f3ba;
+      border-radius: 20px;
+    }
+    .trial-tile__filter-wrap {
+      top: calc(100% + -20px);
+      padding-top: 45px;
+      background: #F8FFF0;
     }
     .trial-tile__filter-view {
       background: #a1d86a;
     }
     .trial-tile__picture {
       background: rgba(255,255,255,.26);
+    }
+    .trial-tile__filter-list {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .trial-tile__filter-item {
+      cursor: pointer;
+      width: calc(50% - 5px);
+      &:hover {
+        .trial-tile__filter-view {
+          background: #82bc49;
+        }
+      }
+    }
+    .trial-tile__filter-input {
+      display: none;
+      &:checked ~ .trial-tile__filter-view {
+        background-color: #67933b;
+      }
     }
   }
 }
@@ -117,6 +146,7 @@
 }
 
 .trial-tile__filter-top {
+  cursor: pointer;
   border-radius: 34px;
   background-color: $white;
   padding: 12px 50px 12px 34px;
@@ -298,10 +328,11 @@
   &_family {
     background: #dae5fe;
     .trial-tile__picture {
-      width: 236px;
+      width: 210px;
       height: 255px;
       @include bg-icon('trial-tile/trial-tile-family.svg');
       @include media(lg) {
+        width: 236px;
         height: 260px;
         border-radius: 22px;
       }
@@ -313,11 +344,12 @@
       }
     }
     .trial-tile__name {
-      margin-bottom: 18px;
+      margin-bottom: 10px;
       font-size: 24px;
       @include media(xs) {
         padding-left: 162px;
         line-height: 115%;
+        margin-bottom: 22px;
       }
     }
     .trial-tile__class-number {
@@ -365,12 +397,11 @@
 }
 
 .trial-tile__class-number {
-  margin-bottom: 12px;
+  margin-bottom: 5px;
   font-size: 16px;
-  line-height: 132%;
+  line-height: 100%;
   color: rgba(0, 0, 0, 0.5);
   @include media(lg) {
-    margin-bottom: 10px;
     font-size: 15px;
   }
   @include media(xs) {
@@ -425,7 +456,7 @@
 .trial-tile__link {
   flex-shrink: 0;
   @include media(xs) {
-    padding: 14px 27px 16px;
+    padding: 14px 20px 16px;
   }
 }
 
@@ -456,6 +487,7 @@
 .trial-tile__course {
   position: relative;
   margin-left: auto;
+  margin-right: 16px;
   font-size: 16px;
   line-height: 16px;
   color: #003c56;
@@ -464,7 +496,7 @@
   transition-duration: $transition-duration;
   transition-property: color;
   @include media(lg) {
-    margin-left: 30px;
+    margin-right: 26px;
     font-size: 15px;
     line-height: 15px;
   }

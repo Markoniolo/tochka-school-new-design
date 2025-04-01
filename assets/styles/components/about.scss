@@ -41,7 +41,8 @@
   @include media(xs) {
     max-width: 417px;
     height: 596px;
-    margin-left: -36px;
+    left: -36px;
+    margin: 0 auto;
   }
 }
 

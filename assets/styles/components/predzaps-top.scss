@@ -1,0 +1,114 @@
+.predzaps-top {
+  @include bg-icon('predzaps-top/predzaps-top-bg.png');
+  background-size: cover;
+  overflow: hidden;
+  @include media(lg) {
+    background: #6683c2;
+  }
+  @include media(xs) {
+    @include bg-icon('predzaps-top/predzaps-top-bg_mob.png');
+    background-size: cover;
+  }
+}
+
+.predzaps-top__cont {
+
+}
+
+.predzaps-top__area {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  padding-left: 160px;
+  position: relative;
+  @include media(lg) {
+    flex-direction: column;
+    padding-left: 148px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  @include media(xs) {
+    padding-left: 0;
+  }
+}
+
+.predzaps-top__decor {
+  position: absolute;
+  left: 0;
+  top: -9px;
+  width: 125px;
+  height: 98px;
+  @include bg-icon('predzaps-top/predzaps-top-decor.svg');
+  @include media(lg) {
+    width: 119px;
+    height: 93px;
+    top: -6px;
+  }
+  @include media(xs) {
+    display: none;
+  }
+}
+
+.predzaps-top__title {
+  margin-right: 44px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 144%;
+  color: #fff;
+  @include media(lg) {
+    margin-right: 0;
+    font-size: 15px;
+    line-height: 107%;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+}
+
+.predzaps-top__text {
+  margin-right: 40px;
+  font-size: 16px;
+  line-height: 108%;
+  color: #fff;
+  max-width: 258px;
+  width: 100%;
+  @include media(lg) {
+    font-size: 13px;
+    margin-right: 0;
+    max-width: 212px;
+  }
+}
+
+.predzaps-top__button {
+  font-size: 12px;
+  padding: 7px 14px 8px;
+  @include media(lg) {
+    position: absolute;
+    left: 514px;
+  }
+  @include media(xs) {
+    bottom: 13px;
+    right: 0;
+    left: unset;
+  }
+  &::after {
+    margin-left: 6px;
+  }
+}
+
+.predzaps-top__close {
+  width: 23px;
+  height: 23px;
+  margin-left: auto;
+  @include bg-icon('discount/ic_discount-trial_close.svg');
+  @include media(lg) {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @include media(xs) {
+    top: 5px;
+    right: -15px;
+    transform: none;
+  }
+}

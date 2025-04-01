@@ -16,7 +16,7 @@ function trialTileInit () {
   })
 
   const reset = trialTile.querySelector("[data-element='trial-tile-filter-reset']")
-  reset.addEventListener('click', resetFilters)
+  if (reset) reset.addEventListener('click', resetFilters)
 
   function resetFilters () {
     for (let i = 0; i < openers.length; i++) {
@@ -60,9 +60,9 @@ function trialTileInit () {
     }
     const itemsAll = trialTile.querySelectorAll(["input:checked"])
     if (itemsAll.length) {
-      reset.style.display = 'flex'
+      if (reset) reset.style.display = 'flex'
     } else {
-      reset.style.display = 'none'
+      if (reset) reset.style.display = 'none'
     }
   }
 

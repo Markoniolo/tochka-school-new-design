@@ -15,7 +15,7 @@ mixin family-teachers(mod)
       .family-teachers__caption Кто будет вести уроки для&nbsp;Вас
       .family-teachers__slider
         .family-teachers__wrapper.swiper-wrapper
-          each item in ['Екатерина Александровна Горошенкина','Анна Юрьевна','Галина Валерьевна','Елена Юрьевна']
+          each item, index in ['Екатерина Александровна Горошенкина','Анна Юрьевна','Галина Валерьевна','Елена Юрьевна']
             .family-teachers__slide.swiper-slide
               .family-teachers__area
                 picture.family-teachers__picture
@@ -27,9 +27,16 @@ mixin family-teachers(mod)
                       .family-teachers__tag Литература
                       .family-teachers__tag Русский язык
                     .family-teachers__list
-                      ul
-                        each item in familyTeachersList
-                          .family-teachers__item= item
+                      if index === 0
+                        ul
+                          .family-teachers__item 1
+                          .family-teachers__item 2
+                          .family-teachers__item 3
+                      else
+                        ul
+                          each item in familyTeachersList
+                            .family-teachers__item= item
+                    button.family-teachers__more Показать полностью
         .family-teachers__bottom
           .family-teachers__scrollbar
           .family-teachers__nav

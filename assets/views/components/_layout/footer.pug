@@ -2,6 +2,11 @@
   const footerList1 = [
     'Начальная школа 1-4 класс', 'Средняя школа 5-8 класс', 'Старшая школа 9-11 класс', 'Курсы для учителей', 'Предзапись на учебный год 25/26 '
   ]
+  const footerList1_summer = [
+    'Летние курсы',
+    'Курсы для учителей',
+    'Предзапись на учебный год 25/26',
+  ]
   const footerList2 = [
     'Политика обработки персональных данных',
     'Согласие на обработку персональных данных',
@@ -24,17 +29,27 @@ footer.footer
       .footer__box
         .footer__logo
           img.footer__logo-image(src=staticImg('logo_white.svg') alt='')
-        p.footer__text Общество с ограниченной ответственностью онлайн-школа "Точка Знаний" ИНН 2311347344
+        p.footer__text
+          | ООО «Точка Знаний»
+          br
+          | ИНН 2311347344
         p.footer__text
           | 350016, Краснодарский край,
           br
           | г. Краснодар, ул. Зиповская,
           br
           | д. 45, помещ. 24, ком. 2
+        p.footer__text
+          | Точка Знаний - образовательная
+          br
+          | платформа, разработанная
+          br
+          | ООО «Точка Знаний»
+        a.footer__about(href='#') Подробнее о платформе
       .footer__box
         .footer__title(data-element="footer__title") Направления
         .footer__list
-          each item in footerList1
+          each item in footerList1_summer
             a.footer__link(href='#')= item
         a.footer__blog.btn-border(href='#') Блог
       .footer__box
@@ -50,7 +65,7 @@ footer.footer
           .footer__phone-note Звонок по России бесплатный
         .footer__contacts-box
           a.footer__whatsapp.btn-border.btn-border_arrow(href='https://api.whatsapp.com/send/?phone=79182293194&text&type=phone_number&app_absent=0') Написать в WhatsApp
-          a.footer__email(href='mailto:tochka-school@yandex.ru') tochka-school@yandex.ru
+          a.footer__email(href='mailto:support@tochka-school.ru') support@tochka-school.ru
         .footer__social
           .footer__headline Социальные сети:
           .footer__social-list

@@ -10,6 +10,12 @@
     margin-bottom: 40px;
     padding-bottom: 0;
   }
+  & + .faq {
+    margin-top: -80px;
+    @include media(lg) {
+      margin-top: 0;
+    }
+  }
   &.summer {
     position: relative;
     z-index: 1;

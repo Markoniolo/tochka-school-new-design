@@ -8,10 +8,18 @@
     background: rgba(255, 255, 255, 0.39);
     .family-teachers__box {
       background: #d6f3ba;
+      &.hide {
+        &::before {
+          background: linear-gradient(0deg, #d6f3ba 0%, #d6f3ba 50%, rgba(214, 243, 186, 0) 100%);
+        }
+      }
     }
     .family-teachers__tag {
       background: rgba(161, 216, 106, 0.54);
       color: #003c56;
+    }
+    .family-teachers__more {
+      color: #67933b;
     }
   }
 }
@@ -34,24 +42,7 @@
 }
 
 .family-teachers__slider {
-
-}
-
-.family-teachers__wrapper {
-
-}
-
-.family-teachers__slide {
-
-}
-
-.family-teachers__area {
   position: relative;
-  display: flex;
-  align-items: flex-end;
-  @include media(xs) {
-    display: block;
-  }
   &::before {
     @include media(xs) {
       content: '';
@@ -84,11 +75,28 @@
   }
 }
 
+.family-teachers__wrapper {
+
+}
+
+.family-teachers__slide {
+
+}
+
+.family-teachers__area {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  @include media(xs) {
+    display: block;
+  }
+}
+
 .family-teachers__picture {
   position: relative;
   z-index: 10;
   width: 509px;
-  height: 567px;
+  height: 566px;
   flex-shrink: 0;
   align-self: flex-end;
   @include media(lg) {
@@ -128,7 +136,7 @@
     border-radius: 50%;
     background-color: #F2C45B;
     position: absolute;
-    top: 2px;
+    top: -20px;
     right: 77px;
     @include media(lg) {
       width: 28px;
@@ -149,10 +157,12 @@
   position: relative;
   z-index: 2;
   height: 100%;
+  object-fit: contain;
 }
 
 .family-teachers__inner {
   padding-bottom: 138px;
+  flex-grow: 1;
   @include media(lg) {
     padding-bottom: 59px;
   }
@@ -167,14 +177,54 @@
   background-color: #FFFFFF;
   box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
   padding: 30px 65px 40px 212px;
+  overflow: hidden;
+  min-height: 380px;
   @include media(lg) {
     border-radius: 10px;
     margin-left: -66px;
     padding: 25px 15px 20px 85px;
+    min-height: 323px;
   }
   @include media(xs) {
+    min-height: unset;
     margin-left: 0;
     padding: 25px 20px;
+  }
+  &.hide {
+    position: relative;
+    &::before {
+      content: '';
+      background: linear-gradient(0deg, #fff 0%, #fff 50%, rgba(#fff, 0) 100%);
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      right: 65px;
+      width: 800px;
+      height: 134px;
+      @include media(lg) {
+        right: 0;
+        width: 850px;
+        height: 105px;
+      }
+      @include media(md) {
+        width: 450px;
+      }
+      @include media(xs) {
+        content: none;
+      }
+    }
+    .family-teachers__list {
+      max-height: 150px;
+      @include media(xs) {
+        max-height: unset;
+      }
+    }
+    .family-teachers__more {
+      display: inline-block;
+      @include media(xs) {
+        display: none;
+      }
+    }
   }
 }
 
@@ -204,6 +254,7 @@
   }
   @include media(xs) {
     margin-bottom: 25px;
+    justify-content: center;
   }
 }
 
@@ -216,6 +267,12 @@
   color: #6683c2;
   @include media(lg) {
     padding: 8px 20px;
+  }
+}
+
+.family-teachers__list {
+  @include media(xs) {
+    max-height: 100%;
   }
 }
 
@@ -251,6 +308,26 @@
       width: 14px;
       height: 14px;
     }
+  }
+}
+
+.family-teachers__more {
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+  font-size: 16px;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #6683c2;
+  display: none;
+  @include media(lg) {
+    margin-top: 10px;
+  }
+  @include media(xs) {
+    display: none;
+  }
+  &.active {
+    display: inline-block;
   }
 }
 

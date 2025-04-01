@@ -1,6 +1,6 @@
 -
   const familyScheduleHead = [
-    'Время начала урока',
+    'Время',
     'Понедельник',
     'Вторник',
     'Среда',
@@ -47,4 +47,4 @@ mixin family-schedule(mod)
                     each cell in item
                       span= cell
         .family-schedule__toggle-box
-          button.family-schedule__toggle.btn-orange.reverse(data-element="family-schedule__toggle-bottom") Развернуть расписание
+          button.family-schedule__toggle.btn-orange.reverse.hide(data-element="family-schedule__toggle-bottom") Развернуть расписание

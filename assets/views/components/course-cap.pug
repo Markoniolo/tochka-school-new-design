@@ -4,11 +4,12 @@ mixin course-cap(mod, id='pre-reg')
       .course-cap__area
         .course-cap__decor.course-cap__decor_1
         .course-cap__decor.course-cap__decor_2
-        .course-cap__number 10 класс
-        h1.course-cap__caption!= 'Курс по математике по&nbsp;программе М.И. Моро «Школа России»'
-        picture.course-cap__picture
-          img.course-cap__image(src=staticImg('course-cap/Kostileva.png') alt='')
-        .course-cap__buttons
-          a.course-cap__button.btn-orange(href=`#${id}` data-role='scroll-to-anchor') Начать обучение
-          .course-cap__author Галина Валерьевна Шевченко
+        .course-cap__box
+          .course-cap__number 10 класс
+          h1.course-cap__caption!= 'Курс по математике по&nbsp;программе М.И. Моро «Школа России»'
+          picture.course-cap__picture
+            img.course-cap__image(src=staticImg('course-cap/Kostileva.png') alt='')
+          .course-cap__buttons
+            a.course-cap__button.btn-orange(href=`#${id}` data-role='scroll-to-anchor') Начать обучение
+            .course-cap__author Галина Валерьевна Шевченко
 

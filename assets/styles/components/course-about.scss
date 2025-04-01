@@ -4,11 +4,51 @@
   @include media(lg) {
     padding-bottom: 40px;
   }
-  &_summer {
+  &.summer {
     .course-about__sound {
       @include bg-img('icons/ic_course_sound_mute_summer.svg');
       background-position: center center;
       background-repeat: no-repeat;
+    }
+  }
+  &.no-video {
+    .course-about__area {
+      position: relative;
+    }
+    .course-about__box {
+      max-width: 564px;
+      min-height: 269px;
+    }
+    .course-about__decor {
+      position: absolute;
+      top: -118px;
+      right: 65px;
+      width: 485px;
+      height: 401px;
+      @include bg-icon('course-about/course-about-decor.svg');
+      @include media(lg) {
+        display: none;
+      }
+    }
+  }
+  &.no-video-summer {
+    .course-about__area {
+      position: relative;
+    }
+    .course-about__box {
+      max-width: 564px;
+      min-height: 269px;
+    }
+    .course-about__decor {
+      position: absolute;
+      top: -118px;
+      right: 65px;
+      width: 485px;
+      height: 401px;
+      @include bg-icon('course-about/course-about-decor-summer.svg');
+      @include media(lg) {
+        display: none;
+      }
     }
   }
 }
@@ -162,7 +202,7 @@
   gap: 0 30px;
   flex-shrink: 0;
   @include media(lg) {
-    gap: 0 15px;
+    display: none;
   }
 }
 
@@ -237,5 +277,82 @@
   }
   100% {
     transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.course-about__lines {
+  display: none;
+  @include media(lg) {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  @include media(xs) {
+    gap: 20px;
+  }
+}
+
+.course-about__line {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  color: #fff;
+  padding: 5px 35px;
+  min-height: 55px;
+  border-radius: 43px;
+  @include media(xs) {
+    min-height: 82px;
+    padding: 10px 29px;
+  }
+  &_light-blue {
+    background: #68ccea;
+    path {
+      fill: #68ccea;
+    }
+  }
+  &_blue {
+    background: #6683c2;
+    path {
+      fill: #6683c2;
+    }
+  }
+  &_yellow {
+    background: #f2c45b;
+    path {
+      fill: #f2c45b;
+    }
+  }
+  &_green {
+    background: #7fcbb4;
+    path {
+      fill: #7fcbb4;
+    }
+  }
+  &_green-summer {
+    background: #A0D76A;
+    path {
+      fill: #A0D76A;
+    }
+  }
+  &_light-green {
+    background: #B4D388;
+    path {
+      fill: #B4D388;
+    }
+  }
+  &_orange {
+    background: #EFAA5C;
+    path {
+      fill: #EFAA5C;
+    }
+  }
+  svg {
+    margin-right: 13px;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    order: -1;
   }
 }

@@ -31,6 +31,8 @@
 }
 
 .course-cap__area {
+  display: flex;
+  align-self: center;
   position: relative;
   box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
   @include bg-icon('course-cap/course-cap-bg.png');
@@ -46,6 +48,17 @@
   @include media(xs) {
     padding: 30px 16px 40px;
     @include bg-icon('course-cap/course-cap-bg_mob.png');
+    display: block;
+  }
+}
+
+.course-cap__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  @include media(xs) {
+    display: block;
   }
 }
 
