@@ -76,6 +76,11 @@
     margin-right: 0;
     max-width: 212px;
   }
+  span {
+    @include media(lg) {
+      font-weight: 600;
+    }
+  }
 }
 
 .predzaps-top__button {

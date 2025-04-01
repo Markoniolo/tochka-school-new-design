@@ -40,7 +40,7 @@
   ]
 
 mixin cap(mod)
-  article.cap(class = mod ? mod : false)
+  article.cap(class = mod ? mod : false data-btn-fixed-hide="true")
     .cap__cont.cont
       .cap__wrap
         h1.cap__caption
@@ -57,16 +57,28 @@ mixin cap(mod)
           img.cap__count-image(src=staticImg('cap/cap-count.png') alt='')
           .cap__count-text Более 44 000 счастливых учеников
         if mod === 'summer'
-          .cap__title Выберите летние курсы
-          .directions-list
-            each item, index in capListSummer
-              .directions-item(class=`directions-item_${index + 1}`)
-                .directions-item-box
-                  .directions-headline= item.headline
-                  .directions-tags
-                    each tag in item.tags
-                      .directions-tag= tag
-                a.directions-button.btn-orange(href='#') Выбрать
+          .cap__news-caption
+            | Летний ритм:
+            br
+            | занимайтесь в своём темпе
+          .cap__news
+            .cap__news-headline Летние курсы
+            .cap__news-list
+              each item in ['Школьные предметы 1-11 класс','Развивающие курсы','Подготовка к ОГЭ и ЕГЭ','Семейное обучение 1-8 класс']
+                .cap__news-item= item
+            .cap__news-note Занятия в апреле и&nbsp;мае — бесплатно
+            .cap__news-gift
+            a.cap__news-button.btn-orange(href='#') Выбрать курс
+          //.cap__title Выберите летние курсы
+          //.directions-list
+          //  each item, index in capListSummer
+          //    .directions-item(class=`directions-item_${index + 1}`)
+          //      .directions-item-box
+          //        .directions-headline= item.headline
+          //        .directions-tags
+          //          each tag in item.tags
+          //            .directions-tag= tag
+          //      a.directions-button.btn-orange(href='#') Выбрать
         else
           .cap__title Выберите направление
           .directions-list

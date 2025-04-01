@@ -1,5 +1,5 @@
 mixin cost (mod)
-  .cost(class = mod ? mod : false id = mod !== 'shortest' ? 'pre-reg' : false)
+  .cost(class = mod ? mod : false id = mod !== 'shortest' ? 'pre-reg' : false data-btn-fixed-hide="true")
     .cost__cont.cont
       if mod !== 'shortest'
         h2.cost__caption Стоимость годового абонемента

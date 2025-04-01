@@ -37,7 +37,7 @@
         <div class="predzaps-top__area">
           <div class="predzaps-top__decor"></div>
           <div class="predzaps-top__title">Предзапись на следующий учебный год</div>
-          <div class="predzaps-top__text">Запишитесь, чтобы сэкономить от 8 000 до 53 000 ₽ на занятиях!</div>
+          <div class="predzaps-top__text">Запишитесь, чтобы сэкономить <span>от 8 000 до 53 000 ₽</span> на занятиях!</div>
           <a class="predzaps-top__button btn-orange btn-orange_arrow" href="#">Записаться</a>
           <button class="predzaps-top__close"></button>
         </div>
@@ -127,7 +127,7 @@
     </header>
   </div>
   <main class="wrapper">
-    <article class="cap">
+    <article class="cap" data-btn-fixed-hide="true">
       <div class="cap__cont cont">
         <div class="cap__wrap">
           <h1 class="cap__caption">Занятия для детей
@@ -200,7 +200,7 @@
         </div>
       </div>
     </article>
-    <article class="cap summer">
+    <article class="cap summer" data-btn-fixed-hide="true">
       <div class="cap__cont cont">
         <div class="cap__wrap">
           <h1 class="cap__caption">Занятия для детей
@@ -228,39 +228,31 @@
             <img class="cap__count-image" src="assets/img/cap/cap-count.png" alt="">
             <div class="cap__count-text">Более 44 000 счастливых учеников</div>
           </div>
-          <div class="cap__title">Выберите летние курсы</div>
-          <div class="directions-list">
-            <div class="directions-item directions-item_1">
-              <div class="directions-item-box">
-                <div class="directions-headline">Летняя начальная школа</div>
-                <div class="directions-tags">
-                  <div class="directions-tag">1-4 класс</div>
-                  <div class="directions-tag">Семейное обучение</div>
-                </div>
-              </div>
-              <a class="directions-button btn-orange" href="#">Выбрать</a>
-            </div>
-            <div class="directions-item directions-item_2">
-              <div class="directions-item-box">
-                <div class="directions-headline">Летняя средняя школа</div>
-                <div class="directions-tags">
-                  <div class="directions-tag">5-8 класс</div>
-                  <div class="directions-tag">Семейное обучение</div>
-                </div>
-              </div>
-              <a class="directions-button btn-orange" href="#">Выбрать</a>
-            </div>
-            <div class="directions-item directions-item_3">
-              <div class="directions-item-box">
-                <div class="directions-headline">Летняя старшая школа</div>
-                <div class="directions-tags">
-                  <div class="directions-tag">9-11 класс</div>
-                  <div class="directions-tag">Подготовка к ОГЭ и ЕГЭ</div>
-                </div>
-              </div>
-              <a class="directions-button btn-orange" href="#">Выбрать</a>
-            </div>
+          <div class="cap__news-caption">Летний ритм:
+            <br>занимайтесь в своём темпе
           </div>
+          <div class="cap__news">
+            <div class="cap__news-headline">Летние курсы</div>
+            <div class="cap__news-list">
+              <div class="cap__news-item">Школьные предметы 1-11 класс</div>
+              <div class="cap__news-item">Развивающие курсы</div>
+              <div class="cap__news-item">Подготовка к ОГЭ и ЕГЭ</div>
+              <div class="cap__news-item">Семейное обучение 1-8 класс</div>
+            </div>
+            <div class="cap__news-note">Занятия в апреле и&nbsp;мае — бесплатно</div>
+            <div class="cap__news-gift"></div>
+            <a class="cap__news-button btn-orange" href="#">Выбрать курс</a>
+          </div>
+          <!--.cap__title Выберите летние курсы-->
+          <!--.directions-list-->
+          <!--  each item, index in capListSummer-->
+          <!--    .directions-item(class=`directions-item_${index + 1}`)-->
+          <!--      .directions-item-box-->
+          <!--        .directions-headline= item.headline-->
+          <!--        .directions-tags-->
+          <!--          each tag in item.tags-->
+          <!--            .directions-tag= tag-->
+          <!--      a.directions-button.btn-orange(href='#') Выбрать-->
         </div>
       </div>
     </article>

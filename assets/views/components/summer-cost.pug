@@ -22,7 +22,7 @@
   ]
 
 mixin summer-cost(mod, title='Летний курс', price='6 000 ₽')
-  .summer-cost#summer-cost(class = mod ? mod : false)
+  .summer-cost#summer-cost(class = mod ? mod : false data-btn-fixed-hide="true")
     .summer-cost__cont.cont
       .summer-cost__wrap
         h2.summer-cost__caption Стоимость летнего абонемента
