@@ -62,12 +62,7 @@ mixin course-about(mod, title='Как проходит этот курс')
         .course-about__box
           ul.course-about__list
             each item, index in courseAboutList
-              li.course-about__item
-                if mod === 'summer' || mod === 'no-video-summer'
-                  img.course-about__icon(src=staticImg(`course-about/course-about-icon-summer-${index+1}.svg`) alt='')
-                else
-                  img.course-about__icon(src=staticImg(`course-about/course-about-icon-${index+1}.svg`) alt='')
-                .course-about__text= item
+              li.course-about__item= item
         if mod === 'no-video' || mod === 'no-video-summer'
           .course-about__decor
       if mod === 'no-video'
