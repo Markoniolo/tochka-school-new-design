@@ -2,8 +2,8 @@
   @include bg-icon('predzaps-top/predzaps-top-bg.png');
   background-size: cover;
   overflow: hidden;
-  transition-property: margin;
   transition-duration: $transition-duration;
+  transition-property: height;
   @include media(lg) {
     background: #6683c2;
   }
@@ -12,7 +12,7 @@
     background-size: cover;
   }
   &.hide {
-    margin-top: -80px;
+    height: 0;
   }
 }
 
@@ -97,8 +97,7 @@
   }
   @include media(xs) {
     bottom: 13px;
-    right: 0;
-    left: unset;
+    left: 235px;
   }
   &::after {
     margin-left: 6px;
