@@ -33,5 +33,7 @@ mixin family-program(mod)
         .family-program__inner
           .family-program__overlay
             .family-program__tags
-              each tag in familyProgramTags
+              each tag, i in familyProgramTags
                 .family-program__tag= tag
+                  if i === 6
+                    .program__hint Основы духовно-нравственной культуры народов России

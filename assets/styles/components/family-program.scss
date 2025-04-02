@@ -210,6 +210,7 @@
 }
 
 .family-program__tag {
+  position: relative;
   border-radius: 33px;
   padding: 3px 5px 2px;
   font-weight: 500;
@@ -223,6 +224,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   @include media(lg) {
     width: 135px;
     font-size: 12px;
@@ -233,6 +235,30 @@
     margin-left: 90px;
     @include media(md) {
       margin-left: 0;
+    }
+  }
+  &:hover {
+    .program__hint {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+  .program__hint {
+    position: absolute;
+    z-index: 1;
+    top: calc(-100% - 25px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    width: 280px;
+    background: #fff;
+    border-radius: 10px;
+    transition-property: opacity;
+    transition-duration: $transition-duration;
+    pointer-events: none;
+    opacity: 0;
+    @include media(lg) {
+      display: none;
     }
   }
 }
