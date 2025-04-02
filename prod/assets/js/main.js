@@ -1151,15 +1151,16 @@ function predzapsTopInit () {
 
   function checkScroll () {
     if (window.scrollY > 0) {
-      predzapsTop.style.display = 'none'
+      predzapsTop.classList.add('hide')
     } else {
-      predzapsTop.style.display = 'block'
+      predzapsTop.classList.remove('hide')
     }
   }
 
   function removePredzapsTop (e) {
     e.preventDefault()
-    predzapsTop.remove()
+    predzapsTop.classList.add('hide')
+    setTimeout(() => predzapsTop.remove(), 300)
   }
 }
 

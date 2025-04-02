@@ -2,12 +2,17 @@
   @include bg-icon('predzaps-top/predzaps-top-bg.png');
   background-size: cover;
   overflow: hidden;
+  transition-property: margin;
+  transition-duration: $transition-duration;
   @include media(lg) {
     background: #6683c2;
   }
   @include media(xs) {
     @include bg-icon('predzaps-top/predzaps-top-bg_mob.png');
     background-size: cover;
+  }
+  &.hide {
+    margin-top: -80px;
   }
 }
 
