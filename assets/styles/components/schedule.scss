@@ -10,12 +10,12 @@
       font-size: 24px;
     }
     .schedule__orange-title {
-      font-size: 24px;
+      font-size: 16px;
     }
     .schedule__orange {
       max-width: 384px;
       padding: 18px 30px;
-      gap: 0;
+      gap: 8px 0;
       @include media(lg) {
         max-width: 300px;
       }
@@ -112,15 +112,26 @@
   }
 }
 
+.schedule__tags {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
 .schedule__tag {
   display: inline-block;
-  margin-bottom: 10px;
   font-size: 14px;
   line-height: 10px;
   color: #6683c2;
   padding: 12px 14px;
   border-radius: 33px;
   background: rgba(102, 131, 194, 0.08);
+}
+
+.schedule__time {
+  color: #6683C2;
+  font-size: 14px;
 }
 
 .schedule__bottom {
