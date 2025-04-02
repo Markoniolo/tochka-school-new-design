@@ -12,9 +12,14 @@
         .summer-schedule__decor_3
     .summer-schedule__line
       .summer-schedule__title Расписание онлайн-уроков до конца мая:
-      each box in ['Параллель 1','Параллель 2']
+      each box, index in ['Параллель 1','Параллель 2']
         .summer-schedule__box
-          .summer-schedule__parallel= box
+          .summer-schedule__top
+            if index === 0
+              .summer-schedule__parallel= box
+              .summer-schedule__duration Уроки по 45 мин
+            else
+              .summer-schedule__parallel Уроки по 45 мин
           .summer-schedule__bottom
             .summer-schedule__data
               .summer-schedule__data-day Понедельник

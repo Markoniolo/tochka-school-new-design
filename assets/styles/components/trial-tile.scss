@@ -17,6 +17,12 @@
         }
       }
     }
+    .trial-tile__filter_class .trial-tile__filter-wrap {
+      width: 100%;
+    }
+    .trial-tile__filter_class .trial-tile__filter-view {
+      width: 100%;
+    }
     .tile-loader {
       color: #A0D76A;
     }
@@ -30,6 +36,7 @@
       top: calc(100% + -20px);
       padding-top: 45px;
       background: #F8FFF0;
+      width: 100%;
     }
     .trial-tile__filter-view {
       background: #a1d86a;
@@ -45,7 +52,7 @@
     }
     .trial-tile__filter-item {
       cursor: pointer;
-      width: calc(50% - 5px);
+      width: calc(50% - 8px);
       &:hover {
         .trial-tile__filter-view {
           background: #82bc49;

@@ -47,6 +47,9 @@
   @include media(xs) {
     display: block;
     margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 270px;
   }
 }
 
@@ -205,9 +208,10 @@
 }
 
 .summer-schedule__title {
+  padding-right: 40px;
   margin-right: auto;
   flex-shrink: 0;
-  max-width: 355px;
+  max-width: 395px;
   width: 100%;
   font-weight: 500;
   font-size: 45px;
@@ -215,6 +219,7 @@
   color: #003c56;
   @include media(lg) {
     margin-bottom: 30px;
+    padding-right: 0;
     font-size: 25px;
     line-height: 100%;
     margin-right: 0;
@@ -248,14 +253,25 @@
   }
 }
 
-.summer-schedule__parallel {
+.summer-schedule__top {
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.summer-schedule__parallel {
   background: rgba(255, 255, 255, 0.2);
   font-size: 14px;
   line-height: 18px;
   padding: 10px 14px;
   border-radius: 33px;
   display: inline-block;
+}
+
+.summer-schedule__duration {
+  font-size: 14px;
+  line-height: 18px;
 }
 
 .summer-schedule__bottom {
