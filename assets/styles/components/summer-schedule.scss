@@ -211,7 +211,7 @@
   padding-right: 40px;
   margin-right: auto;
   flex-shrink: 0;
-  max-width: 395px;
+  max-width: 380px;
   width: 100%;
   font-weight: 500;
   font-size: 45px;
@@ -231,6 +231,7 @@
 }
 
 .summer-schedule__box {
+  min-width: 285px;
   flex-shrink: 0;
   margin-right: 30px;
   box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
