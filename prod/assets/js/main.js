@@ -799,11 +799,13 @@ function headerInit () {
 
   function toggleMenu () {
     header.classList.toggle('open')
+    stickyHeader.classList.toggle('open')
     body.classList.toggle('no-scroll')
   }
 
   function closeMenu () {
     header.classList.remove('open')
+    stickyHeader.classList.remove('open')
     body.classList.remove('no-scroll')
   }
 }

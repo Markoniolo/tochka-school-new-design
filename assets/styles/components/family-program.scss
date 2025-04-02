@@ -211,18 +211,23 @@
 
 .family-program__tag {
   border-radius: 33px;
-  padding: 11px 5px 13px;
+  padding: 3px 5px 2px;
   font-weight: 500;
   font-size: 14px;
+  line-height: 100%;
   color: #23617c;
   background-color: #EFF3FE;
   width: 155px;
+  min-height: 35px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @include media(lg) {
     width: 135px;
     font-size: 12px;
     line-height: 15px;
-    padding: 9px 5px 11px;
+    padding: 3px 5px 2px;
   }
   &:nth-child(8n + 1) {
     margin-left: 90px;
