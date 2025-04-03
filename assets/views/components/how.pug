@@ -2,7 +2,7 @@
   const howList = [
     {
       title: 'Занимаемся онлайн',
-      text: 'Онлайн-уроки в прямом эфире на учебной платформе. Доступ с телефона и ноутбука.'
+      text: 'Онлайн-уроки в прямом эфире на учебной платформе. Доступ с&nbsp;телефона, планшета и ноутбука.'
     },
     {
       title: 'Записи занятий',
@@ -31,7 +31,7 @@ mixin how(mod)
           each item, index in howList
             .how__slide.swiper-slide
               .how__title= item.title
-              .how__text= item.text
+              .how__text!= item.text
               .how__number= index+1
         .how__bottom
           .how__scrollbar

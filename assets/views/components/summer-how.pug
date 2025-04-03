@@ -1,27 +1,44 @@
 -
   const summerHowList = [
-    'Ребёнок пройдёт тестирование по всем школьным предметам',
-    'Тьюторы будут проверять задания, разбирать ошибки и помогать их&nbsp;исправить',
-    'Доступ ко всем темам курса по каждому предмету за учебный год',
+    'В начале лета ребёнок напишет входную работу для выявления пробелов',
+    'Тьютор проверит задания, разберёт и&nbsp;исправит ошибки',
+    'Доступ ко всем темам курса за учебный год (26 уроков)',
+    'Доступ в личный кабинет: уроки, записи, конспекты, задания',
+  ]
+
+  const summerHowListFamily = [
+    'Ребёнок напишет входную работу для выявления пробелов по всем школьным предметам',
+    'Тьюторы будут проверять задания, разбирать ошибки и помогать их исправить',
+    'Доступ ко всем темам курса по каждому предмету за&nbsp;учебный&nbsp;год',
     'Доступ к 2 доп. предметам на выбор (программирование, языки, шахматы, математика и логика)',
   ]
 
-.summer-how
-  .summer-how__cont.cont
-    h2.summer-how__caption Как будет проходить обучение
-    .summer-how__note С 5 июня по 31 августа
-    .summer-how__wrap
-      .summer-how__list
-        each item, index in summerHowList
-          .summer-how__item(class=`summer-how__item_${index+1}`)
-            img.summer-how__image(src=staticImg(`summer-how/summer-how-${index+1}.svg`) alt='')
-            .summer-how__text!= item
-      .summer-how__box
-        .summer-how__item.summer-how__item_5
-          img.summer-how__image(src=staticImg('summer-how/summer-how-5.svg') alt='')
-          .summer-how__text На основании результата теста тьютор составит индивидуальный курс занятий в записи
-        .summer-how__item.summer-how__item_6
-          img.summer-how__image(src=staticImg('summer-how/summer-how-6.svg') alt='')
-          .summer-how__text.
-            Темп обучения зависит от пробелов, цели, свободного времени ребёнка и ваших планов на лето. Выбирайте: от
-            1 урока в неделю до занятий каждый день с возможностью сделать перерыв
+mixin summer-how(mod)
+  .summer-how(class = mod ? mod : false)
+    .summer-how__cont.cont
+      h2.summer-how__caption Как будет проходить обучение
+      .summer-how__note С 5 июня по 31 августа
+      .summer-how__wrap
+        .summer-how__list
+          if (mod === 'family')
+            each item, index in summerHowListFamily
+              .summer-how__item(class=`summer-how__item_${index+1}`)
+                img.summer-how__image(src=staticImg(`summer-how/summer-how-${index+1}.svg`) alt='')
+                .summer-how__text!= item
+          else
+            each item, index in summerHowList
+              .summer-how__item(class=`summer-how__item_${index + 1}`)
+                img.summer-how__image(src=staticImg(`summer-how/summer-how-${index + 1}.svg`) alt='')
+                .summer-how__text!= item
+        .summer-how__box
+          .summer-how__item.summer-how__item_5
+            img.summer-how__image(src=staticImg('summer-how/summer-how-5.svg') alt='')
+            if mod === 'family'
+              .summer-how__text На основании результата работы тьютор составит индивидуальный курс занятий в записи
+            else
+              .summer-how__text Индивидуальный курс, составленный тьютором с учётом пробелов, целей&nbsp;и&nbsp;графика ребёнка
+          .summer-how__item.summer-how__item_6
+            img.summer-how__image(src=staticImg('summer-how/summer-how-6.svg') alt='')
+            .summer-how__text.
+              Темп обучения зависит от пробелов, цели, свободного времени ребёнка и ваших планов на лето. Выбирайте: от
+              1 урока в неделю до занятий каждый день с возможностью сделать перерыв

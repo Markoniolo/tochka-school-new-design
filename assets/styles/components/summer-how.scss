@@ -3,6 +3,49 @@
   @include media(lg) {
     padding-bottom: 40px;
   }
+  &.family {
+    .summer-how__item_1 .summer-how__image {
+      @include media(lg) {
+        top: unset;
+        bottom: 0;
+        right: -20px;
+        width: 86px;
+        height: 86px;
+      }
+    }
+    .summer-how__item_2 .summer-how__image {
+      @include media(lg) {
+        bottom: 0;
+      }
+    }
+    .summer-how__item_3 .summer-how__image {
+      @include media(lg) {
+        top: unset;
+        bottom: 0;
+      }
+      @include media(xs) {
+        bottom: -24px;
+      }
+    }
+    .summer-how__item_1 .summer-how__text {
+      @include media(lg) {
+        max-width: 238px;
+      }
+    }
+    .summer-how__item_3 .summer-how__text  {
+      @include media(lg) {
+        max-width: 180px;
+      }
+      @include media(xs) {
+        max-width: 228px;
+      }
+    }
+    .summer-how__item_4 .summer-how__text {
+      @include media(lg) {
+        max-width: 262px;
+      }
+    }
+  }
 }
 
 .summer-how__cont {
@@ -80,20 +123,21 @@
   }
   &_1 {
     .summer-how__text {
-      max-width: 383px;
+      max-width: 486px;
       @include media(lg) {
-        max-width: 204px;
+        max-width: 232px;
       }
     }
     .summer-how__image {
       top: 7px;
-      right: 0;
+      right: -20px;
       width: 127px;
       height: 127px;
       @include media(lg) {
-        width: 102px;
-        height: 102px;
-        right: -8px;
+        width: 98px;
+        height: 98px;
+        right: -22px;
+        top: 12px;
       }
     }
   }
@@ -130,7 +174,7 @@
     .summer-how__text {
       max-width: 436px;
       @include media(lg) {
-        max-width: 191px;
+        max-width: 200px;
       }
     }
     .summer-how__image {
@@ -150,7 +194,7 @@
     .summer-how__text {
       max-width: 416px;
       @include media(lg) {
-        max-width: 262px;
+        max-width: 228px;
       }
     }
     .summer-how__image {
@@ -174,9 +218,9 @@
       min-height: 90px;
     }
     .summer-how__text {
-      max-width: 410px;
+      max-width: 436px;
       @include media(lg) {
-        max-width: 435px;
+        max-width: 514px;
       }
       @include media(xs) {
         max-width: 230px;
@@ -194,11 +238,12 @@
       }
       @include media(xs) {
         bottom: 0;
+        right: -26px;
       }
     }
   }
   &_6 {
-    min-height: 381px;
+    min-height: 390px;
     align-items: flex-end;
     padding-bottom: 30px;
     @include media(lg) {
