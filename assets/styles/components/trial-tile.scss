@@ -428,7 +428,8 @@
   }
   @include media(xs) {
     padding-left: 115px;
-    min-height: 71px;
+    min-height: 80px;
+    margin-bottom: 12px;
   }
 }
 

@@ -79,6 +79,9 @@ function scheduleFamilyInit () {
     if (!isSummer) {
       toggleBottom.innerHTML = "Развернуть расписание"
       toggleTop.innerHTML = "Развернуть расписание"
+    } else {
+      toggleBottom.innerHTML = "Расписание на апрель и май"
+      toggleTop.innerHTML = "Расписание на апрель и май"
     }
     toggleBottom.classList.add('hide')
   }
@@ -87,10 +90,8 @@ function scheduleFamilyInit () {
     table.classList.remove('hide')
     toggleBottom.classList.remove('reverse')
     toggleTop.classList.remove('reverse')
-    if (!isSummer) {
-      toggleBottom.innerHTML = "Свернуть расписание"
-      toggleTop.innerHTML = "Свернуть расписание"
-    }
+    toggleBottom.innerHTML = "Свернуть расписание"
+    toggleTop.innerHTML = "Свернуть расписание"
     toggleBottom.classList.remove('hide')
     row.style.transform = 'none'
     cellTime.style.transform = 'none'
