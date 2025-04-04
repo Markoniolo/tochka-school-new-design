@@ -162,6 +162,52 @@ function cardsInit () {
   }
 }
 
+const costAreas = document.querySelectorAll('.cost__area')
+
+if (costAreas.length) costAreasInit()
+
+function costAreasInit () {
+  for (let i = 0; i < costAreas.length; i++) {
+    costAreaInit(costAreas[i])
+  }
+
+  function costAreaInit (area) {
+    const checkbox = area.querySelector('.cost__checkbox')
+    if (!checkbox) return
+
+    checkbox.addEventListener('change', changePrice)
+
+    const price_full_old_checkbox_off = checkbox.getAttribute('data-price-full-old-checkbox-off')
+    const price_full_old_checkbox_on = checkbox.getAttribute('data-price-full-old-checkbox-on')
+    const price_full_current_checkbox_off = checkbox.getAttribute('data-price-full-current-checkbox-off')
+    const price_full_current_checkbox_on = checkbox.getAttribute('data-price-full-current-checkbox-on')
+    const price_plan_old_checkbox_off = checkbox.getAttribute('data-price-plan-old-checkbox-off')
+    const price_plan_old_checkbox_on = checkbox.getAttribute('data-price-plan-old-checkbox-on')
+    const price_plan_current_checkbox_off = checkbox.getAttribute('data-price-plan-current-checkbox-off')
+    const price_plan_current_checkbox_on = checkbox.getAttribute('data-price-plan-current-checkbox-on')
+
+    const priceFullCurrentNode = area.querySelector('[data-element="price-full-current"]')
+    const priceFullOldNode = area.querySelector('[data-element="price-full-old"]')
+    const pricePlanCurrentNode = area.querySelector('[data-element="price-plan-current"]')
+    const pricePlanOldNode = area.querySelector('[data-element="price-plan-old"]')
+
+    function changePrice () {
+      if (this.checked) {
+        if (priceFullCurrentNode) priceFullCurrentNode.innerHTML = price_full_current_checkbox_on
+        if (priceFullOldNode) priceFullOldNode.innerHTML = price_full_old_checkbox_on
+        if (pricePlanCurrentNode) pricePlanCurrentNode.innerHTML = price_plan_current_checkbox_on
+        if (pricePlanOldNode) pricePlanOldNode.innerHTML = price_plan_old_checkbox_on
+      }
+      else {
+        if (priceFullCurrentNode) priceFullCurrentNode.innerHTML = price_full_current_checkbox_off
+        if (priceFullOldNode) priceFullOldNode.innerHTML = price_full_old_checkbox_off
+        if (pricePlanCurrentNode) pricePlanCurrentNode.innerHTML = price_plan_current_checkbox_off
+        if (pricePlanOldNode) pricePlanOldNode.innerHTML = price_plan_old_checkbox_off
+      }
+    }
+  }
+}
+
 const courseAboutVideo = document.querySelector("[data-element='course-about-video']")
 
 if (courseAboutVideo) courseAboutVideoInit()
@@ -871,6 +917,48 @@ function modalOrderNewSelectInit () {
       span.style.color = '#000'
     }
   })
+}
+
+const offerTimers = document.querySelectorAll('.offer-timer')
+
+if (offerTimers.length) offerTimersInit()
+
+function offerTimersInit () {
+  for (let i = 0; i < offerTimers.length; i++) {
+    offerTimerInit(offerTimers[i])
+  }
+}
+
+function offerTimerInit (timer) {
+  const date = timer.getAttribute('date-end')
+  const countDownDate = new Date(date).getTime()
+
+  const nodes = timer.querySelectorAll('.offer-timer__number')
+
+  const interval = setInterval(updateTimer, 1000)
+
+  function updateTimer () {
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24))
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000)
+
+    nodes[0].innerHTML = days
+    nodes[1].innerHTML = hours
+    nodes[2].innerHTML = minutes
+    nodes[3].innerHTML = seconds
+
+    if (distance < 0) {
+      clearInterval(interval);
+      nodes[0].innerHTML = "0"
+      nodes[1].innerHTML = "0"
+      nodes[2].innerHTML = "0"
+      nodes[3].innerHTML = "0"
+    }
+  }
 }
 
 // try {
