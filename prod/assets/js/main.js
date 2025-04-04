@@ -176,6 +176,20 @@ function costAreasInit () {
     if (!checkbox) return
 
     checkbox.addEventListener('change', changePrice)
+    checkbox.addEventListener('change', changeHref)
+
+    const button = area.querySelector('.cost__button')
+    const newHref = checkbox.getAttribute('new-href')
+    const initialHref = button.getAttribute('href')
+
+    function changeHref () {
+      const href = button.getAttribute('href')
+      if (href === newHref) {
+        button.setAttribute('href', initialHref)
+      } else {
+        button.setAttribute('href', newHref)
+      }
+    }
 
     const price_full_old_checkbox_off = checkbox.getAttribute('data-price-full-old-checkbox-off')
     const price_full_old_checkbox_on = checkbox.getAttribute('data-price-full-old-checkbox-on')
