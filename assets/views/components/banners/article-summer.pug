@@ -1,0 +1,14 @@
+-
+  const articleSummerList = [
+    'Закроете пробелы по предмету',
+    'Повторите материал текущего учебного года',
+    'Изучите нужные предметы на следующий год',
+    'Откроете новые направления',
+  ]
+
+.article-summer
+  .article-summer__title Лето — маленький шаг к большим целям
+  .article-summer__list
+    each item in articleSummerList
+      .article-summer__item= item
+  a.article-summer__button.btn-orange.btn-orange_arrow(href="#") Выбрать занятие
