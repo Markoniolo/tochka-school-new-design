@@ -28,7 +28,8 @@ mixin cost (mod)
             .cost__price
               .cost__price-current 19 900 ₽
               .cost__price-period / в месяц
-            .cost__full-price!= 'При полной оплате <b>59 700 ₽</b>'
+            .cost__full-price
+              span!= 'При полной оплате <b>59 700 ₽</b>'
           .cost__title Что включено
           .cost__list
             .cost__item Онлайн-уроки по программе 1 класса с сентября по май
@@ -47,7 +48,8 @@ mixin cost (mod)
             .cost__price
               .cost__price-current 16 900 ₽
               .cost__price-period / в месяц
-            .cost__full-price!= 'При полной оплате <b>50 700 ₽</b>'
+            .cost__full-price
+              span!= 'При полной оплате <b>50 700 ₽</b>'
           .cost__title Что включено
           .cost__list
             .cost__item.cost__item_minus Онлайн-уроки по программе 1 класса с сентября по май

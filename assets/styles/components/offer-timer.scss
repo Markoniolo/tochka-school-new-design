@@ -1,0 +1,33 @@
+.offer-timer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 15px;
+  @include media(xs) {
+    justify-content: center;
+  }
+}
+
+.offer-timer__box {
+
+}
+
+.offer-timer__number {
+  margin-bottom: 8px;
+  width: 53px;
+  height: 53px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.offer-timer__note {
+  font-size: 13px;
+  line-height: 100%;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.8);
+}

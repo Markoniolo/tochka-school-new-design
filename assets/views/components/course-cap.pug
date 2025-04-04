@@ -5,8 +5,21 @@ mixin course-cap(mod, id='pre-reg')
         .course-cap__decor.course-cap__decor_1
         .course-cap__decor.course-cap__decor_2
         .course-cap__box
-          .course-cap__number 10 класс
+          if mod === 'offer'
+            .course-cap__top
+              .course-cap__number 10 класс
+              .course-cap__tag Закрытые предпродажи! Только для первых 50 человек
+          else
+            .course-cap__number 10 класс
           h1.course-cap__caption!= 'Курс по математике по&nbsp;программе М.И. Моро «Школа России»'
+          if mod === 'offer'
+            .course-cap__offer
+              .course-cap__offer-text До конца спецпредложения осталось:
+              .offer-timer(date-end="2025-04-10T12:00:00")
+                each item in [{number: '', note: 'дней'},{number: '', note: 'часов'},{number: '', note: 'минут'},{number: '', note: 'секунд'}]
+                  .offer-timer__box
+                    .offer-timer__number= item.number
+                    .offer-timer__note= item.note
           picture.course-cap__picture
             img.course-cap__image(src=staticImg('course-cap/Kostileva.png') alt='')
           .course-cap__buttons

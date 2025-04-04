@@ -1,0 +1,47 @@
+include ../_variables
+include ../components/_layout/_connect-style
+include ../components/_layout/_title
+
+doctype html
+html(lang='ru')
+  head
+    include ../components/_layout/_head
+    +title('Курс спецпредложение')
+  body
+    .sticky-header
+      include ../components/_layout/header-new
+      +header-new
+    main.wrapper
+      include ../components/course-cap
+      +course-cap('offer')
+      include ../components/course-about
+      +course-about('no-video')
+      +course-about
+      include ../components/how
+      +how('blue')
+      include ../components/schedule
+      include ../components/schedule-small
+      include ../components/schedule-smallest
+      include ../components/two-teach
+      +two-teach
+      include ../components/teacher
+      +teacher
+      include ../components/tutor
+      +tutor
+      include ../components/cost
+      +cost('short')
+      +cost('offer-short')
+      +cost('offer')
+      include ../components/pre-reviews
+      +pre-reviews
+      include ../components/faq
+      +faq
+      include ../components/pre-end
+      +pre-end('course','Время принять решение: оставить всё как есть или начать обучение, получить твёрдые знания и отличные оценки.',
+        'Начать обучение')
+      include ../components/btn-fixed
+      +btn-fixed(false,'Получить консультацию',400,1700)
+      include ../components/summer-fixed
+    include ../components/modals/modal-order-new
+    include ../components/_layout/footer-new
+    include ../components/_layout/scripts
