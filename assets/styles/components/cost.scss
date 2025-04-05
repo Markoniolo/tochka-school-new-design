@@ -345,6 +345,9 @@
     font-weight: 600;
     color: #F37E60;
   }
+  b {
+    font-weight: 600;
+  }
   &_minus {
     &::before {
       @include bg-icon('icons/ic_point_gray.svg');
