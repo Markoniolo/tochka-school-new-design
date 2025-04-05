@@ -1,0 +1,73 @@
+mixin cost-offer-1 (mod)
+  .cost(class = mod ? mod : false id = mod !== 'shortest' ? 'pre-reg' : false data-btn-fixed-hide="true")
+    .cost__cont.cont
+      h2.cost__caption Стоимость годового абонемента
+      .cost__wrap(class= mod ? `cost__wrap_${mod}` : false)
+        if mod !== 'shortest'
+          .cost__area
+            .cost__box.cost__box_blue
+              .cost__tag Спецпредложение
+              .cost__name Занятия онлайн + в записи
+              .cost__text Рассрочка на 3 месяца без переплат
+              .cost__price
+                .cost__price-current(data-element="price-plan-current") 5 446 ₽
+                .cost__old-price(data-element="price-plan-old") 8 500 ₽
+                .cost__price-period / в месяц
+                .cost__discount Скидка 25%
+              .cost__full-price
+                span!= 'Полная оплата <b data-element="price-full-current">16 338 ₽</b>'
+                .cost__old-price(data-element="price-full-old") 32 338 ₽
+                .cost__discount Скидка 25%
+            .cost__title Что включено
+            .cost__list
+              .cost__item 2 онлайн-урока в неделю с сентября по май
+              .cost__item Все занятия в записи
+              .cost__item Бесплатные занятия летом 2026
+              .cost__item Личный тьютор-педагог 5 дней в неделю
+              .cost__item Проверка домашних заданий по каждому уроку
+              .cost__item Входное и ежемесячное тестирование
+            a.cost__button.btn-orange(href='#') Начать обучение
+          .cost__area
+            .cost__box
+              .cost__tag Спецпредложение
+              .cost__name Занятия в записи
+              .cost__text Рассрочка на 3 месяца без переплат
+              .cost__price
+                .cost__price-current(data-element="price-plan-current") 4 446 ₽
+                .cost__old-price(data-element="price-plan-old") 5 500 ₽
+                .cost__price-period / в месяц
+                .cost__discount Скидка 25%
+              .cost__full-price
+                span!= 'Полная оплата <b data-element="price-full-current">20 338 ₽</b>'
+                .cost__old-price(data-element="price-full-old") 42 338 ₽
+                .cost__discount Скидка 25%
+            .cost__title Что включено
+            .cost__list
+              .cost__item.cost__item_minus 2 онлайн-урока в неделю с сентября по май
+              .cost__item Все занятия в записи
+              .cost__item Бесплатные занятия летом 2026
+              .cost__item Личный тьютор-педагог 5 дней в неделю
+              .cost__item Проверка домашних заданий по каждому уроку
+              .cost__item Входное и ежемесячное тестирование
+            a.cost__button.btn-orange(href='#') Начать обучение
+        .cost__offer
+          .cost__offer-title До конца специального предложения осталось:
+          .offer-timer(date-end="2025-04-10T12:00:00")
+            each item in [{number: '6', note: 'дней'},{number: '15', note: 'часов'},{number: '58', note: 'минут'},{number: '19', note: 'секунд'}]
+              .offer-timer__box
+                .offer-timer__number= item.number
+                .offer-timer__note= item.note
+        .info__capital
+          .info__title Материнский капитал
+          .info__text
+            span Оплачивайте обучение материнским&nbsp;капиталом.
+            span Поможем со списком документов и&nbsp;остальными вопросами
+          picture.info__capital-decor
+            source(srcset=staticImg(`info/info-decor-1_mob.svg`) media="(max-width: 743px)")
+            source(srcset=staticImg(`info/info-decor-1_tablet.svg`) media="(max-width: 1439px)")
+            if mod === 'short' || mod === 'offer-short'
+              img.info__capital-decor-image(src=staticImg(`info/info-decor-short-1.svg`) alt='')
+            else
+              img.info__capital-decor-image(src=staticImg(`info/info-decor-1.svg`) alt='')
+          a.info__btn.info__btn_order.btn-orange(href='https://api.whatsapp.com/send/?phone=79182293194&text&type=phone_number&app_absent=0' target='_blank') Перейти к оформлению
+
