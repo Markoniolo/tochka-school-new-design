@@ -26,20 +26,74 @@
     .tile-loader {
       color: #A0D76A;
     }
+    .trial-tile__filter {
+      max-width: 100%;
+      width: calc(50% - 15px);
+      padding: 30px;
+      background: #f37e60;
+      border-radius: 32px;
+      @include bg-icon('trial-tile/trial-tile-filter-bg-summer.svg');
+      background-size: cover;
+      @include media(lg) {
+        width: 100%;
+      }
+      @include media(xs) {
+        border-radius: 10px;
+        padding: 20px;
+        background: #f37e60;
+      }
+      &.open {
+        background: #f37e60;
+      }
+    }
     .trial-tile__filter-top {
+      display: flex;
+      align-items: center;
       position: relative;
       z-index: 20;
-      background: #d6f3ba;
-      border-radius: 20px;
+      background: #FFFFFF;
+      border-radius: 34px;
+      font-size: 16px;
+      font-weight: 600;
+      width: calc(50% - 5px);
+      padding: 15px 50px 16px 34px;
+      height: 55px;
+      @include media(xs) {
+        width: 100%;
+      }
+      span {
+        font-size: 16px;
+        font-weight: 600;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+      }
+    }
+    .trial-tile__filter-top-text {
+      font-size: 16px;
+      font-weight: 600;
     }
     .trial-tile__filter-wrap {
-      top: calc(100% + -20px);
-      padding-top: 45px;
-      background: #F8FFF0;
+      border-radius: 0 0 32px 32px;
+      top: calc(100% - 26px);
+      padding: 26px 30px;
+      background: #f37e60;
       width: 100%;
+      left: 0;
+      @include media(xs) {
+        padding: 30px 20px 20px;
+        border-radius: 0 0 10px 10px;
+      }
     }
     .trial-tile__filter-view {
-      background: #a1d86a;
+      background: #ffffff;
+      color: #000;
     }
     .trial-tile__picture {
       background: rgba(255,255,255,.26);
@@ -49,20 +103,22 @@
       flex-wrap: wrap;
       flex-direction: row;
       justify-content: space-between;
+      gap: 10px;
     }
     .trial-tile__filter-item {
       cursor: pointer;
-      width: calc(50% - 8px);
+      width: calc(50% - 5px);
       &:hover {
         .trial-tile__filter-view {
-          background: #82bc49;
+          background: rgba(255, 255, 255, 0.47);
         }
       }
     }
     .trial-tile__filter-input {
       display: none;
       &:checked ~ .trial-tile__filter-view {
-        background-color: #67933b;
+        background-color: #bf644c;
+        color: #000;
       }
     }
   }
