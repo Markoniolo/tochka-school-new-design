@@ -1,0 +1,85 @@
+.blog-summer {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.blog-summer__cont {
+
+}
+
+.blog-summer__area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 42px;
+  border-radius: 20px;
+  overflow: hidden;
+  @include bg-icon('blog-summer/blog-summer-bg.png');
+  background-size: cover;
+  min-height: 384px;
+  @include media(lg) {
+    max-width: 684px;
+    margin: 0 auto;
+    padding: 26px 28px;
+    @include bg-icon('blog-summer/blog-summer-bg_tablet.png');
+    background-size: cover;
+    min-height: 315px;
+  }
+  @include media(xs) {
+    max-width: 330px;
+    padding: 22px 25px;
+    @include bg-icon('blog-summer/blog-summer-bg_mob.png');
+    background-size: cover;
+    min-height: 434px;
+  }
+}
+
+.blog-summer__title {
+  margin-bottom: 36px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 104%;
+  color: #fff;
+  @include media(lg) {
+    margin-bottom: 18px;
+    font-size: 24px;
+  }
+}
+
+.blog-summer__text {
+  margin-bottom: 30px;
+  font-size: 24px;
+  line-height: 30px;
+  color: #fff;
+  max-width: 600px;
+  width: 100%;
+  @include media(lg) {
+    margin-bottom: 30px;
+    max-width: 370px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+  @include media(xs) {
+    margin-bottom: 20px;
+    max-width: 264px;
+  }
+}
+
+.blog-summer__button {
+  margin-top: auto;
+  font-size: 18px;
+  padding: 21px 46px;
+  width: auto;
+  @include media(lg) {
+    margin-top: 0;
+    font-size: 16px;
+    padding: 20px 32px;
+  }
+  @include media(xs) {
+    padding: 20px 30px;
+  }
+  &::after {
+    width: 16px;
+    height: 13px;
+  }
+}
