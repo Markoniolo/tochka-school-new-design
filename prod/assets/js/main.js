@@ -1737,11 +1737,19 @@ function trialTileInit () {
       const oldOpen = trialTile.querySelector(".trial-tile__filter-top.active")
       if (oldOpen) oldOpen.classList.remove('active')
       opener.classList.add('active')
+
+      const filter = opener.parentElement
+      const oldFilter = trialTile.querySelector(".trial-tile__filter.open")
+      if (oldFilter) oldFilter.classList.remove('open')
+      if (filter) filter.classList.add('open')
     }
   }
 
   function closeFilter (opener) {
     opener.classList.remove('active')
+    const filter = opener.parentElement
+    if (filter) filter.classList.remove('open')
+
     for (let i = 0; i < openers.length; i++) {
       const wrap = openers[i].nextElementSibling
       const items = wrap.querySelectorAll(["input:checked"])
@@ -1750,7 +1758,6 @@ function trialTileInit () {
         if (i > 0) result += '|'
         result += item.value
       })
-      console.log(result)
     }
   }
 
