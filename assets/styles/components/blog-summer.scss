@@ -26,10 +26,11 @@
     min-height: 315px;
   }
   @include media(xs) {
-    max-width: 330px;
+    max-width: 353px;
     padding: 22px 25px;
     @include bg-icon('blog-summer/blog-summer-bg_mob.png');
     background-size: cover;
+    background-position: left bottom;
     min-height: 434px;
   }
 }

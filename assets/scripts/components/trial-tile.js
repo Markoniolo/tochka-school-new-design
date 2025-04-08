@@ -27,6 +27,7 @@ function trialTileInit () {
       })
       updateFilter(openers[i], wrap)
     }
+    makeFiltration();
   }
 
   for (let i = 0; i < openers.length; i++) {
@@ -86,15 +87,55 @@ function trialTileInit () {
     const filter = opener.parentElement
     if (filter) filter.classList.remove('open')
 
-    for (let i = 0; i < openers.length; i++) {
-      const wrap = openers[i].nextElementSibling
-      const items = wrap.querySelectorAll(["input:checked"])
-      let result = ''
-      items.forEach((item, i) => {
-        if (i > 0) result += '|'
-        result += item.value
+    makeFiltration();
+  }
+
+  function makeFiltration () {
+    const grades_wrap = grades.nextElementSibling
+    const grades_items = grades_wrap.querySelectorAll(["input:checked"])
+    let grades_result = ''
+    let grade_first = 0
+    grades_items.forEach((item, i) => {
+      if (i > 0) grades_result += '|'
+      if (grade_first == 0) grade_first = item.value
+      grades_result += item.value
+    })
+    let subjects_result = ''
+    try{
+      const subjects_wrap = subjects.nextElementSibling
+      const subjects_items = subjects_wrap.querySelectorAll(["input:checked"])
+      subjects_items.forEach((item, i) => {
+        if (i > 0) subjects_result += '|'
+        subjects_result += item.value
       })
+    }catch(e){}
+    //   let promo_f = trialTile.getAttribute('data-promo');
+    //console.log(grades_result)
+    //console.log(subjects_result)
+    let utm_f = trialTile.getAttribute('data-utm');
+    $('.filtered_elements').html("<div class='tile-loader'></div>");
+    // if(promo_f != null && promo_f != '' && promo_f != undefined){
+    //     $.request('AllCourseFunctions::onPaginateAllCourses', {
+    //             data: {
+    //               'grade': grades_result,
+    //               'subject': subjects_result,
+    //               'promo': promo_f,
+    //             }
+    //         })
+    // }else{
+    $.request('AllCourseFunctions::onPaginateAllSCourses', {
+      data: {
+        'grade': grades_result,
+        'subject': subjects_result,
+        'utm_t': utm_f
+      }
+    })
+    if (grade_first > 0){
+      let url = new URL(window.location.href)
+      url.searchParams.set('gr', grade_first);
+      history.replaceState(null, "", url.toString())
     }
+    // }
   }
 
 }

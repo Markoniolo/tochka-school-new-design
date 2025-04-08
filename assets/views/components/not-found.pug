@@ -1,0 +1,21 @@
+.not-found
+  .not-found__cont.cont
+    .not-found__area
+      .not-found__caption 404
+      picture.not-found__picture
+        source(srcset=staticImg('not-found/not-found-line_mob.png') media="(max-width: 743px)")
+        source(srcset=staticImg('not-found/not-found-line_tablet.png') media="(max-width: 1439px)")
+        img.not-found__image(src=staticImg('not-found/not-found-line.png') alt='')
+      h1.not-found__title!= 'Такой страницы нет. <br> Что-то пошло не так...'
+      p.not-found__text.not-found__text_1.
+        Как в математике. Решали уравнение, нашли значение Х.
+        Потом проверяете, а ответ неверный
+      p.not-found__text.not-found__text_2.
+        Так бывает и с сайтом. Проверьте ссылку, по которой
+        Вы&nbsp;перешли, язык, раскладку клавиатуры. Возможно, страница
+        переехала по новому адресу.
+      .not-found__note
+        | Новый поиск можно начать
+        |
+        a(href='#') с главной страницы
+      a.not-found__button.btn-orange(href='#') На главную
