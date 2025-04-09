@@ -170,9 +170,9 @@
     line-height: 123%;
   }
   span {
+    font-weight: inherit;
     @include media(lg) {
       display: block;
-      font-weight: inherit;
     }
   }
 }
