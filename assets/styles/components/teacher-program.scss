@@ -1,0 +1,242 @@
+.teacher-program {
+  background: #FFFFFF;
+  padding: 66px 0;
+  @include media(lg) {
+    padding: 40px 0;
+  }
+}
+
+.teacher-program__cont {
+
+}
+
+.teacher-program__top {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  @include media(lg) {
+    margin-bottom: 20px;
+    display: block;
+  }
+}
+
+.teacher-program__left {
+  width: calc(50% - 15px);
+  @include media(lg) {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+}
+
+.teacher-program__title {
+  margin-bottom: 30px;
+  @include media(lg) {
+    margin-bottom: 22px;
+  }
+}
+
+.teacher-program__note {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 144%;
+  @include media(lg) {
+    font-size: 18px;
+    line-height: 23px;
+  }
+}
+
+.teacher-program__right {
+  margin-top: 4px;
+  width: calc(50% - 15px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  @include media(lg) {
+    width: 100%;
+    gap: 12px;
+  }
+}
+
+.teacher-program__text {
+  font-size: 16px;
+  line-height: 144%;
+  width: 100%;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+  }
+  &:first-of-type {
+    max-width: 556px;
+    @include media(lg) {
+      max-width: 100%;
+    }
+  }
+  &:last-of-type {
+    max-width: 378px;
+    @include media(lg) {
+      max-width: 100%;
+    }
+  }
+}
+
+.teacher-program__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  @include media(lg) {
+    gap: 25px 44px;
+  }
+}
+
+.teacher-program__item {
+  display: flex;
+  gap: 0 42px;
+  align-items: center;
+  border-radius: 20px;
+  padding: 30px 40px;
+  background: #f3f5fb;
+  width: calc(50% - 15px);
+  @include media(lg) {
+    padding: 15px 20px;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    width: calc(50% - 22px);
+  }
+  @include media(xs) {
+    width: 100%;
+  }
+  &:last-child {
+    @include media(xs) {
+      min-height: 172px;
+    }
+  }
+}
+
+.teacher-program__number {
+  position: relative;
+  top: 15px;
+  text-align: center;
+  color: #6683c2;
+  width: 62px;
+  @include media(lg) {
+    width: auto;
+    margin-bottom: 10px;
+    text-align: left;
+    display: flex;
+    position: static;
+  }
+}
+
+.teacher-program__number-value {
+  font-weight: 800;
+  font-size: 85px;
+  line-height: 61px;
+  @include media(lg) {
+    margin-bottom: 0;
+    margin-right: 5px;
+    font-size: 18px;
+    line-height: 23px;
+  }
+}
+
+.teacher-program__number-note {
+  font-weight: 800;
+  font-size: 24px;
+  @include media(lg) {
+    font-size: 18px;
+    line-height: 23px;
+  }
+}
+
+.teacher-program__box {
+  border-radius: 10px;
+  background: #ebeef5;
+  padding: 15px 20px;
+  @include media(lg) {
+    padding: 12px 15px;
+    flex-grow: 1;
+  }
+}
+
+.teacher-program__headline {
+  margin-bottom: 12px;
+  font-weight: 500;
+  font-size: 18px;
+  @include media(lg) {
+    margin-bottom: 8px;
+    font-size: 15px;
+    line-height: 123%;
+  }
+  span {
+    @include media(lg) {
+      display: block;
+      font-weight: inherit;
+    }
+  }
+}
+
+.teacher-program__tags {
+  margin-left: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  @include media(lg) {
+    margin-left: 0;
+  }
+}
+
+.teacher-program__tag {
+  padding-left: 31px;
+  font-size: 16px;
+  line-height: 18px;
+  position: relative;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+    padding-left: 22px;
+  }
+  &::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    @include bg-icon('icons/ic_point_orange.svg');
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    @include media(lg) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.teacher-program__final {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  width: 100%;
+  @include media(lg) {
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+  }
+}
+
+.teacher-program__final-icon {
+  width: 61px;
+  height: 61px;
+}
+
+.teacher-program__final-text {
+  font-weight: 700;
+  font-size: 34px;
+  text-align: center;
+  color: #6683c2;
+  @include media(lg) {
+    font-size: 18px;
+  }
+}

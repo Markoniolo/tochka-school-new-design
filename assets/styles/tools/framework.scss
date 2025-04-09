@@ -71,6 +71,17 @@
   }
 }
 
+.title {
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 121%;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 25px;
+    line-height: 100%;
+  }
+}
+
 .iti {
   --iti-path-flags-1x: url('../img/intl-tell-input/flags.webp');
   --iti-path-flags-2x: url('../img/intl-tell-input/flags@2x.webp');

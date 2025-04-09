@@ -1,0 +1,17 @@
+.teacher-how
+  .teacher-how__cont.cont
+    .teacher-how__area
+      .teacher-how__box
+        h2.teacher-how__title.title Как проходит обучение
+        .teacher-how__headline Занятия в записи
+        p.teacher-how__text.
+          Каждое занятие — обзор задачи второй части ЕГЭ по профильной математике: критерии проверки, идеи решения,
+          "узкие" места, ключевые ошибки, образцы оформления.
+        p.teacher-how__text.
+          После занятия — домашнее задание. Вы попробуете себя в роли эксперта ЕГЭ, проверяя работы.
+      .teacher-how__list
+        each item in ['Урок 1','Урок 2','Урок 3','Урок 4','Урок 5','Урок 6','Урок 7','Зачетное задание']
+          .teacher-how__item
+            .teacher-how__inner
+              .teacher-how__tag= item
+              img.teacher-how__icon(src=staticImg('teacher-how/teacher-how-play.svg') alt='')

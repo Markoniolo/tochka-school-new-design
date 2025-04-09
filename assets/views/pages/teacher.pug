@@ -1,0 +1,15 @@
+extends ../components/_layout/layout
+
+block head
+  +title('Курс для учителей')
+
+block body
+  include ../components/teacher-cap
+  include ../components/teacher-for
+  include ../components/teacher-how
+  include ../components/teacher-result
+  include ../components/teacher
+  +teacher('teacher-course','Георгий Игоревич Вольфсон')
+  include ../components/teacher-program
+  include ../components/teacher-get
+  include ../components/teacher-cost

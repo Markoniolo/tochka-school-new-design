@@ -1,0 +1,171 @@
+.teacher-how {
+  overflow: hidden;
+}
+
+.teacher-how__cont {
+
+}
+
+.teacher-how__area {
+  display: flex;
+  @include media(lg) {
+    display: block;
+  }
+}
+
+.teacher-how__box {
+  max-width: 545px;
+  width: 100%;
+  margin-right: 94px;
+  position: relative;
+  @include media(lg) {
+    margin-right: 0;
+    max-width: 684px;
+  }
+  &::before {
+    content: '';
+    @include bg-icon('teacher-how/teacher-how-decor.svg');
+    width: 388px;
+    height: 252px;
+    position: absolute;
+    bottom: -74px;
+    right: -184px;
+    transform: rotate(-24deg);
+    @include media(lg) {
+      opacity: 0.4;
+      bottom: -400px;
+      right: 200px;
+    }
+    @include media(xs) {
+      width: 268px;
+      height: 174px;
+      transform: none;
+      bottom: -200px;
+      right: 50px;
+    }
+  }
+}
+
+.teacher-how__title {
+  margin-bottom: 30px;
+  margin-top: -12px;
+  @include media(lg) {
+    margin-bottom: 20px;
+    margin-top: 0;
+  }
+}
+
+.teacher-how__headline {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 144%;
+  margin-bottom: 15px;
+  @include media(lg) {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+}
+
+.teacher-how__text {
+  margin-bottom: 24px;
+  font-size: 16px;
+  line-height: 144%;
+  @include media(lg) {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+}
+
+.teacher-how__list {
+  margin-bottom: -28px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 705px;
+  width: 100%;
+  gap: 20px 17px;
+  @include media(lg) {
+    margin-top: 0;
+    max-width: 684px;
+    margin-bottom: -8px;
+  }
+  @include media(xs) {
+    gap: 8px;
+  }
+  &::before {
+    content: '';
+    background: linear-gradient(360deg, #f8f8f8 0%, rgba(248, 248, 248, 0) 100%);
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 114px;
+    @include media(lg) {
+      height: 137px;
+    }
+    @include media(xs) {
+      height: 64px;
+    }
+  }
+}
+
+.teacher-how__item {
+  border-radius: 10px;
+  width: 223px;
+  padding: 10px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
+  background: #fff;
+  @include media(lg) {
+    width: 216px;
+  }
+  @include media(xs) {
+    width: calc(33.33% - 10px);
+    padding: 5px;
+  }
+}
+
+.teacher-how__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(221, 221, 221, 0.17);
+  height: 122px;
+  @include media(lg) {
+    height: 118px;
+  }
+  @include media(xs) {
+    height: 55px;
+  }
+}
+
+.teacher-how__tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 33px;
+  background: rgba(102, 131, 194, 0.08);
+  font-size: 11px;
+  line-height: 100%;
+  color: #6683c2;
+  padding: 2px 10px;
+  @include media(lg) {
+    font-size: 10px;
+  }
+  @include media(xs) {
+    top: 4px;
+    left: 4px;
+    font-size: 7px;
+    padding: 1px 4px;
+  }
+}
+
+.teacher-how__icon {
+  width: 60px;
+  height: 60px;
+  @include media(xs) {
+    width: 28px;
+    height: 28px;
+  }
+}

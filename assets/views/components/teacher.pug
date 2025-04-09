@@ -6,16 +6,29 @@
     'Финалист заключительного этапа Всероссийского конкурса «Учитель года России» 2023',
     'Благодарность Губернатора Тверской области «За значительный личный вклад в развитие системы образования в Тверской области, а также повышение социальной значимости и престижа профессий сферы образования» 2023 г',
   ]
+  const teacherListCourse = [
+    'Председатель экспертной комиссии по проверке ЕГЭ Ленинградской области.(год)',
+    'Победитель всероссийского конкурса «Учитель Будущего» - 2021.',
+    'Многократный победитель различных конкурсов среди учителей математики (конкурс Эйлера, Творческий конкурс и др.).',
+    'Автор книги «Делимость с человеческим лицом».',
+  ]
 
-mixin teacher(mod)
+mixin teacher(mod, name='Галина Валерьевна Шевченко')
   .teacher(class = `teacher_${mod}` : false)
     .teacher__cont.cont
       h2.teacher__caption Учитель курса
       .teacher__wrap
         .teacher__picture
-          img.teacher__image(src=staticImg('teacher/teacher.png') alt='')
+          if mod === "teacher-course"
+            img.teacher__image(src=staticImg('teacher/teacher-course.png') alt='')
+          else
+            img.teacher__image(src=staticImg('teacher/teacher.png') alt='')
         .teacher__area
-          .teacher__name Галина Валерьевна Шевченко
+          .teacher__name!= name
           .teacher__list
-            each item in teacherList
-              .teacher__item= item
+            if mod === "teacher-course"
+              each item in teacherListCourse
+                .teacher__item= item
+            else
+              each item in teacherList
+                .teacher__item= item

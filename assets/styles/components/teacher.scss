@@ -26,6 +26,19 @@
       @include bg-icon('icons/ic_point_summer.svg');
     }
   }
+  &_teacher-course {
+    padding-top: 80px;
+    @include media(lg) {
+      padding-top: 35px;
+      padding-bottom: 0;
+    }
+    @include media(xs) {
+      padding-bottom: 40px;
+    }
+    .teacher__area::before {
+      content: none;
+    }
+  }
 }
 
 .teacher__cont {
@@ -114,7 +127,7 @@
   border-radius: 20px;
   box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
   background: #fff;
-  padding: 40px 93px 40px 212px;
+  padding: 32px 93px 40px 212px;
   position: relative;
   @include media(lg) {
     margin-top: 0;
@@ -142,7 +155,7 @@
 }
 
 .teacher__name {
-  margin-bottom: 30px;
+  margin-bottom: 24px;
   font-weight: 500;
   font-size: 38px;
   line-height: 97%;
@@ -160,7 +173,7 @@
 .teacher__list {
   display: flex;
   flex-direction: column;
-  gap: 25px 0;
+  gap: 23px 0;
   @include media(lg) {
     gap: 20px 0;
   }

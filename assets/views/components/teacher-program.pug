@@ -1,0 +1,59 @@
+-
+  const teacherProgramList = [
+    {
+      headline: 'Занятие 1. Задача 13. <span>Уравнения</span>',
+      list: [ 'особенности оформления, критерии оценивания;', 'способы верного обоснования в пункте б).', ]
+    },
+    {
+      headline: 'Занятие 2. Задача 15. <span>Неравенства</span>',
+      list: ['особенности оформления, критерии оценивания;', 'использование ОДЗ.',]
+    },
+    {
+      headline: 'Занятие 3. Задача 16. <span>Экономика</span>',
+      list: ['особенности оформления, критерии оценивания;', 'понятие математической модели.',]
+    },
+    {
+      headline: 'Занятие 4. Задача 18. <span>Параметр</span>',
+      list: ['особенности оформления, критерии оценивания;', 'анализ ситуаций, где лучше графо-аналитический метод, а где - алгебраический.',]
+    },
+    {
+      headline: 'Занятие 5. Задача 14. <span>Стереометрия</span>',
+      list: ['особенности оформления, критерии оценивания;', 'основные теоремы, использующиеся на ЕГЭ.',]
+    },
+    {
+      headline: 'Занятие 6. Задача 17. <span>Планиметрия</span>',
+      list: ['особенности оформления, критерии оценивания;', 'основные теоремы, использующиеся на ЕГЭ.',]
+    },
+    {
+      headline: 'Занятие 7. Задача 19. <span>Теория чисел</span>',
+      list: ['особенности оформления, критерии оценивания;', 'способы приведения примеров и конструкций.',]
+    },
+  ]
+
+.teacher-program
+  .teacher-program__cont.cont
+    .teacher-program__top
+      .teacher-program__left
+        h2.teacher-program__title.title Программа обучения
+        .teacher-program__note 7 уроков = 7 заданий второй части “профиля” ЕГЭ
+      .teacher-program__right
+        p.teacher-program__text.
+          На уроке разбираем критерии проверки конкретного задания второй части, примеры правильного и неправильного
+          оформления, «тонкие» места, в которых дети чаще всего допускают неточности.
+        p.teacher-program__text.
+          В конце курса — зачетная работа, в которой Вы попрактикуетесь оценивать решения учеников.
+    ul.teacher-program__list
+      each item, index in teacherProgramList
+        li.teacher-program__item
+          .teacher-program__number
+            .teacher-program__number-value= index+1
+            .teacher-program__number-note урок
+          .teacher-program__box
+            .teacher-program__headline!= item.headline
+            .teacher-program__tags
+              each tag in item.list
+                .teacher-program__tag= tag
+      li.teacher-program__item
+        .teacher-program__final
+          img.teacher-program__final-icon(src=staticImg('teacher-program/teacher-program-final-icon.svg') alt='')
+          .teacher-program__final-text Зачетное задание

@@ -1,0 +1,8 @@
+.teacher-for
+  .teacher-for__cont.cont
+    h2.teacher-for__title Курс отлично подойдёт
+    .teacher-for__area
+      each item, index in ['Учителям математики старших классов','Репетиторам, которые готовят к ЕГЭ','Экспертам ЕГЭ, которые хотят повысить качество своей проверки']
+        .teacher-for__box
+          img.teacher-for__icon(src=staticImg(`teacher-for/teacher-for-${index+1}.svg`) alt='')
+          .teacher-for__item= item

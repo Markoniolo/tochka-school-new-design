@@ -1,0 +1,145 @@
+.teacher-cost {
+  padding: 64px 0 100px;
+  background: #FFFFFF;
+  @include media(lg) {
+    padding: 0 0 70px;
+    background: transparent;
+  }
+  @include media(xs) {
+    padding: 0 0 60px;
+  }
+  .info__area {
+    flex-grow: 1;
+    padding: 24px 34px 45px;
+    @include media(lg) {
+      padding: 30px 25px;
+    }
+    @include media(xs) {
+      padding: 30px 20px 40px;
+    }
+    &::before {
+      @include bg-icon('info/info-decor-circles-teacher.svg');
+      z-index: 1;
+      width: 240px;
+      height: 155px;
+      bottom: -23px;
+      left: 11px;
+      @include media(lg) {
+        content: none;
+      }
+      @include media(xs) {
+        width: 28px;
+        height: 28px;
+        background: #68ccea;
+        border-radius: 50%;
+        content: '';
+        bottom: unset;
+        top: 161px;
+        left: 60px;
+      }
+    }
+  }
+  .info__title {
+    margin-bottom: 34px;
+    max-width: 330px;
+    width: 100%;
+    line-height: 89%;
+    @include media(lg) {
+      max-width: 100%;
+      margin-bottom: 16px;
+    }
+  }
+  .cost__button {
+    padding: 20px 22px;
+  }
+  .cost__box {
+    min-height: auto;
+  }
+  .info__decor {
+    height: 100%;
+    @include media(lg) {
+      width: 684px;
+      height: 323px;
+    }
+    @include media(xs) {
+      margin-bottom: 30px;
+      position: static;
+      width: 353px;
+      height: auto;
+      margin-left: -20px;
+    }
+  }
+}
+
+.teacher-cost__cont {
+
+}
+
+.teacher-cost__title {
+  margin-bottom: 40px;
+  @include media(lg) {
+    margin-bottom: 40px;
+  }
+}
+
+.teacher-cost__wrap {
+  display: flex;
+  gap: 30px;
+  @include media(lg) {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+}
+
+.cost__teacher-box {
+  margin-top: -12px;
+  background: #f3f5fb;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  @include media(xs) {
+    padding: 16px 10px;
+  }
+}
+
+.cost__teacher-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cost__teacher-checkbox {
+  display: none;
+  &:checked {
+    & ~ .cost__teacher-checkbox-view {
+      .active {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.cost__teacher-checkbox-view {
+  width: 19px;
+  height: 19px;
+  margin-right: 13px;
+  flex-shrink: 0;
+  @include media(xs) {
+    margin-right: 8px;
+  }
+  .active {
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: $transition-duration;
+  }
+}
+
+.cost__teacher-checkbox-text {
+  font-size: 16px;
+  line-height: 20px;
+  @include media(xs) {
+    font-size: 15px;
+    line-height: 19px;
+  }
+}

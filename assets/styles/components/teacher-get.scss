@@ -1,0 +1,156 @@
+.teacher-get {
+  padding: 80px 0;
+  @include media(lg) {
+    padding: 40px 0 28px;
+  }
+}
+
+.teacher-get__cont {
+
+}
+
+.teacher-get__title {
+  margin-bottom: 40px;
+  @include media(lg) {
+    margin-bottom: 30px;
+  }
+}
+
+.teacher-get__area {
+  position: relative;
+  min-height: 292px;
+  display: flex;
+  flex-direction: column;
+  @include media(lg) {
+    max-width: 684px;
+    width: 100%;
+  }
+}
+
+.teacher-get__list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 396px;
+  width: 100%;
+  @include media(lg) {
+    gap: 12px;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.teacher-get__item {
+  padding-left: 31px;
+  font-size: 16px;
+  line-height: 18px;
+  position: relative;
+  @include media(lg) {
+    padding-left: 26px;
+    font-size: 15px;
+    line-height: 18px;
+  }
+  &::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    @include bg-icon('icons/ic_point_blue.svg');
+  }
+}
+
+.teacher-get__box {
+  position: absolute;
+  width: 698px;
+  height: 307px;
+  top: -22px;
+  right: 138px;
+  @include media(lg) {
+    margin-bottom: 12px;
+    width: 100%;
+    position: relative;
+    top: unset;
+    right: unset;
+    height: 315px;
+  }
+  @include media(xs) {
+    height: 172px;
+    max-width: 322px;
+    width: 100%;
+  }
+  &::before {
+    content: '';
+    transform: rotate(21deg);
+    width: 175px;
+    height: 149px;
+    position: absolute;
+    top: 78px;
+    right: -86px;
+    @include bg-icon('teacher-get/teacher-get-decor.svg');
+    @include media(lg) {
+      transform: rotate(-71deg);
+      top: 50px;
+      right: 120px;
+      width: 172px;
+      height: 146px;
+    }
+    @include media(xs) {
+      content: none;
+    }
+  }
+}
+
+.teacher-get__image {
+  position: absolute;
+  box-shadow: 0 4px 21px 0 rgba(0, 0, 0, 0.26);
+  border-radius: 10px;
+  &_1 {
+    z-index: 1;
+    width: 301px;
+    height: 211px;
+    top: 70px;
+    left: 0;
+    @include media(lg) {
+      width: 295px;
+      height: 207px;
+      top: 83px;
+    }
+    @include media(xs) {
+      width: 161px;
+      height: 113px;
+      top: 59px;
+    }
+  }
+  &_2 {
+    top: 0;
+    right: 0;
+    width: 437px;
+    height: 307px;
+    @include media(lg) {
+      top: 15px;
+      right: 0;
+      width: 428px;
+      height: 301px;
+    }
+    @include media(xs) {
+      top: 0;
+      width: 201px;
+      height: 142px;
+    }
+  }
+}
+
+.teacher-get__note {
+  max-width: 445px;
+  width: 100%;
+  margin-top: auto;
+  font-size: 16px;
+  line-height: 144%;
+  color: rgba(0, 0, 0, 0.5);
+  @include media(xs) {
+    font-size: 15px;
+  }
+}

@@ -176,7 +176,7 @@
 
 .cost__box {
   position: relative;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   border-radius: 20px;
   min-height: 155px;
   background: #f3f5fb;
@@ -309,7 +309,7 @@
   display: flex;
   flex-direction: column;
   gap: 18px 0;
-  padding: 0 15px;
+  padding: 0 20px;
   @include media(xs) {
     padding: 0 5px;
     gap: 15px 0;
