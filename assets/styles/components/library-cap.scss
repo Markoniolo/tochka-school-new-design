@@ -1,0 +1,271 @@
+.library-cap {
+  margin-top: 20px;
+  margin-bottom: 60px;
+  @include media(lg) {
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+}
+
+.library-cap__cont {
+
+}
+
+.library-cap__area {
+  position: relative;
+  padding: 162px 100px 129px;
+  border-radius: 31px;
+  box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
+  min-height: 664px;
+  @include bg-icon('library-cap/library-cap-bg.png');
+  background-size: cover;
+  @include media(lg) {
+    border-radius: 10px;
+    padding: 55px 62px;
+    min-height: 367px;
+    @include bg-icon('library-cap/library-cap-bg_tablet.png');
+    background-size: cover;
+  }
+  @include media(xs) {
+    @include bg-icon('library-cap/library-cap-bg_mob.png');
+    background-size: cover;
+    min-height: 472px;
+    padding: 20px 18px 30px;
+  }
+}
+
+.library-cap__decor {
+  position: absolute;
+  &_1 {
+    transform: rotate(8deg);
+    width: 65px;
+    height: 50px;
+    top: 70px;
+    left: 68px;
+    @include bg-icon('library-cap/decor-1.svg');
+    @include media(lg) {
+      width: 42px;
+      height: 32px;
+      top: 29px;
+      left: 36px;
+    }
+    @include media(xs) {
+      width: 36px;
+      height: 27px;
+      top: 33px;
+      left: 24px;
+    }
+  }
+  &_2 {
+    transform: rotate(-14deg);
+    top: 60px;
+    right: 84px;
+    width: 49px;
+    height: 37px;
+    @include bg-icon('library-cap/decor-2.svg');
+    @include media(lg) {
+      width: 28px;
+      height: 24px;
+      top: 28px;
+      right: 32px;
+    }
+    @include media(xs) {
+      width: 29px;
+      height: 22px;
+      top: 70px;
+      right: 40px;
+    }
+  }
+  &_3 {
+    width: 167px;
+    height: 297px;
+    transform: rotate(7deg);
+    top: 222px;
+    left: 56px;
+    @include bg-icon('library-cap/decor-3.svg');
+    @include media(lg) {
+      width: 48px;
+      height: 86px;
+      top: 254px;
+      left: 35px;
+    }
+    @include media(xs) {
+      display: none;
+    }
+  }
+  &_4 {
+    top: 188px;
+    right: 40px;
+    width: 206px;
+    height: 175px;
+    transform: rotate(-7deg);
+    @include bg-icon('library-cap/decor-4.svg');
+    @include media(lg) {
+      width: 69px;
+      height: 59px;
+      top: 86px;
+      right: 25px;
+    }
+    @include media(xs) {
+      display: none;
+    }
+  }
+}
+
+.library-cap__title {
+  margin-left: -80px;
+  margin-bottom: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 112%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 30px;
+    font-size: 30px;
+    margin-left: -52px;
+  }
+  @include media(xs) {
+    font-size: 24px;
+    max-width: 180px;
+    width: 100%;
+    margin: 0 auto 30px;
+    flex-direction: column;
+    text-align: center;
+  }
+  &::before {
+    content: '';
+    flex-shrink: 0;
+    margin-right: 20px;
+    width: 60px;
+    height: 50px;
+    @include bg-icon('library-cap/decor-title.svg');
+    @include media(lg) {
+      width: 37px;
+      height: 31px;
+      margin-right: 15px;
+    }
+    @include media(xs) {
+      margin-right: 0;
+      margin-bottom: 10px;
+      width: 29px;
+      height: 24px;
+    }
+  }
+}
+
+.library-cap__text {
+  font-size: 32px;
+  line-height: 40px;
+  text-align: center;
+  color: #003c56;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto 60px;
+  @include media(lg) {
+    max-width: 432px;
+    font-size: 18px;
+    line-height: 23px;
+    margin: 0 auto 30px;
+  }
+  @include media(xs) {
+    max-width: 316px;
+  }
+}
+
+.library-cap__line {
+  margin-bottom: 35px;
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+  @include media(lg) {
+    margin-bottom: 20px;
+    gap: 20px;
+  }
+  @include media(xs) {
+    flex-direction: column;
+  }
+}
+
+.library-cap__select {
+  @include media(xs) {
+    margin-bottom: 15px;
+  }
+}
+
+.library-cap__box {
+  max-width: 252px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  @include media(lg) {
+    max-width: 270px;
+  }
+  @include media(xs) {
+    max-width: 100%;
+  }
+}
+
+.library-cap__button {
+  width: 100%;
+  font-size: 16px;
+  padding: 20px 22px;
+}
+
+.library-cap__reset {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include media(xs) {
+    margin-top: 15px;
+    width: 100%;
+    transform: none;
+  }
+  &.show {
+    opacity: 1;
+    pointer-events: all;
+    @include media(xs) {
+      position: static;
+      span {
+        display: block;
+      }
+    }
+  }
+  svg {
+    @include media(xs) {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  span {
+    display: none;
+    font-size: 15px;
+    text-align: center;
+    color: #6683c2;
+    @include media(xs) {
+      margin-left: 9px;
+    }
+  }
+}
+
+.library-cap__circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  background-color: #6683C2;
+  @include media(xs) {
+    width: 17px;
+    height: 17px;
+  }
+}

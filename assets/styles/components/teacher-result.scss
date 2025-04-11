@@ -79,10 +79,10 @@
     border-radius: 50%;
     background-color: #000;
     position: absolute;
-    top: 4px;
-    left: 10px;
+    top: 11px;
+    left: 17px;
     @include media(lg) {
-      top: 8px;
+      top: 10px;
       left: 10px;
     }
   }

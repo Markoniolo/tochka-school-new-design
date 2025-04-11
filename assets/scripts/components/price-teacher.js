@@ -1,11 +1,17 @@
-const teacherCost = document.querySelector('.teacher-cost')
+const teacherCostArray = document.querySelectorAll('.cost__area')
 
-if (teacherCost) teacherCostInit()
+if (teacherCostArray) teacherCostArrayInit()
 
-function teacherCostInit() {
-  const btn = teacherCost.querySelector('.cost__button')
-  const checkbox = teacherCost.querySelector('.cost__teacher-checkbox')
-  const price = teacherCost.querySelector('.cost__price-current')
+function teacherCostArrayInit () {
+  for (let i = 0; i < teacherCostArray.length; i++) {
+    teacherCostInit(teacherCostArray[i])
+  }
+}
+
+function teacherCostInit(node) {
+  const btn = node.querySelector('.cost__button')
+  const checkbox = node.querySelector('.cost__teacher-checkbox')
+  const price = node.querySelector('.cost__price-current')
 
   checkbox.addEventListener('change', checkboxChangeHandler)
 

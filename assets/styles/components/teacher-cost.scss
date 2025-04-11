@@ -8,65 +8,84 @@
   @include media(xs) {
     padding: 0 0 60px;
   }
-  .info__area {
-    flex-grow: 1;
-    padding: 24px 34px 45px;
-    @include media(lg) {
-      padding: 30px 25px;
-    }
-    @include media(xs) {
-      padding: 30px 20px 40px;
-    }
-    &::before {
-      @include bg-icon('info/info-decor-circles-teacher.svg');
-      z-index: 1;
-      width: 240px;
-      height: 155px;
-      bottom: -23px;
-      left: 11px;
+  &.double {
+    .info__area {
+      padding: 25px;
       @include media(lg) {
-        content: none;
+        padding: 30px 25px;
       }
       @include media(xs) {
-        width: 28px;
-        height: 28px;
-        background: #68ccea;
-        border-radius: 50%;
-        content: '';
-        bottom: unset;
-        top: 161px;
-        left: 60px;
+        padding: 30px 20px 40px;
+      }
+    }
+    .info__title {
+      font-size: 32px;
+      @include media(lg) {
+        font-size: 25px;
       }
     }
   }
-  .info__title {
-    margin-bottom: 34px;
-    max-width: 330px;
-    width: 100%;
-    line-height: 89%;
-    @include media(lg) {
-      max-width: 100%;
-      margin-bottom: 16px;
+  &.single {
+    .info__area {
+      flex-grow: 1;
+      padding: 24px 34px 45px;
+      @include media(lg) {
+        padding: 30px 25px;
+      }
+      @include media(xs) {
+        padding: 30px 20px 40px;
+      }
+      &::before {
+        @include bg-icon('info/info-decor-circles-teacher.svg');
+        z-index: 1;
+        width: 240px;
+        height: 155px;
+        bottom: -23px;
+        left: 11px;
+        @include media(lg) {
+          content: none;
+        }
+        @include media(xs) {
+          width: 28px;
+          height: 28px;
+          background: #68ccea;
+          border-radius: 50%;
+          content: '';
+          bottom: unset;
+          top: 161px;
+          left: 60px;
+        }
+      }
     }
-  }
-  .cost__button {
-    padding: 20px 22px;
-  }
-  .cost__box {
-    min-height: auto;
-  }
-  .info__decor {
-    height: 100%;
-    @include media(lg) {
-      width: 684px;
-      height: 323px;
+    .info__title {
+      margin-bottom: 34px;
+      max-width: 330px;
+      width: 100%;
+      line-height: 89%;
+      @include media(lg) {
+        max-width: 100%;
+        margin-bottom: 16px;
+      }
     }
-    @include media(xs) {
-      margin-bottom: 30px;
-      position: static;
-      width: 353px;
-      height: auto;
-      margin-left: -20px;
+    .cost__button {
+      padding: 20px 22px;
+    }
+    .cost__box {
+      min-height: auto;
+    }
+    .info__decor {
+      height: 100%;
+      @include media(lg) {
+        width: 684px;
+        height: 323px;
+      }
+      @include media(xs) {
+        margin-bottom: 30px;
+        position: static;
+        width: 353px;
+        height: auto;
+        margin-left: -20px;
+      }
     }
   }
 }
