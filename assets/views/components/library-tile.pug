@@ -1,0 +1,30 @@
+-
+  const libraryTileList = [
+    {
+      video: 'https://runtime.video.cloud.yandex.net/player/video/vplvnf2d2zk4iicoats2?autoplay=0&mute=0',
+    },
+    {
+      video: 'https://runtime.video.cloud.yandex.net/player/video/vplvg6ntnqpnd5jl4y5z?autoplay=0&mute=0',
+    }
+  ]
+
+.library-tile#library-tile
+  .library-tile__cont.cont
+    .library-tile__area
+      .tile-loader
+      h2.library-tile__title.title Уроки 2 класса по математике
+      .library-tile__list
+        each item, index in libraryTileList
+          .library-tile__item
+            iframe.library-tile__video(src='https://runtime.video.cloud.yandex.net/player/video/vplvg6ntnqpnd5jl4y5z?autoplay=0&mute=0' allow='autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media' frameborder='0' scrolling='no')
+            .library-tile__inner
+              .library-tile__top
+                .library-tile__lesson!= `Урок №${index}`
+                .library-tile__headline Составные задачи
+              .library-tile__box
+                .library-tile__tags
+                  .library-tile__tag 9 класс
+                  .library-tile__tag Русский язык
+                .library-tile__teacher
+                  .library-tile__teacher-span Учитель:
+                  .library-tile__teacher-name Светлана Евгеньевна Емельянченко

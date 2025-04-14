@@ -1,6 +1,6 @@
-const teacherCostArray = document.querySelectorAll('.cost__area')
+const teacherCostArray = document.querySelectorAll('.teacher-cost .cost__area')
 
-if (teacherCostArray) teacherCostArrayInit()
+if (teacherCostArray.length) teacherCostArrayInit()
 
 function teacherCostArrayInit () {
   for (let i = 0; i < teacherCostArray.length; i++) {

@@ -4,8 +4,9 @@ if (trialTile) trialTileInit()
 
 function trialTileInit () {
   const config = { attributes: true, childList: true, characterData: true, subtree: true }
-
   const openers = trialTile.querySelectorAll("[data-element='trial-tile-filter-opener']")
+  const grades = trialTile.querySelector("[data-ftype='class_select']")
+  const subjects = trialTile.querySelector("[data-ftype='class_subjects']")
 
   const observer = new MutationObserver(function() {
     const wrap = openers[1].nextElementSibling

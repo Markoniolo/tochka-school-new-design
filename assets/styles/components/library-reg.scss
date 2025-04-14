@@ -1,7 +1,7 @@
 .library-reg {
-  margin-bottom: 60px;
+  margin-bottom: 45px;
   @include media(lg) {
-    margin-bottom: 40px;
+    margin-bottom: 36px;
   }
 }
 
@@ -12,6 +12,7 @@
 .library-reg__area {
   position: relative;
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
   padding: 55px 125px 88px 55px;
   border-radius: 32px;
@@ -21,7 +22,7 @@
     border-radius: 10px;
     @include bg-icon('library-reg/library-reg-bg_tablet.png');
     background-size: cover;
-    padding: 20px 54px 20px 20px;
+    padding: 20px 54px 20px 15px;
   }
   @include media(xs) {
     padding: 18px 14px 20px;
@@ -32,6 +33,7 @@
 }
 
 .library-reg__title {
+  margin-top: -10px;
   max-width: 535px;
   width: 100%;
   font-weight: 500;
@@ -39,12 +41,13 @@
   line-height: 100%;
   color: #fff;
   @include media(lg) {
+    margin-top: -5px;
     max-width: 274px;
     font-size: 25px;
   }
   @include media(xs) {
     max-width: 100%;
-    margin-bottom: 15px;
+    margin: 0 0 10px;
   }
 }
 
@@ -60,29 +63,29 @@
 }
 
 .library-reg__text {
-  margin-bottom: 35px;
+  margin-bottom: 26px;
   font-size: 24px;
   line-height: 30px;
   color: #fff;
   @include media(lg) {
-    margin-bottom: 18px;
+    margin-bottom: 10px;
     font-size: 18px;
     line-height: 111%;
   }
   @include media(xs) {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
 }
 
 .library-reg__list {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
   @include media(lg) {
-    gap: 12px;
+    gap: 8px;
   }
   @include media(xs) {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     max-width: 260px;
     width: 100%;
   }

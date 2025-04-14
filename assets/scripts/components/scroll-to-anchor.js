@@ -33,7 +33,7 @@ function animateScrollToAnchor (theElement, offset) {
     }
   }
   const positionNow = window.pageYOffset
-  const positionElement = theElement.getBoundingClientRect().top + pageYOffset - offset
+  const positionElement = theElement.getBoundingClientRect().top + scrollY - offset
   const duration = 200
   const step = positionElement - positionNow
   const start = performance.now()

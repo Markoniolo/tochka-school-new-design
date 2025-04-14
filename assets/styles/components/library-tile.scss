@@ -1,0 +1,199 @@
+.library-tile {
+  margin-bottom: 80px;
+  @include media(lg) {
+    margin-bottom: 40px;
+  }
+}
+
+.library-tile__cont {
+
+}
+
+.library-tile__area {
+  min-height: 400px;
+  position: relative;
+}
+
+.library-tile__title {
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 121%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 30px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+}
+
+.library-tile__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  @include media(lg) {
+    gap: 25px;
+  }
+}
+
+.library-tile__item {
+  padding: 30px 35px 30px 30px;
+  width: 100%;
+  border-radius: 32px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
+  background: #fff;
+  display: flex;
+  @include media(lg) {
+    padding: 8px 8px 20px;
+    border-radius: 10px;
+    display: block;
+  }
+}
+
+.library-tile__video {
+  width: 100%;
+  margin-right: 36px;
+  border: 1px solid rgba(102, 131, 194, 0.3);
+  border-radius: 20px;
+  min-height: 455px;
+  @include media(lg) {
+    min-height: 372px;
+    margin-right: 0;
+    border-radius: 10px;
+    margin-bottom: 12px;
+  }
+  @include media(xs) {
+    min-height: 159px;
+    margin-bottom: 5px;
+  }
+}
+
+.library-tile__inner {
+  max-width: 434px;
+  width: 100%;
+  flex-shrink: 0;
+  @include media(lg) {
+    max-width: 100%;
+    padding: 0 6px;
+  }
+}
+
+.library-tile__top {
+  margin-bottom: 30px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 22px;
+  @include media(lg) {
+    margin-bottom: 10px;
+    padding: 0;
+    box-shadow: none;
+  }
+}
+
+.library-tile__lesson {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 20px;
+  @include media(lg) {
+    margin-bottom: 5px;
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+
+.library-tile__headline {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+  }
+}
+
+.library-tile__box {
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
+  background: #fff;
+  padding: 24px 30px;
+  border-radius: 22px;
+  @include media(lg) {
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  @include media(xs) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.library-tile__tags {
+  margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  @include media(lg) {
+    margin-bottom: 0;
+    gap: 10px;
+    max-width: 393px;
+    width: 100%;
+  }
+  @include media(xs) {
+    margin-bottom: 10px;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.library-tile__tag {
+  border-radius: 22px;
+  background: rgba(102, 131, 194, 0.08);
+  font-size: 14px;
+  line-height: 100%;
+  color: #6683c2;
+  padding: 7px 21px;
+  @include media(lg) {
+    font-size: 13px;
+    padding: 6px 19px;
+  }
+  @include media(xs) {
+    padding: 5px 13px;
+  }
+}
+
+.library-tile__teacher {
+  display: flex;
+  @include media(lg) {
+    max-width: 302px;
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.library-tile__teacher-span {
+  margin-right: 15px;
+  font-size: 16px;
+  line-height: 132%;
+  color: rgba(0, 0, 0, 0.8);
+  @include media(lg) {
+    margin-right: 0;
+    margin-bottom: 3px;
+    font-size: 13px;
+  }
+}
+
+.library-tile__teacher-name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 132%;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 113%;
+  }
+}
