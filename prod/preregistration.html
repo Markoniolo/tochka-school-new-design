@@ -32,17 +32,17 @@
 
 <body>
   <div class="sticky-header">
-    <div class="predzaps-top">
+    <a class="predzaps-top" href="#">
       <div class="predzaps-top__cont cont">
         <div class="predzaps-top__area">
           <div class="predzaps-top__decor"></div>
           <div class="predzaps-top__title">Предзапись на следующий учебный год</div>
           <div class="predzaps-top__text">Запишитесь, чтобы сэкономить <span>от 8 000 до 53 000 ₽</span> на занятиях!</div>
-          <a class="predzaps-top__button btn-orange btn-orange_arrow" href="#">Записаться</a>
+          <div class="predzaps-top__button btn-orange btn-orange_arrow">Записаться</div>
           <button class="predzaps-top__close"></button>
         </div>
       </div>
-    </div>
+    </a>
     <header class="header short" data-element="header">
       <div class="header__cont cont">
         <div class="header__layer layer"></div>
@@ -54,45 +54,40 @@
             <button class="header__nav-item header__nav-item_menu">
               <span>Меню</span>
             </button>
-            <div class="header__nav-item active">Главная</div>
-            <a class="header__nav-item" href="#reviews" data-role="scroll-to-anchor">Отзывы</a>
-            <a class="header__nav-item" href="#">Курсы для учителей</a>
+            <div class="header__nav-item active">Летние курсы</div>
+            <a class="header__nav-item" href="#">Блог</a>
+            <a class="header__nav-item btn-orange btn-orange_arrow" href="#modal-order-new" data-fancybox data-options="{&quot;touch&quot;: false}">Подобрать занятия</a>
           </div>
           <a class="header__login btn-blue" href="#">
             <span>Войти</span>
           </a>
         </div>
+        <div class="header__bottom">
+          <a class="header__bottom-link" href="#">ЕГЭ</a>
+          <a class="header__bottom-link" href="#">ОГЭ</a>
+          <a class="header__bottom-link" href="#">1:1 с репетитором</a>
+          <a class="header__bottom-link" href="#">Занятия в группе</a>
+          <a class="header__bottom-link" href="#">Домашняя школа</a>
+          <a class="header__bottom-link" href="#">Английская</a>
+          <a class="header__bottom-link" href="#">Школа программирования</a>
+          <a class="header__bottom-link" href="#">О нас</a>
+        </div>
         <div class="header__open">
           <div class="header__list">
-            <a class="header__link" href="#">
-              <div class="header__link-name">Начальная школа</div>
-              <div class="header__link-note">1-4 класс</div>
-              <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.59 4.35355C12.7853 4.15829 12.7853 3.84171 12.59 3.64645L9.40803 0.464465C9.21276 0.269203 8.89618 0.269203 8.70092 0.464465C8.50566 0.659728 8.50566 0.97631 8.70092 1.17157L11.5293 4L8.70092 6.82843C8.50566 7.02369 8.50566 7.34027 8.70092 7.53553C8.89618 7.7308 9.21276 7.7308 9.40803 7.53553L12.59 4.35355ZM4.45727e-08 4.5L12.2365 4.5L12.2365 3.5L-4.45727e-08 3.5L4.45727e-08 4.5Z" fill="#6683C2"></path>
-              </svg>
-            </a>
-            <a class="header__link" href="#">
-              <div class="header__link-name">Средняя школа</div>
-              <div class="header__link-note">5-8 класс</div>
-              <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.59 4.35355C12.7853 4.15829 12.7853 3.84171 12.59 3.64645L9.40803 0.464465C9.21276 0.269203 8.89618 0.269203 8.70092 0.464465C8.50566 0.659728 8.50566 0.97631 8.70092 1.17157L11.5293 4L8.70092 6.82843C8.50566 7.02369 8.50566 7.34027 8.70092 7.53553C8.89618 7.7308 9.21276 7.7308 9.40803 7.53553L12.59 4.35355ZM4.45727e-08 4.5L12.2365 4.5L12.2365 3.5L-4.45727e-08 3.5L4.45727e-08 4.5Z" fill="#6683C2"></path>
-              </svg>
-            </a>
-            <a class="header__link" href="#">
-              <div class="header__link-name">Старшая школа</div>
-              <div class="header__link-note">9-11 класс</div>
-              <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.59 4.35355C12.7853 4.15829 12.7853 3.84171 12.59 3.64645L9.40803 0.464465C9.21276 0.269203 8.89618 0.269203 8.70092 0.464465C8.50566 0.659728 8.50566 0.97631 8.70092 1.17157L11.5293 4L8.70092 6.82843C8.50566 7.02369 8.50566 7.34027 8.70092 7.53553C8.89618 7.7308 9.21276 7.7308 9.40803 7.53553L12.59 4.35355ZM4.45727e-08 4.5L12.2365 4.5L12.2365 3.5L-4.45727e-08 3.5L4.45727e-08 4.5Z" fill="#6683C2"></path>
-              </svg>
-            </a>
             <a class="header__link header__link_teacher" href="#">
-              <div class="header__link-name">Курсы для учителей</div>
+              <div class="header__link-name">Летние курсы</div>
               <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.59 4.35355C12.7853 4.15829 12.7853 3.84171 12.59 3.64645L9.40803 0.464465C9.21276 0.269203 8.89618 0.269203 8.70092 0.464465C8.50566 0.659728 8.50566 0.97631 8.70092 1.17157L11.5293 4L8.70092 6.82843C8.50566 7.02369 8.50566 7.34027 8.70092 7.53553C8.89618 7.7308 9.21276 7.7308 9.40803 7.53553L12.59 4.35355ZM4.45727e-08 4.5L12.2365 4.5L12.2365 3.5L-4.45727e-08 3.5L4.45727e-08 4.5Z" fill="#6683C2"></path>
               </svg>
             </a>
             <a class="header__link header__link_teacher" href="#">
               <div class="header__link-name">Предзапись на учебный год 25/26</div>
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.59 4.35355C12.7853 4.15829 12.7853 3.84171 12.59 3.64645L9.40803 0.464465C9.21276 0.269203 8.89618 0.269203 8.70092 0.464465C8.50566 0.659728 8.50566 0.97631 8.70092 1.17157L11.5293 4L8.70092 6.82843C8.50566 7.02369 8.50566 7.34027 8.70092 7.53553C8.89618 7.7308 9.21276 7.7308 9.40803 7.53553L12.59 4.35355ZM4.45727e-08 4.5L12.2365 4.5L12.2365 3.5L-4.45727e-08 3.5L4.45727e-08 4.5Z" fill="#6683C2"></path>
+              </svg>
+            </a>
+            <a class="header__link header__link_teacher" href="#">
+              <div class="header__link-name">Курсы для учителей/26</div>
               <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.59 4.35355C12.7853 4.15829 12.7853 3.84171 12.59 3.64645L9.40803 0.464465C9.21276 0.269203 8.89618 0.269203 8.70092 0.464465C8.50566 0.659728 8.50566 0.97631 8.70092 1.17157L11.5293 4L8.70092 6.82843C8.50566 7.02369 8.50566 7.34027 8.70092 7.53553C8.89618 7.7308 9.21276 7.7308 9.40803 7.53553L12.59 4.35355ZM4.45727e-08 4.5L12.2365 4.5L12.2365 3.5L-4.45727e-08 3.5L4.45727e-08 4.5Z" fill="#6683C2"></path>
               </svg>
