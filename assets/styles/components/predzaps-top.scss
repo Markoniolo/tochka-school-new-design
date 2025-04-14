@@ -1,4 +1,5 @@
 .predzaps-top {
+  display: block;
   @include bg-icon('predzaps-top/predzaps-top-bg.png');
   background-size: cover;
   overflow: hidden;

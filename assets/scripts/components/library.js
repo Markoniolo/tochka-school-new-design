@@ -3,9 +3,18 @@ const libraryCap = document.querySelector('.library-cap')
 if (libraryCap) libraryCapInit()
 
 function libraryCapInit () {
+  const config = { attributes: true, childList: true, characterData: true, subtree: true }
   const openers = libraryCap.querySelectorAll("[data-element='library-cap-filter-opener']")
   const grades = libraryCap.querySelector("[data-ftype='class_select']")
   const subjects = libraryCap.querySelector("[data-ftype='class_subjects']")
+
+  const observer = new MutationObserver(function() {
+    const wrap = openers[1].nextElementSibling
+    const items = wrap.querySelectorAll("[data-element='library-cap-filter-input']")
+    items.forEach((item) => {
+      item.addEventListener('change', () => updateFilter(openers[1], wrap))
+    })
+  })
 
   const save = libraryCap.querySelector(".library-cap__button")
   if (save) save.addEventListener('click', saveHandler)
@@ -61,21 +70,9 @@ function libraryCapInit () {
         subjects_result += item.value
       })
     }catch(e){}
-    //   let promo_f = libraryCap.getAttribute('data-promo');
-    //console.log(grades_result)
-    //console.log(subjects_result)
     let utm_f = libraryCap.getAttribute('data-utm');
     $('.filtered_elements').html("<div class='tile-loader'></div>");
-    // if(promo_f != null && promo_f != '' && promo_f != undefined){
-    //     $.request('AllCourseFunctions::onPaginateAllCourses', {
-    //             data: {
-    //               'grade': grades_result,
-    //               'subject': subjects_result,
-    //               'promo': promo_f,
-    //             }
-    //         })
-    // }else{
-    $.request('AllCourseFunctions::onPaginateAllSCourses', {
+    $.request('VideoCourseFunctions::onPaginateAllCourses', {
       data: {
         'grade': grades_result,
         'subject': subjects_result,
@@ -88,7 +85,6 @@ function libraryCapInit () {
       history.replaceState(null, "", url.toString())
     }
     // }
-
   }
 
   function scrollToTile () {
@@ -114,6 +110,12 @@ function libraryCapInit () {
     items.forEach((item) => {
       item.addEventListener('change', () => updateFilter(openers[i], wrap))
     })
+
+    if (i === 1) {
+      window.onload = function() {
+        observer.observe(wrap, config)
+      }
+    }
   }
 
   function openFilter (opener) {

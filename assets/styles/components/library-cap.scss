@@ -1,5 +1,5 @@
 .library-cap {
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 60px;
   @include media(lg) {
     margin-top: 0;
@@ -255,12 +255,12 @@
     }
     .library-cap__filter-scroll {
       padding-right: 20px;
-      height: 383px;
+      max-height: 383px;
       @include media(lg) {
-        height: 368px;
+        max-height: 368px;
       }
       @include media(xs) {
-        height: 321px;
+        max-height: 321px;
         padding-right: 0;
         padding-bottom: 50px;
       }

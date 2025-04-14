@@ -1,0 +1,29 @@
+mixin promo(mod)
+  .promo(class = mod ? mod : false)
+    .promo__view
+      .promo__decor.promo__decor_1
+      .promo__decor.promo__decor_2
+      .promo__decor.promo__decor_3
+      .promo__circle
+        .promo__text
+          | Ваша
+          br
+          | скидка
+        .promo__value
+          .promo__note до
+          if mod === 'percent'
+            .promo__number 30%
+          else
+            .promo__number 1 000₽
+        svg.promo__arrow(width='24' height='12' viewbox='0 0 24 12' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M1 5.3C0.613401 5.3 0.3 5.6134 0.3 6C0.3 6.3866 0.613401 6.7 1 6.7L1 5.3ZM23.495 6.49497C23.7683 6.22161 23.7683 5.77839 23.495 5.50502L19.0402 1.05025C18.7668 0.776884 18.3236 0.776884 18.0503 1.05025C17.7769 1.32362 17.7769 1.76683 18.0503 2.0402L22.01 6L18.0503 9.9598C17.7769 10.2332 17.7769 10.6764 18.0503 10.9497C18.3236 11.2231 18.7668 11.2231 19.0402 10.9497L23.495 6.49497ZM1 6.7L23 6.7L23 5.3L1 5.3L1 6.7Z' fill='white')
+    .promo__hint
+      .promo__area
+        button.promo__close
+          svg(width='12' height='12' viewbox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M10.9844 1L1.06183 11.0424' stroke='white' stroke-width='1.4' stroke-linecap='round')
+            path(d='M11.0469 10.9829L1.00448 1.06037' stroke='white' stroke-width='1.4' stroke-linecap='round')
+        .promo__title Ваша скидка на все курсы
+        .promo__list
+          .promo__item −1 000₽ при полной оплате
+          .promo__item −1 000₽ на первый платёж в рассрочку

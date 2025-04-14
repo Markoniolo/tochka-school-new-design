@@ -1,11 +1,15 @@
 -
   const headerList = [
-    { name: 'Начальная школа', note: '1-4 класс' },
-    { name: 'Средняя школа', note: '5-8 класс' },
-    { name: 'Старшая школа', note: '9-11 класс' },
-    { name: 'Курсы для учителей', note: '' },
+    // { name: 'Начальная школа', note: '1-4 класс' },
+    // { name: 'Средняя школа', note: '5-8 класс' },
+    // { name: 'Старшая школа', note: '9-11 класс' },
+    // { name: 'Курсы для учителей', note: '' },
+    // { name: 'Предзапись на учебный год 25/26', note: '' },
+    // { name: 'Наш блог', note: '' }
+    { name: 'Летние курсы', note: '' },
     { name: 'Предзапись на учебный год 25/26', note: '' },
-    { name: 'Наш блог', note: '' }
+    { name: 'Курсы для учителей/26', note: '' },
+    { name: 'Наш блог', note: '' },
   ]
 
 header.header.short(data-element="header")
@@ -17,11 +21,14 @@ header.header.short(data-element="header")
       .header__nav
         button.header__nav-item.header__nav-item_menu
           span Меню
-        .header__nav-item.active Главная
-        a.header__nav-item(href="#reviews" data-role="scroll-to-anchor") Отзывы
-        a.header__nav-item(href="#") Курсы для учителей
+        .header__nav-item.active Летние курсы
+        a.header__nav-item(href="#") Блог
+        a.header__nav-item.btn-orange.btn-orange_arrow(href='#modal-order-new' data-fancybox data-options='{"touch": false}') Подобрать занятия
       a.header__login.btn-blue(href="#")
         span Войти
+    .header__bottom
+      each item in ['ЕГЭ','ОГЭ','1:1 с репетитором','Занятия в группе','Домашняя школа','Английская','Школа программирования','О нас']
+        a.header__bottom-link(href='#')= item
     .header__open
       .header__list
         each item in headerList

@@ -7,7 +7,6 @@
   padding-top: 195px;
   padding-bottom: 112px;
   @include media(lg) {
-    padding-top: 100px;
     padding-bottom: 12px;
     @include bg-img('summer-cap/summer-cap-bg_tablet.svg');
     background-repeat: no-repeat;
@@ -15,12 +14,13 @@
     background-position: top center;
   }
   @include media(md) {
+    padding-top: 130px;
     margin-top: -97px;
   }
   @include media(xs) {
     margin-bottom: 40px;
     margin-top: -79px;
-    padding-top: 86px;
+    padding-top: 100px;
     padding-bottom: 0;
     @include bg-img('summer-cap/summer-cap-bg_mob.svg');
     background-repeat: no-repeat;

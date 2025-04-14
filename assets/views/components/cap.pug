@@ -61,14 +61,14 @@ mixin cap(mod)
             | Летний ритм:
             br
             | занимайтесь в своём темпе
-          .cap__news
+          a.cap__news(href='#')
             .cap__news-headline Летние курсы
             .cap__news-list
               each item in ['Школьные предметы 1-11 класс','Развивающие курсы','Подготовка к ОГЭ и ЕГЭ','Семейное обучение 1-8 класс']
                 .cap__news-item= item
             .cap__news-note Занятия в апреле и&nbsp;мае — бесплатно
             .cap__news-gift
-            a.cap__news-button.btn-orange(href='#') Выбрать курс
+            .cap__news-button.btn-orange Выбрать курс
           //.cap__title Выберите летние курсы
           //.directions-list
           //  each item, index in capListSummer
