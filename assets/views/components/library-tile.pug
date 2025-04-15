@@ -17,7 +17,8 @@
         each item, index in libraryTileList
           .library-tile__item
             .library-tile__video-box
-              iframe.library-tile__video(src='https://runtime.video.cloud.yandex.net/player/video/vplvg6ntnqpnd5jl4y5z?autoplay=0&mute=0' allow='autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media' frameborder='0' scrolling='no')
+              img.library-tile__poster(src=staticImg('') alt='')
+              iframe.library-tile__video(poster="https://cms-dev.tochka-school.ru/themes/school-point/assets/img/trial-tile/trial-tile-family-green.svg" src='https://runtime.video.cloud.yandex.net/player/video/vplvg6ntnqpnd5jl4y5z?autoplay=0&mute=0' allow='autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media' frameborder='0' scrolling='no')
             .library-tile__inner
               .library-tile__top
                 .library-tile__lesson!= `Урок №${index}`

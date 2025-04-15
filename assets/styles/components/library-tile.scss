@@ -71,6 +71,17 @@
   }
 }
 
+.library-tile__poster {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  object-fit: cover;
+}
+
 .library-tile__video {
   width: 100%;
   border: 1px solid rgba(102, 131, 194, 0.3);

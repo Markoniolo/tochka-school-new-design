@@ -4,6 +4,11 @@
   &_white {
     background: #fff;
   }
+  &.thin {
+    .header__bottom {
+      display: none;
+    }
+  }
   //&.thin {
   //  .header__bottom {
   //    display: none;

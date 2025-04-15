@@ -88,14 +88,14 @@ function libraryCapInit () {
       })
     }catch(e){}
     let utm_f = libraryCap.getAttribute('data-utm');
-    $('.filtered_elements').html("<div class='tile-loader'></div>");
-    $.request('VideoCourseFunctions::onPaginateAllCourses', {
-      data: {
-        'grade': grades_result,
-        'subject': subjects_result,
-        'utm_t': utm_f
-      }
-    })
+    // $('.filtered_elements').html("<div class='tile-loader'></div>");
+    // $.request('VideoCourseFunctions::onPaginateAllCourses', {
+    //   data: {
+    //     'grade': grades_result,
+    //     'subject': subjects_result,
+    //     'utm_t': utm_f
+    //   }
+    // })
     if (grade_first > 0){
       let url = new URL(window.location.href)
       url.searchParams.set('gr', grade_first);

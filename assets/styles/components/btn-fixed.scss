@@ -4,11 +4,14 @@
   bottom: 0;
   left: 0;
   right: 0;
-  display: flex;
   justify-content: center;
   transform: translateY(200%);
   transition-duration: $transition-duration;
   transition-property: transform;
+  display: none;
+  @include media(xs) {
+    display: flex;
+  }
   &.summer {
     .btn-fixed__area {
       background: radial-gradient(103.74% 82.22% at 84.67% 37.89%, #d8ee76 0%, #a1d86a 100%);
