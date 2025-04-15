@@ -1,11 +1,23 @@
-extends ../components/_layout/layout
+include ../_variables
+include ../components/_layout/_connect-style
+include ../components/_layout/_title
 
-block head
-  +title('Библиотека 500+ уроков')
+doctype html
+html(lang='ru')
+  head
+    include ../components/_layout/_head
+    +title('Библиотека 500+ уроков')
+  body
+    .sticky-header
+      include ../components/_layout/header
+    main.wrapper
+      block body
+        include ../components/library-cap
+        include ../components/library-reg
+        include ../components/library-tile
+        include ../components/library-why
+        include ../components/library-informer
+    include ../components/modals/modal-order-new
+    include ../components/_layout/footer
+    include ../components/_layout/scripts
 
-block body
-  include ../components/library-cap
-  include ../components/library-reg
-  include ../components/library-tile
-  include ../components/library-why
-  include ../components/library-informer
