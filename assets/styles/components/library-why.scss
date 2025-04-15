@@ -1,6 +1,9 @@
 .library-why {
   background-color: #FFFFFF;
   overflow: hidden;
+  &.hide {
+    display: none;
+  }
 }
 
 .library-why__cont {

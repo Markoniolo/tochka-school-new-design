@@ -25,7 +25,7 @@
     padding: 20px 54px 20px 15px;
   }
   @include media(xs) {
-    padding: 18px 14px 20px;
+    padding: 22px 15px 20px;
     @include bg-icon('library-reg/library-reg-bg_mob.png');
     background-size: cover;
     display: block;
@@ -48,6 +48,7 @@
   @include media(xs) {
     max-width: 100%;
     margin: 0 0 10px;
+    display: none;
   }
 }
 
@@ -73,7 +74,9 @@
     line-height: 111%;
   }
   @include media(xs) {
-    margin-bottom: 12px;
+    font-size: 25px;
+    line-height: 25px;
+    margin-bottom: 25px;
   }
 }
 
@@ -85,9 +88,7 @@
     gap: 8px;
   }
   @include media(xs) {
-    margin-bottom: 16px;
-    max-width: 260px;
-    width: 100%;
+    margin-bottom: 28px;
   }
 }
 

@@ -4,6 +4,9 @@
   @include media(lg) {
     padding-bottom: 60px;
   }
+  &.hide {
+    display: none;
+  }
 }
 
 .library-informer__cont {

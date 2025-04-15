@@ -36,6 +36,23 @@ function libraryCapInit () {
     }
   }
 
+  const subjectWrap =  libraryCap.querySelector('.library-cap__filter.library-cap__filter_subject .library-cap__filter-wrap')
+  const simpleBar = new SimpleBar(document.querySelector('.library-cap__filter-scroll'))
+  const node = simpleBar.getScrollElement()
+  const icon = libraryCap.querySelector('.library-cap__filter-icon')
+  const labels = subjectWrap.querySelectorAll('.library-cap__filter-item')
+  if (labels.length < 7 && icon) icon.remove()
+  if (node) {
+    node.addEventListener('scroll', function () {
+      if (icon) icon.remove()
+      if (node.scrollTop > 10) {
+        subjectWrap.classList.add('show-top-gradient')
+      } else {
+        subjectWrap.classList.remove('show-top-gradient')
+      }
+    })
+  }
+
   const reset = libraryCap.querySelector("[data-element='library-cap-filter-reset']")
   if (reset) reset.addEventListener('click', resetFilters)
 
@@ -71,14 +88,14 @@ function libraryCapInit () {
       })
     }catch(e){}
     let utm_f = libraryCap.getAttribute('data-utm');
-    $('.filtered_elements').html("<div class='tile-loader'></div>");
-    $.request('VideoCourseFunctions::onPaginateAllCourses', {
-      data: {
-        'grade': grades_result,
-        'subject': subjects_result,
-        'utm_t': utm_f
-      }
-    })
+    // $('.filtered_elements').html("<div class='tile-loader'></div>");
+    // $.request('VideoCourseFunctions::onPaginateAllCourses', {
+    //   data: {
+    //     'grade': grades_result,
+    //     'subject': subjects_result,
+    //     'utm_t': utm_f
+    //   }
+    // })
     if (grade_first > 0){
       let url = new URL(window.location.href)
       url.searchParams.set('gr', grade_first);
@@ -88,6 +105,7 @@ function libraryCapInit () {
   }
 
   function scrollToTile () {
+    showBlocks()
     const banner = document.querySelector('.discount')
     const bannerHeight = banner ? banner.clientHeight : 0
     const theElement = document.getElementById('library-tile')
@@ -102,8 +120,17 @@ function libraryCapInit () {
     window.scrollTo(0, theElement.getBoundingClientRect().top + scrollY - offset)
   }
 
+  function showBlocks () {
+    const libraryTile = document.querySelector('.library-tile')
+    if (libraryTile) libraryTile.classList.remove('hide')
+    const libraryWhy = document.querySelector('.library-why')
+    if (libraryWhy) libraryWhy.classList.remove('hide')
+    const libraryInformer = document.querySelector('.library-informer')
+    if (libraryInformer) libraryInformer.classList.remove('hide')
+  }
+
   for (let i = 0; i < openers.length; i++) {
-    openers[i].addEventListener("click", ()=> openFilter(openers[i]))
+    openers[i].addEventListener("click", (e)=> openFilter(openers[i], e))
 
     const wrap = openers[i].nextElementSibling
     const items = wrap.querySelectorAll("[data-element='library-cap-filter-input']")
@@ -118,7 +145,8 @@ function libraryCapInit () {
     }
   }
 
-  function openFilter (opener) {
+  function openFilter (opener, e) {
+    e.stopPropagation()
     opener.classList.remove('error')
     if (opener.classList.contains('active')) {
       closeFilter(opener)
@@ -134,6 +162,13 @@ function libraryCapInit () {
     }
   }
 
+  window.addEventListener('click', closeAllFilters)
+
+  function closeAllFilters () {
+    const oldOpen = libraryCap.querySelector(".library-cap__filter-top.active")
+    if (oldOpen) oldOpen.classList.remove('active')
+  }
+
   function closeFilter (opener) {
     opener.classList.remove('active')
     const filter = opener.parentElement
@@ -141,6 +176,12 @@ function libraryCapInit () {
   }
 
   function updateFilter (opener, wrap) {
+    if(opener.getAttribute('data-ftype') === 'class_select') {
+      makeFiltration()
+    } else {
+      makeFiltration()
+      scrollToTile()
+    }
     opener.innerHTML = opener.getAttribute('data-default-text')
     const items = wrap.querySelectorAll(["input:checked"])
     if (items.length) {

@@ -4,38 +4,38 @@
   &_white {
     background: #fff;
   }
-  &.thin {
-    .header__bottom {
-      display: none;
-    }
-    .header__area {
-      min-height: 75px;
-    }
-    .header__logo {
-      width: 92px;
-      height: 39px;
-    }
-    .header__login {
-      span {
-        font-size: 12px;
-      }
-      &::after {
-        width: 15px;
-        height: 18px;
-      }
-    }
-    .header__nav-item {
-      font-size: 12px;
-    }
-    .header__nav-item {
-      padding: 7px 15px;
-      &_menu::before {
-        margin-right: 7px;
-        width: 13px;
-        height: 9px;
-      }
-    }
-  }
+  //&.thin {
+  //  .header__bottom {
+  //    display: none;
+  //  }
+  //  .header__area {
+  //    min-height: 75px;
+  //  }
+  //  .header__logo {
+  //    width: 92px;
+  //    height: 39px;
+  //  }
+  //  .header__login {
+  //    span {
+  //      font-size: 12px;
+  //    }
+  //    &::after {
+  //      width: 15px;
+  //      height: 18px;
+  //    }
+  //  }
+  //  .header__nav-item {
+  //    font-size: 12px;
+  //  }
+  //  .header__nav-item {
+  //    padding: 7px 15px;
+  //    &_menu::before {
+  //      margin-right: 7px;
+  //      width: 13px;
+  //      height: 9px;
+  //    }
+  //  }
+  //}
   &.open {
     background: transparent;
     box-shadow: none;

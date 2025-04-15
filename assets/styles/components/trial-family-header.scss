@@ -9,18 +9,18 @@
   @include media(xs) {
     padding: 10px 0;
   }
-  &.thin {
-    .trial-family-header__logo {
-      @include media(xs) {
-        transform: translateX(-50%) translateY(-300px);
-      }
-    }
-    .trial-family-header__button {
-      @include media(xs) {
-        transform: translateX(-50%) translateY(0);
-      }
-    }
-  }
+  //&.thin {
+  //  .trial-family-header__logo {
+  //    @include media(xs) {
+  //      transform: translateX(-50%) translateY(-300px);
+  //    }
+  //  }
+  //  .trial-family-header__button {
+  //    @include media(xs) {
+  //      transform: translateX(-50%) translateY(0);
+  //    }
+  //  }
+  //}
 }
 
 .trial-family-header__cont {

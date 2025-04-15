@@ -9,18 +9,18 @@
   @include media(xs) {
     height: 80px;
   }
-  &.thin {
-    .header-new__logo {
-      @include media(xs) {
-        transform: translateX(-50%) translateY(-300px);
-      }
-    }
-    .header-new__button {
-      @include media(xs) {
-        transform: translateX(-50%) translateY(0);
-      }
-    }
-  }
+  //&.thin {
+  //  .header-new__logo {
+  //    @include media(xs) {
+  //      transform: translateX(-50%) translateY(-300px);
+  //    }
+  //  }
+  //  .header-new__button {
+  //    @include media(xs) {
+  //      transform: translateX(-50%) translateY(0);
+  //    }
+  //  }
+  //}
   &.no-btn {
     .header-new__logo {
       @include media(xs) {

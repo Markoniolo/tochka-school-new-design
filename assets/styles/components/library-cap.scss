@@ -2,11 +2,8 @@
   margin-top: 40px;
   margin-bottom: 60px;
   @include media(lg) {
-    margin-top: 0;
+    margin-top: 20px;
     margin-bottom: 40px;
-  }
-  @include media(xs) {
-    margin-bottom: 32px;
   }
 }
 
@@ -33,7 +30,7 @@
     @include bg-icon('library-cap/library-cap-bg_mob.png');
     background-size: cover;
     min-height: 472px;
-    padding: 26px 15px 30px;
+    padding: 38px 15px 30px;
   }
 }
 
@@ -53,6 +50,7 @@
       left: 32px;
     }
     @include media(xs) {
+      display: none;
       width: 36px;
       height: 27px;
       top: 33px;
@@ -77,6 +75,7 @@
       height: 22px;
       top: 70px;
       right: 40px;
+      display: none;
     }
   }
   &_3 {
@@ -129,31 +128,12 @@
     font-size: 30px;
   }
   @include media(xs) {
-    font-size: 24px;
+    font-size: 27px;
     max-width: 180px;
     width: 100%;
-    margin: 0 auto 20px;
+    margin: 0 auto 30px;
     flex-direction: column;
     text-align: center;
-  }
-  &::before {
-    content: '';
-    flex-shrink: 0;
-    margin-right: 20px;
-    width: 60px;
-    height: 50px;
-    @include bg-icon('library-cap/decor-title.svg');
-    @include media(lg) {
-      width: 37px;
-      height: 31px;
-      margin-right: 15px;
-    }
-    @include media(xs) {
-      margin-right: 0;
-      margin-bottom: 6px;
-      width: 29px;
-      height: 24px;
-    }
   }
 }
 
@@ -172,8 +152,8 @@
     margin: 0 auto 30px;
   }
   @include media(xs) {
-    max-width: 316px;
-    margin: 0 auto 25px;
+    max-width: 268px;
+    margin: 0 auto 35px;
   }
 }
 
@@ -183,12 +163,13 @@
   gap: 35px;
   justify-content: center;
   @include media(lg) {
-    margin-bottom: 14px;
+    margin-bottom: 20px;
     gap: 20px;
   }
   @include media(xs) {
     flex-direction: column;
     gap: 15px;
+    margin-bottom: 25px;
   }
 }
 
@@ -203,6 +184,7 @@
     max-width: 100%;
   }
   &_class {
+    z-index: 2;
     .library-cap__filter-item {
       width: calc(33.33% - 7px);
       @include media(xs) {
@@ -211,6 +193,7 @@
     }
   }
   &_subject {
+    z-index: 1;
     .library-cap__filter-item {
       width: calc(50% - 5px);
       @include media(xs) {
@@ -224,28 +207,30 @@
         padding: 20px 5px 20px 20px;
       }
       @include media(xs) {
-        padding: 90px 20px 20px;
+        padding: 48px 15px 15px;
       }
-      &::before {
-        @include media(xs) {
-          content: '';
-          background: linear-gradient(0, rgba(102, 131, 194, 0) 0%, #6683c2 100%);
-          position: absolute;
-          z-index: 1;
-          top: 90px;
-          right: 0;
-          left: 0;
-          height: 60px;
-          pointer-events: none;
+      &.show-top-gradient {
+        &::before {
+          @include media(xs) {
+            content: '';
+            background: linear-gradient(0, rgba(102, 131, 194, 0) 0%, #a0b2d9 100%);
+            position: absolute;
+            z-index: 1;
+            top: 45px;
+            right: 0;
+            left: 0;
+            height: 60px;
+            pointer-events: none;
+          }
         }
       }
       &::after {
         @include media(xs) {
           content: '';
-          background: linear-gradient(180deg, rgba(102, 131, 194, 0) 0%, #6683c2 100%);
+          background: linear-gradient(180deg, rgba(102, 131, 194, 0) 0%, #a0b2d9 100%);
           position: absolute;
           z-index: 1;
-          bottom: 20px;
+          bottom: 15px;
           right: 0;
           left: 0;
           height: 60px;
@@ -299,10 +284,12 @@
     font-size: 14px;
     padding: 12px 20px 12px 20px;
   }
+  @include media(xs) {
+    z-index: 20;
+  }
   &.active {
     border: 2px solid #f37e60;
     @include media(xs) {
-      z-index: 20;
       border: 2px solid transparent;
     }
     & ~ .library-cap__filter-wrap {
@@ -353,9 +340,9 @@
   }
   &::before {
     content: '';
-    @include bg-icon('icons/ic_arrow_down_black.svg');
-    width: 12px;
-    height: 7px;
+    @include bg-icon('icons/ic_arrow_down_dark.svg');
+    width: 16px;
+    height: 9px;
     position: absolute;
     right: 34px;
     top: 50%;
@@ -397,13 +384,35 @@
     width: 560px;
   }
   @include media(xs) {
-    width: calc(100% + 30px);
-    right: -15px;
-    left: -15px;
-    background: #6683c2;
-    top: -20px;
-    padding: 90px 20px 20px;
+    top: calc(100% - 30px);
+    width: 100%;
+    background: #a0b2d9;
+    padding: 48px 15px 15px;
     border-radius: 10px;
+  }
+}
+
+.library-cap__filter-icon {
+  display: none;
+  @include media(xs) {
+    display: block;
+    animation: 2s linear infinite libraryCapFilterIconRotate;
+    position: absolute;
+    z-index: 5;
+    top: 169px;
+    right: 12px;
+    transform: translateY(-10px);
+    @keyframes libraryCapFilterIconRotate {
+      0% {
+        transform: translateY(-10px);
+      }
+      50% {
+        transform: translateY(10px);
+      }
+      100% {
+        transform: translateY(-10px);
+      }
+    }
   }
 }
 
@@ -498,12 +507,12 @@
     margin-top: 15px;
     width: 100%;
     transform: none;
+    position: static;
   }
   &.show {
     opacity: 1;
     pointer-events: all;
     @include media(xs) {
-      position: static;
       span {
         display: block;
       }
