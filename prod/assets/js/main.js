@@ -981,6 +981,7 @@ function libraryCapInit () {
   const grades = libraryCap.querySelector("[data-ftype='class_select']")
   const subjects = libraryCap.querySelector("[data-ftype='class_subjects']")
   const filterSubjectBox = libraryCap.querySelector(".library-cap__filter.library-cap__filter_subject")
+  const tile = document.querySelector('.library-tile')
 
   const observer = new MutationObserver(function() {
     const wrap = openers[1].nextElementSibling
@@ -989,6 +990,12 @@ function libraryCapInit () {
       item.addEventListener('change', () => updateFilter(openers[1], wrap))
     })
   })
+
+  const observerPoster = new MutationObserver(function() {
+    initPosters()
+  })
+
+  observerPoster.observe(tile, config)
 
   const save = libraryCap.querySelector(".library-cap__button")
   if (save) save.addEventListener('click', saveHandler)

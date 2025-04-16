@@ -178,7 +178,7 @@
   transition-property: opacity;
   transition-duration: $transition-duration;
   @include media(lg) {
-    top: 20px;
+    top: 24px;
   }
   &.active {
     opacity: 1;
