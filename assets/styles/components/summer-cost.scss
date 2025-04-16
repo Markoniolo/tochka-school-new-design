@@ -23,6 +23,17 @@
       margin-bottom: 72px;
     }
   }
+  &.short {
+    .summer-cost__bonus-list {
+      max-width: 375px;
+      @include media(lg) {
+        max-width: 352px;
+      }
+      @include media(xs) {
+        max-width: 100%;
+      }
+    }
+  }
 }
 
 .summer-cost__cont {
@@ -332,6 +343,12 @@
     left: 0;
     top: 10px;
     background: #003c56;
+    @include media(lg) {
+      top: 9px;
+    }
+    @include media(xs) {
+      top: 8px;
+    }
   }
 }
 
