@@ -1,4 +1,5 @@
 .library-tile {
+  position: relative;
   margin-bottom: 80px;
   @include media(lg) {
     margin-bottom: 40px;
@@ -54,11 +55,15 @@
 }
 
 .library-tile__video-box {
+  position: relative;
   margin-right: 36px;
   width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
   @include media(lg) {
     margin-right: 0;
     margin-bottom: 12px;
+    border-radius: 10px;
   }
   @include media(xs) {
     position: relative;
@@ -67,29 +72,64 @@
   }
   &::before {
     content: '';
-
+    @include bg-icon('library-tile/ic_play.svg');
+    width: 93px;
+    height: 93px;
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition-property: opacity;
+    transition-duration: 1s;
+    @include media(xs) {
+      width: 41px;
+      height: 41px;
+    }
+  }
+  &::after {
+    content: '';
+    background: rgba(102, 131, 194, 0.22);
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition-property: opacity;
+    transition-duration: 1s;
+  }
+  &.active {
+    &::before, &::after {
+      pointer-events: none;
+      opacity: 0;
+    }
+    .library-tile__poster {
+      pointer-events: none;
+      opacity: 0;
+    }
   }
 }
 
 .library-tile__poster {
   pointer-events: none;
   position: absolute;
+  z-index: 1;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 2;
   object-fit: cover;
+  transition-property: opacity;
+  transition-duration: 1s;
 }
 
 .library-tile__video {
   width: 100%;
   border: 1px solid rgba(102, 131, 194, 0.3);
-  border-radius: 20px;
   min-height: 455px;
   @include media(lg) {
     min-height: 372px;
-    border-radius: 10px;
   }
   @include media(xs) {
     min-height: auto;

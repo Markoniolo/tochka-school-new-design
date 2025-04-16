@@ -193,6 +193,7 @@
       margin-left: 0;
     }
     span {
+      font-weight: 500;
       @include media(xs) {
         display: none;
       }

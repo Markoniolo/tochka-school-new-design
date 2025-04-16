@@ -15,7 +15,23 @@
       .library-cap__decor.library-cap__decor_3
       .library-cap__decor.library-cap__decor_4
       h2.library-cap__title Библиотека 500+ уроков
-      .library-cap__text Уроки по темам, которые чаще всего вызывают трудности в школе
+      .library-cap__text
+        span.library-cap__static Уроки по
+        .library-cap__animate
+          .library-cap__animate-spaces ________
+          .library-cap__animate-string(data-text="темам, которые чаще всего вызывают трудности в школе") темам, которые чаще всего вызывают трудности в школе
+        .library-cap__animate
+          .library-cap__animate-spaces __________
+          .library-cap__animate-string(data-text="английскому, французкому и китайскому языку") английскому, французкому и китайскому языку
+        .library-cap__animate
+          .library-cap__animate-spaces ____________
+          .library-cap__animate-string(data-text="программированию, дизайну и копьютерной грамотности") программированию, дизайну и копьютерной грамотности
+        .library-cap__animate
+          .library-cap__animate-spaces ____________
+          .library-cap__animate-string(data-text="подготовке к экзаменам ОГЭ и ЕГЭ") подготовке к экзаменам ОГЭ и ЕГЭ
+        .library-cap__animate
+          .library-cap__animate-spaces ________
+          .library-cap__animate-string(data-text="олимиадной математике и шахматам") олимиадной математике и шахматам
       .library-cap__line
         .library-cap__filter.library-cap__filter_class
           .library-cap__filter-top(data-element='library-cap-filter-opener' data-default-text='Выберите класс' data-ftype='class_select')
@@ -27,7 +43,7 @@
                 label.library-cap__filter-item
                   input.library-cap__filter-input(type='radio' name='class' value=`subject-id-${index + 1}` data-element='library-cap-filter-input')
                   .library-cap__filter-view= `${item} класс`
-        .library-cap__filter.library-cap__filter_subject
+        .library-cap__filter.library-cap__filter_subject.disable
           .library-cap__filter-top(data-element='library-cap-filter-opener' data-default-text='Выберите предмет' data-ftype='class_subjects')
             .library-cap__filter-top-text Выберите предмет
           .library-cap__filter-wrap

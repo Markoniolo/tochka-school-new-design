@@ -3,10 +3,14 @@ const libraryCap = document.querySelector('.library-cap')
 if (libraryCap) libraryCapInit()
 
 function libraryCapInit () {
+  const libraryTile = document.querySelector('.library-tile')
+  const libraryWhy = document.querySelector('.library-why')
+  const libraryInformer = document.querySelector('.library-informer')
   const config = { attributes: true, childList: true, characterData: true, subtree: true }
   const openers = libraryCap.querySelectorAll("[data-element='library-cap-filter-opener']")
   const grades = libraryCap.querySelector("[data-ftype='class_select']")
   const subjects = libraryCap.querySelector("[data-ftype='class_subjects']")
+  const filterSubjectBox = libraryCap.querySelector(".library-cap__filter.library-cap__filter_subject")
 
   const observer = new MutationObserver(function() {
     const wrap = openers[1].nextElementSibling
@@ -57,18 +61,20 @@ function libraryCapInit () {
   if (reset) reset.addEventListener('click', resetFilters)
 
   function resetFilters () {
+    filterSubjectBox.classList.add('disable')
     for (let i = 0; i < openers.length; i++) {
       const wrap = openers[i].nextElementSibling
       const items = wrap.querySelectorAll("[data-element='library-cap-filter-input']")
       items.forEach((item) => {
         item.checked = false
       })
-      updateFilter(openers[i], wrap)
+      updateFilter(openers[i], wrap, true)
     }
     makeFiltration()
+    hideBlocks()
   }
 
-  function makeFiltration () {
+  async function makeFiltration () {
     const grades_wrap = grades.nextElementSibling
     const grades_items = grades_wrap.querySelectorAll(["input:checked"])
     let grades_result = ''
@@ -101,6 +107,7 @@ function libraryCapInit () {
       url.searchParams.set('gr', grade_first);
       history.replaceState(null, "", url.toString())
     }
+    initPosters()
     // }
   }
 
@@ -121,12 +128,15 @@ function libraryCapInit () {
   }
 
   function showBlocks () {
-    const libraryTile = document.querySelector('.library-tile')
     if (libraryTile) libraryTile.classList.remove('hide')
-    const libraryWhy = document.querySelector('.library-why')
     if (libraryWhy) libraryWhy.classList.remove('hide')
-    const libraryInformer = document.querySelector('.library-informer')
     if (libraryInformer) libraryInformer.classList.remove('hide')
+  }
+
+  function hideBlocks () {
+    if (libraryTile) libraryTile.classList.add('hide')
+    if (libraryWhy) libraryWhy.classList.add('hide')
+    if (libraryInformer) libraryInformer.classList.add('hide')
   }
 
   for (let i = 0; i < openers.length; i++) {
@@ -175,12 +185,14 @@ function libraryCapInit () {
     if (filter) filter.classList.remove('open')
   }
 
-  function updateFilter (opener, wrap) {
+  async function updateFilter (opener, wrap, noScroll) {
     if(opener.getAttribute('data-ftype') === 'class_select') {
-      makeFiltration()
+      await makeFiltration()
+      filterSubjectBox.classList.remove('disable')
+      updateFilter(openers[1], openers[1].nextElementSibling, true)
     } else {
       makeFiltration()
-      scrollToTile()
+      if (!noScroll) scrollToTile()
     }
     opener.innerHTML = opener.getAttribute('data-default-text')
     const items = wrap.querySelectorAll(["input:checked"])
@@ -202,5 +214,18 @@ function libraryCapInit () {
     closeFilter(opener)
   }
 
+  initPosters()
+
+  function initPosters () {
+    const videoBoxes = document.querySelectorAll('.library-tile__video-box')
+    for (let i = 0; i < videoBoxes.length; i++) {
+      videoBoxes[i].addEventListener('click', function () {
+        console.log(videoBoxes[i])
+        videoBoxes[i].classList.add('active')
+        const iframe = videoBoxes[i].querySelector('iframe')
+        iframe.src = iframe.src.replace('autoplay=0', 'autoplay=1')
+      })
+    }
+  }
 
 }
