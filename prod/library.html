@@ -119,6 +119,7 @@
           <div class="library-cap__decor library-cap__decor_4"></div>
           <h2 class="library-cap__title">Библиотека 500+ уроков</h2>
           <div class="library-cap__text">
+            <div class="library-cap__cursor"></div>
             <span class="library-cap__static">Уроки по</span>
             <div class="library-cap__animate">
               <div class="library-cap__animate-spaces">________</div>
@@ -143,6 +144,7 @@
           </div>
           <div class="library-cap__line">
             <div class="library-cap__filter library-cap__filter_class">
+              <div class="library-cap__filter-hint">Сначала выберите это</div>
               <div class="library-cap__filter-top" data-element="library-cap-filter-opener" data-default-text="Выберите класс" data-ftype="class_select">
                 <div class="library-cap__filter-top-text">Выберите класс</div>
               </div>
@@ -196,7 +198,8 @@
                 </div>
               </div>
             </div>
-            <div class="library-cap__filter library-cap__filter_subject disable">
+            <div class="library-cap__filter library-cap__filter_subject">
+              <div class="library-cap__filter-hint">А потом это :)</div>
               <div class="library-cap__filter-top" data-element="library-cap-filter-opener" data-default-text="Выберите предмет" data-ftype="class_subjects">
                 <div class="library-cap__filter-top-text">Выберите предмет</div>
               </div>
@@ -338,8 +341,12 @@
         <div class="library-tile__area">
           <div class="tile-loader"></div>
           <h2 class="library-tile__title title">Уроки 2 класса по математике</h2>
+          <div class="library-tile__tabs">
+            <button class="library-tile__tab active" data-index="0">Программа М.И. Моро</button>
+            <button class="library-tile__tab" data-index="1">Программа Л.Г. Петерсон</button>
+          </div>
           <div class="library-tile__list">
-            <div class="library-tile__item">
+            <div class="library-tile__item" data-index="0">
               <div class="library-tile__video-box">
                 <img class="library-tile__poster" src="assets/img/library-tile/poster.png" alt="">
                 <iframe class="library-tile__video" src="https://runtime.video.cloud.yandex.net/player/video/vplvg6ntnqpnd5jl4y5z?autoplay=0&amp;mute=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" frameborder="0" scrolling="no"></iframe>
@@ -361,7 +368,7 @@
                 </div>
               </div>
             </div>
-            <div class="library-tile__item">
+            <div class="library-tile__item" data-index="0">
               <div class="library-tile__video-box">
                 <img class="library-tile__poster" src="assets/img/library-tile/poster.png" alt="">
                 <iframe class="library-tile__video" src="https://runtime.video.cloud.yandex.net/player/video/vplvg6ntnqpnd5jl4y5z?autoplay=0&amp;mute=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" frameborder="0" scrolling="no"></iframe>
@@ -413,6 +420,23 @@
             <div class="library-informer__tag">Сэкономьте от 8 000 до 53 000 ₽</div>
             <div class="library-informer__tag">Займите место на обучении раньше остальных</div>
             <a class="library-informer__button btn-orange" href="#modal-order-new" data-fancybox data-options="{&quot;touch&quot;: false}">Записаться</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="library-consult">
+      <div class="library-consult__cont cont">
+        <div class="library-consult__area">
+          <div class="library-consult__title">Оставьте заявку на консультацию</div>
+          <div class="library-consult__text">Мы ответим на любые ваши вопросы и поможем подобрать занятия</div>
+          <picture class="library-consult__decor">
+            <source srcset="assets/img/library-consult/consult-decor-2_mob.svg" media="(max-width: 743px)">
+            <source srcset="assets/img/library-consult/consult-decor-2_tablet.svg" media="(max-width: 1439px)">
+            <img class="library-consult__decor-image" src="assets/img/library-consult/consult-decor-2.svg" alt="">
+          </picture>
+          <div class="library-consult__buttons">
+            <a class="library-consult__btn library-consult__btn_order btn-orange" href="#modal-order-new" data-fancybox data-options="{&quot;touch&quot;: false}">Оставить заявку</a>
+            <a class="library-consult__btn library-consult__btn_wp btn-blue" href="https://api.whatsapp.com/send/?phone=79182293194&amp;text&amp;type=phone_number&amp;app_absent=0" target="_blank">Связаться в WhatsApp</a>
           </div>
         </div>
       </div>

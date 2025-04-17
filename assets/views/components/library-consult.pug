@@ -1,0 +1,12 @@
+.library-consult
+  .library-consult__cont.cont
+    .library-consult__area
+      .library-consult__title Оставьте заявку на консультацию
+      .library-consult__text Мы ответим на любые ваши вопросы и поможем подобрать занятия
+      picture.library-consult__decor
+        source(srcset=staticImg(`library-consult/consult-decor-2_mob.svg`) media="(max-width: 743px)")
+        source(srcset=staticImg(`library-consult/consult-decor-2_tablet.svg`) media="(max-width: 1439px)")
+        img.library-consult__decor-image(src=staticImg(`library-consult/consult-decor-2.svg`) alt='')
+      .library-consult__buttons
+        a.library-consult__btn.library-consult__btn_order.btn-orange(href='#modal-order-new' data-fancybox data-options='{"touch": false}') Оставить заявку
+        a.library-consult__btn.library-consult__btn_wp.btn-blue(href='https://api.whatsapp.com/send/?phone=79182293194&text&type=phone_number&app_absent=0' target='_blank') Связаться в WhatsApp

@@ -924,7 +924,10 @@ const animateItems = document.querySelectorAll('.library-cap__animate')
 if (animateItems.length) animateItemsInit()
 
 function animateItemsInit () {
+  const speed = 75
   let itemsIndex = 0
+  const text = document.querySelector('.library-cap__text')
+  const cursor = text.querySelector('.library-cap__cursor')
 
   createString(animateItems[itemsIndex])
 
@@ -948,23 +951,50 @@ function animateItemsInit () {
 
     function animateSpan () {
       spans[index].classList.add('active')
+      calculateCoords(spans[index])
       index += 1
       if (index < length) {
-        setTimeout(animateSpan, 100)
+        setTimeout(animateSpan, speed)
       } else {
-        const oldActive = document.querySelector('.library-cap__animate.active')
-        setTimeout(function () {
-          oldActive.classList.remove('active')
-        }, 1000)
-        setTimeout(function () {
-          const oldString = oldActive.querySelector('.library-cap__animate-string')
-          oldString.innerHTML = oldString.getAttribute('data-text')
-          itemsIndex += 1
-          if (itemsIndex >= animateItems.length) itemsIndex = 0
-          createString(animateItems[itemsIndex])
-        }, 2000)
+        setTimeout(animateHide, 1000)
       }
     }
+
+    function animateHide () {
+      const spans = string.querySelectorAll('span')
+      let index = spans.length - 1
+      animateSpanHide()
+
+      function animateSpanHide () {
+        spans[index].classList.remove('active')
+        index -= 1
+        calculateCoords(spans[index])
+        if (index < 0) {
+          const oldActive = document.querySelector('.library-cap__animate.active')
+          setTimeout(function () {
+            oldActive.classList.remove('active')
+          }, 1000)
+          setTimeout(function () {
+            const oldString = oldActive.querySelector('.library-cap__animate-string')
+            oldString.innerHTML = oldString.getAttribute('data-text')
+            itemsIndex += 1
+            if (itemsIndex >= animateItems.length) itemsIndex = 0
+            createString(animateItems[itemsIndex])
+          }, 2000)
+        } else {
+          setTimeout(animateSpanHide, speed)
+        }
+      }
+    }
+  }
+
+  function calculateCoords (span) {
+    if (!span) return
+    const top = span.getBoundingClientRect().top - text.getBoundingClientRect().top
+    const left = span.getBoundingClientRect().left - text.getBoundingClientRect().left
+    console.log(top)
+    cursor.style.top = `${top}px`
+    cursor.style.left = `${left}px`
   }
 }
 
@@ -981,6 +1011,7 @@ function libraryCapInit () {
   const grades = libraryCap.querySelector("[data-ftype='class_select']")
   const subjects = libraryCap.querySelector("[data-ftype='class_subjects']")
   const filterSubjectBox = libraryCap.querySelector(".library-cap__filter.library-cap__filter_subject")
+  const filterClassBox = libraryCap.querySelector(".library-cap__filter.library-cap__filter_class")
   const tile = document.querySelector('.library-tile')
 
   const observer = new MutationObserver(function() {
@@ -991,8 +1022,11 @@ function libraryCapInit () {
     })
   })
 
+  initTabs()
+
   const observerPoster = new MutationObserver(function() {
     initPosters()
+    initTabs()
   })
 
   observerPoster.observe(tile, config)
@@ -1007,7 +1041,7 @@ function libraryCapInit () {
       const itemChecked = wrap.querySelector(["input:checked"])
       if (!itemChecked) {
         valid = false
-        openers[i].classList.add('error')
+        setError()
       }
     }
 
@@ -1134,18 +1168,22 @@ function libraryCapInit () {
 
   function openFilter (opener, e) {
     e.stopPropagation()
-    opener.classList.remove('error')
-    if (opener.classList.contains('active')) {
-      closeFilter(opener)
+    if (opener.parentElement.classList.contains('library-cap__filter_subject') && !filterClassBox.querySelector(["input:checked"])) {
+      setError()
     } else {
-      const oldOpen = libraryCap.querySelector(".library-cap__filter-top.active")
-      if (oldOpen) oldOpen.classList.remove('active')
-      opener.classList.add('active')
+      resetError()
+      if (opener.classList.contains('active')) {
+        closeFilter(opener)
+      } else {
+        const oldOpen = libraryCap.querySelector(".library-cap__filter-top.active")
+        if (oldOpen) oldOpen.classList.remove('active')
+        opener.classList.add('active')
 
-      const filter = opener.parentElement
-      const oldFilter = libraryCap.querySelector(".library-cap__filter.open")
-      if (oldFilter) oldFilter.classList.remove('open')
-      if (filter) filter.classList.add('open')
+        const filter = opener.parentElement
+        const oldFilter = libraryCap.querySelector(".library-cap__filter.open")
+        if (oldFilter) oldFilter.classList.remove('open')
+        if (filter) filter.classList.add('open')
+      }
     }
   }
 
@@ -1197,7 +1235,6 @@ function libraryCapInit () {
     const videoBoxes = document.querySelectorAll('.library-tile__video-box')
     for (let i = 0; i < videoBoxes.length; i++) {
       videoBoxes[i].addEventListener('click', function () {
-        console.log(videoBoxes[i])
         videoBoxes[i].classList.add('active')
         const iframe = videoBoxes[i].querySelector('iframe')
         iframe.src = iframe.src.replace('autoplay=0', 'autoplay=1')
@@ -1205,6 +1242,40 @@ function libraryCapInit () {
     }
   }
 
+  function setError () {
+    openers[0].parentElement.classList.add('library-cap__filter_error')
+    openers[1].parentElement.classList.add('library-cap__filter_error')
+  }
+
+  function resetError () {
+    openers[0].parentElement.classList.remove('library-cap__filter_error')
+    openers[1].parentElement.classList.remove('library-cap__filter_error')
+  }
+
+  function initTabs () {
+    const tabs = tile.querySelectorAll('.library-tile__tab')
+    if (!tabs.length) return
+
+    const items = tile.querySelectorAll('.library-tile__item')
+
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].addEventListener('click', tabFiltration)
+    }
+
+    function tabFiltration () {
+      const oldActive = document.querySelector('.library-tile__tab.active')
+      if (oldActive) oldActive.classList.remove('active')
+      this.classList.add('active')
+      for (let i = 0; i < items.length; i++) {
+        items[i].style.display = 'none'
+      }
+      const dataIndex = this.getAttribute('data-index')
+      const filteredItems = tile.querySelectorAll('[data-index="' + dataIndex + '"]')
+      for (let i = 0; i < filteredItems.length; i++) {
+        filteredItems[i].style.display = 'flex'
+      }
+    }
+  }
 }
 
 const modalOrderNewSelect = document.querySelector('.modal-order-new__select')

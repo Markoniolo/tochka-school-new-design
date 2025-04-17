@@ -16,6 +16,7 @@
       .library-cap__decor.library-cap__decor_4
       h2.library-cap__title Библиотека 500+ уроков
       .library-cap__text
+        .library-cap__cursor
         span.library-cap__static Уроки по
         .library-cap__animate
           .library-cap__animate-spaces ________
@@ -34,6 +35,7 @@
           .library-cap__animate-string(data-text="олимиадной математике и шахматам") олимиадной математике и шахматам
       .library-cap__line
         .library-cap__filter.library-cap__filter_class
+          .library-cap__filter-hint Сначала выберите это
           .library-cap__filter-top(data-element='library-cap-filter-opener' data-default-text='Выберите класс' data-ftype='class_select')
             .library-cap__filter-top-text Выберите класс
           .library-cap__filter-wrap
@@ -43,7 +45,8 @@
                 label.library-cap__filter-item
                   input.library-cap__filter-input(type='radio' name='class' value=`subject-id-${index + 1}` data-element='library-cap-filter-input')
                   .library-cap__filter-view= `${item} класс`
-        .library-cap__filter.library-cap__filter_subject.disable
+        .library-cap__filter.library-cap__filter_subject
+          .library-cap__filter-hint А потом это :)
           .library-cap__filter-top(data-element='library-cap-filter-opener' data-default-text='Выберите предмет' data-ftype='class_subjects')
             .library-cap__filter-top-text Выберите предмет
           .library-cap__filter-wrap

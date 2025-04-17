@@ -13,9 +13,12 @@
     .library-tile__area
       .tile-loader
       h2.library-tile__title.title Уроки 2 класса по математике
+      .library-tile__tabs
+        button.library-tile__tab.active(data-index="0") Программа М.И. Моро
+        button.library-tile__tab(data-index="1") Программа Л.Г. Петерсон
       .library-tile__list
         each item, index in libraryTileList
-          .library-tile__item
+          .library-tile__item(data-index="0")
             .library-tile__video-box
               img.library-tile__poster(src=staticImg('library-tile/poster.png') alt='')
               iframe.library-tile__video(src='https://runtime.video.cloud.yandex.net/player/video/vplvg6ntnqpnd5jl4y5z?autoplay=0&mute=0' allow='autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media' frameborder='0' scrolling='no')
