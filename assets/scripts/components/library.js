@@ -11,6 +11,7 @@ function libraryCapInit () {
   const grades = libraryCap.querySelector("[data-ftype='class_select']")
   const subjects = libraryCap.querySelector("[data-ftype='class_subjects']")
   const filterSubjectBox = libraryCap.querySelector(".library-cap__filter.library-cap__filter_subject")
+  const filterSubjectsList = libraryCap.querySelector(".library-cap__filter-list.class_subjects")
   const filterClassBox = libraryCap.querySelector(".library-cap__filter.library-cap__filter_class")
   const tile = document.querySelector('.library-tile')
 
@@ -203,7 +204,7 @@ function libraryCapInit () {
   async function updateFilter (opener, wrap, noScroll) {
     resetError()
     if(opener.getAttribute('data-ftype') === 'class_select') {
-      openers[1].nextElementSibling.innerHTML = ''
+      filterSubjectsList.innerHTML = "<div class='tile-loader-box'><div class='tile-loader'></div></div>";
       makeFiltration()
     } else {
       makeFiltration()

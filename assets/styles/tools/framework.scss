@@ -143,6 +143,18 @@
   }
 }
 
+.tile-loader-box {
+  height: 110px;
+  width: 100%;
+  position: relative;
+  .tile-loader {
+    top: 45px;
+    @include media(xs) {
+      top: 72px;
+    }
+  }
+}
+
 .tile-loader {
   position: absolute;
   z-index: 1;
