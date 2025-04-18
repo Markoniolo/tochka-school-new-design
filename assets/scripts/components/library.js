@@ -203,7 +203,7 @@ function libraryCapInit () {
   async function updateFilter (opener, wrap, noScroll) {
     resetError()
     if(opener.getAttribute('data-ftype') === 'class_select') {
-      opener.nextElementSibling = ''
+      openers[1].nextElementSibling.innerHTML = ''
       makeFiltration()
     } else {
       makeFiltration()
