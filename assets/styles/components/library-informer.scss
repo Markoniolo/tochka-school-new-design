@@ -1,8 +1,10 @@
 .library-informer {
   padding-bottom: 120px;
   background-color: #FFFFFF;
+  margin-bottom: 80px;
   @include media(lg) {
     padding-bottom: 60px;
+    margin-bottom: 40px;
   }
   &.hide {
     display: none;

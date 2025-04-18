@@ -62,7 +62,7 @@ function animateItemsInit () {
             createString(animateItems[itemsIndex])
           }, 100)
         } else {
-          setTimeout(animateSpanHide, speed)
+          setTimeout(animateSpanHide, speed*0.7)
         }
       }
     }

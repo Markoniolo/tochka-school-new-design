@@ -96,12 +96,14 @@
   font-size: 24px;
   line-height: 132%;
   @include media(lg) {
-    margin-bottom: 36px;
+    font-size: 16px;
+    max-width: 290px;
   }
   @include media(xs) {
     text-align: center;
-    margin-bottom: 26px;
     font-size: 16px;
+    max-width: 225px;
+    margin: 0 auto 26px;
   }
 }
 

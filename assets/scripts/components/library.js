@@ -206,6 +206,7 @@ function libraryCapInit () {
     if(opener.getAttribute('data-ftype') === 'class_select') {
       filterSubjectsList.innerHTML = "<div class='tile-loader-box'><div class='tile-loader'></div></div>";
       makeFiltration()
+      updateFilter(openers[1], openers[1].nextElementSibling, true)
     } else {
       makeFiltration()
       if (!noScroll) scrollToTile()
