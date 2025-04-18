@@ -1,0 +1,18 @@
+include ../_variables
+include ../components/_layout/_connect-style
+include ../components/_layout/_title
+
+doctype html
+html(lang='ru')
+  head
+    include ../components/_layout/_head
+    +title('Все курсы')
+  body
+    .sticky-header
+      include ../components/_layout/header
+    main.wrapper
+      block body
+        include ../components/all-courses
+    include ../components/modals/modal-order-new
+    include ../components/_layout/footer
+    include ../components/_layout/scripts

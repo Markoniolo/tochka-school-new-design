@@ -201,10 +201,10 @@ function libraryCapInit () {
   }
 
   async function updateFilter (opener, wrap, noScroll) {
+    resetError()
     if(opener.getAttribute('data-ftype') === 'class_select') {
-      await makeFiltration()
-      filterSubjectBox.classList.remove('disable')
-      updateFilter(openers[1], openers[1].nextElementSibling, true)
+      filterSubjectBox.innerHTML = ''
+      makeFiltration()
     } else {
       makeFiltration()
       if (!noScroll) scrollToTile()

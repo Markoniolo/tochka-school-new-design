@@ -3,7 +3,7 @@ const animateItems = document.querySelectorAll('.library-cap__animate')
 if (animateItems.length) animateItemsInit()
 
 function animateItemsInit () {
-  const speed = 75
+  const speed = 50
   let itemsIndex = 0
   const text = document.querySelector('.library-cap__text')
   const cursor = text.querySelector('.library-cap__cursor')
@@ -49,17 +49,18 @@ function animateItemsInit () {
         index -= 1
         calculateCoords(spans[index])
         if (index < 0) {
+          cursor.style.left = `${cursor.style.left.slice(0, -2) - 22}px`
           const oldActive = document.querySelector('.library-cap__animate.active')
           setTimeout(function () {
             oldActive.classList.remove('active')
-          }, 1000)
+          }, 50)
           setTimeout(function () {
             const oldString = oldActive.querySelector('.library-cap__animate-string')
             oldString.innerHTML = oldString.getAttribute('data-text')
             itemsIndex += 1
             if (itemsIndex >= animateItems.length) itemsIndex = 0
             createString(animateItems[itemsIndex])
-          }, 2000)
+          }, 100)
         } else {
           setTimeout(animateSpanHide, speed)
         }
@@ -71,7 +72,6 @@ function animateItemsInit () {
     if (!span) return
     const top = span.getBoundingClientRect().top - text.getBoundingClientRect().top
     const left = span.getBoundingClientRect().left - text.getBoundingClientRect().left
-    console.log(top)
     cursor.style.top = `${top}px`
     cursor.style.left = `${left}px`
   }
