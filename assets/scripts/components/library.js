@@ -129,11 +129,11 @@ function libraryCapInit () {
     const theElement = document.getElementById('library-tile')
     let offset
     if (window.innerWidth < 744) {
-      offset = 84 + bannerHeight
+      offset = 100 + bannerHeight
     } else if (window.innerWidth < 1200) {
-      offset = 102 + bannerHeight
-    } else {
       offset = 120 + bannerHeight
+    } else {
+      offset = 200 + bannerHeight
     }
     window.scrollTo(0, theElement.getBoundingClientRect().top + scrollY - offset)
   }
@@ -203,7 +203,7 @@ function libraryCapInit () {
   async function updateFilter (opener, wrap, noScroll) {
     resetError()
     if(opener.getAttribute('data-ftype') === 'class_select') {
-      filterSubjectBox.innerHTML = ''
+      opener.nextElementSibling = ''
       makeFiltration()
     } else {
       makeFiltration()
