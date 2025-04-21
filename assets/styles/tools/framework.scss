@@ -15,6 +15,9 @@
     transform: none;
     transition: none;
   }
+  &.hide {
+    display: none;
+  }
 }
 
 .cont {

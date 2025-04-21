@@ -10,7 +10,6 @@ function libraryCapInit () {
   const openers = libraryCap.querySelectorAll("[data-element='library-cap-filter-opener']")
   const grades = libraryCap.querySelector("[data-ftype='class_select']")
   const subjects = libraryCap.querySelector("[data-ftype='class_subjects']")
-  const filterSubjectBox = libraryCap.querySelector(".library-cap__filter.library-cap__filter_subject")
   const filterSubjectsList = libraryCap.querySelector(".library-cap__filter-list.class_subjects")
   const filterClassBox = libraryCap.querySelector(".library-cap__filter.library-cap__filter_class")
   const tile = document.querySelector('.library-tile')
@@ -73,7 +72,6 @@ function libraryCapInit () {
   if (reset) reset.addEventListener('click', resetFilters)
 
   function resetFilters () {
-    filterSubjectBox.classList.add('disable')
     for (let i = 0; i < openers.length; i++) {
       const wrap = openers[i].nextElementSibling
       const items = wrap.querySelectorAll("[data-element='library-cap-filter-input']")

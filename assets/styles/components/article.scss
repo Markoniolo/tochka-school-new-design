@@ -328,6 +328,11 @@ ol.article__list {
       width: 4px;
     }
   }
+  a {
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #6683c2;
+  }
 }
 
 .article__video-box {
