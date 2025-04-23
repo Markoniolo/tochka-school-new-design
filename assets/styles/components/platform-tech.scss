@@ -1,0 +1,114 @@
+.platform-tech {
+  margin-bottom: 80px;
+  @include media(lg) {
+    margin-bottom: 40px;
+  }
+}
+
+.platform-tech__cont {
+
+}
+
+.platform-tech__caption {
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 121%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 26px;
+    font-size: 25px;
+  }
+  @include media(xs) {
+    font-size: 23px;
+    line-height: 104%;
+  }
+}
+
+.platform-tech__text {
+  margin-bottom: 40px;
+  max-width: 586px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @include media(lg) {
+    margin-bottom: 30px;
+    font-size: 15px;
+    gap: 16px;
+  }
+}
+
+.platform-tech__list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  @include media(lg) {
+    gap: 30px;
+  }
+  @include media(xs) {
+    gap: 26px;
+  }
+}
+
+.platform-tech__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include media(xs) {
+    display: block;
+  }
+}
+
+.platform-tech__name {
+  margin-right: 40px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 121%;
+  color: #003c56;
+  @include media(lg) {
+    margin-right: 30px;
+    font-size: 23px;
+    line-height: 104%;
+  }
+  @include media(xs) {
+    margin-bottom: 16px;
+    margin-right: 0;
+  }
+}
+
+.platform-tech__picture {
+  max-width: 933px;
+  flex-shrink: 0;
+  width: 100%;
+  height: 324px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
+  background: #fff;
+  border-radius: 32px;
+  @include media(lg) {
+    max-width: 476px;
+    height: 165px;
+    border-radius: 10px;
+  }
+  @include media(xs) {
+    height: unset;
+    max-width: 100%;
+    position: relative;
+    padding-bottom: 35%;
+  }
+}
+
+.platform-tech__image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  @include media(xs) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

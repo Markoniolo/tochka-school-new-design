@@ -1,0 +1,14 @@
+section.platform-tech
+  .platform-tech__cont.cont
+    h2.platform-tech__caption Используемые технологии
+    .platform-tech__text
+      p При разработке платформы мы разработали и разрабатываем высокопроизводительные и масштабируемые решения.
+      p Мы используем следующий стек и языки программирования:
+    .platform-tech__list
+      each item, index in ['Backend','Frontend','Мобильное приложение']
+        .platform-tech__item
+          .platform-tech__name= item
+          picture.platform-tech__picture
+            source(srcset=staticImg(`platform-tech/platform-tech-${index+1}_mob.png`) media="(max-width: 743px)")
+            source(srcset=staticImg(`platform-tech/platform-tech-${index+1}_tablet.png`) media="(max-width: 1439px)")
+            img.platform-tech__image(src=staticImg(`platform-tech/platform-tech-${index+1}.png`) alt='')

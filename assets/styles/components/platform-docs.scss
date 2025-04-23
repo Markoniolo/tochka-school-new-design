@@ -1,0 +1,95 @@
+.platform-docs {
+  padding: 76px 0 100px;
+  @include media(lg) {
+    padding: 40px 0 60px;
+  }
+}
+
+.platform-docs__cont {
+
+}
+
+.platform-docs__caption {
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 121%;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 23px;
+    line-height: 104%;
+    margin-bottom: 26px;
+  }
+}
+
+.platform-docs__area {
+  display: flex;
+  align-items: center;
+  @include media(lg) {
+    flex-wrap: wrap;
+  }
+}
+
+.platform-docs__text {
+  margin-right: 47px;
+  font-size: 18px;
+  line-height: 23px;
+  max-width: 432px;
+  width: 100%;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+    margin-bottom: 26px;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.platform-docs__link {
+  position: relative;
+  padding-left: 71px;
+  &:first-of-type {
+    margin-right: 40px;
+    @include media(lg) {
+      width: 241px;
+    }
+    @include media(xs) {
+      margin-bottom: 25px;
+    }
+  }
+  &:last-of-type {
+    @include media(lg) {
+      width: 205px;
+    }
+  }
+  &::before {
+    content: '';
+    @include bg-icon('platform-docs/ic_pdf_file.svg');
+    width: 51px;
+    height: 58px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.platform-docs__name {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 18px;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 113%;
+    margin-bottom: 6px;
+  }
+}
+
+.platform-docs__note {
+  font-size: 16px;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #6683c2;
+  @include media(lg) {
+    font-size: 15px;
+  }
+}

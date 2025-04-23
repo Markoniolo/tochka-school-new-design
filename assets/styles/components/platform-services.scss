@@ -1,0 +1,135 @@
+.platform-services {
+  background: #f3f5fb;
+  padding: 74px 0 100px;
+  @include media(lg) {
+    padding: 36px 0 40px;
+  }
+}
+
+.platform-services__cont {
+
+}
+
+.platform-services__caption {
+  margin-bottom: 44px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 121%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 24px;
+    font-size: 23px;
+    line-height: 104%;
+  }
+}
+
+.platform-services__area {
+  margin-bottom: 74px;
+  border-radius: 10px;
+  background: #ebeef5;
+  max-width: 789px;
+  width: 100%;
+  padding: 36px 38px;
+  @include media(lg) {
+    max-width: 100%;
+    margin-bottom: 36px;
+    padding: 24px 19px;
+  }
+  @include media(xs) {
+    padding: 18px 14px;
+  }
+}
+
+.platform-services__headline {
+  margin-bottom: 20px;
+  font-size: 24px;
+  @include media(lg) {
+    margin-bottom: 18px;
+    font-size: 16px;
+  }
+}
+
+.platform-services__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  @include media(lg) {
+    gap: 16px;
+  }
+}
+
+.platform-services__item {
+  padding-left: 26px;
+  position: relative;
+  font-size: 16px;
+  line-height: 116%;
+  @include media(lg) {
+    padding-left: 22px;
+    font-size: 15px;
+    line-height: 120%;
+  }
+  &::before {
+    content: '';
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    @include bg-icon('icons/ic_point_orange.svg');
+  }
+}
+
+.platform-services__title {
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 121%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 24px;
+    font-size: 23px;
+    line-height: 104%;
+  }
+}
+
+.platform-services__box {
+  position: relative;
+  &::before {
+    content: '';
+    width: 529px;
+    height: 498px;
+    @include bg-icon('platform-services/platform-services-decor.svg');
+    top: -440px;
+    right: 0;
+    position: absolute;
+    @include media(lg) {
+      content: none;
+    }
+  }
+}
+
+.platform-services__inner {
+  position: relative;
+  z-index: 1;
+  border-radius: 10px;
+  background: #ebeef5;
+  padding: 36px 38px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  @include media(lg) {
+    gap: 10px;
+    padding: 24px 18px;
+  }
+  @include media(xs) {
+    padding: 18px 14px;
+  }
+}
+
+.platform-services__text {
+  font-size: 18px;
+  @include media(lg) {
+    font-size: 15px;
+  }
+}
