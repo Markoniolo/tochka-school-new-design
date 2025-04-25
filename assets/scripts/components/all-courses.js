@@ -23,11 +23,15 @@ function allCoursesInit () {
   const tags = allCourses.querySelector("[data-ftype='class_tags']")
   const tile = document.querySelector('.all-courses__tile')
 
+  moreBtnInit()
 
-  if (moreBtn) moreBtn.addEventListener('click', makeFiltration(moreBtn.getAttribute('data-v')))
+  function moreBtnInit () {
+    if (moreBtn) moreBtn.addEventListener('click', makeFiltration(moreBtn.getAttribute('data-v')))
+  }
 
   const observer = new MutationObserver(function() {
     togglePrice()
+    moreBtnInit()
   })
 
   observer.observe(tile, config)
@@ -324,7 +328,13 @@ function allCoursesInit () {
       new_title = new_h1 + 'в онлайн-школе «Точка Знаний»'
       new_description = new_h1 + 'в онлайн-школе «Точка Знаний». ✔️ Интересные и понятные онлайн-занятия с преподавателями. ✔️ Персональный тьютор. ✔️ Подготовка к ЕГЭ, ОГЭ и ВПР. ✔️ Учитесь в удобном темпе, все курсы доступны в записи!'
 
-
+      document.title = new_title
+      const meta= document.getElementsByTagName("meta")
+      for (let i= 0; i < meta.length; i++) {
+        if (meta[i].name.toLowerCase() === "description") {
+          meta[i].content = new_description
+        }
+      }
     }
 
     filterh1block.textContent = new_h1
