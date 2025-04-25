@@ -49,10 +49,10 @@
     {text: 'Приведём к результату через нескучные уроки с игровым подходом', mod: 'light-green'},
   ]
 
-mixin course-about(mod, title='Как проходит этот курс')
-  .course-about(class = mod ? mod : false)
+mixin course-about(mod, title='Как проходит этот курс', number)
+  .course-about(class = `${mod ? mod : false} ${number !== "0" ? "stage-block-hide" : ''}` data-stage-number=number)
     .course-about__cont.cont
-      h2.course-about__caption= title
+      h2.course-about__caption!= `${title} <span class="course-about__stages-tag">Ступень ${number}</span>`
       .course-about__area
         if mod !== 'no-video' && mod !== 'no-video-summer'
           .course-about__video-box(data-element='course-about-video-wrap')

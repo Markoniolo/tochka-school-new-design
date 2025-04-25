@@ -65,18 +65,48 @@
 }
 
 .cost__caption {
+  display: flex;
+  align-items: flex-start;
   margin-bottom: 50px;
   font-weight: 500;
   font-size: 45px;
   line-height: 97%;
   color: #003c56;
   @include media(lg) {
+    flex-direction: row;
     margin-bottom: 40px;
     font-size: 25px;
     line-height: 100%;
   }
   @include media(xs) {
     margin-bottom: 30px;
+    flex-direction: column;
+  }
+}
+
+.cost__stages-tag {
+  font-size: 14px;
+  line-height: 100%;
+  color: #fff;
+  border-radius: 33px;
+  min-width: 114px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  position: relative;
+  top: 10px;
+  background: #6683c2;
+  padding: 5px 10px;
+  @include media(lg) {
+    min-width: 126px;
+    top: -5px;
+  }
+  @include media(xs) {
+    min-width: 94px;
+    font-size: 13px;
+    margin: 20px 0 0;
   }
 }
 

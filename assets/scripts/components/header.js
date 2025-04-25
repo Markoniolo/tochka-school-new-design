@@ -5,8 +5,12 @@ if (header) headerInit()
 function headerInit () {
   const stickyHeader = document.querySelector('.sticky-header')
   const body = document.querySelector('body')
+  const headerStages = document.querySelector('.header__stages')
+  let lastScrollTop = 0
+  let scrollDown = true
 
   window.addEventListener('scroll', checkHeader, { passive: true })
+  window.addEventListener('scroll', checkScrollDirection, { passive: true })
   window.addEventListener('resize', checkHeader, { passive: true })
 
   checkHeader()
@@ -26,6 +30,21 @@ function headerInit () {
       header.classList.remove('thin')
     } else if (window.innerWidth < 1200) {
       header.classList.remove('thin')
+    }
+  }
+
+  function checkScrollDirection () {
+    const st = window.scrollY
+    if (st > lastScrollTop) {
+      scrollDown = true
+    } else if (st < lastScrollTop) {
+      scrollDown = false
+    }
+    lastScrollTop = st <= 0 ? 0 : st
+    if (scrollDown) {
+      if (headerStages) header.classList.add('stages-hide')
+    } else {
+      if (headerStages) header.classList.remove('stages-hide')
     }
   }
 

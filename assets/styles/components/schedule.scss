@@ -1,4 +1,6 @@
 .schedule {
+  position: relative;
+  z-index: 10;
   background: #FFFFFF;
   padding-bottom: 80px;
   @include media(lg) {
@@ -66,6 +68,9 @@
 }
 
 .schedule__title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   max-width: 360px;
   width: 100%;
   font-weight: 500;
@@ -73,9 +78,41 @@
   line-height: 99%;
   color: #003c56;
   @include media(lg) {
+    flex-direction: row;
+    max-width: 100%;
     margin-bottom: 30px;
     font-size: 25px;
     line-height: 100%;
+  }
+  @include media(xs) {
+    flex-direction: column;
+  }
+}
+
+.schedule__stages-tag {
+  font-size: 14px;
+  line-height: 100%;
+  color: #fff;
+  border-radius: 33px;
+  min-width: 114px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  background: #6683c2;
+  padding: 5px 10px;
+  @include media(lg) {
+    min-width: 126px;
+    margin-top: 0;
+    margin-left: 20px;
+    position: relative;
+    top: -5px;
+  }
+  @include media(xs) {
+    min-width: 94px;
+    font-size: 13px;
+    margin: 20px 0 0;
   }
 }
 

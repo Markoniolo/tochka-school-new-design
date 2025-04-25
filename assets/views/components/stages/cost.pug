@@ -1,0 +1,150 @@
+mixin cost (mod, number)
+  .cost(class = `${mod ? mod : false} ${number !== "0" ? "stage-block-hide" : ''}` id = mod !== 'shortest' ? 'pre-reg' : false data-btn-fixed-hide="true" data-stage-number=number)
+    .cost__cont.cont
+      if mod !== 'shortest'
+        h2.cost__caption
+          | Стоимость годового абонемента
+          span.cost__stages-tag!= `Ступень ${number}`
+      .cost__wrap(class= mod ? `cost__wrap_${mod}` : false)
+        if mod !== 'shortest'
+          if mod !== 'short' && mod !== 'offer' && mod !== 'offer-short'
+            .cost__area
+              .cost__box
+                .cost__name Пробная неделя
+                .cost__text Доступ к обучению на 7 дней
+                .cost__price
+                  .cost__price-current 290 ₽
+                  .cost__price-old 1 250 ₽
+              .cost__title Что включено
+              .cost__list
+                .cost__item 2 онлайн-урока в неделю
+                .cost__item Все занятия в записи
+                .cost__item Личный тьютор-педагог 5 дней в неделю
+                .cost__item Проверка домашних заданий к каждому уроку
+                .cost__item Входное тестирование
+                .cost__item.cost__item_minus Бесплатные занятия летом
+                .cost__item!= '<span>Бонус:</span> набор полезных материалов по воспитанию детей'
+              a.cost__button.btn-orange(href='#') Начать обучение
+          .cost__area
+            .cost__box.cost__box_blue
+              if mod === 'offer' || mod === 'offer-short'
+                .cost__tag Спецпредложение
+              .cost__name Занятия онлайн + в записи
+              .cost__text Рассрочка на 3 месяца без переплат
+              .cost__price
+                .cost__price-current(data-element="price-plan-current") 5 446 ₽
+                if mod === 'offer' || mod === 'offer-short'
+                  .cost__old-price(data-element="price-plan-old") 8 500 ₽
+                .cost__price-period / в месяц
+                .cost__discount Скидка 25%
+              .cost__full-price
+                span!= 'Полная оплата <b data-element="price-full-current">16 338 ₽</b>'
+                if mod === 'offer' || mod === 'offer-short'
+                  .cost__old-price(data-element="price-full-old") 32 338 ₽
+                  .cost__discount Скидка 25%
+            .cost__title Что включено
+            .cost__list
+              .cost__item 2 онлайн-урока в неделю с сентября май
+              .cost__item Все занятия в записи
+              .cost__item Личный тьютор-педагог 5 дней в неделю
+              .cost__item Проверка домашних заданий по каждому уроку
+              .cost__item Входное и ежемесячное тестирование
+              .cost__item Бесплатные занятия летом
+              .cost__item Набор полезных материалов для учёбы и развития ребёнка
+            if mod === 'offer'
+              .cost__additional
+                label.cost__label
+                  input.cost__checkbox(type='checkbox' name='additional_1' checked
+                    new-href='new-href-link'
+                    data-price-full-old-checkbox-off='31 338 ₽'
+                    data-price-full-old-checkbox-on='32 338 ₽'
+                    data-price-full-current-checkbox-off='15 338 ₽'
+                    data-price-full-current-checkbox-on='16 338 ₽'
+                    data-price-plan-old-checkbox-off='7 500 ₽'
+                    data-price-plan-old-checkbox-on='8 500 ₽'
+                    data-price-plan-current-checkbox-off='5 446 ₽'
+                    data-price-plan-current-checkbox-on='6 446 ₽'
+                  )
+                  .cost__checkbox-view
+                  .cost__list
+                    .cost__item Бесплатные занятия летом 2026
+                    .cost__item Занятия в сентябре 2026
+            a.cost__button.btn-orange(href='#') Начать обучение
+          .cost__area
+            .cost__box
+              if mod === 'offer' || mod === 'offer-short'
+                .cost__tag Спецпредложение
+              .cost__name Занятия в записи
+              .cost__text Рассрочка на 3 месяца без переплат
+              .cost__price
+                .cost__price-current(data-element="price-plan-current") 4 446 ₽
+                if mod === 'offer' || mod === 'offer-short'
+                  .cost__old-price(data-element="price-plan-old") 5 500 ₽
+                .cost__price-period / в месяц
+                .cost__discount Скидка 25%
+              .cost__full-price
+                span!= 'Полная оплата <b data-element="price-full-current">20 338 ₽</b>'
+                if mod === 'offer' || mod === 'offer-short'
+                  .cost__old-price(data-element="price-full-old") 42 338 ₽
+                  .cost__discount Скидка 25%
+            .cost__title Что включено
+            .cost__list
+              .cost__item.cost__item_minus 2 онлайн-урока в неделю с сентября май
+              .cost__item Все занятия в записи
+              .cost__item Личный тьютор-педагог 5 дней в неделю
+              .cost__item Проверка домашних заданий по каждому уроку
+              .cost__item Входное и ежемесячное тестирование
+              .cost__item Бесплатные занятия летом
+              .cost__item Набор полезных материалов для учёбы и развития ребёнка
+            if mod === 'offer'
+              .cost__additional
+                label.cost__label
+                  input.cost__checkbox(type='checkbox' name='additional_2' checked
+                    new-href='new-href-link'
+                    data-price-full-old-checkbox-off='41 338 ₽'
+                    data-price-full-old-checkbox-on='42 338 ₽'
+                    data-price-full-current-checkbox-off='19 338 ₽'
+                    data-price-full-current-checkbox-on='20 338 ₽'
+                    data-price-plan-old-checkbox-off='4 500 ₽'
+                    data-price-plan-old-checkbox-on='5 500 ₽'
+                    data-price-plan-current-checkbox-off='2 446 ₽'
+                    data-price-plan-current-checkbox-on='3 446 ₽'
+                  )
+                  .cost__checkbox-view
+                  .cost__list
+                    .cost__item Бесплатные занятия летом 2026
+                    .cost__item Занятия в сентябре 2026
+            a.cost__button.btn-orange(href='#') Начать обучение
+        if mod === 'offer' || mod === 'offer-short'
+          .cost__offer
+            .cost__offer-title До конца специального предложения осталось:
+            .offer-timer(date-end="2025-04-10T12:00:00")
+              each item in [{number: '6', note: 'дней'},{number: '15', note: 'часов'},{number: '58', note: 'минут'},{number: '19', note: 'секунд'}]
+                .offer-timer__box
+                  .offer-timer__number= item.number
+                  .offer-timer__note= item.note
+        if mod !== 'offer-short'
+          .info__area
+            .info__title Нужна консультация?
+            .info__text Задавайте любые вопросы, поможем подобрать занятия
+            picture.info__decor
+              source(srcset=staticImg(`info/info-decor-2_mob.svg`) media="(max-width: 743px)")
+              source(srcset=staticImg(`info/info-decor-2_tablet.svg`) media="(max-width: 1439px)")
+              img.info__decor-image(src=staticImg(`info/info-decor-2.svg`) alt='')
+            .info__buttons
+              a.info__btn.info__btn_order.btn-orange(href='#modal-order-new' data-fancybox data-options='{"touch": false}') Оставить заявку
+              a.info__btn.info__btn_wp.btn-blue(href='https://api.whatsapp.com/send/?phone=79182293194&text&type=phone_number&app_absent=0' target='_blank') Связаться в WhatsApp
+        .info__capital
+          .info__title Материнский капитал
+          .info__text
+            span Оплачивайте обучение материнским&nbsp;капиталом.
+            span Поможем со списком документов и&nbsp;остальными вопросами
+          picture.info__capital-decor
+            source(srcset=staticImg(`info/info-decor-1_mob.svg`) media="(max-width: 743px)")
+            source(srcset=staticImg(`info/info-decor-1_tablet.svg`) media="(max-width: 1439px)")
+            if mod === 'short' || mod === 'offer-short'
+              img.info__capital-decor-image(src=staticImg(`info/info-decor-short-1.svg`) alt='')
+            else
+              img.info__capital-decor-image(src=staticImg(`info/info-decor-1.svg`) alt='')
+          a.info__btn.info__btn_order.btn-orange(href='https://api.whatsapp.com/send/?phone=79182293194&text&type=phone_number&app_absent=0' target='_blank') Перейти к оформлению
+
