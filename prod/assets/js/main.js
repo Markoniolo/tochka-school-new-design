@@ -3,12 +3,18 @@ const allCourses = document.querySelector('.all-courses')
 if (allCourses) allCoursesInit()
 
 function allCoursesInit () {
-  const urlFilter = allCourses.getAttribute('data-item-h')
-  const h1Filter = allCourses.getAttribute('data-hname')
   const config = { attributes: false, childList: true, characterData: true, subtree: true }
 
   const stickyHeader = document.querySelector('.sticky-header')
   const body = document.querySelector('body')
+
+  const urlFilter = allCourses.getAttribute('data-item-h')
+  const h1Filter = allCourses.getAttribute('data-hname')
+  const metaMameFilter = allCourses.getAttribute('data-meta_name')
+  const metaDescriptionFilter = allCourses.getAttribute('data-meta_descr')
+
+
+
   const openers = allCourses.querySelectorAll("[data-element='all-courses-filter-opener']")
   const filterh1block = allCourses.querySelector(".all-courses_h1")
   const filterSubjectsList = allCourses.querySelector(".class_subjects")
@@ -24,6 +30,7 @@ function allCoursesInit () {
   const tile = document.querySelector('.all-courses__tile')
 
   moreBtnInit()
+
 
   function moreBtnInit () {
     if (moreBtn) moreBtn.addEventListener('click', makeFiltration(moreBtn.getAttribute('data-v')))
@@ -128,6 +135,7 @@ function allCoursesInit () {
       scrollToTile()
     }
   }
+
 
   for (let i = 0; i < openers.length; i++) {
     openers[i].addEventListener("click", (e)=> openFilter(openers[i], e))
@@ -277,6 +285,11 @@ function allCoursesInit () {
     if(promo_ != null && promo_ != '' && promo_ != undefined){
       promo_f = promo_;
     }
+    if(p_paginate > 1 && grade_item === '' && grade_h1_part === '' && subject_item === '' && subject_h1_part === ''){
+      grades_result = 'all'
+      subjects_result = 'all'
+      tags_result = ''
+    }
     var obData = {
       'grade': grades_result,
       'subject': subjects_result,
@@ -317,8 +330,8 @@ function allCoursesInit () {
     }
     history.replaceState(null, "", url.toString())
     let new_h1 = h1Filter
-    let new_title = ''
-    let new_description = ''
+    let new_title = metaMameFilter
+    let new_description = metaDescriptionFilter
     if (subject_h1_part !== "") {
       new_h1 = 'Курсы по '+ subject_h1_part
       if (grade_h1_part !== "") {
@@ -328,16 +341,18 @@ function allCoursesInit () {
       new_title = new_h1 + 'в онлайн-школе «Точка Знаний»'
       new_description = new_h1 + 'в онлайн-школе «Точка Знаний». ✔️ Интересные и понятные онлайн-занятия с преподавателями. ✔️ Персональный тьютор. ✔️ Подготовка к ЕГЭ, ОГЭ и ВПР. ✔️ Учитесь в удобном темпе, все курсы доступны в записи!'
 
-      document.title = new_title
-      const meta= document.getElementsByTagName("meta")
-      for (let i= 0; i < meta.length; i++) {
-        if (meta[i].name.toLowerCase() === "description") {
-          meta[i].content = new_description
-        }
-      }
+
     }
 
     filterh1block.textContent = new_h1
+
+    document.title = new_title
+    const meta= document.getElementsByTagName("meta")
+    for (let i= 0; i < meta.length; i++) {
+      if (meta[i].name.toLowerCase() === "description") {
+        meta[i].content = new_description
+      }
+    }
 
 
   }
@@ -1188,6 +1203,7 @@ function headerInit () {
   const headerStages = document.querySelector('.header__stages')
   let lastScrollTop = 0
   let scrollDown = true
+  const headerArea = header.querySelector('.header__area')
 
   window.addEventListener('scroll', checkHeader, { passive: true })
   window.addEventListener('scroll', checkScrollDirection, { passive: true })
@@ -1231,6 +1247,11 @@ function headerInit () {
   const menuBtn = document.querySelector('.header__nav-item_menu')
   const layer = document.querySelector('.header__layer')
 
+  const navCloseBtns = header.querySelectorAll('.nav__close')
+  for (let i = 0; i < navCloseBtns.length; i++) {
+    navCloseBtns[i].addEventListener('click', closeMenu)
+  }
+
   menuBtn.addEventListener('click', toggleMenu)
   layer.addEventListener('click', closeMenu)
 
@@ -1244,6 +1265,9 @@ function headerInit () {
     header.classList.remove('open')
     stickyHeader.classList.remove('open')
     body.classList.remove('no-scroll')
+    headerArea.classList.remove('hide')
+    const activeArea = document.querySelector('.nav__area.active-mob')
+    if (activeArea) activeArea.classList.remove('active-mob')
   }
 }
 
@@ -1666,6 +1690,45 @@ function modalOrderNewSelectInit () {
       span.style.color = '#000'
     }
   })
+}
+
+const nav = document.querySelector('.header .nav')
+
+if (nav) navInit()
+
+function navInit () {
+  const buttons = nav.querySelectorAll('button.nav__box-link')
+  const headerArea = document.querySelector('.header__area')
+  const navBackButtons = nav.querySelectorAll('.nav__back')
+
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', toggleArea)
+    buttons[i].addEventListener('mouseenter', toggleArea)
+  }
+
+  for (let i = 0; i < navBackButtons.length; i++) {
+    navBackButtons[i].addEventListener('click', backArea)
+  }
+
+  function backArea () {
+    const activeArea = nav.querySelector('.nav__area.active-mob')
+    if (activeArea) activeArea.classList.remove('active-mob')
+    headerArea.classList.remove('hide')
+  }
+
+  function toggleArea () {
+    const id = this.getAttribute('data-nav-id')
+    const oldArea = nav.querySelector('.nav__area.active')
+    if (oldArea) oldArea.classList.remove('active')
+    if (oldArea) oldArea.classList.remove('active-mob')
+    const oldButton = nav.querySelector('button.nav__box-link.active')
+    if (oldButton) oldButton.classList.remove('active')
+    const area = nav.querySelector("[data-nav-area='" + id + "']")
+    if (area) area.classList.add('active')
+    if (area) area.classList.add('active-mob')
+    headerArea.classList.add('hide')
+    this.classList.add('active')
+  }
 }
 
 const offerTimers = document.querySelectorAll('.offer-timer')
