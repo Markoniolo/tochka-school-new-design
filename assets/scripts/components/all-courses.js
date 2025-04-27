@@ -3,12 +3,18 @@ const allCourses = document.querySelector('.all-courses')
 if (allCourses) allCoursesInit()
 
 function allCoursesInit () {
-  const urlFilter = allCourses.getAttribute('data-item-h')
-  const h1Filter = allCourses.getAttribute('data-hname')
   const config = { attributes: false, childList: true, characterData: true, subtree: true }
 
   const stickyHeader = document.querySelector('.sticky-header')
   const body = document.querySelector('body')
+
+  const urlFilter = allCourses.getAttribute('data-item-h')
+  const h1Filter = allCourses.getAttribute('data-hname')
+  const metaMameFilter = allCourses.getAttribute('data-meta_name')
+  const metaDescriptionFilter = allCourses.getAttribute('data-meta_descr')
+
+
+
   const openers = allCourses.querySelectorAll("[data-element='all-courses-filter-opener']")
   const filterh1block = allCourses.querySelector(".all-courses_h1")
   const filterSubjectsList = allCourses.querySelector(".class_subjects")
@@ -24,6 +30,7 @@ function allCoursesInit () {
   const tile = document.querySelector('.all-courses__tile')
 
   moreBtnInit()
+
 
   function moreBtnInit () {
     if (moreBtn) moreBtn.addEventListener('click', makeFiltration(moreBtn.getAttribute('data-v')))
@@ -128,6 +135,7 @@ function allCoursesInit () {
       scrollToTile()
     }
   }
+
 
   for (let i = 0; i < openers.length; i++) {
     openers[i].addEventListener("click", (e)=> openFilter(openers[i], e))
@@ -277,6 +285,11 @@ function allCoursesInit () {
     if(promo_ != null && promo_ != '' && promo_ != undefined){
       promo_f = promo_;
     }
+    if(p_paginate > 1 && grade_item === '' && grade_h1_part === '' && subject_item === '' && subject_h1_part === ''){
+      grades_result = 'all'
+      subjects_result = 'all'
+      tags_result = ''
+    }
     var obData = {
       'grade': grades_result,
       'subject': subjects_result,
@@ -317,8 +330,8 @@ function allCoursesInit () {
     }
     history.replaceState(null, "", url.toString())
     let new_h1 = h1Filter
-    let new_title = ''
-    let new_description = ''
+    let new_title = metaMameFilter
+    let new_description = metaDescriptionFilter
     if (subject_h1_part !== "") {
       new_h1 = 'Курсы по '+ subject_h1_part
       if (grade_h1_part !== "") {
@@ -328,16 +341,18 @@ function allCoursesInit () {
       new_title = new_h1 + 'в онлайн-школе «Точка Знаний»'
       new_description = new_h1 + 'в онлайн-школе «Точка Знаний». ✔️ Интересные и понятные онлайн-занятия с преподавателями. ✔️ Персональный тьютор. ✔️ Подготовка к ЕГЭ, ОГЭ и ВПР. ✔️ Учитесь в удобном темпе, все курсы доступны в записи!'
 
-      document.title = new_title
-      const meta= document.getElementsByTagName("meta")
-      for (let i= 0; i < meta.length; i++) {
-        if (meta[i].name.toLowerCase() === "description") {
-          meta[i].content = new_description
-        }
-      }
+
     }
 
     filterh1block.textContent = new_h1
+
+    document.title = new_title
+    const meta= document.getElementsByTagName("meta")
+    for (let i= 0; i < meta.length; i++) {
+      if (meta[i].name.toLowerCase() === "description") {
+        meta[i].content = new_description
+      }
+    }
 
 
   }

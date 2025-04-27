@@ -1,6 +1,7 @@
 .btn-blue {
   display: flex;
   align-items: center;
+  justify-content: center;
   border-radius: 37px;
   padding: 9px 35px 11px;
   background-color: #6683c2;
@@ -85,7 +86,7 @@
       content: '';
       margin-left: 10px;
       @include bg-icon('icons/ic_arrow_btn_white.svg');
-      width: 13px;
+      width: 14px;
       height: 11px;
       flex-shrink: 0;
     }

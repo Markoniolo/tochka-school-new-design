@@ -8,6 +8,7 @@ function headerInit () {
   const headerStages = document.querySelector('.header__stages')
   let lastScrollTop = 0
   let scrollDown = true
+  const headerArea = header.querySelector('.header__area')
 
   window.addEventListener('scroll', checkHeader, { passive: true })
   window.addEventListener('scroll', checkScrollDirection, { passive: true })
@@ -51,6 +52,11 @@ function headerInit () {
   const menuBtn = document.querySelector('.header__nav-item_menu')
   const layer = document.querySelector('.header__layer')
 
+  const navCloseBtns = header.querySelectorAll('.nav__close')
+  for (let i = 0; i < navCloseBtns.length; i++) {
+    navCloseBtns[i].addEventListener('click', closeMenu)
+  }
+
   menuBtn.addEventListener('click', toggleMenu)
   layer.addEventListener('click', closeMenu)
 
@@ -64,5 +70,8 @@ function headerInit () {
     header.classList.remove('open')
     stickyHeader.classList.remove('open')
     body.classList.remove('no-scroll')
+    headerArea.classList.remove('hide')
+    const activeArea = document.querySelector('.nav__area.active-mob')
+    if (activeArea) activeArea.classList.remove('active-mob')
   }
 }
