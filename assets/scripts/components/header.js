@@ -24,14 +24,6 @@ function headerInit () {
       header.classList.remove('header_white')
       stickyHeader.classList.remove('white')
     }
-
-    if (window.scrollY > 200 && window.innerWidth >= 1200) {
-      header.classList.add('thin')
-    } else if (window.scrollY < 100 && window.innerWidth >= 1200) {
-      header.classList.remove('thin')
-    } else if (window.innerWidth < 1200) {
-      header.classList.remove('thin')
-    }
   }
 
   function checkScrollDirection () {
@@ -44,8 +36,10 @@ function headerInit () {
     lastScrollTop = st <= 0 ? 0 : st
     if (scrollDown) {
       if (headerStages) header.classList.add('stages-hide')
+      header.classList.add('thin')
     } else {
       if (headerStages) header.classList.remove('stages-hide')
+      header.classList.remove('thin')
     }
   }
 

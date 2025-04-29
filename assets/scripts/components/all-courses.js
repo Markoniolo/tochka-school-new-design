@@ -10,7 +10,7 @@ function allCoursesInit () {
 
   const urlFilter = allCourses.getAttribute('data-item-h')
   const h1Filter = allCourses.getAttribute('data-hname')
-  const metaMameFilter = allCourses.getAttribute('data-meta_name')
+  const metaNameFilter = allCourses.getAttribute('data-meta_name')
   const metaDescriptionFilter = allCourses.getAttribute('data-meta_descr')
 
 
@@ -33,7 +33,7 @@ function allCoursesInit () {
 
 
   function moreBtnInit () {
-    if (moreBtn) moreBtn.addEventListener('click', makeFiltration(moreBtn.getAttribute('data-v')))
+    if (moreBtn) moreBtn.addEventListener('click', () => makeFiltration(moreBtn.getAttribute('data-v')))
   }
 
   const observer = new MutationObserver(function() {
@@ -48,10 +48,12 @@ function allCoursesInit () {
   function togglePrice () {
     const items = tile.querySelectorAll(".all-courses__item")
     items.forEach((item) => {
-      const toggle = item.querySelector('.all-courses__toggle-checkbox')
-      if (!toggle) return
+      const toggle = item.querySelectorAll('.all-courses__radio-input')
+      if (!toggle.length) return
       const boxes = item.querySelectorAll('.all-courses__box')
-      toggle.addEventListener('change', toggleBoxes)
+      for (let i = 0; i < toggle.length; i++) {
+        toggle[i].addEventListener('change', toggleBoxes)
+      }
 
       function toggleBoxes () {
         for (let i = 0; i < boxes.length; i++) {
@@ -330,7 +332,7 @@ function allCoursesInit () {
     }
     history.replaceState(null, "", url.toString())
     let new_h1 = h1Filter
-    let new_title = metaMameFilter
+    let new_title = metaNameFilter
     let new_description = metaDescriptionFilter
     if (subject_h1_part !== "") {
       new_h1 = 'Курсы по '+ subject_h1_part

@@ -8,7 +8,7 @@
     right: 10px;
   }
   &.active {
-    .promo__area {
+    .promo__hint {
       pointer-events: all;
       opacity: 1;
     }
@@ -139,6 +139,10 @@
   top: -138px;
   left: -316px;
   width: 335px;
+  opacity: 0;
+  pointer-events: none;
+  transition-duration: $transition-duration;
+  transition-property: opacity;
   @include media(lg) {
     width: 300px;
     top: -126px;
@@ -152,10 +156,6 @@
   background: #f37e60;
   border-radius: 10px;
   padding: 16px 20px 20px;
-  opacity: 0;
-  pointer-events: none;
-  transition-duration: $transition-duration;
-  transition-property: opacity;
   @include media(lg) {
     padding: 12px 15px 15px;
   }

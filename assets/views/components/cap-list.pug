@@ -1,0 +1,28 @@
+.cap-list 
+  each item, i in [{title: 'Дошкольники', tags: ['Подготовка к школе'],}, {title: 'Начальная школа', tags: ['1-4 класс'],}, {title: 'Средняя школа', tags: ['5-8 класс'],}, {title: 'Старшая школа', tags: ['9-11 класс','ОГЭ и ЕГЭ'],}]
+    a.cap-list__item(href="#")
+      .cap-list__title= item.title
+      .cap-list__tags
+        each tag, index in item.tags
+          .cap-list__tag(class=index === 1 ? 'desc' : false)= tag
+      .cap-list__decor(class=`cap-list__decor_${i+1}`)
+      button.cap-list__button.btn-orange
+        span Выбрать
+  a.cap-list__item.cap-list__item_wide.cap-list__item_summer(href="#")
+    .cap-list__title!= 'Летние <br> курсы'
+    .cap-list__tags
+      each tag, index in ['Школьные предметы 1-11 класс','Семейное обучение 1-8 класс','ОГЭ и ЕГЭ','Развивающие курсы']
+        .cap-list__tag= tag
+      .cap-list__tag.mob Все курсы
+    .cap-list__decor.cap-list__decor_5
+    button.cap-list__button.btn-orange
+      span Выбрать
+  a.cap-list__item.cap-list__item_wide.cap-list__item_family(href="#")
+    .cap-list__title!= 'Семейное <br> обучение'
+    .cap-list__tags
+      each tag, index in ['С 1 по 11 класс','Бесплатное прикрепление к школе','Аттестация онлайн']
+        .cap-list__tag= tag
+      .cap-list__tag.mob 1-11 класс
+    .cap-list__decor.cap-list__decor_6
+    button.cap-list__button.btn-orange
+      span Выбрать

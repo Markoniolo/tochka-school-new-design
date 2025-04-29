@@ -37,8 +37,8 @@
     flex-wrap: nowrap;
   }
   @include media(xs) {
-    margin: 0 -16px;
-    width: calc(100% + 32px);
+    margin: 0 -8px;
+    width: calc(100% + 16px);
   }
 }
 
@@ -62,8 +62,8 @@
     cursor: pointer;
   }
   @include media(xs) {
-    width: 43px;
-    height: 333px;
+    width: 36px;
+    height: 369px;
   }
   &::after {
     display: none;
@@ -251,6 +251,9 @@
   @include media(lg) {
     border-radius: 8px;
     padding: 10px 15px 15px;
+  }
+  @include media(xs) {
+    padding: 10px 9px 15px;
   }
 }
 
