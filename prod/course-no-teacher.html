@@ -26,65 +26,420 @@
   <meta name="twitter:title" content="Точка знаний">
   <meta name="twitter:description" content="Занятия для детей с 1 по 11 класс">
   <meta name="twitter:image" content="https://tochka-school.ru/themes/school-point/assets/img/cover1.png">
-  <title>Курс спецпредложение</title>
-  <meta property="og:title" content="Курс спецпредложение" />
+  <title>Курс</title>
+  <meta property="og:title" content="Курс" />
 </head>
 
 <body>
   <div class="sticky-header">
-    <div class="trial-family-header">
-      <div class="trial-family-header__cont cont">
-        <div class="trial-family-header__area">
-          <div class="trial-family-header__logo">
-            <img class="trial-family-header__logo-image" src="assets/img/logo.svg" alt="">
+    <!--include ../predzaps-top-->
+    <header class="header short" data-element="header">
+      <div class="header__cont cont">
+        <div class="header__layer"></div>
+        <div class="header__area">
+          <div class="header__logo">
+            <img class="header__logo-image" src="assets/img/logo.svg" alt="">
           </div>
-          <a class="trial-family-header__button" href="#trial-family-start" data-role="scroll-to-anchor">
-            <span>Консультация</span>
+          <div class="header__nav">
+            <button class="header__nav-item header__nav-item_menu">
+              <span>Меню</span>
+            </button>
+            <div class="header__nav-item active">Летние курсы</div>
+            <a class="header__nav-item" href="#">Блог</a>
+            <a class="header__nav-item btn-orange btn-orange_arrow" href="#modal-order-new" data-fancybox data-options="{&quot;touch&quot;: false}">Подобрать занятия</a>
+          </div>
+          <a class="header__login btn-blue" href="#">
+            <span>Войти</span>
           </a>
         </div>
+        <div class="header__bottom">
+          <div class="header__bottom-list">
+            <a class="header__bottom-link" href="#">Математика</a>
+            <a class="header__bottom-link" href="#">Семейное обучение</a>
+            <a class="header__bottom-link" href="#">Летние курсы</a>
+            <a class="header__bottom-link" href="#">ЕГЭ</a>
+            <a class="header__bottom-link" href="#">ОГЭ</a>
+            <a class="header__bottom-link" href="#">IT-курсы</a>
+            <a class="header__bottom-link" href="#">Иностранные языки</a>
+            <a class="header__bottom-link" href="#">Развивающие курсы</a>
+          </div>
+        </div>
+        <div class="nav">
+          <div class="nav__wrap">
+            <div class="nav__left">
+              <div class="nav__box">
+                <a class="nav__box-link nav__box-link_mob" href="#">Дошкольники</a>
+                <button class="nav__box-link nav__box-link_desc active" data-nav-id="0">Дошкольники</button>
+                <button class="nav__box-link" data-nav-id="1">Начальная школа</button>
+                <button class="nav__box-link" data-nav-id="2">Средняя школа</button>
+                <button class="nav__box-link" data-nav-id="3">Старшая школа</button>
+              </div>
+              <div class="nav__box">
+                <button class="nav__box-link" data-nav-id="4">Подготовка к ЕГЭ</button>
+                <button class="nav__box-link" data-nav-id="5">Подготовка к ОГЭ</button>
+              </div>
+              <div class="nav__box">
+                <a class="nav__box-link nav__box-link_mob" href="#">Летние курсы</a>
+                <button class="nav__box-link nav__box-link_desc" data-nav-id="6">Летние курсы</button>
+                <button class="nav__box-link" data-nav-id="7">Семейное обучение</button>
+              </div>
+              <div class="nav__box">
+                <button class="nav__box-link" data-nav-id="8">Программирование</button>
+                <button class="nav__box-link" data-nav-id="9">Иностранные языки</button>
+                <button class="nav__box-link" data-nav-id="10">Развивающие курсы</button>
+                <a class="nav__box-link nav__box-link_mob" href="#">Курсы для учителей</a>
+                <button class="nav__box-link nav__box-link_desc" data-nav-id="11">Курсы для учителей</button>
+              </div>
+              <div class="nav__close btn-blue">Закрыть меню</div>
+              <div class="nav__contacts nav__contacts_mob">
+                <a class="nav__phone" href="tel:+78612176477">+7 (861) 217-64-77</a>
+                <a class="nav__email" href="mailto:support@tochka-school.ru">support@tochka-school.ru</a>
+                <a class="nav__wp" href="https://api.whatsapp.com/send/?phone=79182293194&amp;text&amp;type=phone_number&amp;app_absent=0" target="_blank">Написать в WhatsApp</a>
+              </div>
+            </div>
+            <div class="nav__right">
+              <div class="nav__area active nav__area_0" data-nav-area="0">
+                <button class="nav__back"></button>
+                <div class="nav__title">Дошкольники</div>
+                <a class="nav__button btn-orange btn-orange_arrow" href="#">Перейти</a>
+              </div>
+              <div class="nav__area nav__area_1" data-nav-area="1">
+                <button class="nav__back"></button>
+                <div class="nav__title">Занятия для 1-4 классов</div>
+                <div class="nav__menu">
+                  <div class="nav__menu-box">
+                    <a class="nav__menu-tag" href="#">Школьные предметы</a>
+                    <div class="nav__menu-list">
+                      <a class="nav__menu-link" href="#">Математика</a>
+                      <a class="nav__menu-link" href="#">Русский язык</a>
+                      <a class="nav__menu-link" href="#">Окружающий мир</a>
+                      <a class="nav__menu-link" href="#">Литературное чтение</a>
+                      <a class="nav__menu-link" href="#">Музыка</a>
+                      <a class="nav__menu-link" href="#">Физическая культура</a>
+                      <a class="nav__menu-link" href="#">ИЗО и технология</a>
+                    </div>
+                  </div>
+                  <div class="nav__menu-box">
+                    <a class="nav__menu-tag" href="#">Семейное обучение</a>
+                    <div class="nav__menu-list">
+                      <a class="nav__menu-link" href="#">1 класс</a>
+                      <a class="nav__menu-link" href="#">2 класс</a>
+                      <a class="nav__menu-link" href="#">3 класс</a>
+                      <a class="nav__menu-link" href="#">4 класс</a>
+                    </div>
+                  </div>
+                  <div class="nav__menu-box">
+                    <a class="nav__menu-tag" href="#">Программирование</a>
+                    <div class="nav__menu-list">
+                      <a class="nav__menu-link" href="#">Компьютерная грамотность</a>
+                      <a class="nav__menu-link" href="#">Программирование в Minecraft</a>
+                      <a class="nav__menu-link" href="#">Программирование в Scratch</a>
+                      <a class="nav__menu-link" href="#">Курс по разработке игр в Roblox</a>
+                    </div>
+                  </div>
+                  <div class="nav__menu-box">
+                    <a class="nav__menu-tag" href="#">Развивающие курсы</a>
+                    <div class="nav__menu-list">
+                      <a class="nav__menu-link" href="#">Олимпиадная математика</a>
+                      <a class="nav__menu-link" href="#">Ораторское мастерство</a>
+                      <a class="nav__menu-link" href="#">Финансовая грамотность</a>
+                      <a class="nav__menu-link" href="#">Эмоциональный интеллект</a>
+                      <a class="nav__menu-link" href="#">Шахматы</a>
+                      <a class="nav__menu-link" href="#">Блогинг</a>
+                      <a class="nav__menu-link" href="#">Олипиадный русский язык</a>
+                    </div>
+                  </div>
+                  <div class="nav__menu-box">
+                    <a class="nav__menu-tag" href="#">Иностранные языки</a>
+                    <div class="nav__menu-list">
+                      <a class="nav__menu-link" href="#">Английский язык</a>
+                      <a class="nav__menu-link" href="#">Китайский язык</a>
+                      <a class="nav__menu-link" href="#">Французский язык</a>
+                      <a class="nav__menu-link" href="#">Испанский язык</a>
+                    </div>
+                  </div>
+                  <div class="nav__close btn-blue">Закрыть меню</div>
+                </div>
+              </div>
+              <div class="nav__area nav__area_2" data-nav-area="2">
+                <button class="nav__back"></button>
+                <div class="nav__title">Занятия для 5-8 классов</div>
+                <div class="nav__menu">
+                  <div class="nav__menu-box">
+                    <a class="nav__menu-tag" href="#">Школьные предметы</a>
+                    <div class="nav__menu-list">
+                      <a class="nav__menu-link" href="#">Математика</a>
+                      <a class="nav__menu-link" href="#">Русский язык</a>
+                      <a class="nav__menu-link" href="#">Литература</a>
+                      <a class="nav__menu-link" href="#">Биология</a>
+                      <a class="nav__menu-link" href="#">История</a>
+                      <a class="nav__menu-link" href="#">География</a>
+                      <a class="nav__menu-link" href="#">Музыка</a>
+                      <a class="nav__menu-link" href="#">Физическая культура</a>
+                      <a class="nav__menu-link" href="#">ИЗО и технология</a>
+                      <a class="nav__menu-link" href="#">Обществознание</a>
+                      <a class="nav__menu-link" href="#">Физика</a>
+                      <a class="nav__menu-link" href="#">Химия</a>
+                      <a class="nav__menu-link" href="#">Информатика</a>
+                    </div>
+                  </div>
+                  <div class="nav__menu-box">
+                    <a class="nav__menu-tag" href="#">Программирование</a>
+                    <div class="nav__menu-list">
+                      <a class="nav__menu-link" href="#">Программирование на Python</a>
+                      <a class="nav__menu-link" href="#">Создание сайтов</a>
+                      <a class="nav__menu-link" href="#">Компьютерная грамотность</a>
+                      <a class="nav__menu-link" href="#">Программирование в Minecraft</a>
+                      <a class="nav__menu-link" href="#">Программирование в Scratch</a>
+                      <a class="nav__menu-link" href="#">Курс по разработке игр в Roblox</a>
+                    </div>
+                  </div>
+                  <div class="nav__menu-box">
+                    <a class="nav__menu-tag" href="#">Иностранные языки</a>
+                    <div class="nav__menu-list">
+                      <a class="nav__menu-link" href="#">Английский язык</a>
+                      <a class="nav__menu-link" href="#">Китайский язык</a>
+                      <a class="nav__menu-link" href="#">Французский язык</a>
+                      <a class="nav__menu-link" href="#">Испанский язык</a>
+                    </div>
+                  </div>
+                  <div class="nav__menu-box">
+                    <a class="nav__menu-tag" href="#">Развивающие курсы</a>
+                    <div class="nav__menu-list">
+                      <a class="nav__menu-link" href="#">Ораторское мастерство</a>
+                      <a class="nav__menu-link" href="#">Финансовая грамотность</a>
+                      <a class="nav__menu-link" href="#">Эмоциональный интеллект</a>
+                      <a class="nav__menu-link" href="#">Шахматы</a>
+                      <a class="nav__menu-link" href="#">Блогинг</a>
+                      <a class="nav__menu-link" href="#">Олипиадный русский язык</a>
+                      <a class="nav__menu-link" href="#">Олимпиадная математика</a>
+                    </div>
+                  </div>
+                  <div class="nav__close btn-blue">Закрыть меню</div>
+                </div>
+              </div>
+              <div class="nav__area nav__area_3" data-nav-area="3">
+                <button class="nav__back"></button>
+                <div class="nav__title">Занятия для 9-11 классов</div>
+                <div class="nav__menu">
+                  <div class="nav__menu-box">
+                    <a class="nav__menu-tag" href="#">Школьные предметы</a>
+                    <div class="nav__menu-list">
+                      <a class="nav__menu-link" href="#">Математика</a>
+                      <a class="nav__menu-link" href="#">Русский язык</a>
+                      <a class="nav__menu-link" href="#">Литература</a>
+                      <a class="nav__menu-link" href="#">Биология</a>
+                      <a class="nav__menu-link" href="#">История</a>
+                      <a class="nav__menu-link" href="#">География</a>
+                      <a class="nav__menu-link" href="#">Музыка</a>
+                      <a class="nav__menu-link" href="#">Физическая культура</a>
+                      <a class="nav__menu-link" href="#">Технология</a>
+                      <a class="nav__menu-link" href="#">Обществознание</a>
+                      <a class="nav__menu-link" href="#">Физика</a>
+                      <a class="nav__menu-link" href="#">Химия</a>
+                      <a class="nav__menu-link" href="#">Информатика</a>
+                    </div>
+                  </div>
+                  <div class="nav__menu-box">
+                    <a class="nav__menu-tag" href="#">Программирование</a>
+                    <div class="nav__menu-list">
+                      <a class="nav__menu-link" href="#">Программирование на Python</a>
+                      <a class="nav__menu-link" href="#">Создание сайтов</a>
+                      <a class="nav__menu-link" href="#">Компьютерная грамотность</a>
+                      <a class="nav__menu-link" href="#">Курс по разработке игр в Roblox</a>
+                    </div>
+                  </div>
+                  <div class="nav__menu-box">
+                    <a class="nav__menu-tag" href="#">Иностранные языки</a>
+                    <div class="nav__menu-list">
+                      <a class="nav__menu-link" href="#">Английский язык</a>
+                      <a class="nav__menu-link" href="#">Китайский язык</a>
+                      <a class="nav__menu-link" href="#">Французский язык</a>
+                      <a class="nav__menu-link" href="#">Испанский язык</a>
+                    </div>
+                  </div>
+                  <div class="nav__menu-box">
+                    <a class="nav__menu-tag" href="#">Развивающие курсы</a>
+                    <div class="nav__menu-list">
+                      <a class="nav__menu-link" href="#">Ораторское мастерство</a>
+                      <a class="nav__menu-link" href="#">Финансовая грамотность</a>
+                      <a class="nav__menu-link" href="#">Эмоциональный интеллект</a>
+                      <a class="nav__menu-link" href="#">Шахматы</a>
+                      <a class="nav__menu-link" href="#">Блогинг</a>
+                      <a class="nav__menu-link" href="#">Олипиадный русский язык</a>
+                      <a class="nav__menu-link" href="#">Олимпиадная математика</a>
+                      <a class="nav__menu-link" href="#">Перечневые олимпиады</a>
+                    </div>
+                  </div>
+                  <div class="nav__menu-box">
+                    <a class="nav__menu-tag" href="#">Подготовка к ЕГЭ</a>
+                  </div>
+                  <div class="nav__menu-box">
+                    <a class="nav__menu-tag" href="#">Подготовка к ОГЭ</a>
+                  </div>
+                  <div class="nav__close btn-blue">Закрыть меню</div>
+                </div>
+              </div>
+              <div class="nav__area nav__area_4" data-nav-area="4">
+                <button class="nav__back"></button>
+                <div class="nav__title">Подготовка к ЕГЭ</div>
+                <div class="nav__btns">
+                  <a class="nav__btn" href="#">Математика</a>
+                  <a class="nav__btn" href="#">Русский язык</a>
+                  <a class="nav__btn" href="#">Биологии</a>
+                  <a class="nav__btn" href="#">Истории</a>
+                  <a class="nav__btn" href="#">Английский язык</a>
+                  <a class="nav__btn" href="#">Обществознанию</a>
+                  <a class="nav__btn" href="#">Физика</a>
+                  <a class="nav__btn" href="#">Химии</a>
+                  <a class="nav__btn" href="#">Информатике</a>
+                  <a class="nav__btn" href="#">Географии</a>
+                  <a class="nav__btn" href="#">Литературе</a>
+                  <div class="nav__close btn-blue">Закрыть меню</div>
+                </div>
+              </div>
+              <div class="nav__area nav__area_5" data-nav-area="5">
+                <button class="nav__back"></button>
+                <div class="nav__title">Подготовка к ОГЭ</div>
+                <div class="nav__btns">
+                  <a class="nav__btn" href="#">Математика</a>
+                  <a class="nav__btn" href="#">Русский язык</a>
+                  <a class="nav__btn" href="#">Биологии</a>
+                  <a class="nav__btn" href="#">Истории</a>
+                  <a class="nav__btn" href="#">Английский язык</a>
+                  <a class="nav__btn" href="#">Обществознанию</a>
+                  <a class="nav__btn" href="#">Физика</a>
+                  <a class="nav__btn" href="#">Химии</a>
+                  <a class="nav__btn" href="#">Информатике</a>
+                  <a class="nav__btn" href="#">Географии</a>
+                  <a class="nav__btn" href="#">Литературе</a>
+                  <div class="nav__close btn-blue">Закрыть меню</div>
+                </div>
+              </div>
+              <div class="nav__area nav__area_6" data-nav-area="6">
+                <button class="nav__back"></button>
+                <div class="nav__title">Летние онлайн-курсы</div>
+                <div class="nav__summer">
+                  <div class="nav__summer-title">Пока есть время, на каникулах можно сделать очень много!</div>
+                  <div class="nav__summer-list">
+                    <div class="nav__summer-item">Школьные и доп. предметы, 1-11 класс</div>
+                    <div class="nav__summer-item">Записи всех уроков за учебный год</div>
+                    <div class="nav__summer-item">Индивидуальный маршрут и проверка заданий</div>
+                    <div class="nav__summer-item">Обучение в удобном для вас темпе</div>
+                    <div class="nav__summer-item">Старт обучения прямо сейчас</div>
+                  </div>
+                  <a class="nav__button btn-orange btn-orange_arrow" href="#">Перейти</a>
+                </div>
+              </div>
+              <div class="nav__area nav__area_7" data-nav-area="7">
+                <button class="nav__back"></button>
+                <div class="nav__title">Семейное обучение</div>
+                <div class="nav__btns">
+                  <a class="nav__btn" href="#">1 класс</a>
+                  <a class="nav__btn" href="#">2 класс</a>
+                  <a class="nav__btn" href="#">3 класс</a>
+                  <a class="nav__btn" href="#">4 класс</a>
+                  <a class="nav__btn" href="#">5 класс</a>
+                  <a class="nav__btn" href="#">6 класс</a>
+                  <a class="nav__btn" href="#">7 класс</a>
+                  <a class="nav__btn" href="#">8 класс</a>
+                  <a class="nav__btn" href="#">9 класс</a>
+                  <a class="nav__btn" href="#">10 класс</a>
+                  <a class="nav__btn" href="#">11 класс</a>
+                  <div class="nav__close btn-blue">Закрыть меню</div>
+                </div>
+              </div>
+              <div class="nav__area nav__area_8" data-nav-area="8">
+                <button class="nav__back"></button>
+                <div class="nav__title">Программирование</div>
+                <div class="nav__btns">
+                  <a class="nav__btn" href="#">Программирование на Python</a>
+                  <a class="nav__btn" href="#">Программирование в Scratch</a>
+                  <a class="nav__btn" href="#">Программирование в Minecraft</a>
+                  <a class="nav__btn" href="#">Компьютерная грамотность</a>
+                  <a class="nav__btn" href="#">Курс по разработке игр в Roblox</a>
+                  <a class="nav__btn" href="#">Графический дизайн в Figma</a>
+                  <a class="nav__btn" href="#">Создание сайтов</a>
+                  <div class="nav__close btn-blue">Закрыть меню</div>
+                </div>
+              </div>
+              <div class="nav__area nav__area_9" data-nav-area="9">
+                <button class="nav__back"></button>
+                <div class="nav__title">Иностранные языки</div>
+                <div class="nav__btns">
+                  <a class="nav__btn" href="#">Английский язык</a>
+                  <a class="nav__btn" href="#">Китайский язык</a>
+                  <a class="nav__btn" href="#">Французский язык</a>
+                  <a class="nav__btn" href="#">Испанский язык</a>
+                  <a class="nav__btn" href="#">Немецкий язык</a>
+                  <div class="nav__close btn-blue">Закрыть меню</div>
+                </div>
+              </div>
+              <div class="nav__area nav__area_10" data-nav-area="10">
+                <button class="nav__back"></button>
+                <div class="nav__title">Развивающие курсы</div>
+                <div class="nav__btns">
+                  <a class="nav__btn" href="#">Шахматы</a>
+                  <a class="nav__btn" href="#">Блогинг</a>
+                  <a class="nav__btn" href="#">Ораторское мастерство</a>
+                  <a class="nav__btn" href="#">Финансовая грамотность</a>
+                  <a class="nav__btn" href="#">Эмоциональный интеллект</a>
+                  <a class="nav__btn" href="#">Цифровые профессии</a>
+                  <a class="nav__btn" href="#">Олимпиадная математика</a>
+                  <a class="nav__btn" href="#">Олимпиадный русский язык</a>
+                  <a class="nav__btn" href="#">Перечневые олимпиады по математике</a>
+                  <div class="nav__close btn-blue">Закрыть меню</div>
+                </div>
+              </div>
+              <div class="nav__area nav__area_11" data-nav-area="11">
+                <button class="nav__back"></button>
+                <div class="nav__title">Курс по проверке 2-ой части ЕГЭ по профильной математике</div>
+                <div class="nav__teacher-text">Узнайте всё о критериях оценивания и проверке работ экзамена, чтобы ученики сдавали “профиль” на высокий балл.</div>
+                <div class="nav__teacher-area">
+                  <div class="nav__teacher-box">
+                    <div class="nav__teacher-title">Что входит</div>
+                    <ul class="nav__teacher-list">
+                      <li class="nav__teacher-item">7 занятий в записи</li>
+                      <li class="nav__teacher-item">Зачетная работа</li>
+                      <li class="nav__teacher-item">Сертификат от Точки Знаний</li>
+                      <li class="nav__teacher-item">Удостоверение о повышении квалификации</li>
+                    </ul>
+                  </div>
+                  <div class="nav__teacher-box">
+                    <div class="nav__teacher-title">Учитель</div>
+                    <div class="nav__teacher-name">Георгий Игоревич Вольфсон</div>
+                    <div class="nav__teacher-description">Председатель экспертной комиссии по проверке ЕГЭ (с 2018 по 2022 год)</div>
+                  </div>
+                </div>
+                <a class="nav__button btn-orange btn-orange_arrow" href="#">Перейти</a>
+              </div>
+              <div class="nav__contacts nav__contacts_desc">
+                <a class="nav__phone" href="tel:+78612176477">+7 (861) 217-64-77</a>
+                <a class="nav__email" href="mailto:support@tochka-school.ru">support@tochka-school.ru</a>
+                <a class="nav__wp" href="https://api.whatsapp.com/send/?phone=79182293194&amp;text&amp;type=phone_number&amp;app_absent=0" target="_blank">Написать в WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </header>
   </div>
   <main class="wrapper">
-    <div class="course-cap course-cap_offer">
+    <div class="course-cap course-cap_no-teacher">
       <div class="course-cap__cont cont">
         <div class="course-cap__area">
           <div class="course-cap__decor course-cap__decor_1"></div>
           <div class="course-cap__decor course-cap__decor_2"></div>
           <div class="course-cap__box">
-            <div class="course-cap__top">
-              <div class="course-cap__number">10 класс</div>
-              <div class="course-cap__tag">Закрытые предпродажи! Только для первых 50 человек</div>
-            </div>
+            <div class="course-cap__number">10 класс</div>
             <h1 class="course-cap__caption">Курс по информатике <span>(в&nbsp;записи)</span>
             </h1>
-            <div class="course-cap__offer">
-              <div class="course-cap__offer-text">До конца спецпредложения осталось:</div>
-              <div class="offer-timer" date-end="2025-04-10T12:00:00">
-                <div class="offer-timer__box">
-                  <div class="offer-timer__number"></div>
-                  <div class="offer-timer__note">дней</div>
-                </div>
-                <div class="offer-timer__box">
-                  <div class="offer-timer__number"></div>
-                  <div class="offer-timer__note">часов</div>
-                </div>
-                <div class="offer-timer__box">
-                  <div class="offer-timer__number"></div>
-                  <div class="offer-timer__note">минут</div>
-                </div>
-                <div class="offer-timer__box">
-                  <div class="offer-timer__number"></div>
-                  <div class="offer-timer__note">секунд</div>
-                </div>
-              </div>
-            </div>
             <picture class="course-cap__picture">
-              <img class="course-cap__image" src="assets/img/course-cap/Kostileva.png" alt="">
+              <img class="course-cap__image" src="assets/img/course-cap/placeholder.png" alt="">
             </picture>
             <div class="course-cap__buttons">
               <a class="course-cap__button btn-orange" href="#pre-reg" data-role="scroll-to-anchor">Начать обучение</a>
-              <div class="course-cap__author">Галина Валерьевна Шевченко</div>
+              <div class="course-cap__author">Скоро здесь появится учитель</div>
             </div>
           </div>
         </div>
@@ -102,62 +457,6 @@
             </ul>
           </div>
           <div class="course-about__decor"></div>
-        </div>
-        <div class="course-about__lines">
-          <div class="course-about__line course-about__line_light-blue">Объясним сложное просто
-            <svg viewbox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="9.5" cy="9.5" r="9" fill="white"></circle>
-              <path d="M14.2308 6.16532C13.9188 5.85283 13.412 5.85303 13.0995 6.16532L8.00782 11.2572L5.74478 8.99419C5.43229 8.68171 4.92576 8.68171 4.61327 8.99419C4.30078 9.30668 4.30078 9.81322 4.61327 10.1257L7.44195 12.9544C7.59809 13.1105 7.80284 13.1888 8.0076 13.1888C8.21237 13.1888 8.41731 13.1107 8.57346 12.9544L14.2308 7.29681C14.5433 6.98454 14.5433 6.47779 14.2308 6.16532Z" fill="#6683C2"></path>
-            </svg>
-          </div>
-          <div class="course-about__line course-about__line_blue">Добьёмся понимания без зубрёжки
-            <svg viewbox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="9.5" cy="9.5" r="9" fill="white"></circle>
-              <path d="M14.2308 6.16532C13.9188 5.85283 13.412 5.85303 13.0995 6.16532L8.00782 11.2572L5.74478 8.99419C5.43229 8.68171 4.92576 8.68171 4.61327 8.99419C4.30078 9.30668 4.30078 9.81322 4.61327 10.1257L7.44195 12.9544C7.59809 13.1105 7.80284 13.1888 8.0076 13.1888C8.21237 13.1888 8.41731 13.1107 8.57346 12.9544L14.2308 7.29681C14.5433 6.98454 14.5433 6.47779 14.2308 6.16532Z" fill="#6683C2"></path>
-            </svg>
-          </div>
-          <div class="course-about__line course-about__line_yellow">Бережно укажем на ошибки и поможем их исправить
-            <svg viewbox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="9.5" cy="9.5" r="9" fill="white"></circle>
-              <path d="M14.2308 6.16532C13.9188 5.85283 13.412 5.85303 13.0995 6.16532L8.00782 11.2572L5.74478 8.99419C5.43229 8.68171 4.92576 8.68171 4.61327 8.99419C4.30078 9.30668 4.30078 9.81322 4.61327 10.1257L7.44195 12.9544C7.59809 13.1105 7.80284 13.1888 8.0076 13.1888C8.21237 13.1888 8.41731 13.1107 8.57346 12.9544L14.2308 7.29681C14.5433 6.98454 14.5433 6.47779 14.2308 6.16532Z" fill="#6683C2"></path>
-            </svg>
-          </div>
-          <div class="course-about__line course-about__line_green">Найдём подход к ребёнку любого уровня подготовки
-            <svg viewbox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="9.5" cy="9.5" r="9" fill="white"></circle>
-              <path d="M14.2308 6.16532C13.9188 5.85283 13.412 5.85303 13.0995 6.16532L8.00782 11.2572L5.74478 8.99419C5.43229 8.68171 4.92576 8.68171 4.61327 8.99419C4.30078 9.30668 4.30078 9.81322 4.61327 10.1257L7.44195 12.9544C7.59809 13.1105 7.80284 13.1888 8.0076 13.1888C8.21237 13.1888 8.41731 13.1107 8.57346 12.9544L14.2308 7.29681C14.5433 6.98454 14.5433 6.47779 14.2308 6.16532Z" fill="#6683C2"></path>
-            </svg>
-          </div>
-          <div class="course-about__line course-about__line_blue">Поможем развить самостоятельность и логическое мышление
-            <svg viewbox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="9.5" cy="9.5" r="9" fill="white"></circle>
-              <path d="M14.2308 6.16532C13.9188 5.85283 13.412 5.85303 13.0995 6.16532L8.00782 11.2572L5.74478 8.99419C5.43229 8.68171 4.92576 8.68171 4.61327 8.99419C4.30078 9.30668 4.30078 9.81322 4.61327 10.1257L7.44195 12.9544C7.59809 13.1105 7.80284 13.1888 8.0076 13.1888C8.21237 13.1888 8.41731 13.1107 8.57346 12.9544L14.2308 7.29681C14.5433 6.98454 14.5433 6.47779 14.2308 6.16532Z" fill="#6683C2"></path>
-            </svg>
-          </div>
-          <div class="course-about__line course-about__line_light-blue">Приведём к результату через нескучные уроки с игровым подходом
-            <svg viewbox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="9.5" cy="9.5" r="9" fill="white"></circle>
-              <path d="M14.2308 6.16532C13.9188 5.85283 13.412 5.85303 13.0995 6.16532L8.00782 11.2572L5.74478 8.99419C5.43229 8.68171 4.92576 8.68171 4.61327 8.99419C4.30078 9.30668 4.30078 9.81322 4.61327 10.1257L7.44195 12.9544C7.59809 13.1105 7.80284 13.1888 8.0076 13.1888C8.21237 13.1888 8.41731 13.1107 8.57346 12.9544L14.2308 7.29681C14.5433 6.98454 14.5433 6.47779 14.2308 6.16532Z" fill="#6683C2"></path>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="course-about">
-      <div class="course-about__cont cont">
-        <h2 class="course-about__caption">Как проходит этот курс</h2>
-        <div class="course-about__area">
-          <div class="course-about__video-box" data-element="course-about-video-wrap">
-            <div class="course-about__sound"></div>
-            <video class="course-about__video" src="assets/files/Shevchenko_1_klass.mov" loop pip="false" data-element="course-about-video" muted playsinline autoplay data-play-start="35"></video>
-          </div>
-          <div class="course-about__box">
-            <ul class="course-about__list">
-              <li class="course-about__item">Занятия проходят в игровой форме. Сначала проводится разминка на устный счет и математические игры. Затем разбираем тему и решаем задачи.</li>
-              <li class="course-about__item">Мы не только разберём материал школьной программы, но и научимся решать логические задачи, будем развивать пространственное мышление, познавательные и алгоритмические способности.</li>
-              <li class="course-about__item">Узнаем о числах и действиях с ними, величинах, геометрических фигурах. Научимся выявлять количественные и пространственные отношения, определять взаимосвязь между фактами, событиями и явлениями.</li>
-            </ul>
-          </div>
         </div>
         <div class="course-about__lines">
           <div class="course-about__line course-about__line_light-blue">Объясним сложное просто
@@ -336,7 +635,7 @@
         </div>
       </div>
     </div>
-    <div class="two-teach">
+    <div class="two-teach two-teach_no-teacher">
       <div class="two-teach__cont cont">
         <div class="two-teach__top">
           <div class="two-teach__caption">С ребёнком занимаются сразу 2 педагога</div>
@@ -354,7 +653,7 @@
               <div class="two-teach__text">понятно и интересно объяснит тему на уроке</div>
             </div>
             <div class="two-teach__picture">
-              <img class="two-teach__image" src="https://tochka-school.ru/storage/app/media/Stranica_kursov/Foto_blok_2_pedagoga/Babenko_blok_2%20pedpgoga2.webp" alt="">
+              <img class="two-teach__image" src="assets/img/two-teach/placeholder.png" alt="">
             </div>
           </div>
           <div class="two-teach__box two-teach__box_child">
@@ -373,26 +672,6 @@
             </div>
             <div class="two-teach__picture">
               <img class="two-teach__image" src="assets/img/two-teach/two-teach-3.png" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="teacher">
-      <div class="teacher__cont cont">
-        <h2 class="teacher__caption">Учитель курса</h2>
-        <div class="teacher__wrap">
-          <div class="teacher__picture">
-            <img class="teacher__image" src="assets/img/teacher/teacher.png" alt="">
-          </div>
-          <div class="teacher__area">
-            <div class="teacher__name">Галина Валерьевна Шевченко</div>
-            <div class="teacher__list">
-              <div class="teacher__item">Победитель конкурса «Лучшие учителя России» в Тверской области 2024</div>
-              <div class="teacher__item">Учитель года Твери 2023</div>
-              <div class="teacher__item">Учитель года Тверской области 2023</div>
-              <div class="teacher__item">Финалист заключительного этапа Всероссийского конкурса «Учитель года России» 2023</div>
-              <div class="teacher__item">Благодарность Губернатора Тверской области «За значительный личный вклад в развитие системы образования в Тверской области, а также повышение социальной значимости и престижа профессий сферы образования» 2023 г</div>
             </div>
           </div>
         </div>
@@ -458,81 +737,67 @@
         <div class="cost__wrap cost__wrap_short">
           <div class="cost__area">
             <div class="cost__box cost__box_blue">
-              <div class="cost__tag">Спецпредложение</div>
               <div class="cost__name">Занятия онлайн + в записи</div>
               <div class="cost__text">Рассрочка на 3 месяца без переплат</div>
               <div class="cost__price">
                 <div class="cost__price-current" data-element="price-plan-current">5 446 ₽</div>
-                <div class="cost__old-price" data-element="price-plan-old">8 500 ₽</div>
                 <div class="cost__price-period">/ в месяц</div>
                 <div class="cost__discount">Скидка 25%</div>
               </div>
               <div class="cost__full-price">
                 <span>Полная оплата <b data-element="price-full-current">16 338 ₽</b>
                 </span>
-                <div class="cost__old-price" data-element="price-full-old">32 338 ₽</div>
-                <div class="cost__discount">Скидка 25%</div>
               </div>
             </div>
             <div class="cost__title">Что включено</div>
             <div class="cost__list">
-              <div class="cost__item">2 онлайн-урока в неделю с сентября по май</div>
+              <div class="cost__item">2 онлайн-урока в неделю с сентября май</div>
               <div class="cost__item">Все занятия в записи</div>
-              <div class="cost__item">Бесплатные занятия летом 2026</div>
               <div class="cost__item">Личный тьютор-педагог 5 дней в неделю</div>
               <div class="cost__item">Проверка домашних заданий по каждому уроку</div>
               <div class="cost__item">Входное и ежемесячное тестирование</div>
+              <div class="cost__item">Бесплатные занятия летом</div>
+              <div class="cost__item">Набор полезных материалов для учёбы и развития ребёнка</div>
             </div>
             <a class="cost__button btn-orange" href="#">Начать обучение</a>
           </div>
           <div class="cost__area">
             <div class="cost__box">
-              <div class="cost__tag">Спецпредложение</div>
               <div class="cost__name">Занятия в записи</div>
               <div class="cost__text">Рассрочка на 3 месяца без переплат</div>
               <div class="cost__price">
                 <div class="cost__price-current" data-element="price-plan-current">4 446 ₽</div>
-                <div class="cost__old-price" data-element="price-plan-old">5 500 ₽</div>
                 <div class="cost__price-period">/ в месяц</div>
                 <div class="cost__discount">Скидка 25%</div>
               </div>
               <div class="cost__full-price">
                 <span>Полная оплата <b data-element="price-full-current">20 338 ₽</b>
                 </span>
-                <div class="cost__old-price" data-element="price-full-old">42 338 ₽</div>
-                <div class="cost__discount">Скидка 25%</div>
               </div>
             </div>
             <div class="cost__title">Что включено</div>
             <div class="cost__list">
-              <div class="cost__item cost__item_minus">2 онлайн-урока в неделю с сентября по май</div>
+              <div class="cost__item cost__item_minus">2 онлайн-урока в неделю с сентября май</div>
               <div class="cost__item">Все занятия в записи</div>
-              <div class="cost__item">Бесплатные занятия летом 2026</div>
               <div class="cost__item">Личный тьютор-педагог 5 дней в неделю</div>
               <div class="cost__item">Проверка домашних заданий по каждому уроку</div>
               <div class="cost__item">Входное и ежемесячное тестирование</div>
+              <div class="cost__item">Бесплатные занятия летом</div>
+              <div class="cost__item">Набор полезных материалов для учёбы и развития ребёнка</div>
             </div>
             <a class="cost__button btn-orange" href="#">Начать обучение</a>
           </div>
-          <div class="cost__offer">
-            <div class="cost__offer-title">До конца специального предложения осталось:</div>
-            <div class="offer-timer" date-end="2025-04-10T12:00:00">
-              <div class="offer-timer__box">
-                <div class="offer-timer__number">6</div>
-                <div class="offer-timer__note">дней</div>
-              </div>
-              <div class="offer-timer__box">
-                <div class="offer-timer__number">15</div>
-                <div class="offer-timer__note">часов</div>
-              </div>
-              <div class="offer-timer__box">
-                <div class="offer-timer__number">58</div>
-                <div class="offer-timer__note">минут</div>
-              </div>
-              <div class="offer-timer__box">
-                <div class="offer-timer__number">19</div>
-                <div class="offer-timer__note">секунд</div>
-              </div>
+          <div class="info__area">
+            <div class="info__title">Нужна консультация?</div>
+            <div class="info__text">Задавайте любые вопросы, поможем подобрать занятия</div>
+            <picture class="info__decor">
+              <source srcset="assets/img/info/info-decor-2_mob.svg" media="(max-width: 743px)">
+              <source srcset="assets/img/info/info-decor-2_tablet.svg" media="(max-width: 1439px)">
+              <img class="info__decor-image" src="assets/img/info/info-decor-2.svg" alt="">
+            </picture>
+            <div class="info__buttons">
+              <a class="info__btn info__btn_order btn-orange" href="#modal-order-new" data-fancybox data-options="{&quot;touch&quot;: false}">Оставить заявку</a>
+              <a class="info__btn info__btn_wp btn-blue" href="https://api.whatsapp.com/send/?phone=79182293194&amp;text&amp;type=phone_number&amp;app_absent=0" target="_blank">Связаться в WhatsApp</a>
             </div>
           </div>
           <div class="info__capital">
@@ -545,254 +810,6 @@
               <source srcset="assets/img/info/info-decor-1_mob.svg" media="(max-width: 743px)">
               <source srcset="assets/img/info/info-decor-1_tablet.svg" media="(max-width: 1439px)">
               <img class="info__capital-decor-image" src="assets/img/info/info-decor-short-1.svg" alt="">
-            </picture>
-            <a class="info__btn info__btn_order btn-orange" href="https://api.whatsapp.com/send/?phone=79182293194&amp;text&amp;type=phone_number&amp;app_absent=0" target="_blank">Перейти к оформлению</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="cost offer" id="pre-reg" data-btn-fixed-hide="true">
-      <div class="cost__cont cont">
-        <h2 class="cost__caption">Стоимость годового абонемента</h2>
-        <div class="cost__wrap cost__wrap_offer">
-          <div class="cost__area">
-            <div class="cost__box cost__box_blue">
-              <div class="cost__tag">Спецпредложение</div>
-              <div class="cost__name">Занятия онлайн + в записи</div>
-              <div class="cost__text">Рассрочка на 3 месяца без переплат</div>
-              <div class="cost__price">
-                <div class="cost__price-current" data-element="price-plan-current">5 446 ₽</div>
-                <div class="cost__old-price" data-element="price-plan-old">8 500 ₽</div>
-                <div class="cost__price-period">/ в месяц</div>
-                <div class="cost__discount">Скидка 25%</div>
-              </div>
-              <div class="cost__full-price">
-                <span>Полная оплата <b data-element="price-full-current">16 338 ₽</b>
-                </span>
-                <div class="cost__old-price" data-element="price-full-old">32 338 ₽</div>
-                <div class="cost__discount">Скидка 25%</div>
-              </div>
-            </div>
-            <div class="cost__title">Что включено</div>
-            <div class="cost__list">
-              <div class="cost__item">2 онлайн-урока в неделю с сентября по май</div>
-              <div class="cost__item">Все занятия в записи</div>
-              <div class="cost__item">Бесплатные занятия летом 2026</div>
-              <div class="cost__item">
-                <b>Занятия в сентябре 2026</b>
-              </div>
-              <div class="cost__item">Личный тьютор-педагог 5 дней в неделю</div>
-              <div class="cost__item">Проверка домашних заданий по каждому уроку</div>
-              <div class="cost__item">Входное и ежемесячное тестирование</div>
-            </div>
-            <a class="cost__button btn-orange" href="#">Начать обучение</a>
-          </div>
-          <div class="cost__area">
-            <div class="cost__box">
-              <div class="cost__tag">Спецпредложение</div>
-              <div class="cost__name">Занятия в записи</div>
-              <div class="cost__text">Рассрочка на 3 месяца без переплат</div>
-              <div class="cost__price">
-                <div class="cost__price-current" data-element="price-plan-current">4 446 ₽</div>
-                <div class="cost__old-price" data-element="price-plan-old">5 500 ₽</div>
-                <div class="cost__price-period">/ в месяц</div>
-                <div class="cost__discount">Скидка 25%</div>
-              </div>
-              <div class="cost__full-price">
-                <span>Полная оплата <b data-element="price-full-current">20 338 ₽</b>
-                </span>
-                <div class="cost__old-price" data-element="price-full-old">42 338 ₽</div>
-                <div class="cost__discount">Скидка 25%</div>
-              </div>
-            </div>
-            <div class="cost__title">Что включено</div>
-            <div class="cost__list">
-              <div class="cost__item cost__item_minus">2 онлайн-урока в неделю с сентября по май</div>
-              <div class="cost__item">Все занятия в записи</div>
-              <div class="cost__item">Бесплатные занятия летом 2026</div>
-              <div class="cost__item">
-                <b>Занятия в сентябре 2026</b>
-              </div>
-              <div class="cost__item">Личный тьютор-педагог 5 дней в неделю</div>
-              <div class="cost__item">Проверка домашних заданий по каждому уроку</div>
-              <div class="cost__item">Входное и ежемесячное тестирование</div>
-            </div>
-            <a class="cost__button btn-orange" href="#">Начать обучение</a>
-          </div>
-          <div class="cost__offer">
-            <div class="cost__offer-title">До конца специального предложения осталось:</div>
-            <div class="offer-timer" date-end="2025-04-10T12:00:00">
-              <div class="offer-timer__box">
-                <div class="offer-timer__number">6</div>
-                <div class="offer-timer__note">дней</div>
-              </div>
-              <div class="offer-timer__box">
-                <div class="offer-timer__number">15</div>
-                <div class="offer-timer__note">часов</div>
-              </div>
-              <div class="offer-timer__box">
-                <div class="offer-timer__number">58</div>
-                <div class="offer-timer__note">минут</div>
-              </div>
-              <div class="offer-timer__box">
-                <div class="offer-timer__number">19</div>
-                <div class="offer-timer__note">секунд</div>
-              </div>
-            </div>
-          </div>
-          <div class="info__area">
-            <div class="info__title">Нужна консультация?</div>
-            <div class="info__text">Задавайте любые вопросы, поможем подобрать занятия</div>
-            <picture class="info__decor">
-              <source srcset="assets/img/info/info-decor-2_mob.svg" media="(max-width: 743px)">
-              <source srcset="assets/img/info/info-decor-2_tablet.svg" media="(max-width: 1439px)">
-              <img class="info__decor-image" src="assets/img/info/info-decor-2.svg" alt="">
-            </picture>
-            <div class="info__buttons">
-              <a class="info__btn info__btn_order btn-orange" href="#modal-order-new" data-fancybox data-options="{&quot;touch&quot;: false}">Оставить заявку</a>
-              <a class="info__btn info__btn_wp btn-blue" href="https://api.whatsapp.com/send/?phone=79182293194&amp;text&amp;type=phone_number&amp;app_absent=0" target="_blank">Связаться в WhatsApp</a>
-            </div>
-          </div>
-          <div class="info__capital">
-            <div class="info__title">Материнский капитал</div>
-            <div class="info__text">
-              <span>Оплачивайте обучение материнским&nbsp;капиталом.</span>
-              <span>Поможем со списком документов и&nbsp;остальными вопросами</span>
-            </div>
-            <picture class="info__capital-decor">
-              <source srcset="assets/img/info/info-decor-1_mob.svg" media="(max-width: 743px)">
-              <source srcset="assets/img/info/info-decor-1_tablet.svg" media="(max-width: 1439px)">
-              <img class="info__capital-decor-image" src="assets/img/info/info-decor-1.svg" alt="">
-            </picture>
-            <a class="info__btn info__btn_order btn-orange" href="https://api.whatsapp.com/send/?phone=79182293194&amp;text&amp;type=phone_number&amp;app_absent=0" target="_blank">Перейти к оформлению</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="cost offer" id="pre-reg" data-btn-fixed-hide="true">
-      <div class="cost__cont cont">
-        <h2 class="cost__caption">Стоимость годового абонемента</h2>
-        <div class="cost__wrap cost__wrap_offer">
-          <div class="cost__area">
-            <div class="cost__box cost__box_blue">
-              <div class="cost__tag">Спецпредложение</div>
-              <div class="cost__name">Занятия онлайн + в записи</div>
-              <div class="cost__text">Рассрочка на 3 месяца без переплат</div>
-              <div class="cost__price">
-                <div class="cost__price-current" data-element="price-plan-current">5 446 ₽</div>
-                <div class="cost__old-price" data-element="price-plan-old">8 500 ₽</div>
-                <div class="cost__price-period">/ в месяц</div>
-                <div class="cost__discount">Скидка 25%</div>
-              </div>
-              <div class="cost__full-price">
-                <span>Полная оплата <b data-element="price-full-current">16 338 ₽</b>
-                </span>
-                <div class="cost__old-price" data-element="price-full-old">32 338 ₽</div>
-                <div class="cost__discount">Скидка 25%</div>
-              </div>
-            </div>
-            <div class="cost__title">Что включено</div>
-            <div class="cost__list">
-              <div class="cost__item">2 онлайн-урока в неделю с сентября по май</div>
-              <div class="cost__item">Все занятия в записи</div>
-              <div class="cost__item">Личный тьютор-педагог 5 дней в неделю</div>
-              <div class="cost__item">Проверка домашних заданий по каждому уроку</div>
-              <div class="cost__item">Входное и ежемесячное тестирование</div>
-            </div>
-            <div class="cost__additional">
-              <label class="cost__label">
-                <input class="cost__checkbox" type="checkbox" name="additional_2" checked new-href="new-href-link" data-price-full-old-checkbox-off="41 338 ₽" data-price-full-old-checkbox-on="42 338 ₽" data-price-full-current-checkbox-off="19 338 ₽" data-price-full-current-checkbox-on="20 338 ₽" data-price-plan-old-checkbox-off="4 500 ₽" data-price-plan-old-checkbox-on="5 500 ₽" data-price-plan-current-checkbox-off="2 446 ₽" data-price-plan-current-checkbox-on="3 446 ₽">
-                <div class="cost__checkbox-view"></div>
-                <div class="cost__list">
-                  <div class="cost__item">Бесплатные занятия летом 2026</div>
-                  <div class="cost__item">Занятия в сентябре 2026</div>
-                </div>
-              </label>
-            </div>
-            <a class="cost__button btn-orange" href="#">Начать обучение</a>
-          </div>
-          <div class="cost__area">
-            <div class="cost__box">
-              <div class="cost__tag">Спецпредложение</div>
-              <div class="cost__name">Занятия в записи</div>
-              <div class="cost__text">Рассрочка на 3 месяца без переплат</div>
-              <div class="cost__price">
-                <div class="cost__price-current" data-element="price-plan-current">4 446 ₽</div>
-                <div class="cost__old-price" data-element="price-plan-old">5 500 ₽</div>
-                <div class="cost__price-period">/ в месяц</div>
-                <div class="cost__discount">Скидка 25%</div>
-              </div>
-              <div class="cost__full-price">
-                <span>Полная оплата <b data-element="price-full-current">20 338 ₽</b>
-                </span>
-                <div class="cost__old-price" data-element="price-full-old">42 338 ₽</div>
-                <div class="cost__discount">Скидка 25%</div>
-              </div>
-            </div>
-            <div class="cost__title">Что включено</div>
-            <div class="cost__list">
-              <div class="cost__item cost__item_minus">2 онлайн-урока в неделю с сентября по май</div>
-              <div class="cost__item">Все занятия в записи</div>
-              <div class="cost__item">Личный тьютор-педагог 5 дней в неделю</div>
-              <div class="cost__item">Проверка домашних заданий по каждому уроку</div>
-              <div class="cost__item">Входное и ежемесячное тестирование</div>
-            </div>
-            <div class="cost__additional">
-              <label class="cost__label">
-                <input class="cost__checkbox" type="checkbox" name="additional_2" checked new-href="new-href-link" data-price-full-old-checkbox-off="41 338 ₽" data-price-full-old-checkbox-on="42 338 ₽" data-price-full-current-checkbox-off="19 338 ₽" data-price-full-current-checkbox-on="20 338 ₽" data-price-plan-old-checkbox-off="4 500 ₽" data-price-plan-old-checkbox-on="5 500 ₽" data-price-plan-current-checkbox-off="2 446 ₽" data-price-plan-current-checkbox-on="3 446 ₽">
-                <div class="cost__checkbox-view"></div>
-                <div class="cost__list">
-                  <div class="cost__item">Бесплатные занятия летом 2026</div>
-                  <div class="cost__item">Занятия в сентябре 2026</div>
-                </div>
-              </label>
-            </div>
-            <a class="cost__button btn-orange" href="#">Начать обучение</a>
-          </div>
-          <div class="cost__offer">
-            <div class="cost__offer-title">До конца специального предложения осталось:</div>
-            <div class="offer-timer" date-end="2025-04-10T12:00:00">
-              <div class="offer-timer__box">
-                <div class="offer-timer__number">6</div>
-                <div class="offer-timer__note">дней</div>
-              </div>
-              <div class="offer-timer__box">
-                <div class="offer-timer__number">15</div>
-                <div class="offer-timer__note">часов</div>
-              </div>
-              <div class="offer-timer__box">
-                <div class="offer-timer__number">58</div>
-                <div class="offer-timer__note">минут</div>
-              </div>
-              <div class="offer-timer__box">
-                <div class="offer-timer__number">19</div>
-                <div class="offer-timer__note">секунд</div>
-              </div>
-            </div>
-          </div>
-          <div class="info__area">
-            <div class="info__title">Нужна консультация?</div>
-            <div class="info__text">Задавайте любые вопросы, поможем подобрать занятия</div>
-            <picture class="info__decor">
-              <source srcset="assets/img/info/info-decor-2_mob.svg" media="(max-width: 743px)">
-              <source srcset="assets/img/info/info-decor-2_tablet.svg" media="(max-width: 1439px)">
-              <img class="info__decor-image" src="assets/img/info/info-decor-2.svg" alt="">
-            </picture>
-            <div class="info__buttons">
-              <a class="info__btn info__btn_order btn-orange" href="#modal-order-new" data-fancybox data-options="{&quot;touch&quot;: false}">Оставить заявку</a>
-              <a class="info__btn info__btn_wp btn-blue" href="https://api.whatsapp.com/send/?phone=79182293194&amp;text&amp;type=phone_number&amp;app_absent=0" target="_blank">Связаться в WhatsApp</a>
-            </div>
-          </div>
-          <div class="info__capital">
-            <div class="info__title">Материнский капитал</div>
-            <div class="info__text">
-              <span>Оплачивайте обучение материнским&nbsp;капиталом.</span>
-              <span>Поможем со списком документов и&nbsp;остальными вопросами</span>
-            </div>
-            <picture class="info__capital-decor">
-              <source srcset="assets/img/info/info-decor-1_mob.svg" media="(max-width: 743px)">
-              <source srcset="assets/img/info/info-decor-1_tablet.svg" media="(max-width: 1439px)">
-              <img class="info__capital-decor-image" src="assets/img/info/info-decor-1.svg" alt="">
             </picture>
             <a class="info__btn info__btn_order btn-orange" href="https://api.whatsapp.com/send/?phone=79182293194&amp;text&amp;type=phone_number&amp;app_absent=0" target="_blank">Перейти к оформлению</a>
           </div>
@@ -983,6 +1000,20 @@
         </div>
       </div>
     </div>
+    <div class="btn-fixed" data-btn-fixed-start="400" data-btn-fixed-end="1700" data-element="btn-fixed">
+      <div class="btn-fixed__area">
+        <a class="btn-fixed__button btn-orange btn-orange_arrow" href="#modal-order-new" data-fancybox data-options="{&quot;touch&quot;: false}">Получить консультацию</a>
+      </div>
+    </div>
+    <div class="summer-fixed">
+      <div class="summer-fixed__area">
+        <div class="summer-fixed__text">Данный курс сейчас доступен только в летнем формате.
+          <br>Переходите на страницу летнего курса.
+          <br>Занятия в 4 четверти в подарок!
+        </div>
+        <a class="summer-fixed__button btn-orange" href="#">Перейти</a>
+      </div>
+    </div>
   </main>
   <form class="modal-order-new" id="modal-order-new" data-element="order-form" data-docex="/_thanks" data-request-validate>
     <div class="modal-order-new__title">Подобрать занятия</div>
@@ -1024,36 +1055,84 @@
       </div>
     </label>
   </form>
-  <footer class="footer-new">
-    <div class="footer-new__cont cont">
-      <div class="footer-new__area">
-        <div class="footer-new__logo">
-          <img class="footer-new__logo-image" src="assets/img/logo_white.svg" alt="">
+  <footer class="footer">
+    <div class="footer__cont cont">
+      <div class="footer__area">
+        <div class="footer__box">
+          <div class="footer__logo">
+            <img class="footer__logo-image" src="assets/img/logo_white.svg" alt="">
+          </div>
+          <p class="footer__text">ООО «Точка Знаний»
+            <br>ИНН 2311347344
+          </p>
+          <p class="footer__text">350016, Краснодарский край,
+            <br>г. Краснодар, ул. Зиповская,
+            <br>д. 45, помещ. 24, ком. 2
+          </p>
+          <p class="footer__text">Точка Знаний - образовательная
+            <br>платформа, разработанная
+            <br>ООО «Точка Знаний»
+          </p>
+          <a class="footer__about" href="#">Подробнее о платформе</a>
         </div>
-        <div class="footer-new__box">
-          <div class="footer-new__doc btn-border" data-element="footer-new-doc">Документация</div>
-          <a class="footer-new__whatsapp btn-border btn-border_arrow" href="https://api.whatsapp.com/send/?phone=79182293194&amp;text&amp;type=phone_number&amp;app_absent=0">Написать в WhatsApp</a>
-          <div class="footer-new__wrap">
-            <div class="footer-new__list">
-              <a class="footer-new__link" href="#">Политика обработки персональных данных</a>
-              <a class="footer-new__link" href="#">Согласие на обработку персональных данных</a>
-              <a class="footer-new__link" href="#">Согласие на получение информационной и рекламной рассылки</a>
-              <a class="footer-new__link" href="#">Пользовательское соглашение</a>
-            </div>
-            <div class="footer-new__list">
-              <a class="footer-new__link" href="#">Публичная Оферта</a>
-              <a class="footer-new__link" href="#">Соглашение на семейное обучение</a>
-              <a class="footer-new__link" href="#">Правила акции</a>
-              <a class="footer-new__link" href="#">Сведения об образовательной организации</a>
+        <div class="footer__box">
+          <div class="footer__title" data-element="footer__title">Направления</div>
+          <div class="footer__list">
+            <a class="footer__link" href="#">Летние курсы</a>
+            <a class="footer__link" href="#">Курсы для учителей</a>
+            <a class="footer__link" href="#">Предзапись на учебный год 25/26</a>
+          </div>
+          <a class="footer__blog btn-border" href="#">Блог</a>
+        </div>
+        <div class="footer__box">
+          <div class="footer__title" data-element="footer__title">Документация</div>
+          <div class="footer__list">
+            <a class="footer__link" href="#">Политика обработки персональных данных</a>
+            <a class="footer__link" href="#">Согласие на обработку персональных данных</a>
+            <a class="footer__link" href="#">Согласие на получение информационной и рекламной рассылки</a>
+            <a class="footer__link" href="#">Пользовательское соглашение</a>
+            <a class="footer__link" href="#">Публичная Оферта</a>
+            <a class="footer__link" href="#">Соглашение на семейное обучение</a>
+            <a class="footer__link" href="#">Правила акции</a>
+          </div>
+        </div>
+        <a class="footer__blog footer__blog_mob btn-border" href="#">Блог</a>
+        <div class="footer__contacts">
+          <div class="footer__title">Контакты</div>
+          <div class="footer__contacts-box">
+            <a class="footer__phone" href="tel:+78612176477">+7 (861) 217-64-77</a>
+          </div>
+          <div class="footer__contacts-box">
+            <a class="footer__whatsapp btn-border btn-border_arrow" href="https://api.whatsapp.com/send/?phone=79182293194&amp;text&amp;type=phone_number&amp;app_absent=0">Написать в WhatsApp</a>
+            <a class="footer__email" href="mailto:support@tochka-school.ru">support@tochka-school.ru</a>
+          </div>
+          <div class="footer__social">
+            <div class="footer__headline">Социальные сети:</div>
+            <div class="footer__social-list">
+              <a class="footer__social-link" href="https://t.me/+WMCtnpy5ClRiZWQy" target="_blank">
+                <img class="footer__social-icon" src="https://tochka-school.ru/themes/school-point/assets/img/social-icon3.svg" alt="">
+              </a>
+              <a class="footer__social-link" href="https://vk.com/matematik_andrei" target="_blank">
+                <img class="footer__social-icon" src="https://tochka-school.ru/themes/school-point/assets/img/social-icon4.svg" alt="">
+              </a>
+              <a class="footer__social-link" href="http://www.youtube.com/@matematik_andrei" target="_blank">
+                <img class="footer__social-icon" src="https://tochka-school.ru/themes/school-point/assets/img/social-icon2.svg" alt="">
+              </a>
+              <a class="footer__social-link" href="https://www.tiktok.com/@matematik_andrei" target="_blank">
+                <img class="footer__social-icon" src="https://tochka-school.ru/themes/school-point/assets/img/social-icon1.svg" alt="">
+              </a>
             </div>
           </div>
         </div>
-        <a class="footer-new__resident" href="https://sk.ru/" target="_blank">
-          <img class="footer-new__resident-image" src="https://tochka-school.ru/themes/school-point/assets/img/sk-logo.svg" alt="">
-        </a>
       </div>
-      <div class="footer-new__bottom">
-        <div class="footer-new__copyright">ООО "Точка Знаний" ИНН 2311347344</div>
+      <div class="footer__bottom">
+        <a class="footer__organization" href="https://tochka-school.ru/info" target="_blank">Сведения об образовательной организации</a>
+        <div class="footer__license">Дата предоставления лицензии: 11 мая 2023
+          <br>Лицензия № Л035-01218-23/00650937
+        </div>
+        <a class="footer__resident" href="https://sk.ru/" target="_blank">
+          <img class="footer__resident-image" src="https://tochka-school.ru/themes/school-point/assets/img/sk-logo.svg" alt="">
+        </a>
       </div>
     </div>
   </footer>
