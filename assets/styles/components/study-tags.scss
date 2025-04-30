@@ -221,3 +221,11 @@
 .study-tags__image {
   height: 100%;
 }
+
+.study-tile-anchor {
+  position: relative;
+  top: -80px;
+  @include media(xs) {
+    top: -20px;
+  }
+}

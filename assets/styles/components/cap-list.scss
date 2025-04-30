@@ -47,6 +47,10 @@
       min-height: 74px;
       width: 100%;
     }
+    .cap-list__title {
+      max-width: 151px;
+      width: 100%;
+    }
     .cap-list__button {
       position: absolute;
       bottom: 25px;
@@ -90,15 +94,12 @@
   margin-bottom: 20px;
   font-size: 24px;
   line-height: 104%;
-  max-width: 151px;
-  width: 100%;
   margin-right: 5px;
   color: #003c56;
   @include media(lg) {
     margin-bottom: 12px;
     font-size: 16px;
     margin-right: 0;
-    max-width: unset;
   }
   br {
     @include media(lg) {

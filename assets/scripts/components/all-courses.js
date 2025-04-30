@@ -22,7 +22,7 @@ function allCoursesInit () {
   const filterSubjectWrap = allCourses.querySelector(".all-courses__filter-wrap_subject")
   const filterTagWrap = allCourses.querySelector(".all-courses__filter-wrap_tag")
   const findBtn = allCourses.querySelector('.all-courses__find')
-  const moreBtn = allCourses.querySelector('.filter_more_b')
+  const moreBtn = allCourses.querySelector('.all-courses__more-button')
   const reset = false
   const grades = allCourses.querySelector("[data-ftype='class_select']")
   const subjects = allCourses.querySelector("[data-ftype='class_subjects']")

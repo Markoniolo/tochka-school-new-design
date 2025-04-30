@@ -13,7 +13,7 @@
         .tile__tile(class = tile === 1 ? 'active' : false)
           each item in [0,1,2,3,4,5,6]
             if item === 0
-              .tile__family
+              a.tile__family(href='#')
                 picture.tile__family-picture
                   source(srcset=staticImg('tile/tile-family_mob.svg') media="(max-width: 743px)")
                   source(srcset=staticImg('tile/tile-family_tablet.svg') media="(max-width: 1439px)")
@@ -25,9 +25,9 @@
                     .tile__family-tag Аттестация онлайн
                     .tile__family-tag Бесплатное прикрепление к школе
                   .tile__family-text Получайте школьное образование дома. Онлайн. С лучшими учителями РФ, внимательными тьюторами и аттестацией.
-                  a.tile__family-button.btn-orange(href='#') Перейти
+                  .tile__family-button.btn-orange Перейти
             else
-              .tile__item
+              a.tile__item(href='#')
                 .tile__picture
                   img.tile__image(src=staticImg('') alt='')
                 .tile__inner
@@ -36,4 +36,4 @@
                   .tile__author Екатерина Щербакова
                   .tile__text Учитель года Кубани 2022. ТОП-15 учителей России в 2022 году. Педагогический стаж ー 6 лет.
                   .tile__bottom
-                    a.tile__link.btn-orange(href='#') Перейти
+                    .tile__link.btn-orange Перейти

@@ -12,7 +12,7 @@
     { name: 'Наш блог', note: '' },
   ]
   const headerBottom = [
-    'Математика','Семейное обучение','Летние курсы','ЕГЭ','ОГЭ','IT-курсы','Иностранные языки','Развивающие курсы'
+    'Математика','Семейное обучение','Летние курсы','ЕГЭ','ОГЭ','IT-курсы','Иностранные языки','Развивающие курсы',"Летние курсы"
   ]
 
 mixin header(mod)
@@ -25,7 +25,7 @@ mixin header(mod)
         .header__nav
           button.header__nav-item.header__nav-item_menu
             span Меню
-          .header__nav-item.active Летние курсы
+          .header__nav-item.active Все курсы
           a.header__nav-item(href="#") Блог
           a.header__nav-item.btn-orange.btn-orange_arrow(href='#modal-order-new' data-fancybox data-options='{"touch": false}') Подобрать занятия
         a.header__login.btn-blue(href="#")

@@ -8,6 +8,10 @@
   &.predzaps-top-hide {
     transform: translateY(-80px);
   }
+  &.predzaps-top-hide-no-transition {
+    transition-property: unset;
+    transition-duration: unset;
+  }
   &.no-transform {
     transition: none;
   }

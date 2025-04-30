@@ -12,8 +12,10 @@ function predzapsTopInit () {
   function checkScroll () {
     if (window.scrollY > 100) {
       stickyHeader.classList.add('predzaps-top-hide')
+      setTimeout(() => stickyHeader.classList.add('predzaps-top-hide-no-transition'), 300)
     } else if (window.scrollY <= 20) {
-      stickyHeader.classList.remove('predzaps-top-hide')
+      stickyHeader.classList.remove('predzaps-top-hide-no-transition')
+      setTimeout(() => stickyHeader.classList.remove('predzaps-top-hide'), 100)
     }
   }
 
