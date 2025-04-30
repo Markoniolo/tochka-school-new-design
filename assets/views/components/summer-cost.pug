@@ -46,13 +46,16 @@ mixin summer-cost(mod, title='Летний курс', price='6 000 ₽')
                   .summer-cost__item= item
           .summer-cost__bonus
             .summer-cost__bonus-title!= 'бонус<b>:</b> <span>Начните обучение сразу после оплаты</span>'
-            .summer-cost__bonus-date 2 месяца: апрель + май
+            if mod === 'short'
+              .summer-cost__bonus-date Занятия в записи в мае
+            else
+              .summer-cost__bonus-date Онлайн-занятия в мае
             .summer-cost__bonus-list
               if mod === 'short'
-                each item in ['2 месяца занятий в записи в апреле и мае','Проверка домашних заданий','Тьютор-педагог 5 дней в неделю']
+                each item in ['Месяц занятий в записи в мае','Проверка домашних заданий','Тьютор-педагог 5 дней в неделю']
                   .summer-cost__bonus-item= item
               else
-                each item in ['2 месяца онлайн-занятий в апреле и мае','Все занятия в записи','Проверка домашних заданий','Тьютор-педагог 5 дней в неделю']
+                each item in ['Месяц онлайн-занятий в мае','Все занятия в записи','Проверка домашних заданий','Тьютор-педагог 5 дней в неделю']
                   .summer-cost__bonus-item= item
             img.summer-cost__bonus-decor(src=staticImg('summer-cost/summer-cost-2.png') alt='')
             .summer-cost__bonus-prize

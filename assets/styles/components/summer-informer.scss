@@ -133,9 +133,10 @@
 }
 
 .summer-informer__decor_1 {
-  width: 302px;
-  height: 179px;
+  width: 232px;
+  height: 191px;
   @include bg-icon('summer-informer/summer-informer-decor-1.png');
+  background-size: cover;
   @include media(xs) {
     margin: 0 auto 20px;
     max-width: 302px;

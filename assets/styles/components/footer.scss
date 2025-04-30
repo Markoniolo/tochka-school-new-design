@@ -261,6 +261,13 @@ a.footer__lk {
   }
 }
 
+.footer__space {
+  height: 10px;
+  @include media(lg) {
+    height: 15px;
+  }
+}
+
 .footer__blog {
   margin-top: 30px;
   padding: 10px 44px;

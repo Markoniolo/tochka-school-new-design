@@ -190,9 +190,10 @@
 }
 
 .summer-schedule__decor_1 {
-  width: 302px;
-  height: 179px;
+  width: 232px;
+  height: 191px;
   @include bg-icon('summer-informer/summer-informer-decor-1.png');
+  background-size: cover;
   @include media(xs) {
     margin: 0 auto 10px;
     max-width: 282px;
@@ -203,9 +204,10 @@
 }
 
 .summer-schedule__decor_4 {
-  width: 302px;
-  height: 179px;
+  width: 232px;
+  height: 191px;
   @include bg-icon('summer-informer/summer-informer-decor-4.png');
+  background-size: cover;
   @include media(xs) {
     margin: 0 auto 10px;
     max-width: 282px;
@@ -239,8 +241,10 @@
   width: 655px;
   height: 78px;
   @include bg-icon('summer-informer/summer-informer-decor-3.png');
+  background-size: cover;
   @include media(lg) {
     @include bg-icon('summer-informer/summer-informer-decor-3_tablet.png');
+    background-size: cover;
     width: 620px;
     height: 79px;
     margin-left: 15px;

@@ -3,9 +3,16 @@
     'Начальная школа 1-4 класс', 'Средняя школа 5-8 класс', 'Старшая школа 9-11 класс', 'Курсы для учителей', 'Предзапись на учебный год 25/26 '
   ]
   const footerList1_summer = [
+    'Дошкольники',
+    'Начальная школа 1-4 класс',
+    'Средняя школа 5-8 класс',
+    'Старшая школа 9-11 класс',
+
+    'Подготовка к ЕГЭ',
+    'Подготовка к ОГЭ',
+
     'Летние курсы',
-    'Курсы для учителей',
-    'Предзапись на учебный год 25/26',
+    'Семейное обучение',
   ]
   const footerList2 = [
     'Политика обработки персональных данных',
@@ -49,8 +56,12 @@ footer.footer
       .footer__box
         .footer__title(data-element="footer__title") Направления
         .footer__list
-          each item in footerList1_summer
-            a.footer__link(href='#')= item
+          each item, index in footerList1_summer
+            if index === 4 || index === 6
+              .footer__space
+              a.footer__link(href='#')= item
+            else
+              a.footer__link(href='#')= item
         a.footer__blog.btn-border(href='#') Блог
       .footer__box
         .footer__title(data-element="footer__title") Документация
