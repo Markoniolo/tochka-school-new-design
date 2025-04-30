@@ -1,0 +1,31 @@
+extends ../components/_layout/layout
+
+block head
+  +title('Курс')
+
+block body
+  include ../components/course-cap
+  +course-cap('no-teacher')
+  include ../components/course-about
+  +course-about('no-video')
+  include ../components/how
+  +how('blue')
+  include ../components/schedule
+  include ../components/schedule-small
+  include ../components/schedule-smallest
+  include ../components/two-teach
+  +two-teach('no-teacher')
+  include ../components/tutor
+  +tutor
+  include ../components/cost
+  +cost('short')
+  include ../components/pre-reviews
+  +pre-reviews
+  include ../components/faq
+  +faq
+  include ../components/pre-end
+  +pre-end('course','Время принять решение: оставить всё как есть или начать обучение, получить твёрдые знания и отличные оценки.',
+    'Начать обучение')
+  include ../components/btn-fixed
+  +btn-fixed(false,'Получить консультацию',400,1700)
+  include ../components/summer-fixed

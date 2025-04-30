@@ -21,8 +21,13 @@ mixin course-cap(mod, id='pre-reg')
                     .offer-timer__number= item.number
                     .offer-timer__note= item.note
           picture.course-cap__picture
-            img.course-cap__image(src=staticImg('course-cap/Kostileva.png') alt='')
+            if mod === 'no-teacher'
+              img.course-cap__image(src=staticImg('course-cap/placeholder.png') alt='')
+            else
+              img.course-cap__image(src=staticImg('course-cap/Kostileva.png') alt='')
           .course-cap__buttons
             a.course-cap__button.btn-orange(href=`#${id}` data-role='scroll-to-anchor') Начать обучение
-            .course-cap__author Галина Валерьевна Шевченко
-
+            if mod === 'no-teacher'
+              .course-cap__author Скоро здесь появится учитель
+            else
+              .course-cap__author Галина Валерьевна Шевченко

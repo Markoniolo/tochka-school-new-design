@@ -44,7 +44,7 @@
     left: 0;
     font-size: 13px;
     padding: 10px 10px;
-    height: 55px;
+    height: 45px;
     min-height: auto;
     background: #6683c2;
     color: #fff;
@@ -112,6 +112,7 @@
       @include media(lg) {
         border-radius: 33px;
         font-size: 13px;
+        height: 45px;
       }
     }
   }

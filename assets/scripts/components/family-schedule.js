@@ -12,7 +12,7 @@ function scheduleFamilyInit () {
   const cells = scheduleFamily.querySelectorAll('[data-element="family-schedule__cell"]')
   const cellTime = scheduleFamily.querySelector('[data-element="family-schedule__time"]')
 
-  const isSummer = toggleTop.classList.contains('summer')
+  const isSummer = toggleTop?.classList.contains('summer')
 
   function tableFixedCalculate() {
     offsetHeader = window.innerWidth > 574 ? 68 : 60
@@ -56,7 +56,7 @@ function scheduleFamilyInit () {
   }
 
   toggleBottom.addEventListener('click', toggleTable)
-  toggleTop.addEventListener('click', toggleTable)
+  toggleTop?.addEventListener('click', toggleTable)
   toggleBottom.addEventListener('click', scrollToTable)
 
   function toggleTable () {
@@ -77,8 +77,8 @@ function scheduleFamilyInit () {
     toggleBottom.classList.add('reverse')
     toggleTop.classList.add('reverse')
     if (!isSummer) {
-      toggleBottom.innerHTML = "Развернуть расписание"
-      toggleTop.innerHTML = "Развернуть расписание"
+      toggleBottom.innerHTML = "Показать расписание"
+      toggleTop.innerHTML = "Показать расписание"
     } else {
       toggleBottom.innerHTML = "Расписание на апрель и май"
       toggleTop.innerHTML = "Расписание на апрель и май"

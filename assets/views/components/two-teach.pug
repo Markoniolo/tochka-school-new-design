@@ -35,7 +35,9 @@ mixin two-teach(mod)
               .two-teach__title= box.title
               .two-teach__text!= box.text
             .two-teach__picture
-              if box.image
+              if index === 0 && mod === 'no-teacher'
+                img.two-teach__image(src=staticImg(`two-teach/placeholder.png`) alt='')
+              else if box.image
                 img.two-teach__image(src=box.image alt='')
               else
                 img.two-teach__image(src=staticImg(`two-teach/two-teach-${index+1}.png`) alt='')

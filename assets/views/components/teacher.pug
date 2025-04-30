@@ -14,7 +14,7 @@
   ]
 
 mixin teacher(mod, name='Галина Валерьевна Шевченко')
-  .teacher(class = `teacher_${mod}` : false)
+  .teacher(class = mod ? `teacher_${mod}` : false)
     .teacher__cont.cont
       h2.teacher__caption Учитель курса
       .teacher__wrap

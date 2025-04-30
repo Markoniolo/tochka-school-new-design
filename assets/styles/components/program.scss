@@ -1,0 +1,218 @@
+.program {
+  padding-bottom: 45px;
+  background-color: #FFFFFF;
+  @include media(lg) {
+    padding-bottom: 40px;
+  }
+}
+
+.program__cont {
+
+}
+
+.program__caption {
+  margin-bottom: 45px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 121%;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+}
+
+.program__wrap {
+  display: flex;
+  gap: 30px;
+  @include media(lg) {
+    flex-direction: column;
+  }
+}
+
+.program__main {
+  width: 572px;
+  @include media(lg) {
+    width: 100%;
+  }
+  &.wide {
+    width: 100%;
+  }
+  .program__box {
+    background: #eff3fe;
+  }
+  .program__title {
+    max-width: 420px;
+    @include media(lg) {
+      max-width: 100%;
+    }
+    @include media(xs) {
+      max-width: 254px;
+    }
+  }
+}
+
+.program__title {
+  width: 100%;
+  margin-bottom: 25px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 22px;
+    font-size: 18px;
+    line-height: 23px;
+  }
+  @include media(xs) {
+    margin-bottom: 16px;
+  }
+}
+
+.program__box {
+  border-radius: 20px;
+  padding: 30px;
+  height: 410px;
+  overflow: hidden;
+  @include media(lg) {
+    border-radius: 10px;
+    padding: 25px;
+    height: auto;
+  }
+  @include media(xs) {
+    padding: 20px 20px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  @include media(xxs) {
+    padding: 20px 15px 25px;
+  }
+  &.hide {
+    .program__more {
+      display: flex;
+    }
+    .program__item {
+      display: none;
+      &:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7),&:nth-child(8),&:nth-child(9),&:nth-child(10) {
+        display: flex;
+      }
+      @include media(lg) {
+        &:nth-child(9), &:nth-child(10) {
+          display: none;
+        }
+        &:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7),&:nth-child(8) {
+          display: flex;
+        }
+      }
+      @include media(xs) {
+        &:nth-child(6),&:nth-child(7),&:nth-child(8) {
+          display: none;
+        }
+        &:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4),&:nth-child(5) {
+          display: flex;
+        }
+      }
+    }
+  }
+  &.hide.active {
+    height: auto;
+    .program__item {
+      display: flex;
+      @include media(lg) {
+        display: flex;
+      }
+      @include media(xs) {
+        display: flex;
+      }
+    }
+    .program__more svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.program__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  @include media(xs) {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.program__item {
+  min-height: 45px;
+  border-radius: 11px;
+  box-shadow: 0 5px 21px 0 rgba(102, 131, 194, 0.19);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(50% - 8px);
+  text-align: center;
+  padding: 5px 15px;
+  font-size: 16px;
+  line-height: 100%;
+  color: #23617c;
+  @include media(lg) {
+    font-size: 14px;
+  }
+  @include media(xs) {
+    width: 100%;
+  }
+}
+
+.program__more {
+  margin-top: 25px;
+  background: rgba(255, 255, 255, 0.61);
+  min-height: 40px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #23617c;
+  border-radius: 11px;
+  padding: 4px 20px;
+  @include media(lg) {
+    font-size: 15px;
+    padding: 4px 26px;
+  }
+  svg {
+    margin-left: 6px;
+    flex-shrink: 0;
+    width: 8px;
+    height: 12px;
+  }
+}
+
+.program__text {
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 20px;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+  }
+}
+
+.program__additional {
+  width: 742px;
+  @include media(lg) {
+    width: 100%;
+  }
+  .program__box {
+    background: radial-gradient(206.94% 128.1% at 89.69% 88.29%, #dae5fe 0%, #bedaff 100%);
+  }
+  .program__title {
+    max-width: 484px;
+    @include media(lg) {
+      max-width: 100%;
+    }
+    @include media(xs) {
+      max-width: 290px;
+    }
+  }
+}

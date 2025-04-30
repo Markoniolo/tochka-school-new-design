@@ -4,6 +4,9 @@
   @include media(lg) {
     padding: 40px 0;
   }
+  @include media(xs) {
+    overflow: hidden;
+  }
 }
 
 .family-steps__cont {
