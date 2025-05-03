@@ -31,8 +31,13 @@
   }
   @include media(xs) {
     width: 100%;
-    min-height: 74px;
-    padding: 10px 12px;
+    min-height: 100px;
+    padding: 10px 20px;
+    justify-content: center;
+  }
+  @media (max-width: 360.98px) {
+    min-height: 90px;
+    padding: 10px 15px;
   }
   &_wide {
     width: calc(50% - 13px);
@@ -44,12 +49,18 @@
       flex-direction: column;
     }
     @include media(xs) {
-      min-height: 74px;
+      min-height: 100px;
       width: 100%;
+    }
+    @media (max-width: 360.98px) {
+      min-height: 90px;
     }
     .cap-list__title {
       max-width: 151px;
       width: 100%;
+      @include media(xs) {
+        max-width: 100%;
+      }
     }
     .cap-list__button {
       position: absolute;
@@ -84,6 +95,9 @@
   }
   &_summer {
     background: radial-gradient(291.29% 148.49% at 81.8% 79.89%, #eef4c9 0%, #a1e39a 100%);
+    .cap-list__title {
+      color: #003C56;
+    }
   }
   &_family {
     background: radial-gradient(228.28% 137.53% at 85.56% 75.29%, #dae5fe 0%, #bedaff 100%);
@@ -95,11 +109,19 @@
   font-size: 24px;
   line-height: 104%;
   margin-right: 5px;
-  color: #003c56;
+  color: #000000;
+  font-weight: 500;
   @include media(lg) {
     margin-bottom: 12px;
     font-size: 16px;
     margin-right: 0;
+  }
+  @include media(xs) {
+    color: #000000;
+    font-size: 18px;
+  }
+  @media (max-width: 330.98px) {
+    font-size: 17px;
   }
   br {
     @include media(lg) {
@@ -157,9 +179,22 @@
       right: 35px;
     }
     @include media(xs) {
-      width: 101px;
-      height: 74px;
-      @include bg-icon('cap/cap-decor-1_mob.svg');
+      right: 51px;
+      width: 135px;
+      height: 92px;
+      @include bg-icon('cap/cap-decor-1_400.svg');
+    }
+    @media (max-width: 370.98px) {
+      width: 129px;
+      height: 90px;
+      right: 44px;
+      @include bg-icon('cap/cap-decor-1_360.svg');
+    }
+    @media (max-width: 330.98px) {
+      width: 104px;
+      height: 90px;
+      right: 44px;
+      @include bg-icon('cap/cap-decor-1_320.svg');
     }
   }
   &_2 {
@@ -175,10 +210,22 @@
       @include bg-icon('cap/cap-decor-2_tablet.svg');
     }
     @include media(xs) {
-      width: 86px;
-      height: 74px;
-      right: 39px;
-      @include bg-icon('cap/cap-decor-2_mob.svg');
+      width: 98px;
+      height: 88px;
+      right: 65px;
+      @include bg-icon('cap/cap-decor-2_400.svg');
+    }
+    @media (max-width: 370.98px) {
+      width: 129px;
+      height: 90px;
+      right: 44px;
+      @include bg-icon('cap/cap-decor-2_360.svg');
+    }
+    @media (max-width: 330.98px) {
+      width: 104px;
+      height: 90px;
+      right: 44px;
+      @include bg-icon('cap/cap-decor-2_320.svg');
     }
   }
   &_3 {
@@ -194,10 +241,22 @@
       @include bg-icon('cap/cap-decor-3_tablet.svg');
     }
     @include media(xs) {
-      width: 93px;
-      height: 74px;
-      right: 41px;
-      @include bg-icon('cap/cap-decor-3_mob.svg');
+      width: 110px;
+      height: 88px;
+      right: 53px;
+      @include bg-icon('cap/cap-decor-3_400.svg');
+    }
+    @media (max-width: 370.98px) {
+      width: 108px;
+      height: 75px;
+      right: 44px;
+      @include bg-icon('cap/cap-decor-3_360.svg');
+    }
+    @media (max-width: 330.98px) {
+      width: 102px;
+      height: 90px;
+      right: 44px;
+      @include bg-icon('cap/cap-decor-3_320.svg');
     }
   }
   &_4 {
@@ -213,10 +272,22 @@
       @include bg-icon('cap/cap-decor-4_tablet.svg');
     }
     @include media(xs) {
-      width: 101px;
-      height: 74px;
-      right: 37px;
-      @include bg-icon('cap/cap-decor-4_mob.svg');
+      width: 123px;
+      height: 98px;
+      right: 53px;
+      @include bg-icon('cap/cap-decor-4_400.svg');
+    }
+    @media (max-width: 370.98px) {
+      width: 129px;
+      height: 90px;
+      right: 44px;
+      @include bg-icon('cap/cap-decor-4_360.svg');
+    }
+    @media (max-width: 330.98px) {
+      width: 102px;
+      height: 90px;
+      right: 44px;
+      @include bg-icon('cap/cap-decor-4_320.svg');
     }
   }
   &_5 {
@@ -232,10 +303,22 @@
       @include bg-icon('cap/cap-decor-5_tablet.svg');
     }
     @include media(xs) {
-      width: 101px;
-      height: 74px;
-      right: 37px;
-      @include bg-icon('cap/cap-decor-5_mob.svg');
+      width: 138px;
+      height: 94px;
+      right: 54px;
+      @include bg-icon('cap/cap-decor-5_400.svg');
+    }
+    @media (max-width: 370.98px) {
+      width: 129px;
+      height: 90px;
+      right: 39px;
+      @include bg-icon('cap/cap-decor-5_360.svg');
+    }
+    @media (max-width: 330.98px) {
+      width: 102px;
+      height: 90px;
+      right: 44px;
+      @include bg-icon('cap/cap-decor-5_320.svg');
     }
   }
   &_6 {
@@ -250,9 +333,19 @@
       @include bg-icon('cap/cap-decor-6_tablet.svg');
     }
     @include media(xs) {
-      width: 133px;
-      height: 74px;
-      @include bg-icon('cap/cap-decor-6_mob.svg');
+      width: 182px;
+      height: 94px;
+      @include bg-icon('cap/cap-decor-6_400.svg');
+    }
+    @media (max-width: 370.98px) {
+      width: 173px;
+      height: 90px;
+      @include bg-icon('cap/cap-decor-6_360.svg');
+    }
+    @media (max-width: 330.98px) {
+      width: 146px;
+      height: 90px;
+      @include bg-icon('cap/cap-decor-6_320.svg');
     }
   }
 }
@@ -271,6 +364,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  @include media(xs) {
+    right: 20px;
+  }
+  @media (max-width: 370.98px) {
+    right: 15px;
   }
   &::before {
     content: '';

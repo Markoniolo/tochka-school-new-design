@@ -57,10 +57,11 @@
 
 .tile__tab {
   font-size: 16px;
-  width: 120px;
+  min-width: 120px;
   height: 45px;
   border: 1px solid #6683c2;
   border-radius: 34px;
+  padding: 2px 10px 3px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,12 +70,12 @@
   transition-duration: $transition-duration;
   transition-property: background-color, color;
   @include media(lg) {
-    width: 92px;
+    min-width: 92px;
     height: 40px;
     font-size: 14px;
   }
   @include media(xs) {
-    width: 81px;
+    min-width: 81px;
     height: 34px;
   }
   &.active {

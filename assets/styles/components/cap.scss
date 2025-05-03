@@ -24,12 +24,10 @@
     padding: 30px 25px 25px;
   }
   @include media(xs) {
-    @include bg-icon('cap/cap_bg_mob.png');
-    background-size: cover;
-    padding: 35px 20px 20px;
-  }
-  @include media(xxs) {
-    padding: 35px 10px 10px;
+    background: unset;
+    padding: 0;
+    box-shadow: unset;
+    border-radius: 0;
   }
 }
 
@@ -42,7 +40,10 @@
     margin-bottom: 25px;
   }
   @include media(xs) {
-    margin-bottom: 35px;
+    margin-bottom: 28px;
+  }
+  @media (max-width: 320.98px) {
+    margin-bottom: 24px;
   }
 }
 
@@ -80,10 +81,20 @@
   @include media(lg) {
     margin-bottom: 44px;
     font-size: 30px;
+    line-height: 100%;
   }
   @include media(xs) {
-    margin-bottom: 34px;
-    font-size: 24px;
+    margin-bottom: 38px;
+  }
+  @media (max-width: 400.98px) {
+    font-size: 7.5vw;
+  }
+  @media (max-width: 360.98px) {
+    font-size: 7.78vw;
+    margin-bottom: 28px;
+  }
+  @media (max-width: 320.98px) {
+    font-size: 26px;
   }
   br {
     @include media(xs) {
@@ -104,7 +115,10 @@
     font-size: 25px;
   }
   @include media(xs) {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
+    font-size: 23px;
+  }
+  @media (max-width: 330.98px) {
     font-size: 20px;
   }
 }

@@ -133,6 +133,8 @@
 
 .nav
   .nav__wrap
+    .nav__close-box
+      button.nav__close.btn-blue Закрыть меню
     .nav__left
       .nav__box
         a.nav__box-link.nav__box-link_mob(href='#') Дошкольники
@@ -153,7 +155,7 @@
         button.nav__box-link(data-nav-id="10") Развивающие курсы
         a.nav__box-link.nav__box-link_mob(href='#') Курсы для учителей
         button.nav__box-link.nav__box-link_desc(data-nav-id="11") Курсы для учителей
-      .nav__close.btn-blue Закрыть меню
+      button.nav__close.btn-blue Закрыть меню
       .nav__contacts.nav__contacts_mob
         a.nav__phone(href="tel:+78612176477") +7 (861) 217-64-77
         a.nav__email(href="mailto:support@tochka-school.ru") support@tochka-school.ru
@@ -175,7 +177,6 @@
                   .nav__menu-list
                     each item in box.list
                       a.nav__menu-link(href="#")= item
-            .nav__close.btn-blue Закрыть меню
       each area in navAreaSecond
         .nav__area(data-nav-area = area.index class=`nav__area_${area.index}`)
           button.nav__back
@@ -204,7 +205,6 @@
             .nav__btns
               each btn in area.menu
                 a.nav__btn(href="#")= btn
-              .nav__close.btn-blue Закрыть меню
       .nav__contacts.nav__contacts_desc
         a.nav__phone(href="tel:+78612176477") +7 (861) 217-64-77
         a.nav__email(href="mailto:support@tochka-school.ru") support@tochka-school.ru

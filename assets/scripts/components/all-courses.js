@@ -23,14 +23,27 @@ function allCoursesInit () {
   const filterTagWrap = allCourses.querySelector(".all-courses__filter-wrap_tag")
   const findBtn = allCourses.querySelector('.all-courses__find')
   const moreBtn = allCourses.querySelector('.all-courses__more-button')
-  const reset = false
+  const reset = allCourses.querySelector('.all-courses__reset')
   const grades = allCourses.querySelector("[data-ftype='class_select']")
   const subjects = allCourses.querySelector("[data-ftype='class_subjects']")
   const tags = allCourses.querySelector("[data-ftype='class_tags']")
   const tile = document.querySelector('.all-courses__tile')
 
-  moreBtnInit()
+  if (reset) reset.addEventListener('click', resetFilters)
 
+  function resetFilters () {
+    for (let i = 0; i < openers.length; i++) {
+      const wrap = openers[i].nextElementSibling
+      const items = wrap.querySelectorAll("input")
+      items.forEach((item) => {
+        item.checked = false
+      })
+      updateFilter(openers[i], wrap)
+    }
+    makeFiltration();
+  }
+
+  moreBtnInit()
 
   function moreBtnInit () {
     if (moreBtn) moreBtn.addEventListener('click', () => makeFiltration(moreBtn.getAttribute('data-v')))
@@ -237,6 +250,7 @@ function allCoursesInit () {
   }
 
   async function makeFiltration (p_paginate = 1) {
+    reset.classList.add('active')
     const grades_wrap = grades.nextElementSibling
     const grades_items = grades_wrap.querySelectorAll(["input:checked"])
     let grades_result = ''
@@ -281,7 +295,10 @@ function allCoursesInit () {
       })
     }catch(e){}
     let utm_f = allCourses.getAttribute('data-utm');
-    $('.filtered_elements').html("<div class='tile-loader'></div>");
+    if(p_paginate === 1 ){
+      $('.filtered_elements').html("<div class='tile-loader'></div>");
+      $('.more_b').html("");
+    }
     let promo_f = '';
     let promo_ = allCourses.getAttribute('data-promo');
     if(promo_ != null && promo_ != '' && promo_ != undefined){

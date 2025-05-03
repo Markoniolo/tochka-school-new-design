@@ -250,8 +250,65 @@
   margin-bottom: 10px;
   font-size: 16px;
   line-height: 137%;
+  display: flex;
   @include media(xs) {
     font-size: 15px;
+  }
+}
+
+.cost__hint {
+  flex-shrink: 0;
+  position: relative;
+  padding: 10px;
+  top: -10px;
+  left: -10px;
+  margin-left: 8px;
+  cursor: pointer;
+  &:hover {
+    .cost__hint-text {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+  &.family {
+    .cost__hint-text {
+      background: #e4ecfd;
+      &::before {
+        @include bg-icon('all-courses/ic_hint_triangle_family.svg');
+      }
+    }
+  }
+}
+
+.cost__hint-text {
+  position: absolute;
+  top: calc(-100% - -15px);
+  width: 265px;
+  right: -38px;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 100%;
+  padding: 10px 16px;
+  border-radius: 43px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
+  background: #fff;
+  color: #000000;
+  opacity: 0;
+  pointer-events: none;
+  @include media(xs) {
+    right: -15px;
+  }
+  &::before {
+    content: '';
+    @include bg-icon('all-courses/ic_hint_triangle.svg');
+    width: 11px;
+    height: 9px;
+    position: absolute;
+    bottom: -5px;
+    right: 49px;
+    @include media(xs) {
+      right: 27px;
+    }
   }
 }
 
