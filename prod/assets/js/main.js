@@ -23,14 +23,27 @@ function allCoursesInit () {
   const filterTagWrap = allCourses.querySelector(".all-courses__filter-wrap_tag")
   const findBtn = allCourses.querySelector('.all-courses__find')
   const moreBtn = allCourses.querySelector('.all-courses__more-button')
-  const reset = false
+  const reset = allCourses.querySelector('.all-courses__reset')
   const grades = allCourses.querySelector("[data-ftype='class_select']")
   const subjects = allCourses.querySelector("[data-ftype='class_subjects']")
   const tags = allCourses.querySelector("[data-ftype='class_tags']")
   const tile = document.querySelector('.all-courses__tile')
 
-  moreBtnInit()
+  if (reset) reset.addEventListener('click', resetFilters)
 
+  function resetFilters () {
+    for (let i = 0; i < openers.length; i++) {
+      const wrap = openers[i].nextElementSibling
+      const items = wrap.querySelectorAll("input")
+      items.forEach((item) => {
+        item.checked = false
+      })
+      updateFilter(openers[i], wrap)
+    }
+    makeFiltration();
+  }
+
+  moreBtnInit()
 
   function moreBtnInit () {
     if (moreBtn) moreBtn.addEventListener('click', () => makeFiltration(moreBtn.getAttribute('data-v')))
@@ -237,6 +250,7 @@ function allCoursesInit () {
   }
 
   async function makeFiltration (p_paginate = 1) {
+    reset.classList.add('active')
     const grades_wrap = grades.nextElementSibling
     const grades_items = grades_wrap.querySelectorAll(["input:checked"])
     let grades_result = ''
@@ -281,7 +295,10 @@ function allCoursesInit () {
       })
     }catch(e){}
     let utm_f = allCourses.getAttribute('data-utm');
-    $('.filtered_elements').html("<div class='tile-loader'></div>");
+    if(p_paginate === 1 ){
+      $('.filtered_elements').html("<div class='tile-loader'></div>");
+      $('.more_b').html("");
+    }
     let promo_f = '';
     let promo_ = allCourses.getAttribute('data-promo');
     if(promo_ != null && promo_ != '' && promo_ != undefined){
@@ -1696,6 +1713,7 @@ function navInit () {
   const buttons = nav.querySelectorAll('button.nav__box-link')
   const headerArea = document.querySelector('.header__area')
   const navBackButtons = nav.querySelectorAll('.nav__back')
+  let timeout
 
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', toggleArea)
@@ -1712,18 +1730,24 @@ function navInit () {
     headerArea.classList.remove('hide')
   }
 
-  function toggleArea () {
-    const id = this.getAttribute('data-nav-id')
-    const oldArea = nav.querySelector('.nav__area.active')
-    if (oldArea) oldArea.classList.remove('active')
-    if (oldArea) oldArea.classList.remove('active-mob')
-    const oldButton = nav.querySelector('button.nav__box-link.active')
-    if (oldButton) oldButton.classList.remove('active')
-    const area = nav.querySelector("[data-nav-area='" + id + "']")
-    if (area) area.classList.add('active')
-    if (area) area.classList.add('active-mob')
-    headerArea.classList.add('hide')
-    this.classList.add('active')
+  function toggleArea (e) {
+    clearTimeout(timeout)
+    timeout = setTimeout(() => toggle(this),50)
+
+    function toggle (that) {
+      if (!that.closest('.nav__left').querySelector('.nav__box-link:hover')) return
+      const id = that.getAttribute('data-nav-id')
+      const oldArea = nav.querySelector('.nav__area.active')
+      if (oldArea) oldArea.classList.remove('active')
+      if (oldArea) oldArea.classList.remove('active-mob')
+      const oldButton = nav.querySelector('button.nav__box-link.active')
+      if (oldButton) oldButton.classList.remove('active')
+      const area = nav.querySelector("[data-nav-area='" + id + "']")
+      if (area) area.classList.add('active')
+      if (area) area.classList.add('active-mob')
+      headerArea.classList.add('hide')
+      that.classList.add('active')
+    }
   }
 }
 
