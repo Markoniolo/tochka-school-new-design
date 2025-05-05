@@ -59,6 +59,10 @@
     left: 50%;
     transform: translateX(-50%);
   }
+  @media (max-width: 360.98px) {
+    width: 90px;
+    height: 38px;
+  }
 }
 
 .header-new__logo-image {

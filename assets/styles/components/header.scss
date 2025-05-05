@@ -211,6 +211,10 @@
     height: 57px;
   }
   @include media(xs) {
+    width: 100px;
+    height: 43px;
+  }
+  @media (max-width: 360.98px) {
     width: 90px;
     height: 38px;
   }
