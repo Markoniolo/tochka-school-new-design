@@ -535,6 +535,15 @@ function btnFixedInit () {
   }
 }
 
+function setViewportProperty() {
+  let vh = window.innerHeight * 0.01
+  document.documentElement.style.setProperty('--vh', `${vh}px`)
+}
+
+window.addEventListener('resize', setViewportProperty)
+
+setViewportProperty()
+
 const cards = document.querySelector("[data-element='cards']")
 
 if (cards) cardsInit()
