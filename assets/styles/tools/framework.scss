@@ -25,15 +25,16 @@
 }
 
 .cont {
-  max-width: calc(1344px + 30px + 30px);
+  max-width: calc(1344px);
   width: 100%;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 0;
   @include media(lg) {
-    max-width: calc(1100px + 30px + 30px);
+    max-width: calc(1100px);
   }
   @include media(md) {
     max-width: calc(684px + 30px + 30px);
+    padding: 0 30px;
   }
   @include media(xs) {
     max-width: calc(500px + 20px + 20px);
