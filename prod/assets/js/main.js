@@ -808,9 +808,9 @@ function scheduleFamilyInit () {
       toggleBottom.innerHTML = "Показать расписание"
       toggleTop.innerHTML = "Показать расписание"
     } else {
-      toggleBottom.innerHTML = "Расписание на апрель и май"
-      toggleTop.innerHTML = "Расписание на апрель и май"
-    }
+      toggleBottom.innerHTML = "Расписание на май"
+      toggleTop.innerHTML = "Расписание на май"
+    } 
     toggleBottom.classList.add('hide')
   }
 
