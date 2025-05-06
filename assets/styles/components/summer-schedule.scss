@@ -241,10 +241,10 @@
   width: 655px;
   height: 78px;
   @include bg-icon('summer-informer/summer-informer-decor-3.png');
-  background-size: cover;
+  background-size: contain;
   @include media(lg) {
     @include bg-icon('summer-informer/summer-informer-decor-3_tablet.png');
-    background-size: cover;
+    background-size: contain;
     width: 620px;
     height: 79px;
     margin-left: 15px;
