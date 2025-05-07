@@ -22,7 +22,6 @@ function allCoursesInit () {
   const filterSubjectWrap = allCourses.querySelector(".all-courses__filter-wrap_subject")
   const filterTagWrap = allCourses.querySelector(".all-courses__filter-wrap_tag")
   const findBtn = allCourses.querySelector('.all-courses__find')
-  const moreBtn = allCourses.querySelector('.all-courses__more-button')
   const reset = allCourses.querySelector('.all-courses__reset')
   const grades = allCourses.querySelector("[data-ftype='class_select']")
   const subjects = allCourses.querySelector("[data-ftype='class_subjects']")
@@ -40,12 +39,14 @@ function allCoursesInit () {
       })
       updateFilter(openers[i], wrap)
     }
-    makeFiltration();
+    if (reset) reset.classList.remove('active')
   }
 
   moreBtnInit()
 
+
   function moreBtnInit () {
+    const moreBtn = allCourses.querySelector('.all-courses__more-button')
     if (moreBtn) moreBtn.addEventListener('click', () => makeFiltration(moreBtn.getAttribute('data-v')))
   }
 
@@ -80,24 +81,24 @@ function allCoursesInit () {
     })
   }
 
-  const observerSubject = new MutationObserver(function() {
-    initTabs()
-    const items = filterSubjectWrap.querySelectorAll("[data-element='all-courses-filter-input']")
-    const wrap = openers[1].nextElementSibling
-    items.forEach((item) => {
-      item.addEventListener('change', () => updateFilter(openers[1], wrap))
-    })
-  })
-  observerSubject.observe(filterSubjectWrap, config)
+  // const observerSubject = new MutationObserver(function() {
+  //   initTabs()
+  //   const items = filterSubjectWrap.querySelectorAll("[data-element='all-courses-filter-input']")
+  //   const wrap = openers[1].nextElementSibling
+  //   items.forEach((item) => {
+  //     item.addEventListener('change', () => updateFilter(openers[1], wrap))
+  //   })
+  // })
+  // observerSubject.observe(filterSubjectWrap, config)
 
-  const observerTag = new MutationObserver(function() {
-    const items = filterTagWrap.querySelectorAll("[data-element='all-courses-filter-input']")
-    const wrap = openers[1].nextElementSibling
-    items.forEach((item) => {
-      item.addEventListener('change', () => updateFilter(openers[1], wrap))
-    })
-  })
-  observerTag.observe(filterTagWrap, config)
+  // const observerTag = new MutationObserver(function() {
+  //   const items = filterTagWrap.querySelectorAll("[data-element='all-courses-filter-input']")
+  //   const wrap = openers[1].nextElementSibling
+  //   items.forEach((item) => {
+  //     item.addEventListener('change', () => updateFilter(openers[1], wrap))
+  //   })
+  // })
+  // observerTag.observe(filterTagWrap, config)
 
   initTabs()
 
@@ -168,52 +169,43 @@ function allCoursesInit () {
 
   function openFilter (opener, e) {
     e.stopPropagation()
-    if (opener.parentElement.classList.contains('all-courses__filter_subject') && !filterClassBox.querySelector(["input:checked"])) {
-      setError()
+    if (opener.classList.contains('active')) {
+      closeFilter(opener)
     } else {
-      resetError()
-      if (opener.classList.contains('active')) {
-        closeFilter(opener)
-      } else {
-        const oldOpen = allCourses.querySelector(".all-courses__filter-top.active")
-        if (oldOpen) oldOpen.classList.remove('active')
-        opener.classList.add('active')
+      const oldOpen = allCourses.querySelector(".all-courses__filter-top.active")
+      if (oldOpen) oldOpen.classList.remove('active')
+      opener.classList.add('active')
 
-        const filter = opener.parentElement
-        const oldFilter = allCourses.querySelector(".all-courses__filter.open")
-        if (oldFilter) oldFilter.classList.remove('open')
-        if (filter) filter.classList.add('open')
-      }
+      const filter = opener.parentElement
+      const oldFilter = allCourses.querySelector(".all-courses__filter.open")
+      if (oldFilter) oldFilter.classList.remove('open')
+      if (filter) filter.classList.add('open')
     }
     hideHeader()
   }
 
   async function updateFilter (opener, wrap, noScroll) {
-    resetError()
     if(opener.getAttribute('data-ftype') === 'class_select' || opener.getAttribute('data-ftype') === 'class_tags') {
-      filterSubjectsList.innerHTML = "<div class='tile-loader-box'><div class='tile-loader'></div></div>";
+      //filterSubjectsList.innerHTML = "<div class='tile-loader-box'><div class='tile-loader'></div></div>";
       makeFiltration()
-      updateFilter(openers[1], openers[1].nextElementSibling, true)
+      // updateFilter(openers[1], openers[1].nextElementSibling, true)
     } else {
       makeFiltration()
       if (!noScroll) scrollToTile()
     }
     opener.innerHTML = opener.getAttribute('data-default-text')
-    const items = wrap.querySelectorAll(["input:checked"])
-    if (items.length) {
-      opener.innerHTML = 'Выбрано: '
-      items.forEach((item) => {
-        const span = document.createElement("span")
-        span.innerHTML = item.nextElementSibling.innerHTML
-        span.classList.add('span')
-        opener.append(span)
-      })
+    const item = wrap.querySelector(["input:checked"])
+    if (item) {
+      opener.innerHTML = ''
+      span = document.createElement('span')
+      span.innerHTML = item.nextElementSibling.innerHTML
+      opener.append(span)
     }
     const itemsAll = allCourses.querySelectorAll(["input:checked"])
     if (itemsAll.length) {
-      if (reset) reset.classList.add('show')
+      if (reset) reset.classList.add('active')
     } else {
-      if (reset) reset.classList.remove('show')
+      if (reset) reset.classList.remove('active')
     }
     closeFilter(opener)
   }
@@ -250,7 +242,6 @@ function allCoursesInit () {
   }
 
   async function makeFiltration (p_paginate = 1) {
-    reset.classList.add('active')
     const grades_wrap = grades.nextElementSibling
     const grades_items = grades_wrap.querySelectorAll(["input:checked"])
     let grades_result = ''
@@ -304,10 +295,12 @@ function allCoursesInit () {
     if(promo_ != null && promo_ != '' && promo_ != undefined){
       promo_f = promo_;
     }
-    if(p_paginate > 1 && grade_item === '' && grade_h1_part === '' && subject_item === '' && subject_h1_part === ''){
+    if(grade_item === '' && grade_h1_part === ''){
       grades_result = 'all'
+    }
+    if(subject_item === '' && subject_h1_part === ''){
       subjects_result = 'all'
-      tags_result = ''
+      //tags_result = ''
     }
     var obData = {
       'grade': grades_result,
@@ -339,13 +332,18 @@ function allCoursesInit () {
     //  if (useFilterReplaceState === true) history.replaceState(null, "", url.toString())
     if (subject_item !== "") {
       url = url + '/' + subject_item
-      if (grade_item !== "") {
-        url = url + '/' + grade_item
-        if (tag_item !== "") url = url + '/' + tag_item
-
-      }else{
-        url = urlFilter
-      }
+    }else{
+      url = url + '/all'
+    }
+    if (grade_item !== "") {
+      url = url + '/' + grade_item
+    }else{
+      url = url + '/all'
+    }
+    if (tag_item !== "") {
+      url = url + '/' + tag_item
+    }else{
+      url = urlFilter
     }
     history.replaceState(null, "", url.toString())
     let new_h1 = h1Filter
@@ -533,6 +531,15 @@ function btnFixedInit () {
       (left + width) > window.pageXOffset
     )
   }
+}
+
+const buttonDataHrefLinks = document.querySelectorAll('button[data-href-link]')
+
+for (let i = 0; i < buttonDataHrefLinks.length; i++) {
+  buttonDataHrefLinks[i].addEventListener('click', function (e) {
+    e.preventDefault()
+    window.open(this.getAttribute('data-href-link'), '_blank')
+  })
 }
 
 function setViewportProperty() {
@@ -810,7 +817,7 @@ function scheduleFamilyInit () {
     } else {
       toggleBottom.innerHTML = "Расписание на май"
       toggleTop.innerHTML = "Расписание на май"
-    } 
+    }
     toggleBottom.classList.add('hide')
   }
 
@@ -1502,7 +1509,7 @@ function libraryCapInit () {
       })
       updateFilter(openers[i], wrap, true)
     }
-    makeFiltration()
+    // makeFiltration()
     hideBlocks()
   }
 
@@ -1625,7 +1632,7 @@ function libraryCapInit () {
     resetError()
     if(opener.getAttribute('data-ftype') === 'class_select') {
       filterSubjectsList.innerHTML = "<div class='tile-loader-box'><div class='tile-loader'></div></div>";
-      makeFiltration()
+      // makeFiltration()
       updateFilter(openers[1], openers[1].nextElementSibling, true)
     } else {
       makeFiltration()
