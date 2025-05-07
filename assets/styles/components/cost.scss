@@ -234,6 +234,12 @@
       color: rgba(255, 255, 255, 0.7);
     }
   }
+  &_no-promocode {
+    min-height: 135px;
+    @include media(xs) {
+      min-height: 104px;
+    }
+  }
 }
 
 .cost__name {
@@ -319,6 +325,15 @@
 }
 
 .cost__price-current {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 92%;
+  @include media(xs) {
+    font-size: 18px;
+  }
+}
+
+.cost__date {
   font-weight: 600;
   font-size: 24px;
   line-height: 92%;

@@ -13,6 +13,7 @@
       @include bg-icon('cap-school/cap-school-decor-1.png');
       @include media(xs) {
         @include bg-icon('cap-school/cap-school-decor-1_mob.png');
+        background-size: contain;
       }
     }
   }
@@ -21,6 +22,7 @@
       @include bg-icon('cap-school/cap-school-decor-2.png');
       @include media(xs) {
         @include bg-icon('cap-school/cap-school-decor-2_mob.png');
+        background-size: contain;
         top: 12px;
       }
     }
@@ -30,6 +32,7 @@
       @include bg-icon('cap-school/cap-school-decor-3.png');
       @include media(xs) {
         @include bg-icon('cap-school/cap-school-decor-3_mob.png');
+        background-size: contain;
         top: 12px;
       }
     }
@@ -79,7 +82,8 @@
       top: 0;
       left: 50%;
       transform: translateX(-50%);
-      width: 336px;
+      max-width: 336px;
+      width: 100%;
       height: 228px;
     }
   }

@@ -80,7 +80,7 @@ function libraryCapInit () {
       })
       updateFilter(openers[i], wrap, true)
     }
-    makeFiltration()
+    // makeFiltration()
     hideBlocks()
   }
 
@@ -203,7 +203,7 @@ function libraryCapInit () {
     resetError()
     if(opener.getAttribute('data-ftype') === 'class_select') {
       filterSubjectsList.innerHTML = "<div class='tile-loader-box'><div class='tile-loader'></div></div>";
-      makeFiltration()
+      // makeFiltration()
       updateFilter(openers[1], openers[1].nextElementSibling, true)
     } else {
       makeFiltration()

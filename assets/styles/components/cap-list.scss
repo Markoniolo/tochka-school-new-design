@@ -101,6 +101,9 @@
   }
   &_family {
     background: radial-gradient(228.28% 137.53% at 85.56% 75.29%, #dae5fe 0%, #bedaff 100%);
+    .cap-list__tags {
+      max-width: 340px;
+    }
   }
 }
 
@@ -171,9 +174,9 @@
     height: 95px;
     bottom: 0;
     right: 0;
-    @include bg-icon('cap/cap-decor-1.svg');
+    @include bg-icon('cap/cap-decor-1.png');
     @include media(lg) {
-      @include bg-icon('cap/cap-decor-1_tablet.svg');
+      @include bg-icon('cap/cap-decor-1_tablet.png');
       width: 123px;
       height: 88px;
       right: 35px;
@@ -182,19 +185,19 @@
       right: 51px;
       width: 135px;
       height: 92px;
-      @include bg-icon('cap/cap-decor-1_400.svg');
+      @include bg-icon('cap/cap-decor-1_mob.png');
     }
     @media (max-width: 370.98px) {
       width: 129px;
       height: 90px;
       right: 44px;
-      @include bg-icon('cap/cap-decor-1_360.svg');
+      background-size: cover;
     }
     @media (max-width: 330.98px) {
       width: 104px;
       height: 90px;
       right: 44px;
-      @include bg-icon('cap/cap-decor-1_320.svg');
+      background-size: cover;
     }
   }
   &_2 {
@@ -322,8 +325,8 @@
     }
   }
   &_6 {
-    width: 235px;
-    height: 172px;
+    width: 220px;
+    height: 161px;
     bottom: 0;
     right: 0;
     @include bg-icon('cap/cap-decor-6.svg');
