@@ -28,6 +28,18 @@ function allCoursesInit () {
   const tags = allCourses.querySelector("[data-ftype='class_tags']")
   const tile = document.querySelector('.all-courses__tile')
 
+  let timerReload = setTimeout(() => window.location.reload(), 300000)
+
+  function buttonDataHrefLinksInit() {
+    const buttonDataHrefLinks = document.querySelectorAll('button[data-href-link]')
+    for (let i = 0; i < buttonDataHrefLinks.length; i++) {
+      buttonDataHrefLinks[i].addEventListener('click', function (e) {
+        e.preventDefault()
+        window.open(this.getAttribute('data-href-link'), '_blank')
+      })
+    }
+  }
+
   if (reset) reset.addEventListener('click', resetFilters)
 
   function resetFilters () {
@@ -53,6 +65,7 @@ function allCoursesInit () {
   const observer = new MutationObserver(function() {
     togglePrice()
     moreBtnInit()
+    buttonDataHrefLinksInit()
   })
 
   observer.observe(tile, config)
@@ -81,24 +94,24 @@ function allCoursesInit () {
     })
   }
 
-  // const observerSubject = new MutationObserver(function() {
-  //   initTabs()
-  //   const items = filterSubjectWrap.querySelectorAll("[data-element='all-courses-filter-input']")
-  //   const wrap = openers[1].nextElementSibling
-  //   items.forEach((item) => {
-  //     item.addEventListener('change', () => updateFilter(openers[1], wrap))
-  //   })
-  // })
-  // observerSubject.observe(filterSubjectWrap, config)
+//    const observerSubject = new MutationObserver(function() {
+//      initTabs()
+//      const items = filterSubjectWrap.querySelectorAll("[data-element='all-courses-filter-input']")
+//      const wrap = openers[1].nextElementSibling
+//      items.forEach((item) => {
+//        item.addEventListener('change', () => updateFilter(openers[1], wrap))
+//      })
+//    })
+//    observerSubject.observe(filterSubjectWrap, config)
 
-  // const observerTag = new MutationObserver(function() {
-  //   const items = filterTagWrap.querySelectorAll("[data-element='all-courses-filter-input']")
-  //   const wrap = openers[1].nextElementSibling
-  //   items.forEach((item) => {
-  //     item.addEventListener('change', () => updateFilter(openers[1], wrap))
-  //   })
-  // })
-  // observerTag.observe(filterTagWrap, config)
+//    const observerTag = new MutationObserver(function() {
+//      const items = filterTagWrap.querySelectorAll("[data-element='all-courses-filter-input']")
+//      const wrap = openers[1].nextElementSibling
+//      items.forEach((item) => {
+//        item.addEventListener('change', () => updateFilter(openers[1], wrap))
+//      })
+//    })
+//    observerTag.observe(filterTagWrap, config)
 
   initTabs()
 
@@ -140,10 +153,7 @@ function allCoursesInit () {
     for (let i = 0; i < openers.length; i++) {
       const wrap = openers[i].nextElementSibling
       const itemChecked = wrap.querySelector(["input:checked"])
-      if (!itemChecked) {
-        valid = false
-        setError()
-      }
+      if (!itemChecked) valid = false
     }
 
     if (valid) {
@@ -188,7 +198,7 @@ function allCoursesInit () {
     if(opener.getAttribute('data-ftype') === 'class_select' || opener.getAttribute('data-ftype') === 'class_tags') {
       //filterSubjectsList.innerHTML = "<div class='tile-loader-box'><div class='tile-loader'></div></div>";
       makeFiltration()
-      // updateFilter(openers[1], openers[1].nextElementSibling, true)
+      //    updateFilter(openers[1], openers[1].nextElementSibling, true)
     } else {
       makeFiltration()
       if (!noScroll) scrollToTile()
@@ -242,6 +252,9 @@ function allCoursesInit () {
   }
 
   async function makeFiltration (p_paginate = 1) {
+    clearTimeout(timerReload)
+    timerReload = setTimeout(() => window.location.reload(), 300000)
+
     const grades_wrap = grades.nextElementSibling
     const grades_items = grades_wrap.querySelectorAll(["input:checked"])
     let grades_result = ''
@@ -291,9 +304,11 @@ function allCoursesInit () {
       $('.more_b').html("");
     }
     let promo_f = '';
+    let promo_f_param = '';
     let promo_ = allCourses.getAttribute('data-promo');
     if(promo_ != null && promo_ != '' && promo_ != undefined){
       promo_f = promo_;
+      promo_f_param = '?promo='+promo_f;
     }
     if(grade_item === '' && grade_h1_part === ''){
       grades_result = 'all'
@@ -332,34 +347,63 @@ function allCoursesInit () {
     //  if (useFilterReplaceState === true) history.replaceState(null, "", url.toString())
     if (subject_item !== "") {
       url = url + '/' + subject_item
-    }else{
-      url = url + '/all'
     }
     if (grade_item !== "") {
+      if (subject_item !== "") {
+      }else{
+        url = url + '/all'
+      }
       url = url + '/' + grade_item
-    }else{
-      url = url + '/all'
     }
     if (tag_item !== "") {
+      if (grade_item !== "") {
+      }else{
+        if (subject_item !== "") {
+        }else{
+          url = url + '/all'
+        }
+        url = url + '/all'
+      }
       url = url + '/' + tag_item
-    }else{
-      url = urlFilter
     }
+    url = url + promo_f_param
     history.replaceState(null, "", url.toString())
     let new_h1 = h1Filter
     let new_title = metaNameFilter
     let new_description = metaDescriptionFilter
-    if (subject_h1_part !== "") {
-      new_h1 = 'Курсы по '+ subject_h1_part
-      if (grade_h1_part !== "") {
-        new_h1 = new_h1 + ' для ' + grade_h1_part
-        if (tag_h1_part !== "") new_h1 = new_h1 + ', чтобы ' + tag_h1_part
-      }
-      new_title = new_h1 + 'в онлайн-школе «Точка Знаний»'
-      new_description = new_h1 + 'в онлайн-школе «Точка Знаний». ✔️ Интересные и понятные онлайн-занятия с преподавателями. ✔️ Персональный тьютор. ✔️ Подготовка к ЕГЭ, ОГЭ и ВПР. ✔️ Учитесь в удобном темпе, все курсы доступны в записи!'
 
-
+    new_h1 = 'Курсы'
+    const tagPurposeChecked = allCourses.querySelector('.all-courses__filter_purpose input:checked')
+    let special = tagPurposeChecked.getAttribute('data-special') === "special"
+    if(special){
+      new_h1 = 'Семейное онлайн-обучение'
     }
+    if (subject_h1_part !== "" && !special) {
+      new_h1 = new_h1 + ' по '+ subject_h1_part
+    }else{
+    }
+    if (grade_h1_part !== "") {
+      new_h1 = new_h1 + ' для ' + grade_h1_part
+    }else{
+    }
+    if (tag_h1_part !== "") {
+      new_h1 = new_h1 + ', чтобы ' + tag_h1_part
+    }
+    if (new_h1 === 'Курсы' || new_h1 === 'Семейное онлайн-обучение'){
+      new_h1 = h1Filter
+    }
+
+
+    if(special){
+      new_title = new_h1 + ' в «Точке Знаний»'
+      new_description = new_h1 + ' в «Точке Знаний». ✔️ Интересные и понятные онлайн-занятия с преподавателями. ✔️ Персональный тьютор. ✔️ Подготовка к ЕГЭ, ОГЭ и ВПР. ✔️ Учитесь в удобном темпе, все курсы доступны в записи!'
+    }else{
+      new_title = new_h1 + ' в онлайн-школе «Точка Знаний»'
+      new_description = new_h1 + ' в онлайн-школе «Точка Знаний». ✔️ Интересные и понятные онлайн-занятия с преподавателями. ✔️ Персональный тьютор. ✔️ Подготовка к ЕГЭ, ОГЭ и ВПР. ✔️ Учитесь в удобном темпе, все курсы доступны в записи!'
+    }
+
+
+
 
     filterh1block.textContent = new_h1
 
@@ -531,15 +575,6 @@ function btnFixedInit () {
       (left + width) > window.pageXOffset
     )
   }
-}
-
-const buttonDataHrefLinks = document.querySelectorAll('button[data-href-link]')
-
-for (let i = 0; i < buttonDataHrefLinks.length; i++) {
-  buttonDataHrefLinks[i].addEventListener('click', function (e) {
-    e.preventDefault()
-    window.open(this.getAttribute('data-href-link'), '_blank')
-  })
 }
 
 function setViewportProperty() {
