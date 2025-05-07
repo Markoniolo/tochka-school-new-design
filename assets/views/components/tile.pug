@@ -15,17 +15,16 @@
             if item === 0
               a.tile__family(href='#')
                 picture.tile__family-picture
-                  source(srcset=staticImg('tile/tile-family_mob.svg') media="(max-width: 743px)")
-                  source(srcset=staticImg('tile/tile-family_tablet.svg') media="(max-width: 1439px)")
-                  img.tile__family-image(src=staticImg('tile/tile-family.svg') alt='')
+                  img.tile__family-image(src=staticImg('tile/tile-family-new.png') alt='')
                 .tile__family-inner
-                  .tile__family-number= `${tile} класс`
-                  .tile__family-top
-                    .tile__family-title Семейное обучение
-                    .tile__family-tag Аттестация онлайн
-                    .tile__family-tag Бесплатное прикрепление к школе
+                  .tile__family-number 9 класс
+                  .tile__family-name Семейное обучение
                   .tile__family-text Получайте школьное образование дома. Онлайн. С лучшими учителями РФ, внимательными тьюторами и аттестацией.
-                  .tile__family-button.btn-orange Перейти
+                  .tile__family-tags
+                    .tile__family-tag Онлайн-уроки по ФГОС
+                    .tile__family-tag Аттестат гос. образца онлайн
+                    .tile__family-tag.desk Бесплатное прикрепление к школе
+                  button.tile__family-btn.btn-orange Перейти
             else
               a.tile__item(href='#')
                 .tile__picture

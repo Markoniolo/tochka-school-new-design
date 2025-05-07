@@ -13,7 +13,7 @@
   .all-courses__cont.cont
     .all-courses__wrap
       .all-courses__filter.all-courses__filter_class
-        .all-courses__filter-top(data-element='all-courses-filter-opener' data-default-text='Выберите класс' data-ftype='class_select')
+        .all-courses__filter-top(data-element='all-courses-filter-opener' data-default-text='Все классы' data-ftype='class_select')
           .all-courses__filter-top-text Все классы
         .all-courses__filter-wrap
           .all-courses__filter-close
@@ -27,7 +27,7 @@
                 input.all-courses__filter-input(type='radio' name='class' value=`subject-id-${index + 1}` data-element='all-courses-filter-input')
                 .all-courses__filter-view= `${item} класс`
       .all-courses__filter.all-courses__filter_subject
-        .all-courses__filter-top(data-element='all-courses-filter-opener' data-default-text='Выберите предмет' data-ftype='class_subjects')
+        .all-courses__filter-top(data-element='all-courses-filter-opener' data-default-text='Все предметы' data-ftype='class_subjects')
           .all-courses__filter-top-text Все предметы
         .all-courses__filter-wrap.all-courses__filter-wrap_subject
           .all-courses__filter-close
@@ -42,7 +42,7 @@
                   input.all-courses__filter-input(type='radio' name='subject' value=`subject-id-${index + 1}` data-element='all-courses-filter-input')
                   .all-courses__filter-view= `${item}`
       .all-courses__filter.all-courses__filter_purpose
-        .all-courses__filter-top(data-element='all-courses-filter-opener' data-default-text='Выберите цель' data-ftype='class_select')
+        .all-courses__filter-top(data-element='all-courses-filter-opener' data-default-text='Все цели' data-ftype='class_select')
           .all-courses__filter-top-text Все цели
         .all-courses__filter-wrap.all-courses__filter-wrap_tag
           .all-courses__filter-close
@@ -272,7 +272,7 @@
                 .all-courses__price-full-old 55 338 ₽
                 .all-courses__discount Скидка 25%
             .all-courses__btns
-              button.all-courses__button.all-courses__button_border(data-href-link="#link") Начать обучение
+              button.all-courses__button.all-courses__button_border(data-src='#modal-order-new' data-fancybox data-options='{"touch": false}') Начать обучение
               button.all-courses__button.btn-orange Подробнее о курсе
           .all-courses__box.hide
             .all-courses__inner
