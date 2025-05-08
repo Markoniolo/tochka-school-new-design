@@ -1,6 +1,9 @@
 mixin cost (mod)
   .cost(class = mod ? mod : false id = mod !== 'shortest' ? 'pre-reg' : false data-btn-fixed-hide="true")
     .cost__cont.cont
+      a.cost__informer(href='#')
+        .cost__informer-title Этот курс уже доступен к покупке на 25/26 учебный год
+        button.cost__informer-button.btn-orange Подробнее
       if mod !== 'shortest'
         h2.cost__caption Стоимость годового абонемента
       .cost__wrap(class= mod ? `cost__wrap_${mod}` : false)

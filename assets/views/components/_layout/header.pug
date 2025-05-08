@@ -16,7 +16,7 @@
   ]
 
 mixin header(mod)
-  header.header.short.old(data-element="header" class = mod ? mod : false)
+  header.header.short(data-element="header" class = mod ? mod : false)
     .header__cont.cont
       .header__layer
       .header__area
@@ -42,26 +42,26 @@ mixin header(mod)
           .header__bottom-list
             each item in headerBottom
               a.header__bottom-link(href='#')= item
-      .header__open
-        .header__list
-          each item in headerList
-            a.header__link(href='#' class = item.note ? false : 'header__link_teacher')
-              .header__link-name= item.name
-              if item.note
-                .header__link-note= item.note
-              svg(width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg")
-                path(d="M12.59 4.35355C12.7853 4.15829 12.7853 3.84171 12.59 3.64645L9.40803 0.464465C9.21276 0.269203 8.89618 0.269203 8.70092 0.464465C8.50566 0.659728 8.50566 0.97631 8.70092 1.17157L11.5293 4L8.70092 6.82843C8.50566 7.02369 8.50566 7.34027 8.70092 7.53553C8.89618 7.7308 9.21276 7.7308 9.40803 7.53553L12.59 4.35355ZM4.45727e-08 4.5L12.2365 4.5L12.2365 3.5L-4.45727e-08 3.5L4.45727e-08 4.5Z" fill="#6683C2")
-        .header__consult
-          .header__title Нужна консультация?
-          .header__text.
-            Оставьте заявку. Ответим на все
-            вопросы и поможем в выборе.
-          a.header__button.btn-orange.btn-orange_arrow(href='#modal-order-new' data-fancybox data-options='{"touch": false}')
-            | Оставить заявку
-        .header__contacts
-          .header__contacts-box
-            a.header__phone(href='tel:+78612176477') +7 (861) 217-64-77
-          .header__contacts-box
-            a.header__wp(href='https://api.whatsapp.com/send/?phone=79182293194&text&type=phone_number&app_absent=0' target="_blank") Написать в WhatsApp
-            a.header__mail(href='mailto:tochka-school@yandex.ru') tochka-school@yandex.ru
-      //include nav
+      //.header__open
+      //  .header__list
+      //    each item in headerList
+      //      a.header__link(href='#' class = item.note ? false : 'header__link_teacher')
+      //        .header__link-name= item.name
+      //        if item.note
+      //          .header__link-note= item.note
+      //        svg(width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg")
+      //          path(d="M12.59 4.35355C12.7853 4.15829 12.7853 3.84171 12.59 3.64645L9.40803 0.464465C9.21276 0.269203 8.89618 0.269203 8.70092 0.464465C8.50566 0.659728 8.50566 0.97631 8.70092 1.17157L11.5293 4L8.70092 6.82843C8.50566 7.02369 8.50566 7.34027 8.70092 7.53553C8.89618 7.7308 9.21276 7.7308 9.40803 7.53553L12.59 4.35355ZM4.45727e-08 4.5L12.2365 4.5L12.2365 3.5L-4.45727e-08 3.5L4.45727e-08 4.5Z" fill="#6683C2")
+      //  .header__consult
+      //    .header__title Нужна консультация?
+      //    .header__text.
+      //      Оставьте заявку. Ответим на все
+      //      вопросы и поможем в выборе.
+      //    a.header__button.btn-orange.btn-orange_arrow(href='#modal-order-new' data-fancybox data-options='{"touch": false}')
+      //      | Оставить заявку
+      //  .header__contacts
+      //    .header__contacts-box
+      //      a.header__phone(href='tel:+78612176477') +7 (861) 217-64-77
+      //    .header__contacts-box
+      //      a.header__wp(href='https://api.whatsapp.com/send/?phone=79182293194&text&type=phone_number&app_absent=0' target="_blank") Написать в WhatsApp
+      //      a.header__mail(href='mailto:tochka-school@yandex.ru') tochka-school@yandex.ru
+      include nav

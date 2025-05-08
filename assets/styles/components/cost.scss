@@ -64,6 +64,68 @@
 
 }
 
+.cost__informer {
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  background: radial-gradient(181.99% 122.68% at 90.66% 82.56%, #dae5fe 0%, #bedaff 100%);
+  min-height: 172px;
+  padding: 30px 50px;
+  gap: 70px;
+  @include bg-icon('cost/cost-informer-bg.png');
+  background-size: cover;
+  @include media(lg) {
+    @include bg-icon('cost/cost-informer-bg_tablet.png');
+    background-size: cover;
+    border-radius: 10px;
+    min-height: 128px;
+    padding: 20px 25px;
+    gap: 103px;
+  }
+  @include media(xs) {
+    @include bg-icon('cost/cost-informer-bg_mob.png');
+    background-size: cover;
+    min-height: 213px;
+    flex-direction: column;
+    padding: 26px 10px 30px;
+    gap: 0;
+  }
+}
+
+.cost__informer-title {
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 111%;
+  color: #003c56;
+  max-width: 804px;
+  width: 100%;
+  @include media(lg) {
+    max-width: 300px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+  @include media(xs) {
+    max-width: 310px;
+    text-align: center;
+    margin: 0 auto 25px;
+  }
+}
+
+.cost__informer-button {
+  font-size: 16px;
+  min-width: 230px;
+  min-height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include media(xs) {
+    max-width: 283px;
+    min-width: unset;
+    width: 100%;
+  }
+}
+
 .cost__caption {
   display: flex;
   align-items: flex-start;

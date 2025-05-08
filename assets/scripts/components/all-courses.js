@@ -40,6 +40,7 @@ function allCoursesInit () {
     }
   }
 
+
   if (reset) reset.addEventListener('click', resetFilters)
 
   function resetFilters () {
@@ -52,6 +53,15 @@ function allCoursesInit () {
       updateFilter(openers[i], wrap)
     }
     if (reset) reset.classList.remove('active')
+  }
+
+  function resetFilter (opener) {
+    const wrap = opener.nextElementSibling
+    const items = wrap.querySelectorAll("input")
+    items.forEach((item) => {
+      item.checked = false
+    })
+    updateFilter(opener, wrap)
   }
 
   moreBtnInit()
@@ -175,6 +185,9 @@ function allCoursesInit () {
     items.forEach((item) => {
       item.addEventListener('change', () => updateFilter(openers[i], wrap))
     })
+
+    const resetFilterBtn = wrap.querySelector('.all-courses__reset-filter')
+    if (resetFilterBtn) resetFilterBtn.addEventListener('click', () => resetFilter(openers[i]))
   }
 
   function openFilter (opener, e) {
@@ -204,12 +217,16 @@ function allCoursesInit () {
       if (!noScroll) scrollToTile()
     }
     opener.innerHTML = opener.getAttribute('data-default-text')
+    const resetFilterBtn = wrap.querySelector('.all-courses__reset-filter')
     const item = wrap.querySelector(["input:checked"])
     if (item) {
       opener.innerHTML = ''
       span = document.createElement('span')
       span.innerHTML = item.nextElementSibling.innerHTML
       opener.append(span)
+      if (resetFilterBtn) resetFilterBtn.classList.add('active')
+    } else {
+      if (resetFilterBtn) resetFilterBtn.classList.remove('active')
     }
     const itemsAll = allCourses.querySelectorAll(["input:checked"])
     if (itemsAll.length) {
@@ -254,7 +271,6 @@ function allCoursesInit () {
   async function makeFiltration (p_paginate = 1) {
     clearTimeout(timerReload)
     timerReload = setTimeout(() => window.location.reload(), 300000)
-
     const grades_wrap = grades.nextElementSibling
     const grades_items = grades_wrap.querySelectorAll(["input:checked"])
     let grades_result = ''
@@ -299,6 +315,10 @@ function allCoursesInit () {
       })
     }catch(e){}
     let utm_f = allCourses.getAttribute('data-utm');
+    if(utm_f != null && utm_f != '' && utm_f != undefined){
+    }else{
+      utm_f = ''
+    }
     if(p_paginate === 1 ){
       $('.filtered_elements').html("<div class='tile-loader'></div>");
       $('.more_b').html("");
@@ -366,7 +386,7 @@ function allCoursesInit () {
       }
       url = url + '/' + tag_item
     }
-    url = url + promo_f_param
+    url = url + utm_f
     history.replaceState(null, "", url.toString())
     let new_h1 = h1Filter
     let new_title = metaNameFilter
@@ -374,7 +394,8 @@ function allCoursesInit () {
 
     new_h1 = 'Курсы'
     const tagPurposeChecked = allCourses.querySelector('.all-courses__filter_purpose input:checked')
-    let special = tagPurposeChecked.getAttribute('data-special') === "special"
+    let special
+    if (tagPurposeChecked) special = tagPurposeChecked.getAttribute('data-special') === "special"
     if(special){
       new_h1 = 'Семейное онлайн-обучение'
     }
