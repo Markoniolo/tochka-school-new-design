@@ -50,8 +50,9 @@ function allCoursesInit () {
       items.forEach((item) => {
         item.checked = false
       })
-      updateFilter(openers[i], wrap)
+      updateFilter(openers[i], wrap, false, true)
     }
+    makeFiltration()
     if (reset) reset.classList.remove('active')
   }
 
@@ -126,6 +127,7 @@ function allCoursesInit () {
   initTabs()
 
   function initTabs () {
+    const tabsParent = filterSubjectWrap.querySelector('.all-courses__filter-tabs')
     const tabs = filterSubjectWrap.querySelectorAll('.all-courses__filter-tab')
     const subjects = filterSubjectWrap.querySelectorAll('.all-courses__filter-item')
 
@@ -150,6 +152,8 @@ function allCoursesInit () {
         activeSubjects.forEach((subject) => {
           subject.classList.remove('hide')
         })
+
+        tabsParent.scrollLeft = this.offsetLeft - tabsParent.clientWidth/2 + this.clientWidth/2
       }
     })
 
@@ -207,13 +211,13 @@ function allCoursesInit () {
     hideHeader()
   }
 
-  async function updateFilter (opener, wrap, noScroll) {
+  async function updateFilter (opener, wrap, noScroll, noFiltration) {
     if(opener.getAttribute('data-ftype') === 'class_select' || opener.getAttribute('data-ftype') === 'class_tags') {
       //filterSubjectsList.innerHTML = "<div class='tile-loader-box'><div class='tile-loader'></div></div>";
-      makeFiltration()
+      if (!noFiltration) makeFiltration()
       //    updateFilter(openers[1], openers[1].nextElementSibling, true)
     } else {
-      makeFiltration()
+      if (!noFiltration) makeFiltration()
       if (!noScroll) scrollToTile()
     }
     opener.innerHTML = opener.getAttribute('data-default-text')

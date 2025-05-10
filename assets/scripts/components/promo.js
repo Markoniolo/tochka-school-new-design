@@ -9,7 +9,10 @@ function promoInit () {
   promoView.addEventListener('click', openPromo)
   closeBtn.addEventListener('click', closePromo)
 
-  function openPromo () {
+  window.addEventListener('click', closePromo)
+
+  function openPromo (e) {
+    e.stopPropagation()
     promo.classList.add('active')
   }
 

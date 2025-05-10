@@ -290,7 +290,7 @@
 }
 
 .tile__picture {
-  background: #d9d9d9;
+  background: #E0ECFB;
   border-radius: 22px;
   overflow: hidden;
   width: 180px;
@@ -320,6 +320,7 @@
 .tile__inner {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .tile__class-number {

@@ -43,6 +43,9 @@
 .summer-cost__wrap {
   max-width: 1181px;
   width: 100%;
+  & + .cost__informer {
+    margin-top: 40px;
+  }
 }
 
 .summer-cost__caption {

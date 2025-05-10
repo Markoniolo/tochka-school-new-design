@@ -41,15 +41,6 @@
   .program__box {
     background: #eff3fe;
   }
-  .program__title {
-    max-width: 420px;
-    @include media(lg) {
-      max-width: 100%;
-    }
-    @include media(xs) {
-      max-width: 254px;
-    }
-  }
 }
 
 .program__title {
@@ -205,14 +196,5 @@
   }
   .program__box {
     background: radial-gradient(206.94% 128.1% at 89.69% 88.29%, #dae5fe 0%, #bedaff 100%);
-  }
-  .program__title {
-    max-width: 484px;
-    @include media(lg) {
-      max-width: 100%;
-    }
-    @include media(xs) {
-      max-width: 290px;
-    }
   }
 }

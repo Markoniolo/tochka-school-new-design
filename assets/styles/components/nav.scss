@@ -70,6 +70,9 @@
   color: #000;
   transition-property: color;
   transition-duration: $transition-duration;
+  @include media(xs) {
+    transition-duration: unset;
+  }
   &_mob {
     display: none;
     @include media(xs) {
@@ -83,9 +86,6 @@
   }
   &.active {
     color: #6683C2;
-    @include media(xs) {
-      color: #000;
-    }
   }
 }
 
@@ -183,6 +183,7 @@
     scrollbar-color: rgba(102, 131, 194, 0.8) white;
     transition-property: transform;
     transform: translateX(-100%);
+    transition-duration: 0.5s;
   }
   @include media(xxs) {
     padding: 20px 10px;
@@ -381,6 +382,7 @@
     margin: 6px -20px 0;
     overflow-y: auto;
     height: calc(calc(var(--vh) * 100) - 180px);
+    gap: 25px;
   }
   @include media(xxs) {
     width: calc(100% + 20px);
@@ -422,6 +424,10 @@
   gap: 10px;
   @include media(md) {
     gap: 8px;
+  }
+  @include media(xs) {
+    margin-top: 10px;
+    gap: 10px;
   }
 }
 
