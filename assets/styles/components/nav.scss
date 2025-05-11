@@ -324,7 +324,7 @@
     padding: 2px 14px;
   }
   @include media(lg) {
-    &:nth-child(2) {
+    &:nth-child(1), &:nth-child(2) {
       width: 100%;
     }
     &:nth-child(3) {

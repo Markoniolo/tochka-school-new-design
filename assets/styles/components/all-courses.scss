@@ -944,6 +944,7 @@
   max-height: 61px;
   @include media(lg) {
     gap: 4px;
+    max-height: unset;
   }
   &_row {
     margin-bottom: 35px;
@@ -961,7 +962,7 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  max-width: 265px;
+  max-width: 295px;
   @include media(lg) {
     gap: 8px;
   }
@@ -980,6 +981,9 @@
   font-weight: 500;
   @include media(lg) {
     font-size: 15px;
+  }
+  &.hide {
+    display: none;
   }
 }
 
