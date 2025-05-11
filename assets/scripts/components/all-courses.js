@@ -454,4 +454,21 @@ function allCoursesInit () {
     }
 
   }
+
+  const allCoursesTop = document.querySelector('.all-courses__top')
+  const promo = document.querySelector('.promo')
+
+  if (allCoursesTop) {
+    allCoursesTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
+    if (promo) allCoursesTop.classList.add('active-promo')
+    window.addEventListener('scroll', toggleAllCoursesTop, { passive: true })
+
+    function toggleAllCoursesTop () {
+      if (header.classList.contains('thin') || window.scrollY < 1000) {
+        allCoursesTop.classList.remove('active')
+      } else {
+        allCoursesTop.classList.add('active')
+      }
+    }
+  }
 }

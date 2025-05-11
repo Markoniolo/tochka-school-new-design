@@ -174,9 +174,9 @@
     height: 95px;
     bottom: 0;
     right: 0;
-    @include bg-icon('cap/cap-decor-1.png');
+    @include bg-icon('cap/cap-decor-1.svg');
     @include media(lg) {
-      @include bg-icon('cap/cap-decor-1_tablet.png');
+      @include bg-icon('cap/cap-decor-1_tablet.svg');
       width: 123px;
       height: 88px;
       right: 35px;
@@ -185,7 +185,7 @@
       right: 51px;
       width: 135px;
       height: 92px;
-      @include bg-icon('cap/cap-decor-1_mob.png');
+      @include bg-icon('cap/cap-decor-1_mob.svg');
     }
     @media (max-width: 370.98px) {
       width: 129px;

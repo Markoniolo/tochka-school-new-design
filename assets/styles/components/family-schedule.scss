@@ -93,7 +93,7 @@
   &:first-child {
     position: sticky;
     z-index: 10;
-    top: 66px;
+    top: 108px;
     @include media(lg) {
       margin-bottom: 15px;
       top: 0;
@@ -169,6 +169,19 @@
   @include media(xs) {
     text-align: center;
   }
+  &.text {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    @include media(lg) {
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row-reverse;
+    }
+    @include media(xs) {
+      flex-direction: column;
+    }
+  }
 }
 
 .family-schedule__toggle {
@@ -196,5 +209,29 @@
   }
   &.hide {
     display: none;
+    & + .family-schedule__toggle-text {
+      display: none;
+    }
+  }
+}
+
+.family-schedule__toggle-text {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  max-width: 300px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 20px;
+  @include media(lg) {
+    font-size: 14px;
+    line-height: 121%;
+    max-width: 220px;
+    position: static;
+  }
+  @include media(xs) {
+    margin-top: 16px;
+    text-align: center;
+    max-width: 250px;
   }
 }

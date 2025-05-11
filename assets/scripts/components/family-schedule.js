@@ -3,8 +3,7 @@ const scheduleFamily = document.querySelector('[data-element="family-schedule"]'
 if (scheduleFamily) scheduleFamilyInit()
 
 function scheduleFamilyInit () {
-  let offsetHeader = window.innerWidth >= 744 ? 102 : 84
-
+  let offsetHeader
   const toggleBottom = scheduleFamily.querySelector('[data-element="family-schedule__toggle-bottom"]')
   const toggleTop = document.querySelector('[data-element="family-schedule__toggle-top"]')
   const table = scheduleFamily.querySelector('[data-element="family-schedule__box"]')
@@ -13,9 +12,15 @@ function scheduleFamilyInit () {
   const cellTime = scheduleFamily.querySelector('[data-element="family-schedule__time"]')
 
   const isSummer = toggleTop?.classList.contains('summer')
-
+  tableFixedCalculate()
   function tableFixedCalculate() {
-    offsetHeader = window.innerWidth > 574 ? 68 : 60
+    if (window.innerWidth <= 360) {
+      offsetHeader = 70
+    } else if (window.innerWidth < 1200) {
+      offsetHeader = 82
+    } else {
+      offsetHeader = 108
+    }
     if (window.innerWidth < 1440) {
       for (let i = 0; i < cells.length; i++) {
         cells[i].style.height = cells[i].parentNode.offsetHeight + 'px'

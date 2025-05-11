@@ -6,6 +6,13 @@
   @include media(lg) {
     bottom: 10px;
     right: 10px;
+    transition-duration: $transition-duration;
+    transition-property: bottom;
+  }
+  &.transition {
+    @include media(xs) {
+      bottom: 120px;
+    }
   }
   &.active {
     .promo__hint {

@@ -6,13 +6,16 @@ function btnFixedInit () {
   const start = btnFixed.getAttribute('data-btn-fixed-start')
   const end = btnFixed.getAttribute('data-btn-fixed-end')
   const body = document.getElementsByTagName('body')[0]
+  const promo = document.querySelector('.promo')
   window.addEventListener('scroll', checkBtnFixed, { passive: true })
 
   function checkBtnFixed () {
     if (window.scrollY > start && body.scrollHeight - window.pageYOffset > end && !checkBtnFixedHide()) {
       btnFixed.classList.add('active')
+      if (promo) promo.classList.add('transition')
     } else {
       btnFixed.classList.remove('active')
+      if (promo) promo.classList.remove('transition')
     }
   }
 

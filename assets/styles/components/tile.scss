@@ -183,6 +183,7 @@
 
 .tile__family-image {
   height: 255px;
+  object-fit: cover;
   @include media(xs) {
     height: 142px;
   }
