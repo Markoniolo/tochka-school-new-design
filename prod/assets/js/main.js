@@ -454,6 +454,23 @@ function allCoursesInit () {
     }
 
   }
+
+  const allCoursesTop = document.querySelector('.all-courses__top')
+  const promo = document.querySelector('.promo')
+
+  if (allCoursesTop) {
+    allCoursesTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
+    if (promo) allCoursesTop.classList.add('active-promo')
+    window.addEventListener('scroll', toggleAllCoursesTop, { passive: true })
+
+    function toggleAllCoursesTop () {
+      if (header.classList.contains('thin') || window.scrollY < 1000) {
+        allCoursesTop.classList.remove('active')
+      } else {
+        allCoursesTop.classList.add('active')
+      }
+    }
+  }
 }
 
 const articleSidebarDesc = document.querySelector('.article__sidebar_desc')
@@ -561,13 +578,16 @@ function btnFixedInit () {
   const start = btnFixed.getAttribute('data-btn-fixed-start')
   const end = btnFixed.getAttribute('data-btn-fixed-end')
   const body = document.getElementsByTagName('body')[0]
+  const promo = document.querySelector('.promo')
   window.addEventListener('scroll', checkBtnFixed, { passive: true })
 
   function checkBtnFixed () {
     if (window.scrollY > start && body.scrollHeight - window.pageYOffset > end && !checkBtnFixedHide()) {
       btnFixed.classList.add('active')
+      if (promo) promo.classList.add('transition')
     } else {
       btnFixed.classList.remove('active')
+      if (promo) promo.classList.remove('transition')
     }
   }
 
@@ -798,8 +818,7 @@ const scheduleFamily = document.querySelector('[data-element="family-schedule"]'
 if (scheduleFamily) scheduleFamilyInit()
 
 function scheduleFamilyInit () {
-  let offsetHeader = window.innerWidth >= 744 ? 102 : 84
-
+  let offsetHeader
   const toggleBottom = scheduleFamily.querySelector('[data-element="family-schedule__toggle-bottom"]')
   const toggleTop = document.querySelector('[data-element="family-schedule__toggle-top"]')
   const table = scheduleFamily.querySelector('[data-element="family-schedule__box"]')
@@ -808,9 +827,15 @@ function scheduleFamilyInit () {
   const cellTime = scheduleFamily.querySelector('[data-element="family-schedule__time"]')
 
   const isSummer = toggleTop?.classList.contains('summer')
-
+  tableFixedCalculate()
   function tableFixedCalculate() {
-    offsetHeader = window.innerWidth > 574 ? 68 : 60
+    if (window.innerWidth <= 360) {
+      offsetHeader = 70
+    } else if (window.innerWidth < 1200) {
+      offsetHeader = 82
+    } else {
+      offsetHeader = 108
+    }
     if (window.innerWidth < 1440) {
       for (let i = 0; i < cells.length; i++) {
         cells[i].style.height = cells[i].parentNode.offsetHeight + 'px'
