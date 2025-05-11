@@ -30,6 +30,8 @@ function allCoursesInit () {
 
   let timerReload = setTimeout(() => window.location.reload(), 300000)
 
+  buttonDataHrefLinksInit()
+
   function buttonDataHrefLinksInit() {
     const buttonDataHrefLinks = document.querySelectorAll('button[data-href-link]')
     for (let i = 0; i < buttonDataHrefLinks.length; i++) {
