@@ -633,7 +633,7 @@
     padding: 10px 20px 60px;
     margin: 10px -20px 0;
     width: calc(100% + 40px);
-    height: calc(100vh - 180px);
+    height: calc(calc(var(--vh) * 100) - 180px);
   }
   @include media(xxs) {
     padding: 10px 10px 60px;

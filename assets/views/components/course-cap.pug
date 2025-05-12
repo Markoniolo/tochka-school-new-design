@@ -11,7 +11,10 @@ mixin course-cap(mod, id='pre-reg')
               .course-cap__tag Закрытые предпродажи! Только для первых 50 человек
           else
             .course-cap__number 10 класс
-          h1.course-cap__caption!= 'Курс по информатике <span>(в&nbsp;записи)</span>'
+          if mod === "3-teachers"
+            h1.course-cap__caption!= 'Естественные науки: эксперименты и&nbsp;открытия'
+          else
+            h1.course-cap__caption!= 'Курс по информатике <span>(в&nbsp;записи)</span>'
           if mod === 'offer'
             .course-cap__offer
               .course-cap__offer-text До конца спецпредложения осталось:
@@ -21,13 +24,26 @@ mixin course-cap(mod, id='pre-reg')
                     .offer-timer__number= item.number
                     .offer-timer__note= item.note
           picture.course-cap__picture
-            if mod === 'no-teacher'
-              img.course-cap__image(src=staticImg('course-cap/placeholder.png') alt='')
+            if mod === "3-teachers"
+              source(srcset=staticImg(`course-cap/3-teachers_mob.png`) media="(max-width: 743px)")
+              source(srcset=staticImg(`course-cap/3-teachers_tablet.png`) media="(max-width: 1439px)")
+              img.course-cap__image(src=staticImg('course-cap/3-teachers.png') alt='')
             else
-              img.course-cap__image(src=staticImg('course-cap/Kostileva.png') alt='')
+              if mod === 'no-teacher'
+                img.course-cap__image(src=staticImg('course-cap/placeholder.png') alt='')
+              else
+                img.course-cap__image(src=staticImg('course-cap/Kostileva.png') alt='')
           .course-cap__buttons
             a.course-cap__button.btn-orange(href=`#${id}` data-role='scroll-to-anchor') Начать обучение
-            if mod === 'no-teacher'
-              .course-cap__author Скоро здесь появится учитель
+            if mod === "3-teachers"
+              .course-cap__3-teachers
+                | Елена Владимировна Щукина
+                br
+                | Наталья Павловна Титорова
+                br
+                | Скоро объявим учителя
             else
-              .course-cap__author Галина Валерьевна Шевченко
+              if mod === 'no-teacher'
+                .course-cap__author Скоро здесь появится учитель
+              else
+                .course-cap__author Галина Валерьевна Шевченко

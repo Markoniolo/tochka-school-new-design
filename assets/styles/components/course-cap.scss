@@ -4,15 +4,24 @@
   margin-top: 30px;
   @include media(lg) {
     margin-bottom: 40px;
+    margin-top: 0;
+    border-radius: 0;
+    @include bg-icon('course-cap/course-cap-bg_tablet.png');
+  }
+  @include media(xs) {
+    @include bg-icon('course-cap/course-cap-bg_mob.png');
   }
   &_summer {
+    @include media(lg) {
+      @include bg-icon('course-cap/course-cap-bg-summer_tablet.png');
+    }
+    @include media(xs) {
+      @include bg-icon('course-cap/course-cap-bg-summer_mob.png');
+    }
     .course-cap__area {
       @include bg-icon('course-cap/course-cap-bg-summer.png');
       @include media(lg) {
-        @include bg-icon('course-cap/course-cap-bg-summer_tablet.png');
-      }
-      @include media(xs) {
-        @include bg-icon('course-cap/course-cap-bg-summer_mob.png');
+        background: none;
       }
     }
     .course-cap__decor {
@@ -35,6 +44,42 @@
       }
     }
   }
+  &_3-teachers {
+    .course-cap__decor_1 {
+      right: 696px;
+      @include media(lg) {
+        right: 291px;
+      }
+    }
+    .course-cap__caption {
+      max-width: 617px;
+      @include media(lg) {
+        max-width: 327px;
+      }
+      @include media(xs) {
+        max-width: 358px;
+        margin: 0 auto 26px;
+      }
+    }
+    .course-cap__picture {
+      width: 597px;
+      height: 410px;
+      bottom: 15px;
+      right: 49px;
+      @include media(lg) {
+        width: 332px;
+        height: 258px;
+        bottom: 68px;
+        right: 0;
+      }
+      @include media(xs) {
+        max-width: 333px;
+        width: 100%;
+        height: unset;
+        margin: 0 auto 25px;
+      }
+    }
+  }
 }
 
 .course-cap__cont {
@@ -51,15 +96,15 @@
   padding: 60px;
   border-radius: 31px;
   @include media(lg) {
-    border-radius: 10px;
-    padding: 25px;
+    border-radius: 0;
     min-height: 360px;
-    @include bg-icon('course-cap/course-cap-bg_tablet.png');
+    box-shadow: none;
+    background: unset;
+    padding: 32px 0 35px;
   }
   @include media(xs) {
-    padding: 30px 16px 40px;
-    @include bg-icon('course-cap/course-cap-bg_mob.png');
     display: block;
+    padding: 22px 0 25px;
   }
 }
 
@@ -262,6 +307,23 @@
   padding: 20px 50px;
   @include media(lg) {
     order: 1;
+  }
+  @include media(xs) {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.course-cap__3-teachers {
+  display: none;
+  @include media(lg) {
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+    background: #fff;
+    padding: 14px 24px;
+    font-size: 15px;
+    line-height: 140%;
   }
   @include media(xs) {
     width: 100%;
