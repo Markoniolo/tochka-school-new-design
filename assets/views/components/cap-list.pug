@@ -1,6 +1,7 @@
 .cap-list
   each item, i in [{title: 'Дошкольники', tags: ['Подготовка к школе'],}, {title: 'Начальная школа', tags: ['1-4 класс'],}, {title: 'Средняя школа', tags: ['5-8 класс'],}, {title: 'Старшая школа', tags: ['9-11 класс','ОГЭ и ЕГЭ'],}]
     a.cap-list__item(href="#")
+      .cap-list__discount
       .cap-list__title= item.title
       .cap-list__tags
         each tag, index in item.tags
@@ -18,6 +19,7 @@
     button.cap-list__button.btn-orange
       span Выбрать
   a.cap-list__item.cap-list__item_wide.cap-list__item_family(href="#")
+    .cap-list__discount
     .cap-list__title!= 'Семейное <br> обучение'
     .cap-list__tags
       each tag, index in ['С 1 по 11 класс','Онлайн-уроки по ФГОС','Бесплатное прикрепление к школе-партнеру','Аттестат гос. образца онлайн']

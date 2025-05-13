@@ -39,6 +39,62 @@
     min-height: 90px;
     padding: 10px 15px;
   }
+  &:nth-child(1) .cap-list__discount {
+    @include media(lg) {
+      top: 15px;
+      left: 142px;
+    }
+    @include media(xs) {
+      top: 22px;
+      left: 157px;
+    }
+    @include media(xxs) {
+      top: 17px;
+      left: 143px;
+    }
+  }
+  &:nth-child(2) .cap-list__discount {
+    @include media(lg) {
+      top: 44px;
+      left: 105px;
+    }
+    @include media(xs) {
+      top: 53px;
+      left: 108px;
+    }
+    @include media(xxs) {
+      top: 48px;
+      left: 102px;
+    }
+  }
+  &:nth-child(3) .cap-list__discount {
+    @include media(lg) {
+      top: 45px;
+      left: 106px;
+    }
+    @include media(xs) {
+      top: 53px;
+      left: 109px;
+    }
+    @include media(xxs) {
+      top: 48px;
+      left: 102px;
+    }
+  }
+  &:nth-child(4) .cap-list__discount {
+    @include media(lg) {
+      top: 45px;
+      left: 110px;
+    }
+    @include media(xs) {
+      top: 53px;
+      left: 109px;
+    }
+    @include media(xxs) {
+      top: 48px;
+      left: 106px;
+    }
+  }
   &_wide {
     width: calc(50% - 13px);
     flex-direction: row;
@@ -56,8 +112,11 @@
       min-height: 90px;
     }
     .cap-list__title {
-      max-width: 151px;
+      max-width: 152px;
       width: 100%;
+      @include media(lg) {
+        max-width: 171px;
+      }
       @include media(xs) {
         max-width: 100%;
       }
@@ -104,6 +163,35 @@
     .cap-list__tags {
       max-width: 340px;
     }
+    .cap-list__discount {
+      top: 16px;
+      @include media(lg) {
+        top: 45px;
+        left: 108px;
+      }
+      @include media(xs) {
+        top: 53px;
+        left: 109px;
+      }
+      @include media(xxs) {
+        top: 49px;
+        left: 105px;
+      }
+    }
+  }
+}
+
+.cap-list__discount {
+  position: absolute;
+  z-index: 5;
+  top: 20px;
+  right: 18px;
+  width: 26px;
+  height: 27px;
+  @include bg-icon('cap-list/cap-list-discount.svg');
+  @include media(lg) {
+    width: 21px;
+    height: 22px;
   }
 }
 
@@ -123,7 +211,7 @@
     color: #000000;
     font-size: 18px;
   }
-  @media (max-width: 330.98px) {
+  @include media(xxs) {
     font-size: 17px;
   }
   br {
@@ -194,9 +282,9 @@
       background-size: cover;
     }
     @media (max-width: 330.98px) {
-      width: 104px;
-      height: 90px;
-      right: 44px;
+      width: 92px;
+      height: 80px;
+      right: 46px;
       background-size: cover;
     }
   }
@@ -325,8 +413,8 @@
     }
   }
   &_6 {
-    width: 220px;
-    height: 161px;
+    width: 235px;
+    height: 172px;
     bottom: 0;
     right: 0;
     @include bg-icon('cap/cap-decor-6.svg');

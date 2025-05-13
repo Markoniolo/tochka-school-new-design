@@ -50,6 +50,7 @@
 }
 
 .nav__box {
+  position: relative;
   border-radius: 20px;
   background: rgba(102, 131, 194, 0.08);
   padding: 16px 30px 22px;
@@ -60,6 +61,23 @@
   @include media(lg) {
     gap: 7px;
     border-radius: 10px;
+  }
+}
+
+.nav__box-discount {
+  position: absolute;
+  right: 15px;
+  top: 0;
+  transform: translateY(-50%);
+  font-size: 12px;
+  line-height: 100%;
+  text-align: center;
+  color: #fff;
+  border-radius: 33px;
+  background: #f37e60;
+  padding: 4px 9px 5px;
+  @include media(lg) {
+    right: 9px;
   }
 }
 
@@ -132,14 +150,14 @@
   position: relative;
   flex-grow: 1;
   width: 961px;
-  height: 651px;
+  height: 693px;
   @include media(lg) {
     width: 826px;
-    height: 565px;
+    height: 610px;
   }
   @include media(md) {
     width: 450px;
-    height: 630px;
+    height: 675px;
   }
   @include media(xs) {
     z-index: 1;

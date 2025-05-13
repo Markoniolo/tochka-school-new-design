@@ -143,7 +143,7 @@
 
 .promo__hint {
   position: absolute;
-  top: -138px;
+  top: -156px;
   left: -316px;
   width: 335px;
   opacity: 0;
@@ -152,7 +152,7 @@
   transition-property: opacity;
   @include media(lg) {
     width: 300px;
-    top: -126px;
+    top: -140px;
     right: 0;
     left: unset;
   }
@@ -196,10 +196,15 @@
   margin-bottom: 10px;
   font-weight: 600;
   font-size: 18px;
+  line-height: 111%;
   color: #fff;
+  max-width: 260px;
+  width: 100%;
   @include media(lg) {
     font-size: 15px;
+    line-height: 113%;
     margin-bottom: 8px;
+    max-width: 220px;
   }
 }
 

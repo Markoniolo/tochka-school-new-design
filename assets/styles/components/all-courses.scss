@@ -404,7 +404,7 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 0 25px;
   margin-bottom: 25px;
   border-bottom: 1px solid rgba(102, 131, 194, 0.2);
   -ms-overflow-style: none;
@@ -413,7 +413,7 @@
     display: none;
   }
   @include media(lg) {
-    gap: 40px;
+    gap: 0 40px;
   }
   @include media(xs) {
     gap: 0;
@@ -1005,6 +1005,11 @@
     width: 64px;
     height: 68px;
     border-radius: 83px;
+  }
+  &_no-border-radius {
+    @include media(lg) {
+      border-radius: 0;
+    }
   }
 }
 
