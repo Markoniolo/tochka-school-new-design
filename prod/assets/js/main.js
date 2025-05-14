@@ -1538,7 +1538,7 @@ function libraryCapInit () {
   const libraryTile = document.querySelector('.library-tile')
   const libraryWhy = document.querySelector('.library-why')
   const libraryInformer = document.querySelector('.library-informer')
-  const config = { attributes: true, childList: true, characterData: true, subtree: true }
+  const config = { attributes: false, childList: true, characterData: true, subtree: true }
   const openers = libraryCap.querySelectorAll("[data-element='library-cap-filter-opener']")
   const grades = libraryCap.querySelector("[data-ftype='class_select']")
   const subjects = libraryCap.querySelector("[data-ftype='class_subjects']")
