@@ -449,6 +449,7 @@
 .cost__full-price {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 6px;
   margin-top: 14px;
   font-size: 12px;
