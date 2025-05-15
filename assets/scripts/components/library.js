@@ -78,9 +78,9 @@ function libraryCapInit () {
       items.forEach((item) => {
         item.checked = false
       })
-      updateFilter(openers[i], wrap, true)
+      updateFilter(openers[i], wrap, true, true)
     }
-    // makeFiltration()
+    makeFiltration()
     hideBlocks()
   }
 
@@ -199,14 +199,14 @@ function libraryCapInit () {
     if (filter) filter.classList.remove('open')
   }
 
-  async function updateFilter (opener, wrap, noScroll) {
+  async function updateFilter (opener, wrap, noScroll, noFiltration) {
     resetError()
     if(opener.getAttribute('data-ftype') === 'class_select') {
       filterSubjectsList.innerHTML = "<div class='tile-loader-box'><div class='tile-loader'></div></div>";
       // makeFiltration()
-      updateFilter(openers[1], openers[1].nextElementSibling, true)
+      if (!noFiltration) updateFilter(openers[1], openers[1].nextElementSibling, true)
     } else {
-      makeFiltration()
+      if (!noFiltration) makeFiltration()
       if (!noScroll) scrollToTile()
     }
     opener.innerHTML = opener.getAttribute('data-default-text')
