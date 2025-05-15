@@ -32,11 +32,10 @@ mixin header(mod)
           span Войти
       if mod === 'stages'
         .header__stages
-          .header__stages-note.header__stages-note_desc Выберите ступень обучения
-          .header__stages-note.header__stages-note_mob Ступень обучения
+          .header__stages-note У этого курса 2 уровня сложности
           .header__stages-box
-            button.header__stages-button.active(data-stage-id="0") Ступень 1
-            button.header__stages-button(data-stage-id="1") Ступень 2
+            button.header__stages-button.active(data-stage-id="1") 1 ступень
+            button.header__stages-button(data-stage-id="2") 2 ступень
       else
         .header__bottom
           .header__bottom-list

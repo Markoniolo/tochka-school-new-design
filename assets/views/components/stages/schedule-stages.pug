@@ -1,10 +1,10 @@
 mixin schedule-stages(number)
-  .schedule(data-stage-number=number class=number !== "0" ? "stage-block-hide" : false)
+  .schedule(data-stage-number=number class=number !== "1" ? "stage-block-hide" : false)
     .schedule__cont.cont
       .schedule__area
         h2.schedule__title
           | Расписание с&nbsp;сентября&nbsp;2025
-          span.schedule__stages-tag!= `Ступень ${number}`
+          span.schedule__stages-tag!= `${number} ступень`
         .schedule__line
           .schedule__box
             .schedule__tags

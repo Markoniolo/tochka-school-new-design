@@ -1,7 +1,7 @@
 .course-cap {
   border-radius: 31px;
   margin-bottom: 80px;
-  margin-top: 30px;
+  margin-top: 50px;
   @include media(lg) {
     margin-bottom: 40px;
     margin-top: 0;
@@ -104,7 +104,7 @@
   }
   @include media(xs) {
     display: block;
-    padding: 22px 0 25px;
+    padding: 30px 0 25px;
   }
 }
 

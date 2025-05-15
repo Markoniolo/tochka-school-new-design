@@ -1,10 +1,10 @@
 mixin cost (mod, number)
-  .cost(class = `${mod ? mod : false} ${number !== "0" ? "stage-block-hide" : ''}` id = mod !== 'shortest' ? 'pre-reg' : false data-btn-fixed-hide="true" data-stage-number=number)
+  .cost(class = `${mod ? mod : false} ${number !== "1" ? "stage-block-hide" : ''}` id = mod !== 'shortest' ? 'pre-reg' : false data-btn-fixed-hide="true" data-stage-number=number)
     .cost__cont.cont
       if mod !== 'shortest'
         h2.cost__caption
           | Стоимость годового абонемента
-          span.cost__stages-tag!= `Ступень ${number}`
+          span.cost__stages-tag!= `${number} ступень`
       .cost__wrap(class= mod ? `cost__wrap_${mod}` : false)
         if mod !== 'shortest'
           if mod !== 'short' && mod !== 'offer' && mod !== 'offer-short'
