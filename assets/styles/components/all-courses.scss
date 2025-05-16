@@ -657,17 +657,15 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 50px;
   min-height: 200px;
   @include media(lg) {
-    gap: 25px;
-  }
-  @include media(xs) {
     gap: 30px;
   }
 }
 
 .all-courses__item {
+  position: relative;
   width: 100%;
   box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
   background: #fff;
@@ -746,6 +744,48 @@
     .all-courses__side-text {
       width: 255px;
     }
+  }
+}
+
+.all-courses__tickets {
+  display: flex;
+  gap: 15px;
+  position: absolute;
+  right: 40px;
+  top: 0;
+  transform: translateY(-50%);
+  @include media(lg) {
+    gap: 10px;
+    right: 20px;
+  }
+  @include media(xs) {
+    right: 10px;
+  }
+  @include media(xxs) {
+    gap: 9px;
+  }
+}
+
+.all-courses__ticket {
+  border-radius: 33px;
+  padding: 8px 15px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 500;
+  @include media(lg) {
+    font-size: 13px;
+    padding: 6px 15px;
+  }
+  @include media(xxs) {
+    font-size: 12px;
+    padding: 4px 15px 5px;
+  }
+  &.blue {
+    background: #68ccea;
+  }
+  &.green {
+    background: #7fcbb4;
   }
 }
 
