@@ -108,6 +108,50 @@
   }
 }
 
+.course-cap__tickets {
+  position: absolute;
+  left: 60px;
+  top: 0;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 15px;
+  @include media(lg) {
+    gap: 10px;
+    left: 93px;
+    top: 28px;
+    transform: none;
+  }
+  @include media(xs) {
+    position: static;
+    justify-content: center;
+    margin-bottom: 18px;
+    margin-top: -4px;
+  }
+}
+
+.course-cap__ticket {
+  border-radius: 33px;
+  padding: 8px 15px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 500;
+  @include media(lg) {
+    font-size: 13px;
+    padding: 6px 15px;
+  }
+  @include media(xxs) {
+    font-size: 12px;
+    padding: 4px 15px 5px;
+  }
+  &.blue {
+    background: #68ccea;
+  }
+  &.green {
+    background: #7fcbb4;
+  }
+}
+
 .course-cap__box {
   display: flex;
   flex-direction: column;
@@ -214,10 +258,11 @@
   font-size: 24px;
   line-height: 92%;
   @include media(lg) {
-    margin-bottom: 23px;
+    margin-bottom: 16px;
     font-size: 18px;
   }
   @include media(xs) {
+    margin-bottom: 15px;
     text-align: center;
   }
 }
@@ -233,7 +278,7 @@
   @include media(lg) {
     max-width: 380px;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     font-size: 30px;
     line-height: 113%;
   }
@@ -338,6 +383,10 @@
   background: #fff;
   font-size: 16px;
   line-height: 15px;
+  @include media(lg) {
+    font-size: 15px;
+    padding: 20px 28px;
+  }
   @include media(xs) {
     width: 100%;
     text-align: center;

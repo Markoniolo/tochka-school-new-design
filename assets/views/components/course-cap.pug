@@ -15,6 +15,9 @@ mixin course-cap(mod, id='pre-reg')
             h1.course-cap__caption!= 'Естественные науки: эксперименты и&nbsp;открытия'
           else
             h1.course-cap__caption!= 'Курс по информатике <span>(в&nbsp;записи)</span>'
+          .course-cap__tickets
+            .course-cap__ticket.blue Места ограниченны
+            .course-cap__ticket.green Высокий спрос
           if mod === 'offer'
             .course-cap__offer
               .course-cap__offer-text До конца спецпредложения осталось:

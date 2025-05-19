@@ -35,15 +35,16 @@
 }
 
 .tile__nav {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
   @include media(lg) {
-    margin-bottom: 20px;
+    margin-bottom: 35px;
   }
   @include media(xs) {
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 30px;
   }
 }
 
@@ -77,6 +78,9 @@
   @include media(xs) {
     min-width: 81px;
     height: 34px;
+  }
+  @include media(xxs) {
+    min-width: 69px;
   }
   &.active {
     background-color: #6683c2;
@@ -145,7 +149,7 @@
   transition-property: opacity;
   transition-duration: $transition-duration;
   @include media(lg) {
-    gap: 20px 20px;
+    gap: 25px;
   }
   &.active {
     position: static;
@@ -156,16 +160,64 @@
 }
 
 .tile__family {
+  position: relative;
   width: calc(50% - 15px);
   border-radius: 32px;
   background: radial-gradient(171.12% 103.25% at 86.76% 77.46%, #dae5fe 0%, #bedaff 100%);
   padding: 30px;
   display: flex;
-  align-items: flex-start;
   @include media(lg) {
     width: 100%;
     padding: 15px;
     border-radius: 10px;
+  }
+  @include media(xs) {
+    padding: 25px 15px 15px;
+  }
+  @include media(xxs) {
+    padding: 25px 10px 10px;
+  }
+}
+
+.tile__tickets {
+  display: flex;
+  gap: 15px;
+  position: absolute;
+  right: 40px;
+  top: 0;
+  transform: translateY(-50%);
+  @include media(lg) {
+    gap: 10px;
+    right: 20px;
+  }
+  @include media(xs) {
+    right: 10px;
+  }
+  @include media(xxs) {
+    gap: 9px;
+  }
+}
+
+.tile__ticket {
+  border-radius: 33px;
+  padding: 8px 15px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 500;
+  @include media(lg) {
+    font-size: 13px;
+    padding: 6px 15px;
+  }
+  @include media(xxs) {
+    font-size: 12px;
+    padding: 4px 15px 5px;
+  }
+  &.blue {
+    background: #68ccea;
+  }
+  &.green {
+    background: #7fcbb4;
   }
 }
 
@@ -176,8 +228,11 @@
   @include media(xs) {
     width: 100px;
     position: absolute;
-    top: 15px;
+    top: 25px;
     left: 15px;
+  }
+  @include media(xxs) {
+    left: 10px;
   }
 }
 
@@ -192,7 +247,7 @@
 .tile__family-inner {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  width: 100%;
 }
 
 .tile__family-number {
@@ -274,6 +329,7 @@
 }
 
 .tile__item {
+  position: relative;
   box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
   background: #fff;
   width: calc(50% - 15px);
@@ -287,6 +343,10 @@
   }
   @include media(xs) {
     position: relative;
+    padding: 25px 15px 15px;
+  }
+  @include media(xxs) {
+    padding: 25px 10px 10px;
   }
 }
 
@@ -304,8 +364,11 @@
   @include media(xs) {
     width: 100px;
     position: absolute;
-    top: 15px;
+    top: 25px;
     left: 15px;
+  }
+  @include media(xxs) {
+    left: 10px;
   }
 }
 
@@ -381,6 +444,9 @@
   margin-top: auto;
   display: flex;
   align-items: center;
+  @include media(xs) {
+    order: 2;
+  }
 }
 
 .tile__link {

@@ -14,6 +14,8 @@
           each item in [0,1,2,3,4,5,6]
             if item === 0
               a.tile__family(href='#')
+                .tile__tickets
+                  .tile__ticket.blue Места ограниченны
                 picture.tile__family-picture
                   img.tile__family-image(src=staticImg('tile/tile-family-new.png') alt='')
                 .tile__family-inner
@@ -24,9 +26,13 @@
                     .tile__family-tag Онлайн-уроки по ФГОС
                     .tile__family-tag Аттестат гос. образца онлайн
                     .tile__family-tag.desk Бесплатное прикрепление к школе
-                  button.tile__family-btn.btn-orange Перейти
+                  .tile__bottom
+                    button.tile__family-btn.btn-orange Перейти
             else
               a.tile__item(href='#')
+                .tile__tickets
+                  .tile__ticket.blue Места ограниченны
+                  .tile__ticket.green Высокий спрос
                 .tile__picture
                   img.tile__image(src=staticImg('') alt='')
                 .tile__inner
