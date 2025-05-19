@@ -5,6 +5,9 @@ mixin family-cap(mod, title = 'Семейное обучение', id='pre-reg')
         .family-cap__number 10 класс
         h1.family-cap__caption= title
         .family-cap__text Получайте школьное образование дома. Онлайн. С лучшими учителями РФ, внимательными тьюторами и аттестацией.
+        .family-cap__tickets
+          .family-cap__ticket.blue Места ограниченны
+          .family-cap__ticket.green Высокий спрос
         picture.family-cap__picture
           img.family-cap__image(src=staticImg('family-cap/family-cap.svg') alt='')
         a.family-cap__button.btn-orange(href=`#${id}` data-role="scroll-to-anchor") Начать обучение
