@@ -252,3 +252,9 @@
 .stage-block-hide {
   display: none;
 }
+
+.fancybox-slide {
+  @include media(xs) {
+    padding: 0 !important;
+  }
+}

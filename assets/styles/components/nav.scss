@@ -1,7 +1,7 @@
 .header .nav {
   display: none;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 12px;
   @include media(lg) {
     margin-top: 20px;
   }
@@ -57,9 +57,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  gap: 10px;
   @include media(lg) {
-    gap: 7px;
+    gap: 8px;
     border-radius: 10px;
   }
 }
@@ -150,14 +150,14 @@
   position: relative;
   flex-grow: 1;
   width: 961px;
-  height: 693px;
+  height: 699px;
   @include media(lg) {
     width: 826px;
-    height: 610px;
+    height: 662px;
   }
   @include media(md) {
     width: 450px;
-    height: 675px;
+    height: 727px;
   }
   @include media(xs) {
     z-index: 1;

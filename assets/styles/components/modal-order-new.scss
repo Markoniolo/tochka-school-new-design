@@ -1,12 +1,20 @@
 .modal-order-new {
   display: none;
-  max-width: 350px;
+  max-width: 420px;
   border-radius: 20px;
   background: #f6f6f6;
   padding: 21px 28px 34px;
   overflow: unset;
-  @include media(xs) {
+  @include media(lg) {
     max-width: 353px;
+  }
+  @include media(xs) {
+    max-width: 100%;
+    border-radius: 0;
+    padding: 28px 20px;
+  }
+  @include media(xxs) {
+    padding: 28px 10px;
   }
 
   .fancybox-button {
@@ -19,8 +27,17 @@
     top: -46px;
     @include media(xs) {
       background-color: rgba(#000, 0.03);
-      top: 13px;
-      right: 13px;
+      top: 25px;
+      right: 20px;
+    }
+    @include media(xxs) {
+      width: 28px;
+      height: 28px;
+      right: 10px;
+    }
+    svg {
+      width: 100%;
+      height: 100%;
     }
     svg path {
       fill: #fff;
@@ -33,107 +50,268 @@
   .iti.iti--allow-dropdown.iti--show-flags {
     margin-bottom: 20px;
     width: 100%;
-  }
-
-  .custom-select-opener {
-    border-radius: 34px;
-    box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
-    background: #fff;
-    padding: 11px 35px;
-    span {
-      font-weight: 400;
-      font-size: 14px;
-      color: rgba(0, 0, 0, 0.42);
+    @include media(lg) {
+      margin-bottom: 15px;
     }
-  }
-
-  .custom-select-container {
-    &::before {
-      @include bg-icon('icons/ic_arrow_select_orange.svg');
-      width: 10px;
-      height: 6px;
-      right: 28px;
-    }
-  }
-
-  .custom-select-container.is-open .custom-select-panel {
-    max-height: 211px;
-    border: none;
-    border-radius: 0;
-  }
-
-  .custom-select-container.is-open .custom-select-opener {
-    border: none;
-    border-radius: 20px 20px 0 0;
-  }
-
-
-  .custom-select-option {
-    margin-bottom: 10px;
-    border-radius: 34px;
-    padding: 14px 16px;
-    font-size: 14px;
-    color: #fff;
-    background: rgba(102, 131, 194, 0.45);
-    transition-property: background-color;
-    transition-duration: $transition-duration;
-    &.has-focus {
-      background: rgba(102, 131, 194, 0.7);;
-    }
-    &.is-selected {
-      background: rgba(102, 131, 194, 1);
-    }
-    &:nth-child(2) {
-      margin-top: 20px;
-    }
-    &:last-child {
+    @include media(xs) {
       margin-bottom: 20px;
     }
+  }
+
+  .iti__selected-country {
+    margin-left: 22px;
+  }
+
+  .modal-order-new__input.iti__tel-input {
+    padding-left: 100px !important;
   }
 }
 
 .modal-order-new__title {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   font-weight: 500;
   font-size: 24px;
   color: #000;
-  @include media(md) {
+  @include media(lg) {
+    margin-bottom: 16px;
     font-size: 18px;
   }
   @include media(xs) {
-    margin-bottom: 18px;
+    margin-bottom: 26px;
+  }
+  @include media(xxs) {
+    margin-bottom: 22px;
+    font-size: 16px;
   }
 }
 
 .modal-order-new__input {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   border-radius: 34px;
-  padding: 12px 35px;
+  padding: 17px 30px 18px;
   box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
   background: #fff;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 100%;
   width: 100%;
   border: none;
+  @include media(lg) {
+    margin-bottom: 15px;
+    font-size: 15px;
+    padding: 15px 25px 16px;
+  }
+  @include media(xs) {
+    margin-bottom: 20px;
+  }
+  @include media(xxs) {
+    padding: 13px 25px;
+  }
   &::placeholder {
     color: rgba(0, 0, 0, 0.42);
   }
 }
 
 .modal-order-new__select {
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 500;
+  @include media(lg) {
+    margin-bottom: 15px;
+  }
+  @include media(xs) {
+    margin-bottom: 20px;
+  }
+}
 
+.modal-order-new__select-top {
+  position: relative;
+  z-index: 10;
+  padding: 17px 30px 18px;
+  border-radius: 34px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
+  background: #fff;
+  @include media(lg) {
+    padding: 17px 25px 18px;
+  }
+  @include media(xxs) {
+    padding: 15px 25px;
+  }
+  &.active {
+    &::before {
+      transform: translateY(-50%) rotate(180deg);
+    }
+    & ~ .modal-order-new__select-wrap {
+      opacity: 1;
+      pointer-events: all;
+      @include media(xs) {
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 30px;
+    @include bg-icon('icons/ic_arrow_select_orange.svg');
+    width: 16px;
+    height: 9px;
+    @include media(lg) {
+      right: 25px;
+    }
+  }
+}
+
+.modal-order-new__select-placeholder {
+  font-size: 16px;
+  line-height: 100%;
+  margin-right: 25px;
+  overflow: hidden;
+  @include media(xs) {
+    font-size: 15px;
+  }
+}
+
+.modal-order-new__select-wrap {
+  position: absolute;
+  top: 27px;
+  border-radius: 0 0 10px 10px;
+  background: #f5f7fb;
+  padding: 53px 35px 35px;
+  opacity: 0;
+  pointer-events: none;
+  transition-duration: $transition-duration;
+  transition-property: opacity;
+  @include media(lg) {
+    top: 21px;
+    padding: 45px 20px 20px;
+  }
+  @include media(xs) {
+    top: 25px;
+    padding: 0 20px;
+  }
+  @include media(xxs) {
+    padding: 0 10px;
+  }
+}
+
+.modal-order-new__select-close {
+  display: none;
+  @include media(xs) {
+    display: block;
+    width: 29px;
+    height: 29px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  @include media(xxs) {
+    width: 23px;
+    height: 23px;
+    top: 15px;
+    right: 10px;
+  }
+}
+
+.modal-order-new__select-title {
+  display: none;
+  @include media(xs) {
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+    padding: 15px;
+  }
+  @include media(xxs) {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+.modal-order-new__select-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  @include media(xs) {
+    border-radius: 10px 10px 0 0;
+    background: #eef1f9;
+    padding: 20px 28px;
+  }
+  @include media(xxs) {
+    padding: 20px 15px;
+  }
+}
+
+.modal-order-new__select-item {
+  width: calc(50% - 5px);
+  cursor: pointer;
+}
+
+.modal-order-new__select-input {
+  display: none;
+  &:checked ~ .modal-order-new__select-view {
+    background: #6683c2;
+    color: #fff;
+  }
+}
+
+.modal-order-new__select-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 34px;
+  min-height: 50px;
+  background: #fff;
+  font-size: 15px;
+  text-align: center;
+  color: #000;
+  padding: 5px;
+  box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
+  transition-property: color, background;
+  transition-duration: $transition-duration;
+  @include media(lg) {
+    font-size: 14px;
+    min-height: 40px;
+  }
+  @include media(xs) {
+    min-height: 50px;
+  }
+  @include media(xxs) {
+    min-height: 45px;
+  }
+  &:hover {
+    background: #aebddd;
+    color: #fff;
+  }
 }
 
 .modal-order-new__button {
-  margin-top: 25px;
-  margin-bottom: 20px;
+  margin-top: 8px;
+  margin-bottom: 22px;
   width: 100%;
   border-radius: 34px;
   background: #f37e60;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 100%;
   color: #fff;
-  padding: 12px 20px;
+  padding: 19px 20px 20px;
   border: none;
+  @include media(lg) {
+    font-size: 15px;
+    padding: 17px 20px 18px;
+    margin-bottom: 12px;
+  }
+  @include media(xs) {
+    margin-bottom: 16px;
+  }
   &:hover {
     background: #f37e60;
     border: none;
@@ -145,8 +323,15 @@
   display: flex;
   align-items: flex-start;
   cursor: pointer;
+  margin-left: 12px;
+  @include media(lg) {
+    margin-left: 2px;
+  }
   &:first-of-type {
-    margin-bottom: 15px;
+    margin-bottom: 6px;
+    @include media(lg) {
+      margin-bottom: 12px;
+    }
   }
 }
 
@@ -164,7 +349,7 @@
 }
 
 .modal-order-new__checkbox-view {
-  margin-top: 1px;
+  margin-top: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -174,12 +359,18 @@
   width: 15px;
   height: 15px;
   flex-shrink: 0;
+  @include media(xxs) {
+    margin-right: 10px;
+  }
 }
 
 .modal-order-new__checkbox-text {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 129%;
   color: rgba(0, 0, 0, 0.6);
+  @include media(lg) {
+    font-size: 14px;
+  }
   a {
     text-decoration: underline;
     text-decoration-skip-ink: none;

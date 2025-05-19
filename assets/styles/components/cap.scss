@@ -15,7 +15,7 @@
   border-radius: 31px;
   @include bg-icon('cap/cap_bg.png');
   background-size: cover;
-  padding: 63px 60px 60px;
+  padding: 50px 60px 56px;
   box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
   @include media(lg) {
     @include bg-icon('cap/cap_bg_tablet.png');
@@ -32,7 +32,7 @@
 }
 
 .cap__top {
-  margin-bottom: 54px;
+  margin-bottom: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,7 +72,7 @@
 }
 
 .cap__caption {
-  margin-bottom: 50px;
+  margin-bottom: 42px;
   font-weight: 600;
   font-size: 58px;
   line-height: 112%;
