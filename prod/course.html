@@ -119,6 +119,8 @@
                 <button class="nav__box-link" data-nav-id="8">Программирование</button>
                 <button class="nav__box-link" data-nav-id="9">Иностранные языки</button>
                 <button class="nav__box-link" data-nav-id="10">Развивающие курсы</button>
+              </div>
+              <div class="nav__box">
                 <a class="nav__box-link nav__box-link_mob" href="#">Курсы для учителей</a>
                 <button class="nav__box-link nav__box-link_desc" data-nav-id="11">Курсы для учителей</button>
               </div>
@@ -1256,23 +1258,74 @@
   <form class="modal-order-new" id="modal-order-new" data-element="order-form" data-docex="/_thanks" data-request-validate>
     <div class="modal-order-new__title">Подобрать занятия</div>
     <input class="input_utm" name="utm" type="hidden" value="">
-    <input class="modal-order-new__input" name="name" placeholder="Имя родителя" type="text">
+    <div class="modal-order-new__select">
+      <div class="modal-order-new__select-top">
+        <div class="modal-order-new__select-placeholder">Класс</div>
+      </div>
+      <div class="modal-order-new__select-wrap">
+        <div class="modal-order-new__select-close">
+          <svg viewbox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="29" height="29" rx="14.5" fill="#6784C3" fill-opacity="0.21"></rect>
+            <path d="M19.9002 20.4669C20.0127 20.4669 20.1226 20.4336 20.2161 20.3711C20.3096 20.3087 20.3824 20.2199 20.4255 20.116C20.4685 20.0122 20.4798 19.8979 20.4578 19.7876C20.4359 19.6773 20.3817 19.576 20.3022 19.4965L9.79824 8.99255C9.69163 8.88594 9.54704 8.82605 9.39627 8.82605C9.2455 8.82605 9.10091 8.88594 8.9943 8.99255C8.88769 9.09916 8.8278 9.24375 8.8278 9.39452C8.8278 9.54529 8.88769 9.68988 8.9943 9.79649L19.4983 20.3005C19.551 20.3533 19.6137 20.3952 19.6827 20.4238C19.7516 20.4523 19.8256 20.467 19.9002 20.4669Z" fill="#6784C3"></path>
+            <path d="M9.3963 20.4669C9.47096 20.467 9.54491 20.4523 9.61389 20.4238C9.68287 20.3952 9.74553 20.3533 9.79827 20.3005L20.3022 9.79649C20.4089 9.68988 20.4688 9.54529 20.4688 9.39452C20.4688 9.24375 20.4089 9.09916 20.3022 8.99255C20.1956 8.88594 20.051 8.82605 19.9003 8.82605C19.7495 8.82605 19.6049 8.88594 19.4983 8.99255L8.99433 19.4965C8.91482 19.576 8.86067 19.6773 8.83873 19.7876C8.81678 19.8979 8.82804 20.0122 8.87107 20.116C8.9141 20.2199 8.98697 20.3087 9.08046 20.3711C9.17395 20.4336 9.28387 20.4669 9.3963 20.4669Z" fill="#6784C3"></path>
+          </svg>
+        </div>
+        <div class="modal-order-new__select-title">Выберите класс</div>
+        <div class="modal-order-new__select-list">
+          <label class="modal-order-new__select-item">
+            <input class="modal-order-new__select-input" type="radio" name="modal-order-new-class" value="Дошкольник">
+            <div class="modal-order-new__select-view">Дошкольник</div>
+          </label>
+          <label class="modal-order-new__select-item">
+            <input class="modal-order-new__select-input" type="radio" name="modal-order-new-class" value="1 класс">
+            <div class="modal-order-new__select-view">1 класс</div>
+          </label>
+          <label class="modal-order-new__select-item">
+            <input class="modal-order-new__select-input" type="radio" name="modal-order-new-class" value="2 класс">
+            <div class="modal-order-new__select-view">2 класс</div>
+          </label>
+          <label class="modal-order-new__select-item">
+            <input class="modal-order-new__select-input" type="radio" name="modal-order-new-class" value="3 класс">
+            <div class="modal-order-new__select-view">3 класс</div>
+          </label>
+          <label class="modal-order-new__select-item">
+            <input class="modal-order-new__select-input" type="radio" name="modal-order-new-class" value="4 класс">
+            <div class="modal-order-new__select-view">4 класс</div>
+          </label>
+          <label class="modal-order-new__select-item">
+            <input class="modal-order-new__select-input" type="radio" name="modal-order-new-class" value="5 класс">
+            <div class="modal-order-new__select-view">5 класс</div>
+          </label>
+          <label class="modal-order-new__select-item">
+            <input class="modal-order-new__select-input" type="radio" name="modal-order-new-class" value="6 класс">
+            <div class="modal-order-new__select-view">6 класс</div>
+          </label>
+          <label class="modal-order-new__select-item">
+            <input class="modal-order-new__select-input" type="radio" name="modal-order-new-class" value="7 класс">
+            <div class="modal-order-new__select-view">7 класс</div>
+          </label>
+          <label class="modal-order-new__select-item">
+            <input class="modal-order-new__select-input" type="radio" name="modal-order-new-class" value="8 класс">
+            <div class="modal-order-new__select-view">8 класс</div>
+          </label>
+          <label class="modal-order-new__select-item">
+            <input class="modal-order-new__select-input" type="radio" name="modal-order-new-class" value="9 класс">
+            <div class="modal-order-new__select-view">9 класс</div>
+          </label>
+          <label class="modal-order-new__select-item">
+            <input class="modal-order-new__select-input" type="radio" name="modal-order-new-class" value="10 класс">
+            <div class="modal-order-new__select-view">10 класс</div>
+          </label>
+          <label class="modal-order-new__select-item">
+            <input class="modal-order-new__select-input" type="radio" name="modal-order-new-class" value="11 класс">
+            <div class="modal-order-new__select-view">11 класс</div>
+          </label>
+        </div>
+      </div>
+    </div>
     <input class="modal-order-new__input" name="phone" placeholder="Номер телефона" type="tel" required data-element="input-phone-intl">
     <input name="tel" type="hidden" required data-element="input-phone-hidden">
-    <select class="modal-order-new__select" data-role="custom-select" name="class_name">
-      <option value="" selected>Класс</option>
-      <option value="1">1 класс</option>
-      <option value="2">2 класс</option>
-      <option value="3">3 класс</option>
-      <option value="4">4 класс</option>
-      <option value="5">5 класс</option>
-      <option value="6">6 класс</option>
-      <option value="7">7 класс</option>
-      <option value="8">8 класс</option>
-      <option value="9">9 класс</option>
-      <option value="10">10 класс</option>
-      <option value="11">11 класс</option>
-    </select>
+    <input class="modal-order-new__input" name="name" placeholder="Имя родителя" type="text">
     <button class="modal-order-new__button btn-warning">Записаться</button>
     <label class="modal-order-new__checkbox">
       <input class="modal-order-new__checkbox-input" name="policy" type="checkbox">
