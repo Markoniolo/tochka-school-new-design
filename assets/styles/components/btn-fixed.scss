@@ -9,7 +9,7 @@
   transition-duration: $transition-duration;
   transition-property: transform;
   display: none;
-  @include media(xs) {
+  @include media(md) {
     display: flex;
   }
   &.summer {

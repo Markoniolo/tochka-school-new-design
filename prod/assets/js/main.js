@@ -1135,7 +1135,7 @@ function orderFormData (globalForm) {
     'name': globalForm.querySelector("[name='name']").value,
     'utm': globalForm.querySelector("[name='utm']").value,
     'tel': globalForm.querySelector("[name='tel']").value,
-    'class_name': globalForm.querySelector("[name='class_name']").options[globalForm.querySelector("[name='class_name']").selectedIndex].value,
+    'class_name': globalForm.querySelector("[name='class_name']").value,
     'policy': globalForm.querySelector("[name='policy']").checked,
     'news': globalForm.querySelector("[name='news']").checked,
     'page_name': globalForm.querySelector("[name='page_name']").value,

@@ -12,6 +12,7 @@
     max-width: 100%;
     border-radius: 0;
     padding: 28px 20px;
+    height: 100%;
   }
   @include media(xxs) {
     padding: 28px 10px;
@@ -227,11 +228,11 @@
     font-size: 16px;
     line-height: 100%;
     text-align: center;
-    padding: 15px;
+    padding: 25px 15px;
   }
   @include media(xxs) {
     font-size: 14px;
-    padding: 10px;
+    padding: 20px 10px;
   }
 }
 
@@ -282,9 +283,11 @@
   }
   @include media(xs) {
     min-height: 50px;
+    font-size: 15px;
   }
   @include media(xxs) {
     min-height: 45px;
+    font-size: 14px;
   }
   &:hover {
     background: #aebddd;
