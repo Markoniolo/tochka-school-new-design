@@ -717,6 +717,9 @@
         }
       }
     }
+    .all-courses__side-image {
+      background: unset;
+    }
     .all-courses__mob-image {
       border-radius: 0;
     }
@@ -803,6 +806,9 @@
   border-radius: 10px;
   margin-bottom: 20px;
   background-color: #E0ECFB;
+  &.no-background-color {
+    background: unset;
+  }
 }
 
 .all-courses__side-name {

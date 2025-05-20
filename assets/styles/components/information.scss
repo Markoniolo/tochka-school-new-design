@@ -2,6 +2,10 @@
   margin-top: 80px;
   margin-bottom: 80px;
   @include media(lg) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  @include media(md) {
     margin-top: 25px;
     margin-bottom: 25px;
   }
@@ -13,7 +17,65 @@
 
 .information__wrap {
   display: flex;
+  align-items: flex-start;
   gap: 50px;
+  @include media(lg) {
+    gap: 40px;
+  }
+  @include media(md) {
+    display: block;
+  }
+}
+
+.information__sidebar-open {
+  display: none;
+  @include media(md) {
+    margin-bottom: 35px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border-radius: 37px;
+    background: #6683c2;
+    padding: 12px;
+    position: sticky;
+    top: 90px;
+  }
+  @include media(xxs) {
+    top: 80px;
+  }
+}
+
+.information__sidebar-close-box {
+  display: none;
+  @include media(md) {
+    display: block;
+    background: #FFFFFF;
+    padding: 30px 30px 25px;
+    position: sticky;
+    top: 0;
+  }
+  @include media(xs) {
+    padding: 25px 10px 30px;
+  }
+}
+
+.information__sidebar-close {
+  @include media(md) {
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border-radius: 37px;
+    background: #6683c2;
+    padding: 12px;
+  }
 }
 
 .information__sidebar {
@@ -22,12 +84,46 @@
   border-radius: 20px;
   background: rgba(102, 131, 194, 0.08);
   padding: 30px;
+  @include media(lg) {
+    padding: 15px;
+    width: 380px;
+  }
+  @include media(md) {
+    width: 100%;
+    display: none;
+    border-radius: 0;
+  }
+  &.active {
+    @include media(md) {
+      display: block;
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      overflow-y: auto;
+      box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
+      background: #eef1f9;
+      padding: 0;
+      border-radius: 0;
+    }
+  }
 }
 
 .information__list {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  @include media(lg) {
+    gap: 10px;
+  }
+  @include media(md) {
+    padding: 20px 30px 60px;
+  }
+  @include media(xs) {
+    padding: 20px 25px 36px;
+  }
 }
 
 .information__item {
@@ -47,18 +143,39 @@
   padding: 14px 25px;
   font-weight: 500;
   font-size: 18px;
-  line-height: 111%;
+  line-height: 100%;
+  cursor: pointer;
   transition-property: color, background;
   transition-duration: $transition-duration;
+  @include media(lg) {
+    font-size: 15px;
+    min-height: 60px;
+  }
+  @include media(md) {
+    border-radius: 34px;
+    min-height: 45px;
+    text-align: center;
+    justify-content: center;
+  }
+  @include media(xs) {
+    padding: 12px 18px;
+  }
   &:hover {
     background: #aebddd;
     color: #fff;
   }
+  &.active {
+    background: #6683c2;
+    color: #fff;
+    & ~ .information__accordion-box {
+      display: flex;
+    }
+  }
 }
 
 .information__accordion-box {
-  margin-top: 5px;
-  display: flex;
+  display: none;
+  margin-top: 10px;
   flex-direction: column;
 }
 
@@ -71,11 +188,39 @@
 
 }
 
+.information__table {
+  overflow-x: auto;
+  @include media(xs) {
+    display: flex;
+    margin: 0 -20px;
+  }
+  @include media(xxs) {
+    margin: 0 -10px;
+  }
+  &::before, &::after {
+    @include media(xs) {
+      content: '';
+      width: 20px;
+      flex-shrink: 0;
+    }
+    @include media(xxs) {
+      width: 10px;
+    }
+  }
+}
+
 .information__box {
+  display: none;
+  &.active {
+    display: block;
+  }
   br {
     display: block;
     content: "";
     height: 10px;
+    @include media(lg) {
+      height: 8px;
+    }
   }
 
   h2 {
@@ -84,6 +229,10 @@
     font-size: 45px;
     line-height: 97%;
     color: #003c56;
+    @include media(lg) {
+      margin-bottom: 25px;
+      font-size: 25px;
+    }
   }
 
   h4 {
@@ -91,11 +240,19 @@
     font-weight: 500;
     font-size: 20px;
     line-height: 110%;
+    @include media(lg) {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
   }
 
   p {
     font-size: 16px;
     line-height: 137%;
+    @include media(lg) {
+      font-size: 15px;
+      line-height: 19px;
+    }
   }
 
   a {
@@ -104,18 +261,41 @@
     text-decoration: underline;
     text-decoration-skip-ink: none;
     color: #6683c2;
+    @include media(lg) {
+      font-size: 15px;
+      line-height: 19px;
+    }
   }
 
   table {
-    border: 2px solid #afbddd;
-    border-radius: 10px;
+
   }
 
-  tr {
-
+  th {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    @include media(lg) {
+      font-size: 14px;
+    }
   }
 
   th, td {
+    padding: 20px;
+    vertical-align: top;
+    min-width: 200px;
+    border: 2px solid #afbddd;
+    @include media(lg) {
+      padding: 12px;
+    }
+  }
 
+  td {
+    font-size: 16px;
+    line-height: 125%;
+    color: #454545;
+    @include media(lg) {
+      font-size: 14px;
+    }
   }
 }

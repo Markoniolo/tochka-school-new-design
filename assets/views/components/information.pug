@@ -17,22 +17,34 @@
 .information
   .information__cont.cont
     .information__wrap
+      .information__sidebar-open
+        svg(width='17' height='13' viewbox='0 0 17 13' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M1 1.5H16' stroke='white' stroke-width='1.5' stroke-linecap='round')
+          path(d='M1 6.5H16' stroke='white' stroke-width='1.5' stroke-linecap='round')
+          path(d='M1 11.5H16' stroke='white' stroke-width='1.5' stroke-linecap='round')
+        | Навигация по разделу
       .information__sidebar
+        .information__sidebar-close-box
+          .information__sidebar-close
+            svg(width='14' height='13' viewbox='0 0 14 13' fill='none' xmlns='http://www.w3.org/2000/svg')
+              path(d='M1.59668 11.8033L12.2033 1.1967' stroke='white' stroke-width='1.5' stroke-linecap='round')
+              path(d='M1.79688 1.1967L12.4035 11.8033' stroke='white' stroke-width='1.5' stroke-linecap='round')
+            | Закрыть навигацию
         .information__list
           each item, index in informationList
             .information__item
               if index === 9
                 .information__button(data-information-accordion)= item
                 .information__accordion-box
-                  button.information__btn(data-information-button-id=`${index}-1`) Раздел 1
-                  button.information__btn(data-information-button-id=`${index}-2`) Раздел 2
-                  button.information__btn(data-information-button-id=`${index}-3`) Раздел 3
+                  button.information__btn(data-information-toggler data-information-button-id=`${index}-1`) Раздел 1
+                  button.information__btn(data-information-toggler data-information-button-id=`${index}-2`) Раздел 2
+                  button.information__btn(data-information-toggler data-information-button-id=`${index}-3`) Раздел 3
               else
-                button.information__button(data-information-button-id=index)= item
+                button.information__button(data-information-toggler data-information-button-id=index)= item
       .information__area
         each item, index in ['0','1','2','3','4','5','6','7','8','9-1','9-2','9-3','10','11']
           .information__box(data-information-box-id=item class=index === 0 ? 'active' : false)
-            h2 Основные сведения
+            h2!= `Основные сведения ${item}`
             h4 Полное наименование организации:
             p ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ ОНЛАЙН-ШКОЛА «ТОЧКА ЗНАНИЙ».
             br
@@ -54,34 +66,35 @@
               a(href='#') Ссылка
             br
             br
-            table
-              tr
-                th Вид
-                th Пример
-                th Способы победить
-              tr
-                td Контролируемые
-                td Скроллинг соцсетей, просмотр роликов
-                td Поставить лимиты в смартфоне для соцсетей, на которые уходит слишком много времени
-              tr
-                td Неконтролируемые
-                td Пробки на дорогах, опоздания репетитора, друзей
-                td Совсем избежать форс-мажора нельзя, но можно заготовить на такие случаи список полезных дел: почистить фотоальбом, выучить стихотворение, повторить сложную тему
-              tr
-                td Одушевлённые
-                td Сплетни, разговоры с надоедливыми одноклассниками, многочасовые разговоры по телефону с родственниками, общение с гостями, которые не хотят уходить
-                td
-                  | Выстраиваем границы. В начале разговора предупреждаем, что
-                  | спешим и на разговор есть не
-                  | больше 10 минут. В присутствии
-                  | человека ставим таймер на это
-                  | время. Когда таймер звонит,
-                  | прощаемся и спешим продолжать дела по плану.
-                  br
-                  br
-                  | Гостей можно звать до
-                  | фиксированного времени, например: приходи играть в доту с 19:00 до 21:00. А дальше — та же схема с таймером.
-              tr
-                td Неодушевлённые
-                td Компьютерные игры, реалити-шоу, сериалы
-                td Ставим после таких занятий в план встречу или созвон с другом, чтобы не было повода залипать дольше, чем разрешили себе
+            .information__table
+              table
+                tr
+                  th Вид
+                  th Пример
+                  th Способы победить
+                tr
+                  td Контролируемые
+                  td Скроллинг соцсетей, просмотр роликов
+                  td Поставить лимиты в смартфоне для соцсетей, на которые уходит слишком много времени
+                tr
+                  td Неконтролируемые
+                  td Пробки на дорогах, опоздания репетитора, друзей
+                  td Совсем избежать форс-мажора нельзя, но можно заготовить на такие случаи список полезных дел: почистить фотоальбом, выучить стихотворение, повторить сложную тему
+                tr
+                  td Одушевлённые
+                  td Сплетни, разговоры с надоедливыми одноклассниками, многочасовые разговоры по телефону с родственниками, общение с гостями, которые не хотят уходить
+                  td
+                    | Выстраиваем границы. В начале разговора предупреждаем, что
+                    | спешим и на разговор есть не
+                    | больше 10 минут. В присутствии
+                    | человека ставим таймер на это
+                    | время. Когда таймер звонит,
+                    | прощаемся и спешим продолжать дела по плану.
+                    br
+                    br
+                    | Гостей можно звать до
+                    | фиксированного времени, например: приходи играть в доту с 19:00 до 21:00. А дальше — та же схема с таймером.
+                tr
+                  td Неодушевлённые
+                  td Компьютерные игры, реалити-шоу, сериалы
+                  td Ставим после таких занятий в план встречу или созвон с другом, чтобы не было повода залипать дольше, чем разрешили себе
