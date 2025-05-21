@@ -33,7 +33,7 @@
                 .tile__tickets
                   .tile__ticket.blue Места ограниченны
                   .tile__ticket.green Высокий спрос
-                .tile__picture
+                .tile__picture(class=item === 1 ? 'no-background-color' : false)
                   img.tile__image(src=staticImg('') alt='')
                 .tile__inner
                   .tile__class-number!= `${tile} класс`

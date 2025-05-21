@@ -370,6 +370,9 @@
   @include media(xxs) {
     left: 10px;
   }
+  &.no-background-color {
+    background: unset;
+  }
 }
 
 .tile__image {

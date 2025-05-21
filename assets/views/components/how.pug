@@ -21,18 +21,51 @@
       text: 'Доступ в личный кабинет на учебной платформе: уроки, записи, конспекты, задания.'
     },
   ]
+  const howListCourse = [
+    {
+      title: 'Занимаемся онлайн',
+      text: 'Онлайн-уроки в прямом эфире на учебной платформе. Доступ с&nbsp;телефона, планшета и ноутбука.'
+    },
+    {
+      title: 'Записи занятий',
+      text: 'Запись урока готова уже через 30 минут и доступна в течение всего учебного года.'
+    },
+    {
+      title: 'Личный тьютор',
+      text: 'Проверит задание к уроку, поможет исправить ошибки и ответит на вопросы.'
+    },
+    {
+      title: 'Проверка знаний',
+      text: 'Раз в месяц проводим промежуточное тестирование, чтобы отследить прогресс.'
+    },
+    {
+      title: 'Авторский подход',
+      text: 'Курс носит авторский характер, но максимально приближен к школьной программе.'
+    },
+    {
+      title: 'Личный кабинет',
+      text: 'Доступ в личный кабинет на учебной платформе: уроки, записи, конспекты, задания.'
+    },
+  ]
 
-mixin how(mod)
+mixin how(mod, isCourse)
   .how(data-element='how' class = mod ? `how_${mod}` : false)
     .how__cont.cont
       h2.how__caption Как проходит обучение
       .how__slider(data-element='how-slider')
         .how__wrapper.swiper-wrapper
-          each item, index in howList
-            .how__slide.swiper-slide
-              .how__title= item.title
-              .how__text!= item.text
-              .how__number= index+1
+          if isCourse
+            each item, index in howListCourse
+              .how__slide.swiper-slide
+                .how__title= item.title
+                .how__text!= item.text
+                .how__number= index+1
+          else
+            each item, index in howList
+              .how__slide.swiper-slide
+                .how__title= item.title
+                .how__text!= item.text
+                .how__number= index + 1
         .how__bottom
           .how__scrollbar
           .how__nav
