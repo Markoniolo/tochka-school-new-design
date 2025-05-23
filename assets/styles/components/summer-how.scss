@@ -173,6 +173,7 @@
   &_2 {
     @include media(xxs) {
       padding-right: 128px;
+      min-height: 81px;
     }
     .summer-how__text {
       max-width: 353px;
@@ -200,11 +201,18 @@
         bottom: 0;
         right: -48px;
       }
+      @include media(xxs) {
+        width: 113px;
+        height: 71px;
+        bottom: 0px;
+        right: -8px;
+      }
     }
   }
   &_3 {
     @include media(xxs) {
-      padding-right: 121px;
+      padding-right: 93px;
+      min-height: 81px;
     }
     .summer-how__text {
       max-width: 436px;
@@ -223,11 +231,18 @@
         top: 8px;
         right: -23px;
       }
+      @include media(xxs) {
+        width: 104px;
+        height: 96px;
+        top: 8px;
+        right: -17px;
+      }
     }
   }
   &_4 {
     @include media(xxs) {
       padding-right: 100px;
+      min-height: 81px;
     }
     .summer-how__text {
       max-width: 416px;
@@ -247,6 +262,11 @@
         bottom: -12px;
         right: -28px;
       }
+      @include media(xxs) {
+        width: 80px;
+        height: 80px;
+        right: -10px;
+      }
     }
   }
   &_5 {
@@ -256,7 +276,7 @@
       min-height: 90px;
     }
     @include media(xxs) {
-      padding-right: 100px;
+      padding-right: 88px;
     }
     .summer-how__text {
       max-width: 436px;
@@ -282,8 +302,8 @@
         right: -26px;
       }
       @include media(xxs) {
-        width: 92px;
-        height: 86px;
+        width: 114px;
+        height: 106px;
         right: 0;
       }
     }
@@ -318,6 +338,10 @@
         right: unset;
         left: 50%;
         transform: translateX(-50%);
+      }
+      @include media(xxs) {
+        width: 239px;
+        height: 179px;
       }
     }
     .summer-how__text {

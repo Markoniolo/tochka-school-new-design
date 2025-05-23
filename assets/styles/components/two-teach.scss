@@ -46,6 +46,9 @@
   @include media(xs) {
     margin-bottom: 76px;
   }
+  @include media(xxs) {
+    margin-bottom: 72px;
+  }
 }
 
 .two-teach__caption {
@@ -62,6 +65,10 @@
     font-size: 25px;
     line-height: 100%;
     margin-bottom: 30px;
+  }
+  @include media(xxs) {
+    margin-bottom: 24px;
+    font-size: 24px;
   }
 }
 
@@ -115,6 +122,10 @@
       top: 208px;
       left: 208px;
     }
+    @include media(xxs) {
+      top: 188px;
+      left: 188px;
+    }
   }
   &_2 {
     background: #6683C2;
@@ -128,6 +139,10 @@
       top: 500px;
       left: unset;
       right: 205px;
+    }
+    @include media(xxs) {
+      top: 486px;
+      right: 184px;
     }
   }
 }
@@ -149,6 +164,9 @@
     width: 196px;
     height: 259px;
   }
+  @include media(xxs) {
+    width: 160px;
+  }
   &_teacher {
     margin-right: 159px;
     margin-top: 56px;
@@ -160,6 +178,9 @@
     @include media(xs) {
       margin-bottom: 35px;
       margin-top: 0;
+    }
+    @include media(xxs) {
+      margin-bottom: 28px;
     }
     .two-teach__image {
       width: 344px;
@@ -178,13 +199,26 @@
         bottom: -3px;
         left: -25px;
       }
+      @include media(xxs) {
+        width: 225px;
+        height: 230px;
+        bottom: -3px;
+        left: -32px;
+      }
     }
     .two-teach__info {
       @include media(xs) {
         top: -46px;
-        left: 140px;
+        left: 134px;
         text-align: left;
         width: 203px;
+      }
+      @include media(xxs) {
+        top: -46px;
+        left: 100px;
+        text-align: left;
+        width: 203px;
+        padding: 10px 12px;
       }
     }
   }
@@ -215,11 +249,14 @@
         bottom: -5px;
         left: -35px;
       }
+      @include media(xxs) {
+        left: -50px;
+      }
     }
     .two-teach__info {
       @include media(xs) {
         top: -20px;
-        left: -146px;
+        left: -140px;
         text-align: left;
         width: 158px;
       }
@@ -248,6 +285,9 @@
         width: 194px;
         height: 243px;
       }
+      @include media(xxs) {
+        bottom: -12px;
+      }
     }
     .two-teach__info {
       @include media(xs) {
@@ -255,6 +295,10 @@
         left: 145px;
         text-align: left;
         width: 182px;
+      }
+      @include media(xxs) {
+        top: -45px;
+        left: 115px;
       }
     }
   }
@@ -282,6 +326,9 @@
     font-size: 15px;
     color: #000;
   }
+  @include media(xxs) {
+    line-height: 132%;
+  }
 }
 
 .two-teach__text {
@@ -293,6 +340,9 @@
   @include media(xs) {
     font-size: 15px;
     color: #000;
+  }
+  @include media(xxs) {
+    line-height: 132%;
   }
 }
 
