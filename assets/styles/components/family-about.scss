@@ -50,6 +50,9 @@
     font-size: 25px;
     line-height: 100%;
   }
+  @include media(xxs) {
+    margin-bottom: 28px;
+  }
 }
 
 .family-about__list {
@@ -80,6 +83,10 @@
   @include media(xs) {
     padding: 25px 13px;
   }
+  @include media(xxs) {
+    padding: 14px 13px;
+    min-height: 75px;
+  }
   svg {
     width: 36px;
     height: 36px;
@@ -89,6 +96,9 @@
       width: 20px;
       height: 20px;
       margin-right: 13px;
+    }
+    @include media(xxs) {
+      margin-right: 8px;
     }
   }
   &_light-blue {
@@ -123,5 +133,8 @@
   @include media(lg) {
     font-size: 18px;
     line-height: 100%;
+  }
+  @include media(xxs) {
+    font-size: 16px;
   }
 }

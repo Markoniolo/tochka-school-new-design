@@ -43,7 +43,7 @@
   font-weight: 600;
   font-size: 58px;
   line-height: 112%;
-  color: #003c56
+  color: #003c56;
 }
 
 .cap-old__inner {
@@ -343,6 +343,10 @@
     font-size: 25px;
     margin-bottom: 20px
   }
+  .cap-old__news-caption {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
   .cap-old__news {
     min-height: 224px;
     padding: 16px 15px 25px;
@@ -448,7 +452,8 @@
     text-align: left
   }
   .cap-old__text {
-    font-size: 12px
+    font-size: 12px;
+    line-height: 100%;
   }
   .cap-old__hover {
     bottom: 35px
@@ -506,5 +511,53 @@
     right: 15px;
     max-width: 100%;
     width: auto
+  }
+}
+
+@include media(xxs) {
+  .cap-old__wrap {
+    padding: 30px 15px 15px;
+  }
+  .cap-old__caption {
+    font-size: 24px;
+  }
+  .cap-old__inner {
+    background-image: url(../img/cap-old/cap-inner-bg_xxs.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 95px;
+    margin-left: -16px;
+    margin-right: -16px;
+    width: calc(100% + 32px);
+  }
+  .cap-old__news-caption {
+    max-width: 162px;
+    margin-bottom: 20px;
+  }
+  .cap-old__news-note {
+    padding: 9px 10px;
+  }
+  .cap-old__news-gift {
+    right: -28px;
+  }
+  .cap-old__box_1 {
+    top: 6px;
+    left: 20px;
+  }
+  .cap-old__box_2 {
+    top: 73px;
+    left: 45px;
+  }
+  .cap-old__box_3 {
+    top: 5px;
+    left: 116px;
+  }
+  .cap-old__box_4 {
+    top: 73px;
+    left: 222px;
+  }
+  .cap-old__box_5 {
+    top: 7px;
+    left: 225px;
   }
 }

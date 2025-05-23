@@ -27,6 +27,13 @@
     background-size: cover;
     background-position: top center;
   }
+  @include media(xxs) {
+    @include bg-img('summer-cap/summer-cap-bg_xxs.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    margin-bottom: 70px;
+  }
 }
 
 .summer-cap__cont {
@@ -47,6 +54,9 @@
     display: flex;
     flex-direction: column;
   }
+  @include media(xxs) {
+    min-height: calc(100vw * 360 / 292);
+  }
 }
 
 .summer-cap__caption {
@@ -62,6 +72,15 @@
   }
   @include media(xs) {
     text-align: center;
+  }
+  @include media(xxs) {
+    line-height: 96%;
+  }
+  br {
+    display: none;
+    @include media(xxs) {
+      display: block;
+    }
   }
 }
 
@@ -139,5 +158,9 @@
   @include media(xs) {
     max-width: 313px;
     margin: auto auto 0;
+  }
+  @include media(xxs) {
+    position: relative;
+    top: 40px;
   }
 }

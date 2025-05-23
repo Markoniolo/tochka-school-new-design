@@ -4,8 +4,14 @@
   margin-top: 40px;
   margin-bottom: 60px;
   @include media(lg) {
-    margin-top: 20px;
+    margin-top: 0;
     margin-bottom: 40px;
+    @include bg-icon('library-cap/library-cap-bg_tablet.png');
+    background-size: cover;
+  }
+  @include media(xs) {
+    @include bg-icon('library-cap/library-cap-bg_mob.png');
+    background-size: cover;
   }
 }
 
@@ -25,14 +31,16 @@
     border-radius: 10px;
     padding: 52px 62px;
     min-height: 367px;
-    @include bg-icon('library-cap/library-cap-bg_tablet.png');
-    background-size: cover;
+    background: unset;
+    box-shadow: none;
   }
   @include media(xs) {
-    @include bg-icon('library-cap/library-cap-bg_mob.png');
-    background-size: cover;
     min-height: 472px;
-    padding: 38px 15px 10px;
+    padding: 38px 0 10px;
+  }
+  @include media(xxs) {
+    padding: 30px 0 0;
+    min-height: 440px;
   }
 }
 
@@ -136,6 +144,9 @@
     margin: 0 auto 18px;
     flex-direction: column;
     text-align: center;
+  }
+  @include media(xxs) {
+    font-size: 24px;
   }
 }
 
@@ -241,6 +252,9 @@
     flex-direction: column;
     gap: 15px;
     margin-bottom: 25px;
+  }
+  @include media(xxs) {
+    margin-bottom: 15px;
   }
 }
 

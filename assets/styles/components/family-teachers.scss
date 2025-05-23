@@ -190,6 +190,9 @@
     margin-left: 0;
     padding: 25px 20px;
   }
+  @include media(xxs) {
+    padding: 18px 10px;
+  }
   &.hide {
     position: relative;
     &::before {
@@ -242,6 +245,9 @@
   @include media(xs) {
     text-align: center;
   }
+  @include media(xxs) {
+    margin-bottom: 10px;
+  }
 }
 
 .family-teachers__tags {
@@ -255,6 +261,10 @@
   @include media(xs) {
     margin-bottom: 25px;
     justify-content: center;
+  }
+  @include media(xxs) {
+    gap: 10px;
+    margin-bottom: 16px;
   }
 }
 
@@ -283,6 +293,9 @@
   @include media(lg) {
     gap: 20px;
   }
+  @include media(xxs) {
+    gap: 8px;
+  }
 }
 
 .family-teachers__item {
@@ -294,6 +307,9 @@
     padding-left: 24px;
     font-size: 15px;
     line-height: 123%;
+  }
+  @include media(xxs) {
+    padding-left: 22px;
   }
   &::before {
     content: '';

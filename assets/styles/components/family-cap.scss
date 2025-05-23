@@ -26,14 +26,15 @@
     margin-bottom: 80px;
     @include media(lg) {
       margin-bottom: 40px;
+      @include bg-icon('family-cap/family-cap-bg-summer_tablet.png');
+    }
+    @include media(xs) {
+      @include bg-icon('family-cap/family-cap-bg-summer_mob.png');
     }
     .family-cap__area {
       @include bg-icon('family-cap/family-cap-bg-summer.png');
       @include media(lg) {
-        @include bg-icon('family-cap/family-cap-bg-summer_tablet.png');
-      }
-      @include media(xs) {
-        @include bg-icon('family-cap/family-cap-bg-summer_mob.png');
+        background: unset;
       }
     }
   }

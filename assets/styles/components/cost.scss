@@ -279,6 +279,9 @@
     min-height: 135px;
     padding: 22px 8px 19px 15px;
   }
+  @include media(xxs) {
+    margin-bottom: 15px;
+  }
   &_blue {
     background: #6683c2;
     color: #FFFFFF;
@@ -471,6 +474,9 @@
   @include media(xs) {
     padding: 0 5px;
   }
+  @include media(xxs) {
+    margin-bottom: 15px;
+  }
 }
 
 .cost__list {
@@ -482,6 +488,7 @@
   @include media(xs) {
     padding: 0 5px;
     gap: 15px 0;
+    margin-bottom: 20px;
   }
 }
 
@@ -527,6 +534,9 @@
   margin-top: auto;
   display: block;
   font-size: 16px;
+  @include media(xs) {
+    margin: auto 5px 5px;
+  }
 }
 
 .cost__offer {
@@ -660,10 +670,6 @@
     transition-duration: $transition-duration;
     transition-property: left;
   }
-}
-
-.cost__list {
-
 }
 
 

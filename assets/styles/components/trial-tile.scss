@@ -42,6 +42,9 @@
         padding: 20px;
         background: #f37e60;
       }
+      @include media(xxs) {
+        padding: 15px;
+      }
       &.open {
         background: #f37e60;
       }
@@ -388,6 +391,9 @@
   @include media(xs) {
     position: relative;
   }
+  @include media(xxs) {
+    padding: 20px 13px 13px;
+  }
   &_family {
     background: #dae5fe;
     .trial-tile__picture {
@@ -405,6 +411,10 @@
         @include bg-icon('trial-tile/trial-tile-family_mob.svg');
         border-radius: 5px;
       }
+      @include media(xxs) {
+        width: 132px;
+        height: 90px;
+      }
     }
     .trial-tile__name {
       margin-bottom: 10px;
@@ -414,14 +424,26 @@
         line-height: 115%;
         margin-bottom: 22px;
       }
+      @include media(xxs) {
+        padding-left: 146px;
+        min-height: 60px;
+        margin-bottom: 18px;
+      }
     }
     .trial-tile__class-number {
       @include media(xs) {
         padding-left: 162px;
       }
+      @include media(xxs) {
+        padding-left: 146px;
+      }
     }
     .trial-tile__text {
       font-size: 18px;
+      @include media(xxs) {
+        font-size: 15px;
+        line-height: 135%;
+      }
     }
   }
 }
@@ -487,6 +509,9 @@
     min-height: 80px;
     margin-bottom: 12px;
   }
+  @include media(xxs) {
+    margin-bottom: 6px;
+  }
 }
 
 .trial-tile__author {
@@ -499,6 +524,9 @@
     font-size: 15px;
     line-height: 144%;
   }
+  @include media(xxs) {
+    margin-bottom: 6px;
+  }
 }
 
 .trial-tile__text {
@@ -508,6 +536,9 @@
   @include media(lg) {
     font-size: 15px;
     line-height: 144%;
+  }
+  @include media(xxs) {
+    margin-bottom: 12px;
   }
 }
 
@@ -566,6 +597,9 @@
   }
   @include media(xs) {
     margin-left: 20px;
+  }
+  @include media(xxs) {
+    margin-left: 8px;
   }
   &::before {
     content: '';

@@ -261,6 +261,9 @@
   @include media(xs) {
     padding-left: 115px;
   }
+  @include media(xxs) {
+    padding-left: 112px;
+  }
 }
 
 .tile__family-name {
@@ -271,6 +274,9 @@
   @include media(xs) {
     padding-left: 115px;
     max-width: 235px;
+  }
+  @include media(xxs) {
+    padding-left: 112px;
   }
 }
 
@@ -285,6 +291,10 @@
     order: 1;
     margin-top: 16px;
   }
+  @include media(xxs) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }
 
 .tile__family-tags {
@@ -296,6 +306,9 @@
     padding-left: 115px;
     gap: 10px;
     margin-bottom: 0;
+  }
+  @include media(xxs) {
+    padding-left: 112px;
   }
 }
 
@@ -311,6 +324,9 @@
   justify-content: center;
   background: rgba(255, 255, 255, 0.5);
   padding: 8px 12px;
+  @include media(xxs) {
+    padding: 4px 12px;
+  }
   &.desk {
     @include media(xs) {
       display: none;

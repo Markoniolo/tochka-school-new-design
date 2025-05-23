@@ -39,6 +39,9 @@
         @include media(lg) {
           display: block;
         }
+        @include media(xs) {
+          display: none;
+        }
       }
       &_4 {
         background: #A0D76A;
@@ -175,6 +178,9 @@
     padding: 25px 28px;
     @include bg-icon('family-tutor/family-tutor-bg_mob.png');
   }
+  @include media(xxs) {
+    padding: 25px 10px;
+  }
 }
 
 .family-tutor__picture {
@@ -205,6 +211,9 @@
   gap: 35px;
   @include media(md) {
     gap: 20px;
+  }
+  @include media(xxs) {
+    gap: 8px;
   }
 }
 

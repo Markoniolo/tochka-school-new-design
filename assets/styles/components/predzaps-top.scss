@@ -36,6 +36,9 @@
   @include media(xs) {
     padding-left: 0;
   }
+  @include media(xxs) {
+    height: 73px;
+  }
 }
 
 .predzaps-top__decor {
@@ -68,6 +71,9 @@
     margin-bottom: 8px;
     font-weight: 700;
   }
+  @include media(xxs) {
+    font-size: 13px;
+  }
 }
 
 .predzaps-top__text {
@@ -98,10 +104,25 @@
   }
   @include media(xs) {
     bottom: 13px;
-    left: 235px;
+    left: 220px;
+  }
+  @include media(xxs) {
+    width: 34px;
+    height: 34px;
+    text-indent: 9999px;
+    overflow: hidden;
+    bottom: 8px;
+    left: 224px;
   }
   &::after {
     margin-left: 6px;
+    @include media(xxs) {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 }
 
@@ -120,5 +141,8 @@
     top: 5px;
     right: -15px;
     transform: none;
+  }
+  @include media(xxs) {
+    right: 0;
   }
 }

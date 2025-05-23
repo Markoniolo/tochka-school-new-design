@@ -78,6 +78,9 @@
   @include media(xs) {
     width: 100%;
   }
+  @include media(xxs) {
+    padding: 12px 15px;
+  }
   &_1 {
     .summer-how-2__text {
       max-width: 464px;
@@ -139,6 +142,9 @@
     }
   }
   &_4 {
+    @include media(xxs) {
+      padding-right: 82px;
+    }
     .summer-how-2__text {
       max-width: 400px;
       @include media(lg) {
@@ -245,6 +251,10 @@
   @include media(lg) {
     font-size: 18px;
     line-height: 23px;
+  }
+  @include media(xxs) {
+    font-size: 16px;
+    line-height: 20px;
   }
 }
 
