@@ -1863,6 +1863,111 @@ function libraryCapInit () {
   }
 }
 
+const marathonChildThemes = document.querySelector('[data-element="marathon-child__themes"]')
+
+if (marathonChildThemes) marathonChildThemesInit()
+
+function marathonChildThemesInit () {
+  const navItems = document.querySelectorAll('[data-element="marathon-child__nav-item"]')
+  const boxes = document.querySelectorAll('[data-element="marathon-child__box"]')
+
+  for (let i = 0; i < navItems.length; i++) {
+    navItems[i].addEventListener('click', toggleBox)
+  }
+
+  function toggleBox () {
+    const oldNav = marathonChildThemes.querySelector('.marathon-child__nav-item_active')
+    oldNav.classList.remove('marathon-child__nav-item_active')
+    this.classList.add('marathon-child__nav-item_active')
+    const oldBox = marathonChildThemes.querySelector('.marathon-child__box_active')
+    oldBox.classList.remove('marathon-child__box_active')
+    const index = this.getAttribute('data-index')
+    boxes[index].classList.add('marathon-child__box_active')
+  }
+
+  const marathonChildClose = document.querySelector('[data-element="marathon-child__close"]')
+
+  marathonChildThemes.addEventListener('click', openModal)
+  marathonChildClose.addEventListener('click', closeModal)
+  window.addEventListener('click', windowCloseModal)
+
+  function openModal () {
+    marathonChildThemes.classList.add('marathon-child__themes_active')
+  }
+
+  function closeModal (e) {
+    e.stopPropagation()
+    marathonChildThemes.classList.remove('marathon-child__themes_active')
+  }
+
+  function windowCloseModal (e) {
+    if (!e.target.classList.contains('marathon-child__themes') && !e.target.closest('.marathon-child__themes')) {
+      marathonChildThemes.classList.remove('marathon-child__themes_active')
+    }
+  }
+}
+
+const marathonInformer = document.querySelector('[data-element="marathon-informer"]')
+
+if (marathonInformer) marathonInformerInit()
+
+function marathonInformerInit () {
+  const close = document.querySelector('[data-element="marathon-informer__close"]')
+  close.addEventListener('click', removeMarathon)
+
+  function removeMarathon (e) {
+    e.preventDefault()
+    localStorage.setItem('isMarathonInformerShown', 'true')
+    marathonInformer.remove()
+  }
+
+  const isShown = localStorage.getItem('isMarathonInformerShown')
+
+  if (!isShown || marathonInformer.getAttribute('show-always')) {
+    marathonInformer.style.display = 'block'
+  }
+}
+
+const marathonOrderSelect = document.querySelector("[data-element='marathon-order__select']")
+
+if (marathonOrderSelect) marathonOrderSelectInit()
+
+function marathonOrderSelectInit () {
+  const button = document.querySelector("[data-element='marathon-order__button']")
+  const priceOld = document.querySelector("[data-element='marathon-order__price-old']")
+  const priceNew = document.querySelector("[data-element='marathon-order__price-new']")
+  const opener = marathonOrderSelect.closest('.custom-select-container').querySelector('.custom-select-opener')
+
+  marathonOrderSelect.addEventListener('change', updateButton)
+  button.addEventListener('click', validateButton)
+
+  function validateButton (e) {
+    if (!marathonOrderSelect.value) {
+      e.preventDefault()
+      opener.classList.add('error')
+    } else {
+      window.open(button.href)
+    }
+  }
+
+  function updateButton () {
+    opener.classList.remove('error')
+
+    const link = this.options[this.selectedIndex].getAttribute('data-product-link')
+    const priceOldValue = this.options[this.selectedIndex].getAttribute('data-product-old-price')
+    const priceNewValue = this.options[this.selectedIndex].getAttribute('data-product-new-price')
+
+    button.href = link
+    if (priceOldValue) {
+      priceOld.style.display = 'block'
+      priceOld.innerHTML =`${priceOldValue}`
+    } else {
+      priceOld.style.display = 'none'
+    }
+    priceNew.innerHTML =`${priceNewValue}`
+  }
+}
+
 const modalOrderNewSelect = document.querySelector(".modal-order-new__select")
 
 if (modalOrderNewSelect) modalOrderNewSelectInit()
