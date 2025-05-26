@@ -1,0 +1,69 @@
+.marathon-end {
+  background-color: #fffaee;
+  color: #222;
+  overflow: hidden;
+  .container {
+    @include media(xs) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.marathon-end__area {
+  @include bg-icon('marathon-end/marathon-end-bg.svg');
+  background-size: cover;
+  min-height: 459px;
+  padding: 115px 0 112px;
+  text-align: center;
+  @include media(md) {
+    @include bg-icon('marathon-end/marathon-end-bg_tablet.svg');
+    background-size: cover;
+    min-height: 270px;
+    padding: 40px 0;
+  }
+  @include media(xs) {
+    padding: 30px 0;
+    @include bg-icon('marathon-end/marathon-end-bg_mob.svg');
+    background-size: cover;
+    min-height: 322px;
+    max-width: 363px;
+    width: calc(100% + 22px);
+    margin: 0 -11px;
+  }
+}
+
+.marathon-end__title {
+  margin-bottom: 28px;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 122%;
+  @include media(md) {
+    font-size: 27px;
+    margin-bottom: 20px;
+  }
+  @include media(xs) {
+    max-width: 360px;
+    width: 100%;
+    margin: 0 auto 24px;
+  }
+}
+
+.marathon-end__text {
+  max-width: 784px;
+  margin: 0 auto 54px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 144%;
+  @include media(md) {
+    margin: 0 auto 18px;
+    font-size: 15px;
+    max-width: 510px;
+  }
+}
+
+.marathon-end__button {
+  max-width: 275px;
+  width: 100%;
+  padding: 17px 28px;
+}

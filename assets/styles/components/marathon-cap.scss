@@ -1,0 +1,122 @@
+.marathon-cap {
+  @include bg-icon('marathon-cap/marathon-cap-bg.svg');
+  background-size: cover;
+  margin-bottom: 71px;
+  @include media(md) {
+    margin-bottom: 41px;
+    @include bg-icon('marathon-cap/marathon-cap-bg_tablet.svg');
+    background-size: cover;
+  }
+  @include media(xs) {
+    margin-bottom: 38px;
+    @include bg-icon('marathon-cap/marathon-cap-bg_mob.svg');
+    background-size: 100% 455px;
+    background-position: top center;
+  }
+}
+
+.marathon-cap__area {
+  text-align: center;
+  padding: 64px 0 60px;
+  max-width: 632px;
+  width: 100%;
+  margin: 0 auto;
+  color: #222;
+  @include media(md) {
+    max-width: 460px;
+  }
+  @include media(xs) {
+    padding: 80px 0 0;
+  }
+}
+
+.marathon-cap__tag {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 6px 16px;
+  font-size: 15px;
+  line-height: 144%;
+  @include bg-icon('marathon-cap/marathon-cap-tag-bg.svg');
+  @include media(xs) {
+    margin-bottom: 10px;
+  }
+}
+
+.marathon-cap__caption {
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 120%;
+  @include media(md) {
+    margin-bottom: 20px;
+    font-size: 32px;
+    line-height: 122%;
+  }
+  @include media(xs) {
+    margin: 0 auto 27px;
+    max-width: 260px;
+    font-size: 16px;
+    line-height: 127%;
+  }
+}
+
+.marathon-cap__text {
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 144%;
+  @include media(md) {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 141%;
+    max-width: 342px;
+    margin: 0 auto 29px;
+  }
+  @include media(xs) {
+    font-size: 12px;
+    max-width: 270px;
+    margin: 0 auto 26px;
+  }
+}
+
+.marathon-cap__note {
+  margin-bottom: 40px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 144%;
+  text-align: center;
+  @include media(md) {
+    margin-bottom: 29px;
+    font-size: 14px;
+  }
+  @include media(xs) {
+    max-width: 180px;
+    margin: 0 auto 160px;
+  }
+}
+
+.marathon-cap__button {
+  margin-bottom: 14px;
+  max-width: 275px;
+  width: 100%;
+  padding: 17px 28px;
+}
+
+.marathon-cap__price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marathon-cap__price-old {
+  margin-right: 10px;
+  font-size: 15px;
+  line-height: 144%;
+  text-decoration: line-through;
+}
+
+.marathon-cap__price-new {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 144%;
+}

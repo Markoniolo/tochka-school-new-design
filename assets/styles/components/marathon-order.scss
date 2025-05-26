@@ -1,0 +1,292 @@
+.marathon-order {
+  position: relative;
+  z-index: 2;
+  background: #fffaee;
+  color: #222;
+  padding: 70px 0 74px;
+  @include media(md) {
+    padding: 40px 0;
+  }
+}
+
+.marathon-order__title {
+  margin-bottom: 13px;
+  font-size: 35px;
+  line-height: 122%;
+  color: #222;
+  text-align: center;
+  font-weight: 700;
+  @include media(xs) {
+    margin-bottom: 24px;
+    font-size: 27px;
+    line-height: 122%;
+  }
+}
+
+.marathon-order__date {
+  margin-bottom: 36px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 144%;
+  @include media(xs) {
+    margin-bottom: 20px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  span {
+    padding: 5px 10px;
+    margin-left: 16px;
+    font-size: 15px;
+    line-height: 144%;
+    @include bg-icon('marathon-order/marathon-order-date-bg.svg');
+    @include media(xs) {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }
+}
+
+.marathon-order__wrap {
+  max-width: 1058px;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #e0d0a9;
+  box-shadow: 0 1px 17px 0 rgba(0, 0, 0, 0.09);
+  background: #fff;
+  overflow: visible;
+}
+
+.marathon-order__top {
+  margin-bottom: 42px;
+  min-height: 229px;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  border-radius: 10px 10px 0 0;
+  @include media(md) {
+    margin-bottom: 30px;
+    min-height: 174px;
+  }
+  &::before {
+    content: '';
+    @include bg-icon('marathon-order/marathon-order-bg.svg');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 184px;
+    @include media(md) {
+      height: 136px;
+      @include bg-icon('marathon-order/marathon-order-bg_tablet.svg');
+      background-size: cover;
+    }
+    @include media(xs) {
+      @include bg-icon('marathon-order/marathon-order-bg_mob.svg');
+      background-size: cover;
+    }
+  }
+}
+
+.marathon-order__name {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 19px 23px;
+  background: #a05246;
+  border-radius: 18px;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 118%;
+  text-align: center;
+  color: #fff;
+  @include media(md) {
+    font-size: 18px;
+    padding: 21px 23px;
+  }
+  @include media(xs) {
+    padding: 11px 24px;
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.marathon-order__area {
+  margin-bottom: 42px;
+  padding: 0 55px;
+  display: flex;
+  gap: 0 40px;
+  @include media(md) {
+    margin-bottom: 30px;
+    padding: 0 46px;
+    flex-direction: column;
+    gap: 30px 0;
+  }
+  @include media(xs) {
+    padding: 0 20px;
+  }
+}
+
+.marathon-order__box {
+  max-width: 430px;
+  width: 100%;
+  @include media(md) {
+    max-width: 100%;
+  }
+}
+
+.marathon-order__headline {
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 144%;
+  color: #000;
+  @include media(md) {
+    margin-bottom: 18px;
+  }
+}
+
+.marathon-order__list {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+  @include media(md) {
+    gap: 15px 0;
+  }
+}
+
+.marathon-order__item {
+  padding-left: 44px;
+  font-size: 17px;
+  line-height: 144%;
+  color: #000;
+  min-height: 19px;
+  position: relative;
+  @include media(md) {
+    padding-left: 34px;
+    font-size: 14px;
+  }
+  &::before {
+    content: '';
+    width: 19px;
+    height: 19px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    @include bg-icon('marathon-order/ic_marathon-order_check.svg');
+  }
+  span {
+    font-weight: 600;
+  }
+}
+
+.marathon-order__bottom {
+  display: flex;
+  align-items: center;
+  background: #fffaee;
+  padding: 40px 55px;
+  border-radius: 0 0 10px 10px;
+  @include media(md) {
+    padding: 26px 28px;
+    align-items: flex-end;
+  }
+  @include media(xs) {
+    display: block;
+    text-align: center;
+  }
+  .custom-select-container {
+    margin-right: 36px;
+    flex-grow: 1;
+    text-align: left;
+    @include media(md) {
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+  .custom-select-container.is-open .custom-select-panel {
+    background-color: #fffaee;
+  }
+  .custom-select-opener {
+    color: rgba(0, 0, 0, 0.66);
+    @include media(xs) {
+      padding: 14px 28px;
+    }
+  }
+}
+
+.marathon-order__class {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  @include media(md) {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    margin-right: 18px;
+  }
+  @include media(xs) {
+    margin-bottom: 16px;
+    align-items: center;
+  }
+}
+
+.marathon-order__class-note {
+  margin-right: 36px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 144%;
+  @include media(md) {
+    margin-right: 0;
+    margin-bottom: 14px;
+  }
+}
+
+.marathon-order__select {
+
+}
+
+.marathon-order__price {
+  text-align: right;
+  margin-right: 36px;
+  @include media(md) {
+    flex-shrink: 0;
+    margin-right: 18px;
+    margin-bottom: 5px;
+  }
+  @include media(xs) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+}
+
+.marathon-order__price-old {
+  margin-bottom: 5px;
+  font-size: 15px;
+  line-height: 144%;
+  text-decoration: line-through;
+  @include media(xs) {
+    margin-bottom: 0;
+    margin-right: 8px;
+  }
+}
+
+.marathon-order__price-new {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 144%;
+}
+
+.marathon-order__button {
+  padding: 17px 28px;
+  max-width: 275px;
+  width: 100%;
+}

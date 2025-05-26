@@ -1,0 +1,99 @@
+.marathon-informer {
+  position: relative;
+  @include bg-icon('marathon-informer/marathon-informer-bg.svg');
+  background-size: cover;
+  display: none;
+  @include media(md) {
+    @include bg-icon('marathon-informer/marathon-informer-bg_tablet.svg');
+    background-size: cover;
+  }
+  @include media(xs) {
+    @include bg-icon('marathon-informer/marathon-informer-bg_mob.svg');
+    background-size: cover;
+  }
+  .container {
+    position: static;
+    @include media(xs) {
+      padding: 0 20px;
+    }
+  }
+}
+
+.marathon-informer__area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  gap: 0 35px;
+  @include media(md) {
+    gap: 0 42px;
+  }
+  @include media(xs) {
+    gap: 0 15px;
+  }
+}
+
+.marathon-informer__text {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 144%;
+  color: #222;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 114%;
+  }
+  @include media(xs) {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 155%;
+  }
+  span {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 144%;
+    color: #222;
+    @include media(lg) {
+      font-size: 15px;
+      line-height: 114%;
+    }
+    @include media(xs) {
+      margin-bottom: 5px;
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 114%;
+      display: block;
+    }
+  }
+}
+
+.marathon-informer__button {
+  font-weight: 500;
+  font-size: 13px;
+  border: 2px solid #e66927;
+  border-radius: 4px;
+  padding: 8px 29px;
+  flex-shrink: 0;
+  color: #222;
+  @include media(xs) {
+    padding: 5px 16px;
+  }
+}
+
+.marathon-informer__close {
+  position: absolute;
+  top: 24px;
+  right: 26px;
+  width: 32px;
+  height: 32px;
+  @include bg-icon('marathon-informer/ic_marathon-informer_close.svg');
+  border: none;
+  background-color: transparent;
+  @include media(lg) {
+    position: static;
+    flex-shrink: 0;
+  }
+  @include media(xs) {
+    width: 19px;
+    height: 19px;
+  }
+}

@@ -1,0 +1,255 @@
+.marathon-child {
+  margin-bottom: 62px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  @include media(md) {
+    margin-bottom: 40px;
+  }
+}
+
+.marathon-child__area {
+  border: 1px solid #e0d0a9;
+  border-radius: 10px;
+  box-shadow: 0 1px 17px 0 rgba(0, 0, 0, 0.09);
+  background: #fffaee;
+  padding: 60px 40px;
+  color: #222;
+  @include media(md) {
+    padding: 40px 50px;
+  }
+  @include media(xs) {
+    padding: 40px 30px;
+  }
+}
+
+.marathon-child__title {
+  margin-bottom: 60px;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 122%;
+  text-align: center;
+  @include media(md) {
+    margin-bottom: 40px;
+    font-size: 35px;
+  }
+  @include media(xs) {
+    margin-bottom: 35px;
+    font-size: 27px;
+  }
+}
+
+.marathon-child__list {
+  list-style-type: none;
+  display: flex;
+  gap: 0 40px;
+  padding: 0;
+  @include media(md) {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 40px 40px;
+  }
+  @include media(xs) {
+    flex-direction: column;
+    gap: 38px 0;
+    align-items: center;
+  }
+}
+
+.marathon-child__item {
+  text-align: center;
+  width: calc(25% - 20px);
+  @include media(md) {
+    width: calc(50% - 40px);
+    max-width: 282px;
+  }
+  @include media(xs) {
+    width: 100%;
+  }
+}
+
+.marathon-child__icon {
+  display: inline-block;
+  margin-bottom: 32px;
+  width: 111px;
+  height: 111px;
+}
+
+.marathon-child__text {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 144%;
+  @include media(md) {
+    font-size: 14px;
+  }
+  @include media(xs) {
+    font-size: 15px;
+  }
+}
+
+.marathon-child__themes {
+  position: relative;
+  display: inline-block;
+  margin-top: 24px;
+  font-size: 15px;
+  line-height: 144%;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #e66927;
+  cursor: pointer;
+  @include media(md) {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  @include media(xs) {
+    font-size: 15px;
+    margin-top: 15px;
+  }
+  &_active {
+    .marathon-child__modal {
+      pointer-events: all;
+      opacity: 1;
+    }
+  }
+}
+
+.marathon-child__modal {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 15px);
+  left: 0;
+  box-shadow: 0 1px 17px 0 rgba(0, 0, 0, 0.09);
+  background: #fffaee;
+  border: 1px solid #e0d0a9;
+  border-radius: 10px;
+  padding: 35px 33px 30px;
+  width: 816px;
+  text-align: left;
+  color: #222;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition-property: opacity;
+  transition-duration: $transition-duration;
+  @include media(lg) {
+    width: 680px;
+    padding: 24px 28px;
+  }
+  @include media(md) {
+    width: 675px;
+    left: -442px;
+  }
+  @include media(sm) {
+    padding: 24px 20px;
+    width: 365px;
+    left: -114px;
+  }
+  @include media(xs) {
+    width: 360px;
+    left: -115px;
+  }
+  @include media(xxs) {
+    width: 320px;
+    left: -95px;
+  }
+}
+
+.marathon-child__close {
+  @include bg-icon('marathon-child/ic_marathon-child_close.svg', 16px, 16px);
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 24px;
+  right: 30px;
+  cursor: pointer;
+  color: #222;
+  @include media(lg) {
+    top: 16px;
+    right: 20px;
+  }
+  @include media(sm) {
+    right: 12px;
+  }
+}
+
+.marathon-child__class {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 122%;
+}
+
+.marathon-child__nav {
+  display: flex;
+  padding-bottom: 13px;
+  gap: 0 14px;
+  @include media(lg) {
+    padding: 0;
+    margin: 0 -28px 29px;
+    width: calc(100% + 56px);
+    overflow-x: auto;
+    &::before, &::after {
+      content: '';
+      width: 14px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.marathon-child__nav-item {
+  font-size: 18px;
+  padding: 13px 34px;
+  border: 1px solid #e59525;
+  border-radius: 4px;
+  cursor: pointer;
+  transition-duration: $transition-duration;
+  transition-property: background-color;
+  &_active {
+    color: #FFFFFF;
+    cursor: default;
+    box-shadow: inset 0 6px 0 0 #8d6022;
+    background: #e59525;
+  }
+}
+
+.marathon-child__box {
+  display: none;
+  margin-top: 13px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  @include media(lg) {
+    margin-top: 0;
+    padding-top: 0;
+    border: none;
+  }
+  &_active {
+    display: block;
+  }
+}
+
+.marathon-child__headline {
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 144%;
+  @include media(lg) {
+    font-size: 16px;
+  }
+}
+
+.marathon-child__content {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 169%;
+  @include media(lg) {
+    font-size: 14px;
+  }
+  span {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 169%;
+    @include media(lg) {
+      font-size: 14px;
+    }
+  }
+}

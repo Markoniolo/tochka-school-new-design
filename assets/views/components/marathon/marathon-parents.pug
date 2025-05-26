@@ -1,0 +1,45 @@
+-
+  const marathonParentsList = [
+    {
+      theme: 'Тема №1', title: 'Как не дать ребёнку «скатиться» в учёбе', author: 'Шелудько Андрей Александрович',
+      text: 'Основатель онлайн-школы «Точка Знаний». Обучил более 10 000 школьников',
+    },
+    {
+      theme: 'Тема №2',
+      title: 'Когда и как «отпустить контроль» за ребёнком в учёбе. Для родителей школьников 1-4 классов',
+      author: 'Бабенко Анна Юрьевна',
+      text: 'Финалист Всероссийского конкурса «Учитель года России-2022»',
+    },
+    {
+      theme: 'Тема №3', title: 'Как общаться с ребенком, чтобы создать доверительные отношения',
+      author: 'Федоренко Наталья Александровна',
+      text: 'Практикующий психолог, эксперт в сфере детско-родительских отношений с опытом работы 25 лет. Многодетная мама.',
+    },
+    {
+      theme: 'Тема №4', title: 'Приёмы повышения учебной мотивации ребёнка', author: 'Щербакова Екатерина Александровна',
+      text: 'ТОП-15 учителей России в 2022 году',
+    }
+  ]
+
+.marathon-parents
+  .container
+    h2.marathon-parents__title Родители на марафоне:
+    .marathon-parents__text.
+      Получат практические рекомендации от педагогов «Точки Знаний» о том,
+      как помочь ребёнку в учёбе. А именно:
+    ul.marathon-parents__list
+      each item, i in marathonParentsList
+        li.marathon-parents__item
+          img.marathon-parents__image(src=staticImg(`marathon-parents/marathon-parents-${i+1}.png`) alt='')
+          .marathon-parents__inner
+            .marathon-parents__theme= item.theme
+            .marathon-parents__headline= item.title
+            .marathon-parents__box
+              img.marathon-parents__image-mob(src=staticImg(`marathon-parents/marathon-parents-${i+1}.png`) alt='')
+              .marathon-parents__box-inner
+                .marathon-parents__author= item.author
+                .marathon-parents__descr= item.text
+      li.marathon-parents__item.marathon-parents__item_wide
+        .marathon-parents__bonus Бонусный эфир
+        .marathon-parents__bonus-text Ответы на вопросы и разбор Ваших ситуаций от спикеров марафона
+        .marathon-parents__bonus-date 2 ноября 19:00

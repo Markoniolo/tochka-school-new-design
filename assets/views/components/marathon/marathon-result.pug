@@ -1,0 +1,20 @@
+-
+  const marathonResultList = [
+    'Меньше стресса и тревоги у детей и родителей',
+    'Больше радости и интереса от учёбы',
+    'Уверенный переход во вторую четверть',
+  ]
+
+.marathon-result
+  .container
+    .marathon-result__area
+      img.marathon-result__decor-1(src=staticImg('marathon-result/marathon-result-decor-1.svg') alt='')
+      img.marathon-result__decor-2(src=staticImg('marathon-result/marathon-result-decor-2.svg') alt='')
+      img.marathon-result__decor-3(src=staticImg('marathon-result/marathon-result-decor-3.svg') alt='')
+      img.marathon-result__decor-4(src=staticImg('marathon-result/marathon-result-decor-4.svg') alt='')
+      h2.marathon-result__title В результате: любовь к математике + взаимопонимание «родитель-ребёнок» в вопросах учёбы ❤️
+      ul.marathon-result__list
+        each item, i in marathonResultList
+          li.marathon-result__item
+            img.marathon-result__image(src=staticImg(`marathon-result/marathon-result-${i+1}.svg`) alt='')
+            .marathon-result__text= item

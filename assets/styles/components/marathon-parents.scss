@@ -1,0 +1,233 @@
+.marathon-parents {
+  background: #fffaee;
+  padding: 63px 0 70px;
+  color: #222;
+  @include media(md) {
+    padding: 40px 0;
+  }
+}
+
+.marathon-parents__title {
+  margin-bottom: 35px;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 122%;
+  text-align: center;
+  @include media(md) {
+    margin-bottom: 20px;
+  }
+  @include media(xs) {
+    font-size: 27px;
+  }
+}
+
+.marathon-parents__text {
+  max-width: 712px;
+  text-align: center;
+  margin: 0 auto 46px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 144%;
+  @include media(md) {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 141%;
+    margin: 0 auto 30px;
+  }
+}
+
+.marathon-parents__list {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 24px;
+  @include media(md) {
+    gap: 15px 0;
+    flex-direction: column;
+  }
+}
+
+.marathon-parents__item {
+  box-shadow: 0 1px 17px 0 rgba(0, 0, 0, 0.09);
+  background: #fff;
+  border: 1px solid #e0d0a9;
+  border-radius: 10px;
+  padding: 25px;
+  display: flex;
+  width: calc(50% - 12px);
+  @include media(md) {
+    width: 100%;
+  }
+  @include media(xs) {
+    border-radius: 7px;
+    padding: 20px 14px;
+    display: block;
+  }
+  &_wide {
+    order: 5;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    @include media(md) {
+      gap: 0 35px;
+      text-align: center;
+    }
+    @include media(xs) {
+      display: flex;
+      flex-direction: column;
+      gap: 20px 0;
+      padding-top: 30px;
+    }
+  }
+  &:nth-child(1) {
+    order: 1;
+    @include media(md) {
+      order: unset;
+    }
+  }
+  &:nth-child(2) {
+    order: 3;
+    @include media(md) {
+      order: unset;
+    }
+  }
+  &:nth-child(3) {
+    order: 2;
+    @include media(md) {
+      order: unset;
+    }
+  }
+  &:nth-child(4) {
+    order: 4;
+    @include media(md) {
+      order: unset;
+    }
+  }
+}
+
+.marathon-parents__image {
+  margin-right: 36px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  width: 183px;
+  height: 195px;
+  @include media(xs) {
+    display: none;
+  }
+}
+
+.marathon-parents__inner {
+
+}
+
+.marathon-parents__theme {
+  margin-bottom: 16px;
+  font-size: 15px;
+  line-height: 143%;
+  @include media(xs) {
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+}
+
+.marathon-parents__headline {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 144%;
+  @include media(xs) {
+    margin-bottom: 16px;
+  }
+}
+
+.marathon-parents__box {
+  @include media(xs) {
+    display: flex;
+  }
+}
+
+.marathon-parents__image-mob {
+  display: none;
+  @include media(xs) {
+    display: block;
+    flex-shrink: 0;
+    margin-right: 10px;
+    width: 63px;
+    height: 66px;
+    border-radius: 50%;
+  }
+}
+
+.marathon-parents__author {
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 143%;
+  @include media(xs) {
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+}
+
+.marathon-parents__descr {
+  font-size: 15px;
+  line-height: 143%;
+  @include media(xs) {
+    font-size: 14px;
+    line-height: 122%;
+  }
+}
+
+.marathon-parents__bonus {
+  position: relative;
+  padding-left: 77px;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 144%;
+  @include media(md) {
+    padding-left: 38px;
+    font-size: 17px;
+    flex-shrink: 0;
+  }
+  @include media(xs) {
+    padding-left: 54px;
+    font-size: 22px;
+  }
+  &::before {
+    content: '';
+    @include bg-icon('marathon-parents/marathon-parents-bonus.svg');
+    width: 55px;
+    height: 63px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    @include media(md) {
+      width: 26px;
+      height: 30px;
+    }
+    @include media(xs) {
+      width: 39px;
+      height: 44px;
+      transform: translateY(-60%);
+    }
+  }
+}
+
+.marathon-parents__bonus-text {
+  font-weight: 600;
+  font-size: 17px;
+  @include media(md) {
+    font-weight: 600;
+    font-size: 14px;
+  }
+  @include media(xs) {
+    font-size: 17px;
+  }
+}
+
+.marathon-parents__bonus-date {
+  font-weight: 500;
+  font-size: 15px;
+}

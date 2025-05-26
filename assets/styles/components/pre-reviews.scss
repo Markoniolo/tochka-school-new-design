@@ -71,6 +71,27 @@
       background-color: #A0D76A;
     }
   }
+  &.orange {
+    background: #f5ebd3;
+    padding: 40px 0;
+    margin-bottom: 0;
+    .pre-reviews__caption {
+      color: #222;
+      text-align: center;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.2;
+      @include media(xs) {
+        font-size: 26px;
+      }
+    }
+    .pre-reviews__play {
+      @include bg-icon('icons/ic_video_play_orange.svg');
+    }
+    .pre-reviews__scrollbar .swiper-scrollbar-drag {
+      background: #ffca42;
+    }
+  }
 }
 
 .pre-reviews__cont {

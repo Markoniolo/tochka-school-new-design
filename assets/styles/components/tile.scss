@@ -476,3 +476,19 @@
   }
 }
 
+.tile__tileb {
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.tile__tileb .tmore_b {
+  display: none;
+}
+.tile__tileb.active {
+  opacity: 1;
+  margin-top: 30px;
+}
+.tile__tileb.active .tmore_b {
+  display: block;
+}
