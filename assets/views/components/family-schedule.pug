@@ -46,6 +46,18 @@ mixin family-schedule(mod)
                   .family-schedule__cell(data-element = index === 0 ? "family-schedule__cell" : false)
                     each cell in item
                       span= cell
+            .family-schedule__row.add
+              .family-schedule__cell.add
+                span Предметы для самостоятельного изучения
+              .family-schedule__cell.double
+                span Основы религиозных культур и светской этики
+              .family-schedule__cell.double
+                span Курс по основам духовно-нравственной культуры народов России
+            .family-schedule__row.add
+              .family-schedule__cell.add
+                span Предметы для самостоятельного изучения
+              .family-schedule__cell.single
+                span Основы религиозных культур и светской этики
         .family-schedule__toggle-box.text
           button.family-schedule__toggle.reverse.hide(data-element="family-schedule__toggle-bottom"
             class = mod === 'summer' ? 'btn-orange' : 'btn-blue') Развернуть расписание

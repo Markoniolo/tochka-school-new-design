@@ -116,6 +116,11 @@
       }
     }
   }
+  &.add {
+    @include media(lg) {
+      padding-left: 235px;
+    }
+  }
 }
 
 .family-schedule__cell {
@@ -161,6 +166,24 @@
   &_time {
     @include media(lg) {
       display: none;
+    }
+  }
+  &.add {
+    width: 320px;
+    @include media(lg) {
+      width: 225px;
+    }
+  }
+  &.single {
+    width: 1000px;
+    @include media(lg) {
+      width: 860px;
+    }
+  }
+  &.double {
+    width: 490px;
+    @include media(lg) {
+      width: 425px;
     }
   }
 }
