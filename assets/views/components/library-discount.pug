@@ -1,0 +1,13 @@
+.library-discount
+  .library-discount__cont.cont
+    a.library-discount__area(href="https://tochka-school.ru/filter_courses?promo=PROMOM25")
+      .library-discount__title Занимайте место на курсах следующего года с самой большой скидкой в году!
+      .library-discount__list
+        .library-discount__item - 30% на полную оплату
+        .library-discount__item - 25% при оплате в рассрочку (от&nbsp;2&nbsp;до&nbsp;12&nbsp;месяцев)
+        .library-discount__note Без банков и процентов
+      picture.library-discount__picture
+        source(srcset=staticImg('library-discount/library-discount-decor_mob.png') media="(max-width: 743px)")
+        source(srcset=staticImg('library-discount/library-discount-decor_tablet.png') media="(max-width: 1439px)")
+        img.library-discount__image(src=staticImg('library-discount/library-discount-decor.png') alt='')
+      button.library-discount__button.btn-orange.btn-orange_arrow Выбрать курс
