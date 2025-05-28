@@ -24,12 +24,12 @@
 mixin summer-cost(mod, title='Летний курс', price='6 000 ₽')
   .summer-cost#summer-cost(class = mod ? mod : false data-btn-fixed-hide="true")
     .summer-cost__cont.cont
+      h2.summer-cost__caption Стоимость летнего абонемента
       .summer-cost__wrap
-        h2.summer-cost__caption Стоимость летнего абонемента
         .summer-cost__area
-          .summer-cost__decor.summer-cost__decor_1
-          .summer-cost__decor.summer-cost__decor_2
-          .summer-cost__decor.summer-cost__decor_3
+          //.summer-cost__decor.summer-cost__decor_1
+          //.summer-cost__decor.summer-cost__decor_2
+          //.summer-cost__decor.summer-cost__decor_3
           .summer-cost__inner
             .summer-cost__top
               .summer-cost__title= title
@@ -44,20 +44,28 @@ mixin summer-cost(mod, title='Летний курс', price='6 000 ₽')
               .summer-cost__list
                 each item in summerCostList
                   .summer-cost__item= item
-          .summer-cost__bonus
-            .summer-cost__bonus-title!= 'бонус<b>:</b> <span>Начните обучение сразу после оплаты</span>'
-            if mod === 'short'
-              .summer-cost__bonus-date Занятия в записи в мае
-            else
-              .summer-cost__bonus-date Онлайн-занятия в мае
-            .summer-cost__bonus-list
-              if mod === 'short'
-                each item in ['Месяц занятий в записи в мае','Проверка домашних заданий','Тьютор-педагог 5 дней в неделю']
-                  .summer-cost__bonus-item= item
-              else
-                each item in ['Месяц онлайн-занятий в мае','Все занятия в записи','Проверка домашних заданий','Тьютор-педагог 5 дней в неделю']
-                  .summer-cost__bonus-item= item
-            img.summer-cost__bonus-decor(src=staticImg('summer-cost/summer-cost-2.png') alt='')
-            .summer-cost__bonus-prize
-            .summer-cost__start Начните обучение сразу после оплаты
+          //.summer-cost__bonus
+          //  .summer-cost__bonus-title!= 'бонус<b>:</b> <span>Начните обучение сразу после оплаты</span>'
+          //  if mod === 'short'
+          //    .summer-cost__bonus-date Занятия в записи в мае
+          //  else
+          //    .summer-cost__bonus-date Онлайн-занятия в мае
+          //  .summer-cost__bonus-list
+          //    if mod === 'short'
+          //      each item in ['Месяц занятий в записи в мае','Проверка домашних заданий','Тьютор-педагог 5 дней в неделю']
+          //        .summer-cost__bonus-item= item
+          //    else
+          //      each item in ['Месяц онлайн-занятий в мае','Все занятия в записи','Проверка домашних заданий','Тьютор-педагог 5 дней в неделю']
+          //        .summer-cost__bonus-item= item
+          //  img.summer-cost__bonus-decor(src=staticImg('summer-cost/summer-cost-2.png') alt='')
+          //  .summer-cost__bonus-prize
+          //  .summer-cost__start Начните обучение сразу после оплаты
           a.summer-cost__button.btn-orange(href="#") Начать обучение
+        .summer-cost__consult
+          .summer-cost__title Нужна консультация?
+          .summer-cost__text Задавайте любые вопросы, поможем подобрать занятия
+          picture.summer-cost__decor
+            img.summer-cost__decor-image(src=staticImg(`summer-cost/summer-cost-consult-decor.png`) alt='')
+          .summer-cost__buttons
+            a.summer-cost__btn.summer-cost__btn_order.btn-orange(href='#modal-order-new' data-fancybox data-options='{"touch": false}') Оставить заявку
+            a.summer-cost__btn.summer-cost__btn_wp.btn-blue(href='https://api.whatsapp.com/send/?phone=79182293194&text&type=phone_number&app_absent=0' target='_blank') Связаться в WhatsApp

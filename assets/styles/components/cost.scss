@@ -37,6 +37,77 @@
       }
     }
   }
+  &.shortest-summer {
+    margin-bottom: 40px;
+    .info__capital {
+      background: #efffdf;
+      &::before {
+        content: '';
+        @include bg-icon('info/info-decor-circles-2.svg');
+        width: 253px;
+        height: 203px;
+        position: absolute;
+        top: 0;
+        right: 285px;
+        @include media(lg) {
+          content: none;
+        }
+      }
+      &::after {
+        @include media(lg) {
+          content: none;
+        }
+      }
+    }
+    .info__area {
+      display: none;
+      @include bg-icon('info/info-bg-green.png');
+      @include media(lg) {
+        display: block;
+        @include bg-icon('info/info-bg-green_tablet.png');
+      }
+      @include media(xs) {
+        @include bg-icon('info/info-bg-green_mob.png');
+      }
+    }
+    .cost__wrap {
+      .info__capital {
+        @include media-up(xl) {
+          min-height: 215px;
+          width: 100%;
+          @include bg-icon('info/info-short-bg.png');
+          &::before {
+            content: '';
+            @include bg-icon('info/info-short-decor.svg');
+            width: 253px;
+            height: 203px;
+            position: absolute;
+          }
+          .info__text {
+            position: absolute;
+            max-width: 480px;
+            bottom: 49px;
+            left: 372px;
+            margin-bottom: 0;
+            span {
+              display: block;
+            }
+          }
+          .info__title {
+            margin-bottom: 30px;
+          }
+        }
+      }
+      .info__capital-decor {
+        @include media-up(xl) {
+          width: 305px;
+          height: 215px;
+          bottom: 0;
+          right: 74px;
+        }
+      }
+    }
+  }
   &.offer {
     .info__capital {
       &::before {
@@ -90,6 +161,7 @@
     flex-direction: column;
     padding: 26px 10px 30px;
     gap: 0;
+    margin-bottom: 40px;
   }
 }
 
@@ -183,7 +255,7 @@
     align-items: center;
   }
   @include media(xs) {
-    gap: 20px;
+    gap: 40px;
   }
   &_short, &_offer-short {
     .info__area {

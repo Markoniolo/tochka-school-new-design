@@ -4,7 +4,7 @@
   @include media(lg) {
     background: transparent;
     padding: 0;
-    margin-bottom: 40px;
+    margin-bottom: 0;
   }
   &.family {
     @include media(lg) {
@@ -41,8 +41,8 @@
 }
 
 .summer-cost__wrap {
-  max-width: 1181px;
-  width: 100%;
+  display: flex;
+  gap: 30px;
   & + .cost__informer {
     margin-top: 40px;
   }
@@ -67,10 +67,12 @@
   background: #FFFFFF;
   padding: 15px;
   border-radius: 20px;
+  width: 567px;
   @include media(lg) {
     min-height: auto;
     padding: 10px;
     border-radius: 10px;
+    width: 100%;
   }
 }
 
@@ -403,3 +405,78 @@
     max-width: 100%;
   }
 }
+
+.summer-cost__consult {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 40px 45px;
+  @include bg-icon('summer-cost/summer-cost-consult-bg.png');
+  width: 747px;
+  @include media(lg) {
+    display: none;
+  }
+}
+
+.summer-cost__title {
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 121%;
+  color: #003c56;
+}
+
+.summer-cost__text {
+  margin-bottom: 35px;
+  max-width: 295px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 132%;
+}
+
+.summer-cost__decor {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 501px;
+}
+
+.summer-cost__decor-image {
+
+}
+
+.summer-cost__buttons {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 25px 0;
+  max-width: 272px;
+}
+
+.summer-cost__btn {
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  display: inline-block;
+  &_order {
+    padding: 17px 52px 18px;
+  }
+  &_wp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 17px 20px 18px;
+    &::after {
+      content: '';
+      @include bg-icon('icons/ic_wp_white.svg');
+      width: 18px;
+      height: 19px;
+      margin-left: 10px;
+      flex-shrink: 0;
+    }
+  }
+}
+

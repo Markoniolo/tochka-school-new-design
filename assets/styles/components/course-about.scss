@@ -4,6 +4,12 @@
     padding-bottom: 40px;
   }
   &.summer {
+    background-color: rgba(219, 248, 191, 0.4);
+    padding: 74px 0 80px;
+    @include media(lg) {
+      background-color: unset;
+      padding: 0 0 40px;
+    }
     .course-about__sound {
       @include bg-img('icons/ic_course_sound_mute_summer.svg');
       background-position: center center;
@@ -45,6 +51,12 @@
     }
   }
   &.no-video-summer {
+    background-color: rgba(219, 248, 191, 0.4);
+    padding: 74px 0 80px;
+    @include media(lg) {
+      padding: 0 0 40px;
+      background-color: unset;
+    }
     .course-about__area {
       position: relative;
     }

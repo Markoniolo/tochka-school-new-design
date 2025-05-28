@@ -10,6 +10,10 @@
   }
   &.summer {
     background: transparent;
+    padding-bottom: 80px;
+    @include media(md) {
+      padding-bottom: 40px;
+    }
     .family-program__tag {
       background: rgba(161, 216, 106, 0.54);
       color: #003c56;
@@ -19,6 +23,11 @@
     }
     .family-program__inner::before {
       background: linear-gradient(to right, #fffee3, transparent);
+    }
+    .family-program__wrap {
+      @include media(md) {
+        padding-bottom: 0;
+      }
     }
   }
 }
