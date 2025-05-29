@@ -1,0 +1,16 @@
+.max-discount
+  .cont
+    .max-discount__area
+      .max-discount__text
+        span.desc Максимальные
+        span.mob Макс. скидки
+        |
+        span.word скидки
+        |
+        | закончатся через:
+      .max-discount__timer(date-end="2025-06-05T12:00:00")
+        each item in [{number: '', note: 'дней'},{number: '', note: 'час'},{number: '', note: 'мин'},{number: '', note: 'сек'}]
+          .max-discount__box
+            .max-discount__number= item.number
+            .max-discount__note= item.note
+      .max-discount__decor

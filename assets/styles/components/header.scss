@@ -151,9 +151,6 @@
 
 .header__cont.cont {
   z-index: 101;
-  @include media(md) {
-    padding: 0 10px;
-  }
 }
 
 .header__layer {
