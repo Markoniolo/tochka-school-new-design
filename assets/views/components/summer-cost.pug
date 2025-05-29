@@ -65,7 +65,10 @@ mixin summer-cost(mod, title='Летний курс', price='6 000 ₽')
           .summer-cost__title Нужна консультация?
           .summer-cost__text Задавайте любые вопросы, поможем подобрать занятия
           picture.summer-cost__decor
-            img.summer-cost__decor-image(src=staticImg(`summer-cost/summer-cost-consult-decor.png`) alt='')
+            if mod === 'family'
+              img.summer-cost__decor-image(src=staticImg(`summer-cost/summer-cost-consult-decor-2.png`) alt='')
+            else
+              img.summer-cost__decor-image(src=staticImg(`summer-cost/summer-cost-consult-decor-1.png`) alt='')
           .summer-cost__buttons
             a.summer-cost__btn.summer-cost__btn_order.btn-orange(href='#modal-order-new' data-fancybox data-options='{"touch": false}') Оставить заявку
             a.summer-cost__btn.summer-cost__btn_wp.btn-blue(href='https://api.whatsapp.com/send/?phone=79182293194&text&type=phone_number&app_absent=0' target='_blank') Связаться в WhatsApp
