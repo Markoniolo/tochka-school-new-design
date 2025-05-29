@@ -9,4 +9,8 @@ function familyProgramInit () {
   overlay.addEventListener('scroll', function () {
     wrap.classList.add('hide-hint')
   }, {once: true})
+
+  if (overlay.scrollWidth <= overlay.clientWidth) {
+    wrap.classList.add('hide-hint')
+  }
 }
