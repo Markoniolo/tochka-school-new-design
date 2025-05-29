@@ -1,4 +1,5 @@
 .max-discount {
+  display: block;
   @include bg-icon('max-discount/max-discount-bg.png');
   background-size: cover;
   @include media(lg) {
