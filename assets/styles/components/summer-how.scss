@@ -51,15 +51,18 @@
     }
     .summer-how__item_3 .summer-how__text  {
       @include media(lg) {
-        max-width: 180px;
+        max-width: 200px;
       }
       @include media(xs) {
-        max-width: 228px;
+        max-width: 210px;
       }
     }
     .summer-how__item_4 .summer-how__text {
       @include media(lg) {
         max-width: 262px;
+      }
+      @include media(xs) {
+        max-width: 245px;
       }
     }
   }
@@ -245,7 +248,7 @@
       min-height: 81px;
     }
     .summer-how__text {
-      max-width: 416px;
+      max-width: 446px;
       @include media(lg) {
         max-width: 228px;
       }

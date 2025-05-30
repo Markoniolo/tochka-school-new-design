@@ -148,15 +148,15 @@
   &_3 {
     padding-right: 193px;
     @include media(lg) {
-      padding-right: 344px;
+      padding-right: 320px;
     }
     @include media(xs) {
-      padding-right: 158px;
+      padding-right: 130px;
       min-height: 122px;
     }
     @include media(xxs) {
       min-height: 101px;
-      padding-right: 125px;
+      padding-right: 103px;
     }
     &::before {
       @include bg-icon('summer-about/summer-about-3.svg');
