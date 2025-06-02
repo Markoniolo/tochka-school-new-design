@@ -1,5 +1,5 @@
 mixin pre-end(mod, text, button, id='pre-reg')
-  .pre-end(class = mod ? `pre-end_${mod}` : false)
+  .pre-end(class = mod ? `pre-end_${mod}` : false data-btn-fixed-hide="true")
     .pre-end__cont.cont
       .pre-end__wrap
         each item in [1,2,3,4,5]

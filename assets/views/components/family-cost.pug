@@ -1,5 +1,5 @@
 mixin cost (mod)
-  .cost#pre-reg
+  .cost#pre-reg(data-btn-fixed-hide="true")
     .cost__cont.cont
       h2.cost__caption Стоимость годового абонемента
       .cost__wrap(class= mod ? `cost__wrap_${mod}` : false)

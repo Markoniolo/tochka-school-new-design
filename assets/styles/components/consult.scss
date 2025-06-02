@@ -119,6 +119,9 @@
     align-items: center;
     justify-content: center;
     padding: 17px 34px 18px;
+    @include media(xxs) {
+      padding: 17px 15px 18px;
+    }
     &::after {
       content: '';
       @include bg-icon('icons/ic_wp_white.svg');
