@@ -1,0 +1,87 @@
+.fam-best {
+  padding: 74px 0 80px;
+  @include media(lg) {
+    padding: 34px 0 34px;
+  }
+}
+
+.fam-best__cont {
+
+}
+
+.fam-best__caption {
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 97%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 24px;
+    font-size: 25px;
+    line-height: 100%;
+    font-weight: 600;
+  }
+  @include media(xs) {
+    margin-bottom: 20px;
+    max-width: 312px;
+    width: 100%;
+  }
+  @include media(xxs) {
+    font-size: 24px;
+  }
+}
+
+.fam-best__list {
+  display: flex;
+  gap: 30px;
+  @include media(lg) {
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+  @include media(xs) {
+    gap: 20px;
+  }
+}
+
+.fam-best__item {
+  border-radius: 20px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+  background: #fff;
+  padding: 20px;
+  width: calc(25% - 15px);
+  @include media(lg) {
+    width: calc(50% - 13px);
+  }
+  @include media(xs) {
+    border-radius: 10px;
+    width: 100%;
+  }
+  @include media(xxs) {
+    padding: 13px;
+  }
+}
+
+.fam-best__image {
+  margin-bottom: 24px;
+}
+
+.fam-best__title {
+  margin-bottom: 18px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 139%;
+  color: #003c56;
+  @include media(xs) {
+    margin-bottom: 8px;
+  }
+}
+
+.fam-best__text {
+  font-size: 16px;
+  line-height: 137%;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 147%;
+  }
+}

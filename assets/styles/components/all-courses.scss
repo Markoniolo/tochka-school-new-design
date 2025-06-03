@@ -122,7 +122,7 @@
       }
     }
     .all-courses__filter-view {
-      padding: 10px 25px;
+      padding: 10px 18px;
     }
     .all-courses__filter-wrap {
       width: 969px;
@@ -499,23 +499,36 @@
   }
 }
 
+.all-courses__filter-ticket {
+  display: inline-block;
+  width: auto;
+  @include media(xs) {
+    transform: scale(0.8);
+  }
+}
+
 .all-courses__filter-view {
   border-radius: 34px;
   text-align: center;
   padding: 2px;
   min-height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
   background: #fff;
   font-size: 15px;
   line-height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   transition-duration: $transition-duration;
   transition-property: background-color, color;
   @include media(lg) {
     min-height: 45px;
     font-size: 14px;
+  }
+  @include media(xs) {
+    gap: 6px;
   }
 }
 

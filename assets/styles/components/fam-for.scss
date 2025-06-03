@@ -1,0 +1,236 @@
+.fam-for {
+  padding: 74px 0 80px;
+  background-color: #FFFFFF;
+  @include media(lg) {
+    padding: 36px 0 40px;
+  }
+}
+
+.fam-for__cont {
+
+}
+
+.fam-for__caption {
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 97%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 24px;
+    font-size: 25px;
+    line-height: 100%;
+    font-weight: 600;
+  }
+  @include media(xs) {
+    max-width: 260px;
+    width: 100%;
+  }
+}
+
+.fam-for__cards {
+  display: flex;
+  gap: 24px 30px;
+  flex-wrap: wrap;
+  @include media(lg) {
+    gap: 20px;
+  }
+}
+
+.fam-for__card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 24px 30px 36px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+  @include media(lg) {
+    width: 100%;
+    border-radius: 10px;
+    min-height: 98px;
+    padding: 15px 20px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    @include media(lg) {
+      width: 107px;
+      height: 98px;
+    }
+    @include media(xxs) {
+      width: 82px;
+      height: 75px;
+    }
+  }
+  &_1 {
+    @include bg-icon('fam-for/fam-for-bg-1.png');
+    width: calc(50% - 15px);
+    min-height: 167px;
+    @include media(lg) {
+      @include bg-icon('fam-for/fam-for-bg-1_tablet.png');
+    }
+    .fam-for__text {
+      max-width: 438px;
+      @include media(lg) {
+        max-width: 493px;
+      }
+    }
+    &::before {
+      @include bg-icon('fam-for/fam-for-decor-1.svg');
+      width: 174px;
+      height: 167px;
+      @include media(lg) {
+        @include bg-icon('fam-for/fam-for-decor-1_tablet.svg');
+      }
+    }
+  }
+  &_2 {
+    @include bg-icon('fam-for/fam-for-bg-2.png');
+    width: calc(50% - 15px);
+    min-height: 167px;
+    @include media(lg) {
+      @include bg-icon('fam-for/fam-for-bg-2_tablet.png');
+    }
+    .fam-for__text {
+      max-width: 438px;
+      @include media(lg) {
+        max-width: 522px;
+      }
+    }
+    &::before {
+      @include bg-icon('fam-for/fam-for-decor-2.svg');
+      width: 174px;
+      height: 167px;
+      @include media(lg) {
+        @include bg-icon('fam-for/fam-for-decor-2_tablet.svg');
+      }
+    }
+  }
+  &_3 {
+    @include bg-icon('fam-for/fam-for-bg-3.png');
+    width: calc(25% - 23px);
+    min-height: 290px;
+    @include media(lg) {
+      @include bg-icon('fam-for/fam-for-bg-3_tablet.png');
+    }
+    &::before {
+      @include bg-icon('fam-for/fam-for-decor-3.svg');
+      width: 156px;
+      height: 135px;
+      @include media(lg) {
+        @include bg-icon('fam-for/fam-for-decor-3_tablet.svg');
+      }
+    }
+    .fam-for__text {
+      @include media(lg) {
+        max-width: 513px;
+      }
+    }
+  }
+  &_4 {
+    @include bg-icon('fam-for/fam-for-bg-4.png');
+    width: calc(25% - 23px);
+    min-height: 290px;
+    @include media(lg) {
+      @include bg-icon('fam-for/fam-for-bg-4_tablet.png');
+    }
+    &::before {
+      @include bg-icon('fam-for/fam-for-decor-4.svg');
+      width: 156px;
+      height: 135px;
+      @include media(lg) {
+        @include bg-icon('fam-for/fam-for-decor-4_tablet.svg');
+      }
+    }
+    .fam-for__text {
+      max-width: 220px;
+      @include media(lg) {
+        max-width: 508px;
+      }
+    }
+  }
+  &_5 {
+    @include bg-icon('fam-for/fam-for-bg-5.png');
+    width: calc(25% - 23px);
+    min-height: 290px;
+    @include media(lg) {
+      @include bg-icon('fam-for/fam-for-bg-5_tablet.png');
+    }
+    &::before {
+      @include bg-icon('fam-for/fam-for-decor-5.svg');
+      width: 156px;
+      height: 135px;
+      @include media(lg) {
+        @include bg-icon('fam-for/fam-for-decor-5_tablet.svg');
+      }
+    }
+    .fam-for__text {
+      @include media(lg) {
+        max-width: 426px;
+      }
+    }
+  }
+  &_6 {
+    @include bg-icon('fam-for/fam-for-bg-6.png');
+    width: calc(25% - 23px);
+    min-height: 290px;
+    @include media(lg) {
+      @include bg-icon('fam-for/fam-for-bg-6_tablet.png');
+    }
+    &::before {
+      @include bg-icon('fam-for/fam-for-decor-6.svg');
+      width: 156px;
+      height: 135px;
+      @include media(lg) {
+        @include bg-icon('fam-for/fam-for-decor-6_tablet.svg');
+      }
+    }
+    .fam-for__text {
+      max-width: 178px;
+      @include media(lg) {
+        max-width: 448px;
+      }
+    }
+  }
+}
+
+.fam-for__title {
+  margin-bottom: 14px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 104%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  @include media(xxs) {
+    font-size: 16px;
+  }
+}
+
+.fam-for__text {
+  width: 100%;
+  font-size: 16px;
+  line-height: 137%;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+  }
+  @include media(xs) {
+    padding-right: 78px;
+  }
+  @include media(xxs) {
+    padding-right: 52px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  br {
+    @include media(lg) {
+      display: none;
+    }
+  }
+}

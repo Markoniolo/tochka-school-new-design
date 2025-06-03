@@ -5,6 +5,12 @@
   @include media(lg) {
     padding-top: 40px;
     padding-bottom: 40px;
+    @include bg-icon('faq/faq-bg_tablet.png');
+    background-size: cover;
+  }
+  @include media(xs) {
+    @include bg-icon('faq/faq-bg_mob.png');
+    background-size: cover;
   }
   &.summer {
     background: transparent;
