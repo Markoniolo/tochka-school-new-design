@@ -1,0 +1,168 @@
+.fam-about {
+  background: radial-gradient(228.28% 137.53% at 85.56% 75.29%, #dae5fe 0%, #bedaff 100%);
+  padding: 74px 0 274px;
+  @include media(lg) {
+    padding: 36px 0 278px;
+  }
+}
+
+.fam-about__cont {
+
+}
+
+.fam-about__caption {
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 24px;
+    font-size: 25px;
+    font-weight: 600;
+  }
+}
+
+.fam-about__area {
+  margin-bottom: 30px;
+  border-radius: 20px;
+  background: #fff;
+  padding: 24px 30px;
+  display: flex;
+  @include media(lg) {
+    margin-bottom: 25px;
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+}
+
+.fam-about__box {
+  &:nth-child(1) {
+    margin-right: 44px;
+    width: 358px;
+    flex-shrink: 0;
+    padding-right: 45px;
+    border-right: 1px solid rgba(0, 0, 0, 0.13);
+    @include media(lg) {
+      border: none;
+      width: 271px;
+      margin-right: 52px;
+      padding-right: 0;
+    }
+  }
+  &:nth-child(2) {
+    .fam-about__item {
+      width: calc(50% - 20px);
+      @include media(lg) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.fam-about__title {
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 104%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 12px;
+    font-size: 18px;
+  }
+}
+
+.fam-about__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  @include media(lg) {
+    gap: 10px;
+  }
+}
+
+.fam-about__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 100%;
+  gap: 13px;
+  @include media(lg) {
+    gap: 8px;
+  }
+  &::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    @include bg-icon('icons/ic_point_orange.svg');
+    flex-shrink: 0;
+    @include media(lg) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.fam-about__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  @include media(lg) {
+    gap: 15px;
+  }
+}
+
+.fam-about__card {
+  border-radius: 10px;
+  background: #fff;
+  padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: calc(33.33% - 20px);
+  @include media(lg) {
+    position: relative;
+    width: 100%;
+    padding: 18px 18px 18px 30px;
+    gap: 20px;
+  }
+}
+
+.fam-about__picture {
+  @include media(lg) {
+    display: flex;
+    justify-content: center;
+    width: 68px;
+  }
+}
+
+.fam-about__image {
+  width: auto;
+  @include media(lg) {
+    transform: scale(0.9);
+  }
+}
+
+.fam-about__inner {
+
+}
+
+.fam-about__headline {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 18px;
+  @include media(lg) {
+    margin-bottom: 6px;
+    font-size: 16px;
+  }
+}
+
+.fam-about__text {
+  font-size: 16px;
+  line-height: 112%;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 107%;
+  }
+}

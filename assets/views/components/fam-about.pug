@@ -1,0 +1,35 @@
+-
+  const famAboutCards = [
+    { headline: 'Удобное расписание', text: 'Уроки в первой половине дня. 2-4 урока в день.' },
+    { headline: 'Обучающая платформа', text: 'Уроки онлайн и в записи к каждому уроку: конспект и задание.' },
+    { headline: 'Учителя — лучшие в своём деле', text: 'Наши педагоги — победители профконкурсов, увлечённо и доступно объясняющие любую тему.' },
+    { headline: 'Тьюторы по каждому предмету', text: 'Ребёнок не учится один, ему помогает личный тьютор на протяжении всего периода обучения.' },
+    { headline: 'Родительский контроль', text: 'Вы видите всю переписку ребёнка с тьютором, сколько уроков ребёнком пройдено и сколько заданий сдано.' },
+    { headline: 'Контроль успеваемости', text: 'Проведём тестирование для определения уровня знаний и промежуточные проверки в течение года для отслеживания прогресса' },
+  ]
+
+.fam-about
+  .fam-about__cont.cont
+    h2.fam-about__caption Семейное обучение в «Точке Знаний»
+    .fam-about__area
+      .fam-about__box
+        .fam-about__title Во время урока:
+        ul.fam-about__list
+          li.fam-about__item Учитель понятно объяснит тему
+          li.fam-about__item Ответит на все вопросы до последнего
+      .fam-about__box
+        .fam-about__title После урока:
+        ul.fam-about__list
+          li.fam-about__item Тьютор проверит домашнее задание
+          li.fam-about__item Даст обратную связь
+          li.fam-about__item Укажет на ошибки и поможет их исправить
+          li.fam-about__item Ответит на неограниченное количество вопросов
+    .fam-about__cards
+      each card, index in famAboutCards
+        .fam-about__card
+          picture.fam-about__picture
+            img.fam-about__image(src=staticImg(`fam-about/fam-about-${index+1}.svg`) alt='')
+          .fam-about__inner
+            .fam-about__headline= card.headline
+            .fam-about__text= card.text
+
