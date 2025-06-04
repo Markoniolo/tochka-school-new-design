@@ -1,0 +1,14 @@
+.fam-consult
+  .fam-consult__cont.cont
+    .fam-consult__area
+      h2.fam-consult__title Проконсультируем Вас по&nbsp;переходу на семейное обучение
+      ul.fam-consult__list
+        each item in ['Подарим руководство для родителей “4 шага к переходу на СО”','Покажем как проходят уроки в нашей школе','Ответим на все ваши вопросы']
+          li.fam-consult__item= item
+      picture.fam-consult__picture
+        source(srcset=staticImg(`fam-consult/fam-consult-1_mob.svg`) media="(max-width: 743px)")
+        source(srcset=staticImg(`fam-consult/fam-consult-1_tablet.svg`) media="(max-width: 1439px)")
+        img.fam-consult__image(src=staticImg('fam-consult/fam-consult-1.svg') alt='' media="(max-width: 1439px)")
+      .fam-consult__btns
+        a.fam-consult__btn.btn-orange(href='#modal-order-new' data-fancybox data-options='{"touch": false}') Оставить заявку
+        a.fam-consult__btn.fam-consult__btn_wp.btn-blue(href='https://api.whatsapp.com/send/?phone=79182293194&text&type=phone_number&app_absent=0' target='_blank') Связаться в WhatsApp

@@ -1,0 +1,190 @@
+.fam-consult {
+  margin-bottom: 80px;
+  @include media(lg) {
+    margin-bottom: 40px;
+  }
+}
+
+.fam-consult__cont {
+
+}
+
+.fam-consult__area {
+  position: relative;
+  border-radius: 31px;
+  overflow: hidden;
+  padding: 44px 60px 50px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
+  @include bg-icon('fam-consult/fam-consult-bg.png');
+  background-size: cover;
+  min-height: 442px;
+  @include media(lg) {
+    @include bg-icon('fam-consult/fam-consult-bg_tablet.png');
+    background-size: cover;
+    padding: 24px 25px 30px;
+    min-height: 391px;
+    border-radius: 10px;
+  }
+  @include media(xs) {
+    @include bg-icon('fam-consult/fam-consult-bg_mob.png');
+    background-size: cover;
+    padding: 24px 15px 30px;
+  }
+  &::before {
+    content: '';
+    width: 226px;
+    height: 136px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include bg-icon('fam-consult/fam-consult-decor.svg');
+    @include media(lg) {
+      content: none;
+    }
+  }
+}
+
+.fam-consult__title {
+  margin-bottom: 25px;
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 100%;
+  color: #003c56;
+  max-width: 680px;
+  width: 100%;
+  @include media(lg) {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 25px;
+    max-width: 445px;
+  }
+  @include media(xs) {
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
+.fam-consult__list {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  @include media(lg) {
+    max-width: 310px;
+    width: 100%;
+    margin-bottom: 30px;
+    gap: 8px;
+  }
+  @include media(xs) {
+    max-width: 100%;
+  }
+}
+
+.fam-consult__item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 18px;
+  line-height: 100%;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 113%;
+    gap: 8px;
+  }
+  &::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    @include bg-icon('icons/ic_point_blue.svg');
+    @include media(lg) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.fam-consult__picture {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 774px;
+  height: 393px;
+  @include media(lg) {
+    width: 684px;
+    height: 338px;
+  }
+  @include media(xs) {
+    position: relative;
+    width: calc(100% + 30px);
+    margin: 0 -15px 30px;
+    height: auto;
+  }
+  &::before {
+    @include media(lg) {
+      content: '';
+      width: 28px;
+      height: 28px;
+      background: #68CCEA;
+      border-radius: 50%;
+      position: absolute;
+      top: 38px;
+      right: 260px;
+    }
+    @include media(xs) {
+      right: unset;
+      left: 56px;
+      top: 26px;
+    }
+  }
+  &::after {
+    @include media(lg) {
+      content: '';
+      width: 55px;
+      height: 55px;
+      background: #7FCBB4;
+      border-radius: 50%;
+      position: absolute;
+      top: 10px;
+      right: 25px;
+    }
+    @include media(xs) {
+      top: 3px;
+      right: 40px;
+    }
+  }
+}
+
+.fam-consult__image {
+  height: 100%;
+}
+
+.fam-consult__btns {
+  max-width: 283px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  @include media(xs) {
+    margin: 0 auto;
+  }
+}
+
+.fam-consult__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 283px;
+  min-height: 55px;
+  font-size: 16px;
+  &_wp {
+    &::after {
+      content: '';
+      width: 19px;
+      height: 19px;
+      margin-left: 10px;
+      flex-shrink: 0;
+      @include bg-icon('icons/ic_wp_white.svg');
+    }
+  }
+}

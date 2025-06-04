@@ -1,0 +1,18 @@
+-
+  const famInfoList = [
+    'Онлайн-школа года 2024 по версии «GetCourse»',
+    'Аккредитованная IT-компания',
+    'Школа №1 в 2024 в рейтинге школ на внешних платформах по версии «SmartRanking»',
+    'Школа №1 по математике 2023 согласно рейтингу «GetCourse»',
+    'Образовательная лицензия',
+    '44 000+ учеников',
+    'Резидент «Сколково»',
+    'Средняя оценка родителями: 4,9',
+  ]
+
+.fam-info
+  .fam-info__cont.cont
+    h2.fam-info__title Самое важное о «Точке Знаний»
+    ul.fam-info__list
+      each item, index in famInfoList
+        li.fam-info__item(class=`fam-info__item_${index+1}`)= item

@@ -15,7 +15,15 @@
 }
 
 .fam-cap__cont {
-
+  @include media(lg) {
+    max-width: 100%;
+  }
+  @include media(md) {
+    max-width: 100%;
+  }
+  @include media(xs) {
+    max-width: 100%;
+  }
 }
 
 .fam-cap__area {
@@ -97,7 +105,6 @@
   width: 800px;
   height: 518px;
   @include media(lg) {
-    right: -30px;
     width: 435px;
     height: 352px;
   }

@@ -4,6 +4,9 @@
   @include media(lg) {
     padding: 36px 0 278px;
   }
+  @include media(xs) {
+    padding: 36px 0 202px;
+  }
 }
 
 .fam-about__cont {
@@ -21,6 +24,9 @@
     font-size: 25px;
     font-weight: 600;
   }
+  @include media(xs) {
+    max-width: 258px;
+  }
 }
 
 .fam-about__area {
@@ -33,6 +39,10 @@
     margin-bottom: 25px;
     border-radius: 10px;
     padding: 18px 20px;
+  }
+  @include media(xs) {
+    display: block;
+    margin-bottom: 20px;
   }
 }
 
@@ -48,6 +58,10 @@
       width: 271px;
       margin-right: 52px;
       padding-right: 0;
+    }
+    @include media(xs) {
+      margin-right: 0;
+      margin-bottom: 20px;
     }
   }
   &:nth-child(2) {
@@ -127,6 +141,13 @@
     padding: 18px 18px 18px 30px;
     gap: 20px;
   }
+  @include media(xs) {
+    padding: 15px;
+    gap: 15px;
+  }
+  @include media(xxs) {
+    gap: 12px;
+  }
 }
 
 .fam-about__picture {
@@ -134,6 +155,13 @@
     display: flex;
     justify-content: center;
     width: 68px;
+    flex-shrink: 0;
+  }
+  @include media(xs) {
+    width: 65px;
+  }
+  @include media(xxs) {
+    width: 58px;
   }
 }
 
@@ -141,6 +169,12 @@
   width: auto;
   @include media(lg) {
     transform: scale(0.9);
+  }
+  @include media(xs) {
+    transform: scale(0.8);
+  }
+  @include media(xxs) {
+    transform: scale(0.7);
   }
 }
 
@@ -155,6 +189,7 @@
   @include media(lg) {
     margin-bottom: 6px;
     font-size: 16px;
+    line-height: 20px;
   }
 }
 
@@ -164,5 +199,8 @@
   @include media(lg) {
     font-size: 15px;
     line-height: 107%;
+  }
+  @include media(xxs) {
+    font-size: 14px;
   }
 }

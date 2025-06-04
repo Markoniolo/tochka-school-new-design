@@ -1,0 +1,128 @@
+.fam-info {
+  margin-bottom: 80px;
+  @include media(lg) {
+    margin-bottom: 40px;
+  }
+}
+
+.fam-info__cont {
+
+}
+
+.fam-info__title {
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 121%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 24px;
+    font-weight: 600;
+    font-size: 25px;
+  }
+  @include media(xs) {
+    max-width: 218px;
+    width: 100%;
+  }
+}
+
+.fam-info__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px 45px;
+  @include media(lg) {
+    padding: 16px 20px;
+    gap: 14px;
+    box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
+    background: #edeff5;
+    border-radius: 10px;
+  }
+  @include media(xs) {
+    gap: 12px;
+  }
+}
+
+.fam-info__item {
+  width: calc(50% - 23px);
+  border-radius: 32px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  color: #fff;
+  padding: 18px 10px 18px 30px;
+  @include media(lg) {
+    width: 100%;
+    background: transparent;
+    font-size: 15px;
+    min-height: auto;
+    font-weight: 400;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    color: #000;
+    border-radius: 0;
+    padding: 0;
+  }
+  &::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #FFFFFF;
+    margin-right: 13px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    @include media(lg) {
+      width: 6px;
+      height: 6px;
+      background: #6683c2;
+    }
+  }
+  &_1 {
+    background: #7fcbb4;
+  }
+  &_2 {
+    background: #f2c45b;
+  }
+  &_3 {
+    background: #6683c2;
+  }
+  &_4 {
+    background: #68cae8;
+  }
+  &_5 {
+    background: #7fcbb4;
+  }
+  &_6 {
+    background: #f2c45b;
+  }
+  &_7 {
+    background: #6683c2;
+  }
+  &_8 {
+    background: #68cae8;
+    @include media(lg) {
+      margin-top: -10px;
+    }
+    @include media(xxs) {
+      width: 182px;
+      margin-top: -2px;
+    }
+    &::after {
+      content: '';
+      width: 67px;
+      height: 67px;
+      @include bg-icon('icons/ic_yandex_zoon.svg');
+      margin-left: 30px;
+      flex-shrink: 0;
+      @include media(lg) {
+        margin-left: 10px;
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+}
