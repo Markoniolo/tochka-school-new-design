@@ -1,0 +1,238 @@
+.fam-price {
+  position: relative;
+  z-index: 1;
+  background: radial-gradient(228.28% 137.53% at 85.56% 75.29%, #dae5fe 0%, #bedaff 100%);
+  padding: 74px 0 80px;
+  margin-bottom: 80px;
+  @include media(lg) {
+    padding: 36px 0 40px;
+    margin-bottom: 40px;
+  }
+}
+
+.fam-price__cont {
+
+}
+
+.fam-price__caption {
+  margin-bottom: 34px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 25px;
+    font-size: 25px;
+  }
+  @include media(xxs) {
+    font-size: 22px;
+  }
+}
+
+.fam-price__tabs {
+  display: flex;
+  margin-bottom: 40px;
+  gap: 16px;
+  @include media(lg) {
+    margin-bottom: 25px;
+    gap: 8px;
+  }
+  @include media(xs) {
+    flex-wrap: wrap;
+    width: 320px;
+  }
+}
+
+.fam-price__tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  color: #23617c;
+  cursor: pointer;
+  @include media(lg) {
+    gap: 3px;
+    width: 49px;
+    height: 49px;
+  }
+  @include media(xs) {
+    width: 46px;
+    height: 46px;
+  }
+  @include media(xxs) {
+    width: 43px;
+    height: 43px;
+  }
+  span {
+    display: none;
+    font-weight: inherit;
+  }
+  &.active {
+    width: 158px;
+    background: #6683c2;
+    border-radius: 33px;
+    color: #fff;
+    cursor: default;
+    @include media(lg) {
+      width: 114px;
+    }
+    @include media(xs) {
+      width: 100px;
+    }
+    @include media(xxs) {
+      width: 94px;
+    }
+    span {
+      display: block;
+    }
+  }
+}
+
+.fam-price__slides {
+
+}
+
+.fam-price__slide {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+
+.fam-price__wrap {
+  position: relative;
+  &::before {
+    content: '';
+    width: 66px;
+    height: 60px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -75%);
+    @include bg-icon('fam-price/decor-circle.svg');
+  }
+}
+
+.fam-price__area {
+  margin-top: 32px;
+  border-radius: 20px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+  background: #fff;
+  padding: 30px 50px;
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  @include media(lg) {
+    padding: 21px 25px;
+    border-radius: 10px;
+    display: block;
+  }
+  @include media(xs) {
+    padding: 20px 20px 25px;
+  }
+  &::before {
+    content: '';
+    width: 77px;
+    height: 79px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include bg-icon('fam-price/decor.svg');
+    @include media(lg) {
+      @include bg-icon('fam-price/decor_tablet.svg');
+      left: unset;
+      right: 0;
+    }
+  }
+}
+
+.fam-price__title {
+  margin-top: 23px;
+  margin-right: 60px;
+  width: 450px;
+  flex-shrink: 0;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 109%;
+  color: #003c56;
+  @include media(lg) {
+    max-width: 550px;
+    width: 100%;
+    margin-top: 0;
+    margin-right: 0;
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  @include media(xs) {
+    max-width: 312px;
+  }
+  @include media(xxs) {
+    font-size: 18px;
+    line-height: 23px;
+    max-width: 260px;
+  }
+}
+
+.fam-price__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.fam-price__item {
+  box-shadow: 0 5px 21px 0 rgba(102, 131, 194, 0.19);
+  background: #fff;
+  border-radius: 6px;
+  height: 40px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 12px;
+  flex-shrink: 0;
+  @include media(lg) {
+    height: 35px;
+    padding: 6px 10px;
+  }
+}
+
+.fam-price__icon {
+  width: auto;
+  flex-shrink: 0;
+  @include media(lg) {
+    transform: scale(0.9);
+  }
+  @include media(xs) {
+    transform: scale(0.8);
+  }
+}
+
+.fam-price__name {
+  font-size: 13px;
+  line-height: 100%;
+  color: #23617c;
+}
+
+.fam-price__more {
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 100%;
+  padding: 9px 12px;
+  min-width: 133px;
+  min-height: 40px;
+  flex-shrink: 0;
+  display: none;
+  @include media(lg) {
+    min-width: 125px;
+    min-height: 35px;
+  }
+}

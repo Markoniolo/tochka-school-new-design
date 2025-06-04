@@ -6,7 +6,7 @@ mixin consult(image)
         .consult__text Задавайте любые вопросы, поможем подобрать занятия
         picture.consult__decor
           source(srcset=staticImg(`consult/${image}_mob.svg`) media="(max-width: 743px)")
-          source(srcset=staticImg(`consult/${image}_tablet.svg`) media="(max-width: 1439px)")
+          source(srcset=staticImg(`consult/${image}_tablet.svg`) media="(max-width: 1359px)")
           img.consult__decor-image(src=staticImg(`consult/${image}.svg`) alt='')
         .consult__buttons
           a.consult__btn.consult__btn_order.btn-orange(href='#modal-order-new' data-fancybox data-options='{"touch": false}') Оставить заявку

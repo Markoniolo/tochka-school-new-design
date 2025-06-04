@@ -1,23 +1,27 @@
-//extends ../components/_layout/layout
-//
-//block head
-//  +title('Направление СО')
-//
-//block body
-//  include ../components/fam-cap
-//  include ../components/fam-for
-//  include ../components/fam-best
-//  include ../components/fam-steps
-//  include ../components/family-manual
-//  +family-manual
-//  include ../components/fam-about
-//  include ../components/fam-consult
-//  include ../components/faq
-//  +faq
-//  include ../components/fam-informer
-//  include ../components/fam-info
-//  include ../components/pre-reviews
-//  +pre-reviews
-//  include ../components/pre-end
-//  +pre-end('course','Время принять решение: оставить всё как есть или начать обучение, получить твёрдые знания и отличные оценки.',
-//    'Начать обучение')
+extends ../components/_layout/layout
+
+block head
+  +title('Направление СО')
+
+block body
+  include ../components/fam-cap
+  include ../components/fam-meaning
+  include ../components/fam-for
+  include ../components/fam-best
+  include ../components/fam-steps
+  include ../components/family-manual
+  +family-manual
+  include ../components/fam-about
+  include ../components/fam-doc
+  include ../components/fam-price
+  include ../components/fam-consult
+  include ../components/fam-capital
+  include ../components/faq
+  +faq
+  include ../components/fam-informer
+  include ../components/fam-info
+  include ../components/pre-reviews
+  +pre-reviews
+  include ../components/pre-end
+  +pre-end('','Время принять решение: оставить всё как есть или начать обучение, получить твёрдые знания и отличные оценки.',
+    'Начать обучение','fam-price')

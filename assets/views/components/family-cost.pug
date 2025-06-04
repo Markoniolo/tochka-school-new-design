@@ -66,7 +66,7 @@ mixin cost (mod)
           .info__text Задавайте любые вопросы, поможем подобрать занятия
           picture.info__decor
             source(srcset=staticImg(`info/info-decor-2_mob.svg`) media="(max-width: 743px)")
-            source(srcset=staticImg(`info/info-decor-2_tablet.svg`) media="(max-width: 1439px)")
+            source(srcset=staticImg(`info/info-decor-2_tablet.svg`) media="(max-width: 1359px)")
             if mod === 'short'
               img.info__decor-image(src=staticImg(`info/info-decor-short-2.svg`) alt='')
             else
@@ -81,7 +81,7 @@ mixin cost (mod)
             span Поможем со списком документов и&nbsp;остальными вопросами
           picture.info__capital-decor
             source(srcset=staticImg(`info/info-decor-1_mob.svg`) media="(max-width: 743px)")
-            source(srcset=staticImg(`info/info-decor-1_tablet.svg`) media="(max-width: 1439px)")
+            source(srcset=staticImg(`info/info-decor-1_tablet.svg`) media="(max-width: 1359px)")
             if mod === 'short'
               img.info__capital-decor-image(src=staticImg(`info/info-decor-short-1.svg`) alt='')
             else

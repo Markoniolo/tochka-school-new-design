@@ -1,0 +1,28 @@
+-
+  const famMeaningList = [
+    'Уроки от лучших учителей страны',
+    'Внимательный тьютор-педагог по каждому предмету',
+    'Учебная нагрузка с заботой о каждом',
+    'Вниманием ко всем деталям учёбы и интересам ребёнка',
+  ]
+
+.fam-meaning
+  .fam-meaning__cont.cont
+    h2.fam-meaning__title Дайте ребёнку отличное образование. Дома. Онлайн.
+    .fam-meaning__list
+      each item, index in famMeaningList
+        .fam-meaning__item
+          picture.fam-meaning__icon-picture
+            img.fam-meaning__icon-image(src=staticImg(`fam-meaning/fam-meaning-icon-${index+1}.svg`) alt='')
+          .fam-meaning__note= item
+    .fam-meaning__area
+      .fam-meaning__inner
+        .fam-meaning__headline Семейное обучение — альтернатива обычной школе.
+        picture.fam-meaning__picture
+          source(srcset=staticImg('fam-meaning/fam-meaning-decor_mob.svg') media="(max-width: 743px)")
+          source(srcset=staticImg('fam-meaning/fam-meaning-decor_tablet.svg') media="(max-width: 1359px)")
+          img.fam-meaning__image(src=staticImg('fam-meaning/fam-meaning-decor.svg') alt='')
+        .fam-meaning__box
+          .fam-meaning__text Ребёнок не ходит в школу. Вместе с Вами мы организуем его учёбу дома.
+          .fam-meaning__text В «Точке Знаний» семейное обучение открыто для учеников 1–11 классов.
+          .fam-meaning__text Все предметы — как в обычной школе, согласно государственной образовательной программе.

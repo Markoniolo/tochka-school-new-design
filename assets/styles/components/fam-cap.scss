@@ -40,9 +40,12 @@
   @include media(lg) {
     background: unset;
     min-height: 352px;
-    padding: 30px 0 85px;
+    padding: 30px 30px 85px;
     border-radius: 0;
     overflow: visible;
+  }
+  @include media(md) {
+    padding: 30px 0 85px;
   }
   @include media(xs) {
     padding: 20px 0 0;
@@ -107,6 +110,9 @@
   @include media(lg) {
     width: 435px;
     height: 352px;
+  }
+  @include media(md) {
+    right: -30px;
   }
   @include media(xs) {
     position: static;

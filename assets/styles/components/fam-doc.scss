@@ -1,0 +1,264 @@
+.fam-doc {
+  margin-top: -194px;
+  margin-bottom: -260px;
+  transition-property: margin;
+  transition-duration: $transition-duration;
+  @include media(lg) {
+    margin-bottom: -390px;
+  }
+  @include media(xs) {
+    margin-bottom: -325px;
+  }
+  @include media(xxs) {
+    margin-bottom: -325px;
+  }
+  &.open {
+    margin-bottom: 0;
+  }
+}
+
+.fam-doc__cont {
+
+}
+
+.fam-doc__wrap {
+  width: 920px;
+  min-height: 1006px;
+  margin: 0 auto;
+  position: relative;
+  padding: 90px 80px 80px;
+  @include bg-icon('fam-doc/fam-doc-bg.svg');
+  @include media(lg) {
+    width: 482px;
+    min-height: 1171px;
+    @include bg-icon('fam-doc/fam-doc-bg_tablet.svg');
+    padding: 46px 50px 40px;
+  }
+  @include media(xs) {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    @include bg-icon('fam-doc/fam-doc-bg_mob.svg');
+    padding: 30px 30px 40px;
+  }
+  @include media(xxs) {
+    padding: 30px 25px 40px;
+    max-width: 300px;
+  }
+}
+
+.fam-doc__caption {
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 100%;
+  text-align: center;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: 600;
+  }
+}
+
+.fam-doc__title {
+  margin-bottom: 36px;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  @include media(lg) {
+    margin-bottom: 18px;
+    font-size: 18px;
+  }
+}
+
+.fam-doc__list {
+  display: flex;
+  margin-bottom: 25px;
+  @include media(lg) {
+    margin-bottom: 20px;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.fam-doc__item {
+  width: 25%;
+  font-size: 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  @include media(lg) {
+    width: 100%;
+    gap: 8px;
+    font-size: 15px;
+    line-height: 100%;
+    flex-direction: row;
+    text-align: left;
+  }
+  &::before {
+    content: '';
+    width: 42px;
+    height: 42px;
+    @include bg-icon('icons/ic_point_orange.svg');
+    @include media(lg) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.fam-doc__area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 30px;
+  margin-bottom: 40px;
+  @include media(lg) {
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+}
+
+.fam-doc__box {
+  width: calc(50% - 15px);
+  border-radius: 10px;
+  background: rgba(235, 238, 245, 0.46);
+  padding: 16px 20px;
+  font-size: 16px;
+  line-height: 20px;
+  @include media(lg) {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+}
+
+.fam-doc__info {
+  width: calc(50% - 15px);
+  @include media(lg) {
+    width: 100%;
+  }
+}
+
+.fam-doc__info-headline {
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 18px;
+  @include media(lg) {
+    margin-bottom: 16px;
+    text-align: center;
+  }
+}
+
+.fam-doc__info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  @include media(lg) {
+    gap: 10px;
+  }
+}
+
+.fam-doc__info-line {
+  border-radius: 77px;
+  padding: 8px 20px 9px;
+  background: rgba(235, 238, 245, 0.46);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: #6683c2;
+  @include media(lg) {
+    border-radius: 33px;
+    padding: 7px 15px;
+    font-size: 13px;
+  }
+  &::before {
+    content: '';
+    width: 23px;
+    height: 23px;
+    @include bg-icon('icons/ic_point_orange.svg');
+    @include media(lg) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.fam-doc__button {
+  margin: 0 auto 48px;
+  min-width: 328px;
+  min-height: 55px;
+  font-size: 16px;
+  line-height: 100%;
+  @include media(lg) {
+    margin: 0 auto 25px;
+  }
+  @include media(xs) {
+    min-height: 45px;
+    min-width: auto;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 10px;
+  }
+  @include media(xxs) {
+    font-size: 13px;
+  }
+}
+
+.fam-doc__tables {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  @include media(lg) {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  table {
+    width: 100%;
+  }
+  tr:first-child {
+    background: rgba(102, 131, 194, 0.17);
+  }
+  th {
+    font-weight: 500;
+  }
+  th, td {
+    font-size: 15px;
+    padding: 10px;
+    @include media(lg) {
+      font-size: 14px;
+    }
+    @include media(xs) {
+      padding: 5px;
+      font-size: 13px;
+    }
+  }
+  tr {
+    &:not(:last-of-type) {
+      border-bottom: 1px solid #6683c2;
+    }
+  }
+}
+
+.fam-doc__table {
+  border: 1px solid #6683c2;
+  border-radius: 10px;
+  flex-shrink: 0;
+  overflow: hidden;
+  &:nth-child(1) {
+    width: 359px;
+    @include media(lg) {
+      width: 100%;
+    }
+  }
+  &:nth-child(2) {
+    width: 352px;
+    @include media(lg) {
+      width: 100%;
+    }
+  }
+}

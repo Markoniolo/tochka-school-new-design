@@ -29,7 +29,7 @@ mixin course-cap(mod, id='pre-reg')
           picture.course-cap__picture
             if mod === "3-teachers"
               source(srcset=staticImg(`course-cap/3-teachers_mob.png`) media="(max-width: 743px)")
-              source(srcset=staticImg(`course-cap/3-teachers_tablet.png`) media="(max-width: 1439px)")
+              source(srcset=staticImg(`course-cap/3-teachers_tablet.png`) media="(max-width: 1359px)")
               img.course-cap__image(src=staticImg('course-cap/3-teachers.png') alt='')
             else
               if mod === 'no-teacher'

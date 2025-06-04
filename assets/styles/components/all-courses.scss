@@ -304,6 +304,9 @@
       right: 20px;
     }
   }
+  .all-courses__filter-ticket {
+    display: none;
+  }
 }
 
 .all-courses__filter-top-text {
@@ -480,7 +483,7 @@
   cursor: pointer;
   &:hover {
     .all-courses__filter-view {
-      background: #aebddd;
+      background: #EAA593;
       color: #FFFFFF;
     }
   }
@@ -492,7 +495,7 @@
 .all-courses__filter-input {
   display: none;
   &:checked ~ .all-courses__filter-view {
-    background: #6683c2;
+    background: #F37E60;
     color: #fff;
   }
 }
