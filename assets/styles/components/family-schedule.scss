@@ -1,9 +1,5 @@
 .family-schedule {
   background-color: #FFFFFF;
-  padding-bottom: 80px;
-  @include media(lg) {
-    padding-bottom: 40px;
-  }
   &.summer {
     background: transparent;
     .family-schedule__toggle {
@@ -198,11 +194,12 @@
     justify-content: center;
     @include media(lg) {
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       flex-direction: row-reverse;
     }
     @include media(xs) {
       flex-direction: column;
+      align-items: center;
     }
   }
 }
@@ -215,6 +212,13 @@
   justify-content: center;
   width: 280px;
   padding: 19px 33px 20px;
+  margin-bottom: 80px;
+  @include media(lg) {
+    margin-bottom: 40px;
+  }
+  @include media(xs) {
+    margin-bottom: 0;
+  }
   &::after {
     content: '';
     margin-left: 10px;
@@ -251,9 +255,11 @@
     line-height: 121%;
     max-width: 220px;
     position: static;
+    margin-top: 10px;
   }
   @include media(xs) {
     margin-top: 16px;
+    margin-bottom: 36px;
     text-align: center;
     max-width: 250px;
   }
