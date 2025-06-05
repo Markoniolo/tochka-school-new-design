@@ -4,6 +4,9 @@
   @include media(lg) {
     padding-bottom: 33px;
   }
+  &.no-background {
+    background: unset;
+  }
   &.summer {
     background: transparent;
     .family-docs__area, .family-docs__box {

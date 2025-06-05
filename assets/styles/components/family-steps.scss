@@ -1,6 +1,8 @@
 .family-steps {
-  background-color: #FFFFFF;
+  background-color: #D0E1FE;
   padding: 91px 0 80px;
+  position: relative;
+  z-index: 1;
   @include media(lg) {
     padding: 40px 0;
   }

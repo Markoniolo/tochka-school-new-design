@@ -10,6 +10,9 @@
   @include media(xs) {
     padding-bottom: 40px;
   }
+  &.no-background {
+    background: unset;
+  }
   &.summer {
     background: transparent;
     .family-manual__area {

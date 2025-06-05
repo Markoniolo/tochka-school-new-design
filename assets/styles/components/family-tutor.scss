@@ -4,6 +4,16 @@
   @include media(lg) {
     padding: 40px 0;
   }
+  &.blue {
+    background: radial-gradient(228.28% 137.53% at 85.56% 75.29%, #dae5fe 0%, #bedaff 100%);
+    padding: 74px 0 274px;
+    @include media(lg) {
+      padding: 36px 0 278px;
+    }
+    @include media(xs) {
+      padding: 36px 0 202px;
+    }
+  }
   &.summer {
     .family-tutor__area {
       min-height: 360px;
