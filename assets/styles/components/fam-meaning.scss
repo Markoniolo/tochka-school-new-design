@@ -115,6 +115,8 @@
   @include media(lg) {
     width: 303px;
     height: 285px;
+    left: 20px;
+    bottom: 20px;
   }
   @include media(xs) {
     position: static;

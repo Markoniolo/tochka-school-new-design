@@ -272,7 +272,7 @@
     align-items: center;
     @include media(md) {
       display: flex;
-      margin-left: -30px;
+      margin-left: -35px;
     }
     @include media(xs) {
       margin-left: 0;
