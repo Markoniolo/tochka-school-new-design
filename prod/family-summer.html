@@ -1457,6 +1457,331 @@
   <script src="assets/js/jquery-3.4.0.min.js" defer></script>
   <script src="assets/js/libs.js" defer></script>
   <script src="assets/js/main.js" defer></script>
+  <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        $('.pre_n_form').find(':input').each(function () {
+          $(this).on('click', function (e) {
+            // $( ".pre_n_form" ).find('.btn-warning').show();
+            let button_pre = $( ".pre_n_form" ).find('.btn-warning');
+            button_pre.removeAttr('disabled', true);
+            button_pre.prop('disabled', false);
+            button_pre.removeClass('loading');
+            $('.v_messages').html('');
+          });
+        });
+        $( ".pre_n_form" ).on( "submit", function( event ) {
+          // $(this).find('.btn-warning').hide();
+          let button_pre = $(this).find('.btn-warning');
+          button_pre.attr('disabled', true);
+          button_pre.prop('disabled', true);
+          button_pre.addClass('loading');
+        });
+        try {
+          const mask = (selector) => {
+            function setMask() {
+              let matrix = '+###############';
+              maskList.forEach(item => {
+                let code = item.code.replace(/[\\s#]/g, ''),
+                        phone = this.value.replace(/[\\s#-)(]/g, '');
+                if (phone.includes(code)) {
+                  //console.log(phone, code);
+                  matrix = item.code;
+                }
+              });
+              let i = 0,
+                      val = this.value.replace(/\\D/g, '');
+              this.value = matrix.replace(/(?!\\+)./g, function(a) {
+                return /[#\\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? '' : a;
+              });
+            }
+            let inputs = document.querySelectorAll(selector);
+            inputs.forEach(input => {
+              input.addEventListener('focus', () => initInputHandlers(input), {once: true});
+            });
+            function initInputHandlers (input) {
+              if (!input.value) input.value = '+';
+              input.addEventListener('input', setMask);
+              input.addEventListener('focus', setMask);
+              input.addEventListener('blur', setMask);
+            }
+          };
+          mask("[data-phone-pattern]");
+        } catch (error) {
+        }
+        //     function setCookie(name, value, days) {
+        //         let expires = "";
+        //         if (days) {
+        //             let date = new Date();
+        //             date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        //             expires = "; expires=" + date.toUTCString();
+        //         }
+        //         document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        //     }
+        //     function getCookie(name) {
+        //         let matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+        //         return matches ? decodeURIComponent(matches[1]) : undefined;
+        //     }
+        //     function checkCookies() {
+        //         try{
+        //         let cookieNote = document.getElementById('cookie_note_');
+        //         let cookieBtnAccept = cookieNote.querySelector('.cookie_b');
+        //         if (!getCookie('cookies_policy')) {
+        //             cookieNote.classList.add('show');
+        //         }
+        //         cookieBtnAccept.addEventListener('click', function () {
+        //             setCookie('cookies_policy', 'true', 365);
+        //             cookieNote.classList.remove('show');
+        //         });
+        //         }catch(e){};
+        //     }
+        //     checkCookies();
+        function insertBeforeAnchor(url, paramsToInsert) {
+          const parts = url.split('#');
+          if (parts.length === 1) {
+            return `${url}${paramsToInsert}`;
+          }
+          return `${parts[0]}${paramsToInsert}#${parts[1]}`;
+        }
+      
+        function getCookie(name) {
+          let matches = document.cookie.match(new RegExp(
+                  "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+          ));
+          return matches ? decodeURIComponent(matches[1]) : undefined;
+        }
+      
+        const advcake_track_id = getCookie('advcake_track_id')
+        console.log(advcake_track_id)
+      
+        var search = "?" + window.location.search.split("&").filter(function(val) {
+          var value = val.replace(/\\?/, 'matematik-andrei.ru');
+          return value.indexOf("s_") === -1 && value.indexOf("tfc_") === -1;
+        }).join("&").replace(/\\?/, "");
+        if (search !== "?") {
+          var aLinks = document.querySelectorAll('a');
+          var arrayLinks = Array.from(aLinks);
+          arrayLinks.forEach(function (el) {
+            var href = el.getAttribute("href");
+            var data_noparam = el.getAttribute("data-noparam");
+            if (href && href.indexOf("") > -1 && href.indexOf("#") === -1 && data_noparam != 'no') {
+              if (href.indexOf("?") === -1) {
+                el.setAttribute("href", href + search);
+              } else {
+                el.setAttribute("href", href + search.replace("?", "&"));
+              }
+              // if(el.classList.contains('btn_banner')){
+              //     try{
+              //         banner_href = el.getAttribute("href");
+              //         banner_attr = el.getAttribute("banner-utm");
+              //         el.setAttribute("href", banner_href + "&banner_utm=" + banner_attr);
+              //     }catch(e){};
+              // }
+            }
+          });
+          try{
+            if($('.a_fpay').length > 0){
+              $('.a_fpay').each(function(){
+                $(this).attr('href',insertBeforeAnchor($(this).attr('href'), search));
+              });
+            }
+          }catch(e){};
+          try{
+            if($('.btn_fpay').length > 0){
+              // console.log(link_u);
+              $('.btn_fpay').each(function(){
+                $(this).attr('href',$(this).attr('href')+search);
+                $(this).attr('old-href',$(this).attr('href'));
+              });
+              try{
+                if($('.price_input_f_pay').length > 0){
+                  $('.price_input_f_pay').each(function(){
+                    $(this).attr('new-href',$(this).attr('new-href')+search);
+                  });
+                }
+              }catch(e){};
+            }
+            if($('.btn_attr_fpay').length > 0){
+              $('.btn_attr_fpay').each(function(){
+                $(this).attr('data-href-link',$(this).attr('data-href-link')+search);
+              });
+            }
+          }catch(e){};
+          try{
+            if($('.input_utm').length > 0){
+              // console.log(link_u);
+              $('.input_utm').each(function(){
+                $(this).val(search);
+              });
+            }
+            if($('.utm_fpay').length > 0){
+              $('.utm_fpay').each(function(){
+                $(this).attr('data-utm', search);
+              });
+            }
+          }catch(e){};
+          try{
+            if($('.btn_fnoprpay').length > 0){
+              const params_all = new URLSearchParams(search);
+              params_all.delete("promo");
+              const updateSearchNopr = "?" + params_all.toString()
+              // console.log(link_u);
+              $('.btn_fnoprpay').each(function(){
+                $(this).attr('href',$(this).attr('href')+updateSearchNopr);
+                $(this).attr('old-href',$(this).attr('href'));
+              });
+              if($('.utm_fnoprpay').length > 0){
+                $('.utm_fnoprpay').each(function(){
+                  $(this).attr('data-utm', updateSearchNopr);
+                });
+              }
+              try{
+                if($('.price_input_f_fnoprpay').length > 0){
+                  $('.price_input_f_fnoprpay').each(function(){
+                    $(this).attr('new-href',$(this).attr('new-href')+updateSearchNopr);
+                  });
+                }
+              }catch(e){};
+            }
+            if($('.btn_attr_fnoprpay').length > 0){
+              const attr_params_all = new URLSearchParams(search);
+              attr_params_all.delete("promo");
+              const attr_updateSearchNopr = "?" + attr_params_all.toString()
+              $('.btn_attr_fpay').each(function(){
+                $(this).attr('data-href-link',$(this).attr('data-href-link')+attr_updateSearchNopr);
+              });
+            }
+          }catch(e){};
+          try{
+            const params = new URLSearchParams(search);
+            params.delete("promo");
+            const updateSearch = params.toString()
+            if($('.btn_fmpay').length > 0){
+              // console.log(link_u);
+              $('.btn_fmpay').each(function(){
+                $(this).attr('href',$(this).attr('href')+ "?" + updateSearch);
+              });
+              try{
+                if($('.price_option_fm_pay').length > 0){
+                  $('.price_option_fm_pay').each(function(){
+                    $(this).attr('data-product-link',$(this).attr('data-product-link')+ "?" + updateSearch);
+                  });
+                }
+              }catch(e){};
+            }
+          }catch(e){};
+        }
+        var banner_param_name = "?banner_utm=";
+        if (search !== "?") {
+          banner_param_name = "&banner_utm=";
+        }
+        try{
+          var aBLinks = document.querySelectorAll('a.btn_banner');
+          var arrayBLinks = Array.from(aBLinks);
+          arrayBLinks.forEach(function (el) {
+            banner_href = el.getAttribute("href");
+            banner_attr = el.getAttribute("banner-utm");
+            el.setAttribute("href", banner_href + banner_param_name + banner_attr);
+          });
+        }catch(e){};
+        // });
+      });
+      const messageRutObj = {};
+      const fWasLoaded = 0;
+      function posterFrame(num_poster) {
+        var posterWatch_count = 0;
+        var handlePosterWatch = function( r_iframe ) {
+          var handler = function(event) {
+            var message = JSON.parse(event.data);
+            //    messageRutObj[num_poster] = JSON.parse(event.data);
+            //    var message = messageRutObj[num_poster];
+            // console.log(message.type); // some type
+            console.log(posterWatch_count);
+            if(posterWatch_count == 0){
+              console.log(message);
+              switch (message.type) {
+                case 'player:ready':
+                  // console.log(message);
+                  // if(r_iframe.getAttribute('data-vf') == num_poster){
+                  if(messageRutObj[num_poster] != 1){
+                    r_iframe.contentWindow.postMessage(JSON.stringify({type: 'player:unMute',data: {time: 0}}), '*');
+                    r_iframe.contentWindow.postMessage(JSON.stringify({type: 'player:setCurrentTime',data: {time: 0}}), '*');
+                    r_iframe.contentWindow.postMessage(JSON.stringify({type: 'player:play',data: {}}), '*');
+                  }
+                  messageRutObj[num_poster] = 1;
+                      // }
+                      // $('.review_watch').each(function(){
+                      //     if($(this).attr('data-pb') != num_poster){
+                      //         let poster__iframe = document.querySelector('[data-vf="'+$(this).attr('data-pb')+'"]');
+                      //         poster__iframe.contentWindow.postMessage(JSON.stringify({type: 'player:pause',data: {}}), '*');
+                      //     }
+                      // });
+                case 'player:changeState':
+                  // console.log(message);
+                  if(message.data.state == 'playing'){
+                    posterWatch_count++;
+                  }
+                case 'player:rollState':
+                  // console.log(message.data.state);
+                  // console.log(message);
+                  if(message.data.state == 'play'){
+                    r_iframe.contentWindow.postMessage(JSON.stringify({type: 'player:pause',data: {}}), '*');
+                  }
+                  if(message.data.state == 'complete' ){
+                    // if(r_iframe.getAttribute('data-vf') == num_poster){
+                    r_iframe.contentWindow.postMessage(JSON.stringify({type: 'player:setCurrentTime',data: {time: 0}}), '*');
+                    r_iframe.contentWindow.postMessage(JSON.stringify({type: 'player:play',data: {}}), '*');
+                    posterWatch_count++;
+                    // }
+                    // $('.review_watch').each(function(){
+                    //     let poster__iframe = document.querySelector('[data-vf="'+$(this).attr('data-pb')+'"]');
+                    //     poster__iframe.contentWindow.postMessage(JSON.stringify({type: 'player:pause',data: {}}), '*');
+                    // });
+                    //window.removeEventListener("message", handlePosterWatch);
+                    // console.log(message.data.state);
+                  }
+                      // break;
+              };
+            }
+          };
+          return handler;
+        };
+        var player_iframe = document.querySelector('[data-vf="'+num_poster+'"]');
+        window.addEventListener('message', handlePosterWatch(player_iframe));
+        // let player_iframe = document.querySelector('[data-vf="'+num_poster+'"]');
+        // player_iframe.contentWindow.postMessage(JSON.stringify({type: 'player:setCurrentTime',data: {time: 0}}), '*');
+        // player_iframe.contentWindow.postMessage(JSON.stringify({type: 'player:play',data: {}}), '*');
+      }
+      // Вызов функции при загрузке страницы и изменении размера окна
+      document.addEventListener('DOMContentLoaded', (event) => {
+        if($('.video-posters').length > 0 && $('.player-buttons').length > 0 && $('.video-iframes').length > 0){
+          // console.log(link_u);
+          $('.video-posters').each(function(){
+            $(this).on('click', function () {
+              $('[data-pb="'+$(this).attr('data-vp')+'"]').hide();
+              $(this).hide();
+              $('[data-vf="'+$(this).attr('data-vp')+'"]').show();
+              $('[data-vf="'+$(this).attr('data-vp')+'"]').attr('src', $('[data-vf="'+$(this).attr('data-vp')+'"]').attr('data-src')+"&autoplay=1&playerId=9" );
+              if($('[data-vf="'+$(this).attr('data-vp')+'"]').hasClass("review_watch")){
+                let num_poster = $(this).attr('data-vp');
+                setTimeout(posterFrame, 1000, num_poster);
+              }
+            });
+          });
+          $('.player-buttons').each(function(){
+            $(this).on('click', function () {
+              $('[data-vp="'+$(this).attr('data-pb')+'"]').hide();
+              $(this).hide();
+              $('[data-vf="'+$(this).attr('data-pb')+'"]').show();
+              $('[data-vf="'+$(this).attr('data-pb')+'"]').attr('src', $('[data-vf="'+$(this).attr('data-pb')+'"]').attr('data-src')+"&autoplay=1&playerId=9" );
+              if($('[data-vf="'+$(this).attr('data-pb')+'"]').hasClass("review_watch")){
+                let num_poster = $(this).attr('data-pb');
+                setTimeout(posterFrame, 1000, num_poster);
+              }
+            });
+          });
+        }
+      });
+    </script>
 </body>
 
 </html>
