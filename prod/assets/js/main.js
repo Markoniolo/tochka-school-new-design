@@ -788,7 +788,17 @@ if (famDoc) famDocInit()
 
 function famDocInit () {
   const toggle = famDoc.querySelector('.fam-doc__button')
-  toggle.addEventListener('click', () => famDoc.classList.toggle('open'))
+  toggle.addEventListener('click', toggleDoc)
+
+  function toggleDoc () {
+    if (famDoc.classList.contains('open')) {
+      famDoc.classList.remove('open')
+      toggle.innerHTML = 'Открыть расписание аттестации'
+    } else {
+      famDoc.classList.add('open')
+      toggle.innerHTML = 'Скрыть расписание аттестации'
+    }
+  }
 }
 
 const famPrice = document.querySelector('.fam-price')
@@ -851,6 +861,48 @@ function famPriceInit () {
         showList()
       }
     }
+  }
+
+  const tile = famPrice.querySelector('.fam-price__slides')
+
+  togglePrice()
+
+  function togglePrice () {
+    const items = tile.querySelectorAll(".all-courses__item")
+    items.forEach((item) => {
+      const toggle = item.querySelectorAll('.all-courses__radio-input')
+      if (!toggle.length) return
+      const boxes = item.querySelectorAll('.all-courses__box')
+      const textReplace = item.querySelector('.all-courses__info.text-replace')
+      let texts
+      if (textReplace) {
+        texts = textReplace.querySelectorAll('.all-courses__info-span')
+      }
+      for (let i = 0; i < toggle.length; i++) {
+        toggle[i].addEventListener('change', toggleBoxes)
+        if (texts) toggle[i].addEventListener('change', toggleTexts)
+      }
+
+      function toggleBoxes () {
+        for (let i = 0; i < boxes.length; i++) {
+          if (boxes[i].classList.contains('hide')) {
+            boxes[i].classList.remove('hide')
+          } else {
+            boxes[i].classList.add('hide')
+          }
+        }
+      }
+
+      function toggleTexts () {
+        for (let i = 0; i < texts.length; i++) {
+          if (texts[i].classList.contains('hide')) {
+            texts[i].classList.remove('hide')
+          } else {
+            texts[i].classList.add('hide')
+          }
+        }
+      }
+    })
   }
 }
 
