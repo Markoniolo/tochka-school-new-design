@@ -1,16 +1,16 @@
 .fam-doc {
   margin-top: -194px;
-  margin-bottom: -260px;
+  margin-bottom: -245px;
   transition-property: margin;
   transition-duration: $transition-duration;
   @include media(lg) {
-    margin-bottom: -390px;
+    margin-bottom: -332px;
   }
   @include media(xs) {
-    margin-bottom: -325px;
+    margin-bottom: -305px;
   }
   @include media(xxs) {
-    margin-bottom: -325px;
+    margin-bottom: -290px;
   }
   &.open {
     margin-bottom: 0;
@@ -85,6 +85,7 @@
 .fam-doc__item {
   width: 25%;
   font-size: 18px;
+  line-height: 106%;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -125,14 +126,17 @@
   width: calc(50% - 15px);
   border-radius: 10px;
   background: rgba(235, 238, 245, 0.46);
-  padding: 16px 20px;
+  padding: 16px 24px;
   font-size: 16px;
   line-height: 20px;
   @include media(lg) {
     width: 100%;
-    padding: 12px 15px;
+    padding: 12px 100px 12px 15px;
     font-size: 15px;
     line-height: 19px;
+  }
+  @include media(xs) {
+    padding: 12px 15px;
   }
 }
 
@@ -194,7 +198,7 @@
   font-size: 16px;
   line-height: 100%;
   @include media(lg) {
-    margin: 0 auto 25px;
+    margin: 0 auto 40px;
   }
   @include media(xs) {
     min-height: 45px;
@@ -228,19 +232,25 @@
   }
   th, td {
     font-size: 15px;
+    line-height: 19px;
     padding: 10px;
     @include media(lg) {
       font-size: 14px;
+      line-height: 18px;
     }
     @include media(xs) {
       padding: 5px;
       font-size: 13px;
+      line-height: 17px;
     }
   }
   tr {
     &:not(:last-of-type) {
       border-bottom: 1px solid #6683c2;
     }
+  }
+  b {
+    font-weight: 500;
   }
 }
 
@@ -259,6 +269,12 @@
     width: 352px;
     @include media(lg) {
       width: 100%;
+    }
+    td:nth-child(1) {
+      width: 180px;
+      @include media(lg) {
+        width: 162px;
+      }
     }
   }
 }

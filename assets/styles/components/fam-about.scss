@@ -7,6 +7,9 @@
   @include media(xs) {
     padding: 36px 0 202px;
   }
+  @include media(xxs) {
+    padding: 36px 0 210px;
+  }
 }
 
 .fam-about__cont {
@@ -49,7 +52,7 @@
 .fam-about__box {
   &:nth-child(1) {
     margin-right: 44px;
-    width: 358px;
+    width: 385px;
     flex-shrink: 0;
     padding-right: 45px;
     border-right: 1px solid rgba(0, 0, 0, 0.13);
@@ -69,6 +72,12 @@
       width: calc(50% - 20px);
       @include media(lg) {
         width: 100%;
+      }
+      &:nth-child(2), &:nth-child(4) {
+        width: 50%;
+        @include media(lg) {
+          width: 100%;
+        }
       }
     }
   }
@@ -148,14 +157,35 @@
   @include media(xxs) {
     gap: 12px;
   }
+  &:nth-child(1) {
+    .fam-about__text {
+      max-width: 240px;
+      width: 100%;
+      @include media(lg) {
+        max-width: 100%;
+      }
+      @include media(xs) {
+        max-width: 235px;
+      }
+    }
+  }
+  &:nth-child(4) {
+    .fam-about__text {
+      width: calc(100% + 10px);
+      @include media(lg) {
+        width: 100%;
+      }
+    }
+  }
 }
 
 .fam-about__picture {
+  width: 71px;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
   @include media(lg) {
-    display: flex;
-    justify-content: center;
     width: 68px;
-    flex-shrink: 0;
   }
   @include media(xs) {
     width: 65px;
@@ -166,7 +196,6 @@
 }
 
 .fam-about__image {
-  width: auto;
   @include media(lg) {
     transform: scale(0.9);
   }

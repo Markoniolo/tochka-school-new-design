@@ -80,6 +80,9 @@
     min-height: 70px;
     padding: 8px 24px 8px 15px;
   }
+  @include media(xxs) {
+    font-size: 14px;
+  }
   &::before {
     content: '';
     width: 45px;

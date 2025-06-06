@@ -41,6 +41,9 @@
     flex-wrap: wrap;
     width: 320px;
   }
+  @include media(xxs) {
+    width: 300px;
+  }
 }
 
 .fam-price__tab {
@@ -91,6 +94,9 @@
     }
     span {
       display: block;
+      @include media(xxs) {
+        display: none;
+      }
     }
   }
 }
