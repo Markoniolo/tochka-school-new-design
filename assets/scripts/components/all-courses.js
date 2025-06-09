@@ -482,10 +482,10 @@ function allCoursesInit () {
     window.addEventListener('scroll', toggleAllCoursesTop, { passive: true })
 
     function toggleAllCoursesTop () {
-      if (header.classList.contains('thin') || window.scrollY < 1000) {
-        allCoursesTop.classList.remove('active')
-      } else {
+      if (window.scrollY > 0) {
         allCoursesTop.classList.add('active')
+      } else {
+        allCoursesTop.classList.remove('active')
       }
     }
   }

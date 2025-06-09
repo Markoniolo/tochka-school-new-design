@@ -1,0 +1,141 @@
+.thanks-family {
+  margin-top: 50px;
+  margin-bottom: 120px;
+  @include media(lg) {
+    margin-top: 0;
+    margin-bottom: 60px;
+    @include bg-icon('thanks-family/thanks-family-bg_tablet.png');
+    background-size: cover;
+  }
+  @include media(xs) {
+    @include bg-icon('thanks-family/thanks-family-bg_mob.png');
+    background-size: cover;
+  }
+}
+
+.thanks-family__cont {
+
+}
+
+.thanks-family__wrap {
+  position: relative;
+}
+
+.thanks-family__area {
+  position: relative;
+  z-index: 1;
+  border-radius: 31px;
+  padding: 56px 20px 68px;
+  @include bg-icon('thanks-family/thanks-family-bg.png');
+  background-size: cover;
+  @include media(lg) {
+    background: unset;
+    padding: 40px 20px 36px;
+    border-radius: 0;
+  }
+  @include media(xs) {
+    padding: 40px 20px 77px;
+  }
+}
+
+.thanks-family__decor {
+  position: absolute;
+  border-radius: 50%;
+  @include media(lg) {
+    display: none;
+  }
+  &_1 {
+    background-color: #7fcbb4;
+    top: 27px;
+    left: -60px;
+    width: 164px;
+    height: 164px;
+  }
+  &_2 {
+    background-color: #f2c45b;
+    top: 180px;
+    left: -79px;
+    width: 60px;
+    height: 60px;
+  }
+  &_3 {
+    background-color: #68ccea;
+    top: 228px;
+    right: -32px;
+    width: 42px;
+    height: 42px;
+  }
+  &_4 {
+    background-color: #f37e60;
+    top: 278px;
+    right: -50px;
+    width: 115px;
+    height: 115px;
+  }
+}
+
+.thanks-family__caption  {
+  margin: 0 auto 85px;
+  font-weight: 600;
+  font-size: 45px;
+  text-align: center;
+  color: #003c56;
+  width: 100%;
+  max-width: 975px;
+  @include media(lg) {
+    margin: 0 auto 46px;
+    font-size: 22px;
+    max-width: 475px;
+  }
+  @include media(xs) {
+    margin: 0 auto 30px;
+  }
+}
+
+.thanks-family__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  @include media(lg) {
+    gap: 35px;
+  }
+  @include media(xs) {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+.thanks-family__image {
+  width: 283px;
+  height: 270px;
+  @include media(lg) {
+    width: 176px;
+    height: 168px;
+  }
+  @include media(xs) {
+    width: 231px;
+    height: 219px;
+  }
+}
+
+.thanks-family__button {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  min-width: 219px;
+  min-height: 55px;
+  padding: 5px 10px;
+  font-size: 16px;
+  line-height: 100%;
+  @include media(xs) {
+    width: 100%;
+  }
+  &::after {
+    content: "";
+    width: 18px;
+    height: 18px;
+    @include bg-icon('icons/ic_download_white.svg');
+  }
+}

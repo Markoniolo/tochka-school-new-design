@@ -45,11 +45,10 @@
   width: 100%;
   min-height: calc(100vw * 710 / 1920);
   @include media(lg) {
-    max-width: 344px;
+    max-width: 100%;
     min-height: calc(100vw * 400 / 744);
   }
   @include media(xs) {
-    max-width: 100%;
     min-height: calc(100vw * 576 / 532);
     display: flex;
     flex-direction: column;
@@ -86,8 +85,6 @@
 
 .summer-cap__text {
   margin-bottom: 36px;
-  max-width: 458px;
-  width: 100%;
   font-weight: 600;
   font-size: 24px;
   line-height: 30px;

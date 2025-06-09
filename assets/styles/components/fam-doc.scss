@@ -4,13 +4,13 @@
   transition-property: margin;
   transition-duration: $transition-duration;
   @include media(lg) {
-    margin-bottom: -332px;
+    margin-bottom: -336px;
   }
   @include media(xs) {
-    margin-bottom: -305px;
+    margin-bottom: -326px;
   }
   @include media(xxs) {
-    margin-bottom: -290px;
+    margin-bottom: -310px;
   }
   &.open {
     margin-bottom: 0;
