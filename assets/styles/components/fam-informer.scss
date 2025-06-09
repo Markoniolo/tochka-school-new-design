@@ -59,10 +59,7 @@
     width: 100%;
   }
   @include media(xs) {
-    margin-bottom: 12px;
-  }
-  @include media(xxs) {
-    width: calc(100% + 10px);
+    margin-bottom: 16px;
   }
 }
 
@@ -73,16 +70,17 @@
   top: 19px;
   right: 64px;
   @include media(lg) {
-    width: 258px;
-    height: 253px;
-    top: 6px;
-    right: 38px;
+    width: 287px;
+    height: 310px;
+    top: 4px;
+    right: 34px;
   }
   @include media(xs) {
     position: static;
-    width: 252px;
-    height: 247px;
-    margin: 0 auto -54px;
+    width: 251px;
+    height: 274px;
+    margin: 0 auto -68px;
+    transform: translateX(-10px);
   }
   @include media(xxs) {
     width: 234px;
