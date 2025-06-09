@@ -234,6 +234,7 @@
     font-size: 15px;
     line-height: 19px;
     padding: 10px;
+    vertical-align: baseline;
     @include media(lg) {
       font-size: 14px;
       line-height: 18px;
@@ -275,6 +276,21 @@
       @include media(lg) {
         width: 162px;
       }
+      @include media(xs) {
+        width: 147px;
+      }
+    }
+  }
+  .desc {
+    display: inline;
+    @include media(xs) {
+      display: none;
+    }
+  }
+  .mob {
+    display: none;
+    @include media(xs) {
+      display: inline;
     }
   }
 }
