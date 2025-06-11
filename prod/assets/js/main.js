@@ -3367,6 +3367,6 @@ function tutorCourseAnimationInit () {
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: 'assets/files/tutor-course.json'
+    path: tutorCourseAnimation.getAttribute('data-path')
   });
 }

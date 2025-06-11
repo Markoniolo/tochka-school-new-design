@@ -5,7 +5,7 @@
     margin-bottom: 0;
   }
   @include media(xs) {
-    margin-top: -396px;
+    margin-top: -250px;
   }
 }
 
@@ -32,7 +32,7 @@
   }
   @include media(xs) {
     width: 100%;
-    padding: 396px 0 0;
+    padding: 250px 0 0;
   }
   &::before {
     content: '';
@@ -97,6 +97,9 @@
     padding: 12px 15px;
     font-size: 15px;
     line-height: 19px;
+  }
+  @include media(xs) {
+    max-width: 100%;
   }
 }
 
