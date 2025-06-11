@@ -9,7 +9,6 @@ function reviewsTileInit () {
   const openFilterBtn = reviewsTile.querySelector('.reviews-tile__filter')
   const closeFilterBtn = reviewsTile.querySelector('.reviews-tile__close')
   const inputs = reviewsTile.querySelectorAll('.reviews-tile__input')
-  const reviewsTileWrap = reviewsTile.querySelector('.reviews-tile__wrap')
   const filterNote = reviewsTile.querySelector('.reviews-tile__filter-note')
   const scrollTopBtn = document.querySelector('.reviews-tile__scroll-top')
   const reviewsTileCards = document.querySelector('.reviews-tile__cards')
@@ -79,10 +78,15 @@ function reviewsTileInit () {
   function sort () {
     closeFilters()
     filterNote.innerHTML = this.value
-    $('.review___more_pagi').html("<div class='tile-loader'></div>");
     let utm_f = reviewsTile.getAttribute('data-utm');
     let attr_type = this.getAttribute('data-value');
     let p_paginate = this.getAttribute('data-v');
+    if(p_paginate > 1){
+      $('.review___more_pagi').html("<div class='tile-loader'></div>");
+    }else{
+      $('.review___catalog_pagi').html("<div class='tile-loader'></div>");
+      $('.review___more_pagi').html("");
+    }
     makeFiltration (attr_type, utm_f, p_paginate);
 
   }

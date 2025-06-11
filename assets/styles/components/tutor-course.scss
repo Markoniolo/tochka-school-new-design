@@ -1,4 +1,5 @@
 .tutor-course {
+  position: relative;
   margin-bottom: 120px;
   overflow: hidden;
   @include media(lg) {
@@ -6,6 +7,19 @@
   }
   @include media(xs) {
     margin-top: -250px;
+  }
+  &::before {
+    content: '';
+    background: #6683c2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: calc(50vh - 100px);
+    @include media(xl) {
+      content: none;
+    }
   }
 }
 
@@ -24,7 +38,7 @@
 .tutor-course__area {
   flex-shrink: 0;
   position: relative;
-  width: 590px;
+  width: 595px;
   padding: 75px 0 108px;
   @include media(lg) {
     width: 348px;
