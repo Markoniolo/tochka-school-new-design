@@ -5,6 +5,11 @@
   @include media(lg) {
     padding-bottom: 40px;
   }
+  &_no-padding {
+    @include media(lg) {
+      padding-bottom: 0;
+    }
+  }
   &_summer {
     background: rgba(255, 255, 255, 0.39);
     @include media(lg) {
