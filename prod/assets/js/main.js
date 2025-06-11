@@ -2949,6 +2949,7 @@ function reviewsTileInit () {
   const reviewsTileWrap = reviewsTile.querySelector('.reviews-tile__wrap')
   const filterNote = reviewsTile.querySelector('.reviews-tile__filter-note')
   const scrollTopBtn = document.querySelector('.reviews-tile__scroll-top')
+  const reviewsTileCards = document.querySelector('.reviews-tile__cards')
 
   openFilterBtn.addEventListener('click', openFilters)
   closeFilterBtn.addEventListener('click', closeFilters)
@@ -2968,7 +2969,7 @@ function reviewsTileInit () {
 
     for (let i = 0; i < texts.length; i++) {
       const toggle = texts[i].parentElement.querySelector('.reviews-tile__toggle')
-      if (texts[i].clientHeight > 230 && window.innerWidth >= 1440 || texts[i].clientHeight > 190 && window.innerWidth >= 744 || texts[i].clientHeight > 350 && window.innerWidth < 744) {
+      if (texts[i].clientHeight > 230 && window.innerWidth >= 1440 || texts[i].clientHeight > 190 && window.innerWidth >= 744 && window.innerWidth < 1440 || texts[i].clientHeight > 350 && window.innerWidth < 744) {
         texts[i].classList.add('hide')
         toggle.addEventListener('click', () => toggleText(texts[i]))
       } else {
@@ -2993,10 +2994,34 @@ function reviewsTileInit () {
     inputs[i].addEventListener('change', sort)
   }
 
+  async function makeFiltration (attr_type = '', attr_utm = '',p_paginate = 1) {
+    if (typeof attr_type !== 'undefined' && attr_type !== false &&
+      typeof attr_utm !== 'undefined' && attr_utm !== false) {
+      if (typeof p_paginate == 'undefined' || p_paginate == false || p_paginate == null){
+        p_paginate = 1;
+      }
+      console.log(attr_type);
+      console.log(attr_utm);
+      console.log(p_paginate);
+      $.request('ModelUrl::onPaginateR', {
+        data: {
+          'pagePaginate': p_paginate,
+          'utm_t': attr_utm,
+          'type': attr_type,
+        }
+      });
+    }
+  }
+
   function sort () {
     closeFilters()
     filterNote.innerHTML = this.value
-    console.log('sort')
+    $('.review___more_pagi').html("<div class='tile-loader'></div>");
+    let utm_f = reviewsTile.getAttribute('data-utm');
+    let attr_type = this.getAttribute('data-value');
+    let p_paginate = this.getAttribute('data-v');
+    makeFiltration (attr_type, utm_f, p_paginate);
+
   }
 
   function moreBtnInit () {
@@ -3014,7 +3039,7 @@ function reviewsTileInit () {
     moreBtnInit()
   })
 
-  observer.observe(reviewsTileWrap, config)
+  observer.observe(reviewsTileCards, config)
 
   function videoInit () {
     const videoBoxes = reviewsTile.querySelectorAll('.reviews-tile__video-box')
@@ -3330,4 +3355,18 @@ function trialTileInit () {
     // }
   }
 
+}
+
+const tutorCourseAnimation = document.querySelector('.tutor-course__animation')
+
+if (tutorCourseAnimation) tutorCourseAnimationInit()
+
+function tutorCourseAnimationInit () {
+  lottie.loadAnimation({
+    container: tutorCourseAnimation,
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'assets/files/tutor-course.json'
+  });
 }
