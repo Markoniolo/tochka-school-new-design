@@ -1,0 +1,158 @@
+.reviews-cap {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  @include media(lg) {
+    margin-top: 0;
+    margin-bottom: 30px;
+    @include bg-icon('reviews-cap/reviews-cap-bg_tablet.png');
+    background-size: cover;
+    padding: 30px 0 55px;
+  }
+  @include media(xs) {
+    padding: 30px 0;
+    @include bg-icon('reviews-cap/reviews-cap-bg_mob.png');
+    background-size: cover;
+  }
+  @include media(xxs) {
+    margin-bottom: 25px;
+  }
+}
+
+.reviews-cap__wrap {
+  display: flex;
+  align-items: center;
+  border-radius: 31px;
+  @include bg-icon('reviews-cap/reviews-cap-bg.png');
+  background-size: cover;
+  padding: 54px 60px 60px;
+  gap: 110px;
+  @include media(lg) {
+    background: unset;
+    padding: 0;
+    border-radius: 0;
+    gap: 35px;
+  }
+  @include media(xs) {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+.reviews-cap__area {
+  width: 612px;
+  @include media(lg) {
+    width: 325px;
+  }
+  @include media(xs) {
+    width: 100%;
+  }
+}
+
+.reviews-cap__caption {
+  margin-bottom: 40px;
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 112%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 25px;
+    font-size: 30px;
+  }
+  @include media(xs) {
+    text-align: center;
+    max-width: 330px;
+    width: 100%;
+    margin: 0 auto 20px;
+    font-size: 27px;
+  }
+}
+
+.reviews-cap__text {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 136%;
+  color: #003c56;
+  max-width: 600px;
+  width: 100%;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 140%;
+    max-width: 285px;
+  }
+  @include media(xs) {
+    text-align: center;
+    font-size: 18px;
+    line-height: 23px;
+    max-width: 100%;
+  }
+  @include media(xxs) {
+    font-size: 16px;
+    line-height: 131%;
+  }
+}
+
+.reviews-cap__list {
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  @include media(lg) {
+    width: 320px;
+    gap: 15px;
+  }
+  @include media(xxs) {
+    width: 300px;
+    gap: 10px;
+  }
+}
+
+.reviews-cap__item {
+  border-radius: 20px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 123px;
+  padding: 18px;
+  width: calc(50% - 13px);
+  @include media(lg) {
+    min-height: 93px;
+    width: calc(50% - 8px);
+    border-radius: 10px;
+    padding: 12px 4px;
+  }
+  &:nth-child(3) {
+    width: 100%;
+  }
+}
+
+.reviews-cap__value {
+  margin-bottom: 14px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 78%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 6px;
+    font-size: 18px;
+    line-height: 85%;
+  }
+}
+
+.reviews-cap__note {
+  font-size: 18px;
+  line-height: 23px;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 14px;
+    line-height: 107%;
+  }
+  span {
+    @include media(xxs) {
+      display: none;
+    }
+  }
+}

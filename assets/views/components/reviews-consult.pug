@@ -1,0 +1,41 @@
+.reviews-consult
+  .cont
+    .reviews-consult__wrap
+      .reviews-consult__area
+        .reviews-consult__title Оставьте заявку на&nbsp;консультацию
+        ul.reviews-consult__list
+          each item in ['Поможем подобрать курс','Покажем как проходят уроки в нашей школе','Ответим на все ваши вопросы']
+            li.reviews-consult__item= item
+        picture.reviews-consult__picture
+          source(srcset=staticImg('reviews-consult/reviews-consult-1_xxs.svg') media="(max-width: 359px)")
+          source(srcset=staticImg('reviews-consult/reviews-consult-1_mob.svg') media="(max-width: 743px)")
+          source(srcset=staticImg('reviews-consult/reviews-consult-1_tablet.svg') media="(max-width: 1359px)")
+          img.reviews-consult__image(src=staticImg('reviews-consult/reviews-consult-1.svg') alt='')
+      form.reviews-consult__form(data-element='reviews-consult__form' data-request-validate)
+        .reviews-consult__inner
+          input.input_utm(name='utm' type='hidden' value='')
+          input(type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru/blog/voprosy-dlya-podrostkov-chto-polezno-i-interesno-obsudit-do-15-let")
+          input.reviews-consult__input.input-white(placeholder='Ваше имя' type='text' name='name' data-phone-pattern)
+          input.reviews-consult__input.input-white(placeholder='Номер телефона' type='tel' required data-element='input-phone-intl' name='phone')
+          input(name='tel' type='hidden' required data-element='input-phone-hidden')
+          button.reviews-consult__submit.btn-orange.btn-warning Оставить заявку
+          label.reviews-consult__label.checkbox-white-label
+            input.reviews-consult__checkbox.checkbox-white-input(name='policy' type='checkbox')
+            .reviews-consult__checkbox-view.checkbox-white-input-view
+            .reviews-consult__checkbox-text.checkbox-white-text
+              | Даю
+              |
+              a(href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target='_blank') Согласие
+              |
+              | на обработку персональных
+              | данных в соответствии с
+              |
+              a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf' target='_blank') Политикой
+          label.reviews-consult__label.checkbox-white-label
+            input.reviews-consult__checkbox.checkbox-white-input(name='news' type='checkbox')
+            .reviews-consult__checkbox-view.checkbox-white-input-view
+            .reviews-consult__checkbox-text.checkbox-white-text
+              | Согласен на
+              |
+              a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf' target='_blank') получение рекламы
+

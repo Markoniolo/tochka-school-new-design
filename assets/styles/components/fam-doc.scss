@@ -28,10 +28,12 @@
   position: relative;
   padding: 90px 80px 80px;
   @include bg-icon('fam-doc/fam-doc-bg.svg');
+  background-position: top;
   @include media(lg) {
     width: 482px;
     min-height: 1171px;
     @include bg-icon('fam-doc/fam-doc-bg_tablet.svg');
+    background-position: top;
     padding: 46px 50px 40px;
   }
   @include media(xs) {
@@ -39,6 +41,7 @@
     max-width: 320px;
     margin: 0 auto;
     @include bg-icon('fam-doc/fam-doc-bg_mob.svg');
+    background-position: top;
     padding: 30px 30px 40px;
   }
   @include media(xxs) {

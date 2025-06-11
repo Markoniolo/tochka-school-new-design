@@ -87,14 +87,14 @@
       width: 114px;
     }
     @include media(xs) {
-      width: 100px;
+      width: 46px;
     }
     @include media(xxs) {
-      width: 94px;
+      width: 43px;
     }
     span {
       display: block;
-      @include media(xxs) {
+      @include media(xs) {
         display: none;
       }
     }

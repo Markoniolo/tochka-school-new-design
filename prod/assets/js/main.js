@@ -1154,6 +1154,16 @@ function familyTeachersSliderInit () {
   }
 }
 
+const container = document.querySelector('.family-tutor__lottie')
+
+lottie.loadAnimation({
+  container: container, // the dom element that will contain the animation
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'assets/files/family-tutor.json' // the path to the animation json
+});
+
 const faqItems = document.querySelectorAll("[data-element='faq-item']")
 
 for (let i = 0; i < faqItems.length; i++) {

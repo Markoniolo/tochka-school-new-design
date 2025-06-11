@@ -18,19 +18,23 @@
     @include bg-icon('library-discount/library-discount-bg_tablet.png');
     background-size: cover;
     min-height: 232px;
-    padding: 16px 15px 20px;
+    padding: 16px 25px 20px;
   }
   @include media(xs) {
     @include bg-icon('library-discount/library-discount-bg_mob.png');
     background-size: cover;
-    min-height: 470px;
-    padding: 20px 14px 15px;
+    min-height: unset;
+    padding: 21px 18px 15px;
+  }
+  @include media(xxs) {
+    @include bg-icon('library-discount/library-discount-bg_xxs.png');
+    background-size: cover;
   }
 }
 
 .library-discount__title {
   margin-bottom: 38px;
-  max-width: 905px;
+  max-width: 675px;
   width: 100%;
   font-weight: 500;
   font-size: 45px;
@@ -39,10 +43,10 @@
   @include media(lg) {
     margin-bottom: 24px;
     font-size: 25px;
-    max-width: 520px;
+    max-width: 375px;
   }
   @include media(xs) {
-    margin-bottom: 22px;
+    margin-bottom: 20px;
   }
 }
 
@@ -57,8 +61,8 @@
     gap: 8px;
   }
   @include media(xs) {
-    margin-bottom: 20px;
-    gap: 15px;
+    margin-bottom: 32px;
+    gap: 7px;
   }
 }
 
@@ -99,27 +103,27 @@
   color: #fff;
   background-color: #f37e60;
   box-shadow: 0 4px 7px 0 rgba(243, 126, 96, 0.33);
-  border-radius: 10px 10px 10px 0;
+  border-radius: 7px;
   position: absolute;
-  right: -100px;
-  top: -6px;
+  right: -230px;
+  top: 36px;
   width: 214px;
   height: 38px;
   @include media(lg) {
+    border-radius: 5px;
     font-size: 12px;
     width: 162px;
     height: 23px;
-    top: -2px;
-    right: -48px;
+    top: 24px;
+    right: -171px;
   }
   @include media(xs) {
     width: 158px;
     top: unset;
     position: static;
     margin-left: auto;
-    border-radius: 0 10px 10px 10px;
-    margin-top: -8px;
-    margin-right: 28px;
+    border-radius: 4px;
+    height: 19px;
   }
 }
 
@@ -136,10 +140,15 @@
     right: 26px;
   }
   @include media(xs) {
-    margin: 0 auto 24px;
+    margin: 0 auto 16px;
     position: static;
+    width: 263px;
+    height: 142px;
+  }
+  @include media(xxs) {
     width: 182px;
     height: 111px;
+    margin: 0 auto 18px;
   }
 }
 

@@ -1,0 +1,8 @@
+.reviews-line
+  .cont
+    ul.reviews-line__list
+      each item in [1,2,3,4,5,6]
+        li.reviews-line__item
+          picture.reviews-line__picture
+            source(srcset=staticImg(`reviews-line/reviews-line-${item}_mob.svg`) media="(max-width: 743px)")
+            img.reviews-line__image(src=staticImg(`reviews-line/reviews-line-${item}.svg`) alt='')

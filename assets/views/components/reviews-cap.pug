@@ -1,0 +1,20 @@
+-
+  const reviewsCapList = [
+    { value: '4,9', note: 'средняя оценка родителей' },
+    { value: '92%', note: '<span>позитивно</span> оценили общение с тьютором' },
+    { value: '44 000+', note: 'учеников прошли обучение у нас' }
+  ]
+
+.reviews-cap
+  .cont
+    .reviews-cap__wrap
+      .reviews-cap__area
+        h1.reviews-cap__caption Отзывы об обучении в «Точке Знаний»
+        .reviews-cap__text.
+          За годы работы мы помогли улучшить оценки, получить твёрдые знания и успешно сдать экзамены тысячам
+          учеников. Многие из них поделились с нами своими достижениями и благодарностями.
+      ul.reviews-cap__list
+        each item in reviewsCapList
+          li.reviews-cap__item
+            .reviews-cap__value= item.value
+            .reviews-cap__note!= item.note

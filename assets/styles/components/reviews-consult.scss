@@ -1,0 +1,181 @@
+.reviews-consult {
+  margin-bottom: 120px;
+  @include media(lg) {
+    margin-bottom: 80px;
+  }
+  @include media(xs) {
+    margin-bottom: 60px;
+  }
+}
+
+.reviews-consult__wrap {
+  border-radius: 31px;
+  background: rgba(255, 255, 255, 0.38);
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  @include bg-icon('reviews-consult/reviews-consult-bg.png');
+  background-size: cover;
+  min-height: 375px;
+  @include media(lg) {
+    overflow: visible;
+    border-radius: 0;
+    min-height: 395px;
+    background: unset;
+  }
+  @include media(xs) {
+    min-height: auto;
+    display: block;
+    @include bg-icon('reviews-consult/reviews-consult-bg_mob.png');
+    background-size: cover;
+  }
+}
+
+.reviews-consult__area {
+  position: relative;
+  padding: 45px 60px;
+  flex-grow: 1;
+  @include media(lg) {
+    padding: 0;
+  }
+  @include media(xs) {
+    padding: 26px 0 0;
+  }
+  &::before {
+    content: '';
+    width: 226px;
+    height: 136px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @include bg-icon('reviews-consult/decor.svg');
+    @include media(lg) {
+      content: none;
+    }
+  }
+}
+
+.reviews-consult__title {
+  margin-bottom: 30px;
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 104%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 25px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+  @include media(xs) {
+    margin: 0 auto 18px;
+    text-align: center;
+    max-width: 280px;
+    width: 100%;
+  }
+}
+
+.reviews-consult__list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  @include media(xs) {
+    width: 244px;
+    margin: 0 auto 25px;
+  }
+}
+
+.reviews-consult__item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 18px;
+  line-height: 100%;
+  @include media(lg) {
+    gap: 8px;
+    font-size: 15px;
+  }
+  &::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    @include bg-icon('icons/ic_point_blue.svg');
+    @include media(lg) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.reviews-consult__picture {
+  position: absolute;
+  bottom: -30px;
+  right: -140px;
+  @include media(lg) {
+    bottom: 0;
+    right: -26px;
+  }
+  @include media(xs) {
+    position: static;
+    margin-bottom: -15px;
+  }
+}
+
+.reviews-consult__image {
+  width: 600px;
+  height: 330px;
+  @include media(lg) {
+    width: 408px;
+    height: 237px;
+  }
+  @include media(xs) {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+.reviews-consult__form {
+  position: relative;
+  z-index: 1;
+  width: 400px;
+  flex-shrink: 0;
+  background: #6683c2;
+  @include media(lg) {
+    width: 353px;
+    border-radius: 10px;
+  }
+  @include media(xs) {
+    width: 100%;
+  }
+}
+
+.reviews-consult__inner {
+  padding: 41px 55px;
+  @include media(lg) {
+    padding: 35px 32px;
+  }
+  @include media(xxs) {
+    padding: 20px 15px 16px;
+  }
+}
+
+.reviews-consult__input {
+  margin-bottom: 20px;
+  width: 100%;
+  &:last-of-type {
+    margin-bottom: 30px;
+  }
+}
+
+.reviews-consult__submit {
+  margin-bottom: 25px;
+  display: block;
+  width: 100%;
+}
+
+.reviews-consult__label {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
