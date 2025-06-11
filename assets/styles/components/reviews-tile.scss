@@ -154,6 +154,7 @@
 }
 
 .reviews-tile__wrap {
+  position: relative;
   width: calc(100% - 476px);
   @include media(lg) {
     width: 100%;
@@ -327,6 +328,7 @@
     display: none;
     & ~ video {
       height: auto;
+      position: static;
     }
   }
 }
@@ -357,8 +359,13 @@
 }
 
 .reviews-tile__video {
+  position: absolute;
   width: 100%;
   height: 100%;
+  border-radius: 10px;
+  @include media(lg) {
+    position: static;
+  }
 }
 
 .reviews-tile__video-placeholder {

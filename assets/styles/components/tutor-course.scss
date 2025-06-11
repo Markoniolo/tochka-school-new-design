@@ -1,0 +1,203 @@
+.tutor-course {
+  margin-bottom: 120px;
+  overflow: hidden;
+  @include media(lg) {
+    margin-bottom: 0;
+  }
+  @include media(xs) {
+    margin-top: -396px;
+  }
+}
+
+.tutor-course__wrap {
+  display: flex;
+  justify-content: space-between;
+  @include media(lg) {
+    gap: 13px;
+    justify-content: unset;
+  }
+  @include media(xs) {
+    display: block;
+  }
+}
+
+.tutor-course__area {
+  flex-shrink: 0;
+  position: relative;
+  width: 590px;
+  padding: 75px 0 108px;
+  @include media(lg) {
+    width: 348px;
+    padding: 35px 0 38px;
+  }
+  @include media(xs) {
+    width: 100%;
+    padding: 396px 0 0;
+  }
+  &::before {
+    content: '';
+    width: 1196px;
+    height: 1196px;
+    position: absolute;
+    top: -235px;
+    left: -487px;
+    background: #6683c2;
+    border-radius: 50%;
+    @include media(lg) {
+      width: 832px;
+      height: 832px;
+      top: -245px;
+      left: -310px;
+    }
+    @include media(xs) {
+      width: 1000px;
+      height: 1000px;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.tutor-course__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.tutor-course__title {
+  margin-bottom: 45px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 97%;
+  color: #fff;
+  @include media(lg) {
+    margin-bottom: 25px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+  @include media(xs) {
+    text-align: center;
+  }
+}
+
+.tutor-course__note {
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 517px;
+  border-radius: 10px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
+  background: #fff;
+  font-size: 18px;
+  line-height: 122%;
+  padding: 25px 23px 25px 38px;
+  @include media(lg) {
+    max-width: 348px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 12px 15px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+}
+
+.tutor-course__list {
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  @include media(lg) {
+    margin-bottom: 20px;
+  }
+}
+
+.tutor-course__item {
+  position: relative;
+  padding-left: 31px;
+  font-size: 16px;
+  line-height: 100%;
+  color: #fff;
+  width: calc(50% - 6px);
+  @include media(lg) {
+    width: 100%;
+    padding-left: 22px;
+    font-size: 15px;
+  }
+  &::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include bg-icon('icons/ic_point_orange.svg');
+    @include media(lg) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.tutor-course__text {
+  width: 100%;
+  max-width: 548px;
+  font-size: 16px;
+  line-height: 150%;
+  color: #fff;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+    max-width: 332px;
+  }
+}
+
+.tutor-course__box {
+  position: relative;
+  width: 684px;
+  height: 642px;
+  @include media(lg) {
+    width: 323px;
+    height: 347px;
+    align-self: flex-end;
+  }
+  @include media(xs) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.tutor-course__picture {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 550px;
+  height: 642px;
+  @include media(lg) {
+    width: 255px;
+    height: 347px;
+  }
+  @include media(xs) {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.tutor-course__image {
+  height: 100%;
+  @include media(xs) {
+    height: auto;
+  }
+}
+
+.tutor-course__animation {
+  width: 100%;
+  @include media(xs) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+  }
+}

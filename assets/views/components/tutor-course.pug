@@ -1,0 +1,22 @@
+.tutor-course
+  .cont
+    .tutor-course__wrap
+      .tutor-course__area
+        .tutor-course__inner
+          h2.tutor-course__title Персональный тьютор каждому ученику!
+          p.tutor-course__note.
+            Тьютор — опытный педагог по выбранному предмету. Он станет личным помощником в учёбе.
+            Будем на связи с Вами и ребёнком 5 дней в неделю.
+          ul.tutor-course__list
+            each item in ['Проверит домашнее задание','Поможет исправить ошибки','Ответит на вопросы по предмету','Станет помощником в учёбе']
+              li.tutor-course__item= item
+          p.tutor-course__text.
+            Тьютор не оставит ребёнка 1 на 1 с предметом. Зная его стартовый уровень, особенности и сложности,
+            тьютор объяснит непонятное, добьётся понимания каждой темы, поддержит перед контрольной, окружит
+            вниманием и заботой.
+      .tutor-course__box
+        picture.tutor-course__picture
+          source(srcset=staticImg('tutor-course/decor_mob.png') media="(max-width: 743px)")
+          source(srcset=staticImg('tutor-course/decor_tablet.png') media="(max-width: 1359px)")
+          img.tutor-course__image(src=staticImg('tutor-course/decor.png') alt='')
+        .tutor-course__animation

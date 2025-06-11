@@ -1,4 +1,6 @@
 .teacher {
+  position: relative;
+  z-index: 1;
   overflow: hidden;
   @include media(lg) {
     padding-bottom: 40px;

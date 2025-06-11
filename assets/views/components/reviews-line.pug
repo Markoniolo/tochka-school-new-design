@@ -1,8 +1,18 @@
+-
+  const reviewsLineList = [
+    'https://yandex.ru/maps/-/CHS6YW0c',
+    'https://otzovik.com/reviews/onlayn-shkola_tochka_znaniy/',
+    'https://www.tbank.ru/reviews/company/tochka-znany/194562/',
+    'https://zoon.ru/krasnodar/p-repetitor/andrej_aleksandrovich_sheludko/',
+    'https://zoon.ru/krasnodar/trainings/onlajn-shkola_tochka_znanij/reviews/',
+    'https://t.me/matematik_andrei_otzyvi'
+  ]
+
 .reviews-line
   .cont
-    ul.reviews-line__list
-      each item in [1,2,3,4,5,6]
-        li.reviews-line__item
+    .reviews-line__list
+      each item, index in reviewsLineList
+        a.reviews-line__item(href=item target="_blank")
           picture.reviews-line__picture
-            source(srcset=staticImg(`reviews-line/reviews-line-${item}_mob.svg`) media="(max-width: 743px)")
-            img.reviews-line__image(src=staticImg(`reviews-line/reviews-line-${item}.svg`) alt='')
+            source(srcset=staticImg(`reviews-line/reviews-line-${index+1}_mob.svg`) media="(max-width: 743px)")
+            img.reviews-line__image(src=staticImg(`reviews-line/reviews-line-${index+1}.svg`) alt='')

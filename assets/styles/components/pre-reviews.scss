@@ -16,6 +16,9 @@
       margin-top: 0;
     }
   }
+  & + .pre-end.pre-end_course {
+    padding-top: 0;
+  }
   &.summer {
     position: relative;
     z-index: 1;
