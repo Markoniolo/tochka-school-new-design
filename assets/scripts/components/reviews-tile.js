@@ -116,9 +116,21 @@ function reviewsTileInit () {
     }
 
     function playVideo () {
+
+        const oldActive = reviewsTile.querySelector('.reviews-tile__video-box.active')
+        if (oldActive) {
+          const video = oldActive.parentElement.querySelector('video')
+          oldActive.classList.remove('active')
+          video.pause()
+        }
+
       this.classList.add('active')
+      const that = this
       const video = this.parentElement.querySelector('video')
-      if (video) video.play()
+      if (video) {
+        video.play()
+        // video.addEventListener('pause', () => that.classList.remove('active'))
+      }
     }
   }
 

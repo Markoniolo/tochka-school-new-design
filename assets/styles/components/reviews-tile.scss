@@ -89,7 +89,7 @@
 }
 
 .reviews-tile__title {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   font-weight: 600;
   font-size: 24px;
   line-height: 101%;
@@ -103,10 +103,8 @@
 .reviews-tile__list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   padding-left: 15px;
   @include media(lg) {
-    gap: 25px;
     padding: 25px;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -120,6 +118,8 @@
 }
 
 .reviews-tile__label {
+  padding: 10px 0;
+  cursor: pointer;
   @include media(lg) {
     width: calc(50% - 13px);
   }
@@ -313,7 +313,6 @@
   overflow: hidden;
   @include media(lg) {
     width: 100%;
-    height: 95px;
   }
 }
 
@@ -324,6 +323,7 @@
   right: 0;
   bottom: 0;
   left: 0;
+  cursor: pointer;
   &.active {
     display: none;
     & ~ video {
@@ -365,6 +365,7 @@
   border-radius: 10px;
   @include media(lg) {
     position: static;
+    height: 95px;
   }
 }
 

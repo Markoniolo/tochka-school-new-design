@@ -7,10 +7,10 @@
     margin-bottom: -336px;
   }
   @include media(xs) {
-    margin-bottom: -326px;
+    margin-bottom: -270px;
   }
   @include media(xxs) {
-    margin-bottom: -310px;
+    margin-bottom: -268px;
   }
   &.open {
     margin-bottom: 0;
@@ -39,6 +39,7 @@
   @include media(xs) {
     width: 100%;
     max-width: 320px;
+    min-height: 1112px;
     margin: 0 auto;
     @include bg-icon('fam-doc/fam-doc-bg_mob.svg');
     background-position: top;

@@ -2,13 +2,7 @@
   background: radial-gradient(228.28% 137.53% at 85.56% 75.29%, #dae5fe 0%, #bedaff 100%);
   padding: 74px 0 274px;
   @include media(lg) {
-    padding: 36px 0 278px;
-  }
-  @include media(xs) {
-    padding: 36px 0 202px;
-  }
-  @include media(xxs) {
-    padding: 36px 0 210px;
+    padding: 36px 0 230px;
   }
 }
 
