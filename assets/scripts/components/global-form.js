@@ -75,7 +75,7 @@ function orderFormData (globalForm) {
     'name': globalForm.querySelector("[name='name']").value,
     'utm': globalForm.querySelector("[name='utm']").value,
     'tel': globalForm.querySelector("[name='tel']").value,
-    'class_name': globalForm.querySelector("[name='class_name']").value,
+    'class_name': globalForm.querySelector(".modal-order-new__select-input").value,
     'policy': globalForm.querySelector("[name='policy']").checked,
     'news': globalForm.querySelector("[name='news']").checked,
     'page_name': globalForm.querySelector("[name='page_name']").value,
@@ -114,11 +114,17 @@ function globalFormInit (form, func_name, type) {
 
   const news = form.querySelector('[name="news"]')
   const policy = form.querySelector('[name="policy"]')
-  const classSelect = globalForm.querySelector('.modal-order__select')
+  const classSelectInputs = globalForm.querySelectorAll('.modal-order-new__select-input')
+  const classSelectTop = globalForm.querySelector('.modal-order-new__select-top')
 
   if (news) news.addEventListener('change', () => news.closest('label').classList.remove('error-text'))
   if (policy) policy.addEventListener('change',() => policy.closest('label').classList.remove('error-text'))
-  if (classSelect) classSelect.addEventListener('change',() => classSelect.closest('.custom-select-container').querySelector('.custom-select-opener').classList.remove('error'))
+
+  for (let i = 0; i < classSelectInputs.length; i++) {
+    classSelectInputs[i].addEventListener('change', () => {
+      if (classSelectTop) classSelectTop.classList.remove('error')
+    })
+  }
 
   let iti
 
@@ -191,16 +197,19 @@ function globalFormInit (form, func_name, type) {
           isValid = false
         }
       }
-      if (classSelect) {
-        if (!classSelect.value) {
-          const opener = classSelect.closest('.custom-select-container').querySelector('.custom-select-opener')
-          opener.classList.add('error')
+
+      if (classSelectTop) {
+        const checkedClass = document.querySelector('.modal-order-new__select-input:checked')
+        if (!checkedClass) {
+          if (classSelectTop) classSelectTop.classList.add('error')
           isValid = false
         }
       }
 
       if (isValid) {
-        email_value = email.value;
+        if (email) {
+          email_value = email.value;
+        }
 
         btnSubmit.disabled = true;
         if (type === 'preFormData') {

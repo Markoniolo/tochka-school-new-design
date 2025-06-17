@@ -137,6 +137,10 @@
   @include media(xxs) {
     padding: 15px 25px;
   }
+  &.error {
+    background: #fff;
+    color: red;
+  }
   &.active {
     &::before {
       transform: translateY(-50%) rotate(180deg);
