@@ -2000,6 +2000,18 @@ function libraryCapInit () {
   }
 }
 
+const lottieAnimations = document.querySelectorAll('[data-path]')
+
+for (let i = 0; i < lottieAnimations.length; i++) {
+  lottie.loadAnimation({
+    container: lottieAnimations[i],
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: lottieAnimations[i].getAttribute('data-path')
+  })
+}
+
 const marathonChildThemes = document.querySelector('[data-element="marathon-child__themes"]')
 
 if (marathonChildThemes) marathonChildThemesInit()
@@ -3380,18 +3392,4 @@ function trialTileInit () {
     // }
   }
 
-}
-
-const tutorCourseAnimation = document.querySelector('.tutor-course__animation')
-
-if (tutorCourseAnimation) tutorCourseAnimationInit()
-
-function tutorCourseAnimationInit () {
-  lottie.loadAnimation({
-    container: tutorCourseAnimation,
-    renderer: 'svg',
-    loop: true,
-    autoplay: true,
-    path: tutorCourseAnimation.getAttribute('data-path')
-  });
 }
