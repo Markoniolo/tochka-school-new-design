@@ -1,0 +1,253 @@
+.tutor-family {
+  margin-bottom: 80px;
+  padding-top: 75px;
+  overflow: hidden;
+  @include media(lg) {
+    margin-bottom: 40px;
+    padding-top: 36px;
+    background: #FFFFFF;
+  }
+  & + .fam-doc {
+    margin-top: 0;
+  }
+}
+
+.tutor-family__title {
+  margin-bottom: 45px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 97%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 25px;
+    font-size: 25px;
+    max-width: 296px;
+    width: 100%;
+  }
+}
+
+.tutor-family__area {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  @include media(xs) {
+    display: block;
+  }
+  &:before {
+    content: '';
+    width: 101px;
+    height: 101px;
+    background: #68ccea;
+    border-radius: 50%;
+    position: absolute;
+    top: -32px;
+    right: -232px;
+    @include media(lg) {
+      width: 41px;
+      height: 41px;
+      top: -95px;
+      right: 10px;
+    }
+    @include media(xs) {
+      top: unset;
+      right: unset;
+      bottom: 126px;
+      left: -2px;
+      width: 36px;
+      height: 35px;
+    }
+    @include media(xxs) {
+      height: 25px;
+      width: 25px;
+      bottom: 90px;
+      left: 0;
+    }
+  }
+  &::after {
+    @include media(lg) {
+      content: '';
+      background: #7fcbb4;
+      border-radius: 50%;
+      position: absolute;
+      top: -65px;
+      right: -55px;
+      width: 67px;
+      height: 67px;
+    }
+    @include media(xs) {
+      top: unset;
+      right: unset;
+      bottom: 25px;
+      left: 16px;
+      width: 82px;
+      height: 82px;
+    }
+    @include media(xxs) {
+      height: 56px;
+      width: 56px;
+      bottom: 24px;
+      left: 14px;
+    }
+  }
+}
+
+.tutor-family__left {
+  position: relative;
+  padding-bottom: 222px;
+  @include media(lg) {
+    padding-bottom: 40px;
+  }
+  @include media(xs) {
+    padding-bottom: 0;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -230px;
+    left: -20px;
+    width: 680px;
+    height: 438px;
+    @include bg-icon('tutor-family/decor.svg');
+    @include media(lg) {
+      display: none;
+    }
+  }
+}
+
+.tutor-family__list {
+  position: relative;
+  z-index: 1;
+  border-radius: 10px;
+  width: 562px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+  background: #fff;
+  padding: 35px 20px 35px 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  @include media(lg) {
+    width: 320px;
+    padding: 12px;
+    gap: 16px;
+  }
+  @include media(xs) {
+    width: 100%;
+    gap: 12px;
+    padding: 15px;
+  }
+  @include media(xxs) {
+    padding: 13px;
+    gap: 6px;
+  }
+}
+
+.tutor-family__item {
+  position: relative;
+  font-size: 18px;
+  line-height: 23px;
+  padding-left: 31px;
+  @include media(lg) {
+    padding-left: 22px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+  &::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    @include bg-icon('icons/ic_point_orange.svg');
+    @include media(lg) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.tutor-family__box {
+  width: 684px;
+  flex-shrink: 0;
+  position: relative;
+  margin-top: -145px;
+  @include media(lg) {
+    width: 340px;
+    margin-top: -20px;
+  }
+  @include media(xs) {
+    margin-top: 20px;
+    width: 100%;
+    min-height: 353px;
+  }
+  &::before {
+    content: '';
+    background: #6683c2;
+    position: absolute;
+    width: 655px;
+    height: 655px;
+    border-radius: 50%;
+    bottom: -220px;
+    left: 157px;
+    @include media(lg) {
+      width: 412px;
+      height: 412px;
+      bottom: -178px;
+      left: 63px;
+    }
+    @include media(xs) {
+      width: 432px;
+      height: 432px;
+      bottom: -122px;
+      left: 112px;
+    }
+    @include media(xxs) {
+      width: 365px;
+      height: 365px;
+      bottom: -106px;
+      left: 125px;
+    }
+  }
+}
+
+.tutor-family__picture {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 382px;
+  height: 539px;
+  @include media(lg) {
+    width: 186px;
+    height: 321px;
+  }
+  @include media(xs) {
+    width: 206px;
+    height: 362px;
+    right: -20px;
+  }
+  @include media(xxs) {
+    width: 199px;
+    height: 350px;
+    right: -70px;
+  }
+}
+
+.tutor-course__image {
+  height: 100%;
+  object-fit: cover;
+}
+
+.tutor-family__animation {
+  width: 100%;
+  position: relative;
+  top: 75px;
+  @include media(lg) {
+    position: static;
+    top: 0;
+  }
+  @include media(xxs) {
+    width: calc(100% + 50px);
+  }
+}

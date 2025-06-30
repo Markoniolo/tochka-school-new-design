@@ -1,0 +1,21 @@
+-
+  const tutorFamilyList = [
+    'Каждый предмет ребёнку будет помогать усваивать тьютор. Тьютор - профессиональный преподаватель по выбранному предмету.',
+    'Тьютор проверит домашнюю работу, разберет вместе с ребенком ошибки, поможет их исправить и всегда будет на связи.',
+    'С тьютором невозможна ситуация «я не понял тему»',
+  ]
+
+.tutor-family
+  .cont
+    h2.tutor-family__title Персональный тьютор каждому ученику!
+    .tutor-family__area
+      .tutor-family__left
+        ul.tutor-family__list
+          each item in tutorFamilyList
+            li.tutor-family__item= item
+      .tutor-family__box
+        picture.tutor-family__picture
+          source(srcset=staticImg('tutor-family/tutor_mob.png') media="(max-width: 743px)")
+          source(srcset=staticImg('tutor-family/tutor_tablet.png') media="(max-width: 1359px)")
+          img.tutor-family__image(src=staticImg('tutor-family/tutor.png') alt='')
+        .tutor-family__animation(data-path='assets/files/tutor-course.json')

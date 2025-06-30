@@ -1,6 +1,9 @@
 .family-teachers {
   overflow: hidden;
   background: #fff;
+  @include media(lg) {
+    background: transparent;
+  }
   @include media(xs) {
     padding-bottom: 30px;
   }
