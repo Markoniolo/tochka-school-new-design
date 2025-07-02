@@ -1,4 +1,4 @@
-mixin family-cap(mod, title = 'Семейное обучение', id='pre-reg')
+mixin family-cap(mod, title = 'Семейное обучение', id='pre-reg', over, timer)
   .family-cap(class = mod ? mod : false)
     .family-cap__cont.cont
       .family-cap__area
@@ -13,4 +13,15 @@ mixin family-cap(mod, title = 'Семейное обучение', id='pre-reg')
           .family-cap__ticket.green Высокий спрос
         picture.family-cap__picture
           img.family-cap__image(src=staticImg('family-cap/family-cap.svg') alt='')
-        a.family-cap__button.btn-orange(href=`#${id}` data-role="scroll-to-anchor") Начать обучение
+        if timer
+          .family-cap__timer-box
+            .family-cap__timer-text До окончания продаж летних курсов осталось:
+            .family-cap__timer(date-end="2025-07-10T12:00:00" data-element="timer")
+              each item in [{number: '', note: 'день'},{number: '', note: 'час'},{number: '', note: 'мин'},{number: '', note: 'сек'}]
+                .family-cap__timer-area
+                  .family-cap__timer-number(data-element="timer-number")= item.number
+                  .family-cap__timer-note= item.note
+        if over
+          .family-cap__button.btn-orange.over Продажи завершены
+        else
+          a.family-cap__button.btn-orange(href=`#${id}` data-role="scroll-to-anchor") Начать обучение

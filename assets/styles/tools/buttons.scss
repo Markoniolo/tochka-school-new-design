@@ -157,6 +157,11 @@
       }
     }
   }
+  &.over {
+    background: rgba(0, 0, 0, 0.11);
+    color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+  }
 }
 
 .btn-border {

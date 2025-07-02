@@ -179,6 +179,130 @@
       }
     }
   }
+  &_fam {
+    background: radial-gradient(306.45% 110.89% at 90.82% 82.4%, #a6cfff 0%, #edf7ff 100%);
+    min-height: 196px;
+    @include media(lg) {
+      min-height: 90px;
+    }
+    @include media(xs) {
+      min-height: 100px;
+    }
+    @include media(xxs) {
+      min-height: 90px;
+    }
+    .cap-list__tag {
+      background: rgba(255, 255, 255, 0.39);
+    }
+    .cap-list__decor {
+      position: absolute;
+      width: 236px;
+      height: 172px;
+      bottom: 0;
+      right: 0;
+      @include bg-icon('cap/cap-decor-fam.svg');
+      @include media(lg) {
+        width: 202px;
+        height: 90px;
+        @include bg-icon('cap/cap-decor-fam_tablet.svg');
+      }
+      @include media(xs) {
+        width: 210px;
+        height: 100px;
+        @include bg-icon('cap/cap-decor-fam_mob.svg');
+      }
+      @include media(xs) {
+        width: 166px;
+        height: 90px;
+        @include bg-icon('cap/cap-decor-fam_xxs.svg');
+      }
+    }
+    .cap-list__discount {
+      top: 16px;
+      @include media(lg) {
+        top: 45px;
+        left: 108px;
+      }
+      @include media(xs) {
+        top: 53px;
+        left: 109px;
+      }
+      @include media(xxs) {
+        top: 49px;
+        left: 105px;
+      }
+    }
+  }
+  &_it {
+    background: radial-gradient(306.45% 110.89% at 90.82% 82.4%, #a7bcff 0%, #dfe7ff 100%);
+    min-height: 196px;
+    @include media(lg) {
+      min-height: 90px;
+      margin-left: 0;
+    }
+    @include media(xs) {
+      min-height: 100px;
+    }
+    @include media(xxs) {
+      min-height: 90px;
+    }
+    .cap-list__tags {
+      max-width: 372px;
+      margin-left: -156px;
+      @include media(lg) {
+        margin-left: 0;
+      }
+    }
+    .cap-list__tag {
+      background: rgba(255, 255, 255, 0.35);
+      &:first-child {
+        margin-left: 120px;
+        @include media(lg) {
+          margin-left: 0;
+        }
+      }
+    }
+    .cap-list__decor {
+      position: absolute;
+      width: 350px;
+      height: 196px;
+      bottom: 0;
+      right: 0;
+      @include bg-icon('cap/cap-decor-it.svg');
+      @include media(lg) {
+        width: 174px;
+        height: 90px;
+        right: 36px;
+        @include bg-icon('cap/cap-decor-it_tablet.svg');
+      }
+      @include media(xs) {
+        width: 313px;
+        height: 100px;
+        right: 0;
+        @include bg-icon('cap/cap-decor-it_mob.svg');
+      }
+      @include media(xxs) {
+        width: 174px;
+        height: 90px;
+        @include bg-icon('cap/cap-decor-it_xxs.svg');
+      }
+    }
+    .cap-list__discount {
+      top: 16px;
+      @include media(lg) {
+        top: 14px;
+        left: 100px;
+      }
+      @include media(xs) {
+        top: 22px;
+        left: 109px;
+      }
+      @include media(xxs) {
+        top: 17px;
+        left: 98px;
+      }
+    }
+  }
 }
 
 .cap-list__discount {

@@ -23,7 +23,7 @@
     '1 урок — 260 руб',
   ]
 
-mixin summer-cost(mod, title='Летний курс', price='6 000 ₽')
+mixin summer-cost(mod, title='Летний курс', price='6 000 ₽', over)
   .summer-cost#summer-cost(class = mod ? mod : false data-btn-fixed-hide="true")
     .summer-cost__cont.cont
       h2.summer-cost__caption Стоимость летнего абонемента
@@ -35,8 +35,9 @@ mixin summer-cost(mod, title='Летний курс', price='6 000 ₽')
           .summer-cost__inner
             .summer-cost__top
               .summer-cost__title= title
-              .summer-cost__date С 5 июня по 31 августа
-              .summer-cost__price= price
+              if !over
+                .summer-cost__date С 5 июня по 31 августа
+                .summer-cost__price= price
             .summer-cost__headline Что включено
             if mod === 'family'
               .summer-cost__list
@@ -62,12 +63,17 @@ mixin summer-cost(mod, title='Летний курс', price='6 000 ₽')
           //  img.summer-cost__bonus-decor(src=staticImg('summer-cost/summer-cost-2.png') alt='')
           //  .summer-cost__bonus-prize
           //  .summer-cost__start Начните обучение сразу после оплаты
-          a.summer-cost__button.btn-orange(href="#") Начать обучение
+          if over
+            .summer-cost__button.btn-orange.over Продажи завершены
+          else
+            a.summer-cost__button.btn-orange(href="#") Начать обучение
         .summer-cost__consult
           .summer-cost__title Нужна консультация?
           .summer-cost__text Задавайте любые вопросы, поможем подобрать занятия
           picture.summer-cost__decor
-            if mod === 'family'
+            if over
+              img.summer-cost__decor-image(src=staticImg(`summer-cost/summer-cost-consult-decor-3.png`) alt='')
+            else if mod === 'family'
               img.summer-cost__decor-image(src=staticImg(`summer-cost/summer-cost-consult-decor-2.png`) alt='')
             else
               img.summer-cost__decor-image(src=staticImg(`summer-cost/summer-cost-consult-decor-1.png`) alt='')

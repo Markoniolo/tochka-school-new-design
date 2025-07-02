@@ -5,6 +5,44 @@
   right: 0;
   left: 0;
   padding: 0 10px;
+  &.blue {
+    .summer-fixed__area {
+      max-width: 725px;
+      padding: 16px 30px;
+      background: radial-gradient(181.99% 122.68% at 90.66% 82.56%, #dae5fe 0%, #bedaff 100%);
+      @include media(lg) {
+        padding: 18px 20px;
+        max-width: 684px;
+      }
+      @include media(xs) {
+        padding: 14px 10px 16px;
+        max-width: 353px;
+        flex-direction: column;
+      }
+    }
+    .summer-fixed__text {
+      margin-right: 28px;
+      font-size: 24px;
+      line-height: 30px;
+      @include media(lg) {
+        margin-right: 20px;
+      }
+      @include media(xs) {
+        margin-right: 0;
+        font-size: 15px;
+        line-height: 120%;
+      }
+    }
+    .summer-fixed__button {
+      max-width: 230px;
+      @include media(lg) {
+        max-width: 179px;
+      }
+      @include media(xs) {
+        max-width: 164px;
+      }
+    }
+  }
 }
 
 .summer-fixed__area {

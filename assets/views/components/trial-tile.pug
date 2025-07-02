@@ -1,4 +1,4 @@
-mixin trial-tile(mod, title = 'Любой курс за 290 ₽')
+mixin trial-tile(mod, title = 'Любой курс за 290 ₽', over)
   .trial-tile#trial-tile(class = mod ? mod : false)
     .trial-tile__cont.cont
       h2.trial-tile__title.trial-title= title
@@ -42,9 +42,15 @@ mixin trial-tile(mod, title = 'Любой курс за 290 ₽')
                 .trial-tile__text Получайте школьное образование дома. Онлайн. С лучшими учителями РФ, внимательными тьюторами и аттестацией.
               .trial-tile__bottom
                 if mod === 'summer'
-                  a.trial-tile__link.btn-orange(href='#') Записаться за 3 090 ₽
+                  if over
+                    .trial-tile__link.btn-orange.over Продажи завершены
+                  else
+                    a.trial-tile__link.btn-orange(href='#') Записаться за 3 090 ₽
                   a.trial-tile__course(href='#') О курсе
                 else
-                  a.trial-tile__link.btn-orange(href='#') Начать обучение
+                  if over
+                    .trial-tile__link.btn-orange.over Продажи завершены
+                  else
+                    a.trial-tile__link.btn-orange(href='#') Начать обучение
                   .trial-tile__price-current 290 ₽
                   .trial-tile__price-old 1 750 ₽

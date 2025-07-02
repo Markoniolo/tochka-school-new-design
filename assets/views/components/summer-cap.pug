@@ -1,9 +1,21 @@
-.summer-cap
-  .summer-cap__cont.cont
-    .summer-cap__area
-      h1.summer-cap__caption!= 'Летние <br> онлайн-курсы!'
-      .summer-cap__text Уроки в записи + проверка знаний от тьютора
-      .summer-cap__list
-        each item in ['Закрыть старые пробелы','Повторить программу','Пройти материал наперёд','Освоить новые направления']
-          .summer-cap__item= item
-      a.summer-cap__button.btn-orange(href="#trial-tile" data-role="scroll-to-anchor") Выбрать предмет
+mixin summer-cap(mod)
+  .summer-cap(class=mod ? mod : false)
+    .summer-cap__cont.cont
+      .summer-cap__area
+        h1.summer-cap__caption!= 'Летние <br> онлайн-курсы!'
+        .summer-cap__text Уроки в записи + проверка знаний от тьютора
+        .summer-cap__list
+          each item in ['Закрыть старые пробелы','Повторить программу','Пройти материал наперёд','Освоить новые направления']
+            .summer-cap__item= item
+        if mod === 'over'
+          .summer-cap__button.btn-orange Продажи завершены
+        else
+          a.summer-cap__button.btn-orange(href="#trial-tile" data-role="scroll-to-anchor") Выбрать предмет
+        if mod === 'timer'
+          .summer-cap__timer-box
+            .summer-cap__timer-text До окончания продаж летних курсов осталось:
+            .summer-cap__timer(date-end="2025-07-10T12:00:00" data-element="timer")
+              each item in [{number: '', note: 'день'},{number: '', note: 'час'},{number: '', note: 'мин'},{number: '', note: 'сек'}]
+                .summer-cap__timer-area
+                  .summer-cap__number(data-element="timer-number")= item.number
+                  .summer-cap__note= item.note

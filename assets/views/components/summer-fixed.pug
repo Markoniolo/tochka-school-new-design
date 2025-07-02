@@ -1,9 +1,5 @@
-.summer-fixed
-  .summer-fixed__area
-    .summer-fixed__text
-      | Данный курс сейчас доступен только в летнем формате.
-      br
-      | Переходите на страницу летнего курса.
-      br
-      | Занятия в 4 четверти в подарок!
-    a.summer-fixed__button.btn-orange(href="#") Перейти
+mixin summer-fixed(mod, text)
+  .summer-fixed(class = mod ? mod : false)
+    .summer-fixed__area
+      .summer-fixed__text!= text
+      a.summer-fixed__button.btn-orange(href="#") Перейти

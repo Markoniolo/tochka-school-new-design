@@ -1,4 +1,4 @@
-mixin course-cap(mod, id='pre-reg')
+mixin course-cap(mod, id='pre-reg', over, timer)
   .course-cap(class = mod ? `course-cap_${mod}` : false)
     .course-cap__cont.cont
       .course-cap__area
@@ -37,7 +37,10 @@ mixin course-cap(mod, id='pre-reg')
               else
                 img.course-cap__image(src=staticImg('course-cap/Kostileva.png') alt='')
           .course-cap__buttons
-            a.course-cap__button.btn-orange(href=`#${id}` data-role='scroll-to-anchor') Начать обучение
+            if over
+              .course-cap__button.btn-orange.over Продажи завершены
+            else
+              a.course-cap__button.btn-orange(href=`#${id}` data-role='scroll-to-anchor') Начать обучение
             if mod === "3-teachers"
               .course-cap__3-teachers
                 | Елена Владимировна Щукина
@@ -50,3 +53,11 @@ mixin course-cap(mod, id='pre-reg')
                 .course-cap__author Скоро здесь появится учитель
               else
                 .course-cap__author Галина Валерьевна Шевченко
+            if timer
+              .course-cap__timer-box
+                .course-cap__timer-text До окончания продаж летних курсов осталось:
+                .course-cap__timer(date-end="2025-07-10T12:00:00" data-element="timer")
+                  each item in [{number: '', note: 'день'},{number: '', note: 'час'},{number: '', note: 'мин'},{number: '', note: 'сек'}]
+                    .course-cap__timer-area
+                      .course-cap__timer-number(data-element="timer-number")= item.number
+                      .course-cap__timer-note= item.note

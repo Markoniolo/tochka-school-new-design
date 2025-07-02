@@ -273,3 +273,88 @@
     gap: 20px 0;
   }
 }
+
+.summer-how-2__timer-wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.summer-how-2__timer-title {
+
+}
+
+.summer-how-2__timer-box {
+  background: #a1d86b;
+  border-radius: 20px;
+  padding: 20px 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 500px;
+  width: 100%;
+  @include media(lg) {
+    border-radius: 10px;
+    max-width: 388px;
+    gap: 17px;
+    padding: 15px 20px;
+  }
+  @include media(xs) {
+    display: none;
+  }
+}
+
+.summer-how-2__timer-text {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 111%;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 15px;
+  }
+  @include media(xs) {
+    text-align: center;
+  }
+}
+
+.summer-how-2__timer {
+  flex-shrink: 0;
+  width: 207px;
+  display: flex;
+  gap: 17px;
+  @include media(lg) {
+    width: 146px;
+    gap: 9px;
+  }
+}
+
+.summer-how-2__timer-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.summer-how-2__timer-number {
+  border-radius: 10px;
+  width: 39px;
+  height: 39px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+  background: #fff;
+  font-size: 22px;
+  line-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include media(lg) {
+    width: 28px;
+    height: 28px;
+    font-size: 15px;
+    border-radius: 7px;
+  }
+}
+
+.summer-how-2__timer-note {
+  font-size: 13px;
+  line-height: 100%;
+}

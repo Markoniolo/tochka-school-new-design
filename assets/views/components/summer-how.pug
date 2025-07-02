@@ -13,11 +13,24 @@
     'Доступ к 2 доп. предметам на выбор в записи (программирование, языки, шахматы, математика и логика)',
   ]
 
-mixin summer-how(mod)
+mixin summer-how(mod, timer)
   .summer-how(class = mod ? mod : false)
     .summer-how__cont.cont
-      h2.summer-how__caption Как будет проходить обучение
-      .summer-how__note С 5 июня по 31 августа
+      if timer
+        .summer-how__timer-wrap
+          .summer-how__timer-title
+            h2.summer-how__caption Как будет проходить обучение
+            .summer-how__note С 5 июня по 31 августа
+          .summer-how__timer-box
+            .summer-how__timer-text До окончания продаж летних курсов осталось:
+            .summer-how__timer(date-end="2025-07-10T12:00:00" data-element="timer")
+              each item in [{number: '', note: 'день'},{number: '', note: 'час'},{number: '', note: 'мин'},{number: '', note: 'сек'}]
+                .summer-how__timer-area
+                  .summer-how__timer-number(data-element="timer-number")= item.number
+                  .summer-how__timer-note= item.note
+      else
+        h2.summer-how__caption Как будет проходить обучение
+        .summer-how__note С 5 июня по 31 августа
       .summer-how__wrap
         .summer-how__list
           if (mod === 'family')

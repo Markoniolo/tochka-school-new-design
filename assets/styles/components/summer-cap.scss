@@ -34,6 +34,41 @@
     background-position: top center;
     margin-bottom: 70px;
   }
+  &.timer {
+    @include media(md) {
+      margin-bottom: 72px;
+    }
+    @include media(xs) {
+      margin-bottom: 180px;
+    }
+    .summer-cap__area {
+      min-height: calc(100vw * 910 / 1920);
+      @include media(lg) {
+        min-height: calc(100vw * 400 / 744);
+      }
+      @include media(xs) {
+        min-height: calc(100vw * 576 / 532);
+      }
+      @include media(xxs) {
+        min-height: calc(100vw * 360 / 292);
+      }
+    }
+    .summer-cap__button {
+      @include media(xs) {
+        order: 10;
+        position: relative;
+        top: 150px;
+        margin-top: 20px;
+      }
+    }
+  }
+  &.over {
+    .summer-cap__button {
+      color: #888888;
+      background: #E3E3E3;
+      pointer-events: none;
+    }
+  }
 }
 
 .summer-cap__cont {
@@ -160,4 +195,72 @@
     position: relative;
     top: 40px;
   }
+}
+
+.summer-cap__timer-box {
+  margin-top: 50px;
+  background: #a1d86b;
+  border-radius: 20px;
+  padding: 20px 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 500px;
+  width: 100%;
+  @include media(lg) {
+    margin-top: 30px;
+    border-radius: 10px;
+  }
+  @include media(xs) {
+    max-width: 100%;
+    margin-bottom: 0;
+    margin-top: 0;
+    flex-direction: column;
+    padding: 12px 25px;
+    gap: 15px;
+    position: relative;
+    top: 150px;
+  }
+}
+
+.summer-cap__timer-text {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 111%;
+  color: #003c56;
+  @include media(xs) {
+    text-align: center;
+  }
+}
+
+.summer-cap__timer {
+  flex-shrink: 0;
+  width: 207px;
+  display: flex;
+  gap: 17px;
+}
+
+.summer-cap__timer-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.summer-cap__number {
+  border-radius: 10px;
+  width: 39px;
+  height: 39px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+  background: #fff;
+  font-size: 22px;
+  line-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.summer-cap__note {
+  font-size: 13px;
+  line-height: 100%;
 }

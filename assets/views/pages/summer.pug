@@ -14,12 +14,18 @@ html(lang='ru')
     main.wrapper
       block body
         include ../components/summer-cap
+        +summer-cap
+        include ../components/summer-info
+        +summer-cap('timer')
+        include ../components/summer-info
+        +summer-cap('over')
         include ../components/summer-info
         include ../components/summer-about
         //include ../components/summer-informer
         include ../components/summer-options
         include ../components/trial-tile
         +trial-tile('summer', 'Выберите курс')
+        +trial-tile('summer', 'Выберите курс', true)
         include ../components/faq
         +faq('summer')
         include ../components/summer-important

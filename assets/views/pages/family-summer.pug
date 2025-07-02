@@ -16,8 +16,11 @@ html(lang='ru')
       block body
         include ../components/family-cap
         +family-cap('summer', 'Занятия летом на семейном обучении', 'summer-cost')
+        +family-cap('summer', 'Занятия летом на семейном обучении', 'summer-cost', true)
+        +family-cap('summer', 'Занятия летом на семейном обучении', 'summer-cost', false, true)
         include ../components/summer-how
         +summer-how('family')
+        +summer-how('family',true)
         //include ../components/summer-informer
         include ../components/family-program
         +family-program('summer')
@@ -35,6 +38,7 @@ html(lang='ru')
         +family-docs('summer')
         include ../components/summer-cost
         +summer-cost('family','Летний курс семейного обучения','12 000 ₽')
+        +summer-cost('family over','Летний курс семейного обучения','12 000 ₽', true)
         include ../components/cost
         +cost('shortest-summer')
         include ../components/faq

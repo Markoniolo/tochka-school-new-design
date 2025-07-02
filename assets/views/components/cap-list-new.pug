@@ -1,0 +1,31 @@
+.cap-list
+  each item, i in [{title: 'Дошкольники', tags: ['Подготовка к школе'],}, {title: 'Начальная школа', tags: ['1-4 класс'],}, {title: 'Средняя школа', tags: ['5-8 класс'],}, {title: 'Старшая школа', tags: ['9-11 класс','ОГЭ и ЕГЭ'],}]
+    a.cap-list__item(href="#")
+      .cap-list__discount
+      .cap-list__title= item.title
+      .cap-list__tags
+        each tag, index in item.tags
+          .cap-list__tag(class=index === 1 ? 'desc' : false)= tag
+      .cap-list__decor(class=`cap-list__decor_${i+1}`)
+      button.cap-list__button.btn-orange
+        span Выбрать
+  a.cap-list__item.cap-list__item_wide.cap-list__item_fam(href="#")
+    .cap-list__discount
+    .cap-list__title!= 'Семейное <br> обучение'
+    .cap-list__tags
+      each tag, index in ['Прикрепим к школе-партнеру за 0₽','1-11 класс','Уроки по ФГОС','Аттестат гос. образца']
+        .cap-list__tag= tag
+      .cap-list__tag.mob 1-11 класс
+    .cap-list__decor
+    button.cap-list__button.btn-orange
+      span Выбрать
+  a.cap-list__item.cap-list__item_wide.cap-list__item_it(href="#")
+    .cap-list__discount
+    .cap-list__title IT-курсы
+    .cap-list__tags
+      each tag, index in ['Создание сайтов','Phyton','Roblox','Minecraft','Scratch','Figma']
+        .cap-list__tag= tag
+      .cap-list__tag.mob Все курсы
+    .cap-list__decor
+    button.cap-list__button.btn-orange
+      span Выбрать

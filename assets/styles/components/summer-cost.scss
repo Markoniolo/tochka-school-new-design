@@ -34,6 +34,42 @@
       }
     }
   }
+  &.over {
+    .summer-cost__top {
+      min-height: auto;
+      .summer-cost__title {
+        font-size: 32px;
+        margin-bottom: 0;
+        @include media(lg) {
+          font-size: 24px;
+        }
+      }
+    }
+    .summer-cost__area {
+      display: flex;
+      flex-direction: column;
+      min-height: auto;
+    }
+    .summer-cost__consult {
+      min-height: auto;
+    }
+    .summer-cost__button {
+      margin-top: auto;
+    }
+  }
+  &.family.over {
+    .summer-cost__top {
+      .summer-cost__title {
+        font-size: 24px;
+      }
+    }
+    .summer-cost__area {
+      min-height: auto;
+    }
+    .summer-cost__consult {
+      min-height: auto;
+    }
+  }
 }
 
 .summer-cost__cont {
