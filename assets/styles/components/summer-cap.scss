@@ -41,15 +41,21 @@
     @include media(xs) {
       margin-bottom: 180px;
     }
+    @include media(xxs) {
+      margin-bottom: 225px;
+    }
     .summer-cap__area {
       min-height: calc(100vw * 910 / 1920);
       @include media(lg) {
         min-height: calc(100vw * 400 / 744);
+        display: flex;
+        flex-direction: column;
       }
       @include media(xs) {
         min-height: calc(100vw * 576 / 532);
       }
       @include media(xxs) {
+        position: relative;
         min-height: calc(100vw * 360 / 292);
       }
     }
@@ -58,7 +64,23 @@
         order: 10;
         position: relative;
         top: 150px;
-        margin-top: 20px;
+        margin-top: 10px;
+      }
+      @include media(xxs) {
+        top: 92vw;
+      }
+    }
+    .summer-cap__timer-box {
+      @include media(lg) {
+        margin-top: auto;
+        margin-bottom: 100px;
+      }
+      @include media(md) {
+        margin-bottom: 10px;
+      }
+      @include media(xxs) {
+        position: absolute;
+        top: 118vw;
       }
     }
   }
