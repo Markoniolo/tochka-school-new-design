@@ -18,14 +18,16 @@ block body
   +family-schedule
   include ../components/family-teachers
   +family-teachers
-  include ../components/tutor-family
-  include ../components/fam-doc
   .family-blue
     include ../components/family-steps
     include ../components/family-manual
     +family-manual('no-background')
     include ../components/family-docs
     +family-docs('no-background')
+  include ../components/fam-doc
+  +fam-doc('family')
+  include ../components/tutor-family
+  +tutor-family('blue')
   include ../components/family-cost
   +cost('short')
   include ../components/pre-reviews

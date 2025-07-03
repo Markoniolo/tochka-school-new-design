@@ -6,6 +6,10 @@
   }
   &.no-background {
     background: unset;
+    padding-bottom: 360px;
+    @include media(lg) {
+      padding-bottom: 330px;
+    }
   }
   &.summer {
     background: transparent;

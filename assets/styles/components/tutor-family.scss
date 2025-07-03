@@ -1,14 +1,18 @@
 .tutor-family {
-  margin-bottom: 80px;
   padding-top: 75px;
+  background: #FFFFFF;
   overflow: hidden;
   @include media(lg) {
-    margin-bottom: 40px;
     padding-top: 36px;
     background: #FFFFFF;
   }
   & + .fam-doc {
     margin-top: 0;
+  }
+  &.blue {
+    position: relative;
+    z-index: 1;
+    background: radial-gradient(228.28% 137.53% at 85.56% 75.29%, #dae5fe 0%, #bedaff 100%);
   }
 }
 
