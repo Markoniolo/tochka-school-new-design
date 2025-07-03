@@ -1,0 +1,32 @@
+.library-popup
+  .library-popup__wrap
+    .library-popup__title Откройте доступ к 500+ урокам «Точки Знаний»
+    img.library-popup__decor(src=staticImg('library-popup/library-popup-decor.svg') alt='')
+    .library-popup__form
+      input.input_utm(name='utm' type='hidden' value='')
+      input(type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru/blog/voprosy-dlya-podrostkov-chto-polezno-i-interesno-obsudit-do-15-let")
+      input.library-popup__input.input-white(placeholder='Имя родителя' type='text' name='name')
+      input.library-popup__input.input-white(placeholder='Телефон' type='tel' required data-element='input-phone-intl' name='phone' data-phone-pattern)
+      input(name='tel' type='hidden' required data-element='input-phone-hidden')
+      input.library-popup__input.input-white(placeholder='E-mail' type='email' name='email')
+      button.library-popup__submit.btn-orange.btn-warning Открыть доступ
+      label.library-popup__label.checkbox-label
+        input.library-popup__checkbox.checkbox-input(name='policy' type='checkbox')
+        .library-popup__checkbox-view.checkbox-input-view
+        .library-popup__checkbox-text.checkbox-text
+          | Даю
+          |
+          a(href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target='_blank') Согласие
+          |
+          | на обработку персональных
+          | данных в соответствии с
+          |
+          a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf' target='_blank') Политикой
+      label.library-popup__label.checkbox-label
+        input.library-popup__checkbox.checkbox-input(name='news' type='checkbox')
+        .library-popup__checkbox-view.checkbox-input-view
+        .library-popup__checkbox-text.checkbox-text
+          | Согласен на
+          |
+          a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf' target='_blank') получение рекламы
+

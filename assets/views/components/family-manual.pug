@@ -12,8 +12,8 @@ mixin family-manual(mod)
           .family-manual__inner
             input.input_utm(name='utm' type='hidden' value='')
             input(type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru/blog/voprosy-dlya-podrostkov-chto-polezno-i-interesno-obsudit-do-15-let")
-            input.family-manual__input.input-white(placeholder='Имя родителя' type='text' name='name' data-phone-pattern)
-            input.family-manual__input.input-white(placeholder='Телефон родителя' type='tel' required data-element='input-phone-intl' name='phone')
+            input.family-manual__input.input-white(placeholder='Имя родителя' type='text' name='name')
+            input.family-manual__input.input-white(placeholder='Телефон родителя' type='tel' required data-element='input-phone-intl' name='phone' data-phone-pattern)
             input(name='tel' type='hidden' required data-element='input-phone-hidden')
             input.family-manual__input.input-white(placeholder='E-mail родителя' type='email' name='email')
             button.family-manual__submit.btn-orange.btn-warning Скачать
