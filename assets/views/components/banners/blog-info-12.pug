@@ -1,0 +1,36 @@
+form.blog-info-12(data-request-validate)
+  .blog-info-12__title Узнайте реальный уровень знаний ребёнка
+  picture.blog-info-12__picture
+    source(srcset=staticImg('blog-info-12/decor-1_xxs.svg') media="(max-width: 359px)")
+    source(srcset=staticImg('blog-info-12/decor-1_mob.svg') media="(max-width: 743px)")
+    source(srcset=staticImg('blog-info-12/decor-1_tablet.svg') media="(max-width: 1359px)")
+    img.blog-info-12__image(src=staticImg('blog-info-12/decor-1.svg') alt='')
+  .blog-info-12__wrap
+    .blog-info-12__note!= 'Тесты по школьным предметам <span>1-11 класс</span>'
+    .blog-info-12__area
+      .blog-info-12__top
+        input.blog-info-12__input.input-white(name='phone' placeholder='Номер телефона' type='tel' required data-element='input-phone-intl')
+        input(name='tel' type='hidden' required data-element='input-phone-hidden')
+        button.blog-info-12__button.btn-orange Получить тесты
+      .blog-info-12__bottom
+        label.blog-info-12__label.checkbox-white-label
+          input.blog-info-12__checkbox.checkbox-white-input(name='policy' type='checkbox')
+          .blog-info-12__checkbox-view.checkbox-white-input-view
+          .blog-info-12__checkbox-text.checkbox-white-text
+            | Даю
+            |
+            a(href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target='_blank') Согласие
+            |
+            | на обработку персональных
+            | данных в соответствии с
+            |
+            a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf' target='_blank') Политикой
+        label.blog-info-12__label.checkbox-white-label
+          input.blog-info-12__checkbox.checkbox-white-input(name='news' type='checkbox')
+          .blog-info-12__checkbox-view.checkbox-white-input-view
+          .blog-info-12__checkbox-text.checkbox-white-text
+            | Согласен
+            br
+            | на
+            |
+            a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf' target='_blank') получение рекламы

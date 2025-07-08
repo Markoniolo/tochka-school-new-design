@@ -146,19 +146,6 @@
     padding: 25px 19px 25px 20px;
     margin-left: 0;
   }
-  &::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    transform: translateY(calc(100% + 25px));
-    width: 232px;
-    height: 219px;
-    @include bg-icon('teacher/ic_teacher_decor.svg');
-    @include media(lg) {
-      content: none;
-    }
-  }
 }
 
 .teacher__name {
