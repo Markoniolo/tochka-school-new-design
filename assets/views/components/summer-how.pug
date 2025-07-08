@@ -22,7 +22,7 @@ mixin summer-how(mod, timer)
             h2.summer-how__caption Как будет проходить обучение
             .summer-how__note С 5 июня по 31 августа
           .summer-how__timer-box
-            .summer-how__timer-text До окончания продаж летних курсов осталось:
+            .summer-how__timer-text!= 'Последний шанс записаться на летние курсы! <br> Осталось:'
             .summer-how__timer(date-end="2025-07-10T12:00:00" data-element="timer")
               each item in [{number: '', note: 'день'},{number: '', note: 'час'},{number: '', note: 'мин'},{number: '', note: 'сек'}]
                 .summer-how__timer-area

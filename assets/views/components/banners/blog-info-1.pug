@@ -1,0 +1,33 @@
+form.blog-info-1(data-request-validate)
+  .blog-info-1__title
+    | Подберём занятия по важным школьным темам. Все предметы
+    |
+    span 1-11 класс
+  img.blog-info-1__image(src=staticImg('blog-info-1/decor-1.png') alt='')
+  .blog-info-1__area
+    .blog-info-1__top
+      input.blog-info-1__input.input-white(name='phone' placeholder='Номер телефона' type='tel' required data-element='input-phone-intl')
+      input(name='tel' type='hidden' required data-element='input-phone-hidden')
+      button.blog-info-1__button.btn-orange Оставить заявку
+    .blog-info-1__bottom
+      label.blog-info-1__label.checkbox-white-label
+        input.blog-info-1__checkbox.checkbox-white-input(name='policy' type='checkbox')
+        .blog-info-1__checkbox-view.checkbox-white-input-view
+        .blog-info-1__checkbox-text.checkbox-white-text
+          | Даю
+          |
+          a(href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target='_blank') Согласие
+          |
+          | на обработку персональных
+          | данных в соответствии с
+          |
+          a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf' target='_blank') Политикой
+      label.blog-info-1__label.checkbox-white-label
+        input.blog-info-1__checkbox.checkbox-white-input(name='news' type='checkbox')
+        .blog-info-1__checkbox-view.checkbox-white-input-view
+        .blog-info-1__checkbox-text.checkbox-white-text
+          | Согласен
+          br
+          | на
+          |
+          a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf' target='_blank') получение рекламы

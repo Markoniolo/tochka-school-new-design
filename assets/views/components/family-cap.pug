@@ -15,7 +15,7 @@ mixin family-cap(mod, title = 'Семейное обучение', id='pre-reg',
           img.family-cap__image(src=staticImg('family-cap/family-cap.svg') alt='')
         if timer
           .family-cap__timer-box
-            .family-cap__timer-text До окончания продаж летних курсов осталось:
+            .family-cap__timer-text!= 'Последний шанс записаться на летние курсы! Осталось:'
             .family-cap__timer(date-end="2025-07-10T12:00:00" data-element="timer")
               each item in [{number: '', note: 'день'},{number: '', note: 'час'},{number: '', note: 'мин'},{number: '', note: 'сек'}]
                 .family-cap__timer-area

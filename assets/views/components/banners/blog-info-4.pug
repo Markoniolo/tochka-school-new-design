@@ -1,0 +1,34 @@
+form.blog-info-4(data-request-validate)
+  .blog-info-4__title Программирование, создание игр или дизайн?
+  picture.blog-info-4__picture
+    source(srcset=staticImg('blog-info-4/decor-1_xxs.png') media="(max-width: 359px)")
+    source(srcset=staticImg('blog-info-4/decor-1_mob.png') media="(max-width: 743px)")
+    source(srcset=staticImg('blog-info-4/decor-1_tablet.png') media="(max-width: 1359px)")
+    img.blog-info-4__image(src=staticImg('blog-info-4/decor-1.png') alt='')
+  .blog-info-4__note Подберём IT-курс исходя из возраста и увлечений ребёнка
+  .blog-info-4__area
+    .blog-info-4__top
+      input.blog-info-4__input.input-white(name='phone' placeholder='Номер телефона' type='tel' required data-element='input-phone-intl')
+      input(name='tel' type='hidden' required data-element='input-phone-hidden')
+      button.blog-info-4__button.btn-orange Оставить заявку
+    .blog-info-4__bottom
+      label.blog-info-4__label.checkbox-white-label
+        input.blog-info-4__checkbox.checkbox-white-input(name='policy' type='checkbox')
+        .blog-info-4__checkbox-view.checkbox-white-input-view
+        .blog-info-4__checkbox-text.checkbox-white-text
+          | Даю
+          |
+          a(href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target='_blank') Согласие
+          |
+          | на обработку персональных
+          | данных в соответствии с
+          |
+          a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf' target='_blank') Политикой
+      label.blog-info-4__label.checkbox-white-label
+        input.blog-info-4__checkbox.checkbox-white-input(name='news' type='checkbox')
+        .blog-info-4__checkbox-view.checkbox-white-input-view
+        .blog-info-4__checkbox-text.checkbox-white-text
+          | Согласен
+          | на
+          |
+          a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf' target='_blank') получение рекламы

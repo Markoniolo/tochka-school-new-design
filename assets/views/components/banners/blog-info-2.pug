@@ -1,0 +1,41 @@
+form.blog-info-2(data-request-validate)
+  .blog-info-2__title
+    | Подберём занятия по важным школьным темам. Все предметы
+    |
+    span 1-11 класс
+  picture.blog-info-2__picture
+    source(srcset=staticImg('blog-info-2/decor-1_xxs.png') media="(max-width: 359px)")
+    source(srcset=staticImg('blog-info-2/decor-1_mob.png') media="(max-width: 743px)")
+    source(srcset=staticImg('blog-info-2/decor-1_tablet.png') media="(max-width: 1359px)")
+    img.blog-info-2__image(src=staticImg('blog-info-2/decor-1.png') alt='')
+  .blog-info-2__note
+    | Летние скидки
+    |
+    span до 20%
+  .blog-info-2__area
+    .blog-info-2__top
+      input.blog-info-2__input.input-white(name='phone' placeholder='Номер телефона' type='tel' required data-element='input-phone-intl')
+      input(name='tel' type='hidden' required data-element='input-phone-hidden')
+      button.blog-info-2__button.btn-orange Оставить заявку
+    .blog-info-2__bottom
+      label.blog-info-2__label.checkbox-white-label
+        input.blog-info-2__checkbox.checkbox-white-input(name='policy' type='checkbox')
+        .blog-info-2__checkbox-view.checkbox-white-input-view
+        .blog-info-2__checkbox-text.checkbox-white-text
+          | Даю
+          |
+          a(href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target='_blank') Согласие
+          |
+          | на обработку персональных
+          | данных в соответствии с
+          |
+          a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf' target='_blank') Политикой
+      label.blog-info-2__label.checkbox-white-label
+        input.blog-info-2__checkbox.checkbox-white-input(name='news' type='checkbox')
+        .blog-info-2__checkbox-view.checkbox-white-input-view
+        .blog-info-2__checkbox-text.checkbox-white-text
+          | Согласен
+          br
+          | на
+          |
+          a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf' target='_blank') получение рекламы

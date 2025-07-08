@@ -55,7 +55,7 @@ mixin course-cap(mod, id='pre-reg', over, timer)
                 .course-cap__author Галина Валерьевна Шевченко
             if timer
               .course-cap__timer-box
-                .course-cap__timer-text До окончания продаж летних курсов осталось:
+                .course-cap__timer-text!= 'Последний шанс записаться на летние курсы! Осталось:'
                 .course-cap__timer(date-end="2025-07-10T12:00:00" data-element="timer")
                   each item in [{number: '', note: 'день'},{number: '', note: 'час'},{number: '', note: 'мин'},{number: '', note: 'сек'}]
                     .course-cap__timer-area

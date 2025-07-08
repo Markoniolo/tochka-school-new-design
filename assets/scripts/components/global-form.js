@@ -25,6 +25,21 @@ if (preCapForm) globalFormInit(preCapForm, 'onSendPreSubscribeMessage', 'preForm
 const preRegForm = document.querySelector("[data-element='pre-reg__form']")
 if (preRegForm) globalFormInit(preRegForm, 'onSendPreSubscribeMessage', 'preFormData')
 
+const libraryPopupForm = document.querySelector("[data-element='library-popup']")
+if (libraryPopupForm) globalFormInit(libraryPopupForm, 'onSendLibraryM', 'libraryPopupFormData')
+
+function libraryPopupFormData (globalForm) {
+  return {
+    'name': globalForm.querySelector("[name='name']").value,
+    'utm': globalForm.querySelector("[name='utm']").value,
+    'tel': globalForm.querySelector("[name='tel']").value,
+    'email': globalForm.querySelector("[name='email']").value,
+    'policy': globalForm.querySelector("[name='policy']").checked,
+    'news': globalForm.querySelector("[name='news']").checked,
+    'page_name': globalForm.querySelector("[name='page_name']").value,
+  };
+}
+
 function preFormData (globalForm) {
   return {
     'name': globalForm.querySelector("[name='name']").value,
@@ -129,22 +144,30 @@ function globalFormInit (form, func_name, type) {
   let iti
 
   if (input) {
-    iti = window.intlTelInput(input, {
-      utilsScript: "../libs/intlTelInputWithUtils.min",
-      initialCountry: 'ru',
-      separateDialCode: true,
-      strictMode: true
-    })
+    if(type == 'libraryPopupFormData'){
+      input.addEventListener('input', function () {
+        let tempValue = input.value
+        const cleanNumber = tempValue.replace(/[^+\d]/g, '')
+        inputHidden.value = cleanNumber
+      })
+    }else{
+      iti = window.intlTelInput(input, {
+        utilsScript: "../libs/intlTelInputWithUtils.min",
+        initialCountry: 'ru',
+        separateDialCode: true,
+        strictMode: true
+      })
 
-    input.addEventListener('input', function () {
-      let tempValue = input.value
-      inputHidden.value = input.value
-      const cleanNumber = tempValue.replace(/[^+\d]/g, '')
-      if (iti.selectedCountryData.dialCode === "7" && cleanNumber.length > 10) {
-        inputHidden.value = cleanNumber.substring(cleanNumber.length - 10)
-      }
-      inputHidden.value = iti.selectedCountryData.dialCode + ' ' + inputHidden.value
-    })
+      input.addEventListener('input', function () {
+        let tempValue = input.value
+        inputHidden.value = input.value
+        const cleanNumber = tempValue.replace(/[^+\d]/g, '')
+        if (iti.selectedCountryData.dialCode === "7" && cleanNumber.length > 10) {
+          inputHidden.value = cleanNumber.substring(cleanNumber.length - 10)
+        }
+        inputHidden.value = iti.selectedCountryData.dialCode + ' ' + inputHidden.value
+      })
+    }
   }
 
   function resetError () {
@@ -156,7 +179,7 @@ function globalFormInit (form, func_name, type) {
     e.preventDefault()
     if (input && !input?.value?.trim()) {
       input.classList.add("error")
-    } else if (iti?.isValidNumber() || !input) {
+    } else if ((iti?.isValidNumber() || !input || type == 'libraryPopupFormData')) {
 
       if (type == 'externalFormData') {
         var form_data = externalFormData(globalForm);
@@ -174,6 +197,8 @@ function globalFormInit (form, func_name, type) {
         var form_data = preFormData(globalForm);
       } else if (type == 'preFormData') {
         var form_data = preFormData(globalForm);
+      } else if (type == 'libraryPopupFormData') {
+        var form_data = libraryPopupFormData(globalForm);
       }
 
       const email = globalForm.querySelector('[name="email"]')
@@ -197,7 +222,13 @@ function globalFormInit (form, func_name, type) {
           isValid = false
         }
       }
-
+      //   if (classSelect) {
+      //     if (!classSelect.value) {
+      //       const opener = classSelect.closest('.custom-select-container').querySelector('.custom-select-opener')
+      //       opener.classList.add('error')
+      //       isValid = false
+      //     }
+      //   }
       if (classSelectTop) {
         const checkedClass = document.querySelector('.modal-order-new__select-input:checked')
         if (!checkedClass) {
@@ -214,7 +245,8 @@ function globalFormInit (form, func_name, type) {
         btnSubmit.disabled = true;
         if (type === 'preFormData') {
           e.stopPropagation();
-          btnSubmit.classList.add('loading')
+          const loader = document.querySelector('.form-loader')
+          if (loader) loader.classList.add('active')
           $.request('MainFunctions::onSendPreSubscribeMessage', {
             data: form_data,
           });
@@ -231,7 +263,7 @@ function globalFormInit (form, func_name, type) {
           globalForm.submit();
           setTimeout(() => {
             clearForm();
-            location.assign(linkTo + `?cemail=${email_value}`);
+            // location.assign(linkTo + `?cemail=${email_value}`);
             // location.assign(linkTo + '?email='+email_value)
             location.assign(linkTo);
           }, 100)
