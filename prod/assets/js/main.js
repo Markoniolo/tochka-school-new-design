@@ -1204,6 +1204,22 @@ if (orderFormTeacher) globalFormInit(orderFormTeacher, 'onSendTeacherOrderMessag
 const trialForm = document.querySelector("[data-element='trial']")
 if (trialForm) globalFormInit(trialForm, 'onSendBlogMessage', 'trialFormData')
 
+
+const blogPhoneFormItems = document.querySelectorAll("[data-element='blog-phone']")
+blogPhoneFormItems.forEach((blogPhoneForm) => {
+  if (blogPhoneForm) globalFormInit(blogPhoneForm, 'onSendBlogMessagePh', 'blogPhoneFormData')
+})
+
+const blogEmailFormItems = document.querySelectorAll("[data-element='blog-email']")
+blogEmailFormItems.forEach((blogEmailForm) => {
+  if (blogEmailForm) globalFormInit(blogEmailForm, 'onSendBlogMessageEm', 'blogEmailFormData')
+})
+
+const blogPhoneEmailFormItems = document.querySelectorAll("[data-element='blog-phone-email']")
+blogPhoneEmailFormItems.forEach((blogPhoneEmailForm) => {
+  if (blogPhoneEmailForm) globalFormInit(blogPhoneEmailForm, 'onSendBlogMessagePhEm', 'blogPhoneEmailFormData')
+})
+
 const newsletterForm = document.querySelector("[data-element='newsletter']")
 if (newsletterForm) globalFormInit(newsletterForm, 'onSendSubscribeMessage', 'newsletterFormData')
 
@@ -1215,6 +1231,37 @@ if (preRegForm) globalFormInit(preRegForm, 'onSendPreSubscribeMessage', 'preForm
 
 const libraryPopupForm = document.querySelector("[data-element='library-popup']")
 if (libraryPopupForm) globalFormInit(libraryPopupForm, 'onSendLibraryM', 'libraryPopupFormData')
+
+function blogPhoneFormData (globalForm) {
+  return {
+    'utm': globalForm.querySelector("[name='utm']").value,
+    'tel': globalForm.querySelector("[name='tel']").value,
+    'policy': globalForm.querySelector("[name='policy']").checked,
+    'news': globalForm.querySelector("[name='news']").checked,
+    'page_name': globalForm.querySelector("[name='page_name']").value,
+  };
+}
+
+function blogEmailFormData (globalForm) {
+  return {
+    'utm': globalForm.querySelector("[name='utm']").value,
+    'email': globalForm.querySelector("[name='email']").value,
+    'policy': globalForm.querySelector("[name='policy']").checked,
+    'news': globalForm.querySelector("[name='news']").checked,
+    'page_name': globalForm.querySelector("[name='page_name']").value,
+  };
+}
+
+function blogPhoneEmailFormData (globalForm) {
+  return {
+    'utm': globalForm.querySelector("[name='utm']").value,
+    'tel': globalForm.querySelector("[name='tel']").value,
+    'email': globalForm.querySelector("[name='email']").value,
+    'policy': globalForm.querySelector("[name='policy']").checked,
+    'news': globalForm.querySelector("[name='news']").checked,
+    'page_name': globalForm.querySelector("[name='page_name']").value,
+  };
+}
 
 function libraryPopupFormData (globalForm) {
   return {
@@ -1278,6 +1325,8 @@ function orderFormData (globalForm) {
     'name': globalForm.querySelector("[name='name']").value,
     'utm': globalForm.querySelector("[name='utm']").value,
     'tel': globalForm.querySelector("[name='tel']").value,
+    //'class_name': globalForm.querySelector("[name='class_name']").options[globalForm.querySelector("[name='class_name']").selectedIndex].value,
+    // 'class_name': globalForm.querySelector("[name='class_name']").value,
     'class_name': globalForm.querySelector(".modal-order-new__select-input").value,
     'policy': globalForm.querySelector("[name='policy']").checked,
     'news': globalForm.querySelector("[name='news']").checked,
@@ -1317,12 +1366,13 @@ function globalFormInit (form, func_name, type) {
 
   const news = form.querySelector('[name="news"]')
   const policy = form.querySelector('[name="policy"]')
+//   const classSelect = globalForm.querySelector('.modal-order__select')
   const classSelectInputs = globalForm.querySelectorAll('.modal-order-new__select-input')
   const classSelectTop = globalForm.querySelector('.modal-order-new__select-top')
 
   if (news) news.addEventListener('change', () => news.closest('label').classList.remove('error-text'))
   if (policy) policy.addEventListener('change',() => policy.closest('label').classList.remove('error-text'))
-
+//   if (classSelect) classSelect.addEventListener('change',() => classSelect.closest('.custom-select-container').querySelector('.custom-select-opener').classList.remove('error'))
   for (let i = 0; i < classSelectInputs.length; i++) {
     classSelectInputs[i].addEventListener('change', () => {
       if (classSelectTop) classSelectTop.classList.remove('error')
@@ -1367,7 +1417,7 @@ function globalFormInit (form, func_name, type) {
     e.preventDefault()
     if (input && !input?.value?.trim()) {
       input.classList.add("error")
-    } else if ((iti?.isValidNumber() || !input || type == 'libraryPopupFormData')) {
+    } else if ((iti?.isValidNumber() || !input || type == 'libraryPopupFormData' || type == 'blogPhoneFormData' || type == 'blogPhoneEmailFormData')) {
 
       if (type == 'externalFormData') {
         var form_data = externalFormData(globalForm);
@@ -1387,6 +1437,12 @@ function globalFormInit (form, func_name, type) {
         var form_data = preFormData(globalForm);
       } else if (type == 'libraryPopupFormData') {
         var form_data = libraryPopupFormData(globalForm);
+      } else if (type == 'blogPhoneFormData') {
+        var form_data = blogPhoneFormData(globalForm);
+      } else if (type == 'blogEmailFormData') {
+        var form_data = blogEmailFormData(globalForm);
+      } else if (type == 'blogPhoneEmailFormData') {
+        var form_data = blogPhoneEmailFormData(globalForm);
       }
 
       const email = globalForm.querySelector('[name="email"]')
