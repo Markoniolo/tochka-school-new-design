@@ -19,7 +19,7 @@
       }
     }
   }
-  & ~ .pre-reviews {
+  & ~ .pre-reviews, & + .reviews {
     margin-bottom: 0;
   }
   &.summer {

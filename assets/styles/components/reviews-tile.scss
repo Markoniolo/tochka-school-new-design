@@ -44,7 +44,7 @@
   width: 436px;
   flex-shrink: 0;
   position: sticky;
-  top: 156px;
+  top: 218px;
   border-radius: 20px;
   box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
   background: #fff;
@@ -70,6 +70,12 @@
       display: block;
     }
   }
+  &.space {
+    top: 168px;
+    @include media(lg) {
+      top: 0;
+    }
+  }
 }
 
 .reviews-tile__close {
@@ -89,7 +95,7 @@
 }
 
 .reviews-tile__title {
-  margin-bottom: 15px;
+  margin-bottom: 22px;
   font-weight: 600;
   font-size: 24px;
   line-height: 101%;
@@ -103,7 +109,7 @@
 .reviews-tile__list {
   display: flex;
   flex-direction: column;
-  padding-left: 15px;
+  gap: 10px;
   @include media(lg) {
     padding: 25px;
     flex-wrap: wrap;
@@ -118,12 +124,14 @@
 }
 
 .reviews-tile__label {
-  padding: 10px 0;
   cursor: pointer;
   @include media(lg) {
     width: calc(50% - 13px);
   }
   @include media(xs) {
+    width: calc(50% - 5px);
+  }
+  @media (max-width: 439.98px) {
     width: 100%;
   }
 }
@@ -131,6 +139,7 @@
 .reviews-tile__input {
   display: none;
   &:checked ~ .reviews-tile__input-view {
+    background: #c6d2e6;
     &::before {
       @include bg-icon('reviews-tile/ic_radio_active.svg');
     }
@@ -138,17 +147,24 @@
 }
 
 .reviews-tile__input-view {
+  min-height: 46px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background: #f9f9f9;
   font-size: 18px;
   line-height: 15px;
-  padding-left: 27px;
+  padding-left: 41px;
   position: relative;
   &::before {
     content: '';
     width: 15px;
     height: 15px;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 13px;
+    transform: translateY(-50%);
     @include bg-icon('reviews-tile/ic_radio.svg');
   }
 }

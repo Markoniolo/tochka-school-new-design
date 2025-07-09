@@ -1,0 +1,43 @@
+.reviews
+  .cont
+    .reviews__top
+      h2.reviews__caption Говорят ученики и&nbsp;родители
+      a.reviews__all.btn-blue(href="#") Открыть все отзывы
+      .reviews__nav
+        button.reviews__nav-btn.reviews__nav-btn_prev
+        button.reviews__nav-btn.reviews__nav-btn_next
+    .reviews__slider
+      .swiper-wrapper
+        each item in [1,2,3]
+          .reviews__slide.swiper-slide
+            .reviews__box
+              img.reviews__image(src=staticImg('Shevchenko_prevyu.jpg') alt='')
+            .reviews__area
+              .reviews__inner
+                .reviews__name Пушкарева Анна
+                .reviews__note Математика, 8 класс, г. Москва
+                .reviews__text
+                  p.
+                    На обучение записались, чтобы подтянуть геометрию, алгебру, выйти на “пятерки” по геометрии. Своих
+                    целей достигли. Улучшились оценки, по геометрии вышли на “5”.
+                  p.
+                    Темы на курсе разбираем раньше, чем в школе.
+                .reviews__toggle Читать весь отзывs
+          .reviews__slide.swiper-slide
+            .reviews__box
+              .reviews__play
+              img.reviews__image(src=staticImg('Shevchenko_prevyu.jpg') alt='')
+              video.reviews__video(src=`${pathStatics}/files/Shevchenko_1_klass.mov`)
+            .reviews__area
+              .reviews__inner
+                .reviews__name Пушкарева Анна
+                .reviews__note Математика, 8 класс, г. Москва
+                .reviews__text
+                  p.
+                    Здравствуйте. На семейном обучении несколько месяцев, выбрали такой формат в связи с переездом в
+                    другой город. Не пожалели и записались на СО уже на следующий год. Такого спокойствия и счастья от
+                    школьных занятий не испытывала никогда со всеми тремя детьми. В Точке знаний уже три года сын и я
+                    очень признательна всем организаторам этой школы, педагогам за качественную подготовку , открытость
+                    и доступность программы. Мы очень рады, что мы с вами! Спасибо. ❤️
+                button.reviews__toggle Читать весь отзыв
+    .reviews__scrollbar.swiper-scrollbar

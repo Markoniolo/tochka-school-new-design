@@ -4,7 +4,7 @@
     padding-bottom: 0;
     margin-bottom: 40px;
   }
-  & + .pre-reviews {
+  & + .pre-reviews, & + .reviews {
     padding-top: 70px;
     @include media(lg) {
       padding-top: 0;

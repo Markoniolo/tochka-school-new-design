@@ -9,6 +9,7 @@ function headerInit () {
   let lastScrollTop = 0
   let scrollDown = true
   const headerArea = header.querySelector('.header__area')
+  const reviewsTileSidebar = document.querySelector('.reviews-tile__sidebar')
 
   window.addEventListener('scroll', checkHeader, { passive: true })
   window.addEventListener('scroll', checkScrollDirection, { passive: true })
@@ -37,9 +38,11 @@ function headerInit () {
     if (scrollDown) {
       if (headerStages) header.classList.add('stages-hide')
       header.classList.add('thin')
+      if (reviewsTileSidebar) reviewsTileSidebar.classList.add('space')
     } else {
       if (headerStages) header.classList.remove('stages-hide')
       header.classList.remove('thin')
+      if (reviewsTileSidebar) reviewsTileSidebar.classList.remove('space')
     }
   }
 

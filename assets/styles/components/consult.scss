@@ -6,7 +6,7 @@
     background-color: transparent;
     margin-bottom: 40px;
   }
-  & + .pre-reviews {
+  & + .pre-reviews, & + .reviews {
     background-color: transparent;
     padding-top: 70px;
     @include media(lg) {

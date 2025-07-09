@@ -10,7 +10,7 @@
   @include media(xs) {
     padding-top: 38px;
   }
-  & + .pre-reviews {
+  & + .pre-reviews, & + .reviews {
     margin-bottom: 0;
   }
   & ~ .trial-license {

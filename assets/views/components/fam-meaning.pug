@@ -1,9 +1,9 @@
 -
   const famMeaningList = [
-    'Уроки от лучших учителей страны',
+    'Онлайн-уроки от лучших учителей страны',
     'Внимательный тьютор-педагог по каждому предмету',
-    'Учебная нагрузка с заботой о каждом',
-    'Вниманием ко всем деталям учёбы и интересам ребёнка',
+    'Учебная нагрузка с заботой о&nbsp;ребёнке',
+    'Лёгкость и интерес к учёбе с&nbsp;первых уроков',
   ]
 
 .fam-meaning
@@ -14,7 +14,7 @@
         .fam-meaning__item
           picture.fam-meaning__icon-picture
             img.fam-meaning__icon-image(src=staticImg(`fam-meaning/fam-meaning-icon-${index+1}.svg`) alt='')
-          .fam-meaning__note= item
+          .fam-meaning__note!= item
     .fam-meaning__area
       .fam-meaning__inner
         .fam-meaning__headline Семейное обучение — альтернатива обычной школе.
