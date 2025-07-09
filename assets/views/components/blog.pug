@@ -3,11 +3,11 @@
     h1.blog__caption.caption Всё, что нужно знать — в&nbsp;одном месте
     .blog__list
       each box in [1,2,3,4,5,6,7,8,9]
-        .blog__item
+        a.blog__item(href='#')
           img.blog__image(src=staticImg('blog.png') alt='')
           .blog__name Вопросы для подростков: что полезно и интересно обсудить до 15 лет
           .blog__text Шпаргалка, как распознать речевые нарушения и к кому обратиться за помощью
-          a.blog__button.btn-blue.btn-blue_arrow(href='#') Читать далее
+          .blog__button.btn-blue.btn-blue_arrow Читать далее
           .blog__line
             each item, index in ['17.12.2024','7 682','3 мин.']
               .blog__stat

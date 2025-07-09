@@ -1,0 +1,36 @@
+form.blog-info-15(data-request-validate)
+  .blog-info-15__title
+    | 4 шага к переходу на семейное обучение. Пошаговое руководство + шаблоны документов
+  picture.blog-info-15__picture
+    source(srcset=staticImg('blog-info-15/decor-1_xxs.svg') media="(max-width: 359px)")
+    source(srcset=staticImg('blog-info-15/decor-1_mob.svg') media="(max-width: 743px)")
+    source(srcset=staticImg('blog-info-15/decor-1_tablet.svg') media="(max-width: 1359px)")
+    img.blog-info-15__image(src=staticImg('blog-info-15/decor-1.svg') alt='')
+  .blog-info-15__wrap
+    .blog-info-15__area
+      .blog-info-15__top
+        input.blog-info-15__input.input-white(name='phone' placeholder='Номер телефона' type='tel' required data-element='input-phone-intl')
+        input(name='tel' type='hidden' required data-element='input-phone-hidden')
+        input.blog-info-15__input.input-white(type='email' name='email' placeholder='E-mail' required)
+        button.blog-info-15__button.btn-orange.btn-orange_arrow Получить руководство
+      .blog-info-15__bottom
+        label.blog-info-15__label.checkbox-white-label
+          input.blog-info-15__checkbox.checkbox-white-input(name='policy' type='checkbox')
+          .blog-info-15__checkbox-view.checkbox-white-input-view
+          .blog-info-15__checkbox-text.checkbox-white-text
+            | Даю
+            |
+            a(href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target='_blank') Согласие
+            |
+            | на обработку персональных
+            | данных в соответствии с
+            |
+            a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf' target='_blank') Политикой
+        label.blog-info-15__label.checkbox-white-label
+          input.blog-info-15__checkbox.checkbox-white-input(name='news' type='checkbox')
+          .blog-info-15__checkbox-view.checkbox-white-input-view
+          .blog-info-15__checkbox-text.checkbox-white-text
+            | Согласен
+            | на
+            |
+            a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf' target='_blank') получение рекламы

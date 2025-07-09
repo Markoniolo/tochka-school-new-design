@@ -1,0 +1,36 @@
+form.blog-info-18(data-request-validate)
+  .blog-info-18__title Как развивать таланты и&nbsp;способности ребёнка?
+  picture.blog-info-18__picture
+    source(srcset=staticImg('blog-info-18/decor-1_xxs.svg') media="(max-width: 359px)")
+    source(srcset=staticImg('blog-info-18/decor-1_mob.svg') media="(max-width: 743px)")
+    source(srcset=staticImg('blog-info-18/decor-1_tablet.svg') media="(max-width: 1359px)")
+    img.blog-info-18__image(src=staticImg('blog-info-18/decor-1.svg') alt='')
+  .blog-info-18__wrap
+    .blog-info-18__note Делимся рекомендациями в руководстве для заботливых родителей
+    .blog-info-18__area
+      .blog-info-18__top
+        input.blog-info-18__input.input-white(name='phone' placeholder='Номер телефона' type='tel' required data-element='input-phone-intl')
+        input(name='tel' type='hidden' required data-element='input-phone-hidden')
+        input.blog-info-18__input.input-white(type='email' name='email' placeholder='E-mail' required)
+        button.blog-info-18__button.btn-orange.btn-orange_arrow Получить руководство
+      .blog-info-18__bottom
+        label.blog-info-18__label.checkbox-white-label
+          input.blog-info-18__checkbox.checkbox-white-input(name='policy' type='checkbox')
+          .blog-info-18__checkbox-view.checkbox-white-input-view
+          .blog-info-18__checkbox-text.checkbox-white-text
+            | Даю
+            |
+            a(href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target='_blank') Согласие
+            |
+            | на обработку персональных
+            | данных в соответствии с
+            |
+            a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf' target='_blank') Политикой
+        label.blog-info-18__label.checkbox-white-label
+          input.blog-info-18__checkbox.checkbox-white-input(name='news' type='checkbox')
+          .blog-info-18__checkbox-view.checkbox-white-input-view
+          .blog-info-18__checkbox-text.checkbox-white-text
+            | Согласен
+            | на
+            |
+            a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf' target='_blank') получение рекламы
