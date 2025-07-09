@@ -1,4 +1,7 @@
 .summer-cap {
+  @media (min-width: 1921px) {
+    padding-top: 310px;
+  }
   margin-top: -114px;
   @include bg-img('summer-cap/summer-cap-bg.svg');
   background-repeat: no-repeat;
@@ -133,10 +136,15 @@
 }
 
 .summer-cap__cont {
-
+  @media (min-width: 1921px) {
+    max-width: 1644px;
+  }
 }
 
 .summer-cap__area {
+  @media (min-width: 1921px) {
+    min-height: 33.395833vw;
+  }
   max-width: 660px;
   width: 100%;
   min-height: calc(100vw * 710 / 1920);

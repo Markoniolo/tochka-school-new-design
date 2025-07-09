@@ -479,6 +479,7 @@
 .trial-tile__inner {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 
 .trial-tile__class-number {
