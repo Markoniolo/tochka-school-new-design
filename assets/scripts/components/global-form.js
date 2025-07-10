@@ -176,6 +176,8 @@ function globalFormInit (form, func_name, type) {
   const inputHidden = globalForm.querySelector("[data-element='input-phone-hidden']")
   const linkTo = globalForm.getAttribute("data-docex")
 
+  const utm_input = globalForm.querySelector('[name="utm"]')
+
   const news = form.querySelector('[name="news"]')
   const policy = form.querySelector('[name="policy"]')
 //   const classSelect = globalForm.querySelector('.modal-order__select')
@@ -192,9 +194,12 @@ function globalFormInit (form, func_name, type) {
   }
 
   let iti
-
+  let data_phone_pattern_exists = false;
   if (input) {
-    if(type == 'libraryPopupFormData'){
+    if (input.hasAttribute('data-phone-pattern')) {
+      data_phone_pattern_exists = true;
+    }
+    if(type == 'libraryPopupFormData' || data_phone_pattern_exists){
       input.addEventListener('input', function () {
         let tempValue = input.value
         const cleanNumber = tempValue.replace(/[^+\d]/g, '')
@@ -229,7 +234,7 @@ function globalFormInit (form, func_name, type) {
     e.preventDefault()
     if (input && !input?.value?.trim()) {
       input.classList.add("error")
-    } else if ((iti?.isValidNumber() || !input || type == 'libraryPopupFormData' || type == 'blogPhoneFormData' || type == 'blogPhoneEmailFormData')) {
+    } else if (iti?.isValidNumber() || !input || type == 'libraryPopupFormData' || type == 'blogPhoneFormData' || type == 'blogPhoneEmailFormData' || data_phone_pattern_exists) {
 
       if (type == 'externalFormData') {
         var form_data = externalFormData(globalForm);
@@ -316,12 +321,25 @@ function globalFormInit (form, func_name, type) {
           //     }, 100)
           // }, 100)
         } else {
+          let linkTo_ = linkTo;
+          if (utm_input) {
+            utm_f = utm_input.value;
+            if(utm_f != null && utm_f != '' && utm_f != undefined){
+            }else{
+              utm_f = ''
+            }
+            if (utm_f.length > 0) {
+              linkTo_ = linkTo_ + utm_f;
+            }
+          }
           globalForm.submit();
           setTimeout(() => {
             clearForm();
             // location.assign(linkTo + `?cemail=${email_value}`);
             // location.assign(linkTo + '?email='+email_value)
-            location.assign(linkTo);
+
+            location.assign(linkTo_);
+
           }, 100)
         }
       }
