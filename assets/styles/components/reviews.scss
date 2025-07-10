@@ -230,23 +230,24 @@
     }
   }
   &.show {
-    //height: 260px;
-    //@include media(lg) {
+    height: 260px;
+    @include media(lg) {
+      height: auto;
       padding-bottom: 50px;
-    //}
-    //&::before {
-    //  content: '';
-    //  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 55%, #fff 100%);
-    //  height: 108px;
-    //  position: absolute;
-    //  z-index: 2;
-    //  bottom: -2px;
-    //  left: 0;
-    //  right: 0;
-    //  @include media(lg) {
-    //    content: none;
-    //  }
-    //}
+    }
+    &::before {
+      content: '';
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 55%, #fff 100%);
+      height: 108px;
+      position: absolute;
+      z-index: 2;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      @include media(lg) {
+        content: none;
+      }
+    }
   }
 }
 
