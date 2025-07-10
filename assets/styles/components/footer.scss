@@ -5,7 +5,7 @@
   padding: 74px 0 54px;
   font-size: 15px;
   @include media(md) {
-    padding: 40px 0 54px;
+    padding: 40px 0 200px;
   }
   @include media(xs) {
     text-align: center;
@@ -24,14 +24,17 @@
   @include media(xs) {
     padding: 0 20px;
   }
+  @include media(xxs) {
+    padding: 0 10px;
+  }
 }
 
 .footer__area {
   display: flex;
   justify-content: space-between;
   gap: 0 20px;
-  padding-bottom: 32px;
-  margin-bottom: 38px;
+  padding-bottom: 45px;
+  margin-bottom: 44px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
   @include media(md) {
     flex-direction: column;
@@ -70,6 +73,7 @@
     max-width: 267px;
     width: 100%;
     @include media(md) {
+      margin-top: -5px;
       max-width: 262px;
       border-top: 1px solid rgba(255, 255, 255, 0.07);
       padding-top: 16px;
@@ -136,12 +140,12 @@
 }
 
 .footer__logo {
-  margin-bottom: 32px;
-  width: 225px;
-  height: 96px;
+  margin-bottom: 24px;
+  width: 168px;
+  height: 72px;
   display: inline-block;
   @include media(lg) {
-    margin-bottom: 30px;
+    margin-bottom: 18px;
     width: 162px;
     height: 69px;
   }
@@ -195,26 +199,31 @@ a.footer__lk {
     max-width: 248px;
     width: 100%;
     line-height: 154%;
-    margin-top: 26px;
+    margin-top: 21px;
   }
   &:not(:last-of-type) {
-    margin-bottom: 28px;
+    margin-bottom: 22px;
     @include media(md) {
-      margin-bottom: 30px;
+      margin-bottom: 18px;
     }
     @include media(xs) {
       margin-bottom: 0;
     }
   }
+  a {
+    color: rgba($white, .6);
+    text-decoration: underline;
+  }
 }
 
 .footer__about {
-  margin-top: 5px;
+  margin-top: 10px;
   font-size: 16px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   @include media(md) {
+    margin-top: 15px;
     font-size: 15px;
   }
   @include media(xs) {
@@ -254,7 +263,7 @@ a.footer__lk {
 .footer__list {
   display: flex;
   flex-direction: column;
-  gap: 7px 0;
+  gap: 6px 0;
   @include media(md) {
     display: none;
     margin-top: 16px;
@@ -269,11 +278,11 @@ a.footer__lk {
 }
 
 .footer__blog {
-  margin-top: 30px;
+  margin-top: 40px;
   padding: 10px 44px;
   @include media(md) {
     display: none;
-    margin-top: 34px;
+    margin-top: 18px;
   }
   &_mob {
     display: none;
@@ -284,7 +293,7 @@ a.footer__lk {
     }
     @include media(xs) {
       max-width: 180px;
-      margin: 18px auto 0;
+      margin: 18px auto 8px;
     }
   }
 }
@@ -321,11 +330,14 @@ a.footer__lk {
 }
 
 .footer__contacts-box {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   display: flex;
   flex-direction: column;
   @include media(md) {
-    margin-bottom: 26px;
+    margin-bottom: 24px;
+  }
+  @include media(xs) {
+    margin-bottom: 28px;
   }
 }
 
@@ -410,7 +422,6 @@ a.footer__lk {
 .footer__organization {
   max-width: 350px;
   width: 100%;
-  font-weight: 600;
   text-decoration: underline;
   text-decoration-skip-ink: none;
   display: flex;
@@ -421,7 +432,7 @@ a.footer__lk {
     font-size: 15px;
     position: absolute;
     left: 48px;
-    top: 416px;
+    top: 448px;
   }
   @include media(xs) {
     max-width: 232px;
@@ -442,23 +453,91 @@ a.footer__lk {
   }
 }
 
-a.footer__license {
-  color: rgba(255, 255, 255, 0.5);
+.footer__license {
+  color: #FFFFFF;
   font-size: 16px;
   position: relative;
-  left: -26px;
+  left: -35px;
   @include media(md) {
     position: absolute;
     font-size: 15px;
     width: 100%;
     order: 1;
-    top: 512px;
+    top: 522px;
     max-width: 332px;
     left: 48px;
   }
   @include media(xs) {
     position: static;
   }
+  a {
+    text-decoration: underline;
+  }
+  br.mob {
+    display: none;
+    @include media(xs) {
+      display: inline;
+    }
+  }
+}
+
+.footer__app {
+  position: relative;
+  left: -20px;
+  @include media(md) {
+    position: absolute;
+    left: unset;
+    right: 84px;
+    top: 534px;
+    width: 227px;
+  }
+  @include media(xs) {
+    width: 100%;
+    position: static;
+    order: 1;
+    margin-top: 23px;
+  }
+}
+
+.footer__app-text {
+  margin-bottom: 12px;
+  font-size: 16px;
+  @include media(md) {
+    font-size: 15px;
+  }
+  @include media(xs) {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+}
+
+.footer__app-links {
+  display: flex;
+  gap: 25px;
+  @include media(md) {
+    flex-direction: column;
+    gap: 16px;
+  }
+  @include media(xs) {
+    align-items: center;
+    gap: 18px;
+  }
+}
+
+.footer__app-ru-store {
+  width: 160px;
+  height: 40px;
+  @include bg-icon('footer/ru-store.svg');
+  @include media(md) {
+    width: 142px;
+    height: 36px;
+  }
+}
+
+.footer__app-app-store {
+  width: 135px;
+  height: 40px;
+  @include bg-icon('footer/app-store.svg');
 }
 
 .footer__resident {

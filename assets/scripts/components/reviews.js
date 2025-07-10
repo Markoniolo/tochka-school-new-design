@@ -64,7 +64,7 @@ function reviewsSliderInit () {
     const text = inner.querySelector('.reviews__text')
     const btn = inner.querySelector('.reviews__toggle')
 
-    if (inner.clientHeight > 360) {
+    if (inner.clientHeight > 260) {
       inner.classList.add('hide')
       btn.addEventListener('click', toggle)
     } else {
