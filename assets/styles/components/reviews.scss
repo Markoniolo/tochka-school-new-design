@@ -96,12 +96,12 @@
   line-height: 100%;
   color: #003c56;
   @include media(lg) {
-    max-width: 216px;
+    max-width: 268px;
     font-size: 25px;
   }
   @include media(xs) {
     margin-right: 0;
-    max-width: 143px;
+    max-width: 100%;
   }
   @include media(xxs) {
     max-width: 100%;

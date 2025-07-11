@@ -2,7 +2,7 @@ mixin reviews(mod)
   .reviews(class = mod ? mod : false)
     .cont
       .reviews__top
-        h2.reviews__caption Говорят ученики и родители
+        h2.reviews__caption Говорят ученики и&nbsp;родители
         if mod === 'orange'
           a.reviews__all.btn-warning(href="#") Открыть все отзывы
         else if mod === 'summer'
