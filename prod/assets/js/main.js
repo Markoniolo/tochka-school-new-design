@@ -3292,6 +3292,11 @@ function reviewsSliderInit () {
         inner.classList.remove('hide')
         btn.innerHTML = 'Скрыть'
         inner.classList.add('show')
+        const oldBox = reviewsSlider.querySelector('.reviews__box.active')
+        if (oldBox) {
+          const oldVideo = oldBox.querySelector('.reviews__video')
+          if (oldVideo) oldVideo.pause()
+        }
         createModal(inner, btn)
       } else {
         inner.classList.add('hide')
