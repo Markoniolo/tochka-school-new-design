@@ -3144,6 +3144,7 @@ function reviewsTileInit () {
 
   function sort () {
     closeFilters()
+    window.scrollTo({ top: window.scrollY + reviewsTile.getBoundingClientRect().top - 180, behavior: 'smooth' })
     filterNote.innerHTML = this.value
     let utm_f = reviewsTile.getAttribute('data-utm');
     let attr_type = this.getAttribute('data-value');
