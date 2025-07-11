@@ -53,7 +53,7 @@ function reviewsTileInit () {
   }
 
   for (let i = 0; i < inputs.length; i++) {
-    inputs[i].addEventListener('change', sort)
+    inputs[i].addEventListener('change', (e) => sort(e))
   }
 
   async function makeFiltration (attr_type = '', attr_utm = '',p_paginate = 1) {
@@ -75,13 +75,15 @@ function reviewsTileInit () {
     }
   }
 
-  function sort () {
+  function sort (e, isMoreBtn) {
     closeFilters()
-    window.scrollTo({ top: window.scrollY + reviewsTile.getBoundingClientRect().top - 180, behavior: 'smooth' })
-    filterNote.innerHTML = this.value
+    if (!isMoreBtn) {
+      window.scrollTo({ top: window.scrollY + reviewsTile.getBoundingClientRect().top - 180, behavior: 'smooth' })
+      filterNote.innerHTML = e.currentTarget.value
+    }
     let utm_f = reviewsTile.getAttribute('data-utm');
-    let attr_type = this.getAttribute('data-value');
-    let p_paginate = this.getAttribute('data-v');
+    let attr_type = e.currentTarget.getAttribute('data-value');
+    let p_paginate = e.currentTarget.getAttribute('data-v');
     if(p_paginate > 1){
       $('.review___more_pagi').html("<div class='tile-loader'></div>");
     }else{
@@ -94,7 +96,7 @@ function reviewsTileInit () {
 
   function moreBtnInit () {
     const moreBtn = reviewsTile.querySelector('.reviews-tile__more')
-    if (moreBtn) moreBtn.addEventListener('click', sort)
+    if (moreBtn) moreBtn.addEventListener('click', (e) => sort(e, true))
   }
 
   videoInit()
