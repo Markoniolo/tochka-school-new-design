@@ -5,6 +5,8 @@ mixin reviews(mod)
         h2.reviews__caption Говорят ученики и родители
         if mod === 'orange'
           a.reviews__all.btn-warning(href="#") Открыть все отзывы
+        else if mod === 'summer'
+          a.reviews__all.btn-orange(href="#") Открыть все отзывы
         else
           a.reviews__all.btn-blue(href="#") Открыть все отзывы
         .reviews__nav
