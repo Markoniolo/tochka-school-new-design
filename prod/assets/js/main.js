@@ -3310,6 +3310,8 @@ function reviewsSliderInit () {
       const videoOld = slide.querySelector('.reviews__video')
       const imageOld = slide.querySelector('.reviews__image')
       const textOld = slide.querySelector('.reviews__text')
+      const nameOld = slide.querySelector('.reviews__name')
+      const noteOld = slide.querySelector('.reviews__note')
 
       const modal = document.createElement('div')
       modal.classList.add('review-modal')
@@ -3373,6 +3375,8 @@ function reviewsSliderInit () {
 
       box.append(image)
       left.append(box)
+      name.innerHTML = nameOld.innerHTML
+      note.innerHTML = noteOld.innerHTML
       left.append(name)
       left.append(note)
       text.innerHTML = textOld.innerHTML
