@@ -42,7 +42,7 @@
         background: #A0D76A;
       }
       &_2 {
-        background: #F37E60;
+        background: $orange;
       }
       &_3 {
         display: none;
@@ -136,7 +136,7 @@
     }
   }
   &_4 {
-    background-color: #F37E60;
+    background-color: $orange;
     width: 119px;
     height: 119px;
     bottom: -25px;

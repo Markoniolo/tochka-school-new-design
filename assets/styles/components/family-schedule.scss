@@ -3,7 +3,7 @@
   &.summer {
     background: transparent;
     .family-schedule__toggle {
-      background: #f37e60;
+      background: $orange;
     }
     .family-schedule__row:first-child .family-schedule__cell, .family-schedule__time {
       background: #cceaa1;

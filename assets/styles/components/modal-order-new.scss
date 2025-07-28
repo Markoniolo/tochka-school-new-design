@@ -125,6 +125,7 @@
 }
 
 .modal-order-new__select-top {
+  cursor: pointer;
   position: relative;
   z-index: 10;
   padding: 17px 30px 18px;
@@ -304,7 +305,7 @@
   margin-bottom: 22px;
   width: 100%;
   border-radius: 34px;
-  background: #f37e60;
+  background: $orange;
   font-weight: 600;
   font-size: 16px;
   line-height: 100%;

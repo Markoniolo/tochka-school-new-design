@@ -224,7 +224,7 @@
   }
   &_child {
     margin-right: 159px;
-    background: #F37E60;
+    background: $orange;
     @include media(lg) {
       margin-right: 0;
     }

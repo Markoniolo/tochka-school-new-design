@@ -1,0 +1,164 @@
+.it-consult {
+  position: relative;
+  background: #3f5483;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  @include media(lg) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    left: 0;
+    width: 100%;
+    height: 353px;
+    @include bg-icon('it-consult/bg.png');
+    background-repeat: repeat-x;
+    background-size: contain;
+    @include media(lg) {
+      height: 231px;
+      @include bg-icon('it-consult/bg_tablet.png');
+      background-repeat: repeat-x;
+      background-size: contain;
+      top: -100px;
+    }
+    @include media(xs) {
+      background-size: cover;
+    }
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    left: 0;
+    width: 100%;
+    height: 353px;
+    @include bg-icon('it-consult/bg-down.png');
+    background-repeat: repeat-x;
+    background-size: contain;
+    @include media(lg) {
+      height: 231px;
+      @include bg-icon('it-consult/bg-down_tablet.png');
+      background-repeat: repeat-x;
+      background-size: contain;
+      z-index: 1;
+      bottom: -100px;
+    }
+    @include media(xs) {
+      background-size: cover;
+    }
+  }
+  .cont {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.it-consult__wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  @include media(lg) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.it-consult__caption {
+  max-width: 300px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 109%;
+  color: #fff;
+  @include media(lg) {
+    margin-bottom: 25px;
+    font-size: 25px;
+    line-height: 100%;
+    max-width: 390px;
+  }
+  @include media(xs) {
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.it-consult__image {
+  width: 474px;
+  height: 544px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  @include media(lg) {
+    width: 239px;
+    height: 275px;
+  }
+  @include media(xs) {
+    position: static;
+    width: 242px;
+    height: 269px;
+    margin: 0 auto 20px;
+    transform: none;
+  }
+}
+
+.it-consult__area {
+  max-width: 472px;
+  width: 100%;
+  @include media(lg) {
+    max-width: 387px;
+  }
+  @include media(xs) {
+    max-width: 100%;
+  }
+}
+
+.it-consult__title {
+  margin-bottom: 25px;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 100%;
+  color: #fff;
+  @include media(lg) {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  @include media(xs) {
+    text-align: center;
+  }
+}
+
+.it-consult__text {
+  margin-bottom: 35px;
+  font-size: 24px;
+  line-height: 30px;
+  color: #fff;
+  @include media(lg) {
+    margin-bottom: 25px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+  @include media(xs) {
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+  }
+}
+
+.it-consult__button {
+  min-width: 272px;
+  min-height: 55px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  @include media(xs) {
+    font-size: 14px;
+    min-height: 45px;
+    display: flex;
+  }
+}

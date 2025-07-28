@@ -136,7 +136,7 @@
   right: 24px;
   width: 80px;
   height: 80px;
-  background-color: #F37E60;
+  background-color: $orange;
   @include media(md) {
     bottom: 31px;
     right: -77px;

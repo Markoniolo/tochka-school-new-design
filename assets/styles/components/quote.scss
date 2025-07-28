@@ -60,7 +60,7 @@
   }
   &_3 {
     @include media(lg) {
-      background-color: #f37e60;
+      background-color: $orange;
       width: 145px;
       height: 145px;
       top: 280px;

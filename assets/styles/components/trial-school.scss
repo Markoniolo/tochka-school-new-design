@@ -79,7 +79,7 @@
   &_1 {
     width: 97px;
     height: 97px;
-    background-color: #f37e60;
+    background-color: $orange;
     top: -7px;
     right: 26px;
   }
@@ -218,7 +218,7 @@
 
 .trial-school__decor_1 {
   display: none;
-  background-color: #F37E60;
+  background-color: $orange;
   @include media(md) {
     display: block;
     bottom: 31px;

@@ -1,0 +1,149 @@
+.it-why {
+  position: relative;
+  margin-bottom: 105px;
+  padding-top: 160px;
+  @include media(lg) {
+    margin-bottom: 36px;
+    padding-top: 55px;
+  }
+  @include media(xs) {
+    padding-top: 80px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 208px;
+    height: 299px;
+    @include bg-icon('it-why/decor-1.png');
+    @include media(xl) {
+      content: none;
+    }
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    right: 0;
+    width: 275px;
+    height: 376px;
+    @include bg-icon('it-why/decor-2.png');
+    @include media(xl) {
+      content: none;
+    }
+  }
+}
+
+.it-why__caption {
+  margin-bottom: 44px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 121%;
+  color: #fff;
+  @include media(lg) {
+    margin-bottom: 26px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+  @include media(xs) {
+    max-width: 300px;
+    width: 100%;
+  }
+}
+
+.it-why__list {
+  display: flex;
+  justify-content: space-between;
+  @include media(lg) {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 632px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  @include media(xs) {
+    gap: 20px;
+  }
+}
+
+.it-why__item {
+  border-radius: 20px;
+  width: 312px;
+  background: #fff;
+  padding: 25px 20px 20px;
+  @include media(lg) {
+    width: 301px;
+    border-radius: 10px;
+    padding: 15px;
+  }
+  @include media(xs) {
+    width: 100%;
+    padding: 20px 20px 18px;
+  }
+  @include media(xxs) {
+    padding: 15px;
+  }
+}
+
+.it-why__icon {
+  margin: 0 auto 25px;
+  @include media(lg) {
+    margin: 0 auto 18px;
+  }
+  &_1 {
+    width: 235px;
+    height: 215px;
+    @include media(lg) {
+      width: 206px;
+      height: 184px;
+    }
+  }
+  &_2 {
+    width: 235px;
+    height: 215px;
+    @include media(lg) {
+      width: 182px;
+      height: 147px;
+    }
+  }
+  &_3 {
+    width: 235px;
+    height: 215px;
+    @include media(lg) {
+      width: 164px;
+      height: 173px;
+    }
+  }
+  &_4 {
+    width: 235px;
+    height: 215px;
+    @include media(lg) {
+      width: 193px;
+      height: 173px;
+    }
+  }
+}
+
+.it-why__title {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 139%;
+  color: #000;
+  @include media(lg) {
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.it-why__text {
+  font-size: 16px;
+  line-height: 137%;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 140%;
+  }
+}

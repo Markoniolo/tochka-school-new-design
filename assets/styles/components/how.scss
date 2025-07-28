@@ -244,14 +244,9 @@
     opacity: 0.25;
     pointer-events: none;
   }
-}
-
-.how__nav-btn_prev {
-  transform: rotate(180deg);
-}
-
-.how__nav-btn_next {
-
+  &_prev {
+    transform: rotate(180deg);
+  }
 }
 
 .how__button-box {

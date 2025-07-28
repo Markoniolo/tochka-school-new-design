@@ -1,0 +1,19 @@
+extends ../components/_layout/layout
+
+block head
+  +title('IT-курсы')
+
+block body
+  include ../components/it-cap
+  .it-background-gradient-1
+    include ../components/it-why
+    include ../components/it-about
+  include ../components/it-skills
+  include ../components/it-time
+  include ../components/it-how
+  include ../components/it-tile
+  include ../components/it-consult
+  include ../components/faq
+  +faq('it')
+  include ../components/it-end
+

@@ -96,7 +96,7 @@
     width: 464px;
     height: 464px;
     border-radius: 50%;
-    background-color: #F37E60;
+    background-color: $orange;
     @include media(lg) {
       width: 239px;
       height: 239px;

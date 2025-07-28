@@ -30,7 +30,7 @@
       max-width: 100%;
       width: calc(50% - 15px);
       padding: 30px;
-      background: #f37e60;
+      background: $orange;
       border-radius: 32px;
       @include bg-icon('trial-tile/trial-tile-filter-bg-summer.svg');
       background-size: cover;

@@ -1,0 +1,254 @@
+.it-tile {
+  background: #324266;
+  padding-bottom: 100px;
+}
+
+.it-tile__caption {
+  margin-bottom: 45px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 100%;
+  color: #fff;
+  @include media(lg) {
+    margin-bottom: 26px;
+    font-size: 25px;
+  }
+}
+
+.it-tile__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  @include media(lg) {
+    gap: 25px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.it-tile__item {
+  position: relative;
+  z-index: 1;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 32px 40px 40px;
+  @include media(lg) {
+    border-radius: 10px;
+    padding: 108px 15px 80px;
+    width: 328px;
+  }
+  @include media(xs) {
+    width: 100%;
+  }
+}
+
+.it-tile__picture {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.it-tile__image {
+  height: 100%;
+  object-fit: cover;
+  @include media(lg) {
+    object-position: top right;
+  }
+}
+
+.it-tile__top {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  @include media(lg) {
+    margin-bottom: 20px;
+    gap: 12px;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+}
+
+.it-tile__title {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 100%;
+  color: #fff;
+  @include media(lg) {
+    font-size: 20px;
+    line-height: 25px;
+  }
+}
+
+.it-tile__tag {
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 22px 0 #6683c2;
+  background: #6683c2;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  color: #fff;
+  @include media(lg) {
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+}
+
+.it-tile__area {
+  display: flex;
+  @include media(lg) {
+    flex-direction: column-reverse;
+  }
+}
+
+.it-tile__author {
+  margin-right: 26px;
+  width: 240px;
+  flex-shrink: 0;
+  @include media(lg) {
+    margin-right: 0;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
+
+.it-tile__author-picture {
+  margin-bottom: 22px;
+  width: 240px;
+  height: 255px;
+  border-radius: 6px;
+  overflow: hidden;
+  @include media(lg) {
+    margin-bottom: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+}
+
+.it-tile__author-image {
+  height: 100%;
+}
+
+.it-tile__author-inner {
+
+}
+
+.it-tile__author-name {
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  color: #fff;
+  @include media(lg) {
+    margin-bottom: 6px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+}
+
+.it-tile__author-descr {
+  font-size: 16px;
+  line-height: 137%;
+  color: #fff;
+  @include media(lg) {
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 500;
+  }
+}
+
+.it-tile__box {
+  padding-left: 26px;
+  max-width: 453px;
+  width: 100%;
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  @include media(lg) {
+    padding-left: 0;
+    max-width: 100%;
+    border: none;
+  }
+}
+
+.it-tile__text {
+  margin-top: -2px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 137%;
+  color: #fff;
+  @include media(lg) {
+    margin-top: 0;
+    font-size: 15px;
+    line-height: 147%;
+  }
+}
+
+.it-tile__video-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+  @include media(lg) {
+    flex-direction: row-reverse;
+    gap: 15px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.it-tile__note {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 137%;
+  color: #fff;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 113%;
+  }
+}
+
+.it-tile__video-wrap {
+  width: 338px;
+  height: 190px;
+  @include media(lg) {
+    width: 106px;
+    height: 60px;
+    flex-shrink: 0;
+  }
+}
+
+.it-tile__video {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  @include media(lg) {
+    border-radius: 3px;
+  }
+}
+
+.it-tile__button {
+  font-size: 16px;
+  min-width: 250px;
+  min-height: 55px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  @include media(lg) {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    font-size: 14px;
+    min-height: 45px;
+  }
+}

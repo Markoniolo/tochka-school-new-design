@@ -198,7 +198,7 @@ b.schedule__note {
   flex-direction: column;
   justify-content: center;
   gap: 8px 0;
-  background: #f37e60;
+  background: $orange;
   max-width: 288px;
   width: 100%;
   @include media(lg) {

@@ -1,0 +1,36 @@
+-
+  const itHowSlider = [
+    {
+      title: '20% теории — 80% практики',
+      text: 'Творим, создаём новое с нуля. Поэтому этот формат так увлекает ребят!'
+    },
+    {
+      title: 'На уроке',
+      text: 'Учитель объяснит тему, ответит на все вопросы до последнего. Покажет на своём экране, как выполнять задание, писать код или создавать дизайн.'
+    },
+    {
+      title: 'После урока',
+      text: 'Тьютор проверит задание, укажет на ошибки и поможет их исправить. Объяснит непонятные моменты и ответит на неограниченное количество вопросов.'
+    },
+    {
+      title: 'Личный кабинет',
+      text: 'Онлайн-уроки, их записи и учебные материалы будут собраны в личном кабинете. Вы сможете следить за успехами ребёнка в разделе «Успеваемость».'
+    },
+  ]
+
+.it-how
+  .cont
+    h2.it-how__caption Как проходит обучение
+    .it-how__slider
+      .it-how__wrapper.swiper-wrapper
+        each slide, index in itHowSlider
+          .it-how__slide.swiper-slide(class=`it-how__slide_${index+1}`)
+            img.it-how__image(class=`it-how__image_${index+1}` src=staticImg(`it-how/it-how-${index+1}.png`) alt='')
+            .it-how__inner
+              .it-how__title= slide.title
+              .it-how__text= slide.text
+      .it-how__bottom
+        .it-how__scrollbar
+        .it-how__nav
+          button.it-how__nav-btn.it-how__nav-btn_prev
+          button.it-how__nav-btn.it-how__nav-btn_next

@@ -51,7 +51,7 @@
   }
 
   .desc {
-    background: #f37e60;
+    background: $orange;
     padding: 4px 8px;
     border-radius: 6px;
     @include media(lg) {
@@ -67,7 +67,7 @@
     display: none;
     @include media(xxs) {
       display: inline-block;
-      background: #f37e60;
+      background: $orange;
       padding: 2px 4px;
       border-radius: 3px;
     }

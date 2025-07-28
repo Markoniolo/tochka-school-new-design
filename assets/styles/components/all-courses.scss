@@ -194,7 +194,7 @@
   }
   &_error {
     .all-courses__filter-top {
-      border: 2px solid #F37E60;
+      border: 2px solid $orange;
     }
     .all-courses__filter-hint {
       opacity: 1;
@@ -214,7 +214,7 @@
   right: 20px;
   top: 0;
   transform: translateY(-50%);
-  background: #f37e60;
+  background: $orange;
   color: #fff;
   border-radius: 33px;
   padding: 2px 12px;
@@ -245,7 +245,7 @@
     padding: 8px 20px 8px 20px;
   }
   &.active {
-    border: 2px solid #f37e60;
+    border: 2px solid $orange;
     @include media(xs) {
       border: 2px solid transparent;
       display: none;

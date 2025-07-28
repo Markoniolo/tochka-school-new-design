@@ -1,0 +1,6 @@
+.it-background-gradient-1 {
+  background: linear-gradient(180deg, #6683c2 0%, #546b9e 100%);
+  @include media(lg) {
+    background: #6984bf;
+  }
+}

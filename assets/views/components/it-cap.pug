@@ -1,0 +1,31 @@
+-
+  const itCapCards = [
+    { title: 'Программирование в Scratch', note: '1-6 класс' },
+    { title: 'Графический дизайн в Фигма', note: '5-11 класс' },
+    { title: 'Создание игр в Roblox', note: '5-11 класс' },
+    { title: 'Компьютерная грамотность', note: '1-9 класс' },
+    { title: 'Программирование на языке Python', note: '5-11 класс' },
+    { title: 'Создание сайтов', note: '5-11 класс' },
+    { title: 'Программирование в Minecraft', note: '3-9 класс' },
+  ]
+
+.it-cap
+  .cont
+    .it-cap__wrap
+      span.it-cap__class 1-11 класс
+      h1.it-cap__caption IT-курсы
+      p.it-cap__text.
+        Стать профи в работе с компьютером, научиться программировать, создавать игры и освоить графический дизайн.
+      picture.it-cap__picture
+        source(srcset=staticImg('it-cap/it-cap-1_xxs.png') media="(max-width: 359px)")
+        source(srcset=staticImg('it-cap/it-cap-1_mob.png') media="(max-width: 743px)")
+        source(srcset=staticImg('it-cap/it-cap-1_tablet.png') media="(max-width: 1359px)")
+        img.it-cap__image(src=staticImg('it-cap/it-cap-1.png') alt="")
+      a.it-cap__button.btn-orange(href="#it-tile" data-role="scroll-to-anchor") Выбрать курс
+      .it-cap__cards
+        each card, index in itCapCards
+          .it-cap__card
+            .it-cap__title= card.title
+            .it-cap__note= card.note
+            a.it-cap__more(href="#") Подробнее
+            img.it-cap__decor(src=staticImg(`it-cap/decor-${index+1}.png`) alt='')

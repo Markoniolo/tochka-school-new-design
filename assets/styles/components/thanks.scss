@@ -3,7 +3,13 @@
   margin-top: 40px;
   @include media(lg) {
     margin-top: 0;
-    margin-bottom: 60px;
+    margin-bottom: 0;
+    @include bg-icon('thanks/thanks-bg_tablet.png');
+    background-size: cover;
+  }
+  @include media(xs) {
+    @include bg-icon('thanks/thanks-bg_mob.png');
+    background-size: cover;
   }
 }
 
@@ -19,15 +25,13 @@
   background-size: cover;
   box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
   @include media(lg) {
-    @include bg-icon('thanks/thanks-bg_tablet.png');
-    background-size: cover;
+    background: none;
     border-radius: 10px;
-    padding: 24px 20px 40px;
+    padding: 30px 20px 40px;
+    box-shadow: none;
   }
   @include media(xs) {
-    @include bg-icon('thanks/thanks-bg_mob.png');
-    background-size: cover;
-    padding: 24px 15px 30px;
+    padding: 30px 15px 40px;
   }
   &::before {
     content: '';
@@ -103,14 +107,14 @@
   z-index: 1;
   box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
   background: #fff;
-  padding: 39px 45px 0;
+  padding: 39px 45px;
   border-radius: 22px;
   display: flex;
   margin: 0 auto;
   max-width: 857px;
   width: 100%;
   @include media(lg) {
-    padding: 25px 25px 0;
+    padding: 25px 25px;
     max-width: 531px;
     border-radius: 10px;
   }

@@ -64,6 +64,37 @@
       @include bg-icon('faq/ic_faq_plus_green.svg');
     }
   }
+  &.it {
+    background: #324266;
+    padding-bottom: 93px;
+    @include media(lg) {
+      padding-bottom: 33px;
+    }
+    @include media(xs) {
+      padding-bottom: 36px;
+    }
+    .faq__caption {
+      color: #fff;
+    }
+    .faq__area {
+      margin-right: 20px;
+      padding-bottom: 0;
+      @include media(lg) {
+        margin-right: 0;
+      }
+    }
+    .faq__image {
+      width: 548px;
+      height: 548px;
+    }
+    .faq__top {
+      transition-property: background-color;
+      transition-duration: $transition-duration;
+      &:hover {
+        background-color: #c0ceeb;
+      }
+    }
+  }
 }
 
 .faq__cont {
