@@ -3264,6 +3264,7 @@ const reviewsSlider = document.querySelector('.reviews__slider')
 if (reviewsSlider) reviewsSliderInit()
 
 function reviewsSliderInit () {
+  const body = document.querySelector('body')
   const preReviewsSliderSwiper = new Swiper(reviewsSlider, {
     slidesPerView: 'auto',
     spaceBetween: 15,
@@ -3437,11 +3438,14 @@ function reviewsSliderInit () {
       const main = document.querySelector('main')
       main.append(modal)
 
+      body.classList.add('no-scroll-desktop')
+
       function closeModal () {
         modal.remove()
         innerOld.classList.add('hide')
         btn.innerHTML = 'Читать весь отзыв'
         innerOld.classList.remove('show')
+        body.classList.remove('no-scroll-desktop')
       }
     }
   }
