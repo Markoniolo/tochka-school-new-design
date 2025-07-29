@@ -120,6 +120,13 @@
   overflow: hidden;
 }
 
+.no-scroll-desktop {
+  overflow: hidden;
+  @include media(lg) {
+    overflow: auto;
+  }
+}
+
 .layer {
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.71);

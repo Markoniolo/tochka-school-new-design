@@ -89,8 +89,8 @@
 }
 
 .reviews__caption {
-  margin-right: 40px;
   width: 100%;
+  padding-right: 40px;
   font-weight: 500;
   font-size: 45px;
   line-height: 100%;
@@ -100,11 +100,7 @@
     font-size: 25px;
   }
   @include media(xs) {
-    margin-right: 0;
-    max-width: 100%;
-  }
-  @include media(xxs) {
-    max-width: 100%;
+    padding-right: 0;
   }
 }
 
@@ -113,7 +109,6 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-left: auto;
   font-size: 16px;
   min-width: 210px;
   min-height: 55px;
@@ -129,6 +124,7 @@
 }
 
 .reviews__nav {
+  flex-shrink: 0;
   margin-left: 55px;
   display: flex;
   gap: 18px;

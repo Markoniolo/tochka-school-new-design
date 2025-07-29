@@ -7,6 +7,8 @@ mixin reviews(mod)
           a.reviews__all.btn-warning(href="#") Открыть все отзывы
         else if mod === 'summer'
           a.reviews__all.btn-orange(href="#") Открыть все отзывы
+        else if mod === 'no-reviews-all'
+
         else
           a.reviews__all.btn-blue(href="#") Открыть все отзывы
         .reviews__nav
@@ -17,7 +19,7 @@ mixin reviews(mod)
           each item in [1,2,3]
             .reviews__slide.swiper-slide
               .reviews__box
-                img.reviews__image(src=staticImg('Shevchenko_prevyu.jpg') alt='')
+                img.reviews__image(loading="lazy" src=staticImg('Shevchenko_prevyu.jpg') alt='')
               .reviews__area
                 .reviews__inner
                   .reviews__name Пушкарева Анна
@@ -32,8 +34,8 @@ mixin reviews(mod)
             .reviews__slide.swiper-slide
               .reviews__box.reviews__box_video
                 .reviews__play
-                img.reviews__image(src=staticImg('Shevchenko_prevyu.jpg') alt='')
-                video.reviews__video(src=`${pathStatics}/files/Shevchenko_1_klass.mov`)
+                img.reviews__image(loading="lazy" src=staticImg('Shevchenko_prevyu.jpg') alt='')
+                video.reviews__video(src=`https://tochka-school.ru/storage/app/media/Stranica_otzivov/Video_otzivov/Mednikova_Varvara_otziv.mp4` preload="none")
               .reviews__area
                 .reviews__inner
                   .reviews__name Пушкарева Анна
