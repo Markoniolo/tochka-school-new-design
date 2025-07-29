@@ -65,10 +65,14 @@
     }
   }
   &.it {
+    padding-top: 195px;
     background: #324266;
     padding-bottom: 93px;
     @include media(lg) {
       padding-bottom: 33px;
+      padding-top: 12px;
+      position: relative;
+      z-index: 1;
     }
     @include media(xs) {
       padding-bottom: 36px;

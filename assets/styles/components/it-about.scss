@@ -1,8 +1,8 @@
 .it-about {
   position: relative;
-  padding-bottom: 56px;
+  padding-bottom: 88px;
   @include media(lg) {
-    padding-bottom: 36px;
+    padding-bottom: 42px;
   }
   &::before {
     content: '';
@@ -38,7 +38,7 @@
   line-height: 100%;
   color: #fff;
   @include media(lg) {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     font-size: 25px;
   }
   @include media(xs) {
@@ -58,12 +58,14 @@
     left: 0;
     width: 308px;
     height: 299px;
+    transform: scale(1.1) translateX(-8px) translateY(6px);
   }
   @include media(xs) {
     position: static;
     margin: 0 auto 25px;
     width: 252px;
     height: 244px;
+    transform: none;
   }
 }
 
@@ -86,13 +88,16 @@
   position: relative;
   border-radius: 20px;
   background: #fff;
-  padding: 18px 64px 22px 109px;
+  padding: 12px 64px 18px 109px;
   min-height: 112px;
   @include media(lg) {
     border-radius: 10px;
-    padding: 18px 20px;
+    padding: 15px 19px 15px 20px;
   }
   @include media(xs) {
+    padding: 15px 19px;
+  }
+  @include media(xxs) {
     padding: 12px 15px;
   }
   &::before {
@@ -203,12 +208,12 @@
 }
 
 .it-about__title {
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   font-weight: 600;
   font-size: 18px;
   line-height: 139%;
   @include media(lg) {
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     font-size: 16px;
     line-height: 20px;
   }

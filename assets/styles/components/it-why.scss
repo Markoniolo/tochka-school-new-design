@@ -1,7 +1,7 @@
 .it-why {
   position: relative;
-  margin-bottom: 105px;
-  padding-top: 160px;
+  margin-bottom: 100px;
+  padding-top: 170px;
   @include media(lg) {
     margin-bottom: 36px;
     padding-top: 55px;
@@ -24,7 +24,7 @@
   &::after {
     content: '';
     position: absolute;
-    bottom: -100px;
+    bottom: -78px;
     right: 0;
     width: 275px;
     height: 376px;
@@ -36,7 +36,7 @@
 }
 
 .it-why__caption {
-  margin-bottom: 44px;
+  margin-bottom: 40px;
   font-weight: 500;
   font-size: 45px;
   line-height: 121%;
@@ -72,7 +72,7 @@
   border-radius: 20px;
   width: 312px;
   background: #fff;
-  padding: 25px 20px 20px;
+  padding: 25px 22px 20px;
   @include media(lg) {
     width: 301px;
     border-radius: 10px;
@@ -127,13 +127,13 @@
 }
 
 .it-why__title {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   font-weight: 600;
   font-size: 18px;
   line-height: 139%;
   color: #000;
   @include media(lg) {
-    margin-bottom: 12px;
+    margin-bottom: 5px;
     font-size: 16px;
     line-height: 20px;
   }

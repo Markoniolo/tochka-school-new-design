@@ -10,7 +10,7 @@
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 15px;
-  padding: 45px 60px;
+  padding: 45px 60px 55px;
   @include media(lg) {
     padding: 20px 25px 25px;
   }
@@ -22,7 +22,7 @@
 }
 
 .it-end__title {
-  margin-bottom: 40px;
+  margin-bottom: 35px;
   font-weight: 600;
   font-size: 45px;
   line-height: 100%;
@@ -38,7 +38,7 @@
 }
 
 .it-end__text {
-  margin-bottom: 35px;
+  margin-bottom: 32px;
   font-weight: 500;
   font-size: 24px;
   line-height: 30px;
@@ -92,5 +92,7 @@
     font-size: 14px;
     display: flex;
     min-height: 45px;
+    max-width: 313px;
+    margin: 0 auto;
   }
 }

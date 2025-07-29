@@ -44,17 +44,20 @@
     background: none;
     overflow: visible;
     border-radius: 0;
-    padding: 40px 0 49px;
+    padding: 34px 0 49px;
+  }
+  @include media(xs) {
+    padding: 26px 0 49px;
   }
 }
 
 .it-cap__class {
   display: block;
-  margin-bottom: 48px;
+  margin-bottom: 38px;
   font-size: 24px;
   line-height: 100%;
   @include media(lg) {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-size: 18px;
   }
   @include media(xs) {
@@ -63,16 +66,17 @@
 }
 
 .it-cap__caption {
-  margin-bottom: 45px;
+  margin-bottom: 37px;
   font-weight: 600;
   font-size: 58px;
   line-height: 112%;
   color: #003c56;
   @include media(lg) {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     font-size: 32px;
   }
   @include media(xs) {
+    margin-bottom: 8px;
     text-align: center;
   }
 }
@@ -86,6 +90,7 @@
   line-height: 30px;
   color: #003c56;
   @include media(lg) {
+    margin-bottom: 58px;
     max-width: 360px;
     font-size: 18px;
     line-height: 23px;
@@ -110,7 +115,7 @@
   height: 532px;
   @include media(lg) {
     top: 20px;
-    right: 0;
+    right: 8px;
     width: 303px;
     height: 278px;
   }
@@ -147,22 +152,43 @@
     position: absolute;
     z-index: 1;
     bottom: 0;
+    left: 16px;
+    right: 16px;
+    transform: translateY(50%);
+  }
+  @include media(xxs) {
     left: 0;
     right: 0;
-    transform: translateY(50%);
   }
 }
 
 .it-cap__cards {
+  margin-left: -60px;
   display: flex;
-  gap: 25px;
   @include media(lg) {
     display: none;
   }
 }
 
+.it-cap__cards-box {
+  flex-shrink: 0;
+  display: flex;
+  gap: 25px;
+  padding-right: 25px;
+  animation: 20s infinite linear itCapCardsBox;
+  @keyframes itCapCardsBox {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+}
+
 .it-cap__card {
   position: relative;
+  flex-shrink: 0;
   min-width: 316px;
   border-radius: 20px;
   padding: 20px 25px;
@@ -179,7 +205,7 @@
 }
 
 .it-cap__note {
-  margin-bottom: 28px;
+  margin-bottom: 30px;
   font-size: 16px;
   line-height: 100%;
 }

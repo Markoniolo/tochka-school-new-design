@@ -2,10 +2,10 @@
   background: linear-gradient(180deg, #546b9f 0%, #546b9f 100%);
   overflow: hidden;
   margin-top: -2px;
-  margin-bottom: -100px;
+  margin-bottom: -138px;
   @include media(lg) {
     background: #6984bf;
-    margin-bottom: -50px;
+    margin-bottom: -46px;
     padding-top: 0;
   }
 }
@@ -16,7 +16,7 @@
   padding-bottom: 270px;
   @include media(lg) {
     padding-top: 0;
-    padding-bottom: 100px;
+    padding-bottom: 120px;
     padding-left: 38px;
   }
   @include media(xs) {
@@ -64,13 +64,13 @@
 .it-skills__item {
   border: 1px solid #fff;
   border-radius: 20px;
-  padding: 16px;
+  padding: 14px 16px;
   display: flex;
   @include media(lg) {
     border-radius: 10px;
     padding: 20px 20px 16px;
     flex-direction: column;
-    gap: 15px;
+    gap: 8px;
     position: relative;
   }
   @include media(xxs) {
@@ -232,6 +232,7 @@
     margin: 90px auto 115px;
     display: flex;
     align-items: center;
+    justify-content: center;
     @include media(lg) {
       order: -1;
       margin: 0;
@@ -241,12 +242,14 @@
       border-radius: 0;
       flex-direction: row;
       gap: 0;
+      justify-content: flex-start;
     }
     @include media(xs) {
       width: 100%;
       flex-direction: column;
       align-items: flex-start;
       gap: 10px;
+      margin-bottom: 10px;
     }
     &::before {
       @include media(lg) {
@@ -256,11 +259,11 @@
         background-color: #ffffff;
         position: absolute;
         top: 28px;
-        left: -37.5px;
+        left: -37px;
       }
       @include media(xs) {
         top: 85px;
-        left: -22.5px;
+        left: -22px;
       }
       @include media(xxs) {
         left: -15px;
@@ -409,13 +412,13 @@
 }
 
 .it-skills__title {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   font-weight: 600;
   font-size: 18px;
   line-height: 139%;
   color: #fff;
   @include media(lg) {
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     font-size: 16px;
     line-height: 20px;
   }

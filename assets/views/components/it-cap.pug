@@ -23,9 +23,11 @@
         img.it-cap__image(src=staticImg('it-cap/it-cap-1.png') alt="")
       a.it-cap__button.btn-orange(href="#it-tile" data-role="scroll-to-anchor") Выбрать курс
       .it-cap__cards
-        each card, index in itCapCards
-          .it-cap__card
-            .it-cap__title= card.title
-            .it-cap__note= card.note
-            a.it-cap__more(href="#") Подробнее
-            img.it-cap__decor(src=staticImg(`it-cap/decor-${index+1}.png`) alt='')
+        each box in [1,2]
+          .it-cap__cards-box
+            each card, index in itCapCards
+              .it-cap__card
+                .it-cap__title= card.title
+                .it-cap__note= card.note
+                a.it-cap__more(href="#") Подробнее
+                img.it-cap__decor(src=staticImg(`it-cap/decor-${index+1}.png`) alt='')
