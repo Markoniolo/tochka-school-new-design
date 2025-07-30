@@ -743,6 +743,12 @@ function courseAboutVideoInit () {
     console.log(e)
   }
 
+  courseAboutVideo.addEventListener('loadeddata', videoLoaded)
+
+  function videoLoaded () {
+    videoWrap.classList.add('loaded')
+  }
+
   videoWrap.addEventListener('click', playVideo)
 
   function playVideo (e) {
