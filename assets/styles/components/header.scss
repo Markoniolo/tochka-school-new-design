@@ -1,6 +1,12 @@
 .header {
   position: relative;
   background-color: #FFFFFF;
+  height: 106px;
+  transition-duration: $transition-duration;
+  transition-property: height;
+  @include media(lg) {
+    height: auto;
+  }
   @include media(xs) {
     position: relative;
   }
@@ -8,15 +14,12 @@
     background: #fff;
   }
   &.thin {
+    height: 168px;
+    @include media(lg) {
+      height: auto;
+    }
     .header__area {
       border-bottom: none;
-    }
-    .header__bottom {
-      transform: translateY(-100%);
-      position: absolute;
-      &::before {
-        box-shadow: none;
-      }
     }
   }
   &.stages-hide {
@@ -443,13 +446,13 @@
 }
 
 .header__bottom {
-  position: relative;
+  position: absolute;
   z-index: 1;
-  top: 100%;
   left: 0;
   right: 0;
+  bottom: 0;
   overflow: hidden;
-  transition-duration: 0.6s;
+  transition-duration: $transition-duration;
   transition-property: transform;
   @include media(lg) {
     display: none;
@@ -464,9 +467,6 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100vw;
-    //box-shadow: 0 4px 9px 0 rgba(0,0,0,.05);
-    transition-duration: $transition-duration;
-    transition-property: box-shadow;
   }
 }
 

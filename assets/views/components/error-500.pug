@@ -1,0 +1,20 @@
+-
+  const error500List = [
+    'Нажмите Ctrl+F5 для обновления страницы',
+    'Узнайте, обновлен ли ваш браузер до последней версии',
+    'Проверьте, нет ли странных интернет-настроек?'
+  ]
+
+.error-500
+  .cont
+    .error-500__wrap
+      h1.error-500__caption!= 'Упс! <br> Где-то произошел сбой!'
+      h2.error-500__title Извините, наш учебный сервер не может прочитать запрос.
+      picture.error-500__picture
+        source(srcset=staticImg('error-500/decor_tablet.svg') media="(max-width: 1359px)")
+        img.error-500__image(src=staticImg('error-500/decor.svg') alt='')
+      .error-500__box
+        .error-500__headline Что делать?
+        ul.error-500__list
+          each item in error500List
+            li.error-500__item= item

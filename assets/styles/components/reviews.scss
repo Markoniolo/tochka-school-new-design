@@ -2,7 +2,7 @@
   margin-bottom: 80px;
   overflow: hidden;
   background: #d7e4fe;
-  padding-top: 80px;
+  padding-top: 72px;
   padding-bottom: 80px;
   @include media(lg) {
     padding-top: 40px;
@@ -96,7 +96,6 @@
   line-height: 100%;
   color: #003c56;
   @include media(lg) {
-    max-width: 268px;
     font-size: 25px;
   }
   @include media(xs) {
@@ -168,8 +167,8 @@
 
 .reviews__box {
   position: relative;
-  height: 417px;
-  margin-bottom: -32px;
+  height: 375px;
+  margin-bottom: -26px;
   overflow: hidden;
   border-radius: 20px;
   @include media(lg) {

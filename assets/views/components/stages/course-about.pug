@@ -56,6 +56,7 @@ mixin course-about(mod, title='Как проходит этот курс', numbe
       .course-about__area
         if mod !== 'no-video' && mod !== 'no-video-summer'
           .course-about__video-box(data-element='course-about-video-wrap')
+            .tile-loader
             .course-about__sound
             video.course-about__video(src=`${pathStatics}/files/Shevchenko_1_klass.mov` loop=true controls=false pip="false"
               data-element='course-about-video' muted playsinline autoplay data-play-start="35")

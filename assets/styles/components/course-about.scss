@@ -175,9 +175,22 @@
     max-width: 100%;
     margin-bottom: 30px;
   }
+  &.loaded {
+    .tile-loader {
+      display: none;
+    }
+    .course-about__sound {
+      display: block;
+    }
+  }
+  .tile-loader {
+    top: 50%;
+    transform: translate(-50%, -50%) scale(3);
+  }
 }
 
 .course-about__sound {
+  display: none;
   box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
   width: 52px;
   height: 52px;

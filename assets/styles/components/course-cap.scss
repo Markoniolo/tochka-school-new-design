@@ -62,21 +62,21 @@
       }
     }
     .course-cap__picture {
-      width: 597px;
-      height: 410px;
-      bottom: 15px;
-      right: 49px;
+      width: 657px;
+      height: 436px;
+      bottom: 5px;
+      right: 33px;
       @include media(lg) {
-        width: 332px;
-        height: 258px;
-        bottom: 68px;
+        width: 333px;
+        height: 286px;
+        bottom: 46px;
         right: 0;
       }
       @include media(xs) {
         max-width: 333px;
         width: 100%;
         height: unset;
-        margin: 0 auto 25px;
+        margin: 0 auto 5px;
       }
     }
   }

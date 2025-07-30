@@ -1,5 +1,6 @@
 .it-cap {
   position: relative;
+  z-index: 1;
   margin-top: 50px;
   margin-bottom: -90px;
   @include media(lg) {
@@ -225,6 +226,8 @@
   border-radius: 34px;
   padding: 5px 10px;
   box-shadow: 0 4px 27px 0 rgba(0, 0, 0, 0.08);
+  transition-duration: $transition-duration;
+  transition-property: color;
 }
 
 .it-cap__decor {
