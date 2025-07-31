@@ -1,12 +1,6 @@
 .header {
   position: relative;
   background-color: #FFFFFF;
-  height: 106px;
-  transition-duration: $transition-duration;
-  transition-property: height;
-  @include media(lg) {
-    height: auto;
-  }
   @include media(xs) {
     position: relative;
   }
@@ -14,12 +8,15 @@
     background: #fff;
   }
   &.thin {
-    height: 168px;
-    @include media(lg) {
-      height: auto;
-    }
     .header__area {
       border-bottom: none;
+    }
+    .header__bottom {
+      transform: translateY(-100%);
+      position: absolute;
+      &::before {
+        box-shadow: none;
+      }
     }
   }
   &.stages-hide {
@@ -446,11 +443,11 @@
 }
 
 .header__bottom {
-  position: absolute;
+  position: relative;
   z-index: 1;
   left: 0;
   right: 0;
-  bottom: 0;
+  top: 100%;
   overflow: hidden;
   transition-duration: $transition-duration;
   transition-property: transform;
