@@ -36,10 +36,12 @@
   border-radius: 20px;
   overflow: hidden;
   padding: 32px 40px 40px;
+  min-height: 540px;
   @include media(lg) {
     border-radius: 10px;
     padding: 108px 15px 80px;
     width: 328px;
+    min-height: auto;
   }
   @include media(xs) {
     width: 100%;
@@ -58,6 +60,7 @@
 .it-tile__image {
   height: 100%;
   object-fit: cover;
+  object-position: center right;
   @include media(lg) {
     object-position: top right;
   }
@@ -126,7 +129,6 @@
 .it-tile__author-picture {
   margin-bottom: 22px;
   width: 240px;
-  height: 255px;
   border-radius: 6px;
   overflow: hidden;
   @include media(lg) {
@@ -185,11 +187,12 @@
 
 .it-tile__text {
   margin-top: -2px;
-  margin-bottom: 14px;
+  margin-bottom: 19px;
   font-size: 16px;
   line-height: 137%;
   color: #fff;
   @include media(lg) {
+    margin-bottom: 14px;
     margin-top: 0;
     font-size: 15px;
     line-height: 147%;
