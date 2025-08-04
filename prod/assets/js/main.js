@@ -727,13 +727,15 @@ function costAreasInit () {
   }
 }
 
-const courseAboutVideo = document.querySelector("[data-element='course-about-video']")
+const courseAboutVideoWraps = document.querySelectorAll("[data-element='course-about-video-wrap']")
 
-if (courseAboutVideo) courseAboutVideoInit()
+for (let i = 0; i < courseAboutVideoWraps.length; i++) {
+  courseAboutVideoWrapInit(courseAboutVideoWraps[i])
+}
 
-function courseAboutVideoInit () {
-  const videoWrap = document.querySelector("[data-element='course-about-video-wrap']")
-  const soundBtn = document.querySelector(".course-about__sound")
+function courseAboutVideoWrapInit (videoWrap) {
+  const courseAboutVideo = videoWrap.querySelector("[data-element='course-about-video']")
+  const soundBtn = videoWrap.querySelector(".course-about__sound")
   let startPlayTime = courseAboutVideo.getAttribute('data-play-start')
   if (!startPlayTime) startPlayTime = 0
 
@@ -3528,15 +3530,29 @@ function stageTogglesInit () {
     }
 
     const oldToggle = document.querySelector('.header__stages-button.active')
-    const oldId = oldToggle.getAttribute('data-stage-id')
+    let oldId = ''
+    if (oldToggle) {
+      oldId = oldToggle.getAttribute('data-stage-id')
+      oldToggle.classList.remove('active')
+    }
     const oldBlocks = document.querySelectorAll("[data-stage-number='" + oldId + "']")
+
+    const oldCourseAbout = document.querySelector(".course-about[data-stage-number='" + oldId + "']")
+    if (oldCourseAbout) {
+      const oldVideoWrap = oldCourseAbout.querySelector("[data-element='course-about-video-wrap']")
+      if (oldVideoWrap) {
+        const courseAboutVideo = oldVideoWrap.querySelector("[data-element='course-about-video']")
+        if (courseAboutVideo) {
+          if (!courseAboutVideo.muted) oldVideoWrap.click()
+        }
+      }
+    }
 
     for (let i = 0; i < oldBlocks.length; i++) {
       oldBlocks[i].classList.add('stage-block-hide')
     }
 
     this.classList.add('active')
-    oldToggle.classList.remove('active')
   }
 }
 
