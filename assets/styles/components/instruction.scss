@@ -1,0 +1,157 @@
+.instruction {
+  margin-top: 50px;
+  margin-bottom: 120px;
+  @include media(lg) {
+    margin-top: 0;
+    margin-bottom: 60px;
+    @include bg-icon('instruction/bg_tablet.png');
+    background-size: cover;
+  }
+  @include media(xs) {
+    margin-bottom: 0;
+    @include bg-icon('instruction/bg_mob.png');
+    background-size: cover;
+  }
+}
+
+.instruction__wrap {
+  position: relative;
+  border-radius: 31px;
+  padding: 46px 60px 60px;
+  @include bg-icon('instruction/bg.png');
+  background-size: cover;
+  @include media(lg) {
+    background: transparent;
+    padding: 40px 0;
+  }
+  @include media(xs) {
+    padding: 30px 0 60px;
+  }
+}
+
+.instruction__caption {
+  margin-bottom: 22px;
+  width: 100%;
+  max-width: 627px;
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 112%;
+  color: #003c56;
+  @include media(lg) {
+    max-width: 342px;
+    margin-bottom: 28px;
+    font-size: 32px;
+    line-height: 106%;
+  }
+  @include media(xs) {
+    margin-bottom: 20px;
+    max-width: 100%;
+    text-align: center;
+    font-size: 25px;
+    line-height: 124%;
+  }
+}
+
+.instruction__video-box {
+  cursor: pointer;
+  position: absolute;
+  right: 60px;
+  top: 86px;
+  width: 533px;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  @include media(lg) {
+    width: 298px;
+    height: 168px;
+    right: 0;
+    top: 45px;
+    border-radius: 10px;
+  }
+  @include media(xs) {
+    margin-bottom: 17px;
+    position: relative;
+    top: unset;
+    right: unset;
+    width: 100%;
+    height: auto;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 98px;
+    height: 98px;
+    @include bg-icon('library-tile/ic_play.svg');
+    @include media(lg) {
+      width: 55px;
+      height: 55px;
+    }
+  }
+  &.active {
+    cursor: default;
+    &::before {
+      content: none;
+    }
+    .instruction__poster {
+      display: none;
+    }
+  }
+}
+
+.instruction__poster {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.instruction__video {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  @include media(xs) {
+    position: static;
+  }
+}
+
+.instruction__text {
+  margin-bottom: 32px;
+  width: 100%;
+  max-width: 620px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 30px;
+    max-width: 285px;
+    font-size: 18px;
+    line-height: 23px;
+  }
+  @include media(xs) {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+.instruction__button {
+  display: inline-block;
+  font-size: 16px;
+  padding: 19px 30px 21px;
+  @include media(xs) {
+    font-size: 15px;
+    display: block;
+    padding: 17px 10px 18px;
+  }
+}
