@@ -91,7 +91,7 @@
             </button>
             <div class="header__nav-item active">Все курсы</div>
             <a class="header__nav-item" href="#">Блог</a>
-            <a class="header__nav-item btn-orange btn-orange_arrow" href="#modal-order-new" data-fancybox data-options="{&quot;touch&quot;: false}">Подобрать занятия</a>
+            <a class="header__nav-item btn-orange btn-orange_arrow" href="#modal-order-new" data-banner="banner-id-1" data-ftitle="Новый заголовок" data-fancybox data-options="{&quot;touch&quot;: false}">Подобрать занятия</a>
           </div>
           <a class="header__login btn-blue" href="#">
             <span>Войти</span>
@@ -1026,7 +1026,8 @@
     </div>
   </main>
   <form class="modal-order-new" id="modal-order-new" data-element="order-form" data-docex="/_thanks" data-request-validate>
-    <div class="modal-order-new__title">Подобрать занятия</div>
+    <div class="modal-order-new__title" data-default-title="Подобрать занятия">Подобрать занятия</div>
+    <input type="hidden" name="banner_v">
     <input class="input_utm" name="utm" type="hidden" value="">
     <input type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru">
     <div class="modal-order-new__select">
