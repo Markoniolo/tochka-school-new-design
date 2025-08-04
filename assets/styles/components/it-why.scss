@@ -89,6 +89,7 @@
 
 .it-why__icon {
   margin: 0 auto 25px;
+  object-fit: contain;
   @include media(lg) {
     margin: 0 auto 18px;
   }

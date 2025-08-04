@@ -16,14 +16,28 @@ function stageTogglesInit () {
     }
 
     const oldToggle = document.querySelector('.header__stages-button.active')
-    const oldId = oldToggle.getAttribute('data-stage-id')
+    let oldId = ''
+    if (oldToggle) {
+      oldId = oldToggle.getAttribute('data-stage-id')
+      oldToggle.classList.remove('active')
+    }
     const oldBlocks = document.querySelectorAll("[data-stage-number='" + oldId + "']")
+
+    const oldCourseAbout = document.querySelector(".course-about[data-stage-number='" + oldId + "']")
+    if (oldCourseAbout) {
+      const oldVideoWrap = oldCourseAbout.querySelector("[data-element='course-about-video-wrap']")
+      if (oldVideoWrap) {
+        const courseAboutVideo = oldVideoWrap.querySelector("[data-element='course-about-video']")
+        if (courseAboutVideo) {
+          if (!courseAboutVideo.muted) oldVideoWrap.click()
+        }
+      }
+    }
 
     for (let i = 0; i < oldBlocks.length; i++) {
       oldBlocks[i].classList.add('stage-block-hide')
     }
 
     this.classList.add('active')
-    oldToggle.classList.remove('active')
   }
 }

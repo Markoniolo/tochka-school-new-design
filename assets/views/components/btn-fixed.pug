@@ -1,5 +1,9 @@
 mixin btn-fixed(mod, text, start, end)
   .btn-fixed(data-btn-fixed-start=start data-btn-fixed-end=end data-element="btn-fixed" class=mod ? mod : false)
     .btn-fixed__area
-      a.btn-fixed__button.btn-orange.btn-orange_arrow(href='#modal-order-new'
-        data-fancybox data-options='{"touch": false}')= text
+      if mod === "double"
+        a.btn-fixed__button.btn-orange(href="#") Купить
+        a.btn-fixed__button.btn-blue(href='#modal-order-new' data-fancybox data-options='{"touch": false}') Консультация
+      else
+        a.btn-fixed__button.btn-orange.btn-orange_arrow(href='#modal-order-new'
+          data-fancybox data-options='{"touch": false}')= text

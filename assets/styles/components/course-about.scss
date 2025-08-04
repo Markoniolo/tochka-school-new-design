@@ -181,6 +181,9 @@
     }
     .course-about__sound {
       display: block;
+      &.hide {
+        display: none;
+      }
     }
   }
   .tile-loader {
