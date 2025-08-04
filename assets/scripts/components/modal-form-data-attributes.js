@@ -30,7 +30,7 @@ function setDefaultBannerName (form) {
 function setDataFtitle (button, form) {
   const title = button.attr('data-ftitle')
   const titleTag = form.querySelector('.modal-order-new__title')
-  if (title && titleTag) {
+  if (title && title?.length > 1 && titleTag) {
     titleTag.innerHTML = title
   }
 }
