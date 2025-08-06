@@ -2,12 +2,7 @@
   @include bg-img('discount-august/bg.png');
   background-size: cover;
   @include media(lg) {
-    @include bg-img('discount-august/bg_tablet.png');
-    background-size: cover;
-  }
-  @include media(xs) {
-    @include bg-img('discount-august/bg_mob.png');
-    background-size: cover;
+    background: #84BEED;
   }
 }
 
@@ -23,47 +18,19 @@
   align-items: center;
 }
 
-.discount-august__left {
-  flex-shrink: 0;
-  position: relative;
-  top: -58px;
-  align-self: flex-start;
-  margin-right: 161px;
-  width: 220px;
-  height: 220px;
-  @include media(lg) {
-    display: none;
-  }
-}
-
-.discount-august__left-number {
-  position: absolute;
-  top: 46px;
-  left: 33px;
-  width: 153px;
-  height: 129px;
-}
-
-.discount-august__left-circle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #5776B9;
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
-}
-
 .discount-august__text {
+  margin-left: 306px;
   margin-right: 32px;
   font-size: 32px;
   line-height: 100%;
   color: #fff;
   @include media(lg) {
+    margin-left: 44px;
     margin-right: 0;
     font-size: 25px;
   }
   @include media(xs) {
+    margin-left: 0;
     max-width: 205px;
     width: 100%;
     font-size: 20px;
@@ -120,10 +87,13 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #5776B9;
+  background: rgba(#FFF4E8, .6);
   border-radius: 50%;
   width: 100%;
   height: 100%;
+  @include media(lg) {
+    background: rgba(#FFF, .3);
+  }
 }
 
 .discount-august__close {
@@ -134,7 +104,7 @@
   right: 0;
   width: 23px;
   height: 23px;
-  background-color: rgba(255, 255, 255, 0.09);
+  background-color: rgba(0, 0, 0, 0.06);
   border-radius: 50%;
   @include bg-icon('icons/ic_close_white.svg', 10px, 10px);
   @include media(xs) {
