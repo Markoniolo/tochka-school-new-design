@@ -2344,18 +2344,26 @@ function maxDiscountInit () {
 
 $("[data-fancybox]").fancybox({
   beforeShow: function(instance){
-    const form = document.querySelector(this.src)
-    const openButton = instance.current.opts.$orig
-    if (form) {
-      setDataFtitle(openButton, form)
-      setBannerName(openButton, form)
+    try {
+      const form = document.querySelector(this.src)
+      const openButton = instance.current.opts.$orig
+      if (form) {
+        setDataFtitle(openButton, form)
+        setBannerName(openButton, form)
+      }
+    } catch (e) {
+
     }
   },
   afterClose: function() {
-    const form = document.querySelector(this.src)
-    if (form) {
-      setDefaultDataFtitle(form)
-      setDefaultBannerName(form)
+    try {
+      const form = document.querySelector(this.src)
+      if (form) {
+        setDefaultDataFtitle(form)
+        setDefaultBannerName(form)
+      }
+    } catch (e) {
+
     }
   }
 })
