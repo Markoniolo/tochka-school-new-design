@@ -1,0 +1,56 @@
+-
+  const reasonsCircle = [
+    {
+      index: 1,
+      number: '№1',
+      text: 'С вами ребёнок заинтересовался предметом прямо с первого занятия.',
+      color: '#F37E60'
+    },
+    {
+      index: 2,
+      number: '№2',
+      text: 'Вижу, как проходят занятия, как приходят напоминания об уроках. Очень хорошо, что каждый месяц у вас тестирование, чтобы понимать, двигаемся мы к цели или нет.',
+      color: '#6683C2'
+    },
+    {
+      index: 3,
+      number: '№3',
+      text: 'Можно срочно подготовиться к контрольной и самостоятельной — все темы уже есть в записи.',
+      color: '#F1C35B'
+    },
+    {
+      index: 27,
+      number: '',
+      text: '',
+      color: '#5B6784'
+    }
+  ]
+
+.reasons
+  .cont
+    .reasons__wrap
+      .reasons__caption Родители назвали 26 причин обучения в «Точке Знаний»
+      img.reasons__image(src=staticImg('reasons/decor.svg') alt='')
+      .reasons__area
+        .reasons__box
+          .reasons__top
+            .reasons__title Какая у Вас цель?
+            .reasons__tag Свяжитесь с нами
+          .reasons__text.
+            Подберём занятия исходя из целей обучения и уровня подготовки ребёнка.
+            Отправим пробные уроки, покажем, как проходят занятия и каких результатов Вам ждать.
+        .reasons__buttons
+          a.reasons__button.btn-green.btn-green_wp(href="#")
+            span.desk Написать в WhatsApp
+            span.mob Наш WhatsApp
+          a.reasons__button.btn-light-blue.btn-light-blue_tg(href="#")
+            span.desk Связаться в Telegram
+            span.mob Наш Telegram
+      .reasons__circles
+        each item in reasonsCircle
+          .reasons__circle(class=`reasons__circle_${item.index}` style=`background-color: ${item.color}`)
+            .reasons__circle-blur(style=`background-color: ${item.color}`)
+            if item.number
+              .reasons__circle-number= item.number
+            if item.text
+              .reasons__circle-text= item.text

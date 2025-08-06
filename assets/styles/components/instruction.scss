@@ -59,14 +59,12 @@
   top: 86px;
   width: 533px;
   height: 300px;
-  border-radius: 20px;
   overflow: hidden;
   @include media(lg) {
     width: 298px;
     height: 168px;
     right: 0;
     top: 45px;
-    border-radius: 10px;
   }
   @include media(xs) {
     margin-bottom: 17px;
@@ -109,6 +107,10 @@
   right: 0;
   bottom: 0;
   left: 0;
+  border-radius: 20px;
+  @include media(lg) {
+    border-radius: 10px;
+  }
 }
 
 .instruction__video {
@@ -119,7 +121,10 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: auto;
+  border-radius: 20px;
+  @include media(lg) {
+    border-radius: 10px;
+  }
   @include media(xs) {
     position: static;
   }
