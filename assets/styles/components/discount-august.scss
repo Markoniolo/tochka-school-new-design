@@ -4,11 +4,16 @@
   @include media(lg) {
     background: #84BEED;
   }
+  &.hide {
+    display: none;
+  }
 }
 
 .discount-august__wrap {
   position: relative;
   height: 80px;
+  transition-duration: $transition-duration;
+  transition-property: height;
 }
 
 .discount-august__area {
