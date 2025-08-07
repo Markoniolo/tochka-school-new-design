@@ -4,8 +4,11 @@
   background-repeat: repeat-y;
   background-size: 100%;
   background-position-x: center;
+  background-position-y: 0;
   animation: reasons 2s forwards;
   animation-delay: 4s;
+  transition-duration: 1.5s;
+  transition-property: background-position-y;
   @include media(lg) {
     background: none;
   }
@@ -14,7 +17,7 @@
       background-size: 100%;
     }
     100% {
-      background-size: 120%;
+      background-size: 115%;
     }
   }
 }
@@ -30,12 +33,12 @@
   }
   @include media(xs) {
     padding-top: 30px;
-    height: 696px;
+    height: 513px;
   }
 }
 
 .reasons__caption {
-  margin: 0 auto 30px;
+  margin: 0 auto 75px;
   max-width: 1000px;
   width: 100%;
   font-weight: 600;
@@ -52,7 +55,8 @@
     max-width: 500px;
   }
   @include media(xs) {
-    margin-bottom: 18px;
+    max-width: 300px;
+    margin: 0 auto 30px;
     font-size: 25px;
     line-height: 31px;
   }
@@ -113,24 +117,27 @@
   transform: translateY(600px);
   transition-property: bottom;
   transition-duration: 1s;
+  transition-delay: 1s;
   @include media(lg) {
     @include bg-icon('reasons/bg-box_tablet.png');
     background-size: cover;
-    gap: 42px;
+    gap: 38px;
     width: 684px;
     padding: 18px 20px;
     bottom: 30px;
     left: calc(50% - 342px);
   }
   @include media(xs) {
-    //@include bg-icon('reasons/bg-box_mob.png');
-    //background-size: cover;
     width: 100%;
     left: 0;
     bottom: 56px;
     padding: 0;
     background: transparent;
     border-radius: 0;
+    box-shadow: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
   }
   @keyframes reasons__area {
     0% {
@@ -142,13 +149,47 @@
   }
   &.end {
     bottom: 274px;
+    @include media(lg) {
+      bottom: 100px;
+    }
+    @include media(xs) {
+      text-align: center;
+      border-radius: 10px;
+      @include bg-icon('reasons/bg-box_mob.png');
+      background-size: cover;
+      box-shadow: 0 4px 17px 0 rgba(0, 0, 0, 0.07);
+      padding: 16px 10px;
+      bottom: 174px;
+    }
+    .reasons__title {
+      @include media(xs) {
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+      }
+    }
+    .reasons__text {
+      @include media(xs) {
+        display: block;
+      }
+    }
+    .reasons__tag {
+      @include media(xs) {
+        position: absolute;
+        bottom: 45px;
+        width: 100%;
+      }
+    }
+    .reasons__buttons {
+      margin: 0 5px 0;
+      position: relative;
+      bottom: -32px;
+    }
   }
 }
 
 .reasons__box {
-  @include media(xs) {
-    display: none;
-  }
+
 }
 
 .reasons__top {
@@ -159,6 +200,9 @@
   @include media(lg) {
     gap: 24px;
   }
+  @include media(xs) {
+    margin-bottom: 0;
+  }
 }
 
 .reasons__title {
@@ -168,6 +212,10 @@
   color: #fff;
   @include media(lg) {
     font-size: 24px;
+  }
+  @include media(xs) {
+    display: none;
+    font-size: 18px;
   }
 }
 
@@ -182,6 +230,12 @@
   @include media(lg) {
     font-size: 15px;
   }
+  @include media(xs) {
+    font-size: 18px;
+    background: none;
+    padding: 0;
+    flex-shrink: 0;
+  }
 }
 
 .reasons__text {
@@ -191,6 +245,12 @@
   @include media(lg) {
     font-size: 15px;
     line-height: 19px;
+  }
+  @include media(xs) {
+    display: none;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 16px;
   }
 }
 
@@ -214,6 +274,15 @@
 .reasons__button {
   @include media(xs) {
     width: calc(50% - 2px);
+    font-size: 13px;
+    padding: 9px 4px 10px;
+  }
+  &::after {
+    @include media(xs) {
+      margin-left: 6px;
+      width: 16px;
+      height: 16px;
+    }
   }
   .desk {
     @include media(xs) {
@@ -234,19 +303,17 @@
 
 .reasons__circle {
   position: absolute;
-  top: calc(100% + 100px);
+  top: calc(100% + 300px);
   left: calc(50% - 751px);
   padding-top: 90px;
   width: 1502px;
   height: 1502px;
   border-radius: 50%;
-  animation: reasons__circle 4s forwards;
   @include media(lg) {
     padding-top: 45px;
     width: 905px;
     height: 905px;
     left: calc(50% - 452px);
-    animation: reasons__circle_tablet 4s forwards;
   }
   @include media(xs) {
     padding-top: 28px;
@@ -259,10 +326,10 @@
       transform: translateY(0);
     }
     25% {
-      transform: translateY(-786px);
+      transform: translateY(-986px);
     }
     75% {
-      transform: translateY(-786px);
+      transform: translateY(-986px);
     }
     100% {
       transform: translateY(0);
@@ -273,10 +340,10 @@
       transform: translateY(0);
     }
     25% {
-      transform: translateY(-580px);
+      transform: translateY(-780px);
     }
     75% {
-      transform: translateY(-580px);
+      transform: translateY(-780px);
     }
     100% {
       transform: translateY(0);
@@ -287,24 +354,21 @@
     @include media(lg) {
       animation: reasons__circle_1_tablet 10s forwards;
     }
-    @include media(xs) {
-
-    }
     @keyframes reasons__circle_1 {
       0% {
         transform: translateY(0);
       }
       15% {
-        transform: translateY(-507px);
+        transform: translateY(-707px);
       }
       40% {
-        transform: translateY(-507px);
+        transform: translateY(-707px);
       }
       55% {
-        transform: translateY(-786px);
+        transform: translateY(-986px);
       }
       85% {
-        transform: translateY(-786px);
+        transform: translateY(-986px);
       }
       100% {
         transform: translateY(0);
@@ -315,16 +379,16 @@
         transform: translateY(0);
       }
       15% {
-        transform: translateY(-300px);
+        transform: translateY(-500px);
       }
       40% {
-        transform: translateY(-300px);
+        transform: translateY(-500px);
       }
       55% {
-        transform: translateY(-580px);
+        transform: translateY(-780px);
       }
       85% {
-        transform: translateY(-580px);
+        transform: translateY(-780px);
       }
       100% {
         transform: translateY(0);
@@ -344,44 +408,33 @@
       }
     }
   }
-  &_27 {
-    animation: reasons__circle_27 1s forwards;
+  &.animate {
+    animation: reasons__circle 5s forwards;
     @include media(lg) {
-      animation: reasons__circle_27_tablet 1s forwards;
+      animation: reasons__circle_tablet 5s forwards;
     }
-    @keyframes reasons__circle_27 {
+  }
+  &.animate-end {
+    animation: reasons__circle-end 1.25s forwards;
+    @include media(lg) {
+      animation: reasons__circle-end_tablet 1.25s forwards;
+    }
+    @keyframes reasons__circle-end {
       0% {
         transform: translateY(0);
       }
       100% {
-        transform: translateY(-786px);
+        transform: translateY(-986px);
       }
     }
-    @keyframes reasons__circle_27_tablet {
+    @keyframes reasons__circle-end_tablet {
       0% {
         transform: translateY(0);
       }
       100% {
-        transform: translateY(-580px);
+        transform: translateY(-780px);
       }
     }
-  }
-}
-
-@for $i from 2 through 27 {
-  .reasons__circle_#{$i} {
-    animation-delay: 2.5s + $i*3.2s;
-    z-index: -$i;
-    @include media(lg) {
-      animation-delay: 2.5s + $i*3.2s;
-    }
-  }
-}
-
-.reasons__circle_27 {
-  animation-delay: 15.3s;
-  @include media(lg) {
-    animation-delay: 15.3s;
   }
 }
 
@@ -419,10 +472,10 @@
 
 .reasons__circle-text {
   margin: 0 auto;
-  max-width: 850px;
+  max-width: 900px;
   width: 100%;
   font-weight: 600;
-  font-size: 45px;
+  font-size: 41px;
   line-height: 57px;
   text-align: center;
   color: #fff;
@@ -432,8 +485,12 @@
     line-height: 106%;
   }
   @include media(xs) {
-    max-width: 300px;
+    max-width: 340px;
     font-size: 25px;
     line-height: 124%;
+  }
+  @include media(xxs) {
+    padding: 0;
+    max-width: 300px;
   }
 }
