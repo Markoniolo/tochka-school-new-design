@@ -1,0 +1,208 @@
+include ../_variables
+include ../components/_layout/_title
+
+doctype html
+html(lang='ru')
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=2, minimum-scale=1.0")
+    meta(name="author" content="Точка знаний")
+    meta(name='description' content='Точка знаний')
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    +title('Ошибка общая')
+
+    style.
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+      * {
+        font-family: "WixMadeforDisplay", Arial, sans-serif;
+        margin: 0;
+        outline: none;
+        padding: 0;
+      }
+      @font-face {
+        font-family: 'WixMadeforDisplay';
+        src: url('assets/fonts/WixMadeforDisplay-Regular.woff2') format('woff2'), url('assets/fonts/WixMadeforDisplay-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+        font-display: block;
+      }
+      @font-face {
+        font-family: 'WixMadeforDisplay';
+        src: url('assets/fonts/WixMadeforDisplay-Medium.woff2') format('woff2'), url('assets/fonts/WixMadeforDisplay-Medium.woff') format('woff');
+        font-weight: 500;
+        font-style: normal;
+        font-display: block;
+      }
+      @font-face {
+        font-family: 'WixMadeforDisplay';
+        src: url('assets/fonts/WixMadeforDisplay-SemiBold.woff2') format('woff2'), url('assets/fonts/WixMadeforDisplay-SemiBold.woff') format('woff');
+        font-weight: 600;
+        font-style: normal;
+        font-display: block;
+      }
+      @font-face {
+        font-family: 'WixMadeforDisplay';
+        src: url('assets/fonts/WixMadeforDisplay-Bold.woff2') format('woff2'), url('assets/fonts/WixMadeforDisplay-Bold.woff') format('woff');
+        font-weight: 700;
+        font-style: normal;
+        font-display: block;
+      }
+      @font-face {
+        font-family: 'WixMadeforDisplay';
+        src: url('assets/fonts/WixMadeforDisplay-ExtraBold.woff2') format('woff2'), url('assets/fonts/WixMadeforDisplay-ExtraBold.woff') format('woff');
+        font-weight: 800;
+        font-style: normal;
+        font-display: block;
+      }
+      @font-face {
+        font-family: 'Rubik';
+        src: url('assets/fonts/Rubik-Regular.woff2') format('woff2'), url('assets/fonts/Rubik-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+        font-display: block;
+      }
+      @font-face {
+        font-family: 'Rubik';
+        src: url('assets/fonts/Rubik-Medium.woff2') format('woff2'), url('assets/fonts/Rubik-Medium.woff') format('woff');
+        font-weight: 500;
+        font-style: normal;
+        font-display: block;
+      }
+      @font-face {
+        font-family: 'Rubik';
+        src: url('assets/fonts/Rubik-Bold.woff2') format('woff2'), url('assets/fonts/Rubik-Bold.woff') format('woff');
+        font-weight: 700;
+        font-style: normal;
+        font-display: block;
+      }
+      .cont {
+        max-width: 1344px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0
+      }
+      .error-common {
+        margin-top: 80px
+      }
+      .error-common__wrap {
+        position: relative;
+        border-radius: 31px;
+        background-image: url(assets/img/error-common/bg.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        padding: 75px 38px 75px 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between
+      }
+      .error-common__caption {
+        margin-bottom: 32px;
+        font-weight: 600;
+        font-size: 58px;
+        line-height: 112%;
+        color: #003c56
+      }
+      .error-common__title {
+        margin-bottom: 36px;
+        max-width: 730px;
+        width: 100%;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 116%;
+        color: #003c56
+      }
+      .error-common__picture {
+        display: block;
+        position: relative;
+        top: -16px;
+        flex-shrink: 0;
+        width: 520px;
+        height: 314px
+      }
+      .error-common__image {
+        height: 100%
+      }
+      @media (max-width: 1359.98px) {
+        .cont {
+          max-width: 1100px
+        }
+        .error-common {
+          margin-top: 20px;
+          background-image: url(assets/img/error-common/bg_tablet.png);
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: cover
+        }
+        .error-common__wrap {
+          background: 0 0;
+          padding: 50px 0 68px;
+          border-radius: 0
+        }
+        .error-common__caption {
+          margin-bottom: 14px;
+          font-size: 32px;
+          line-height: 106%
+        }
+        .error-common__title {
+          margin-bottom: 28px;
+          max-width: 436px;
+          font-size: 18px;
+          line-height: 23px
+        }
+        .error-common__picture {
+          top: -20px;
+          width: 329px;
+          height: 217px
+        }
+      }
+      @media (max-width: 1199.98px) {
+        .cont {
+          max-width: 744px;
+          padding: 0 30px
+        }
+      }
+      @media (max-width: 743.98px) {
+        .cont {
+          max-width: 540px;
+          padding: 0 20px
+        }
+        .error-common {
+          margin-top: 0;
+          background-image: url(assets/img/error-common/bg_mob.png);
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: cover
+        }
+        .error-common__wrap {
+          display: block;
+          padding: 40px 0 45px
+        }
+        .error-common__caption {
+          margin-bottom: 12px;
+          font-size: 25px;
+          line-height: 124%;
+          text-align: center
+        }
+        .error-common__title {
+          margin: 0 auto 20px;
+          text-align: center;
+          max-width: 350px
+        }
+        .error-common__picture {
+          position: static;
+          margin: 0 auto;
+          width: 295px;
+          height: 195px
+        }
+      }
+      @media (max-width: 359.98px) {
+        .cont {
+          padding: 0 10px
+        }
+      }
+  body
+    main.wrapper
+      include ../components/error-common

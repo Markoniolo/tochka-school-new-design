@@ -1,0 +1,9 @@
+.error-common
+  .cont
+    .error-common__wrap
+      .error-common__area
+        h1.error-common__caption Ошибка на странице
+        h2.error-common__title К сожалению, страница не может быть отображена из-за ошибки.
+      picture.error-common__picture
+        source(srcset=staticImg('error-common/decor_tablet.svg') media="(max-width: 1359px)")
+        img.error-common__image(src=staticImg('error-common/decor.svg') alt='')
