@@ -6,17 +6,17 @@
   @include media(lg) {
     margin-top: 0;
     margin-bottom: -20px;
-    @include bg-icon('it-cap/bg_tablet.png');
+    @include bg-icon('it-cap/bg_tablet.webp');
     background-size: cover;
     border-radius: 0 0 20px 20px;
     border: 1px solid rgba(255, 255, 255, 0.5);
   }
   @include media(xs) {
-    @include bg-icon('it-cap/bg_mob.png');
+    @include bg-icon('it-cap/bg_mob.webp');
     background-size: cover;
   }
   @include media(xxs) {
-    @include bg-icon('it-cap/bg_xxs.png');
+    @include bg-icon('it-cap/bg_xxs.webp');
     background-size: cover;
   }
   &::before {
@@ -38,7 +38,7 @@
   overflow: hidden;
   position: relative;
   border-radius: 31px;
-  @include bg-icon('it-cap/bg.png');
+  @include bg-icon('it-cap/bg.webp');
   background-size: cover;
   padding: 55px 60px 50px;
   @include media(lg) {
@@ -164,28 +164,8 @@
 }
 
 .it-cap__cards {
-  margin-left: -60px;
-  display: flex;
   @include media(lg) {
     display: none;
-  }
-}
-
-.it-cap__cards-box {
-  position: relative;
-  z-index: 1;
-  flex-shrink: 0;
-  display: flex;
-  gap: 25px;
-  padding-right: 25px;
-  animation: 40s infinite linear itCapCardsBox;
-  @keyframes itCapCardsBox {
-    0% {
-      transform: translate3d(0, 0, 0);
-    }
-    100% {
-      transform: translate3d(-100%, 0, 0);
-    }
   }
 }
 
@@ -193,10 +173,18 @@
   position: relative;
   flex-shrink: 0;
   min-width: 316px;
+  width: auto;
   border-radius: 20px;
   padding: 20px 25px;
   box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
   background: rgba(#CDD7EB, 0.77);
+  left: 0;
+  transition-property: left;
+  transition-duration: 0.3s;
+  transition-delay: 0.8s;
+  &.swiper-slide-prev {
+    left: -65px;
+  }
 }
 
 .it-cap__title {

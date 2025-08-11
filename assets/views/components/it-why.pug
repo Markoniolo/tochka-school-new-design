@@ -24,7 +24,7 @@
     ul.it-why__list
       each item, index in itWhyList
         li.it-why__item
-          img.it-why__icon(class=`it-why__icon_${index+1}` src=staticImg(`it-why/it-why-${index+1}.png`) alt='')
+          img.it-why__icon(class=`it-why__icon_${index+1}` src=staticImg(`it-why/it-why-${index+1}.webp`) alt='' loading="lazy")
           .it-why__title!= item.title
           .it-why__text= item.text
 

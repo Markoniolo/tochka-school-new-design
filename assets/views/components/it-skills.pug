@@ -28,7 +28,7 @@
       ul.it-skills__list
         each item, index in itSkillsList
           li.it-skills__item
-            img.it-skills__decor(src=staticImg(`it-skills/decor-${index+1}.png`) alt='')
+            img.it-skills__decor(src=staticImg(`it-skills/decor-${index+1}.webp`) alt='' loading="lazy")
             .it-skills__inner
               .it-skills__title!= item.title
               .it-skills__text= item.text

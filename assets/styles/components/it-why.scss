@@ -16,7 +16,7 @@
     left: 0;
     width: 208px;
     height: 299px;
-    @include bg-icon('it-why/decor-1.png');
+    @include bg-icon('it-why/decor-1.webp');
     @include media(xl) {
       content: none;
     }
@@ -28,7 +28,7 @@
     right: 0;
     width: 275px;
     height: 376px;
-    @include bg-icon('it-why/decor-2.png');
+    @include bg-icon('it-why/decor-2.webp');
     @include media(xl) {
       content: none;
     }

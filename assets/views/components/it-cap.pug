@@ -17,17 +17,16 @@
       p.it-cap__text.
         Стать профи в работе с компьютером, научиться программировать, создавать игры и освоить графический дизайн.
       picture.it-cap__picture
-        source(srcset=staticImg('it-cap/it-cap-1_xxs.png') media="(max-width: 359px)")
-        source(srcset=staticImg('it-cap/it-cap-1_mob.png') media="(max-width: 743px)")
-        source(srcset=staticImg('it-cap/it-cap-1_tablet.png') media="(max-width: 1359px)")
-        img.it-cap__image(src=staticImg('it-cap/it-cap-1.png') alt="")
+        source(srcset=staticImg('it-cap/it-cap-1_xxs.webp') media="(max-width: 359px)")
+        source(srcset=staticImg('it-cap/it-cap-1_mob.webp') media="(max-width: 743px)")
+        source(srcset=staticImg('it-cap/it-cap-1_tablet.webp') media="(max-width: 1359px)")
+        img.it-cap__image(src=staticImg('it-cap/it-cap-1.webp') alt="")
       a.it-cap__button.btn-orange(href="#it-tile" data-role="scroll-to-anchor") Выбрать курс
       .it-cap__cards
-        each box in [1,2]
-          .it-cap__cards-box
-            each card, index in itCapCards
-              .it-cap__card
-                .it-cap__title= card.title
-                .it-cap__note= card.note
-                a.it-cap__more(href="#") Подробнее
-                img.it-cap__decor(src=staticImg(`it-cap/decor-${index+1}.png`) alt='')
+        .swiper-wrapper
+          each card, index in itCapCards
+            .it-cap__card.swiper-slide
+              .it-cap__title= card.title
+              .it-cap__note= card.note
+              a.it-cap__more(href="#") Подробнее
+              img.it-cap__decor(src=staticImg(`it-cap/decor-${index+1}.png`) alt='')

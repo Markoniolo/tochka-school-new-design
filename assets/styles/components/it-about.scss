@@ -9,7 +9,7 @@
     position: absolute;
     top: -45px;
     left: 0;
-    @include bg-icon('it-about/decor.png');
+    @include bg-icon('it-about/decor.webp');
     width: 533px;
     height: 436px;
     @include media(lg) {
@@ -118,12 +118,12 @@
     &::before {
       width: 72px;
       height: 71px;
-      @include bg-icon('it-about/ic_it-about_1.png');
+      @include bg-icon('it-about/ic_it-about_1.webp');
       @include media(lg) {
-        @include bg-icon('it-about/ic_it-about_1_tablet.png');
+        @include bg-icon('it-about/ic_it-about_1_tablet.webp');
       }
       @include media(xxs) {
-        @include bg-icon('it-about/ic_it-about_1_xxs.png');
+        @include bg-icon('it-about/ic_it-about_1_xxs.webp');
         bottom: 11px;
       }
     }
@@ -141,12 +141,12 @@
     &::before {
       width: 72px;
       height: 72px;
-      @include bg-icon('it-about/ic_it-about_2.png');
+      @include bg-icon('it-about/ic_it-about_2.webp');
       @include media(lg) {
-        @include bg-icon('it-about/ic_it-about_2_tablet.png');
+        @include bg-icon('it-about/ic_it-about_2_tablet.webp');
       }
       @include media(xxs) {
-        @include bg-icon('it-about/ic_it-about_2_xxs.png');
+        @include bg-icon('it-about/ic_it-about_2_xxs.webp');
       }
     }
     .it-about__text {
@@ -163,12 +163,12 @@
     &::before {
       width: 73px;
       height: 74px;
-      @include bg-icon('it-about/ic_it-about_3.png');
+      @include bg-icon('it-about/ic_it-about_3.webp');
       @include media(lg) {
-        @include bg-icon('it-about/ic_it-about_3_tablet.png');
+        @include bg-icon('it-about/ic_it-about_3_tablet.webp');
       }
       @include media(xxs) {
-        @include bg-icon('it-about/ic_it-about_3_xxs.png');
+        @include bg-icon('it-about/ic_it-about_3_xxs.webp');
         bottom: 9px;
       }
     }
@@ -186,12 +186,12 @@
     &::before {
       width: 73px;
       height: 75px;
-      @include bg-icon('it-about/ic_it-about_4.png');
+      @include bg-icon('it-about/ic_it-about_4.webp');
       @include media(lg) {
-        @include bg-icon('it-about/ic_it-about_4_tablet.png');
+        @include bg-icon('it-about/ic_it-about_4_tablet.webp');
       }
       @include media(xxs) {
-        @include bg-icon('it-about/ic_it-about_4_xxs.png');
+        @include bg-icon('it-about/ic_it-about_4_xxs.webp');
         bottom: 9px;
       }
     }

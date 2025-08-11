@@ -34,6 +34,7 @@
     background: #FFFFFF;
     box-shadow: none;
     position: fixed;
+    z-index: 3;
     top: 0;
     bottom: 0;
     left: 0;
@@ -67,8 +68,16 @@
       z-index: 60;
     }
     .header__area {
-      background: transparent;
+      position: sticky;
+      top: 0;
+      background: #FFFFFF;
       border: none;
+      @include media(md) {
+        margin: 0 -20px;
+      }
+      @include media(xs) {
+        margin: 0;
+      }
       &::after {
         //content: '';
         @include bg-icon('icons/ic_header_decor.svg');
@@ -411,12 +420,13 @@
 }
 
 .header__bottom {
-  position: relative;
+  position: absolute;
   z-index: 1;
   left: 0;
   right: 0;
   top: 100%;
   overflow: hidden;
+  box-shadow: 0 4px 19px 0 rgba(0, 0, 0, .05);
   transition-duration: $transition-duration;
   transition-property: transform;
   @include media(lg) {

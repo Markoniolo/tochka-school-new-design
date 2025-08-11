@@ -57,10 +57,10 @@
     .it-tile__caption Выберите курс
     .it-tile__list
       each item, index in itTileList
-        .it-tile__item
+        a.it-tile__item(href="#")
           picture.it-tile__picture
             source(srcset=staticImg(`it-tile/${index+1}_mob.webp`) media="(max-width: 1359px)")
-            img.it-tile__image(src=staticImg(`it-tile/${index+1}.webp`) alt='')
+            img.it-tile__image(src=staticImg(`it-tile/${index+1}.webp`) alt='' loading="lazy")
           .it-tile__top
             .it-tile__title= item.title
             .it-tile__tag= item.tag
@@ -68,14 +68,14 @@
             .it-tile__author
               picture.it-tile__author-picture
                 source(srcset=staticImg(`it-tile/author_mob.png`) media="(max-width: 1359px)")
-                img.it-tile__author-image(src=staticImg('it-tile/author.png') alt='')
+                img.it-tile__author-image(src=staticImg('it-tile/author.png') alt='' loading="lazy")
               .it-tile__author-inner
                 .it-tile__author-name Иванов Иван
-                .it-tile__author-descr Лучший учитель родного языка и литературы 2023. Педагогический стаж ー 10 лет
+                .it-tile__author-descr Разработал более 50 курсов и провел более 1000 занятий по программированию. Педагогический стаж 8 лет.
             .it-tile__box
               p.it-tile__text= item.text
               .it-tile__video-box
                 span.it-tile__note Посмотрите примеры работ учеников
                 .it-tile__video-wrap(data-fancybox data-src='https://tochka-school.ru/storage/app/media/Video_vse_o_kurse/IT_Kursi/Gurtovcev_Python_1_stupen.mp4')
-                  video.it-tile__video(src='https://tochka-school.ru/storage/app/media/Video_vse_o_kurse/IT_Kursi/Gurtovcev_Python_1_stupen.mp4' muted autoplay)
-              a.it-tile__button.btn-orange.btn-orange_arrow(href="#") Подробнее о курсе
+                  video.it-tile__video(src='https://tochka-school.ru/storage/app/media/Video_vse_o_kurse/IT_Kursi/Gurtovcev_Python_1_stupen.mp4' preload="metadata")
+              .it-tile__button.btn-orange.btn-orange_arrow Подробнее о курсе
