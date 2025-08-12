@@ -134,7 +134,8 @@
         each item, index in reasonsCircle
           .reasons__circle(class=`reasons__circle_${index+1}` style=`background-color: ${item.color}`)
             .reasons__circle-blur(style=`background-color: ${item.color}`)
-            if index < 26
-              .reasons__circle-number= `№${index+1}`
-            if item.text
-              .reasons__circle-text= item.text
+            .reasons__circle-box
+              if index < 26
+                .reasons__circle-number= `№${index+1}`
+              if item.text
+                .reasons__circle-text= item.text

@@ -6,10 +6,10 @@
   background-position-x: center;
   background-position-y: 0;
   animation: reasons 2s forwards;
-  animation-delay: 4s;
-  transition-duration: 1.5s;
+  transition-duration: 1s;
   transition-property: background-position-y;
-  @include media(lg) {
+  transition-timing-function: linear;
+  @include media(xs) {
     background: none;
   }
   @keyframes reasons {
@@ -26,14 +26,16 @@
   position: relative;
   z-index: 1;
   padding-top: 70px;
-  height: 750px;
+  height: calc(100vh - 168px);
   @include media(lg) {
     padding-top: 46px;
-    height: 508px;
+    height: calc(100vh - 106px);
   }
-  @include media(xs) {
-    padding-top: 30px;
-    height: 513px;
+  @include media(md) {
+    height: calc(100vh - 80px);
+  }
+  @include media(xxs) {
+    height: calc(100vh - 69px);
   }
 }
 
@@ -46,8 +48,9 @@
   line-height: 73px;
   text-align: center;
   color: #003c56;
-  animation: reasons__caption 2s forwards;
-  animation-delay: 4s;
+  transform: translateY(0);
+  transition-property: transform;
+  transition-duration: 1s;
   @include media(lg) {
     margin-bottom: 65px;
     font-size: 32px;
@@ -60,13 +63,8 @@
     font-size: 25px;
     line-height: 31px;
   }
-  @keyframes reasons__caption {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-500px);
-    }
+  &.animate {
+    transform: translateY(-500px);
   }
 }
 
@@ -76,33 +74,34 @@
   margin: 0 auto;
   width: 438px;
   height: 438px;
-  animation: reasons__image 5s forwards;
+  animation: reasons__image-scale 1s forwards;
+  transition-duration: 1s;
+  transition-property: opacity, transform;
+  @include media(xl) {
+    width: 316px;
+    height: 316px;
+  }
   @include media(lg) {
     width: 183px;
     height: 183px;
   }
-  @keyframes reasons__image {
+  @keyframes reasons__image-scale {
     0% {
       transform: translateY(100px) scale(0.8);
     }
-    20% {
+    100% {
       transform: translateY(0) scale(1);
     }
-    80% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(200px);
-    }
+  }
+  &.animate {
+    opacity: 0;
+    transform: translateY(200px);
   }
 }
 
 .reasons__area {
   position: absolute;
   z-index: 5;
-  bottom: 60px;
   left: calc(50% - 385px);
   width: 770px;
   display: flex;
@@ -112,19 +111,18 @@
   padding: 36px 40px;
   @include bg-icon('reasons/bg-box.png');
   background-size: cover;
-  animation: 2s reasons__area forwards;
-  animation-delay: 5s;
-  transform: translateY(600px);
+  bottom: -600px;
   transition-property: bottom;
   transition-duration: 1s;
-  transition-delay: 1s;
+  @include media(xl) {
+    padding: 27px 25px;
+  }
   @include media(lg) {
     @include bg-icon('reasons/bg-box_tablet.png');
     background-size: cover;
     gap: 38px;
     width: 684px;
     padding: 18px 20px;
-    bottom: 30px;
     left: calc(50% - 342px);
   }
   @include media(xs) {
@@ -139,18 +137,28 @@
     align-items: center;
     gap: 12px;
   }
-  @keyframes reasons__area {
-    0% {
-      transform: translateY(600px);
+  &.animate {
+    bottom: 50px;
+    @include media(xl) {
+      bottom: 40px;
     }
-    100% {
-      transform: translateY(0);
+    @include media(lg) {
+      bottom: 20px;
+    }
+    @include media(md) {
+      bottom: 60px;
     }
   }
   &.end {
     bottom: 274px;
+    @include media(xl) {
+      bottom: 200px;
+    }
     @include media(lg) {
       bottom: 100px;
+    }
+    @include media(md) {
+      bottom: 150px;
     }
     @include media(xs) {
       text-align: center;
@@ -181,9 +189,11 @@
       }
     }
     .reasons__buttons {
-      margin: 0 5px 0;
-      position: relative;
-      bottom: -32px;
+      @include media(xs) {
+        margin: 0 5px 0;
+        position: relative;
+        bottom: -32px;
+      }
     }
   }
 }
@@ -210,6 +220,9 @@
   font-size: 28px;
   line-height: 100%;
   color: #fff;
+  @include media(xl) {
+    font-size: 24px;
+  }
   @include media(lg) {
     font-size: 24px;
   }
@@ -242,7 +255,7 @@
   font-size: 16px;
   line-height: 20px;
   color: #fff;
-  @include media(lg) {
+  @include media(xl) {
     font-size: 15px;
     line-height: 19px;
   }
@@ -305,135 +318,78 @@
   position: absolute;
   top: calc(100% + 300px);
   left: calc(50% - 751px);
-  padding-top: 90px;
+  padding-top: 65px;
   width: 1502px;
   height: 1502px;
   border-radius: 50%;
+  transform: translateY(0);
+  transition-duration: 1s;
+  transition-property: transform;
+  @include media(xl) {
+    padding-top: 50px;
+  }
   @include media(lg) {
     padding-top: 45px;
     width: 905px;
     height: 905px;
     left: calc(50% - 452px);
   }
+  @include media(md) {
+    padding-top: 60px;
+  }
   @include media(xs) {
-    padding-top: 28px;
     width: 782px;
     height: 782px;
     left: calc(50% - 391px);
   }
-  @keyframes reasons__circle {
-    0% {
-      transform: translateY(0);
-    }
-    25% {
-      transform: translateY(-986px);
-    }
-    75% {
-      transform: translateY(-986px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-  @keyframes reasons__circle_tablet {
-    0% {
-      transform: translateY(0);
-    }
-    25% {
-      transform: translateY(-780px);
-    }
-    75% {
-      transform: translateY(-780px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
   &_1 {
-    animation: reasons__circle_1 10s forwards;
+    transform: translateY(-995px) scale(.7);
+    @include media(xl) {
+      transform: translateY(-845px) scale(.7);
+    }
+    @include media(xl) {
+      transform: translateY(-845px) scale(.7);
+    }
     @include media(lg) {
-      animation: reasons__circle_1_tablet 10s forwards;
+      transform: translateY(-758px) scale(.7);
     }
-    @keyframes reasons__circle_1 {
-      0% {
-        transform: translateY(0);
-      }
-      15% {
-        transform: translateY(-707px);
-      }
-      40% {
-        transform: translateY(-707px);
-      }
-      55% {
-        transform: translateY(-986px);
-      }
-      85% {
-        transform: translateY(-986px);
-      }
-      100% {
-        transform: translateY(0);
-      }
-    }
-    @keyframes reasons__circle_1_tablet {
-      0% {
-        transform: translateY(0);
-      }
-      15% {
-        transform: translateY(-500px);
-      }
-      40% {
-        transform: translateY(-500px);
-      }
-      55% {
-        transform: translateY(-780px);
-      }
-      85% {
-        transform: translateY(-780px);
-      }
-      100% {
-        transform: translateY(0);
-      }
+    @include media(md) {
+      transform: translateY(-800px) scale(.7);
     }
     .reasons__circle-number, .reasons__circle-text {
       transform: translateY(600px);
-      animation: reasons__circle-number 1.5s forwards;
-      animation-delay: 5s;
-      @keyframes reasons__circle-number {
-        0% {
-          transform: translateY(600px);
-        }
-        100% {
-          transform: translateY(0);
-        }
+      transition-property: transform;
+      transition-duration: 1s;
+    }
+    &.animate {
+      transform: translateY(-1000px) scale(1);
+      @include media(xl) {
+        transform: translateY(-845px) scale(1);
       }
+      @include media(lg) {
+        transform: translateY(-760px);
+      }
+      @include media(md) {
+        transform: translateY(-850px);
+      }
+      .reasons__circle-number, .reasons__circle-text {
+        transform: translateY(0);
+      }
+    }
+    &.animate-end {
+      transform: translateY(0);
     }
   }
   &.animate {
-    animation: reasons__circle 5s forwards;
+    transform: translateY(-1000px);
+    @include media(xl) {
+      transform: translateY(-845px);
+    }
     @include media(lg) {
-      animation: reasons__circle_tablet 5s forwards;
+      transform: translateY(-760px);
     }
-  }
-  &.animate-end {
-    animation: reasons__circle-end 1.25s forwards;
-    @include media(lg) {
-      animation: reasons__circle-end_tablet 1.25s forwards;
-    }
-    @keyframes reasons__circle-end {
-      0% {
-        transform: translateY(0);
-      }
-      100% {
-        transform: translateY(-986px);
-      }
-    }
-    @keyframes reasons__circle-end_tablet {
-      0% {
-        transform: translateY(0);
-      }
-      100% {
-        transform: translateY(-780px);
-      }
+    @include media(md) {
+      transform: translateY(-850px);
     }
   }
 }
@@ -460,6 +416,10 @@
   line-height: 100%;
   text-align: center;
   color: #fff;
+  @include media(xl) {
+    margin-bottom: 20px;
+    font-size: 48px;
+  }
   @include media(lg) {
     margin-bottom: 28px;
     font-size: 32px;
@@ -470,19 +430,44 @@
   }
 }
 
+.reasons__circle-box {
+  height: 373px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include media(xl) {
+    height: 270px;
+  }
+  @include media(lg) {
+    height: 215px;
+  }
+  @include media(xs) {
+    height: 288px;
+  }
+}
+
 .reasons__circle-text {
   margin: 0 auto;
   max-width: 900px;
   width: 100%;
   font-weight: 600;
-  font-size: 41px;
+  font-size: 45px;
   line-height: 57px;
   text-align: center;
   color: #fff;
+  @include media(xl) {
+    font-size: 36px;
+    line-height: 50px;
+    max-width: 890px;
+  }
   @include media(lg) {
-    max-width: 510px;
+    max-width: 620px;
     font-size: 28px;
     line-height: 106%;
+  }
+  @include media(md) {
+    max-width: 510px;
   }
   @include media(xs) {
     max-width: 340px;
