@@ -3526,6 +3526,7 @@ function reviewsSliderInit () {
   const preReviewsSliderSwiper = new Swiper(reviewsSlider, {
     slidesPerView: 'auto',
     spaceBetween: 15,
+    mousewheel: { forceToAxis: true },
     a11y: false,
     navigation: {
       nextEl: '.reviews__nav-btn.reviews__nav-btn_next',

@@ -293,6 +293,9 @@
     padding: 16px 15px;
     max-width: 353px;
   }
+  @include media(xs) {
+    max-width: 100%;
+  }
   &::before {
     content: "";
     @include bg-icon('exams/clip.svg');
