@@ -3257,6 +3257,9 @@ function reasonsInit () {
 
   const step = 300
   let index = -1
+  let touchstartY = 0
+  let touchendY = 0
+  const swipeThreshold = 50
 
   function throttle(func, delay) {
     let inThrottle
@@ -3288,6 +3291,25 @@ function reasonsInit () {
       prevSlide()
     } else if (e.deltaY > 0) {
       nextSlide()
+    }
+  }
+
+  window.addEventListener('touchstart', e => {
+    touchstartY = e.touches[0].clientY
+  })
+
+  window.addEventListener('touchend', e => {
+    touchendY = e.changedTouches[0].clientY
+    handleGesture()
+  })
+
+  function handleGesture() {
+    if (touchendY < touchstartY - swipeThreshold) {
+      nextSlide()
+    }
+
+    if (touchendY > touchstartY + swipeThreshold) {
+      prevSlide()
     }
   }
 
