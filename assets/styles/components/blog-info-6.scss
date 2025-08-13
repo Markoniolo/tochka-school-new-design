@@ -3,7 +3,6 @@
   margin: 50px 0;
   position: relative;
   border-radius: 20px;
-  overflow: hidden;
   padding: 40px 50px;
   @include bg-icon('blog-info-6/bg.png');
   @include media(lg) {
@@ -71,6 +70,9 @@
 
 .blog-info-6__image {
   height: 100%;
+  @include media(lg) {
+    border-radius: 0 0 10px 0;
+  }
 }
 
 .blog-info-6__note {

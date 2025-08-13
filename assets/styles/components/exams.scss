@@ -1,0 +1,357 @@
+.exams {
+  background: #d7e4fe;
+  padding-top: 74px;
+  @include media(lg) {
+    padding-top: 36px;
+    overflow: hidden;
+  }
+}
+
+.exams__caption {
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 25px;
+    font-size: 25px;
+  }
+}
+
+.exams__area {
+  display: flex;
+  padding-bottom: 80px;
+  @include media(lg) {
+    padding-bottom: 32px;
+    align-items: flex-end;
+  }
+  @include media(xs) {
+    display: block;
+  }
+}
+
+.exams__box {
+  @include media(xs) {
+    margin-bottom: 14px;
+  }
+}
+
+.exams__point {
+  margin-bottom: 34px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  @include media(lg) {
+    margin-bottom: 20px;
+  }
+  @include media(xs) {
+    gap: 10px 0;
+  }
+}
+
+.exams__point-note {
+  margin-right: 13px;
+  flex-shrink: 0;
+  font-weight: 500;
+  font-size: 24px;
+  color: #003c56;
+  @include media(lg) {
+    margin-right: 9px;
+    font-size: 18px;
+  }
+  @include media(xxs) {
+    font-size: 14px;
+    margin-right: 8px;
+  }
+}
+
+.exams__point-value {
+  margin-right: 20px;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #f37e60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include media(lg) {
+    width: 34px;
+    height: 34px;
+  }
+  @include media(xxs) {
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+  }
+  span {
+    position: relative;
+    left: -2px;
+    font-weight: 500;
+    font-size: 25px;
+    color: #fff;
+    @include media(lg) {
+      font-size: 20px;
+    }
+    @include media(xxs) {
+      font-size: 16px;
+    }
+  }
+}
+
+.exams__point-achieve {
+  border-radius: 33px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 8px 15px 8px 10px;
+  flex-shrink: 0;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  color: #6683c2;
+  background: #fff;
+  @include media(lg) {
+    gap: 7px;
+    font-size: 14px;
+    padding: 3px 11px 5px 8px;
+  }
+  &::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    @include bg-icon('icons/ic_point_orange.svg');
+    flex-shrink: 0;
+    @include media(lg) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.exams__info {
+  margin-bottom: 40px;
+  border-radius: 10px;
+  background: rgba(102, 131, 194, 0.1);
+  padding: 20px;
+  width: 640px;
+  @include media(lg) {
+    width: 334px;
+    margin-bottom: 16px;
+    padding: 18px 15px;
+  }
+  @include media(xs) {
+    width: 100%;
+  }
+}
+
+.exams__title {
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 97%;
+  @include media(lg) {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 23px;
+  }
+  @include media(xs) {
+    margin-bottom: 16px;
+  }
+}
+
+.exams__list {
+  margin-left: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  @include media(lg) {
+    margin-left: 0;
+    gap: 10px;
+  }
+}
+
+.exams__item {
+  position: relative;
+  font-size: 18px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+    gap: 10px;
+  }
+  &::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    @include bg-icon('icons/ic_point_orange.svg');
+    @include media(lg) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.exams__text {
+  font-size: 18px;
+  line-height: 23px;
+  max-width: 615px;
+  width: 100%;
+  @include media(lg) {
+    max-width: 340px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+}
+
+.exams__picture {
+  margin-left: 113px;
+  flex-shrink: 0;
+  width: 541px;
+  height: 292px;
+  @include media(lg) {
+    margin-left: 42px;
+    width: 288px;
+    height: 226px;
+  }
+  @include media(xs) {
+    margin: 0 auto;
+    width: 269px;
+    height: 277px;
+  }
+}
+
+.exams__image {
+
+}
+
+.exams__parent {
+  position: relative;
+  min-height: 395px;
+  padding-bottom: 80px;
+  @include media(lg) {
+    padding-bottom: 40px;
+    min-height: 290px;
+  }
+  @include media(xs) {
+    min-height: auto;
+  }
+}
+
+.exams__parent-caption {
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 26px;
+    font-size: 25px;
+  }
+}
+
+.exams__parent-picture {
+  position: absolute;
+  right: 50px;
+  bottom: 0;
+  width: 376px;
+  height: 395px;
+  @include media(lg) {
+    width: 310px;
+    height: 320px;
+    right: 0;
+    bottom: -28px;
+  }
+  @include media(xs) {
+    position: static;
+    width: 210px;
+    height: 217px;
+    margin: 0 auto -50px;
+  }
+}
+
+.exams__parent-image {
+  height: 100%;
+  object-fit: contain;
+}
+
+.exams__parent-box {
+  position: relative;
+  max-width: 838px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
+  background: #fff;
+  padding: 40px 90px 34px 40px;
+  @include media(lg) {
+    border-radius: 10px;
+    padding: 16px 15px;
+    max-width: 353px;
+  }
+  &::before {
+    content: "";
+    @include bg-icon('exams/clip.svg');
+    width: 89px;
+    height: 92px;
+    position: absolute;
+    top: -17px;
+    right: -25px;
+    @include media(lg) {
+      content: none;
+    }
+  }
+}
+
+.exams__parent-list {
+  margin-bottom: 22px;
+  background: rgba(102, 131, 194, 0.12);
+  border-radius: 10px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  @include media(lg) {
+    border-radius: 7px;
+    margin-bottom: 10px;
+    gap: 12px;
+    padding: 13px 20px 13px 17px;
+  }
+}
+
+.exams__parent-item {
+  position: relative;
+  font-size: 18px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+  }
+  &::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    @include bg-icon('icons/ic_point_orange.svg');
+  }
+}
+
+.exams__parent-text {
+  max-width: 600px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 20px;
+  color: #48587d;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+    max-width: 100%;
+  }
+}

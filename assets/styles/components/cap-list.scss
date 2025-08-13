@@ -212,9 +212,15 @@
         @include bg-icon('cap/cap-decor-fam_mob.svg');
       }
       @include media(xs) {
-        width: 166px;
+        right: -5px;
+        width: 210px;
+        height: 100px;
+        @include bg-icon('cap/cap-decor-fam_mob.svg');
+      }
+      @include media(xxs) {
+        right: -20px;
+        width: 189px;
         height: 90px;
-        @include bg-icon('cap/cap-decor-fam_xxs.svg');
       }
     }
     .cap-list__discount {
@@ -268,23 +274,23 @@
       height: 196px;
       bottom: 0;
       right: 0;
-      @include bg-icon('cap/cap-decor-it.svg');
+      @include bg-icon('cap/cap-decor-it.png');
       @include media(lg) {
         width: 174px;
         height: 90px;
         right: 36px;
-        @include bg-icon('cap/cap-decor-it_tablet.svg');
+        @include bg-icon('cap/cap-decor-it_tablet.png');
       }
       @include media(xs) {
-        width: 313px;
+        width: 163px;
         height: 100px;
-        right: 0;
-        @include bg-icon('cap/cap-decor-it_mob.svg');
+        right: 40px;
+        @include bg-icon('cap/cap-decor-it_mob.png');
       }
       @include media(xxs) {
-        width: 174px;
+        width: 147px;
         height: 90px;
-        @include bg-icon('cap/cap-decor-it_xxs.svg');
+        right: 35px;
       }
     }
     .cap-list__discount {
