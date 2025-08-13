@@ -51,12 +51,11 @@
 }
 
 .discount-august__button {
-  width: 118px;
   font-size: 12px;
   line-height: 100%;
   font-weight: 500;
   border-radius: 41px;
-  padding: 11px 5px 12px;
+  padding: 11px 15px 12px;
   @include media(lg) {
     display: none;
   }
