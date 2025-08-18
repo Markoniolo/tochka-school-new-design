@@ -1141,6 +1141,7 @@ function familyTeachersSliderInit () {
     })
   } else {
     swiper = new Swiper(familyTeachersSlider, {
+      mousewheel: { forceToAxis: true },
       slidesPerView: 'auto',
       autoHeight: true,
       spaceBetween: 200,
@@ -1645,9 +1646,9 @@ function headerInit () {
 
   function checkScrollDirection () {
     const st = window.scrollY
-    if (st > lastScrollTop) {
+    if (st - lastScrollTop > 15) {
       scrollDown = true
-    } else if (st < lastScrollTop) {
+    } else if (st - lastScrollTop < -15) {
       scrollDown = false
     }
     lastScrollTop = st <= 0 ? 0 : st
@@ -1698,6 +1699,7 @@ function howSliderInit () {
 
   function initSlider () {
     howSliderSwiper = new Swiper(howSlider, {
+      mousewheel: { forceToAxis: true },
       slidesPerView: 'auto',
       spaceBetween: 40,
       a11y: false,
@@ -1811,6 +1813,7 @@ function itCapCardsInit () {
 
   function initSlider () {
     itCapCardsSwiper = new Swiper(itCapCards, {
+      mousewheel: { forceToAxis: true },
       slidesPerView: 'auto',
       allowTouchMove: false,
       spaceBetween: 25,
@@ -1844,6 +1847,7 @@ function itHowSliderInit () {
 
   function initSlider () {
     itHowSliderSwiper = new Swiper(itHowSlider, {
+      mousewheel: { forceToAxis: true },
       slidesPerView: 'auto',
       spaceBetween: 20,
       a11y: false,
@@ -2671,6 +2675,7 @@ if (preReviewsSlider) preReviewsSliderInit()
 
 function preReviewsSliderInit () {
   const preReviewsSliderSwiper = new Swiper(preReviewsSlider, {
+    mousewheel: { forceToAxis: true },
     slidesPerView: 'auto',
     spaceBetween: 25,
     a11y: false,
@@ -2735,6 +2740,7 @@ if (preStudySlider) {
 
   function initSlider () {
     preStudySliderSwiper = new Swiper(preStudySlider, {
+      mousewheel: { forceToAxis: true },
       slidesPerView: 'auto',
       spaceBetween: 25,
       loop: true,
@@ -2827,6 +2833,7 @@ function preWaysSliderInit () {
 
   function initSlider () {
     preWaysSliderSwiper = new Swiper(preWaysSlider, {
+      mousewheel: { forceToAxis: true },
       slidesPerView: 'auto',
       spaceBetween: 25,
       pagination: {
