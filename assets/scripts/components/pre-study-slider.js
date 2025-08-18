@@ -10,6 +10,7 @@ if (preStudySlider) {
 
   function initSlider () {
     preStudySliderSwiper = new Swiper(preStudySlider, {
+      mousewheel: { forceToAxis: true },
       slidesPerView: 'auto',
       spaceBetween: 25,
       loop: true,

@@ -36,7 +36,7 @@
   border-radius: 20px;
   overflow: hidden;
   padding: 32px 40px 40px;
-  min-height: 540px;
+  min-height: 544px;
   @include media(lg) {
     border-radius: 10px;
     padding: 108px 15px 80px;
@@ -184,7 +184,7 @@
 
 .it-tile__box {
   padding-left: 26px;
-  max-width: 453px;
+  max-width: 783px;
   width: 100%;
   border-left: 1px solid rgba(255, 255, 255, 0.25);
   @include media(lg) {
@@ -204,7 +204,7 @@
     margin-bottom: 14px;
     margin-top: 0;
     font-size: 15px;
-    line-height: 147%;
+    line-height: 22px;
   }
 }
 

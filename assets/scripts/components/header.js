@@ -29,9 +29,9 @@ function headerInit () {
 
   function checkScrollDirection () {
     const st = window.scrollY
-    if (st > lastScrollTop) {
+    if (st - lastScrollTop > 15) {
       scrollDown = true
-    } else if (st < lastScrollTop) {
+    } else if (st - lastScrollTop < -15) {
       scrollDown = false
     }
     lastScrollTop = st <= 0 ? 0 : st

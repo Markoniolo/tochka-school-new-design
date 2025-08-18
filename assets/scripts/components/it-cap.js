@@ -7,6 +7,7 @@ function itCapCardsInit () {
 
   function initSlider () {
     itCapCardsSwiper = new Swiper(itCapCards, {
+      mousewheel: { forceToAxis: true },
       slidesPerView: 'auto',
       allowTouchMove: false,
       spaceBetween: 25,

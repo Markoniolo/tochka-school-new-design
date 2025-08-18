@@ -18,6 +18,7 @@ function preWaysSliderInit () {
 
   function initSlider () {
     preWaysSliderSwiper = new Swiper(preWaysSlider, {
+      mousewheel: { forceToAxis: true },
       slidesPerView: 'auto',
       spaceBetween: 25,
       pagination: {

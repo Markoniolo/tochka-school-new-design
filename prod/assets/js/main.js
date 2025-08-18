@@ -953,6 +953,7 @@ function familyHowSliderInit () {
 
   function initSlider () {
     familyHowSliderSwiper = new Swiper(familyHowSlider, {
+      mousewheel: { forceToAxis: true },
       slidesPerView: 'auto',
       spaceBetween: 40,
       a11y: false,
@@ -1111,6 +1112,7 @@ function familyTeachersSliderInit () {
   let swiper
   if (window.innerWidth >= 744) {
     swiper = new Swiper(familyTeachersSlider, {
+      mousewheel: { forceToAxis: true },
       slidesPerView: 'auto',
       autoHeight: true,
       spaceBetween: 500,

@@ -4,6 +4,7 @@ if (preReviewsSlider) preReviewsSliderInit()
 
 function preReviewsSliderInit () {
   const preReviewsSliderSwiper = new Swiper(preReviewsSlider, {
+    mousewheel: { forceToAxis: true },
     slidesPerView: 'auto',
     spaceBetween: 25,
     a11y: false,

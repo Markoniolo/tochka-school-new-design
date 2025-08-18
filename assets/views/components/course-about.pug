@@ -60,12 +60,18 @@ mixin course-about(mod, title='Как проходит этот курс')
             .course-about__sound
             video.course-about__video(src=`${pathStatics}/files/Shevchenko_1_klass.mov` loop=true controls=false pip="false"
               data-element='course-about-video' muted playsinline autoplay data-play-start="35")
-        .course-about__box
-          ul.course-about__list
-            each item, index in courseAboutList
-              li.course-about__item= item
-        if mod === 'no-video' || mod === 'no-video-summer'
-          .course-about__decor
+        if mod === 'exams'
+          each text, index in ['Курс для тех, у кого <br> оценки в школе 2 и 3','Цель на экзамене — 4 <br> (15-21 балл из 31)']
+            .course-about__exams
+              img.course-about__exams-image(src=staticImg(`course-about/exams-${index+1}.svg`) alt='')
+              .course-about__exams-text!= text
+        else
+          .course-about__box
+            ul.course-about__list
+              each item, index in courseAboutList
+                li.course-about__item= item
+          if mod === 'no-video' || mod === 'no-video-summer'
+            .course-about__decor
       if mod === 'no-video' || mod === undefined
         .course-about__lines
           each line in courseAboutTagsStatic

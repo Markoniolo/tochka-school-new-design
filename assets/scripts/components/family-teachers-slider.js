@@ -6,6 +6,7 @@ function familyTeachersSliderInit () {
   let swiper
   if (window.innerWidth >= 744) {
     swiper = new Swiper(familyTeachersSlider, {
+      mousewheel: { forceToAxis: true },
       slidesPerView: 'auto',
       autoHeight: true,
       spaceBetween: 500,
@@ -34,6 +35,7 @@ function familyTeachersSliderInit () {
     })
   } else {
     swiper = new Swiper(familyTeachersSlider, {
+      mousewheel: { forceToAxis: true },
       slidesPerView: 'auto',
       autoHeight: true,
       spaceBetween: 200,

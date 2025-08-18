@@ -7,6 +7,7 @@ function familyHowSliderInit () {
 
   function initSlider () {
     familyHowSliderSwiper = new Swiper(familyHowSlider, {
+      mousewheel: { forceToAxis: true },
       slidesPerView: 'auto',
       spaceBetween: 40,
       a11y: false,
