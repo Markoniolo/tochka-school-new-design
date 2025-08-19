@@ -79,9 +79,25 @@ function allCoursesInit () {
     togglePrice()
     moreBtnInit()
     buttonDataHrefLinksInit()
+    dataRedirect()
   })
 
   observer.observe(tile, config)
+
+  dataRedirect()
+
+  function dataRedirect () {
+    const dataRedirectLinks = tile.querySelectorAll('[data-redirect]')
+
+    for (let i = 0; i < dataRedirectLinks.length; i++) {
+      dataRedirectLinks[i].addEventListener('click', dataRedirect)
+    }
+
+    function dataRedirect (e) {
+      e.preventDefault()
+      window.open(this.href, '_blank');
+    }
+  }
 
   togglePrice()
 
@@ -774,6 +790,21 @@ const selectArray = document.querySelectorAll('[data-role="custom-select"]')
 
 for (let i = 0; i < selectArray.length; i++) {
   customSelect(selectArray[i])
+}
+
+const dataRedirectLinks = document.querySelectorAll('[data-redirect]')
+
+if (dataRedirectLinks.length) dataRedirectLinksInit()
+
+function dataRedirectLinksInit () {
+  for (let i = 0; i < dataRedirectLinks.length; i++) {
+    dataRedirectLinks[i].addEventListener('click', dataRedirect)
+  }
+
+  function dataRedirect (e) {
+    e.preventDefault()
+    window.open(this.href, '_blank');
+  }
 }
 
 const discountAugust = document.querySelector('[data-element="discount-august"]')
@@ -1876,6 +1907,25 @@ function itHowSliderInit () {
       initSlider()
     } else {
       itHowSliderSwiper?.destroy()
+    }
+  }
+}
+
+const itTileItems = document.querySelectorAll('.it-tile__item')
+
+for (let i = 0; i < itTileItems.length; i++) {
+  itTileMoreInit(itTileItems[i])
+}
+
+function itTileMoreInit (parent) {
+  const btn = parent.querySelector('.it-tile__more')
+  const descr = parent.querySelector('.it-tile__author-descr')
+
+  if (btn && descr) {
+    if ((descr.clientHeight > 68 && window.innerWidth >= 1440) || (descr.clientHeight > 50 && window.innerWidth < 1440)) {
+      descr.classList.add('hide')
+    } else {
+      btn.remove()
     }
   }
 }
