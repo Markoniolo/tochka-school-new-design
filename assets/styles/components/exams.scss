@@ -210,19 +210,23 @@
 }
 
 .exams__picture {
-  margin-left: 113px;
+  margin-left: 305px;
   flex-shrink: 0;
-  width: 541px;
-  height: 292px;
+  width: 396px;
+  height: 308px;
   @include media(lg) {
     margin-left: 42px;
-    width: 288px;
-    height: 226px;
+    width: 289px;
+    height: 227px;
   }
   @include media(xs) {
     margin: 0 auto;
-    width: 269px;
-    height: 277px;
+    width: 353px;
+    height: 276px;
+  }
+  @include media(xxs) {
+    width: 100%;
+    height: auto;
   }
 }
 
