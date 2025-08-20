@@ -124,7 +124,6 @@
       }
       @include media(xxs) {
         @include bg-icon('it-about/ic_it-about_1_xxs.webp');
-        bottom: 11px;
       }
     }
     .it-about__text {

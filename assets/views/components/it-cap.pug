@@ -25,8 +25,8 @@
       .it-cap__cards
         .swiper-wrapper
           each card, index in itCapCards
-            .it-cap__card.swiper-slide
+            a.it-cap__card.swiper-slide(href="#")
               .it-cap__title= card.title
               .it-cap__note= card.note
-              a.it-cap__more(href="#") Подробнее
+              .it-cap__more Подробнее
               img.it-cap__decor(src=staticImg(`it-cap/decor-${index+1}.png`) alt='')
