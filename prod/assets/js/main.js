@@ -87,7 +87,7 @@ function allCoursesInit () {
   dataRedirect()
 
   function dataRedirect () {
-    const dataRedirectLinks = tile.querySelectorAll('[data-redirect]')
+    const dataRedirectLinks = document.querySelectorAll('[data-redirect]')
 
     for (let i = 0; i < dataRedirectLinks.length; i++) {
       dataRedirectLinks[i].addEventListener('click', dataRedirect)
