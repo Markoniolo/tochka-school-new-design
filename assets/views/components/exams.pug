@@ -1,35 +1,40 @@
 mixin exams(mod)
-  .exams
-    .cont
-      h2.exams__caption Результаты учеников прошлого года
-      .exams__area
-        .exams__box
-          .exams__point
-            .exams__point-note Средний балл:
-            .exams__point-value
-              span 18
-            .exams__point-achieve Цель достигнута!
-          .exams__info
-            .exams__title Целевая оценка курса: 4 (начинается с 15 баллов)
-            .exams__list
-              .exams__item 63,2% учеников сдали экзамен на 4
-              .exams__item 77,9% учеников сдали экзамен на 4 и 5
-          .exams__text Каждый год средний балл на курсе растёт: от&nbsp;14,9 баллов в 2022 году до 18 баллов в 2025.
-        picture.exams__picture
-          source(srcset=staticImg(`exams/decor-1_mob.svg`) media="(max-width: 743px)")
-          source(srcset=staticImg(`exams/decor-1_tablet.svg`) media="(max-width: 1359px)")
-          img.exams__image(src=staticImg('exams/decor-1.svg') alt="")
-      if mod !== 'no-parent'
-        .exams__parent
-          .exams__parent-caption Родителям на заметку
-          picture.exams__parent-picture
-            source(srcset=staticImg(`exams/decor-2_mob.svg`) media="(max-width: 743px)")
-            source(srcset=staticImg(`exams/decor-2_tablet.svg`) media="(max-width: 1359px)")
-            img.exams__parent-image(src=staticImg('exams/decor-2.svg') alt="")
-          .exams__parent-box
-            .exams__parent-list
-              .exams__parent-item ОГЭ проверяет знания по математике не только за 9 класс, а за всю среднюю школу.
-              .exams__parent-item И 90% школьников пишут пробный ОГЭ в начале года на «2».
-            .exams__parent-text.
-              Но не поддавайтесь панике. Шаг за шагом мы устраним пробелы в знаниях, поможем
-              подготовиться и сдать ОГЭ по математике на желаемый балл.
+  each item in ['decor-1','decor-empty']
+    .exams
+      .cont
+        h2.exams__caption Результаты учеников прошлого года
+        .exams__area
+          .exams__box
+            .exams__point
+              .exams__point-note Средний балл:
+              .exams__point-value
+                span 18
+              .exams__point-achieve Цель достигнута!
+            .exams__info
+              .exams__title Целевая оценка курса: 4 (начинается с 15 баллов)
+              .exams__list
+                .exams__item 63,2% учеников сдали экзамен на 4
+                .exams__item 77,9% учеников сдали экзамен на 4 и 5
+            .exams__text Каждый год средний балл на курсе растёт: от&nbsp;14,9 баллов в 2022 году до 18 баллов в 2025.
+          if item === "decor-empty"
+            picture.exams__picture.empty
+              img.exams__image(src=staticImg(`exams/${item}.svg`) alt="")
+          else
+            picture.exams__picture
+              source(srcset=staticImg(`exams/${item}_mob.svg`) media="(max-width: 743px)")
+              source(srcset=staticImg(`exams/${item}_tablet.svg`) media="(max-width: 1359px)")
+              img.exams__image(src=staticImg(`exams/${item}.svg`) alt="")
+        if mod !== 'no-parent'
+          .exams__parent
+            .exams__parent-caption Родителям на заметку
+            picture.exams__parent-picture
+              source(srcset=staticImg(`exams/decor-2_mob.svg`) media="(max-width: 743px)")
+              source(srcset=staticImg(`exams/decor-2_tablet.svg`) media="(max-width: 1359px)")
+              img.exams__parent-image(src=staticImg('exams/decor-2.svg') alt="")
+            .exams__parent-box
+              .exams__parent-list
+                .exams__parent-item ОГЭ проверяет знания по математике не только за 9 класс, а за всю среднюю школу.
+                .exams__parent-item И 90% школьников пишут пробный ОГЭ в начале года на «2».
+              .exams__parent-text.
+                Но не поддавайтесь панике. Шаг за шагом мы устраним пробелы в знаниях, поможем
+                подготовиться и сдать ОГЭ по математике на желаемый балл.

@@ -1,0 +1,117 @@
+.thanks-manual {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 182px;
+    height: 379px;
+    bottom: 0;
+    left: 0;
+    @include bg-icon('thanks-manual/decor-2.svg');
+    @include media(xl) {
+      content: none;
+    }
+    @include media(xs) {
+      content: '';
+      width: 38px;
+      height: 73px;
+      @include bg-icon('thanks-manual/decor-2_mob.svg');
+    }
+  }
+}
+
+.thanks-manual__wrap {
+  position: relative;
+  padding: 110px 0 79px;
+  @include media(lg) {
+    padding: 40px 0 60px;
+  }
+  @include media(xs) {
+    padding: 30px 0 60px;
+  }
+}
+
+.thanks-manual__caption {
+  margin-bottom: 60px;
+  max-width: 510px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 122%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 20px;
+    max-width: 320px;
+    font-size: 27px;
+    line-height: 34px;
+  }
+  @include media(xs) {
+    margin-bottom: 10px;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+.thanks-manual__picture {
+  position: absolute;
+  top: 31px;
+  right: -190px;
+  width: 900px;
+  height: 484px;
+  @include media(xl) {
+    width: 700px;
+    height: 376px;
+    top: 100px;
+    right: 0;
+  }
+  @include media(lg) {
+    width: 435px;
+    height: 261px;
+    top: 21px;
+    right: -30px;
+  }
+  @include media(xs) {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 26px;
+  }
+}
+
+.thanks-manual__image {
+  height: 100%;
+}
+
+.thanks-manual__text {
+  margin-bottom: 74px;
+  max-width: 676px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 30px;
+    max-width: 290px;
+    font-size: 18px;
+    line-height: 23px;
+  }
+  @include media(xs) {
+    margin-bottom: 26px;
+    max-width: 100%;
+    text-align: center;
+    font-size: 15px;
+    line-height: 19px;
+  }
+}
+
+.thanks-manual__button {
+  min-width: 219px;
+  display: inline-block;
+  padding: 19px 30px 20px;
+  font-size: 16px;
+  line-height: 100%;
+  @include media(xs) {
+    width: 100%;
+  }
+}

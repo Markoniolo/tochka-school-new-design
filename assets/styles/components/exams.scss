@@ -210,28 +210,41 @@
 }
 
 .exams__picture {
-  margin-left: 305px;
+  margin-left: 127px;
   flex-shrink: 0;
-  width: 396px;
-  height: 308px;
+  width: 541px;
+  height: 292px;
   @include media(lg) {
     margin-left: 42px;
     width: 289px;
     height: 227px;
   }
   @include media(xs) {
-    margin: 0 auto;
-    width: 353px;
-    height: 276px;
-  }
-  @include media(xxs) {
     width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
     height: auto;
+  }
+  &.empty {
+    margin-left: 211px;
+    width: 421px;
+    height: 361px;
+    @include media(lg) {
+      margin-left: 42px;
+      width: 289px;
+      height: 248px;
+    }
+    @include media(xs) {
+      max-width: 350px;
+      margin: 0 auto;
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
 .exams__image {
-
+  height: 100%;
 }
 
 .exams__parent {
@@ -268,8 +281,11 @@
   @include media(lg) {
     width: 310px;
     height: 320px;
-    right: 0;
+    right: 390px;
     bottom: -28px;
+  }
+  @include media(md) {
+    right: 0;
   }
   @include media(xs) {
     position: static;
