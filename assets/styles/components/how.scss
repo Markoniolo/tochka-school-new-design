@@ -138,6 +138,12 @@
       display: block;
     }
   }
+  &:nth-child(5) {
+    width: 596px;
+    @include media(lg) {
+      width: 100%;
+    }
+  }
 }
 
 .how__title {

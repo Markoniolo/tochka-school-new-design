@@ -116,12 +116,6 @@
   @include media(xs) {
     text-align: center;
     margin: 0 auto 26px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    span {
-      display: block;
-    }
   }
 }
 
@@ -213,6 +207,9 @@
   }
   .info__text {
     max-width: 390px;
+    @include media(lg) {
+      margin-bottom: 16px;
+    }
   }
   &::before {
     @include media(xs) {
@@ -222,7 +219,7 @@
       height: 28px;
       background: #6683c2;
       border-radius: 50%;
-      top: 230px;
+      top: 260px;
       left: 27px;
     }
   }
@@ -234,7 +231,7 @@
       height: 55px;
       background: #7fcbb4;
       border-radius: 50%;
-      top: 170px;
+      top: 202px;
       right: 16px;
     }
   }
@@ -249,6 +246,7 @@
   @include media(lg) {
     width: 309px;
     height: 248px;
+    right: -24px;
   }
   @include media(xs) {
     position: relative;

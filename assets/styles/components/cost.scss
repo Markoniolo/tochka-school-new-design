@@ -40,6 +40,10 @@
   &.shortest-summer {
     margin-bottom: 40px;
     .info__capital {
+      padding: 36px 44px 36px;
+      @include media(lg) {
+        padding: 26px;
+      }
       background: #efffdf;
       &::before {
         content: '';
@@ -82,19 +86,22 @@
             width: 253px;
             height: 203px;
             position: absolute;
+            right: 256px;
           }
           .info__text {
             position: absolute;
-            max-width: 480px;
-            bottom: 49px;
-            left: 372px;
+            max-width: 500px;
+            bottom: 32px;
+            left: 352px;
             margin-bottom: 0;
-            span {
-              display: block;
-            }
           }
           .info__title {
-            margin-bottom: 30px;
+            margin-bottom: 42px;
+            max-width: 780px;
+            font-size: 38px;
+          }
+          .info__btn_order {
+            padding: 17px 40px 18px;
           }
         }
       }
@@ -103,7 +110,7 @@
           width: 305px;
           height: 215px;
           bottom: 0;
-          right: 74px;
+          right: 45px;
         }
       }
     }
@@ -280,6 +287,10 @@
       }
     }
     .info__capital {
+      padding: 36px 44px 36px;
+      @include media(lg) {
+        padding: 26px;
+      }
       @include media-up(xl) {
         min-height: 215px;
         width: 100%;
@@ -291,21 +302,25 @@
           height: 203px;
           position: absolute;
           top: 0;
-          right: 285px;
+          right: 256px;
         }
         .info__text {
           position: absolute;
-          max-width: 480px;
-          bottom: 49px;
-          left: 372px;
+          max-width: 500px;
+          bottom: 32px;
+          left: 352px;
           margin-bottom: 0;
-          span {
-            display: block;
-          }
         }
         .info__title {
-          margin-bottom: 30px;
-          max-width: 760px;
+          margin-bottom: 42px;
+          max-width: 780px;
+          font-size: 38px;
+          @include media(lg) {
+            font-size: 25px;
+          }
+        }
+        .info__btn_order {
+          padding: 17px 40px 18px;
         }
       }
     }
@@ -314,7 +329,7 @@
         width: 305px;
         height: 215px;
         bottom: 0;
-        right: 74px;
+        right: 45px;
       }
     }
   }
