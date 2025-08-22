@@ -26,16 +26,16 @@
   position: relative;
   z-index: 1;
   padding-top: 70px;
-  height: calc(100vh - 168px);
+  height: calc(calc(100 * var(--vh)) - 168px);
   @include media(lg) {
     padding-top: 46px;
-    height: calc(100vh - 106px);
+    height: calc(calc(100 * var(--vh)) - 106px);
   }
   @include media(md) {
-    height: calc(100vh - 80px);
+    height: calc(calc(100 * var(--vh)) - 80px);
   }
   @include media(xxs) {
-    height: calc(100vh - 69px);
+    height: calc(calc(100 * var(--vh)) - 69px);
   }
 }
 
