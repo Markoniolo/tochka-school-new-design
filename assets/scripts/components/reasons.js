@@ -41,13 +41,17 @@ function reasonsInit () {
       }
     }
   }
+  let lock = false
 
   function update (e) {
+    if (lock) return
     if (e.deltaY < 0) {
       prevSlide()
     } else if (e.deltaY > 0) {
       nextSlide()
     }
+    lock = true
+    setTimeout(() => {lock = false}, 600)
   }
 
   window.addEventListener('touchstart', e => {
@@ -69,7 +73,7 @@ function reasonsInit () {
     }
   }
 
-  window.addEventListener('wheel', throttle(update, 200), { passive: true })
+  window.addEventListener('wheel', update, { passive: true })
 
   function prevSlide () {
     if (index > -1 && window.scrollY === 0) {
