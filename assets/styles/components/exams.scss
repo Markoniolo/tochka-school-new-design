@@ -61,41 +61,47 @@
     font-size: 18px;
   }
   @include media(xxs) {
-    font-size: 14px;
+    font-size: 13px;
     margin-right: 8px;
   }
 }
 
 .exams__point-value {
+  position: relative;
   margin-right: 20px;
   flex-shrink: 0;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: #f37e60;
   display: flex;
   align-items: center;
   justify-content: center;
-  @include media(lg) {
-    width: 34px;
-    height: 34px;
-  }
   @include media(xxs) {
     margin-right: 8px;
-    width: 24px;
-    height: 24px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #f37e60;
+    width: 120%;
+    padding-bottom: 120%;
   }
   span {
     position: relative;
+    z-index: 1;
     left: -2px;
     font-weight: 500;
     font-size: 25px;
     color: #fff;
+    min-width: 35px;
+    text-align: center;
     @include media(lg) {
       font-size: 20px;
     }
     @include media(xxs) {
       font-size: 16px;
+      min-width: 30px;
     }
   }
 }
@@ -116,6 +122,9 @@
     gap: 7px;
     font-size: 14px;
     padding: 3px 11px 5px 8px;
+  }
+  @include media(xxs) {
+    font-size: 13px;
   }
   &::before {
     content: "";
