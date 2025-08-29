@@ -224,7 +224,7 @@
   width: 541px;
   height: 292px;
   @include media(lg) {
-    margin-left: 42px;
+    margin-left: auto;
     width: 289px;
     height: 227px;
   }

@@ -317,7 +317,7 @@
 }
 
 .header__stages {
-  position: relative;
+  position: absolute;
   z-index: 1;
   top: 100%;
   left: 0;
@@ -332,6 +332,7 @@
   transition-property: transform;
   @include media(lg) {
     padding: 20px 0;
+    position: relative;
   }
   @include media(xs) {
     flex-wrap: wrap;

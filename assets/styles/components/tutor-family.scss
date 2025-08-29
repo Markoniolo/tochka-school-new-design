@@ -34,7 +34,6 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   @include media(xs) {
     display: block;
   }
@@ -248,10 +247,10 @@
   position: relative;
   top: 75px;
   @include media(lg) {
-    position: static;
-    top: 0;
+    top: -21px;
   }
   @include media(xxs) {
+    position: static;
     width: calc(100% + 50px);
   }
 }

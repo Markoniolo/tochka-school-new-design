@@ -266,7 +266,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  width: 310px;
   @include media(md) {
     border-radius: 10px;
     width: calc(50% - 13px);
@@ -295,6 +295,9 @@
   line-height: 30px;
   text-align: center;
   color: #003c56;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
   @include media(md) {
     font-size: 18px;
     line-height: 23px;
