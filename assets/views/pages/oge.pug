@@ -1,0 +1,25 @@
+extends ../components/_layout/layout
+
+block head
+  +title('ОГЭ')
+
+block body
+  .ege-cells
+    include ../components/ege-cap
+    +ege-cap('oge', 'ОГЭ без стресса и&nbsp;на&nbsp;высокий балл')
+    include ../components/ege-how
+    +ege-how('oge')
+  include ../components/family-teachers
+  +family-teachers('oge','Кто подготовит к ОГЭ')
+  include ../components/ege-why
+  +ege-why('oge')
+  include ../components/reviews
+  +reviews('blue')
+  include ../components/ege-about
+  include ../components/ege-tile
+  include ../components/cost
+  +cost('capital')
+  include ../components/about
+  include ../components/quote
+  include ../components/numbers
+  include ../components/ege-order

@@ -25,6 +25,15 @@
       color: #67933b;
     }
   }
+  &.ege, &.oge {
+    margin-bottom: 80px;
+    padding-top: 74px;
+    background: #f0f5ff;
+    @include media(lg) {
+      margin-bottom: 40px;
+      padding-top: 36px;
+    }
+  }
 }
 
 .family-teachers__cont {

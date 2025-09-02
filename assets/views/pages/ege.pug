@@ -1,0 +1,25 @@
+extends ../components/_layout/layout
+
+block head
+  +title('ЕГЭ')
+
+block body
+  .ege-cells
+    include ../components/ege-cap
+    +ege-cap('ege', 'Сдать ЕГЭ на высокий балл и&nbsp;поступить куда хочешь, а&nbsp;не&nbsp;куда получится')
+    include ../components/ege-how
+    +ege-how('ege')
+  include ../components/family-teachers
+  +family-teachers('ege','Кто подготовит к ЕГЭ')
+  include ../components/ege-why
+  +ege-why('ege')
+  include ../components/reviews
+  +reviews('blue')
+  include ../components/ege-about
+  include ../components/ege-tile
+  include ../components/cost
+  +cost('capital')
+  include ../components/about
+  include ../components/quote
+  include ../components/numbers
+  include ../components/ege-order

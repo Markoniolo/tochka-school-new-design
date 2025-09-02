@@ -6,6 +6,15 @@
   @include media(xs) {
     margin-bottom: 50px;
   }
+  .blog-info-1__title {
+    max-width: 910px;
+    @include media(lg) {
+      max-width: 410px;
+    }
+  }
+  .blog-info-1__image {
+    right: 40px;
+  }
 }
 
 .blog__cont {

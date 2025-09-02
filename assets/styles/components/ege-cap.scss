@@ -1,0 +1,452 @@
+.ege-cap {
+  margin-bottom: 74px;
+  @include media(lg) {
+    margin-bottom: 32px;
+    overflow: hidden;
+  }
+  &_ege {
+    .ege-cap__area {
+      @include bg-icon('ege-cap/ege-bg.webp');
+      background-size: cover;
+      @include media(lg) {
+        background: transparent;
+      }
+    }
+    .ege-cap__caption {
+      max-width: 613px;
+      @include media(lg) {
+        max-width: 344px;
+      }
+      @include media(xs) {
+        max-width: 100%;
+      }
+    }
+    .ege-cap__tabs {
+      background: rgba(255, 255, 255, 0.17);
+    }
+  }
+  &_oge {
+    .ege-cap__caption {
+      max-width: 532px;
+      @include media(lg) {
+        max-width: 327px;
+      }
+      @include media(xs) {
+        max-width: 100%;
+      }
+    }
+    .ege-cap__area {
+      background: linear-gradient(337deg, #f0f5ff 0%, #e6efff 100%);
+    }
+  }
+}
+
+.ege-cap__wrap {
+  display: flex;
+  gap: 20px;
+  @include media(lg) {
+    display: block;
+  }
+}
+
+.ege-cap__area {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 32px;
+  padding: 45px 60px 60px;
+  flex-grow: 1;
+  @include media(lg) {
+    padding: 35px 0 110px;
+    border-radius: 0;
+    overflow: visible;
+    margin-bottom: -80px;
+  }
+  @include media(xs) {
+    padding: 25px 0 130px;
+    margin-bottom: -284px;
+  }
+}
+
+.ege-cap__tabs-box {
+  margin-bottom: 32px;
+  @include media(lg) {
+    margin-bottom: 20px;
+  }
+  @include media(xs) {
+    margin: 0 auto 22px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.ege-cap__tabs {
+  display: inline-flex;
+  border-radius: 53px;
+  @include media(lg) {
+    backdrop-filter: blur(2px);
+  }
+}
+
+.ege-cap__tab {
+  min-width: 115px;
+  border-radius: 34px;
+  padding: 10px 40px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
+  background-color: #6683c2;
+  color: $white;
+  @include media(lg) {
+    font-size: 15px;
+    padding: 10px 34px;
+    min-width: 100px;
+  }
+}
+
+a.ege-cap__tab {
+  background-color: transparent;
+  color: $black;
+  box-shadow: none;
+  transition-property: background-color, color;
+  transition-duration: $transition-duration;
+  &:hover {
+    background-color: #a0b6e6;
+    color: $white;
+  }
+}
+
+.ege-cap__caption {
+  margin-bottom: 28px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 57px;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 14px;
+    font-size: 30px;
+    line-height: 113%;
+  }
+  @include media(xs) {
+    font-size: 24px;
+    line-height: 112%;
+    text-align: center;
+  }
+}
+
+.ege-cap__list {
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  @include media(lg) {
+    margin-bottom: 26px;
+    gap: 5px;
+  }
+  @include media(xs) {
+    align-items: center;
+    max-width: 278px;
+    width: 100%;
+    margin: 0 auto 25px;
+    gap: 6px;
+  }
+}
+
+.ege-cap__item {
+  position: relative;
+  padding-left: 25px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    padding-left: 12px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+  @include media(xs) {
+    text-align: center;
+    display: block;
+    padding: 0;
+  }
+  &::before {
+    content: '';
+    background-color: #F37E60;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 9px;
+    height: 9px;
+    @include media(lg) {
+      width: 6px;
+      height: 6px;
+    }
+    @include media(xs) {
+      position: static;
+      display: inline-block;
+      margin-right: 5px;
+      transform: none;
+    }
+  }
+}
+
+.ege-cap__button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  box-shadow: 0 4px 27px 0 rgba(0, 0, 0, 0.08);
+  border: 2px solid #f37e60;
+  border-radius: 34px;
+  color: #003c56;
+  padding: 16px 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  @include media(lg) {
+    font-size: 15px;
+    border: 1px solid #f37e60;
+    padding: 19px 40px;
+  }
+  @include media(xs) {
+    display: none;
+  }
+  &::after {
+    content: '';
+    @include bg-icon('icons/ic_btn_arrow_down_dark.svg');
+    width: 12px;
+    height: 13px;
+  }
+}
+
+.ege-cap__picture {
+  position: absolute;
+  top: -68px;
+  right: -100px;
+  width: 307px;
+  height: 307px;
+  border-radius: 50%;
+  background: radial-gradient(90.71% 90.71% at 42.25% 60.65%, rgb(196, 216, 255) 0%, rgb(102, 131, 194) 100%);
+  overflow: hidden;
+  @include media(lg) {
+    width: 331px;
+    height: 331px;
+    top: -56px;
+    right: -85px;
+  }
+  @include media(xs) {
+    position: static;
+    width: 100%;
+    height: 403px;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    @include bg-icon('ege-cap/elips.webp');
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+.ege-cap__image {
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom;
+  @include media(xs) {
+    width: auto;
+  }
+}
+
+.ege-cap__decor {
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+  &_1 {
+    @include bg-icon('ege-cap/decor-1.svg');
+    width: 55px;
+    height: 55px;
+    top: 11px;
+    right: 180px;
+    @include media(lg) {
+      top: 42px;
+      right: 219px;
+    }
+    @include media(xs) {
+      display: none;
+    }
+  }
+  &_2 {
+    @include bg-icon('ege-cap/decor-2.svg');
+    width: 34px;
+    height: 34px;
+    top: 81px;
+    right: 190px;
+    @include media(lg) {
+      top: 112px;
+      right: 230px;
+    }
+    @include media(xs) {
+      display: none;
+    }
+  }
+  &_3 {
+    @include bg-icon('ege-cap/decor-3.webp');
+    width: 109px;
+    height: 109px;
+    bottom: 122px;
+    right: 14px;
+    @include media(lg) {
+      bottom: 200px;
+      right: 130px;
+      width: 90px;
+      height: 90px;
+    }
+    @include media(xs) {
+      @include bg-icon('ege-cap/decor-3_mob.webp');
+      bottom: 495px;
+      right: 51px;
+      width: 50px;
+      height: 50px;
+    }
+  }
+  &_4 {
+    @include bg-icon('ege-cap/decor-4.svg');
+    width: 155px;
+    height: 155px;
+    bottom: 8px;
+    right: 78px;
+    @include media(lg) {
+      bottom: 162px;
+      right: -1px;
+      width: 115px;
+      height: 115px;
+    }
+    @include media(xs) {
+      bottom: 420px;
+      right: -8px;
+      width: 80px;
+      height: 80px;
+    }
+  }
+}
+
+.ege-cap__form {
+  width: 413px;
+  flex-shrink: 0;
+  background: radial-gradient(56.77% 58.48% at 80.15% 24.42%, #96abd7 0%, #6683c2 100%);
+  padding: 36px 40px;
+  border-radius: 32px;
+  @include media(lg) {
+    width: 100%;
+    border-radius: 10px;
+    padding: 22px 20px;
+    position: relative;
+    z-index: 1;
+  }
+  @include media(xs) {
+    padding: 18px 15px;
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.ege-cap__title {
+  margin-bottom: 25px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #fff;
+  @include media(lg) {
+    margin-bottom: 12px;
+    font-size: 18px;
+    line-height: 23px;
+  }
+}
+
+.ege-cap__inner {
+  @include media(lg) {
+    margin-bottom: 12px;
+    display: flex;
+    gap: 10px;
+  }
+  @include media(xs) {
+    display: block;
+  }
+}
+
+.ege-cap__input {
+  margin-bottom: 25px;
+  width: 100%;
+  min-height: 55px;
+  @include media(lg) {
+    min-height: 45px;
+    margin-bottom: 0;
+  }
+  @include media(xs) {
+    margin-bottom: 20px;
+  }
+  &:last-of-type {
+    margin-bottom: 35px;
+    @include media(lg) {
+      margin-bottom: 0;
+    }
+    @include media(xs) {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.ege-cap__submit {
+  margin-top: 10px;
+  margin-bottom: 18px;
+  display: block;
+  width: 100%;
+  min-height: 55px;
+  font-size: 16px;
+  @include media(lg) {
+    min-height: 45px;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  @include media(xs) {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+}
+
+.ege-cap__label {
+  @include media(lg) {
+    display: inline-flex;
+  }
+  &:not(:last-child) {
+    margin-bottom: 20px;
+    @include media(lg) {
+      margin-bottom: 0;
+      width: 336px;
+      margin-right: 13px;
+    }
+    @include media(xs) {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 14px;
+    }
+  }
+  &:last-child {
+    @include media(lg) {
+      width: 192px;
+    }
+    @include media(xs) {
+      width: 100%;
+    }
+  }
+}
+
+.ege-cap__checkbox-text {
+  @include media(lg) {
+    font-size: 14px;
+  }
+}

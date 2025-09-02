@@ -1,0 +1,38 @@
+.ege-order
+  .cont
+    .ege-order__wrap
+      .ege-order__area
+        .ege-order__caption Начните подготовку прямо сейчас
+        .ege-order__text Получите полноценную консультацию по программе и ответы на все вопросы о подготовке к экзамену
+        picture.ege-order__picture
+          source(srcset=staticImg(`ege-order/decor_mob.svg`) media="(max-width: 743px)")
+          source(srcset=staticImg(`ege-order/decor_tablet.svg`) media="(max-width: 1359px)")
+          img.ege-order__image(src=staticImg('ege-order/decor.svg') alt='')
+      form.ege-order__form(data-request-validate)
+        .ege-order__title Оставить заявку на&nbsp;обучение
+        .ege-order__inner
+          input.input_utm(name='utm' type='hidden' value='')
+          input(type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru/blog/voprosy-dlya-podrostkov-chto-polezno-i-interesno-obsudit-do-15-let")
+          input.ege-order__input.input-white(placeholder='Имя' type='text' name='name')
+          input.ege-order__input.input-white(placeholder='Телефон' type='tel' required data-element='input-phone-intl' name='phone' data-phone-pattern)
+          input(name='tel' type='hidden' required data-element='input-phone-hidden')
+          button.ege-order__submit.btn-orange.btn-warning Оставить заявку
+        label.ege-order__label.checkbox-white-label
+          input.ege-order__checkbox.checkbox-white-input(name='policy' type='checkbox')
+          .ege-order__checkbox-view.checkbox-white-input-view
+          .ege-order__checkbox-text.checkbox-white-text
+            | Даю
+            |
+            a(href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target='_blank') Согласие
+            |
+            | на обработку персональных
+            | данных в соответствии с
+            |
+            a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf' target='_blank') Политикой
+        label.ege-order__label.checkbox-white-label
+          input.ege-order__checkbox.checkbox-white-input(name='news' type='checkbox')
+          .ege-order__checkbox-view.checkbox-white-input-view
+          .ege-order__checkbox-text.checkbox-white-text
+            | Согласен на
+            |
+            a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf' target='_blank') получение рекламы

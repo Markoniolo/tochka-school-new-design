@@ -1,0 +1,27 @@
+-
+  const egeAboutList = [
+    'Онлайн-уроки',
+    'Записи уроков',
+    'Конспекты занятий',
+    'Тестирование',
+    'Чат с тьютором',
+    'Доп. материалы',
+  ]
+
+.ege-about
+  .cont
+    .ege-about__wrap
+      h2.ege-about__title!= 'Платформа <br> обучения 6 в 1'
+      picture.ege-about__picture
+        source(srcset=staticImg('ege-about/decor-1_mob.webp') media="(max-width: 743px)")
+        source(srcset=staticImg('ege-about/decor-1_tablet.webp') media="(max-width: 1359px)")
+        img.ege-about__image(src=staticImg('ege-about/decor-1.webp') alt='')
+      ul.ege-about__list
+        each item, index in egeAboutList
+          li.ege-about__item
+            .ege-about__item-inner
+              img.ege-about__icon(src=staticImg(`ege-about/point-${index+1}.svg`) alt='')
+              span= item
+      .ege-about__box
+        .ege-about__text Не нужно искать материалы в интернете или покупать сборники. Мы подготовили всё необходимое для обучения.
+        .ege-about__text Предоставим инструкции о том, как вести себя перед и на экзамене (от входа в класс до заполнения бланка ответов)

@@ -1,0 +1,55 @@
+mixin ege-cap(mod, title)
+  .ege-cap(class = mod ? `ege-cap_${mod}` : false)
+    .cont
+      .ege-cap__wrap
+        .ege-cap__area
+          .ege-cap__tabs-box
+            .ege-cap__tabs
+              if mod === 'ege'
+                a.ege-cap__tab(href='#') ОГЭ
+                .ege-cap__tab ЕГЭ
+              else
+                .ege-cap__tab ОГЭ
+                a.ege-cap__tab(href='#') ЕГЭ
+          h1.ege-cap__caption!= title
+          ul.ege-cap__list
+            li.ege-cap__item лучшие учителя страны*
+            li.ege-cap__item выверенная программа подготовки
+            li.ege-cap__item с личным тьютором: от первого урока до экзамена
+          a.ege-cap__button(href='#ege-tile' data-role="scroll-to-anchor") Выбрать предмет
+          picture.ege-cap__picture
+            source(srcset=staticImg(`ege-cap/${mod}_mob.webp`) media="(max-width: 743px)")
+            source(srcset=staticImg(`ege-cap/${mod}_tablet.webp`) media="(max-width: 1359px)")
+            img.ege-cap__image(src=staticImg(`ege-cap/${mod}.webp`) alt='')
+          .ege-cap__decor.ege-cap__decor_1
+          .ege-cap__decor.ege-cap__decor_2
+          .ege-cap__decor.ege-cap__decor_3
+          .ege-cap__decor.ege-cap__decor_4
+        form.ege-cap__form(data-request-validate)
+          .ege-cap__title Начните подготовку прямо сейчас. Оставьте заявку!
+          .ege-cap__inner
+            input.input_utm(name='utm' type='hidden' value='')
+            input(type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru/blog/voprosy-dlya-podrostkov-chto-polezno-i-interesno-obsudit-do-15-let")
+            input.ege-cap__input.input-white(placeholder='Имя' type='text' name='name')
+            input.ege-cap__input.input-white(placeholder='Телефон' type='tel' required data-element='input-phone-intl' name='phone' data-phone-pattern)
+            input(name='tel' type='hidden' required data-element='input-phone-hidden')
+            button.ege-cap__submit.btn-orange.btn-warning Оставить заявку
+          label.ege-cap__label.checkbox-white-label
+            input.ege-cap__checkbox.checkbox-white-input(name='policy' type='checkbox')
+            .ege-cap__checkbox-view.checkbox-white-input-view
+            .ege-cap__checkbox-text.checkbox-white-text
+              | Даю
+              |
+              a(href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target='_blank') Согласие
+              |
+              | на обработку персональных
+              | данных в соответствии с
+              |
+              a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf' target='_blank') Политикой
+          label.ege-cap__label.checkbox-white-label
+            input.ege-cap__checkbox.checkbox-white-input(name='news' type='checkbox')
+            .ege-cap__checkbox-view.checkbox-white-input-view
+            .ege-cap__checkbox-text.checkbox-white-text
+              | Согласен на
+              |
+              a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf' target='_blank') получение рекламы

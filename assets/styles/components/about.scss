@@ -4,6 +4,7 @@
     margin-bottom: 40px;
   }
   @include media(xs) {
+    margin-bottom: 0;
     overflow: hidden;
   }
 }
@@ -24,6 +25,9 @@
     width: 100%;
     font-size: 25px;
     line-height: 100%;
+  }
+  @include media(xs) {
+    margin-bottom: 0;
   }
 }
 

@@ -9,10 +9,10 @@
     'Педагогический стаж ー 5 лет',
   ]
 
-mixin family-teachers(mod)
+mixin family-teachers(mod, title='Кто будет вести уроки для&nbsp;Вас')
   .family-teachers(class = mod ? mod : false)
     .family-teachers__cont.cont
-      .family-teachers__caption Кто будет вести уроки для&nbsp;Вас
+      .family-teachers__caption!= title
       .family-teachers__slider
         .family-teachers__wrapper.swiper-wrapper
           each item, index in ['Екатерина Александровна Горошенкина','Анна Юрьевна','Галина Валерьевна','Елена Юрьевна']

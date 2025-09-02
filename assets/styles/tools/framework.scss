@@ -273,3 +273,15 @@
 .family-blue {
   background: radial-gradient(228.28% 137.53% at 85.56% 75.29%, #dae5fe 0%, #bedaff 100%);
 }
+
+.ege-cells {
+  padding-top: 50px;
+  @include bg-icon('ege-cells/bg.webp');
+  @include media(lg) {
+    padding-top: 0;
+    @include bg-icon('ege-cells/bg_tablet.webp');
+  }
+  @include media(xs) {
+    @include bg-icon('ege-cells/bg_mob.webp');
+  }
+}
