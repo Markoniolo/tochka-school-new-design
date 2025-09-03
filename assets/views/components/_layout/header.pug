@@ -40,7 +40,7 @@ mixin header(mod)
         .header__bottom
           .header__bottom-list
             each item in headerBottom
-              a.header__bottom-link(href='#')= item
+              a.header__bottom-link(href='#' class = item === "Семейное обучение" ? "header__bottom-link_family" : false)= item
       //.header__open
       //  .header__list
       //    each item in headerList

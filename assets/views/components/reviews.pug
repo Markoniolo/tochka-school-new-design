@@ -1,8 +1,8 @@
-mixin reviews(mod)
+mixin reviews(mod, title='Говорят ученики и&nbsp;родители')
   .reviews(class = mod ? mod : false)
     .cont
       .reviews__top
-        h2.reviews__caption Говорят ученики и&nbsp;родители
+        h2.reviews__caption!= title
         if mod === 'orange'
           a.reviews__all.btn-warning(href="#") Открыть все отзывы
         else if mod === 'summer'

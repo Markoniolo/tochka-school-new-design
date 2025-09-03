@@ -42,9 +42,6 @@
     font-size: 25px;
     line-height: 100%;
   }
-  @include media(xs) {
-    margin-bottom: 16px;
-  }
   br {
     display: none;
     @include media(xs) {
@@ -69,10 +66,15 @@
     margin: 0 auto -100px;
   }
   @include media(xs) {
-    margin: 0 -15px -92px;
-    width: calc(100% + 30px);
+    margin: 0 auto -92px;
+    width: 100%;
+    max-width: 320px;
     height: auto;
     left: 0;
+  }
+  @include media(xxs) {
+    margin: 0 -15px -92px;
+    width: calc(100% + 30px);
   }
 }
 
@@ -93,8 +95,8 @@
     gap: 6px 20px;
   }
   @include media(xs) {
-    margin-bottom: 20px;
     gap: 12px;
+    margin-bottom: 20px;
   }
 }
 

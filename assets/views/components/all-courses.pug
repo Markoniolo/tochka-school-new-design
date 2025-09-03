@@ -77,11 +77,11 @@
       .all-courses__empty-title Упс...
       .all-courses__empty-text Не нашлось ничего подходящего :(
     .all-courses__tile.filtered_elements
-      a.all-courses__item(href='#')
+      .all-courses__item
         .all-courses__tickets
           .all-courses__ticket.blue Места ограниченны
           .all-courses__ticket.green Высокий спрос
-        .all-courses__side
+        a.all-courses__side(href='#' data-redirect)
           img.all-courses__side-image.no-background-color(src=staticImg('all-courses/teacher.png') alt='')
           .all-courses__side-name Иванов Иван
           .all-courses__side-text Лучший учитель родного языка и литературы 2023. Педагогический стаж ー 10 лет
@@ -89,7 +89,7 @@
           .all-courses__tags
             each tag, index in ['5 класс','Математика','Курс','Освоить школьную программу']
               .all-courses__tag(class = index === 0 ? 'all-courses__tag_class' : false)= tag
-          .all-courses__title Курс по химии
+          a.all-courses__title(href='#' data-redirect) Курс по химии
           .all-courses__text.
             Занятия направлены на то, чтобы ребенок понял и полюбил математику, научился самостоятельности, вышел на
             стабильный высокий уровень и справлялся с трудными заданиями.
@@ -135,7 +135,7 @@
                 .all-courses__discount Скидка 25%
             .all-courses__btns
               button.all-courses__button.all-courses__button_border(data-href-link="#link") Начать обучение
-              button.all-courses__button.btn-orange Подробнее о курсе
+              a.all-courses__button.btn-orange(href='#' data-redirect) Подробнее о курсе
           .all-courses__box.hide
             .all-courses__inner
               .all-courses__bar
@@ -153,11 +153,11 @@
                 .all-courses__discount Скидка 25%
             .all-courses__btns
               button.all-courses__button.all-courses__button_border(data-href-link="#link") Начать обучение
-              button.all-courses__button.btn-orange Подробнее о курсе
-      a.all-courses__item(href='#')
+              a.all-courses__button.btn-orange(href='#' data-redirect) Подробнее о курсе
+      .all-courses__item
         .all-courses__tickets
           .all-courses__ticket.green Высокий спрос
-        .all-courses__side
+        a.all-courses__side(href='#' data-redirect)
           img.all-courses__side-image(src=staticImg('all-courses/teacher.png') alt='')
           .all-courses__side-name Иванов Иван
           .all-courses__side-text Лучший учитель родного языка и литературы 2023. Педагогический стаж ー 10 лет
@@ -165,7 +165,7 @@
           .all-courses__tags
             each tag, index in ['5 класс','Математика','Курс','Освоить школьную программу']
               .all-courses__tag(class = index === 0 ? 'all-courses__tag_class' : false)= tag
-          .all-courses__title Курс по химии
+          a.all-courses__title(href='#' data-redirect) Курс по химии
           .all-courses__text.
             Занятия направлены на то, чтобы ребенок понял и полюбил математику, научился самостоятельности, вышел на
             стабильный высокий уровень и справлялся с трудными заданиями.
@@ -207,7 +207,7 @@
                 .all-courses__price-full-current 45 970 ₽
             .all-courses__btns
               button.all-courses__button.all-courses__button_border(data-href-link="#link") Начать обучение
-              button.all-courses__button.btn-orange Подробнее о курсе
+              a.all-courses__button.btn-orange(href='#' data-redirect) Подробнее о курсе
           .all-courses__box.hide
             .all-courses__inner
               .all-courses__bar
@@ -225,11 +225,11 @@
                 .all-courses__discount Скидка 25%
             .all-courses__btns
               button.all-courses__button.all-courses__button_border(data-href-link="#link") Начать обучение
-              button.all-courses__button.btn-orange Подробнее о курсе
-      a.all-courses__item.family(href='#')
+              a.all-courses__button.btn-orange(href='#' data-redirect) Подробнее о курсе
+      .all-courses__item.family
         .all-courses__tickets
           .all-courses__ticket.blue Места ограниченны
-        .all-courses__side
+        a.all-courses__side(href='#' data-redirect)
           img.all-courses__side-image(src=staticImg('all-courses/teacher.png') alt='')
           .all-courses__side-name Лучшие учителя РФ
           .all-courses__side-text.
@@ -239,7 +239,7 @@
           .all-courses__tags
             each tag, index in ['5 класс','Математика','Курс','Математика','Математика']
               .all-courses__tag(class=index === 0 ? 'all-courses__tag_class' : false)= tag
-          .all-courses__title Семейное обучение
+          a.all-courses__title(href='#' data-redirect) Семейное обучение
           .all-courses__text.
             Занятия направлены на то, чтобы ребенок понял и полюбил математику, научился самостоятельности, вышел на
             стабильный высокий уровень и справлялся с трудными заданиями. Уделим максимальное внимание самым важным
@@ -291,7 +291,7 @@
                 .all-courses__discount Скидка 25%
             .all-courses__btns
               button.all-courses__button.all-courses__button_border(data-src='#modal-order-new' data-fancybox data-options='{"touch": false}') Начать обучение
-              button.all-courses__button.btn-orange Подробнее о курсе
+              a.all-courses__button.btn-orange(href='#' data-redirect) Подробнее о курсе
           .all-courses__box.hide
             .all-courses__inner
               .all-courses__bar
@@ -308,9 +308,9 @@
                 .all-courses__discount Скидка 25%
             .all-courses__btns
               button.all-courses__button.all-courses__button_border(data-href-link="#link") Начать обучение
-              button.all-courses__button.btn-orange Подробнее о курсе
-      a.all-courses__item(href='#')
-        .all-courses__side
+              a.all-courses__button.btn-orange(href='#' data-redirect) Подробнее о курсе
+      .all-courses__item
+        a.all-courses__side(href='#' data-redirect)
           img.all-courses__side-image(src=staticImg('all-courses/teacher.png') alt='')
           .all-courses__side-name Иванов Иван
           .all-courses__side-text Лучший учитель родного языка и литературы 2023. Педагогический стаж ー 10 лет
@@ -318,7 +318,7 @@
           .all-courses__tags
             each tag, index in ['5 класс','Математика','Курс']
               .all-courses__tag(class = index === 0 ? 'all-courses__tag_class' : false)= tag
-          .all-courses__title Курс по химии
+          a.all-courses__title(href='#' data-redirect) Курс по химии
           .all-courses__text.
             Занятия направлены на то, чтобы ребенок понял и полюбил математику, научился самостоятельности, вышел на
             стабильный высокий уровень и справлялся с трудными заданиями.
@@ -359,9 +359,9 @@
                 .all-courses__discount Скидка 25%
             .all-courses__btns
               button.all-courses__button.all-courses__button_border(data-href-link="#link") Начать обучение
-              button.all-courses__button.btn-orange Подробнее о курсе
-      a.all-courses__item.family(href='#')
-        .all-courses__side
+              a.all-courses__button.btn-orange(href='#' data-redirect) Подробнее о курсе
+      .all-courses__item.family
+        a.all-courses__side(href='#' data-redirect)
           img.all-courses__side-image(src=staticImg('all-courses/teacher.png') alt='')
           .all-courses__side-name Лучшие учителя РФ
           .all-courses__side-text.
@@ -371,7 +371,7 @@
           .all-courses__tags
             each tag, index in ['5 класс','Математика','Курс','Математика','Математика']
               .all-courses__tag(class=index === 0 ? 'all-courses__tag_class' : false)= tag
-          .all-courses__title Семейное обучение
+          a.all-courses__title(href='#' data-redirect) Семейное обучение
           .all-courses__text.
             Занятия направлены на то, чтобы ребенок понял и полюбил математику, научился самостоятельности, вышел на
             стабильный высокий уровень и справлялся с трудными заданиями. Уделим максимальное внимание самым важным
@@ -415,7 +415,7 @@
                   |
                   span 19 мая
               .all-courses__btns
-                button.all-courses__button.btn-orange Подробнее о курсе
+                a.all-courses__button.btn-orange(href='#' data-redirect) Подробнее о курсе
           .all-courses__no-price
             .all-courses__box.hide
               .all-courses__inner
@@ -424,9 +424,9 @@
                   |
                   span 19 мая
               .all-courses__btns
-                button.all-courses__button.btn-orange Подробнее о курсе
-      a.all-courses__item(href='#')
-        .all-courses__side
+                a.all-courses__button.btn-orange(href='#' data-redirect) Подробнее о курсе
+      .all-courses__item
+        a.all-courses__side(href='#' data-redirect)
           img.all-courses__side-image(src=staticImg('all-courses/teacher.png') alt='')
           .all-courses__side-name Иванов Иван
           .all-courses__side-text Лучший учитель родного языка и литературы 2023. Педагогический стаж ー 10 лет
@@ -434,7 +434,7 @@
           .all-courses__tags
             each tag, index in ['5 класс','Математика','Курс']
               .all-courses__tag(class = index === 0 ? 'all-courses__tag_class' : false)= tag
-          .all-courses__title Курс по химии
+          a.all-courses__title(href='#' data-redirect) Курс по химии
           .all-courses__text.
             Занятия направлены на то, чтобы ребенок понял и полюбил математику, научился самостоятельности, вышел на
             стабильный высокий уровень и справлялся с трудными заданиями.
@@ -466,7 +466,7 @@
                   |
                   span 19 мая
               .all-courses__btns
-                button.all-courses__button.btn-orange Подробнее о курсе
+                a.all-courses__button.btn-orange(href='#' data-redirect) Подробнее о курсе
     .all-courses__more
       button.all-courses__more-button.btn-blue.btn-blue_arrow Показать ещё
     .all-courses__top

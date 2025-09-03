@@ -105,6 +105,19 @@
   &.active {
     color: #6683C2;
   }
+  &_family {
+    position: relative;
+    &::before {
+      content: '';
+      @include bg-icon('icons/ic_family_lightning.svg');
+      width: 12px;
+      height: 16px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -18px;
+    }
+  }
 }
 
 .nav__close-box {

@@ -461,8 +461,20 @@
   font-weight: 500;
   font-size: 16px;
   color: rgba(0, 0, 0, 0.8);
+  &_family {
+    position: relative;
+    &::before {
+      content: '';
+      @include bg-icon('icons/ic_family_lightning.svg');
+      width: 12px;
+      height: 16px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -19px;
+    }
+  }
 }
-
 
 .header__open {
   display: none;

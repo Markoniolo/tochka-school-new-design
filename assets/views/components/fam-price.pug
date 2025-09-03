@@ -7,11 +7,11 @@
     .fam-price__slides
       each item in [1,2,3,4,5,6,7,8,9,10,11]
         .fam-price__slide(class=item === 1 ? 'active' : false)
-          a.all-courses__item(href='#')
+          .all-courses__item
             .all-courses__tickets
               .all-courses__ticket.blue Места ограниченны
               .all-courses__ticket.green Высокий спрос
-            .all-courses__side
+            a.all-courses__side(href='#' data-redirect)
               img.all-courses__side-image.no-background-color(src=staticImg('all-courses/teacher.png') alt='')
               .all-courses__side-name Иванов Иван
               .all-courses__side-text Лучший учитель родного языка и литературы 2023. Педагогический стаж ー 10 лет
@@ -19,7 +19,7 @@
               .all-courses__tags
                 each tag, index in ['5 класс','Математика','Курс','Освоить школьную программу']
                   .all-courses__tag(class = index === 0 ? 'all-courses__tag_class' : false)= tag
-              .all-courses__title!= `Курс по химии ${item} класс`
+              a.all-courses__title(href='#' data-redirect)!= `Курс по химии ${item} класс`
               .all-courses__text.
                 Занятия направлены на то, чтобы ребенок понял и полюбил математику, научился самостоятельности, вышел на
                 стабильный высокий уровень и справлялся с трудными заданиями.
@@ -65,7 +65,7 @@
                     .all-courses__discount Скидка 25%
                 .all-courses__btns
                   button.all-courses__button.all-courses__button_border(data-href-link="#link") Начать обучение
-                  button.all-courses__button.btn-orange Подробнее о курсе
+                  a.all-courses__button.btn-orange(href='#' data-redirect) Подробнее о курсе
               .all-courses__box.hide
                 .all-courses__inner
                   .all-courses__bar
@@ -83,7 +83,7 @@
                     .all-courses__discount Скидка 25%
                 .all-courses__btns
                   button.all-courses__button.all-courses__button_border(data-href-link="#link") Начать обучение
-                  button.all-courses__button.btn-orange Подробнее о курсе
+                  a.all-courses__button.btn-orange(href='#' data-redirect) Подробнее о курсе
           .fam-price__wrap
             .fam-price__area
               .fam-price__title Бесплатно откроем доступ&nbsp;к&nbsp;2 дополнительным предметам на выбор:

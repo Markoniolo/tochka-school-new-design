@@ -84,6 +84,7 @@
     padding: 20px 20px;
     margin: 0 -20px -20px;
     @include bg-icon('blog-info-13/ellipse.svg');
+    border-radius: 0 0 10px 10px;
   }
   @include media(xxs) {
     margin: 0 -15px -20px;

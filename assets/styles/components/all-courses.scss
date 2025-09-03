@@ -918,6 +918,7 @@
 }
 
 .all-courses__title {
+  display: block;
   margin-bottom: 14px;
   font-weight: 500;
   font-size: 38px;
@@ -929,6 +930,9 @@
   }
   @include media(xs) {
     font-size: 20px;
+  }
+  &:hover {
+    color: #003c56;
   }
 }
 

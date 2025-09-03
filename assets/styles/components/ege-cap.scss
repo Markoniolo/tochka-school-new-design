@@ -22,7 +22,24 @@
       }
     }
     .ege-cap__tabs {
-      background: rgba(255, 255, 255, 0.17);
+      background: #CFDCF4;
+      &::before {
+        left: 115px;
+        @include media(lg) {
+          left: 100px;
+        }
+      }
+      &.active {
+        &::before {
+          left: 0;
+        }
+        .ege-cap__tab {
+          color: #000;
+        }
+        a.ege-cap__tab {
+          color: #FFFFFF;
+        }
+      }
     }
   }
   &_oge {
@@ -33,6 +50,26 @@
       }
       @include media(xs) {
         max-width: 100%;
+      }
+    }
+    .ege-cap__tabs {
+      background: #D0DCF5;
+      &::before {
+        left: 0;
+      }
+      &.active {
+        &::before {
+          left: 115px;
+          @include media(lg) {
+            left: 100px;
+          }
+        }
+        .ege-cap__tab {
+          color: #000;
+        }
+        a.ege-cap__tab {
+          color: #FFFFFF;
+        }
       }
     }
     .ege-cap__area {
@@ -81,23 +118,51 @@
 }
 
 .ege-cap__tabs {
+  position: relative;
   display: inline-flex;
   border-radius: 53px;
   @include media(lg) {
     backdrop-filter: blur(2px);
   }
+  &::before {
+    content: '';
+    box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
+    background-color: #6683c2;
+    width: 115px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 34px;
+    transition-duration: $transition-duration;
+    transition-property: left;
+    @include media(lg) {
+      width: 100px;
+    }
+  }
+  &.active {
+    &::before {
+      left: 115px;
+      @include media(lg) {
+        left: 100px;
+      }
+    }
+  }
 }
 
 .ege-cap__tab {
+  position: relative;
+  z-index: 1;
   min-width: 115px;
   border-radius: 34px;
   padding: 10px 40px;
   font-weight: 500;
   font-size: 16px;
   line-height: 100%;
-  box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
-  background-color: #6683c2;
   color: $white;
+  transition-duration: $transition-duration;
+  transition-property: color;
   @include media(lg) {
     font-size: 15px;
     padding: 10px 34px;
@@ -109,12 +174,6 @@ a.ege-cap__tab {
   background-color: transparent;
   color: $black;
   box-shadow: none;
-  transition-property: background-color, color;
-  transition-duration: $transition-duration;
-  &:hover {
-    background-color: #a0b6e6;
-    color: $white;
-  }
 }
 
 .ege-cap__caption {
@@ -140,6 +199,7 @@ a.ege-cap__tab {
   margin-bottom: 48px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 10px;
   @include media(lg) {
     margin-bottom: 26px;
@@ -160,6 +220,7 @@ a.ege-cap__tab {
   font-weight: 500;
   font-size: 24px;
   line-height: 100%;
+  cursor: default;
   color: #003c56;
   @include media(lg) {
     padding-left: 12px;
@@ -190,6 +251,45 @@ a.ege-cap__tab {
       display: inline-block;
       margin-right: 5px;
       transform: none;
+    }
+  }
+  &:hover {
+    .ege-cap__hover {
+      opacity: 1;
+    }
+  }
+  .ege-cap__hover {
+    pointer-events: none;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: -42px;
+    transform: translateY(-45px);
+    border-radius: 43px;
+    box-shadow: 0 4px 21px 0 rgba(0, 0, 0, 0.17);
+    background: #fff;
+    color: #000;
+    font-size: 12px;
+    line-height: 100%;
+    width: 279px;
+    padding: 10px 15px 11px;
+    transition-duration: $transition-duration;
+    transition-property: opacity;
+    @include media(lg) {
+      right: -64px;
+      transform: translateY(-42px);
+    }
+    &::before {
+      content: '';
+      @include bg-icon('icons/ic_hint_triangle.svg');
+      width: 73px;
+      height: 71px;
+      position: absolute;
+      top: 3px;
+      right: 10px;
+      @include media(lg) {
+        right: 30px;
+      }
     }
   }
 }
@@ -419,11 +519,14 @@ a.ege-cap__tab {
 }
 
 .ege-cap__label {
+  margin-left: 12px;
   @include media(lg) {
+    margin-left: 0;
     display: inline-flex;
   }
   &:not(:last-child) {
     margin-bottom: 20px;
+    width: 292px;
     @include media(lg) {
       margin-bottom: 0;
       width: 336px;
