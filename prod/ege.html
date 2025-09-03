@@ -70,7 +70,7 @@
         <div class="header__bottom">
           <div class="header__bottom-list">
             <a class="header__bottom-link" href="#">Математика</a>
-            <a class="header__bottom-link" href="#">Семейное обучение</a>
+            <a class="header__bottom-link header__bottom-link_family" href="#">Семейное обучение</a>
             <a class="header__bottom-link" href="#">Летние курсы</a>
             <a class="header__bottom-link" href="#">ЕГЭ</a>
             <a class="header__bottom-link" href="#">ОГЭ</a>
@@ -127,7 +127,7 @@
               </div>
               <div class="nav__box">
                 <div class="nav__box-discount">Скидка до 30%</div>
-                <button class="nav__box-link" data-nav-id="7">Семейное обучение</button>
+                <button class="nav__box-link nav__box-link_family" data-nav-id="7">Семейное обучение</button>
               </div>
               <div class="nav__box">
                 <div class="nav__box-discount">Скидка до 30%</div>
@@ -513,7 +513,9 @@
               </div>
               <h1 class="ege-cap__caption">Сдать ЕГЭ на высокий балл и&nbsp;поступить куда хочешь, а&nbsp;не&nbsp;куда получится</h1>
               <ul class="ege-cap__list">
-                <li class="ege-cap__item">лучшие учителя страны*</li>
+                <li class="ege-cap__item">лучшие учителя страны*
+                  <div class="ege-cap__hover">По результатам всероссийский конкурсов</div>
+                </li>
                 <li class="ege-cap__item">выверенная программа подготовки</li>
                 <li class="ege-cap__item">с личным тьютором: от первого урока до экзамена</li>
               </ul>
@@ -761,7 +763,7 @@
     <div class="reviews blue">
       <div class="cont">
         <div class="reviews__top">
-          <h2 class="reviews__caption">Говорят ученики и&nbsp;родители</h2>
+          <h2 class="reviews__caption">Результаты довольных и счастливых учеников</h2>
           <a class="reviews__all btn-blue" href="#">Открыть все отзывы</a>
           <div class="reviews__nav">
             <button class="reviews__nav-btn reviews__nav-btn_prev"></button>
@@ -957,122 +959,134 @@
         </div>
       </div>
     </div>
-    <div class="ege-tile" id="ege-tile">
+    <div class="ege-tile ege-tile_ege" id="ege-tile">
       <div class="cont">
         <div class="ege-tile__caption">Выберите курс</div>
-        <div class="ege-tile__filter ege-tile__filter_class">
-          <div class="ege-tile__filter-top">
-            <div class="ege-tile__filter-top-text">Все предметы</div>
+        <div class="ege-tile__line">
+          <div class="ege-tile__tabs">
+            <label class="ege-tile__tab">
+              <input class="ege-tile__tab-input" type="checkbox" name="class" value="10">
+              <div class="ege-tile__tab-view">10 класс</div>
+            </label>
+            <label class="ege-tile__tab">
+              <input class="ege-tile__tab-input" type="checkbox" name="class" value="11">
+              <div class="ege-tile__tab-view">11 класс</div>
+            </label>
           </div>
-          <div class="ege-tile__filter-wrap">
-            <div class="ege-tile__filter-close"></div>
-            <div class="ege-tile__filter-headline">Выберите предмет</div>
-            <div class="ege-tile__filter-list">
-              <label class="ege-tile__filter-item">
-                <input class="ege-tile__filter-input" type="radio" name="subject" value="all-subjects">
-                <div class="ege-tile__filter-view">Все предметы</div>
-              </label>
-              <label class="ege-tile__filter-item">
-                <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-1" data-text="Математика">
-                <div class="ege-tile__filter-view">Математика
-                  <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                </div>
-              </label>
-              <label class="ege-tile__filter-item">
-                <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-2" data-text="Русский язык">
-                <div class="ege-tile__filter-view">Русский язык
-                  <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                </div>
-              </label>
-              <label class="ege-tile__filter-item">
-                <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-3" data-text="Литература">
-                <div class="ege-tile__filter-view">Литература
-                  <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                </div>
-              </label>
-              <label class="ege-tile__filter-item">
-                <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-4" data-text="Биология">
-                <div class="ege-tile__filter-view">Биология
-                  <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                </div>
-              </label>
-              <label class="ege-tile__filter-item">
-                <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-5" data-text="История">
-                <div class="ege-tile__filter-view">История
-                  <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                </div>
-              </label>
-              <label class="ege-tile__filter-item">
-                <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-6" data-text="География">
-                <div class="ege-tile__filter-view">География
-                  <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                </div>
-              </label>
-              <label class="ege-tile__filter-item">
-                <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-7" data-text="Английский язык">
-                <div class="ege-tile__filter-view">Английский язык
-                  <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                </div>
-              </label>
-              <label class="ege-tile__filter-item">
-                <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-8" data-text="Музыка">
-                <div class="ege-tile__filter-view">Музыка
-                  <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                </div>
-              </label>
-              <label class="ege-tile__filter-item">
-                <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-9" data-text="Физкультура">
-                <div class="ege-tile__filter-view">Физкультура
-                  <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                </div>
-              </label>
-              <label class="ege-tile__filter-item">
-                <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-10" data-text="ИЗО и технология">
-                <div class="ege-tile__filter-view">ИЗО и технология
-                  <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                </div>
-              </label>
-              <label class="ege-tile__filter-item">
-                <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-11" data-text="Обществознание">
-                <div class="ege-tile__filter-view">Обществознание
-                  <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                </div>
-              </label>
-              <label class="ege-tile__filter-item">
-                <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-12" data-text="Физика">
-                <div class="ege-tile__filter-view">Физика
-                  <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                </div>
-              </label>
-              <label class="ege-tile__filter-item">
-                <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-13" data-text="Химия">
-                <div class="ege-tile__filter-view">Химия
-                  <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                </div>
-              </label>
-              <label class="ege-tile__filter-item">
-                <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-14" data-text="Информатика">
-                <div class="ege-tile__filter-view">Информатика
-                  <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                </div>
-              </label>
-              <label class="ege-tile__filter-item">
-                <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-15" data-text="Окружающий мир">
-                <div class="ege-tile__filter-view">Окружающий мир
-                  <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                </div>
-              </label>
-              <label class="ege-tile__filter-item">
-                <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-16" data-text="Литературное чтение">
-                <div class="ege-tile__filter-view">Литературное чтение
-                  <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                </div>
-              </label>
+          <div class="ege-tile__filter ege-tile__filter_class">
+            <div class="ege-tile__filter-top">
+              <div class="ege-tile__filter-top-text">Все предметы</div>
+            </div>
+            <div class="ege-tile__filter-wrap">
+              <div class="ege-tile__filter-close"></div>
+              <div class="ege-tile__filter-headline">Выберите предмет</div>
+              <div class="ege-tile__filter-list">
+                <label class="ege-tile__filter-item">
+                  <input class="ege-tile__filter-input" type="radio" name="subject" value="all-subjects" checked>
+                  <div class="ege-tile__filter-view">Все предметы</div>
+                </label>
+                <label class="ege-tile__filter-item">
+                  <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-1" data-text="Математика">
+                  <div class="ege-tile__filter-view">Математика
+                    <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                  </div>
+                </label>
+                <label class="ege-tile__filter-item">
+                  <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-2" data-text="Русский язык">
+                  <div class="ege-tile__filter-view">Русский язык
+                    <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                  </div>
+                </label>
+                <label class="ege-tile__filter-item">
+                  <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-3" data-text="Литература">
+                  <div class="ege-tile__filter-view">Литература
+                    <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                  </div>
+                </label>
+                <label class="ege-tile__filter-item">
+                  <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-4" data-text="Биология">
+                  <div class="ege-tile__filter-view">Биология
+                    <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                  </div>
+                </label>
+                <label class="ege-tile__filter-item">
+                  <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-5" data-text="История">
+                  <div class="ege-tile__filter-view">История
+                    <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                  </div>
+                </label>
+                <label class="ege-tile__filter-item">
+                  <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-6" data-text="География">
+                  <div class="ege-tile__filter-view">География
+                    <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                  </div>
+                </label>
+                <label class="ege-tile__filter-item">
+                  <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-7" data-text="Английский язык">
+                  <div class="ege-tile__filter-view">Английский язык
+                    <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                  </div>
+                </label>
+                <label class="ege-tile__filter-item">
+                  <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-8" data-text="Музыка">
+                  <div class="ege-tile__filter-view">Музыка
+                    <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                  </div>
+                </label>
+                <label class="ege-tile__filter-item">
+                  <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-9" data-text="Физкультура">
+                  <div class="ege-tile__filter-view">Физкультура
+                    <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                  </div>
+                </label>
+                <label class="ege-tile__filter-item">
+                  <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-10" data-text="ИЗО и технология">
+                  <div class="ege-tile__filter-view">ИЗО и технология
+                    <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                  </div>
+                </label>
+                <label class="ege-tile__filter-item">
+                  <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-11" data-text="Обществознание">
+                  <div class="ege-tile__filter-view">Обществознание
+                    <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                  </div>
+                </label>
+                <label class="ege-tile__filter-item">
+                  <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-12" data-text="Физика">
+                  <div class="ege-tile__filter-view">Физика
+                    <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                  </div>
+                </label>
+                <label class="ege-tile__filter-item">
+                  <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-13" data-text="Химия">
+                  <div class="ege-tile__filter-view">Химия
+                    <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                  </div>
+                </label>
+                <label class="ege-tile__filter-item">
+                  <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-14" data-text="Информатика">
+                  <div class="ege-tile__filter-view">Информатика
+                    <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                  </div>
+                </label>
+                <label class="ege-tile__filter-item">
+                  <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-15" data-text="Окружающий мир">
+                  <div class="ege-tile__filter-view">Окружающий мир
+                    <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                  </div>
+                </label>
+                <label class="ege-tile__filter-item">
+                  <input class="ege-tile__filter-input" type="radio" name="subject" value="subject-id-16" data-text="Литературное чтение">
+                  <div class="ege-tile__filter-view">Литературное чтение
+                    <img class="ege-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                  </div>
+                </label>
+              </div>
             </div>
           </div>
         </div>
         <div class="all-courses__tile">
-          <a class="all-courses__item" href="#" data-subject-id="subject-id-0">
+          <a class="all-courses__item" href="#" data-subject-id="subject-id-0" data-class-id="10">
             <div class="all-courses__tickets">
               <div class="all-courses__ticket blue">Места ограниченны</div>
               <div class="all-courses__ticket green">Высокий спрос</div>
@@ -1180,7 +1194,7 @@
               </div>
             </div>
           </a>
-          <a class="all-courses__item" href="#" data-subject-id="subject-id-1">
+          <a class="all-courses__item" href="#" data-subject-id="subject-id-1" data-class-id="11">
             <div class="all-courses__tickets">
               <div class="all-courses__ticket green">Высокий спрос</div>
             </div>
@@ -1283,7 +1297,7 @@
               </div>
             </div>
           </a>
-          <a class="all-courses__item family" href="#" data-subject-id="subject-id-2">
+          <a class="all-courses__item family" href="#" data-subject-id="subject-id-2" data-class-id="11">
             <div class="all-courses__tickets">
               <div class="all-courses__ticket blue">Места ограниченны</div>
             </div>
@@ -1403,7 +1417,7 @@
               </div>
             </div>
           </a>
-          <a class="all-courses__item" href="#" data-subject-id="subject-id-3">
+          <a class="all-courses__item" href="#" data-subject-id="subject-id-3" data-class-id="11">
             <div class="all-courses__side">
               <img class="all-courses__side-image" src="assets/img/all-courses/teacher.png" alt="">
               <div class="all-courses__side-name">Иванов Иван</div>
