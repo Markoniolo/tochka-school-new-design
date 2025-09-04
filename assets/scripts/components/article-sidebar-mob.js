@@ -6,16 +6,24 @@ function articleSidebarMobInit () {
   const name = articleSidebarMob.querySelector('.article__name')
   const layer = articleSidebarMob.querySelector('.article__layer')
 
-  window.addEventListener('scroll', togglePosition, {passive: true})
-  let lastScrollTop = 0;
-  function togglePosition () {
-    let st = window.scrollY
-    if (st > lastScrollTop) {
-      articleSidebarMob.classList.remove('fixed')
-    } else if (st < lastScrollTop) {
-      articleSidebarMob.classList.add('fixed')
+  let scrollDown = true
+  let lastScrollTop = 0
+
+  window.addEventListener('scroll', checkScrollDirection, { passive: true })
+
+  function checkScrollDirection () {
+    const st = window.scrollY
+    if (st - lastScrollTop > 7) {
+      scrollDown = true
+    } else if (st - lastScrollTop < -7) {
+      scrollDown = false
     }
     lastScrollTop = st <= 0 ? 0 : st
+    if (scrollDown) {
+      articleSidebarMob.classList.add('fixed')
+    } else {
+      articleSidebarMob.classList.remove('fixed')
+    }
   }
 
   name.addEventListener('click', toggleSidebar)
@@ -25,14 +33,14 @@ function articleSidebarMobInit () {
     if (name.classList.contains('active')) {
       closeSidebar()
     } else {
-      window.removeEventListener('scroll', togglePosition)
+      window.removeEventListener('scroll', checkScrollDirection)
       name.classList.add('active')
     }
   }
 
   function closeSidebar () {
     name.classList.remove('active')
-    window.addEventListener('scroll', togglePosition, {passive: true})
+    window.addEventListener('scroll', checkScrollDirection, {passive: true})
   }
 
   const articleLinkArray = articleSidebarMob.querySelectorAll('.article__link')
@@ -46,7 +54,6 @@ function articleSidebarMobInit () {
     if (oldActive) oldActive.classList.remove('active')
     this.classList.add('active')
     name.classList.remove('active')
-    articleSidebarMob.classList.remove('fixed')
-    window.addEventListener('scroll', togglePosition, {passive: true})
+    window.addEventListener('scroll', checkScrollDirection, {passive: true})
   }
 }

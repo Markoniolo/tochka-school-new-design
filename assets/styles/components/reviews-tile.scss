@@ -311,6 +311,12 @@
       height: 350px;
     }
   }
+  p {
+    margin-bottom: 20px;
+    @include media(lg) {
+      margin-bottom: 10px;
+    }
+  }
 }
 
 .reviews-tile__toggle {

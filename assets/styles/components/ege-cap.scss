@@ -135,7 +135,7 @@
     top: 0;
     bottom: 0;
     border-radius: 34px;
-    transition-duration: $transition-duration;
+    transition-duration: 0.2s;
     transition-property: left;
     @include media(lg) {
       width: 100px;
@@ -314,11 +314,15 @@ a.ege-cap__tab {
   @include media(xs) {
     display: none;
   }
+  &:hover {
+    color: #003c56;
+  }
   &::after {
     content: '';
     @include bg-icon('icons/ic_btn_arrow_down_dark.svg');
     width: 12px;
     height: 13px;
+    transform: translateY(1px);
   }
 }
 
@@ -452,6 +456,27 @@ a.ege-cap__tab {
     width: 100%;
     margin: 0 auto;
   }
+  .iti.iti--allow-dropdown.iti--show-flags {
+    margin-bottom: 20px;
+    width: 100%;
+    @include media(lg) {
+      margin-bottom: 0;
+      width: calc(33.33% - 9px);
+    }
+    @include media(xs) {
+      margin-bottom: 20px;
+      width: 100%;
+    }
+    .ege-cap__input {
+      width: 100%;
+    }
+  }
+  .iti__selected-country {
+    padding-left: 22px;
+  }
+  .modal-order-new__input.iti__tel-input {
+    padding-left: 100px !important;
+  }
 }
 
 .ege-cap__title {
@@ -485,8 +510,10 @@ a.ege-cap__tab {
   @include media(lg) {
     min-height: 45px;
     margin-bottom: 0;
+    width: calc(33.33% - 9px);
   }
   @include media(xs) {
+    width: 100%;
     margin-bottom: 20px;
   }
   &:last-of-type {
@@ -497,6 +524,9 @@ a.ege-cap__tab {
     @include media(xs) {
       margin-bottom: 30px;
     }
+  }
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.62);
   }
 }
 
@@ -511,10 +541,21 @@ a.ege-cap__tab {
     min-height: 45px;
     margin-bottom: 0;
     margin-top: 0;
+    width: calc(33.33% - 9px);
   }
   @include media(xs) {
     margin-top: 10px;
     font-size: 15px;
+    width: 100%;
+  }
+}
+
+.ege-cap__labels {
+  @include media(lg) {
+    display: flex;
+  }
+  @include media(xs) {
+    display: block;
   }
 }
 
@@ -522,7 +563,6 @@ a.ege-cap__tab {
   margin-left: 12px;
   @include media(lg) {
     margin-left: 0;
-    display: inline-flex;
   }
   &:not(:last-child) {
     margin-bottom: 20px;

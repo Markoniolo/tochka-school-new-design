@@ -8,13 +8,13 @@
           source(srcset=staticImg(`ege-order/decor_mob.svg`) media="(max-width: 743px)")
           source(srcset=staticImg(`ege-order/decor_tablet.svg`) media="(max-width: 1359px)")
           img.ege-order__image(src=staticImg('ege-order/decor.svg') alt='')
-      form.ege-order__form(data-request-validate)
+      form.ege-order__form(data-request-validate data-element="review-form")
         .ege-order__title Оставить заявку на&nbsp;обучение
         .ege-order__inner
           input.input_utm(name='utm' type='hidden' value='')
           input(type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru/blog/voprosy-dlya-podrostkov-chto-polezno-i-interesno-obsudit-do-15-let")
           input.ege-order__input.input-white(placeholder='Имя' type='text' name='name')
-          input.ege-order__input.input-white(placeholder='Телефон' type='tel' required data-element='input-phone-intl' name='phone' data-phone-pattern)
+          input.ege-order__input.input-white(placeholder='Телефон' type='tel' required data-element='input-phone-intl' name='phone')
           input(name='tel' type='hidden' required data-element='input-phone-hidden')
           button.ege-order__submit.btn-orange.btn-warning Оставить заявку
         label.ege-order__label.checkbox-white-label

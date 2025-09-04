@@ -819,6 +819,8 @@
   border-radius: 10px;
   margin-bottom: 20px;
   background-color: #E0ECFB;
+  height: 255px;
+  object-fit: contain;
   &.no-background-color {
     background: unset;
   }

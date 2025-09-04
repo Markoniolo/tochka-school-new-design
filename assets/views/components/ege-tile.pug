@@ -8,7 +8,15 @@
 mixin ege-tile(mod)
   .ege-tile#ege-tile(class = mod ? `ege-tile_${mod}` : false)
     .cont
-      .ege-tile__caption Выберите курс
+      .ege-tile__box
+        .ege-tile__caption Выберите курс
+        .ege-tile__toggle
+          if mod === 'ege'
+            a.ege-tile__toggle-item(href='#') ОГЭ
+            .ege-tile__toggle-item ЕГЭ
+          else
+            .ege-tile__toggle-item ОГЭ
+            a.ege-tile__toggle-item(href='#') ЕГЭ
       .ege-tile__line
         if mod === 'ege'
           .ege-tile__tabs

@@ -63,6 +63,12 @@ function egeTileFilterInit () {
     tabs[i].addEventListener('input', tabHandler)
   }
 
+  const initialTab = document.querySelector('.ege-tile__tab-input[value="11"]')
+  if (initialTab) {
+    initialTab.checked = true
+    initialTab.dispatchEvent(new Event('input'))
+  }
+
   function tabHandler() {
     this.checked = !this.checked
     if (this.checked) {

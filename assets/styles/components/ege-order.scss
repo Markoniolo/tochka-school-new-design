@@ -180,6 +180,22 @@
     z-index: 1;
     padding: 16px 15px;
   }
+  .iti.iti--allow-dropdown.iti--show-flags {
+    margin-bottom: 20px;
+    width: 100%;
+    @include media(lg) {
+      margin-bottom: 15px;
+    }
+    @include media(xs) {
+      margin-bottom: 20px;
+    }
+  }
+  .iti__selected-country {
+    padding-left: 22px;
+  }
+  .modal-order-new__input.iti__tel-input {
+    padding-left: 100px !important;
+  }
 }
 
 .ege-order__title {
@@ -215,6 +231,9 @@
     @include media(xs) {
       margin-bottom: 30px;
     }
+  }
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.62);
   }
 }
 

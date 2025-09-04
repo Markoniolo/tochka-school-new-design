@@ -28,20 +28,159 @@
         width: 100%;
       }
     }
+    .ege-tile__toggle {
+      background: #D0DCF5;
+      &::before {
+        left: 0;
+      }
+      &.active {
+        &::before {
+          left: 115px;
+          @include media(lg) {
+            left: 100px;
+          }
+          @include media(xs) {
+            left: 50%;
+          }
+        }
+        .ege-tile__toggle-item {
+          color: #000;
+        }
+        a.ege-tile__toggle-item {
+          color: #FFFFFF;
+        }
+      }
+    }
+  }
+  &_ege {
+    .ege-tile__toggle {
+      background: #CFDCF4;
+      &::before {
+        left: 115px;
+        @include media(lg) {
+          left: 100px;
+        }
+        @include media(xs) {
+          left: 50%;
+        }
+      }
+      &.active {
+        &::before {
+          left: 0;
+        }
+        .ege-tile__toggle-item {
+          color: #000;
+        }
+        a.ege-tile__toggle-item {
+          color: #FFFFFF;
+        }
+      }
+    }
+  }
+}
+
+.ege-tile__box {
+  margin-bottom: 36px;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  @include media(lg) {
+    margin-bottom: 25px;
+    gap: 23px;
+  }
+  @include media(xs) {
+    margin-bottom: 15px;
+    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
 .ege-tile__caption {
-  margin-bottom: 36px;
   font-weight: 500;
   font-size: 45px;
   line-height: 121%;
   color: #003c56;
   @include media(lg) {
-    margin-bottom: 25px;
     font-size: 25px;
     line-height: 100%;
   }
+}
+
+.ege-tile__toggle {
+  position: relative;
+  display: inline-flex;
+  border-radius: 53px;
+  transform: translateY(6px);
+  @include media(lg) {
+    backdrop-filter: blur(2px);
+    transform: translateY(2px);
+  }
+  @include media(xs) {
+    transform: none;
+    display: flex;
+    width: 100%;
+  }
+  &::before {
+    content: '';
+    box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
+    background-color: #6683c2;
+    width: 115px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 34px;
+    transition-duration: 0.2s;
+    transition-property: left;
+    @include media(lg) {
+      width: 100px;
+    }
+    @include media(xs) {
+      width: 50%;
+    }
+  }
+  &.active {
+    &::before {
+      left: 115px;
+      @include media(lg) {
+        left: 100px;
+      }
+      @include media(xs) {
+        left: 50%;
+      }
+    }
+  }
+}
+
+.ege-tile__toggle-item {
+  position: relative;
+  z-index: 1;
+  min-width: 115px;
+  border-radius: 34px;
+  padding: 10px 40px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: $white;
+  transition-duration: $transition-duration;
+  transition-property: color;
+  @include media(lg) {
+    font-size: 15px;
+    padding: 10px 34px;
+    min-width: 100px;
+  }
+  @include media(xs) {
+    width: 50%;
+    text-align: center;
+  }
+}
+
+a.ege-tile__toggle-item {
+  background-color: transparent;
+  color: $black;
+  box-shadow: none;
 }
 
 .ege-tile__line {
@@ -106,10 +245,10 @@
   transition-property: color, background-color;
   @include media(lg) {
     font-size: 15px;
-    padding: 10px 46px;
+    padding: 9px 46px 11px;
   }
   @include media(xs) {
-    padding: 10px 20px;
+    padding: 9px 20px 11px;
   }
   &:hover {
     background-color: #a0b6e6;
@@ -119,15 +258,16 @@
 
 .ege-tile__filter {
   position: relative;
-  max-width: 295px;
+  max-width: 301px;
   width: 100%;
   z-index: 10;
   @include media(lg) {
-    max-width: 100%;
+    max-width: 323px;
     flex-grow: 1;
   }
   @include media(xs) {
     width: 100%;
+    max-width: 100%;
   }
 
   .ege-tile__filter-item {

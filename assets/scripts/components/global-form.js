@@ -4,6 +4,12 @@ for (let i = 0; i < externalFormArray.length; i++) {
   globalFormInit(externalFormArray[i], 'onSendMessageTb', 'externalFormData');
 }
 
+const reviewFormArray = document.querySelectorAll("[data-element='review-form']")
+
+for (let i = 0; i < reviewFormArray.length; i++) {
+  globalFormInit(reviewFormArray[i], 'onSendNOrderWGMessage', 'reviewFormData');
+}
+
 const familyOrderForm = document.querySelector("[data-element='family-order-form']")
 if (familyOrderForm) globalFormInit(familyOrderForm, 'onSendConsultMessage', 'consultFormData')
 
