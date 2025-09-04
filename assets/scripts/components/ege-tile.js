@@ -10,6 +10,7 @@ function egeTileFilterInit () {
   const inputs = egeTileFilter.querySelectorAll('.ege-tile__filter-input')
   const cards = document.querySelectorAll('.all-courses__item')
   const tabs = document.querySelectorAll('.ege-tile__tab-input')
+  const tile = document.querySelector('.all-courses__tile')
   let classId = false
 
   egeTileFilterTop.addEventListener("click", (e)=> openFilter(egeTileFilterTop, e))
@@ -17,6 +18,46 @@ function egeTileFilterInit () {
   document.addEventListener('click', function () {
     egeTileFilterTop.classList.remove('active')
   })
+
+  togglePrice()
+
+  function togglePrice () {
+    const items = tile.querySelectorAll(".all-courses__item")
+    items.forEach((item) => {
+      const toggle = item.querySelectorAll('.all-courses__radio-input')
+      if (!toggle.length) return
+      const boxes = item.querySelectorAll('.all-courses__box')
+      const textReplace = item.querySelector('.all-courses__info.text-replace')
+      let texts
+      if (textReplace) {
+        texts = textReplace.querySelectorAll('.all-courses__info-span')
+      }
+      for (let i = 0; i < toggle.length; i++) {
+        toggle[i].addEventListener('change', toggleBoxes)
+        if (texts) toggle[i].addEventListener('change', toggleTexts)
+      }
+
+      function toggleBoxes () {
+        for (let i = 0; i < boxes.length; i++) {
+          if (boxes[i].classList.contains('hide')) {
+            boxes[i].classList.remove('hide')
+          } else {
+            boxes[i].classList.add('hide')
+          }
+        }
+      }
+
+      function toggleTexts () {
+        for (let i = 0; i < texts.length; i++) {
+          if (texts[i].classList.contains('hide')) {
+            texts[i].classList.remove('hide')
+          } else {
+            texts[i].classList.add('hide')
+          }
+        }
+      }
+    })
+  }
 
   for (let i = 0; i < tabs.length; i++) {
     tabs[i].addEventListener('input', tabHandler)
