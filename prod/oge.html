@@ -530,35 +530,37 @@
               <div class="ege-cap__decor ege-cap__decor_3"></div>
               <div class="ege-cap__decor ege-cap__decor_4"></div>
             </div>
-            <form class="ege-cap__form" data-request-validate>
+            <form class="ege-cap__form" data-request-validate data-element="review-form">
               <div class="ege-cap__title">Начните подготовку прямо сейчас. Оставьте заявку!</div>
               <div class="ege-cap__inner">
                 <input class="input_utm" name="utm" type="hidden" value="">
                 <input type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru/blog/voprosy-dlya-podrostkov-chto-polezno-i-interesno-obsudit-do-15-let">
                 <input class="ege-cap__input input-white" placeholder="Имя" type="text" name="name">
-                <input class="ege-cap__input input-white" placeholder="Телефон" type="tel" required data-element="input-phone-intl" name="phone" data-phone-pattern>
+                <input class="ege-cap__input input-white" placeholder="Телефон" type="tel" required data-element="input-phone-intl" name="phone">
                 <input name="tel" type="hidden" required data-element="input-phone-hidden">
                 <button class="ege-cap__submit btn-orange btn-warning">Оставить заявку</button>
               </div>
-              <label class="ege-cap__label checkbox-white-label">
-                <input class="ege-cap__checkbox checkbox-white-input" name="policy" type="checkbox">
-                <div class="ege-cap__checkbox-view checkbox-white-input-view"></div>
-                <div class="ege-cap__checkbox-text checkbox-white-text">
-                  Даю
-                  <a href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target="_blank">Согласие</a>
-                  на обработку персональных
-                  данных в соответствии с
-                  <a href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf" target="_blank">Политикой</a>
-                </div>
-              </label>
-              <label class="ege-cap__label checkbox-white-label">
-                <input class="ege-cap__checkbox checkbox-white-input" name="news" type="checkbox">
-                <div class="ege-cap__checkbox-view checkbox-white-input-view"></div>
-                <div class="ege-cap__checkbox-text checkbox-white-text">
-                  Согласен на
-                  <a href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf" target="_blank">получение рекламы</a>
-                </div>
-              </label>
+              <div class="ege-cap__labels">
+                <label class="ege-cap__label checkbox-white-label">
+                  <input class="ege-cap__checkbox checkbox-white-input" name="policy" type="checkbox">
+                  <div class="ege-cap__checkbox-view checkbox-white-input-view"></div>
+                  <div class="ege-cap__checkbox-text checkbox-white-text">
+                    Даю
+                    <a href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target="_blank">Согласие</a>
+                    на обработку персональных
+                    данных в соответствии с
+                    <a href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf" target="_blank">Политикой</a>
+                  </div>
+                </label>
+                <label class="ege-cap__label checkbox-white-label">
+                  <input class="ege-cap__checkbox checkbox-white-input" name="news" type="checkbox">
+                  <div class="ege-cap__checkbox-view checkbox-white-input-view"></div>
+                  <div class="ege-cap__checkbox-text checkbox-white-text">
+                    Согласен на
+                    <a href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf" target="_blank">получение рекламы</a>
+                  </div>
+                </label>
+              </div>
             </form>
           </div>
         </div>
@@ -961,7 +963,13 @@
     </div>
     <div class="ege-tile ege-tile_oge" id="ege-tile">
       <div class="cont">
-        <div class="ege-tile__caption">Выберите курс</div>
+        <div class="ege-tile__box">
+          <div class="ege-tile__caption">Выберите курс</div>
+          <div class="ege-tile__toggle">
+            <div class="ege-tile__toggle-item">ОГЭ</div>
+            <a class="ege-tile__toggle-item" href="#">ЕГЭ</a>
+          </div>
+        </div>
         <div class="ege-tile__line">
           <div class="ege-tile__tabs">
             <label class="ege-tile__tab">
@@ -1695,13 +1703,13 @@
               <img class="ege-order__image" src="assets/img/ege-order/decor.svg" alt="">
             </picture>
           </div>
-          <form class="ege-order__form" data-request-validate>
+          <form class="ege-order__form" data-request-validate data-element="review-form">
             <div class="ege-order__title">Оставить заявку на&nbsp;обучение</div>
             <div class="ege-order__inner">
               <input class="input_utm" name="utm" type="hidden" value="">
               <input type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru/blog/voprosy-dlya-podrostkov-chto-polezno-i-interesno-obsudit-do-15-let">
               <input class="ege-order__input input-white" placeholder="Имя" type="text" name="name">
-              <input class="ege-order__input input-white" placeholder="Телефон" type="tel" required data-element="input-phone-intl" name="phone" data-phone-pattern>
+              <input class="ege-order__input input-white" placeholder="Телефон" type="tel" required data-element="input-phone-intl" name="phone">
               <input name="tel" type="hidden" required data-element="input-phone-hidden">
               <button class="ege-order__submit btn-orange btn-warning">Оставить заявку</button>
             </div>

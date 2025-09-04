@@ -543,16 +543,24 @@ function articleSidebarMobInit () {
   const name = articleSidebarMob.querySelector('.article__name')
   const layer = articleSidebarMob.querySelector('.article__layer')
 
-  window.addEventListener('scroll', togglePosition, {passive: true})
-  let lastScrollTop = 0;
-  function togglePosition () {
-    let st = window.scrollY
-    if (st > lastScrollTop) {
-      articleSidebarMob.classList.remove('fixed')
-    } else if (st < lastScrollTop) {
-      articleSidebarMob.classList.add('fixed')
+  let scrollDown = true
+  let lastScrollTop = 0
+
+  window.addEventListener('scroll', checkScrollDirection, { passive: true })
+
+  function checkScrollDirection () {
+    const st = window.scrollY
+    if (st - lastScrollTop > 7) {
+      scrollDown = true
+    } else if (st - lastScrollTop < -7) {
+      scrollDown = false
     }
     lastScrollTop = st <= 0 ? 0 : st
+    if (scrollDown) {
+      articleSidebarMob.classList.add('fixed')
+    } else {
+      articleSidebarMob.classList.remove('fixed')
+    }
   }
 
   name.addEventListener('click', toggleSidebar)
@@ -562,14 +570,14 @@ function articleSidebarMobInit () {
     if (name.classList.contains('active')) {
       closeSidebar()
     } else {
-      window.removeEventListener('scroll', togglePosition)
+      window.removeEventListener('scroll', checkScrollDirection)
       name.classList.add('active')
     }
   }
 
   function closeSidebar () {
     name.classList.remove('active')
-    window.addEventListener('scroll', togglePosition, {passive: true})
+    window.addEventListener('scroll', checkScrollDirection, {passive: true})
   }
 
   const articleLinkArray = articleSidebarMob.querySelectorAll('.article__link')
@@ -583,8 +591,7 @@ function articleSidebarMobInit () {
     if (oldActive) oldActive.classList.remove('active')
     this.classList.add('active')
     name.classList.remove('active')
-    articleSidebarMob.classList.remove('fixed')
-    window.addEventListener('scroll', togglePosition, {passive: true})
+    window.addEventListener('scroll', checkScrollDirection, {passive: true})
   }
 }
 
@@ -883,6 +890,17 @@ function egeCapTabsInit (tabs) {
   if (tab) tab.addEventListener('click', () => tabs.classList.add('active'))
 }
 
+const egeTileToggle = document.querySelectorAll('.ege-tile__toggle')
+
+for (let i = 0; i < egeTileToggle.length; i++) {
+  egeTileToggleInit(egeTileToggle[i])
+}
+
+function egeTileToggleInit (tabs) {
+  const tab = tabs.querySelector('a.ege-tile__toggle-item')
+  if (tab) tab.addEventListener('click', () => tabs.classList.add('active'))
+}
+
 const egeTileFilter = document.querySelector(".ege-tile__filter")
 
 if (egeTileFilter) egeTileFilterInit()
@@ -946,6 +964,12 @@ function egeTileFilterInit () {
 
   for (let i = 0; i < tabs.length; i++) {
     tabs[i].addEventListener('input', tabHandler)
+  }
+
+  const initialTab = document.querySelector('.ege-tile__tab-input[value="11"]')
+  if (initialTab) {
+    initialTab.checked = true
+    initialTab.dispatchEvent(new Event('input'))
   }
 
   function tabHandler() {
@@ -1447,6 +1471,12 @@ const externalFormArray = document.querySelectorAll("[data-element='external-for
 
 for (let i = 0; i < externalFormArray.length; i++) {
   globalFormInit(externalFormArray[i], 'onSendMessageTb', 'externalFormData');
+}
+
+const reviewFormArray = document.querySelectorAll("[data-element='review-form']")
+
+for (let i = 0; i < reviewFormArray.length; i++) {
+  globalFormInit(reviewFormArray[i], 'onSendNOrderWGMessage', 'reviewFormData');
 }
 
 const familyOrderForm = document.querySelector("[data-element='family-order-form']")
