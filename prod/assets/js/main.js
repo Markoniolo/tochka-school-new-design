@@ -557,9 +557,9 @@ function articleSidebarMobInit () {
     }
     lastScrollTop = st <= 0 ? 0 : st
     if (scrollDown) {
-      articleSidebarMob.classList.add('fixed')
-    } else {
       articleSidebarMob.classList.remove('fixed')
+    } else {
+      articleSidebarMob.classList.add('fixed')
     }
   }
 
