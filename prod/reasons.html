@@ -921,6 +921,29 @@
   <script src="assets/js/main.js" defer></script>
   <script>
       window.addEventListener("DOMContentLoaded", () => {
+        const urlParams = location.search.slice(1); // убираем '?'
+        // Проверка, начинается ли ссылка с одного из целевых URL
+        function isTargetLink(href) {
+          const targets = [
+            "https://salebot.site/",
+            "https://sbsite.pro/",
+            "https://vk.com/app7062840"
+          ];
+          return targets.some(prefix => href.startsWith(prefix));
+        }
+      
+        // Собираем значения из нужных cookie
+        const cookies = ['_fbc', '_fbp', '_ga', '_ym_uid', 'roistat_visit'];
+        let cookieParams = '';
+      
+        cookies.forEach(name => {
+          const value = getCookie(name);
+          if (value) {
+            if (cookieParams) cookieParams += '&';
+            cookieParams += `${name}='${encodeURIComponent(value)}'`;
+          }
+        });
+      
         $('.pre_n_form').find(':input').each(function () {
           $(this).on('click', function (e) {
             // $( ".pre_n_form" ).find('.btn-warning').show();
@@ -1026,11 +1049,29 @@
             var href = el.getAttribute("href");
             var data_noparam = el.getAttribute("data-noparam");
             if (href && href.indexOf("") > -1 && href.indexOf("#") === -1 && data_noparam != 'no') {
-              if (href.indexOf("?") === -1) {
-                el.setAttribute("href", href + search);
+              if (isTargetLink(href)) {
+                if (href.indexOf("?") === -1) {
+                  href += search
+                } else {
+                  href += search.replace("?", "&")
+                }
+                if (cookieParams) {
+                  if (href.startsWith("https://vk.com/app7062840")) {
+                    href += "&" + cookieParams;
+                  } else {
+                    href += (href.includes("?") ? "&" : "?") + cookieParams;
+                  }
+                }
               } else {
-                el.setAttribute("href", href + search.replace("?", "&"));
+                if (href.indexOf("?") === -1) {
+                  href += search
+                } else {
+                  href += search.replace("?", "&")
+                }
               }
+              el.setAttribute("href", href)
+              console.log("urlParams: " + urlParams)
+              console.log("search: " + search)
               // if(el.classList.contains('btn_banner')){
               //     try{
               //         banner_href = el.getAttribute("href");
@@ -1038,99 +1079,125 @@
               //         el.setAttribute("href", banner_href + "&banner_utm=" + banner_attr);
               //     }catch(e){};
               // }
+      
             }
           });
-          try{
-            if($('.a_fpay').length > 0){
-              $('.a_fpay').each(function(){
-                $(this).attr('href',insertBeforeAnchor($(this).attr('href'), search));
+          try {
+            if ($('.a_fpay').length > 0) {
+              $('.a_fpay').each(function () {
+                $(this).attr('href', insertBeforeAnchor($(this).attr('href'), search));
               });
             }
-          }catch(e){};
-          try{
-            if($('.btn_fpay').length > 0){
+          } catch (e) {
+          }
+          ;
+          try {
+            if ($('.btn_fpay').length > 0) {
               // console.log(link_u);
-              $('.btn_fpay').each(function(){
-                $(this).attr('href',$(this).attr('href')+search);
-                $(this).attr('old-href',$(this).attr('href'));
+              $('.btn_fpay').each(function () {
+                $(this).attr('href', $(this).attr('href') + search);
+                $(this).attr('old-href', $(this).attr('href'));
               });
-              try{
-                if($('.price_input_f_pay').length > 0){
-                  $('.price_input_f_pay').each(function(){
-                    $(this).attr('new-href',$(this).attr('new-href')+search);
+              try {
+                if ($('.price_input_f_pay').length > 0) {
+                  $('.price_input_f_pay').each(function () {
+                    $(this).attr('new-href', $(this).attr('new-href') + search);
                   });
                 }
-              }catch(e){};
+              } catch (e) {
+              }
+              ;
             }
-            if($('.btn_attr_fpay').length > 0){
-              $('.btn_attr_fpay').each(function(){
-                $(this).attr('data-href-link',$(this).attr('data-href-link')+search);
+      
+            if ($('.btn_attr_fpay').length > 0) {
+              $('.btn_attr_fpay').each(function () {
+                $(this).attr('data-href-link', $(this).attr('data-href-link') + search);
               });
             }
-          }catch(e){};
-          try{
-            if($('.input_utm').length > 0){
+          } catch (e) {
+          }
+          ;
+      
+          try {
+            if ($('.input_utm').length > 0) {
               // console.log(link_u);
-              $('.input_utm').each(function(){
+              $('.input_utm').each(function () {
                 $(this).val(search);
               });
             }
-            if($('.utm_fpay').length > 0){
-              $('.utm_fpay').each(function(){
+            if ($('.utm_fpay').length > 0) {
+              $('.utm_fpay').each(function () {
                 $(this).attr('data-utm', search);
               });
             }
-          }catch(e){};
-          try{
-            if($('.btn_fnoprpay').length > 0){
+            //  if($('.ddocexp').length > 0){
+            //      $('.ddocexp').each(function(){
+            //          $(this).attr('data-docex', $(this).attr('data-docex')+search);
+            //      });
+            //  }
+          } catch (e) {
+          }
+          ;
+      
+          try {
+            if ($('.btn_fnoprpay').length > 0) {
               const params_all = new URLSearchParams(search);
               params_all.delete("promo");
               const updateSearchNopr = "?" + params_all.toString()
               // console.log(link_u);
-              $('.btn_fnoprpay').each(function(){
-                $(this).attr('href',$(this).attr('href')+updateSearchNopr);
-                $(this).attr('old-href',$(this).attr('href'));
+              $('.btn_fnoprpay').each(function () {
+                $(this).attr('href', $(this).attr('href') + updateSearchNopr);
+                $(this).attr('old-href', $(this).attr('href'));
               });
-              if($('.utm_fnoprpay').length > 0){
-                $('.utm_fnoprpay').each(function(){
+              if ($('.utm_fnoprpay').length > 0) {
+                $('.utm_fnoprpay').each(function () {
                   $(this).attr('data-utm', updateSearchNopr);
                 });
               }
-              try{
-                if($('.price_input_f_fnoprpay').length > 0){
-                  $('.price_input_f_fnoprpay').each(function(){
-                    $(this).attr('new-href',$(this).attr('new-href')+updateSearchNopr);
+              try {
+                if ($('.price_input_f_fnoprpay').length > 0) {
+                  $('.price_input_f_fnoprpay').each(function () {
+                    $(this).attr('new-href', $(this).attr('new-href') + updateSearchNopr);
                   });
                 }
-              }catch(e){};
+              } catch (e) {
+              }
+              ;
             }
-            if($('.btn_attr_fnoprpay').length > 0){
+            if ($('.btn_attr_fnoprpay').length > 0) {
               const attr_params_all = new URLSearchParams(search);
               attr_params_all.delete("promo");
               const attr_updateSearchNopr = "?" + attr_params_all.toString()
-              $('.btn_attr_fpay').each(function(){
-                $(this).attr('data-href-link',$(this).attr('data-href-link')+attr_updateSearchNopr);
+              $('.btn_attr_fnoprpay').each(function () {
+                $(this).attr('data-href-link', $(this).attr('data-href-link') + attr_updateSearchNopr);
               });
             }
-          }catch(e){};
-          try{
+          } catch (e) {
+          }
+          ;
+      
+          try {
             const params = new URLSearchParams(search);
             params.delete("promo");
             const updateSearch = params.toString()
-            if($('.btn_fmpay').length > 0){
+            if ($('.btn_fmpay').length > 0) {
               // console.log(link_u);
-              $('.btn_fmpay').each(function(){
-                $(this).attr('href',$(this).attr('href')+ "?" + updateSearch);
+              $('.btn_fmpay').each(function () {
+                $(this).attr('href', $(this).attr('href') + "?" + updateSearch);
               });
-              try{
-                if($('.price_option_fm_pay').length > 0){
-                  $('.price_option_fm_pay').each(function(){
-                    $(this).attr('data-product-link',$(this).attr('data-product-link')+ "?" + updateSearch);
+              try {
+                if ($('.price_option_fm_pay').length > 0) {
+                  $('.price_option_fm_pay').each(function () {
+                    $(this).attr('data-product-link', $(this).attr('data-product-link') + "?" + updateSearch);
                   });
                 }
-              }catch(e){};
+              } catch (e) {
+              }
+              ;
             }
-          }catch(e){};
+          } catch (e) {
+          }
+          ;
         }
         var banner_param_name = "?banner_utm=";
         if (search !== "?") {

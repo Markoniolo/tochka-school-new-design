@@ -1804,8 +1804,21 @@ function globalFormInit (form, func_name, type) {
               utm_f = ''
             }
             if (utm_f.length > 0) {
-              linkTo_ = linkTo_ + utm_f;
+              if (isTargetLink(linkTo_)) {
+                linkTo_ = linkTo_ + utm_f;
+                if (cookieParams) {
+                  if (linkTo_.startsWith("https://vk.com/app7062840")) {
+                    linkTo_ += "&" + cookieParams;
+                  } else {
+                    linkTo_ += (linkTo_.includes("?") ? "&" : "?") + cookieParams;
+                  }
+                }
+              } else {
+                linkTo_ = linkTo_ + utm_f;
+              }
             }
+            console.log("urlParams: " + urlParams)
+            console.log("utm_f: " + utm_f)
           }
           globalForm.submit();
           setTimeout(() => {
@@ -1844,6 +1857,38 @@ function globalFormInit (form, func_name, type) {
     }
   }
 }
+
+// Проверка, начинается ли ссылка с одного из целевых URL
+function isTargetLink(href) {
+  const targets = [
+    "https://salebot.site/",
+    "https://sbsite.pro/",
+    "https://vk.com/app7062840"
+  ];
+  return targets.some(prefix => href.startsWith(prefix));
+}
+
+// Собираем значения из нужных cookie
+const cookies = ['_fbc', '_fbp', '_ga', '_ym_uid', 'roistat_visit'];
+let cookieParams = '';
+
+cookies.forEach(name => {
+  const value = getCookie(name);
+  if (value) {
+    if (cookieParams) cookieParams += '&';
+    cookieParams += `${name}='${encodeURIComponent(value)}'`;
+  }
+});
+
+// Функция для получения значения cookie по имени
+function getCookie(name) {
+  const matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+const urlParams = location.search.slice(1); // убираем '?'
 
 const headerNew = document.querySelector('[data-element="header-new"]')
 
