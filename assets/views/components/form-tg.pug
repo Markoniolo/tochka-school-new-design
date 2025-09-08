@@ -1,0 +1,41 @@
+.form-tg
+  .cont
+    .form-tg__wrap
+      h1.form-tg__caption Получите доступ в закрытый Телеграм-канал будущих учеников «Точки Знаний»
+      picture.form-tg__picture
+        source(srcset=staticImg('form-tg/decor_xxs.svg') media="(max-width: 359px)")
+        source(srcset=staticImg('form-tg/decor_mob.svg') media="(max-width: 743px)")
+        source(srcset=staticImg('form-tg/decor_tablet.svg') media="(max-width: 1359px)")
+        img.form-tg__image(src=staticImg('form-tg/decor.svg') alt='')
+      ul.form-tg__list
+        each item in ['Сэкономить на обучении','Первым узнавать о скидках и акциях','Получить приоритетное место на курсах']
+          li.form-tg__item= item
+      form.form-tg__form(data-element="review-form" data-request-validate)
+        .form-tg__title Заполните форму
+        input.input_utm(name='utm' type='hidden' value='')
+        input(type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru/blog/voprosy-dlya-podrostkov-chto-polezno-i-interesno-obsudit-do-15-let")
+        .form-tg__line
+          input.form-tg__input.input-white(placeholder='Телефон' type='tel' required data-element='input-phone-intl' name='phone')
+          input(name='tel' type='hidden' required data-element='input-phone-hidden')
+          button.form-tg__submit.btn-orange Оставить заявку
+        .form-tg__labels
+          label.form-tg__label.checkbox-white-label
+            input.form-tg__checkbox.checkbox-white-input(name='policy' type='checkbox')
+            .form-tg__checkbox-view.checkbox-white-input-view
+            .form-tg__checkbox-text.checkbox-white-text
+              | Даю
+              |
+              a(href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target='_blank') Согласие
+              |
+              | на обработку персональных
+              | данных в соответствии с
+              |
+              a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf' target='_blank') Политикой
+          label.form-tg__label.checkbox-white-label
+            input.form-tg__checkbox.checkbox-white-input(name='news' type='checkbox')
+            .form-tg__checkbox-view.checkbox-white-input-view
+            .form-tg__checkbox-text.checkbox-white-text
+              | Согласен на
+              |
+              a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf' target='_blank') получение рекламы
+

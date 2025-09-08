@@ -1,0 +1,270 @@
+.form-tg {
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    width: 215px;
+    height: 495px;
+    @include bg-icon('form-tg/circles.svg');
+    @include media(xl) {
+      content: none;
+    }
+    @include media(xs) {
+      content: '';
+      width: 55px;
+      height: 105px;
+      left: 0;
+      bottom: unset;
+      top: 388px;
+    }
+  }
+}
+
+.form-tg__wrap {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 61px;
+  @include media(lg) {
+    position: relative;
+    padding-top: 40px;
+  }
+  @include media(xs) {
+    padding-top: 30px;
+  }
+}
+
+.form-tg__caption {
+  margin-bottom: 31px;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 122%;
+  color: #003c56;
+  max-width: 694px;
+  width: 100%;
+  @include media(lg) {
+    margin-bottom: 25px;
+    font-size: 27px;
+    line-height: 34px;
+    max-width: 398px;
+  }
+  @include media(xs) {
+    max-width: 100%;
+    margin-bottom: 2px;
+    text-align: center;
+  }
+}
+
+.form-tg__picture {
+  position: absolute;
+  bottom: -60px;
+  right: -364px;
+  width: 971px;
+  height: 686px;
+  @include media(lg) {
+    width: 307px;
+    height: 281px;
+    bottom: unset;
+    top: 7px;
+    right: -17px;
+  }
+  @include media(xs) {
+    margin-bottom: 12px;
+    position: static;
+    width: calc(100% + 20px);
+    height: auto;
+  }
+  @include media(xxs) {
+    width: calc(100% + 10px);
+  }
+}
+
+.form-tg__image {
+
+}
+
+.form-tg__list {
+  margin-bottom: 43px;
+  display: flex;
+  flex-direction: column;
+  @include media(lg) {
+    margin-bottom: 35px;
+    gap: 2px;
+  }
+  @include media(xs) {
+    margin-bottom: 22px;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+.form-tg__item {
+  position: relative;
+  padding-left: 25px;
+  font-weight: 500;
+  font-size: 24px;
+  color: #003c56;
+  @include media(lg) {
+    padding-left: 12px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+  @include media(xs) {
+    text-align: center;
+    padding-left: 0;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: $orange;
+    @include media(lg) {
+      width: 6px;
+      height: 6px;
+    }
+    @include media(xs) {
+      margin-right: 5px;
+      position: static;
+      display: inline-block;
+    }
+  }
+}
+
+.form-tg__form {
+  position: relative;
+  z-index: 1;
+  border-radius: 20px;
+  background: radial-gradient(118.33% 93.95% at 66.55% 44.1%, #96abd7 0%, #6683c2 100%);
+  padding: 18px 25px;
+  max-width: 686px;
+  width: 100%;
+  @include media(lg) {
+    border-radius: 10px;
+    padding: 20px 20px;
+  }
+  .iti {
+    flex-grow: 1;
+    width: 100%;
+    @include media(lg) {
+      max-width: 260px;
+    }
+    @include media(xs) {
+      max-width: 100%;
+    }
+  }
+}
+
+.form-tg__title {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 24px;
+  color: #fff;
+  @include media(lg) {
+    font-size: 18px;
+  }
+}
+
+.form-tg__line {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 22px;
+  @include media(lg) {
+    gap: 30px;
+  }
+  @include media(xs) {
+    gap: 25px;
+    flex-direction: column;
+    margin-bottom: 18px;
+  }
+  @include media(xxs) {
+    gap: 20px;
+  }
+}
+
+.form-tg__input {
+  width: 100%;
+  padding: 15px 30px 16px;
+  @include media(lg) {
+    padding: 10px 30px 11px;
+  }
+}
+
+.form-tg__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 16px;
+  width: 278px;
+  flex-shrink: 0;
+  padding: 18px 30px;
+  @include media(lg) {
+    width: 260px;
+    font-size: 15px;
+    padding: 13px 30px;
+  }
+  @include media(xs) {
+    width: 100%;
+  }
+  &::after {
+    content: '';
+    width: 21px;
+    height: 19px;
+    @include bg-icon('icons/ic_tg_white.svg');
+    transform: translateY(1px);
+  }
+}
+
+.form-tg__labels {
+  display: flex;
+  gap: 30px;
+  @include media(lg) {
+    gap: 20px;
+  }
+  @include media(xs) {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.form-tg__label {
+  &:first-of-type {
+    width: 330px;
+    @include media(lg) {
+      width: 328px;
+    }
+    @include media(xs) {
+      width: 100%;
+    }
+  }
+  &:last-of-type {
+    width: 260px;
+    flex-shrink: 0;
+    @include media(lg) {
+      width: 195px;
+    }
+    @include media(xs) {
+      width: 100%;
+    }
+  }
+}
+
+.form-tg__checkbox {
+
+}
+
+.form-tg__checkbox-view {
+
+}
+
+.form-tg__checkbox-text {
+  color: rgba(255, 255, 255, 0.76);
+}

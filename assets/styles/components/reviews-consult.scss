@@ -148,6 +148,13 @@
   @include media(xs) {
     width: 100%;
   }
+  .iti.iti--allow-dropdown.iti--show-flags {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .iti__selected-country {
+    padding-left: 22px;
+  }
 }
 
 .reviews-consult__inner {
