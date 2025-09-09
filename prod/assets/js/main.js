@@ -1473,6 +1473,13 @@ for (let i = 0; i < externalFormArray.length; i++) {
   globalFormInit(externalFormArray[i], 'onSendMessageTb', 'externalFormData');
 }
 
+
+const phoneFormArray = document.querySelectorAll("[data-element='phone-form']")
+
+for (let i = 0; i < phoneFormArray.length; i++) {
+  globalFormInit(phoneFormArray[i], 'onSendNOrderWGMessagePh', 'phoneFormData');
+}
+
 const reviewFormArray = document.querySelectorAll("[data-element='review-form']")
 
 for (let i = 0; i < reviewFormArray.length; i++) {
@@ -1631,12 +1638,31 @@ function externalFormData (globalForm) {
     'page_name': globalForm.querySelector("[name='page_name']").value,
   };
 }
+function reviewFormData (globalForm) {
+  return {
+    'name': globalForm.querySelector("[name='name']").value,
+    'utm': globalForm.querySelector("[name='utm']").value,
+    'tel': globalForm.querySelector("[name='tel']").value,
+    'policy': globalForm.querySelector("[name='policy']").checked,
+    'news': globalForm.querySelector("[name='news']").checked,
+    'page_name': globalForm.querySelector("[name='page_name']").value,
+  };
+}
 function consultFormData (globalForm) {
   return {
     'name': globalForm.querySelector("[name='name']").value,
     'utm': globalForm.querySelector("[name='utm']").value,
     'tel': globalForm.querySelector("[name='tel']").value,
     'messenger': globalForm.querySelector("[name='messenger']:checked").value,
+    'policy': globalForm.querySelector("[name='policy']").checked,
+    'news': globalForm.querySelector("[name='news']").checked,
+    'page_name': globalForm.querySelector("[name='page_name']").value,
+  };
+}
+function phoneFormData (globalForm) {
+  return {
+    'utm': globalForm.querySelector("[name='utm']").value,
+    'tel': globalForm.querySelector("[name='tel']").value,
     'policy': globalForm.querySelector("[name='policy']").checked,
     'news': globalForm.querySelector("[name='news']").checked,
     'page_name': globalForm.querySelector("[name='page_name']").value,
@@ -1713,6 +1739,10 @@ function globalFormInit (form, func_name, type) {
 
       if (type == 'externalFormData') {
         var form_data = externalFormData(globalForm);
+      } else if (type == 'phoneFormData') {
+        var form_data = phoneFormData(globalForm);
+      } else if (type == 'reviewFormData') {
+        var form_data = reviewFormData(globalForm);
       } else if (type == 'orderFormData') {
         var form_data = orderFormData(globalForm);
       } else if (type == 'consultFormData') {
@@ -1797,6 +1827,7 @@ function globalFormInit (form, func_name, type) {
           // }, 100)
         } else {
           let linkTo_ = linkTo;
+          let linkTo_base = linkTo_;
           if (utm_input) {
             utm_f = utm_input.value;
             if(utm_f != null && utm_f != '' && utm_f != undefined){
@@ -1804,22 +1835,18 @@ function globalFormInit (form, func_name, type) {
               utm_f = ''
             }
             if (utm_f.length > 0) {
-              if (isTargetLink(linkTo_)) {
-                linkTo_ = linkTo_ + utm_f;
-                if (cookieParams) {
-                  if (linkTo_.startsWith("https://vk.com/app7062840")) {
-                    linkTo_ += "&" + cookieParams;
-                  } else {
-                    linkTo_ += (linkTo_.includes("?") ? "&" : "?") + cookieParams;
-                  }
-                }
-              } else {
-                linkTo_ = linkTo_ + utm_f;
-              }
+              linkTo_ = linkTo_ + utm_f;
             }
-            console.log("urlParams: " + urlParams)
-            console.log("utm_f: " + utm_f)
           }
+          if (isTargetLink(linkTo_base)) {
+            if (cookieParams) {
+              linkTo_ += (linkTo_.includes("?") ? "&" : "?") + cookieParams;
+            }
+          }
+
+          // console.log("urlParams: " + urlParams)
+          // console.log("utm_f: " + utm_f)
+
           globalForm.submit();
           setTimeout(() => {
             clearForm();
