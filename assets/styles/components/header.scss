@@ -151,7 +151,7 @@
   background: #FFFFFF;
   position: relative;
   z-index: 5;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid #EBEBEB;
   overflow: hidden;
   @include media(lg) {
     border-bottom: none;

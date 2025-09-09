@@ -232,7 +232,7 @@
     .nav__menu-box {
       &:nth-child(1), &:nth-child(2) {
         width: 205px;
-        @include media(xs) {
+        @include media(md) {
           width: 100%;
         }
       }
@@ -242,7 +242,7 @@
     .nav__menu-box {
       &:nth-child(1) {
         width: 205px;
-        @include media(xs) {
+        @include media(md) {
           width: 100%;
         }
       }
@@ -424,7 +424,7 @@
 
 .nav__menu-box {
   width: 271px;
-  @include media(xs) {
+  @include media(md) {
     width: 100%;
   }
 }
@@ -463,6 +463,11 @@
 }
 
 .nav__menu-link {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
   font-size: 15px;
   line-height: 19px;
   padding-left: 18px;
@@ -472,9 +477,18 @@
     font-size: 18px;
     line-height: 23px;
   }
+  @include media(xs) {
+    gap: 4px;
+  }
   &:hover {
     color: #6683c2;
   }
+}
+
+.nav__menu-link-ticket {
+  display: inline-block;
+  width: auto;
+  transform: scale(0.8);
 }
 
 .nav__summer {
@@ -682,6 +696,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row-reverse;
+  gap: 15px;
   font-size: 18px;
   line-height: 100%;
   @include media(lg) {
@@ -690,6 +706,17 @@
   }
   @include media(md) {
     width: 100%;
+  }
+  @include media(xs) {
+    gap: 10px;
+  }
+}
+
+.nav__btn-ticket {
+  display: inline-block;
+  width: auto;
+  @include media(xs) {
+    transform: scale(0.8);
   }
 }
 

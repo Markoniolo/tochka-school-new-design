@@ -191,6 +191,7 @@
                   .nav__menu-list
                     each item in box.list
                       a.nav__menu-link(href="#")= item
+                        img.nav__menu-link-ticket(src=staticImg('all-courses/all-courses-icon.svg') alt='')
       each area in navAreaSecond
         .nav__area(data-nav-area = area.index class=`nav__area_${area.index}`)
           button.nav__back
@@ -219,6 +220,7 @@
             .nav__btns
               each btn in area.menu
                 a.nav__btn(href="#")= btn
+                  img.nav__btn-ticket(src=staticImg('all-courses/all-courses-icon.svg') alt='')
       .nav__contacts.nav__contacts_desc
         a.nav__phone(href="tel:+78612176477") +7 (861) 217-64-77
         a.nav__email(href="mailto:support@tochka-school.ru") support@tochka-school.ru

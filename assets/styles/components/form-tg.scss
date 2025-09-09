@@ -19,6 +19,7 @@
       left: 0;
       bottom: unset;
       top: 388px;
+      @include bg-icon('form-tg/circles_mob.svg');
     }
   }
 }
@@ -51,8 +52,9 @@
     max-width: 398px;
   }
   @include media(xs) {
-    max-width: 100%;
-    margin-bottom: 2px;
+    max-width: 296px;
+    width: 100%;
+    margin: 0 auto 2px;
     text-align: center;
   }
 }
