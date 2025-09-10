@@ -1,0 +1,65 @@
+.circle-move-1 {
+  animation: 10s circle-move-1 infinite;
+  @keyframes circle-move-1 {
+    0% {
+      transform: translate3d(0%, 0%, 0);
+    }
+    25% {
+      transform: translate3d(-10%, 15%, 0);
+    }
+    50% {
+      transform: translate3d(10%, -10%, 0);
+    }
+    75% {
+      transform: translate3d(5%, 10%, 0);
+    }
+    100% {
+      transform: translate3d(0%, 0%, 0);
+    }
+  }
+}
+
+.circle-move-2 {
+  animation: 10s circle-move-2 infinite;
+  @keyframes circle-move-2 {
+    0% {
+      transform: translate3d(0%, 0%, 0);
+    }
+    20% {
+      transform: translate3d(25%, 5%, 0);
+    }
+    40% {
+      transform: translate3d(-10%, -15%, 0);
+    }
+    60% {
+      transform: translate3d(5%, 5%, 0);
+    }
+    80% {
+      transform: translate3d(-10%, 20%, 0);
+    }
+    100% {
+      transform: translate3d(0%, 0%, 0);
+    }
+  }
+}
+
+.circle-move-3 {
+  animation: 10s circle-move-3 infinite;
+  @keyframes circle-move-3 {
+    0% {
+      transform: translate3d(0%, 0%, 0);
+    }
+    30% {
+      transform: translate3d(20%, -15%, 0);
+    }
+    50% {
+      transform: translate3d(5%, 10%, 0);
+    }
+    70% {
+      transform: translate3d(-5%, -5%, 0);
+    }
+    100% {
+      transform: translate3d(0%, 0%, 0);
+    }
+  }
+}

@@ -16,5 +16,5 @@
         .quote__author-name Андрей Александрович Шелудько
       .quote__picture
         each item in [1,2,3]
-          .quote__image-decor(class=`quote__image-decor_${item}`)
+          .quote__image-decor(class=`quote__image-decor_${item} circle-move-${item}`)
         img.quote__image(src=staticImg('quote/quote-1.png') alt='')

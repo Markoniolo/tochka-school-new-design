@@ -79,9 +79,13 @@
       top: -10px;
     }
     .numbers__count {
+      width: 348px;
       color: #68ccea;
+      @include media(lg) {
+        width: 252px;
+      }
       @include media(xs) {
-        max-width: 171px;
+       width: 171px;
       }
     }
     .numbers__note {
@@ -100,7 +104,14 @@
       order: 5;
     }
     .numbers__count {
+      width: 194px;
       color: #7fcbb4;
+      @include media(lg) {
+        width: 140px;
+      }
+      @include media(xs) {
+        width: 95px;
+      }
     }
   }
   &_3 {
@@ -108,7 +119,11 @@
       order: 2;
     }
     .numbers__count {
+      width: 135px;
       color: #7fcbb4;
+      @include media(lg) {
+        width: 97px;
+      }
     }
   }
   &_4 {
@@ -121,7 +136,14 @@
       order: 1;
     }
     .numbers__count {
+      width: 382px;
       color: #f37e60;
+      @include media(lg) {
+        width: 276px;
+      }
+      @include media(xs) {
+        width: 188px;
+      }
     }
     .numbers__note {
       max-width: 214px;
@@ -142,7 +164,14 @@
       order: 4;
     }
     .numbers__count {
+      width: 175px;
       color: #6683c2;
+      @include media(lg) {
+        width: 126px;
+      }
+      @include media(xs) {
+        width: 100px;
+      }
     }
     .numbers__note {
       max-width: 150px;
@@ -191,6 +220,10 @@
     margin-bottom: 14px;
     font-size: 53px;
     line-height: 38px;
+  }
+  span {
+    font-size: inherit;
+    font-weight: inherit;
   }
 }
 

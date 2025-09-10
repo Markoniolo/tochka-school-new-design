@@ -1,7 +1,7 @@
 .quote {
-  margin-bottom: 98px;
+  padding-bottom: 98px;
   @include media(lg) {
-    margin-bottom: 40px;
+    padding-bottom: 40px;
     overflow: hidden;
   }
 }

@@ -1,23 +1,23 @@
 -
   const numbersList = [
     {
-      count: '4 года',
+      count: '<span class="animate-counter" data-animate-counter-end="4" data-to-fixed="0">?</span> года',
       note: 'Помогаем улучшить оценки и полюбить учёбу'
     },
     {
-      count: '194',
+      count: '<span class="animate-counter" data-animate-counter-end="194" data-to-fixed="0">?</span>',
       note: 'Тьютора'
     },
     {
-      count: '37',
+      count: '<span class="animate-counter" data-animate-counter-end="40" data-to-fixed="0">?</span>',
       note: 'Преподаватель'
     },
     {
-      count: '44 000',
+      count: '<span class="animate-counter" data-animate-counter-end="44000" data-to-fixed="0">?</span>',
       note: 'Учеников прошли&nbsp;наше&nbsp;обучение'
     },
     {
-      count: '4,9',
+      count: '<span class="animate-counter" data-animate-counter-end="4.9" data-to-fixed="1">?</span>',
       note: 'Средняя оценка родителей'
     },
   ]
@@ -29,5 +29,5 @@
       .numbers__list
         each item, index in numbersList
           .numbers__item(class=`numbers__item_${index+1}`)
-            .numbers__count= item.count
+            .numbers__count!= item.count
             .numbers__note!= item.note

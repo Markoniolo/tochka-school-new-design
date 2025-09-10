@@ -117,15 +117,20 @@ function egeTileFilterInit () {
     }
   }
 
+
   observer.observe(tile, config)
 
   const reset = egeTile.querySelector('.ege-tile__reset-filter')
   if (reset) reset.addEventListener('click', resetFilters)
 
   function resetFilters () {
-    const items = egeTile.querySelectorAll("input:checked")
+    const items = egeTile.querySelectorAll("input")
     items.forEach((item) => {
-      item.checked = false
+      if (item.hasAttribute('data-default-garde')) {
+        item.checked = true
+      }else{
+        item.checked = false
+      }
     })
     reset.style.display = 'none'
     subjectInputText.innerHTML = "Все предметы"
@@ -173,7 +178,7 @@ function egeTileFilterInit () {
     })
     let subjects_result = ''
     try{
-      const subjects_items = egeTile.querySelectorAll('.ege-tile__tab-input_subject:checked')
+      const subjects_items = egeTile.querySelectorAll('.ege-tile__filter-input_subject:checked')
       subjects_items.forEach((item, i) => {
         if (i > 0) subjects_result += '|'
         subjects_result += item.value
@@ -184,7 +189,10 @@ function egeTileFilterInit () {
     let promo_f = tile.getAttribute('data-promo');
     let oge_ege_type = tile.getAttribute('data-oge-ege');
 
-    $('.all-courses__tile').html("<div class='tile-loader'></div>");
+    if(p_paginate === 1 ){
+      $('.filtered_elements').html("<div class='tile-loader'></div>");
+      $('.more_b').html("");
+    }
 
     var obData = {
       'grade': grades_result,
@@ -197,11 +205,11 @@ function egeTileFilterInit () {
     $.request('DirectionFunctions::onPaginateAllCourses', {
       data: obData
     })
-    if (grade_first > 0){
-      let url = new URL(window.location.href)
-      url.searchParams.set('gr', grade_first);
-      history.replaceState(null, "", url.toString())
-    }
+    // if (grade_first > 0){
+    //   let url = new URL(window.location.href)
+    //   url.searchParams.set('gr', grade_first);
+    //   history.replaceState(null, "", url.toString())
+    // }
     // }
   }
 }
