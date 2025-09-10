@@ -948,7 +948,77 @@ function egeTileFilterInit () {
 
   const observer = new MutationObserver(function() {
     moreBtnInit()
+    togglePrice()
+    buttonDataHrefLinksInit()
+    dataRedirect()
   })
+
+  togglePrice()
+
+  function togglePrice () {
+    const items = tile.querySelectorAll(".all-courses__item")
+    items.forEach((item) => {
+      const toggle = item.querySelectorAll('.all-courses__radio-input')
+      if (!toggle.length) return
+      const boxes = item.querySelectorAll('.all-courses__box')
+      const textReplace = item.querySelector('.all-courses__info.text-replace')
+      let texts
+      if (textReplace) {
+        texts = textReplace.querySelectorAll('.all-courses__info-span')
+      }
+      for (let i = 0; i < toggle.length; i++) {
+        toggle[i].addEventListener('change', toggleBoxes)
+        if (texts) toggle[i].addEventListener('change', toggleTexts)
+      }
+
+      function toggleBoxes () {
+        for (let i = 0; i < boxes.length; i++) {
+          if (boxes[i].classList.contains('hide')) {
+            boxes[i].classList.remove('hide')
+          } else {
+            boxes[i].classList.add('hide')
+          }
+        }
+      }
+
+      function toggleTexts () {
+        for (let i = 0; i < texts.length; i++) {
+          if (texts[i].classList.contains('hide')) {
+            texts[i].classList.remove('hide')
+          } else {
+            texts[i].classList.add('hide')
+          }
+        }
+      }
+    })
+  }
+
+  buttonDataHrefLinksInit()
+
+  function buttonDataHrefLinksInit() {
+    const buttonDataHrefLinks = document.querySelectorAll('button[data-href-link]')
+    for (let i = 0; i < buttonDataHrefLinks.length; i++) {
+      buttonDataHrefLinks[i].addEventListener('click', function (e) {
+        e.preventDefault()
+        window.open(this.getAttribute('data-href-link'), '_blank')
+      })
+    }
+  }
+
+  dataRedirect()
+
+  function dataRedirect () {
+    const dataRedirectLinks = tile.querySelectorAll('[data-redirect]')
+
+    for (let i = 0; i < dataRedirectLinks.length; i++) {
+      dataRedirectLinks[i].addEventListener('click', dataRedirect)
+    }
+
+    function dataRedirect (e) {
+      e.preventDefault()
+      window.open(this.href, '_blank');
+    }
+  }
 
   observer.observe(tile, config)
 
