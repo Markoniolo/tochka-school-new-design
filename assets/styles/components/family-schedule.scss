@@ -1,5 +1,10 @@
 .family-schedule {
   background-color: #FFFFFF;
+  & + .family-teachers {
+    @include media(lg) {
+      padding-top: 36px;
+    }
+  }
   &.summer {
     background: transparent;
     .family-schedule__toggle {

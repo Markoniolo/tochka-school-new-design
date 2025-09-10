@@ -6,7 +6,7 @@
   ]
 
 mixin ege-tile(mod)
-  .ege-tile#ege-tile(class = mod ? `ege-tile_${mod}` : false)
+  .ege-tile#ege-tile(class = mod ? `ege-tile_${mod}` : false )
     .cont
       .ege-tile__box
         .ege-tile__caption Выберите курс
@@ -21,10 +21,10 @@ mixin ege-tile(mod)
         if mod === 'ege'
           .ege-tile__tabs
             label.ege-tile__tab
-              input.ege-tile__tab-input(type="checkbox" name='class' value='10')
+              input.ege-tile__tab-input.ege-tile__tab-input_class(type="radio" name='class' value='10')
               .ege-tile__tab-view 10 класс
             label.ege-tile__tab
-              input.ege-tile__tab-input(type="checkbox" name='class' value='11')
+              input.ege-tile__tab-input.ege-tile__tab-input_class(type="radio" name='class' value='11')
               .ege-tile__tab-view 11 класс
         if mod === 'oge'
           .ege-tile__tabs
@@ -39,14 +39,17 @@ mixin ege-tile(mod)
             .ege-tile__filter-headline Выберите предмет
             .ege-tile__filter-list
               label.ege-tile__filter-item
-                input.ege-tile__filter-input(type='radio' name='subject' value=`all-subjects` checked)
+                input.ege-tile__filter-input.ege-tile__filter-input_subject(type='radio' name='subject' value=`all-subjects` checked)
                 .ege-tile__filter-view Все предметы
               each item, index in allCoursesFilterListSubjects
                 label.ege-tile__filter-item
-                  input.ege-tile__filter-input(type='radio' name='subject' value=`subject-id-${index + 1}` data-text=item)
+                  input.ege-tile__filter-input.ege-tile__filter-input_subject(type='radio' name='subject' value=`subject-id-${index + 1}` data-text=item)
                   .ege-tile__filter-view= `${item}`
                     img.ege-tile__filter-ticket(src=staticImg('all-courses/all-courses-icon.svg') alt='')
-      .all-courses__tile
+        button.ege-tile__reset-filter Сбросить
+          svg(width='11' height='11' viewbox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M6.41602 5.50004L10.3092 1.60683C10.5625 1.35359 10.5625 0.944119 10.3092 0.690908C10.0559 0.437666 9.64646 0.437666 9.39325 0.690908L5.50001 4.58409L1.60692 0.690908C1.35356 0.437666 0.944241 0.437666 0.690999 0.690908C0.437636 0.944149 0.437636 1.35359 0.690999 1.60683L4.58406 5.50004L0.691029 9.39322C0.437666 9.64646 0.437666 10.0559 0.691029 10.3091C0.751099 10.3694 0.822481 10.4172 0.901073 10.4497C0.979664 10.4823 1.06392 10.499 1.14899 10.4989C1.31478 10.4989 1.48063 10.4355 1.60695 10.3091L5.50001 6.41596L9.39325 10.3091C9.45333 10.3694 9.52471 10.4171 9.6033 10.4497C9.68189 10.4823 9.76614 10.499 9.85121 10.4989C10.017 10.4989 10.1829 10.4355 10.3092 10.3091C10.5625 10.0559 10.5625 9.64646 10.3092 9.39322L6.41602 5.50004Z' fill='white')
+      .all-courses__tile.filtered_elements.utm_fpay(data-promo="" data-utm="" data-oge-ege="")
         .all-courses__item(data-subject-id="subject-id-0" data-class-id="10")
           .all-courses__tickets
             .all-courses__ticket.blue Места ограниченны
@@ -330,3 +333,5 @@ mixin ege-tile(mod)
               .all-courses__btns
                 button.all-courses__button.all-courses__button_border(data-href-link="#link") Начать обучение
                 a.all-courses__button.btn-orange(href='#' data-redirect) Подробнее о курсе
+      .all-courses__more
+        button.all-courses__more-button.btn-blue.btn-blue_arrow Показать ещё

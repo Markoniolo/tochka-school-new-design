@@ -190,7 +190,8 @@ a.ege-tile__toggle-item {
   margin-bottom: 47px;
   @include media(lg) {
     margin-bottom: 20px;
-    gap: 41px;
+    gap: 20px 41px;
+    flex-wrap: wrap;
   }
   @include media(xs) {
     margin-bottom: 28px;
@@ -527,6 +528,35 @@ a.ege-tile__toggle-item {
   width: auto;
   @include media(xs) {
     transform: scale(0.8);
+  }
+}
+
+.ege-tile__reset-filter {
+  font-size: 15px;
+  line-height: 100%;
+  color: #fff;
+  border-radius: 34px;
+  background: #4d69a7;
+  min-width: 144px;
+  min-height: 53px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  @include media(lg) {
+    width: 100%;
+    min-width: 126px;
+    min-height: 35px;
+    font-size: 14px;
+  }
+  @include media(xs) {
+    min-height: 45px;
+    width: 100%;
+  }
+  &.active {
+    display: flex;
+  }
+  svg {
+    margin-left: 7px;
   }
 }
 

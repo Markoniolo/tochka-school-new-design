@@ -3,87 +3,15 @@ const egeTileFilter = document.querySelector(".ege-tile__filter")
 if (egeTileFilter) egeTileFilterInit()
 
 function egeTileFilterInit () {
+  const egeTileFilterTop = egeTileFilter.querySelector(".ege-tile__filter-top")
   const stickyHeader = document.querySelector('.sticky-header')
   const body = document.querySelector('body')
-  const egeTileFilterTop = egeTileFilter.querySelector(".ege-tile__filter-top")
-  const selectedText = egeTileFilter.querySelector('.ege-tile__filter-top-text')
-  const inputs = egeTileFilter.querySelectorAll('.ege-tile__filter-input')
-  const cards = document.querySelectorAll('.all-courses__item')
-  const tabs = document.querySelectorAll('.ege-tile__tab-input')
-  const tile = document.querySelector('.all-courses__tile')
-  let classId = false
 
   egeTileFilterTop.addEventListener("click", (e)=> openFilter(egeTileFilterTop, e))
 
   document.addEventListener('click', function () {
     egeTileFilterTop.classList.remove('active')
   })
-
-  togglePrice()
-
-  function togglePrice () {
-    const items = tile.querySelectorAll(".all-courses__item")
-    items.forEach((item) => {
-      const toggle = item.querySelectorAll('.all-courses__radio-input')
-      if (!toggle.length) return
-      const boxes = item.querySelectorAll('.all-courses__box')
-      const textReplace = item.querySelector('.all-courses__info.text-replace')
-      let texts
-      if (textReplace) {
-        texts = textReplace.querySelectorAll('.all-courses__info-span')
-      }
-      for (let i = 0; i < toggle.length; i++) {
-        toggle[i].addEventListener('change', toggleBoxes)
-        if (texts) toggle[i].addEventListener('change', toggleTexts)
-      }
-
-      function toggleBoxes () {
-        for (let i = 0; i < boxes.length; i++) {
-          if (boxes[i].classList.contains('hide')) {
-            boxes[i].classList.remove('hide')
-          } else {
-            boxes[i].classList.add('hide')
-          }
-        }
-      }
-
-      function toggleTexts () {
-        for (let i = 0; i < texts.length; i++) {
-          if (texts[i].classList.contains('hide')) {
-            texts[i].classList.remove('hide')
-          } else {
-            texts[i].classList.add('hide')
-          }
-        }
-      }
-    })
-  }
-
-  for (let i = 0; i < tabs.length; i++) {
-    tabs[i].addEventListener('input', tabHandler)
-  }
-
-  const initialTab = document.querySelector('.ege-tile__tab-input[value="11"]')
-  if (initialTab) {
-    initialTab.checked = true
-    initialTab.dispatchEvent(new Event('input'))
-  }
-
-  function tabHandler() {
-    this.checked = !this.checked
-    if (this.checked) {
-      this.checked = false
-      classId = false
-    } else {
-      const oldActiveTabs = document.querySelectorAll('.ege-tile__tab-input:checked')
-      for (let i = 0; i < oldActiveTabs.length; i++) {
-        oldActiveTabs[i].checked = false
-      }
-      this.checked = true
-      classId = this.value
-    }
-    updateFilter()
-  }
 
   function openFilter (opener, e) {
     e.stopPropagation()
@@ -108,51 +36,102 @@ function egeTileFilterInit () {
     }
   }
 
-  for (let i = 0; i < inputs.length; i++) {
-    inputs[i].addEventListener('change', updateFilter)
+  const config = { attributes: true, childList: true, characterData: true, subtree: true }
+  const egeTile = document.querySelector('.ege-tile')
+  const tile = egeTile.querySelector('.all-courses__tile')
+  const classInputs = egeTile.querySelectorAll('.ege-tile__tab-input_class')
+  const subjectInputs = egeTile.querySelectorAll('.ege-tile__filter-input_subject')
+  const subjectInputText = egeTile.querySelector('.ege-tile__filter-top-text')
+
+  const observer = new MutationObserver(function() {
+    moreBtnInit()
+  })
+
+  observer.observe(tile, config)
+
+  const reset = egeTile.querySelector('.ege-tile__reset-filter')
+  if (reset) reset.addEventListener('click', resetFilters)
+
+  function resetFilters () {
+    const items = egeTile.querySelectorAll("input:checked")
+    items.forEach((item) => {
+      item.checked = false
+    })
+    reset.style.display = 'none'
+    subjectInputText.innerHTML = "Все предметы"
+    makeFiltration();
+  }
+
+  for (let i = 0; i < classInputs.length; i++) {
+    classInputs[i].addEventListener('change', updateFilter)
+  }
+
+  for (let i = 0; i < subjectInputs.length; i++) {
+    subjectInputs[i].addEventListener('change', updateFilter)
+    subjectInputs[i].addEventListener('change', changeSubjectInputText)
+  }
+
+  function changeSubjectInputText () {
+    subjectInputText.innerHTML = this.getAttribute('data-text')
+  }
+
+  moreBtnInit()
+
+  function moreBtnInit () {
+    const moreBtn = egeTile.querySelector('.all-courses__more-button')
+    if (moreBtn) moreBtn.addEventListener('click', () => makeFiltration(moreBtn.getAttribute('data-v')))
   }
 
   function updateFilter () {
-    const subject = egeTileFilter.querySelector('.ege-tile__filter-input:checked')
-    if (subject.value === 'all-subjects') {
-      if (classId) {
-        const activeCards = document.querySelectorAll('[data-class-id="' + classId + '"]')
-        hideAllCards()
-        showActiveCards(activeCards)
-      } else {
-        showAllCards()
-      }
+    const itemsAll = egeTile.querySelectorAll(["input:checked"])
+    if (itemsAll.length) {
+      if (reset) reset.style.display = 'flex'
     } else {
-      hideAllCards()
-      selectedText.innerHTML = subject.getAttribute('data-text')
-      const activeCards = document.querySelectorAll('[data-subject-id="' + subject.value + '"]')
-      if (classId && activeCards.length) {
-        const filteredCards = []
-        for (let i = 0; i < activeCards.length; i++) {
-          if (activeCards[i].getAttribute('data-class-id') === classId) filteredCards.push(activeCards[i])
-        }
-        showActiveCards(filteredCards)
-      } else {
-        showActiveCards(activeCards)
-      }
+      if (reset) reset.style.display = 'none'
     }
+    makeFiltration()
   }
 
-  function showActiveCards (activeCards) {
-    for (let i = 0; i < activeCards.length; i++) {
-      activeCards[i].style.display = 'flex'
-    }
-  }
+  function makeFiltration (p_paginate = 1) {
+    const grades_items = egeTile.querySelectorAll('.ege-tile__tab-input_class:checked')
+    let grades_result = ''
+    let grade_first = 0
+    grades_items.forEach((item, i) => {
+      if (i > 0) grades_result += '|'
+      if (grade_first == 0) grade_first = item.value
+      grades_result += item.value
+    })
+    let subjects_result = ''
+    try{
+      const subjects_items = egeTile.querySelectorAll('.ege-tile__tab-input_subject:checked')
+      subjects_items.forEach((item, i) => {
+        if (i > 0) subjects_result += '|'
+        subjects_result += item.value
+      })
+    }catch(e){}
 
-  function hideAllCards () {
-    for (let i = 0; i < cards.length; i++) {
-      cards[i].style.display = 'none'
-    }
-  }
+    let utm_f = tile.getAttribute('data-utm');
+    let promo_f = tile.getAttribute('data-promo');
+    let oge_ege_type = tile.getAttribute('data-oge-ege');
 
-  function showAllCards () {
-    for (let i = 0; i < cards.length; i++) {
-      cards[i].style.display = 'flex'
+    $('.all-courses__tile').html("<div class='tile-loader'></div>");
+
+    var obData = {
+      'grade': grades_result,
+      'subject': subjects_result,
+      'utm_t': utm_f,
+      'promo': promo_f,
+      'oge_ege_type': oge_ege_type,
+      'pagePaginate': p_paginate,
+    };
+    $.request('DirectionFunctions::onPaginateAllCourses', {
+      data: obData
+    })
+    if (grade_first > 0){
+      let url = new URL(window.location.href)
+      url.searchParams.set('gr', grade_first);
+      history.replaceState(null, "", url.toString())
     }
+    // }
   }
 }
