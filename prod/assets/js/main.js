@@ -54,7 +54,7 @@ function allCoursesInit () {
       })
       updateFilter(openers[i], wrap, false, true)
     }
-    makeFiltration()
+    makeFiltration(1, true)
     if (reset) reset.classList.remove('active')
   }
 
@@ -306,7 +306,7 @@ function allCoursesInit () {
 
   }
 
-  async function makeFiltration (p_paginate = 1) {
+  async function makeFiltration (p_paginate = 1, isReset = false) {
     clearTimeout(timerReload)
     timerReload = setTimeout(() => window.location.reload(), 300000)
     const grades_wrap = grades.nextElementSibling
@@ -463,8 +463,11 @@ function allCoursesInit () {
 
 
 
-
-    filterh1block.textContent = new_h1
+    if (isReset) {
+      filterh1block.innerHTML = new_h1 + `<svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="21" cy="21" r="21" fill="#6683C2" fill-opacity="0.24"></circle><path d="M20.25 29C20.25 29.4142 20.5858 29.75 21 29.75C21.4142 29.75 21.75 29.4142 21.75 29L21 29L20.25 29ZM21.5303 12.4697C21.2374 12.1768 20.7626 12.1768 20.4697 12.4697L15.6967 17.2426C15.4038 17.5355 15.4038 18.0104 15.6967 18.3033C15.9896 18.5962 16.4645 18.5962 16.7574 18.3033L21 14.0607L25.2426 18.3033C25.5355 18.5962 26.0104 18.5962 26.3033 18.3033C26.5962 18.0104 26.5962 17.5355 26.3033 17.2426L21.5303 12.4697ZM21 29L21.75 29L21.75 13L21 13L20.25 13L20.25 29L21 29Z" fill="#003C56"></path></svg>`
+    } else {
+      filterh1block.textContent = new_h1
+    }
 
     document.title = new_title
     const meta= document.getElementsByTagName("meta")
@@ -505,6 +508,43 @@ function allCoursesInit () {
       }
     }
   }
+}
+
+const animateCounters = document.querySelectorAll('.animate-counter')
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target, 0, entry.target.getAttribute('data-animate-counter-end'), 1000)
+      observer.unobserve(entry.target)
+    }
+  })
+}, {
+  root: null,
+  scrollMargin : "0px 0px -150px 0px",
+  threshold: 1
+})
+
+for (let i = 0; i < animateCounters.length; i++) {
+  animateCounterInit(animateCounters[i])
+}
+
+function animateCounterInit (counter) {
+  observer.observe(counter)
+}
+
+function animateCounter(element, startValue, endValue, duration) {
+  let currentValue = startValue
+  const increment = (endValue - startValue) / (duration / 10)
+  const toFixed = element.getAttribute('data-to-fixed')
+  const counterInterval = setInterval(() => {
+    currentValue += increment;
+    if ((increment > 0 && currentValue >= endValue) || (increment < 0 && currentValue <= endValue)) {
+      currentValue = endValue
+      clearInterval(counterInterval)
+    }
+    element.textContent = (+currentValue).toFixed(toFixed).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+  }, 10)
 }
 
 const articleSidebarDesc = document.querySelector('.article__sidebar_desc')
@@ -1020,15 +1060,20 @@ function egeTileFilterInit () {
     }
   }
 
+
   observer.observe(tile, config)
 
   const reset = egeTile.querySelector('.ege-tile__reset-filter')
   if (reset) reset.addEventListener('click', resetFilters)
 
   function resetFilters () {
-    const items = egeTile.querySelectorAll("input:checked")
+    const items = egeTile.querySelectorAll("input")
     items.forEach((item) => {
-      item.checked = false
+      if (item.hasAttribute('data-default-garde')) {
+        item.checked = true
+      }else{
+        item.checked = false
+      }
     })
     reset.style.display = 'none'
     subjectInputText.innerHTML = "Все предметы"
@@ -1076,7 +1121,7 @@ function egeTileFilterInit () {
     })
     let subjects_result = ''
     try{
-      const subjects_items = egeTile.querySelectorAll('.ege-tile__tab-input_subject:checked')
+      const subjects_items = egeTile.querySelectorAll('.ege-tile__filter-input_subject:checked')
       subjects_items.forEach((item, i) => {
         if (i > 0) subjects_result += '|'
         subjects_result += item.value
@@ -1087,7 +1132,10 @@ function egeTileFilterInit () {
     let promo_f = tile.getAttribute('data-promo');
     let oge_ege_type = tile.getAttribute('data-oge-ege');
 
-    $('.all-courses__tile').html("<div class='tile-loader'></div>");
+    if(p_paginate === 1 ){
+      $('.filtered_elements').html("<div class='tile-loader'></div>");
+      $('.more_b').html("");
+    }
 
     var obData = {
       'grade': grades_result,
@@ -1100,11 +1148,11 @@ function egeTileFilterInit () {
     $.request('DirectionFunctions::onPaginateAllCourses', {
       data: obData
     })
-    if (grade_first > 0){
-      let url = new URL(window.location.href)
-      url.searchParams.set('gr', grade_first);
-      history.replaceState(null, "", url.toString())
-    }
+    // if (grade_first > 0){
+    //   let url = new URL(window.location.href)
+    //   url.searchParams.set('gr', grade_first);
+    //   history.replaceState(null, "", url.toString())
+    // }
     // }
   }
 }
