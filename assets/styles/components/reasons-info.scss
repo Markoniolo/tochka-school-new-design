@@ -1,0 +1,636 @@
+.reasons-info {
+  margin-bottom: 80px;
+  @include media(lg) {
+    margin-bottom: 40px;
+  }
+}
+
+.reasons-info__area {
+  position: relative;
+}
+
+.reasons-info__decor {
+  position: absolute;
+  z-index: -1;
+  @include media(lg) {
+    display: none;
+  }
+  &_1 {
+    width: 468px;
+    height: 478px;
+    top: 167px;
+    right: -20px;
+  }
+  &_2 {
+    width: 656px;
+    height: 450px;
+    top: 878px;
+    left: 0;
+  }
+}
+
+.reasons-info__circle {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  @include media(lg) {
+    display: none;
+  }
+  &_1 {
+    top: 12px;
+    right: -2px;
+    width: 51px;
+    height: 51px;
+    background: #F2C45B;
+  }
+  &_2 {
+    top: 62px;
+    right: 72px;
+    width: 92px;
+    height: 92px;
+    background: #68ccea;
+  }
+  &_3 {
+    top: 195px;
+    right: 496px;
+    width: 145px;
+    height: 145px;
+    background: #7fcbb4;
+  }
+  &_4 {
+    top: 974px;
+    right: 21px;
+    width: 75px;
+    height: 75px;
+    background: #6683c2;
+  }
+  &_5 {
+    top: 1272px;
+    right: 174px;
+    width: 136px;
+    height: 136px;
+    background: #68ccea;
+  }
+  &_6 {
+    top: 1360px;
+    right: 44px;
+    width: 75px;
+    height: 75px;
+    background: #f2c45b;
+  }
+}
+
+.reasons-info__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  @include media(lg) {
+    gap: 15px;
+  }
+  @include media(xs) {
+    justify-content: center;
+  }
+}
+
+.reasons-info__item {
+  padding: 9px 25px 9px 9px;
+  border-radius: 43px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
+  background: #fff;
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  &_1 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-1_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-1_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    .reasons-info__number {
+      background-color: #6683C2;
+      @include media(lg) {
+        color: #6683C2;
+      }
+    }
+  }
+  &_2 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-2_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-2_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    .reasons-info__number {
+      background-color: #68CCEA;
+      @include media(lg) {
+        color: #68CCEA;
+      }
+    }
+  }
+  &_3 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-3_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-3_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    .reasons-info__number {
+      background-color: #F2C45B;
+      @include media(lg) {
+        color: #F2C45B;
+      }
+    }
+  }
+  &_4 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-4_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-4_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    .reasons-info__number {
+      background-color: #F37E60;
+      @include media(lg) {
+        color: #F37E60;
+      }
+    }
+  }
+  &_5 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-5_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-5_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    margin-right: 723px;
+    .reasons-info__number {
+      background-color: #7FCBB4;
+      @include media(lg) {
+        color: #7FCBB4;
+      }
+    }
+  }
+  &_6 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-6_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-6_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    margin-right: 679px;
+    .reasons-info__number {
+      background-color: #6683C2;
+      @include media(lg) {
+        color: #6683C2;
+      }
+    }
+  }
+  &_7 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-7_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-7_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    margin-right: 601px;
+    .reasons-info__number {
+      background-color: #F37E60;
+      @include media(lg) {
+        color: #F37E60;
+      }
+    }
+  }
+  &_8 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-8_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-8_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    .reasons-info__number {
+      background-color: #68CCEA;
+      @include media(lg) {
+        color: #68CCEA;
+      }
+    }
+  }
+  &_9 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-9_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-9_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    margin-right: 329px;
+    .reasons-info__number {
+      background-color: #7FCBB4;
+      @include media(lg) {
+        color: #7FCBB4;
+      }
+    }
+  }
+  &_10 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-10_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-10_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    margin-right: 400px;
+    .reasons-info__number {
+      background-color: #F2C45B;
+      @include media(lg) {
+        color: #F2C45B;
+      }
+    }
+  }
+  &_11 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-11_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-11_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    margin-right: 80px;
+    .reasons-info__number {
+      background-color: #6683C2;
+      @include media(lg) {
+        color: #6683C2;
+      }
+    }
+  }
+  &_12 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-12_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-12_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    .reasons-info__number {
+      background-color: #7FCBB4;
+      @include media(lg) {
+        color: #7FCBB4;
+      }
+    }
+  }
+  &_13 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-13_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-13_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    .reasons-info__number {
+      background-color: #68CCEA;
+      @include media(lg) {
+        color: #68CCEA;
+      }
+    }
+  }
+  &_14 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-14_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-14_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    margin-left: 510px;
+    .reasons-info__number {
+      background-color: #6683C2;
+      @include media(lg) {
+        color: #6683C2;
+      }
+    }
+  }
+  &_15 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-15_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-15_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    margin-left: 570px;
+    .reasons-info__number {
+      background-color: #F2C45B;
+      @include media(lg) {
+        color: #F2C45B;
+      }
+    }
+  }
+  &_16 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-16_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-16_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    margin-left: 630px;
+    .reasons-info__number {
+      background-color: #F37E60;
+      @include media(lg) {
+        color: #F37E60;
+      }
+    }
+  }
+  &_17 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-17_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-17_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    margin-left: 730px;
+    .reasons-info__number {
+      background-color: #7FCBB4;
+      @include media(lg) {
+        color: #7FCBB4;
+      }
+    }
+  }
+  &_18 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-18_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-18_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    .reasons-info__number {
+      background-color: #6683C2;
+      @include media(lg) {
+        color: #6683C2;
+      }
+    }
+  }
+  &_19 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-19_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-19_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    .reasons-info__number {
+      background-color: #F37E60;
+      @include media(lg) {
+        color: #F37E60;
+      }
+    }
+  }
+  &_20 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-20_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-20_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    .reasons-info__number {
+      background-color: #F2C45B;
+      @include media(lg) {
+        color: #F2C45B;
+      }
+    }
+  }
+  &_21 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-21_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-21_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    width: 536px;
+    .reasons-info__number {
+      background-color: #68CCEA;
+      @include media(lg) {
+        color: #68CCEA;
+      }
+    }
+  }
+  &_22 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-22_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-22_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    .reasons-info__number {
+      background-color: #7FCBB4;
+      @include media(lg) {
+        color: #7FCBB4;
+      }
+    }
+  }
+  &_23 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-23_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-23_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    .reasons-info__number {
+      background-color: #6683C2;
+      @include media(lg) {
+        color: #6683C2;
+      }
+    }
+  }
+  &_24 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-24_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-24_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    .reasons-info__number {
+      background-color: #F37E60;
+      @include media(lg) {
+        color: #F37E60;
+      }
+    }
+  }
+  &_25 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-25_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-25_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    .reasons-info__number {
+      background-color: #F2C45B;
+      @include media(lg) {
+        color: #F2C45B;
+      }
+    }
+  }
+  &_26 {
+    @include media(lg) {
+      @include bg-icon('reasons-info/bg-26_tablet.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    @include media(xs) {
+      @include bg-icon('reasons-info/bg-26_mob.svg');
+      background-size: cover;
+      background-position: left;
+    }
+    .reasons-info__number {
+      background-color: #68CCEA;
+      @include media(lg) {
+        color: #68CCEA;
+      }
+    }
+  }
+  @include media(lg) {
+    margin: 0;
+    min-height: 60px;
+    width: 100%;
+    gap: 10px;
+    padding: 9px;
+    border-radius: 10px;
+  }
+  @include media(xs) {
+    max-width: 320px;
+  }
+  .reasons-info__number {
+    @include media(lg) {
+      background: transparent;
+      width: auto;
+      height: auto;
+    }
+  }
+}
+
+.reasons-info__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  font-weight: 600;
+  font-size: 24px;
+  border-radius: 50%;
+  color: #fff;
+  @include media(lg) {
+    font-size: 50px;
+    line-height: 36px;
+    border-radius: 0;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+  }
+}
+
+.reasons-info__text {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+  }
+}
+
+.reasons-info__item-circle {
+
+}
+

@@ -74,11 +74,48 @@
 }
 
 .fam-meaning__note {
+  position: relative;
   font-size: 18px;
   line-height: 23px;
   text-align: center;
   @include media(lg) {
     text-align: left;
+  }
+  &:hover .fam-meaning__note-hover {
+    opacity: 1;
+    pointer-events: all
+  }
+}
+
+.fam-meaning__note-hover {
+  border-radius: 43px;
+  padding: 12px 15px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, .06);
+  background: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  position: absolute;
+  z-index: 1;
+  top: -56px;
+  left: 0;
+  width: 375px;
+  pointer-events: none;
+  opacity: 0;
+  transition-duration: .3s;
+  transition-property: opacity;
+  @include media(lg) {
+    top: unset;
+    left: unset;
+    padding: 13px 16px;
+    bottom: -58px;
+    right: -62px
+  }
+  @include media(xs) {
+    width: 90vw;
+    right: -20px;
+    bottom: -56px;
+    font-size: 12px;
+    text-align: center;
   }
 }
 
