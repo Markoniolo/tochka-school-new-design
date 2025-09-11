@@ -392,11 +392,11 @@
   flex-direction: column;
   flex-wrap: wrap;
   gap: 36px 12px;
-  height: 520px;
+  height: 552px;
   @include media(lg) {
     gap: 20px;
     margin-top: 16px;
-    height: 480px;
+    height: 512px;
   }
   @include media(md) {
     height: 566px;
