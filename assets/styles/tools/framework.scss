@@ -285,3 +285,10 @@
     @include bg-icon('ege-cells/bg_mob.webp');
   }
 }
+
+.form-messages {
+  margin-top: 20px;
+  p {
+    margin-bottom: 20px;
+  }
+}
