@@ -1874,14 +1874,14 @@ function globalFormInit (form, func_name, type) {
       }
       if (news) {
         if (!news.checked) {
-          news.closest('label').classList.add('error-text')
-          news.classList.add('error')
+          // news.closest('label').classList.add('error-text')
+          // news.classList.add('error')
           isValid = false
         }
       }
       if (policy) {
         if (!policy.checked) {
-          policy.closest('label').classList.add('error-text')
+          // policy.closest('label').classList.add('error-text')
           isValid = false
         }
       }
