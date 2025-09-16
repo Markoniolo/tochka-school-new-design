@@ -27,32 +27,5 @@ mixin ege-cap(mod, title)
           .ege-cap__decor.ege-cap__decor_2
           .ege-cap__decor.ege-cap__decor_3
           .ege-cap__decor.ege-cap__decor_4
-        form.ege-cap__form(data-request-validate data-element="review-form")
-          .ege-cap__title Начните подготовку прямо сейчас. Оставьте заявку!
-          .ege-cap__inner
-            input.input_utm(name='utm' type='hidden' value='')
-            input(type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru/blog/voprosy-dlya-podrostkov-chto-polezno-i-interesno-obsudit-do-15-let")
-            input.ege-cap__input.input-white(placeholder='Имя' type='text' name='name')
-            input.ege-cap__input.input-white(placeholder='Телефон' type='tel' required data-element='input-phone-intl' name='phone')
-            input(name='tel' type='hidden' required data-element='input-phone-hidden')
-            button.ege-cap__submit.btn-orange.btn-warning Оставить заявку
-          .ege-cap__labels
-            label.ege-cap__label.checkbox-white-label
-              input.ege-cap__checkbox.checkbox-white-input(name='policy' type='checkbox')
-              .ege-cap__checkbox-view.checkbox-white-input-view
-              .ege-cap__checkbox-text.checkbox-white-text
-                | Даю
-                |
-                a(href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target='_blank') Согласие
-                |
-                | на обработку персональных
-                | данных в соответствии с
-                |
-                a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf' target='_blank') Политикой
-            label.ege-cap__label.checkbox-white-label
-              input.ege-cap__checkbox.checkbox-white-input(name='news' type='checkbox')
-              .ege-cap__checkbox-view.checkbox-white-input-view
-              .ege-cap__checkbox-text.checkbox-white-text
-                | Согласен на
-                |
-                a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf' target='_blank') получение рекламы
+        include ./ege-cap__form
+        +ege-cap__form('Начните подготовку прямо сейчас. Оставьте заявку!')

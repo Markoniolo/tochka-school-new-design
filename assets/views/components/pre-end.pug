@@ -3,7 +3,7 @@ mixin pre-end(mod, text, button, id='pre-reg')
     .pre-end__cont.cont
       .pre-end__wrap
         each item in [1,2,3,4,5]
-          .pre-end__decor(class=`pre-end__decor_${item}`)
+          .pre-end__decor(class=`pre-end__decor_${item} circle-animation-${item}` data-animate-on-scroll)
         .pre-end__area
           h2.pre-end__caption.pre-caption Страница подошла к концу :)
           p.pre-end__text!= text

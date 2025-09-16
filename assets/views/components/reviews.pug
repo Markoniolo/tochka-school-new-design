@@ -14,7 +14,7 @@ mixin reviews(mod, title='Говорят ученики и&nbsp;родители
         .reviews__nav
           button.reviews__nav-btn.reviews__nav-btn_prev
           button.reviews__nav-btn.reviews__nav-btn_next
-      .reviews__slider
+      .reviews__slider.fade-left-animation-200px(data-animate-on-scroll)
         .swiper-wrapper
           each item in [1,2,3]
             .reviews__slide.swiper-slide

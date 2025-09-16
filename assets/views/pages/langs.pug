@@ -1,0 +1,20 @@
+extends ../components/_layout/layout
+
+block head
+  +title('Ин. Яз')
+
+block body
+  include ../components/langs-cap
+  include ../components/langs-lessons
+  include ../components/langs-teachers
+  include ../components/langs-purpose
+  include ../components/langs-how
+  include ../components/langs-tile
+  include ../components/langs-consult
+  include ../components/faq
+  +faq
+  include ../components/reviews
+  +reviews
+  include ../components/pre-end
+  +pre-end('course','Время принять решение: оставить всё как есть или начать обучение, получить твёрдые знания и отличные оценки.',
+    'Начать обучение','langs-tile')

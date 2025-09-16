@@ -1,0 +1,59 @@
+-
+  const familyTeachersList = [
+    'Победитель конкурса «Лучшие учителя России» в Тверской области 2024',
+    'Учитель года Твери 2023',
+    'Учитель года Тверской области 2023',
+    'Финалист заключительного этапа Всероссийского конкурса «Учитель года России» 2023',
+    'Благодарность Губернатора Тверской области «За значительный личный вклад в развитие системы образования в Тверской области, а также повышение социальной значимости и престижа профессий сферы образования» 2023 г ',
+    'Почетная грамота Управления образования Администрации города Твери « За высокие результаты педагогического труда, методическое мастерство и профессионализм» 2023 г',
+    'Педагогический стаж ー 5 лет',
+  ]
+  const familyTeachersWrapper = [
+    { name: 'Екатерина Александровна Горошенкина', background: '#d4e2ff' },
+    { name: 'Анна Юрьевна', background: '#b3e4d5' },
+    { name: 'Галина Валерьевна', background: '#f6dca0' },
+    { name: 'Елена Юрьевна', background: '#d4e2ff' },
+    { name: 'Екатерина Александровна Горошенкина', background: '#b3e4d5' },
+    { name: 'Анна Юрьевна', background: '#f6dca0' },
+  ]
+
+.langs-teachers
+  .cont
+    .langs-teachers__wrap
+      h2.langs-teachers__caption Учителя – мастера своего&nbsp;дела
+      p.langs-teachers__text.
+        Многие из них имеют многолетний опыт общения с носителями языка, опыт работы и жизни в тех странах,
+        язык которых преподают. Знают своё дело не по учебникам и увлекают с первого урока.
+      each item in [1,2,3]
+        .langs-teachers__circle(class=`langs-teachers__circle_${item} circle-animation-${item}` data-animate-on-scroll)
+      .langs-teachers__slider
+        .langs-teachers__wrapper.swiper-wrapper
+          each item, index in familyTeachersWrapper
+            .langs-teachers__slide.swiper-slide
+              .langs-teachers__area
+                picture.langs-teachers__picture
+                  img.langs-teachers__image(src=staticImg('teacher/teacher.png') alt='')
+                .langs-teachers__inner
+                  .langs-teachers__box
+                    .langs-teachers__name!= item.name
+                    .langs-teachers__tags
+                      .langs-teachers__tag
+                        | Английский
+                        img.langs-teachers__tag-icon(src=staticImg('langs-tile/ic_flag_2.svg') alt='')
+                    .langs-teachers__list
+                      if index === 0
+                        ul
+                          .langs-teachers__item 1
+                          .langs-teachers__item 2
+                          .langs-teachers__item 3
+                      else
+                        ul
+                          each item in familyTeachersList
+                            .langs-teachers__item= item
+                    button.langs-teachers__more Показать полностью
+        .langs-teachers__bottom
+          .langs-teachers__scrollbar
+          .langs-teachers__nav
+            button.langs-teachers__nav-btn.langs-teachers__nav-btn_prev
+            button.langs-teachers__nav-btn.langs-teachers__nav-btn_next
+        .langs-teachers__pagination

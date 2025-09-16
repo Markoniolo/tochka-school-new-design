@@ -1,0 +1,29 @@
+-
+  const langsPurposeList = [
+    {
+      title: 'Начать изучение иностранного языка с&nbsp;нуля',
+      text: 'Без предварительной подготовки. Отлично подойдёт как самым маленьким слушателям, так и тем, кто хочет расширить кругозор в подростковом и даже зрелом возрасте.'
+    },
+    {
+      title: 'Стать «продвинутым пользователем»',
+      text: 'Продвинуться в произношении, грамматике, бегло говорить и думать на иностранном языке, без перевода на русский и обратно.'
+    },
+    {
+      title: 'Подготовиться к ОГЭ и&nbsp;ЕГЭ',
+      text: 'Знаем всё об экзаменах, чтобы подготовить на высокий балл. Определим стартовый уровень и будем идти к цели шаг за шагом по выверенной программе.'
+    },
+  ]
+
+.langs-purpose
+  .cont
+    h2.langs-purpose__caption С нами Вы можете:
+    .langs-purpose__wrap
+      each circle in [1,2,3,4]
+        .langs-purpose__circle(class=`langs-purpose__circle_${circle} circle-animation-${circle}` data-animate-on-scroll)
+      each blur in [1,2,3,4,5]
+        .langs-purpose__blur(class=`langs-purpose__blur_${blur}`)
+      ul.langs-purpose__list
+        each item in langsPurposeList
+          li.langs-purpose__item
+            .langs-purpose__title!= item.title
+            .langs-purpose__text= item.text

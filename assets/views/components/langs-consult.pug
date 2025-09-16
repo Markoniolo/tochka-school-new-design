@@ -1,0 +1,13 @@
+.langs-consult
+  .cont
+    .langs-consult__wrap
+      each circle in [1,2,3]
+        .langs-consult__circle(class=`langs-consult__circle_${circle} circle-animation-${circle}` data-animate-on-scroll)
+      .langs-consult__caption Не знаете какой курс выбрать?
+      .langs-consult__title Оставьте заявку на консультацию
+      .langs-consult__text Поможем подобрать занятия исходя из возраста и увлечений ребёнка.
+      picture.langs-consult__picture
+        source(srcset=staticImg(`langs-consult/decor_mob.svg`) media="(max-width: 743px)")
+        source(srcset=staticImg(`langs-consult/decor_tablet.svg`) media="(max-width: 1359px)")
+        img.langs-consult__image(src=staticImg('langs-consult/decor.svg') alt='')
+      a.langs-consult__button.btn-orange(href='#modal-order-new' data-fancybox data-options='{"touch": false}') Оставить заявку

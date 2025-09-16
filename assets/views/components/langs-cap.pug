@@ -1,0 +1,14 @@
+.langs-cap
+  .cont
+    .langs-cap__wrap
+      .langs-cap__area
+        h1.langs-cap__title Онлайн-уроки иностранных языков с учителями уровня носителя
+        ul.langs-cap__list
+          each item in ['повышение успеваемости','подготовка к ОГЭ и ЕГЭ','погружение в культуру']
+            li.langs-cap__item= item
+        a.langs-cap__button(href='#langs-tile' data-role="scroll-to-anchor") Выбрать курс
+        each item, index in ['png','png','svg','png','svg']
+          .langs-cap__decor-box(class=`langs-cap__decor-box_${index+1} circle-animation-${index+1}` data-animate-on-scroll)
+            img.langs-cap__decor(src=staticImg(`langs-cap/decor-${index+1}.${item}`) alt='')
+      include ./ege-cap__form
+      +ege-cap__form('Поможем с выбором курсаs')

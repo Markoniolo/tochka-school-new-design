@@ -1,0 +1,474 @@
+.langs-teachers {
+  padding-bottom: 80px;
+  background: #FFFFFF;
+  @include media(lg) {
+    background: transparent;
+    padding-bottom: 36px;
+  }
+}
+
+.langs-teachers__wrap {
+  position: relative;
+  padding-top: 74px;
+  @include media(lg) {
+    padding-top: 36px;
+  }
+}
+
+.langs-teachers__caption {
+  margin-bottom: 44px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 121%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 25px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+}
+
+.langs-teachers__text {
+  margin-bottom: 20px;
+  max-width: 746px;
+  width: 100%;
+  font-size: 18px;
+  line-height: 23px;
+  @include media(lg) {
+    margin-bottom: 36px;
+    max-width: 489px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.langs-teachers__circle {
+  position: absolute;
+  border-radius: 50%;
+  @include media(lg) {
+    display: none;
+  }
+  &_1 {
+    top: 42px;
+    right: 160px;
+    width: 158px;
+    height: 158px;
+    background: #68CCEA;
+  }
+  &_2 {
+    top: 146px;
+    right: 105px;
+    width: 44px;
+    height: 44px;
+    background: #7fcbb4;
+  }
+  &_3 {
+    top: 214px;
+    right: 73px;
+    width: 100px;
+    height: 100px;
+    background: #f2c45b;
+  }
+}
+
+.langs-teachers__slider {
+  position: relative;
+  &::before {
+    @include media(xs) {
+      content: '';
+      @include bg-icon('icons/ic_scroll_cursor_hint.svg');
+      background-size: 31px 31px;
+      background-color: rgba(0, 0, 0, 0.04);
+      width: 51px;
+      height: 51px;
+      border-radius: 50%;
+      position: absolute;
+      z-index: 1;
+      top: -25px;
+      right: 0;
+      animation: family-program-scroll-hint 2s linear infinite;
+      transform: translateX(5px);
+      transition-property: opacity;
+      transition-duration: $transition-duration;
+    }
+  }
+  @keyframes family-program-scroll-hint {
+    0% {
+      transform: translateX(5px);
+    }
+    50% {
+      transform: translateX(-5px);
+    }
+    100% {
+      transform: translateX(5px);
+    }
+  }
+}
+
+.langs-teachers__wrapper {
+
+}
+
+.langs-teachers__slide {
+
+}
+
+.langs-teachers__area {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  @include media(xs) {
+    display: block;
+  }
+}
+
+.langs-teachers__picture {
+  position: relative;
+  z-index: 10;
+  width: 509px;
+  height: 566px;
+  flex-shrink: 0;
+  align-self: flex-end;
+  @include media(lg) {
+    width: 242px;
+    height: 270px;
+  }
+  @include media(xs) {
+    margin: 0 auto;
+    max-width: 299px;
+    width: 100%;
+    height: auto;
+  }
+  &::before {
+    content: '';
+    width: 464px;
+    height: 464px;
+    border-radius: 50%;
+    background-color: #F37E60;
+    position: absolute;
+    top: 58px;
+    left: 0;
+    @include media(lg) {
+      width: 220px;
+      height: 220px;
+      top: 28px;
+    }
+    @include media(xs) {
+      width: 273px;
+      height: 273px;
+      top: 34px;
+    }
+  }
+  &::after {
+    content: '';
+    width: 59px;
+    height: 59px;
+    border-radius: 50%;
+    background-color: #F2C45B;
+    position: absolute;
+    top: -20px;
+    right: 77px;
+    @include media(lg) {
+      width: 28px;
+      height: 28px;
+      top: 1px;
+      right: 37px;
+    }
+    @include media(xs) {
+      width: 41px;
+      height: 41px;
+      top: 1px;
+      right: 45px;
+    }
+  }
+}
+
+.langs-teachers__image {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  object-fit: contain;
+}
+
+.langs-teachers__inner {
+  padding-bottom: 138px;
+  flex-grow: 1;
+  @include media(lg) {
+    padding-bottom: 59px;
+  }
+  @include media(xs) {
+    padding-bottom: 0;
+  }
+}
+
+.langs-teachers__box {
+  border-radius: 20px;
+  margin-left: -212px;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+  padding: 30px 65px 40px 212px;
+  overflow: hidden;
+  min-height: 380px;
+  @include media(lg) {
+    border-radius: 10px;
+    margin-left: -66px;
+    padding: 25px 15px 20px 85px;
+    min-height: 323px;
+  }
+  @include media(xs) {
+    min-height: unset;
+    margin-left: 0;
+    padding: 25px 20px;
+  }
+  @include media(xxs) {
+    padding: 18px 10px;
+  }
+  &.hide {
+    position: relative;
+    &::before {
+      content: '';
+      background: linear-gradient(0deg, #fff 0%, #fff 50%, rgba(#fff, 0) 100%);
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      right: 65px;
+      width: 800px;
+      height: 134px;
+      @include media(lg) {
+        right: 0;
+        width: 850px;
+        height: 105px;
+      }
+      @include media(md) {
+        width: 450px;
+      }
+      @include media(xs) {
+        content: none;
+      }
+    }
+    .langs-teachers__list {
+      max-height: 150px;
+      @include media(xs) {
+        max-height: unset;
+      }
+    }
+    .langs-teachers__more {
+      display: inline-block;
+      @include media(xs) {
+        display: none;
+      }
+    }
+  }
+}
+
+.langs-teachers__name {
+  margin-bottom: 21px;
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 97%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 15px;
+    font-size: 18px;
+    line-height: 139%;
+  }
+  @include media(xs) {
+    text-align: center;
+  }
+  @include media(xxs) {
+    margin-bottom: 10px;
+  }
+}
+
+.langs-teachers__tags {
+  margin-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  @include media(lg) {
+    margin-bottom: 20px;
+  }
+  @include media(xs) {
+    margin-bottom: 25px;
+    justify-content: center;
+  }
+  @include media(xxs) {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+}
+
+.langs-teachers__tag {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 6px;
+  border-radius: 33px;
+  background: rgba(102, 131, 194, 0.08);
+  padding: 8px 40px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #6683c2;
+  font-weight: 500;
+  @include media(lg) {
+    padding: 8px 20px;
+  }
+}
+
+.langs-teachers__tag-icon {
+  width: 15px;
+  flex-shrink: 0;
+}
+
+.langs-teachers__list {
+  @include media(xs) {
+    max-height: 100%;
+  }
+}
+
+.langs-teachers__list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  @include media(lg) {
+    gap: 20px;
+  }
+  @include media(xxs) {
+    gap: 8px;
+  }
+}
+
+.langs-teachers__item {
+  position: relative;
+  font-size: 16px;
+  line-height: 20px;
+  padding-left: 31px;
+  @include media(lg) {
+    padding-left: 24px;
+    font-size: 15px;
+    line-height: 123%;
+  }
+  @include media(xxs) {
+    padding-left: 22px;
+  }
+  &::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    @include bg-icon('icons/ic_point_orange.svg');
+    @include media(lg) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.langs-teachers__more {
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+  font-size: 16px;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #6683c2;
+  display: none;
+  @include media(lg) {
+    margin-top: 10px;
+  }
+  @include media(xs) {
+    display: none;
+  }
+  &.active {
+    display: inline-block;
+  }
+}
+
+.langs-teachers__bottom {
+  position: relative;
+  z-index: 5;
+  height: 98px;
+  margin-top: -98px;
+  padding-bottom: 40px;
+  max-width: 835px;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  @include media(lg) {
+    max-width: 415px;
+    height: 47px;
+    padding-bottom: 10px;
+    margin-top: -47px;
+  }
+  @include media(xs) {
+    display: none;
+  }
+}
+
+.langs-teachers__scrollbar {
+  margin-right: 40px;
+  flex-grow: 1;
+  height: 5px;
+  background: #ECEFF4;
+  @include media(lg) {
+    margin-right: 25px;
+  }
+  .swiper-scrollbar-drag {
+    background: #f37e60;
+  }
+}
+
+.langs-teachers__nav {
+  display: flex;
+  gap: 0 18px;
+  @include media(lg) {
+    gap: 0 12px;
+  }
+}
+
+.langs-teachers__nav-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: #f37e60;
+  @include bg-icon('icons/ic_arrow_slider_white.svg');
+  background-size: auto;
+  opacity: 0.5;
+  transition-property: opacity;
+  transition-duration: $transition-duration;
+  @include media(lg) {
+    width: 37px;
+    height: 37px;
+    background-size: 24px 24px;
+  }
+  &:hover {
+    opacity: 1;
+  }
+  &:disabled {
+    opacity: 0.25;
+    pointer-events: none;
+  }
+}
+
+.langs-teachers__nav-btn_prev {
+  transform: rotate(180deg);
+}
+
+.langs-teachers__pagination {
+  display: none;
+  @include media(xs) {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .swiper-pagination-bullet {
+    background-color: #F37E60;
+    opacity: 0.5;
+  }
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+}

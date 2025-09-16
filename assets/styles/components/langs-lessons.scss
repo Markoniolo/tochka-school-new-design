@@ -1,0 +1,215 @@
+.langs-lessons {
+  margin-bottom: 80px;
+  @include media(lg) {
+    margin-bottom: 40px;
+  }
+}
+
+.langs-lessons__caption {
+  position: relative;
+  margin-bottom: 45px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 25px;
+    font-size: 25px;
+  }
+  @include media(xs) {
+    max-width: 300px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -42px;
+    left: 372px;
+    background: rgba(206, 17, 36, 0.17);
+    filter: blur(106px);
+    width: 216px;
+    height: 216px;
+    @include media(lg) {
+      content: none;
+    }
+  }
+}
+
+.langs-lessons__tile {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px;
+  @include media(lg) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+  @include media(xs) {
+    gap: 20px;
+  }
+}
+
+.langs-lessons__box {
+  position: relative;
+  overflow: hidden;
+  padding: 25px 30px;
+  border-radius: 20px;
+  @include media(lg) {
+    border-radius: 10px;
+    width: calc(50% - 13px);
+    padding: 17px 20px;
+  }
+  @include media(xs) {
+    width: 100%;
+  }
+  .langs-lessons__picture {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  &_1 {
+    background: linear-gradient(156deg, #a1e9ff 0%, #68ccea 100%);
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    @include media(lg) {
+      background: linear-gradient(157deg, #a1e9ff 0%, #68ccea 100%);
+    }
+    .langs-lessons__picture {
+      width: 302px;
+      height: 206px;
+      @include media(lg) {
+        width: 152px;
+        height: 131px;
+      }
+      @include media(xs) {
+        width: 152px;
+        height: 131px;
+      }
+    }
+  }
+  &_2 {
+    background: linear-gradient(152deg, #ffe099 0%, #f2c45b 100%);
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    @include media(lg) {
+      background: linear-gradient(148deg, #ffe099 0%, #f2c45b 100%);
+    }
+    .langs-lessons__picture {
+      width: 189px;
+      height: 157px;
+      @include media(lg) {
+        width: 111px;
+        height: 131px;
+      }
+      @include media(xs) {
+        width: 111px;
+        height: 112px;
+      }
+    }
+    .langs-lessons__text {
+      max-width: 177px;
+      width: 100%;
+      @include media(lg) {
+        max-width: 194px;
+      }
+      @include media(xs) {
+        max-width: 194px;
+      }
+    }
+  }
+  &_3 {
+    background: linear-gradient(90deg, #a2e2ce 0%, #7fcbb4 100%);
+    grid-column: 3 / 5;
+    grid-row: 1 / 2;
+    @include media(lg) {
+      padding-bottom: 210px;
+      background: linear-gradient(145deg, #a2e2ce 0%, #7fcbb4 100%);
+    }
+    .langs-lessons__picture {
+      width: 221px;
+      height: 130px;
+      @include media(lg) {
+        width: 320px;
+        height: 198px;
+      }
+      @include media(xs) {
+        width: 300px;
+        height: 188px;
+      }
+    }
+    .langs-lessons__text {
+      max-width: 352px;
+      width: 100%;
+      @include media(lg) {
+        max-width: 100%;
+      }
+    }
+  }
+  &_4 {
+    background: linear-gradient(90deg, #abbde4 0%, #6683c2 100%);
+    grid-column: 3 / 5;
+    grid-row: 2 / 3;
+    @include media(lg) {
+      padding-bottom: 228px;
+      background: linear-gradient(134deg, #abbde4 0%, #6683c2 100%);
+    }
+    .langs-lessons__picture {
+      width: 221px;
+      height: 130px;
+      @include media(lg) {
+        width: 320px;
+        height: 215px;
+      }
+      @include media(xs) {
+        width: 300px;
+        height: 215px;
+      }
+    }
+    .langs-lessons__text {
+      max-width: 417px;
+      width: 100%;
+      @include media(lg) {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.langs-lessons__title {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 104%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 12px;
+    font-size: 16px;
+  }
+}
+
+.langs-lessons__list {
+  padding-left: 24px;
+  @include media(lg) {
+    padding-left: 20px;
+  }
+}
+
+.langs-lessons__item {
+  list-style-type: disc;
+  font-size: 16px;
+  line-height: 137%;
+  @include media(lg) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.langs-lessons__text {
+  font-size: 16px;
+  line-height: 137%;
+  @include media(lg) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}

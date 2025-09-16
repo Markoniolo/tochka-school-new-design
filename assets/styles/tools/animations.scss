@@ -1,65 +1,196 @@
-.circle-move-1 {
-  animation: 10s circle-move-1 infinite;
-  @keyframes circle-move-1 {
-    0% {
-      transform: translate3d(0%, 0%, 0);
-    }
-    25% {
-      transform: translate3d(-10%, 15%, 0);
-    }
-    50% {
-      transform: translate3d(10%, -10%, 0);
-    }
-    75% {
-      transform: translate3d(5%, 10%, 0);
-    }
-    100% {
-      transform: translate3d(0%, 0%, 0);
+@keyframes circle-scale {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.circle-animation-1 {
+  transform: scale(0);
+  &.active {
+    animation: circle-scale 2s forwards, circle-move-1 10s infinite 2s;
+    @keyframes circle-move-1 {
+      0% {
+        transform: translate3d(0%, 0%, 0);
+      }
+      25% {
+        transform: translate3d(-5%, 10%, 0);
+      }
+      50% {
+        transform: translate3d(5%, -5%, 0);
+      }
+      75% {
+        transform: translate3d(0%, 5%, 0);
+      }
+      100% {
+        transform: translate3d(0%, 0%, 0);
+      }
     }
   }
 }
 
-.circle-move-2 {
-  animation: 10s circle-move-2 infinite;
-  @keyframes circle-move-2 {
-    0% {
-      transform: translate3d(0%, 0%, 0);
-    }
-    20% {
-      transform: translate3d(25%, 5%, 0);
-    }
-    40% {
-      transform: translate3d(-10%, -15%, 0);
-    }
-    60% {
-      transform: translate3d(5%, 5%, 0);
-    }
-    80% {
-      transform: translate3d(-10%, 20%, 0);
-    }
-    100% {
-      transform: translate3d(0%, 0%, 0);
+.circle-animation-2 {
+  transform: scale(0);
+  &.active {
+    animation: circle-scale 2s forwards 0.25s, circle-move-2 10s infinite 2.25s;
+    @keyframes circle-move-2 {
+      0% {
+        transform: translate3d(0%, 0%, 0);
+      }
+      20% {
+        transform: translate3d(20%, 0%, 0);
+      }
+      40% {
+        transform: translate3d(-5%, -10%, 0);
+      }
+      60% {
+        transform: translate3d(0%, 0%, 0);
+      }
+      80% {
+        transform: translate3d(-5%, 15%, 0);
+      }
+      100% {
+        transform: translate3d(0%, 0%, 0);
+      }
     }
   }
 }
 
-.circle-move-3 {
-  animation: 10s circle-move-3 infinite;
-  @keyframes circle-move-3 {
-    0% {
-      transform: translate3d(0%, 0%, 0);
+.circle-animation-3 {
+  transform: scale(0);
+  &.active {
+    animation: circle-scale 2s forwards 0.5s, circle-move-3 10s infinite 2.5s;
+    @keyframes circle-move-3 {
+      0% {
+        transform: translate3d(0%, 0%, 0);
+      }
+      30% {
+        transform: translate3d(15%, -10%, 0);
+      }
+      50% {
+        transform: translate3d(0%, 5%, 0);
+      }
+      70% {
+        transform: translate3d(-5%, -5%, 0);
+      }
+      100% {
+        transform: translate3d(0%, 0%, 0);
+      }
     }
-    30% {
-      transform: translate3d(20%, -15%, 0);
+  }
+}
+
+.circle-animation-4 {
+  transform: scale(0);
+  &.active {
+    animation: circle-scale 2s forwards 0.75s, circle-move-4 10s infinite 2.75s;
+    @keyframes circle-move-4 {
+      0% {
+        transform: translate3d(0%, 0%, 0);
+      }
+      30% {
+        transform: translate3d(0%, 5%, 0);
+      }
+      50% {
+        transform: translate3d(15%, -10%, 0);
+      }
+      70% {
+        transform: translate3d(-5%, -5%, 0);
+      }
+      100% {
+        transform: translate3d(0%, 0%, 0);
+      }
     }
-    50% {
-      transform: translate3d(5%, 10%, 0);
+  }
+}
+
+.circle-animation-5 {
+  transform: scale(0);
+  &.active {
+    animation: circle-scale 2s forwards 1s, circle-move-5 10s infinite 3s;
+    @keyframes circle-move-5 {
+      0% {
+        transform: translate3d(0%, 0%, 0);
+      }
+      20% {
+        transform: translate3d(-10%, -15%, 0);
+      }
+      40% {
+        transform: translate3d(25%, 5%, 0);
+      }
+      60% {
+        transform: translate3d(5%, 5%, 0);
+      }
+      80% {
+        transform: translate3d(-10%, 20%, 0);
+      }
+      100% {
+        transform: translate3d(0%, 0%, 0);
+      }
     }
-    70% {
-      transform: translate3d(-5%, -5%, 0);
-    }
-    100% {
-      transform: translate3d(0%, 0%, 0);
-    }
+  }
+}
+
+@keyframes fade-left-animation {
+  0% {
+    opacity: 0;
+    transform: translateX(90%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-left-animation-1 {
+  opacity: 0;
+  transform: translateX(90%);
+  &.active {
+    animation: fade-left-animation 1s forwards;
+  }
+}
+
+.fade-left-animation-2 {
+  opacity: 0;
+  transform: translateX(100%);
+  &.active {
+    animation: fade-left-animation 1s forwards 0.25s;
+  }
+}
+
+.fade-left-animation-3 {
+  opacity: 0;
+  transform: translateX(100%);
+  &.active {
+    animation: fade-left-animation 1s forwards 0.5s;
+  }
+}
+
+.fade-left-animation-4 {
+  opacity: 0;
+  transform: translateX(100%);
+  &.active {
+    animation: fade-left-animation 1s forwards 0.75s;
+  }
+}
+
+.fade-left-animation-200px {
+  opacity: 0;
+  transform: translateX(200px);
+  &.active {
+    animation: fade-left-animation-200px 1s forwards;
+  }
+}
+
+@keyframes fade-left-animation-200px {
+  0% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

@@ -1,0 +1,37 @@
+-
+  const langsLessonsTile = [
+    {
+      title: 'Используем все средства',
+      list: ['чтение','говорение','восприятие на слух','аудирование']
+    },
+    {
+      title: 'В современном формате',
+      text: 'Изучаем язык, на котором говорят носители прямо сейчас.'
+    },
+    {
+      title: 'В увлекательной форме',
+      text: 'Изучаем язык через фильмы, песни, игры, популярные видео.'
+    },
+    {
+      title: 'С погружением в культуру',
+      text: 'Чувствуем язык через изучение культурных особенностей и традиций страны изучаемого языка'
+    },
+  ]
+
+.langs-lessons
+  .cont
+    h2.langs-lessons__caption Уроки, на которые хочется вернуться
+    .langs-lessons__tile
+      each box, index in langsLessonsTile
+        .langs-lessons__box(class=`langs-lessons__box_${index+1}`)
+          picture.langs-lessons__picture(class=`fade-left-animation-${index+1}` data-animate-on-scroll)
+            source(srcset=staticImg(`langs-lessons/decor-${index+1}_mob.svg`) media="(max-width: 743px)")
+            source(srcset=staticImg(`langs-lessons/decor-${index+1}_tablet.svg`) media="(max-width: 1359px)")
+            img.langs-lessons__image(src=staticImg(`langs-lessons/decor-${index+1}.svg`) alt='')
+          .langs-lessons__title= box.title
+          if box.list
+            ul.langs-lessons__list
+              each item in box.list
+                li.langs-lessons__item= item
+          if box.text
+            .langs-lessons__text= box.text
