@@ -512,39 +512,65 @@ function allCoursesInit () {
 
 const animateCounters = document.querySelectorAll('.animate-counter')
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      animateCounter(entry.target, 0, entry.target.getAttribute('data-animate-counter-end'), 1000)
-      observer.unobserve(entry.target)
-    }
+if (animateCounters.length) animateCountersInit()
+
+function animateCountersInit () {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target, 0, entry.target.getAttribute('data-animate-counter-end'), 1000)
+        observer.unobserve(entry.target)
+      }
+    })
+  }, {
+    root: null,
+    scrollMargin : "0px 0px -150px 0px",
+    threshold: 1
   })
-}, {
-  root: null,
-  scrollMargin : "0px 0px -150px 0px",
-  threshold: 1
-})
 
-for (let i = 0; i < animateCounters.length; i++) {
-  animateCounterInit(animateCounters[i])
+  for (let i = 0; i < animateCounters.length; i++) {
+    animateCounterInit(animateCounters[i])
+  }
+
+  function animateCounterInit (counter) {
+    observer.observe(counter)
+  }
+
+  function animateCounter(element, startValue, endValue, duration) {
+    let currentValue = startValue
+    const increment = (endValue - startValue) / (duration / 10)
+    const toFixed = element.getAttribute('data-to-fixed')
+    const counterInterval = setInterval(() => {
+      currentValue += increment;
+      if ((increment > 0 && currentValue >= endValue) || (increment < 0 && currentValue <= endValue)) {
+        currentValue = endValue
+        clearInterval(counterInterval)
+      }
+      element.textContent = (+currentValue).toFixed(toFixed).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+    }, 10)
+  }
 }
 
-function animateCounterInit (counter) {
-  observer.observe(counter)
-}
+const animationsOnScroll = document.querySelectorAll('[data-animate-on-scroll]')
 
-function animateCounter(element, startValue, endValue, duration) {
-  let currentValue = startValue
-  const increment = (endValue - startValue) / (duration / 10)
-  const toFixed = element.getAttribute('data-to-fixed')
-  const counterInterval = setInterval(() => {
-    currentValue += increment;
-    if ((increment > 0 && currentValue >= endValue) || (increment < 0 && currentValue <= endValue)) {
-      currentValue = endValue
-      clearInterval(counterInterval)
-    }
-    element.textContent = (+currentValue).toFixed(toFixed).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
-  }, 10)
+if (animationsOnScroll.length) animationsOnScrollInit()
+
+function animationsOnScrollInit () {
+  gsap.registerPlugin(ScrollTrigger)
+
+  for (let i = 0; i < animationsOnScroll.length; i++) {
+   initGsapScrollTrigger(animationsOnScroll[i])
+  }
+
+  function initGsapScrollTrigger (node) {
+    gsap.to(node, {
+      scrollTrigger: {
+        trigger: node,
+        start: "top 95%",
+        onEnter: () => node.classList.add("active")
+      }
+    })
+  }
 }
 
 const articleSidebarDesc = document.querySelector('.article__sidebar_desc')
@@ -2311,6 +2337,238 @@ function itTileMoreInit (parent) {
     } else {
       btn.remove()
     }
+  }
+}
+
+const langsTeachersSlider = document.querySelector('.langs-teachers__slider')
+
+if (langsTeachersSlider) langsTeachersSliderInit()
+
+function langsTeachersSliderInit () {
+  let swiper
+  if (window.innerWidth >= 744) {
+    swiper = new Swiper(langsTeachersSlider, {
+      mousewheel: { forceToAxis: true },
+      slidesPerView: 'auto',
+      autoHeight: true,
+      spaceBetween: 500,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      a11y: false,
+      pagination: {
+        el: '.langs-teachers__pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        744: {
+          effect: 'fade',
+          navigation: {
+            nextEl: '.langs-teachers__nav-btn_next',
+            prevEl: '.langs-teachers__nav-btn_prev',
+          },
+          scrollbar: {
+            el: '.langs-teachers__scrollbar',
+            draggable: true,
+          },
+        }
+      }
+    })
+  } else {
+    swiper = new Swiper(langsTeachersSlider, {
+      mousewheel: { forceToAxis: true },
+      slidesPerView: 'auto',
+      autoHeight: true,
+      spaceBetween: 200,
+      fadeEffect: {
+        crossFade: true
+      },
+      a11y: false,
+      pagination: {
+        el: '.langs-teachers__pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        744: {
+          effect: 'fade',
+          navigation: {
+            nextEl: '.langs-teachers__nav-btn_next',
+            prevEl: '.langs-teachers__nav-btn_prev',
+          },
+          scrollbar: {
+            el: '.langs-teachers__scrollbar',
+            draggable: true,
+          },
+        }
+      }
+    })
+  }
+
+  const boxes = langsTeachersSlider.querySelectorAll('.langs-teachers__box')
+
+  for (let i = 0; i < boxes.length; i++) {
+    const list = boxes[i].querySelector('.langs-teachers__list')
+    if (list.clientHeight > 150) moreBtnInit(boxes[i])
+  }
+
+  function moreBtnInit (box) {
+    box.classList.add('hide')
+    const btn = box.querySelector('.langs-teachers__more')
+    btn.classList.add('active')
+    btn.addEventListener('click', toggleBox)
+
+    function toggleBox () {
+      if (box.classList.contains('hide')) {
+        box.classList.remove('hide')
+        btn.innerHTML = 'Свернуть'
+      } else {
+        box.classList.add('hide')
+        btn.innerHTML = 'Показать полностью'
+      }
+      swiper.update()
+    }
+  }
+}
+
+const langsTile = document.querySelector(".langs-tile")
+
+if (langsTile) langsTileInit()
+
+function langsTileInit () {
+  const stickyHeader = document.querySelector('.sticky-header')
+  const body = document.querySelector('body')
+
+  const config = { attributes: true, childList: true, characterData: true, subtree: true }
+  const subjectInputs = langsTile.querySelectorAll('.langs-tile__filter-input_subject')
+
+  const observer = new MutationObserver(function() {
+    moreBtnInit()
+    togglePrice()
+    buttonDataHrefLinksInit()
+    dataRedirect()
+  })
+
+  togglePrice()
+
+  function togglePrice () {
+    const items = langsTile.querySelectorAll(".all-courses__item")
+    items.forEach((item) => {
+      const toggle = item.querySelectorAll('.all-courses__radio-input')
+      if (!toggle.length) return
+      const boxes = item.querySelectorAll('.all-courses__box')
+      const textReplace = item.querySelector('.all-courses__info.text-replace')
+      let texts
+      if (textReplace) {
+        texts = textReplace.querySelectorAll('.all-courses__info-span')
+      }
+      for (let i = 0; i < toggle.length; i++) {
+        toggle[i].addEventListener('change', toggleBoxes)
+        if (texts) toggle[i].addEventListener('change', toggleTexts)
+      }
+
+      function toggleBoxes () {
+        for (let i = 0; i < boxes.length; i++) {
+          if (boxes[i].classList.contains('hide')) {
+            boxes[i].classList.remove('hide')
+          } else {
+            boxes[i].classList.add('hide')
+          }
+        }
+      }
+
+      function toggleTexts () {
+        for (let i = 0; i < texts.length; i++) {
+          if (texts[i].classList.contains('hide')) {
+            texts[i].classList.remove('hide')
+          } else {
+            texts[i].classList.add('hide')
+          }
+        }
+      }
+    })
+  }
+
+  buttonDataHrefLinksInit()
+
+  function buttonDataHrefLinksInit() {
+    const buttonDataHrefLinks = document.querySelectorAll('button[data-href-link]')
+    for (let i = 0; i < buttonDataHrefLinks.length; i++) {
+      buttonDataHrefLinks[i].addEventListener('click', function (e) {
+        e.preventDefault()
+        window.open(this.getAttribute('data-href-link'), '_blank')
+      })
+    }
+  }
+
+  dataRedirect()
+
+  function dataRedirect () {
+    const dataRedirectLinks = langsTile.querySelectorAll('[data-redirect]')
+
+    for (let i = 0; i < dataRedirectLinks.length; i++) {
+      dataRedirectLinks[i].addEventListener('click', dataRedirect)
+    }
+
+    function dataRedirect (e) {
+      e.preventDefault()
+      window.open(this.href, '_blank');
+    }
+  }
+
+
+  observer.observe(langsTile, config)
+
+  for (let i = 0; i < subjectInputs.length; i++) {
+    subjectInputs[i].addEventListener('change', updateFilter)
+  }
+
+  moreBtnInit()
+
+  function moreBtnInit () {
+    const moreBtn = langsTile.querySelector('.all-courses__more-button')
+    if (moreBtn) moreBtn.addEventListener('click', () => makeFiltration(moreBtn.getAttribute('data-v')))
+  }
+
+  function updateFilter () {
+    makeFiltration()
+  }
+
+  function makeFiltration (p_paginate = 1) {
+    let subjects_result = ''
+    try{
+      const subjects_items = langsTile.querySelectorAll('.langs-tile__filter-input_subject:checked')
+      subjects_items.forEach((item, i) => {
+        if (i > 0) subjects_result += '|'
+        subjects_result += item.value
+      })
+    }catch(e){}
+
+    let utm_f = langsTile.getAttribute('data-utm');
+    let promo_f = langsTile.getAttribute('data-promo');
+    let oge_ege_type = langsTile.getAttribute('data-oge-ege');
+
+    if(p_paginate === 1 ){
+      $('.filtered_elements').html("<div class='tile-loader'></div>");
+      $('.more_b').html("");
+    }
+
+    var obData = {
+      'subject': subjects_result,
+      'utm_t': utm_f,
+      'promo': promo_f,
+      'oge_ege_type': oge_ege_type,
+      'pagePaginate': p_paginate,
+    };
+    $.request('DirectionFunctions::onPaginateAllCourses', {
+      data: obData
+    })
+    // if (grade_first > 0){
+    //   let url = new URL(window.location.href)
+    //   url.searchParams.set('gr', grade_first);
+    //   history.replaceState(null, "", url.toString())
+    // }
+    // }
   }
 }
 
