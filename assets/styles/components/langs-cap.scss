@@ -8,6 +8,11 @@
     margin-bottom: 36px;
     background: linear-gradient(337deg, #f0f5ff 0%, #e6efff 100%);
   }
+  .ege-cap__form {
+    @include media(xs) {
+      max-width: 100%;
+    }
+  }
 }
 
 .langs-cap__wrap {

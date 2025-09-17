@@ -1,6 +1,7 @@
 .langs-teachers {
   padding-bottom: 80px;
   background: #FFFFFF;
+  overflow: hidden;
   @include media(lg) {
     background: transparent;
     padding-bottom: 36px;

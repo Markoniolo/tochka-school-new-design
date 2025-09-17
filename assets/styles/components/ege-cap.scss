@@ -551,6 +551,7 @@ a.ege-cap__tab {
 .ege-cap__labels {
   @include media(lg) {
     display: flex;
+    flex-wrap: wrap;
   }
   @include media(xs) {
     display: block;
@@ -562,7 +563,7 @@ a.ege-cap__tab {
   @include media(lg) {
     margin-left: 0;
   }
-  &:not(:last-child) {
+  &:not(:last-of-type) {
     margin-bottom: 20px;
     width: 292px;
     @include media(lg) {
@@ -576,7 +577,7 @@ a.ege-cap__tab {
       margin-bottom: 14px;
     }
   }
-  &:last-child {
+  &:last-of-type {
     @include media(lg) {
       width: 192px;
     }
