@@ -563,13 +563,23 @@ function animationsOnScrollInit () {
   }
 
   function initGsapScrollTrigger (node) {
-    gsap.to(node, {
-      scrollTrigger: {
-        trigger: node,
-        start: "top 95%",
-        onEnter: () => node.classList.add("active")
-      }
-    })
+    if (node.classList.contains('langs-cap__decor-box')) {
+      gsap.to(node, {
+        scrollTrigger: {
+          trigger: node,
+          start: "top 95%",
+          onEnter: () => node.classList.add("active")
+        }
+      })
+    } else {
+      gsap.to(node, {
+        scrollTrigger: {
+          trigger: node,
+          start: "top 80%",
+          onEnter: () => node.classList.add("active")
+        }
+      })
+    }
   }
 }
 
