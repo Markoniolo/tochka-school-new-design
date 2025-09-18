@@ -1,7 +1,24 @@
+-
+  const aboutCircles = [
+    'Резидент <br> «Сколково»',
+    'Онлайн-школа года по&nbsp;версии «GetCourse»',
+    'Школа №1 в рейтинге школ на внешних платформахпо версии «SmartRanking» (2024)',
+    'Аккредитованная <br> IT-компания',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+  ]
+
 .about
   .about__cont.cont
     h2.about__title Не просто школа. «Точка Знаний» — это:
-    picture.about__picture
-      source(srcset=staticImg(`about/about-1_mob.svg`) media="(max-width: 743px)")
-      source(srcset=staticImg(`about/about-1_tablet.svg`) media="(max-width: 1359px)")
-      img.about__image(src=staticImg('about/about-1.svg') alt='')
+    .about__wrap
+      each item, index in aboutCircles
+        .about__circle(class=`about__circle_${index+1}` data-animate-on-scroll)!= item

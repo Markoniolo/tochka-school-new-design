@@ -14,5 +14,6 @@ mixin trial-license(mod)
             span.trial-license__note Регистрационный номер лицензии: № Л035-01218-23/00650937
             span.trial-license__note Дата предоставления лицензии: 11 мая 2023
         .trial-license__wrap
-          each item in [1,2,3,4,5]
-            .trial-license__decor(class=`trial-license__decor_${item}`)
+          each item in [1,2,3,4]
+            .trial-license__decor(class=`trial-license__decor_${item} circle-animation-${item}` data-animate-on-scroll)
+          .trial-license__decor.trial-license__decor_5
