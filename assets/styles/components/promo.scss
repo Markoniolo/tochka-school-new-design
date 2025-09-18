@@ -33,6 +33,11 @@
   height: 151px;
   position: relative;
   cursor: pointer;
+  &:hover {
+    .promo__circle {
+      background-color: #FF9C83;
+    }
+  }
   @include media(lg) {
     width: 100px;
     height: 100px;
@@ -88,6 +93,8 @@
   background-color: #F37E60;
   border-radius: 50%;
   box-shadow: 0 8px 12px 0 rgba(243, 126, 96, 0.44);
+  transition-duration: $transition-duration;
+  transition-property: background-color;
   @include media(lg) {
     width: 100px;
     height: 100px;

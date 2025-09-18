@@ -1421,7 +1421,14 @@
     border: 1px solid rgba(102, 131, 194, 0.3);
     border-radius: 34px;
     font-size: 16px;
+    font-weight: 500;
     color: rgba(0, 0, 0, 0.75);
+    transition-property: border-color, color;
+    transition-duration: $transition-duration;
+    &:hover {
+      border: 1px solid $orange;
+      color: rgba(0, 0, 0, 1);
+    }
     @include media(lg) {
       font-size: 14px;
     }

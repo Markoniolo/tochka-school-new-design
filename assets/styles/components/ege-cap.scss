@@ -307,6 +307,8 @@ a.ege-cap__tab {
   display: inline-flex;
   align-items: center;
   gap: 5px;
+  transition-property: border-color;
+  transition-duration: $transition-duration;
   @include media(lg) {
     font-size: 15px;
     border: 1px solid #f37e60;
@@ -317,6 +319,7 @@ a.ege-cap__tab {
   }
   &:hover {
     color: #003c56;
+    border: 2px solid #6683c2;
   }
   &::after {
     content: '';

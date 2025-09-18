@@ -224,17 +224,20 @@
 
 .btn-border {
   font-size: 16px;
-  color: #fff;
-  border: 1px solid #fff;
+  color: rgba(#fff, .65);
+  border: 1px solid rgba(#fff, .65);
   border-radius: 34px;
   padding: 9px 20px 11px;
   display: inline-block;
   text-align: center;
+  transition-property: color, border;
+  transition-duration: $transition-duration;
   @include media(lg) {
     font-size: 15px;
   }
   &:hover {
     color: #fff;
+    border: 1px solid #fff;
   }
   &_arrow {
     display: flex;

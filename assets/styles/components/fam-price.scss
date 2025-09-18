@@ -60,6 +60,12 @@
   line-height: 100%;
   color: #23617c;
   cursor: pointer;
+  transition-property: background-color, color;
+  transition-duration: $transition-duration;
+  &:hover {
+    color: #fff;
+    background: #809edf;
+  }
   @include media(lg) {
     gap: 3px;
     width: 49px;

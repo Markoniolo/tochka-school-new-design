@@ -190,7 +190,7 @@ a.footer__lk {
 .footer__text {
   font-size: 16px;
   line-height: 132%;
-  color: rgba($white, .6);
+  color: $white;
   @include media(md) {
     font-size: 15px;
     line-height: 146%;
@@ -211,23 +211,34 @@ a.footer__lk {
     }
   }
   a {
-    color: rgba($white, .6);
+    color: rgba($white, .65);
     text-decoration: underline;
+    transition-duration: $transition-duration;
+    transition-property: color;
+    &:hover {
+      color: #FFFFFF;
+    }
   }
 }
 
-.footer__about {
+a.footer__about {
   margin-top: 10px;
   font-size: 16px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition-duration: $transition-duration;
+  transition-property: color;
+  color: rgba(#fff, .65);
   @include media(md) {
     margin-top: 15px;
     font-size: 15px;
   }
   @include media(xs) {
     margin-top: 10px;
+  }
+  &:hover {
+    color: #fff;
   }
   &::after {
     content: '';
@@ -267,6 +278,7 @@ a.footer__about {
 .footer__list {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 6px 0;
   @include media(md) {
     display: none;
@@ -281,9 +293,10 @@ a.footer__about {
   }
 }
 
-.footer__blog {
+a.footer__blog, .footer__blog {
   margin-top: 40px;
   padding: 10px 44px;
+  color: rgba(#fff, .65);
   @include media(md) {
     display: none;
     margin-top: 18px;
@@ -310,6 +323,15 @@ a.footer__about {
   }
   @include media(xs) {
     text-align: center;
+  }
+}
+
+a.footer__link {
+  color: rgba(255, 255, 255, 0.65);
+  transition-property: color;
+  transition-duration: $transition-duration;
+  &:hover {
+    color: rgba(255, 255, 255, 1);
   }
 }
 
@@ -359,8 +381,9 @@ a.footer__about {
   }
 }
 
-.footer__whatsapp {
+a.footer__whatsapp, .footer__whatsapp {
   margin-bottom: 25px;
+  color: rgba(#fff, .65);
   @include media(xs) {
     max-width: 236px;
     width: 100%;
@@ -368,7 +391,13 @@ a.footer__about {
   }
 }
 
-.footer__email {
+a.footer__email {
+  color: rgba(#fff, .65);
+  transition-property: color;
+  transition-duration: $transition-duration;
+  &:hover {
+    color: #fff;
+  }
   @include media(md) {
     font-size: 15px;
   }
@@ -423,7 +452,7 @@ a.footer__about {
   }
 }
 
-.footer__organization {
+a.footer__organization {
   max-width: 350px;
   width: 100%;
   text-decoration: underline;
@@ -431,6 +460,9 @@ a.footer__about {
   display: flex;
   align-items: center;
   font-size: 16px;
+  transition-duration: $transition-duration;
+  transition-property: color;
+  color: rgba(#fff, .65);
   @include media(md) {
     margin-bottom: 50px;
     font-size: 15px;
@@ -443,6 +475,9 @@ a.footer__about {
     justify-content: center;
     margin-bottom: 26px;
     position: static;
+  }
+  &:hover {
+    color: #fff;
   }
   &::before {
     content: '';
@@ -476,6 +511,12 @@ a.footer__about {
   }
   a {
     text-decoration: underline;
+    color: rgba(255, 255, 255, 0.65);
+    transition-duration: $transition-duration;
+    transition-property: color;
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+    }
   }
   br.mob {
     display: none;
@@ -531,6 +572,12 @@ a.footer__about {
 .footer__app-ru-store {
   width: 160px;
   height: 40px;
+  opacity: 0.65;
+  transition-property: opacity;
+  transition-duration: $transition-duration;
+  &:hover {
+    opacity: 1;
+  }
   @include bg-icon('footer/ru-store.svg');
   @include media(md) {
     width: 142px;
@@ -542,6 +589,12 @@ a.footer__about {
   width: 135px;
   height: 40px;
   @include bg-icon('footer/app-store.svg');
+  opacity: 0.65;
+  transition-property: opacity;
+  transition-duration: $transition-duration;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .footer__resident {

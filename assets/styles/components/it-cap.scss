@@ -182,6 +182,12 @@
   transition-property: left;
   transition-duration: 0.3s;
   transition-delay: 0.8s;
+  &:hover {
+    .it-cap__more {
+      color: #6683c2;
+      border: 1px solid #6683c2;
+    }
+  }
   &.swiper-slide-prev {
     left: -65px;
   }
@@ -217,7 +223,7 @@
   padding: 5px 10px;
   box-shadow: 0 4px 27px 0 rgba(0, 0, 0, 0.08);
   transition-duration: $transition-duration;
-  transition-property: color;
+  transition-property: color, border-color;
 }
 
 .it-cap__decor {

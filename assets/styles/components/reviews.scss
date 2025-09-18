@@ -31,6 +31,9 @@
     }
     .reviews__toggle {
       color: #FFCA42;
+      &:hover {
+        color: #FFCA42;
+      }
     }
     .reviews__nav-btn {
       background-color: rgba(#FFCA42, .5);
@@ -56,6 +59,9 @@
     }
     .reviews__toggle {
       color: #A0D76A;
+      &:hover {
+        color: #A0D76A;
+      }
     }
     .reviews__nav-btn {
       background-color: rgba(#a0d76a, .5);
@@ -184,6 +190,11 @@
   }
   &_video {
     cursor: pointer;
+    &:hover {
+      .reviews__image {
+        transform: scale(1.05);
+      }
+    }
   }
 }
 
@@ -206,6 +217,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition-duration: $transition-duration;
+  transition-property: transform;
 }
 
 .reviews__video {
@@ -316,6 +329,11 @@
   text-decoration: underline;
   text-decoration-skip-ink: none;
   color: #6683c2;
+  transition-duration: $transition-duration;
+  transition-property: color;
+  &:hover {
+    color: #809edf;
+  }
 }
 
 .reviews__scrollbar {

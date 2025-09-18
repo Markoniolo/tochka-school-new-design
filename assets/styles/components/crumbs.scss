@@ -82,7 +82,7 @@ a.crumbs__item {
   transition-duration: $transition-duration;
   transition-property: color;
   &:hover {
-    color: rgba(#000, 1);
+    color: #6683c2;
   }
   &::before {
     opacity: 0.6;

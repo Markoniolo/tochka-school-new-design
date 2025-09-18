@@ -87,12 +87,17 @@
   margin-bottom: 22px;
   border-radius: 34px;
   padding: 17px 30px 18px;
+  border: 1px solid #fff;
   box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
   background: #fff;
   font-size: 16px;
   line-height: 100%;
   width: 100%;
-  border: none;
+  transition-duration: $transition-duration;
+  transition-property: border-color;
+  &:focus, &:hover {
+    border: 1px solid $orange;
+  }
   @include media(lg) {
     margin-bottom: 15px;
     font-size: 15px;
@@ -318,7 +323,7 @@
     margin-bottom: 16px;
   }
   &:hover {
-    background: #f37e60;
+    background: #FF9C83;
     border: none;
     color: #fff;
   }
@@ -329,6 +334,11 @@
   align-items: flex-start;
   cursor: pointer;
   margin-left: 12px;
+  &:hover {
+    .modal-order-new__checkbox-view {
+      border: 1px solid $orange;
+    }
+  }
   @include media(lg) {
     margin-left: 2px;
   }
@@ -364,6 +374,8 @@
   width: 15px;
   height: 15px;
   flex-shrink: 0;
+  transition-duration: $transition-duration;
+  transition-property: border-color;
   @include media(xxs) {
     margin-right: 10px;
   }

@@ -239,12 +239,18 @@
     color: #FFFFFF;
     margin-left: 28px;
     padding: 14px 17px 15px;
+    transition-property: background-color;
+    &:hover {
+      color: #FFFFFF;
+    }
     @include media(md) {
       margin-left: 0;
     }
   }
   &_menu {
+    position: relative;
     margin-left: -74px;
+    padding-left: 32px;
     display: flex;
     align-items: center;
     @include media(md) {
@@ -253,26 +259,60 @@
     }
     @include media(xs) {
       margin-left: 0;
+      padding-left: 24px;
+    }
+    @include media-up(xl) {
+      &:hover {
+        &::before {
+          opacity: 0;
+        }
+        &::after {
+          opacity: 1;
+        }
+        span {
+          color: #6683c2;
+        }
+      }
     }
     span {
       font-weight: 500;
+      transition-property: color;
+      transition-duration: $transition-duration;
       @include media(xs) {
         display: none;
       }
     }
-    &::before {
+    &::before, &::after {
       content: '';
-      flex-shrink: 0;
-      margin-right: 12px;
+      position: absolute;
+      top: 50%;
+      left: 0;
       width: 20px;
       height: 14px;
-      @include bg-icon('icons/ic_burger.svg');
+      transform: translateY(-50%);
+      transition-duration: $transition-duration;
+      transition-property: opacity;
       @include media(xs) {
-        margin-right: 0;
         width: 24px;
         height: 17px;
       }
     }
+    &::before {
+      opacity: 1;
+      @include bg-icon('icons/ic_burger.svg');
+    }
+    &::after {
+      opacity: 0;
+      @include bg-icon('icons/ic_burger_blue.svg');
+    }
+  }
+}
+
+a.header__nav-item {
+  transition-property: color;
+  transition-duration: $transition-duration;
+  &:hover {
+    color: #6683c2;
   }
 }
 
@@ -282,10 +322,17 @@
   @include media(xs) {
     background-color: #6683c2;
   }
+  &:hover {
+    span {
+      color: #6683c2;
+    }
+  }
   span {
     color: #000000;
     font-size: 15px;
     font-weight: 400;
+    transition-property: color;
+    transition-duration: $transition-duration;
     @include media(xs) {
       display: none;
     }
@@ -391,7 +438,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition-property: box-shadow;
+  transition-property: box-shadow, background-color;
   transition-duration: $transition-duration;
   @include media(lg) {
     min-width: 126px;
@@ -411,6 +458,7 @@
   }
   &:hover {
     box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
+    background: rgba(102, 131, 194, 0.41);
   }
   &.active {
     box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
@@ -473,6 +521,14 @@
       transform: translateY(-50%);
       left: -19px;
     }
+  }
+}
+
+a.header__bottom-link {
+  transition-property: color;
+  transition-duration: $transition-duration;
+  &:hover {
+    color: #6683c2;
   }
 }
 

@@ -14,10 +14,21 @@
   }
   &.summer {
     background: transparent;
+    .faq__top {
+      background: #d6f3ba;
+      &:hover {
+        background: #d6f3ba;
+        color: #000;
+      }
+    }
     .faq__item.active {
       background: #d6f3ba;
       .faq__top {
         background: #d6f3ba;
+        &:hover {
+          background: #d6f3ba;
+          color: #000;
+        }
         &::before {
           @include bg-icon('faq/ic_faq_minus_green.svg');
         }
@@ -30,10 +41,21 @@
   &.summer-course {
     padding-top: 0;
     background: transparent;
+    .faq__top {
+      background: #d6f3ba;
+      &:hover {
+        background: #d6f3ba;
+        color: #000;
+      }
+    }
     .faq__item.active {
       background: #d6f3ba;
       .faq__top {
         background: #d6f3ba;
+        &:hover {
+          background: #d6f3ba;
+          color: #000;
+        }
         &::before {
           @include bg-icon('faq/ic_faq_minus_green.svg');
         }
@@ -51,10 +73,21 @@
       padding-top: 0;
       padding-bottom: 40px;
     }
+    .faq__top {
+      background: #d6f3ba;
+      &:hover {
+        background: #d6f3ba;
+        color: #000;
+      }
+    }
     .faq__item.active {
       background: #d6f3ba;
       .faq__top {
         background: #d6f3ba;
+        &:hover {
+          background: #d6f3ba;
+          color: #000;
+        }
         &::before {
           @include bg-icon('faq/ic_faq_minus_green.svg');
         }
@@ -90,13 +123,6 @@
     .faq__image {
       width: 548px;
       height: 548px;
-    }
-    .faq__top {
-      transition-property: background-color;
-      transition-duration: $transition-duration;
-      &:hover {
-        background-color: #c0ceeb;
-      }
     }
     .faq__item {
       background: #f3f5fb;
@@ -155,6 +181,9 @@
     box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
     .faq__top {
       background: #f3f5fb;
+      &:hover {
+        background: #809edf;
+      }
       &::before {
         @include bg-icon('faq/ic_faq_minus.svg');
       }
@@ -179,6 +208,12 @@
   display: flex;
   align-items: center;
   position: relative;
+  transition-property: background-color, color;
+  transition-duration: $transition-duration;
+  &:hover {
+    background-color: #809edf;
+    color: #fff;
+  }
   @include media(lg) {
     border-radius: 20px;
     font-size: 15px;

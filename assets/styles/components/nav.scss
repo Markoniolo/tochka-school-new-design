@@ -700,6 +700,12 @@
   gap: 15px;
   font-size: 18px;
   line-height: 100%;
+  transition-duration: $transition-duration;
+  transition-property: background-color, color;
+  &:hover {
+    background: #809edf;
+    color: #fff;
+  }
   @include media(lg) {
     min-height: 45px;
     font-size: 15px;
