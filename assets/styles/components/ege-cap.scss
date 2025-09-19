@@ -121,6 +121,7 @@
   position: relative;
   display: inline-flex;
   border-radius: 53px;
+  overflow: hidden;
   @include media(lg) {
     backdrop-filter: blur(2px);
   }
@@ -148,6 +149,11 @@
         left: 100px;
       }
     }
+    a.ege-cap__tab {
+      &::before {
+        content: none;
+      }
+    }
   }
 }
 
@@ -161,8 +167,6 @@
   font-size: 16px;
   line-height: 100%;
   color: $white;
-  transition-duration: $transition-duration;
-  transition-property: color;
   @include media(lg) {
     font-size: 15px;
     padding: 10px 34px;
@@ -174,8 +178,22 @@ a.ege-cap__tab {
   background-color: transparent;
   color: $black;
   box-shadow: none;
+  position: static;
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition-property: background-color;
+    transition-duration: $transition-duration;
+  }
   &:hover {
-    color: #6683c2;
+    &::before {
+      background-color: rgba(102, 131, 194, 0.49);
+    }
   }
 }
 

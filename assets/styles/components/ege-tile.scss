@@ -108,6 +108,7 @@
 }
 
 .ege-tile__toggle {
+  overflow: hidden;
   position: relative;
   display: inline-flex;
   border-radius: 53px;
@@ -181,8 +182,22 @@ a.ege-tile__toggle-item {
   background-color: transparent;
   color: $black;
   box-shadow: none;
+  position: static;
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition-property: background-color;
+    transition-duration: $transition-duration;
+  }
   &:hover {
-    color: #6683c2;
+    &::before {
+      background-color: rgba(102, 131, 194, 0.49);
+    }
   }
 }
 
