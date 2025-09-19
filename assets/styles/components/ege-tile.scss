@@ -181,6 +181,9 @@ a.ege-tile__toggle-item {
   background-color: transparent;
   color: $black;
   box-shadow: none;
+  &:hover {
+    color: #6683c2;
+  }
 }
 
 .ege-tile__line {
