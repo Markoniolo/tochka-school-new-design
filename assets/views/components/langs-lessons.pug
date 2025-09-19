@@ -14,7 +14,7 @@
     },
     {
       title: 'С погружением в культуру',
-      text: 'Чувствуем язык через изучение культурных особенностей и традиций страны изучаемого языка'
+      text: 'Чувствуем язык через культурные особенности и&nbsp;традиции страны изучаемого языка'
     },
   ]
 
@@ -34,4 +34,4 @@
               each item in box.list
                 li.langs-lessons__item= item
           if box.text
-            .langs-lessons__text= box.text
+            .langs-lessons__text!= box.text

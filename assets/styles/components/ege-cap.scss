@@ -13,7 +13,7 @@
       }
     }
     .ege-cap__caption {
-      max-width: 613px;
+      max-width: 550px;
       @include media(lg) {
         max-width: 344px;
       }
@@ -44,9 +44,9 @@
   }
   &_oge {
     .ege-cap__caption {
-      max-width: 532px;
+      max-width: 612px;
       @include media(lg) {
-        max-width: 327px;
+        max-width: 400px;
       }
       @include media(xs) {
         max-width: 100%;
