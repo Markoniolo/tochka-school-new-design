@@ -1,0 +1,31 @@
+-
+  const list = [
+    { title: 'Пройдёт входное тестирование по&nbsp;выбранному предмету' },
+    { title: 'Посетит 1-2 онлайн-урока от лучших учителей РФ*' },
+    { title: 'Разберётся в темах, которые вызывают трудности в школе' },
+    { title: 'Скачает конспект, задание и тест для проверки знаний к&nbsp;каждому уроку' },
+    { title: 'Получит разбор заданий и помощь в&nbsp;исправлении ошибок от педагога-тьютора' },
+    { title: 'Получит доступ ко всем урокам по предмету с начала учебного года, чтобы повторить прошедшие темы' },
+  ]
+
+.offer-about
+  .cont
+    h2.offer-about__caption На пробной неделе Ваш ребёнок:
+    ul.offer-about__list
+      each item, index in list
+        li.offer-about__item(class=`offer-about__item_${index+1}`)
+          .offer-about__title!= item.title
+          picture.offer-about__picture
+            if index !== 2
+              source(srcset=staticImg(`offer-about/${index+1}_xxs.svg`) media="(max-width: 359px)")
+              source(srcset=staticImg(`offer-about/${index+1}_mob.svg`) media="(max-width: 743px)")
+              source(srcset=staticImg(`offer-about/${index+1}_tablet.svg`) media="(max-width: 1359px)")
+            img.offer-about__image(src=staticImg(`offer-about/${index+1}.svg`) alt='')
+          if index === 2
+            .offer-about__question.offer-about__question_1
+            .offer-about__question.offer-about__question_2
+            .offer-about__question.offer-about__question_3
+          if index === 4
+            a.offer-about__button.btn-orange(href='#offer-tile' data-role="scroll-to-anchor") Выбрать курс!
+          if index === 5
+            .offer-about__tab А ещё!

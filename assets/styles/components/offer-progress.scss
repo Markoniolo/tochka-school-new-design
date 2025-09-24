@@ -1,0 +1,213 @@
+.offer-progress {
+  padding: 74px 0 80px;
+  background: #f1f5fd;
+  @include media(lg) {
+    padding: 34px 0 40px;
+  }
+}
+
+.offer-progress__caption {
+  margin-bottom: 45px;
+  max-width: 488px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 121%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 30px;
+    max-width: 282px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+}
+
+.offer-progress__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  @include media(lg) {
+    gap: 20px;
+    position: relative;
+    flex-direction: column;
+  }
+}
+
+.offer-progress__item {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 30px 24px;
+  border-radius: 20px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+  background: #fff;
+  min-height: 279px;
+  @include media(lg) {
+    min-height: 141px;
+    border-radius: 10px;
+    padding: 18px 20px 16px;
+  }
+  @include media(xxs) {
+    padding: 15px;
+  }
+  &_1 {
+    width: 261px;
+    @include media(lg) {
+      width: calc(50% - 10px);
+    }
+    @include media(xs) {
+      width: 100%;
+    }
+  }
+  &_2 {
+    width: 761px;
+    @include media(lg) {
+      width: calc(50% - 10px);
+      height: 463px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      overflow: hidden;
+    }
+    @include media(xs) {
+      position: static;
+      height: auto;
+      width: 100%;
+    }
+    .offer-progress__title {
+      max-width: 440px;
+    }
+  }
+  &_3 {
+    width: 266px;
+    height: 256px;
+    box-shadow: none;
+    background-color: transparent;
+    @include bg-icon('offer-progress/bg-3.svg');
+    @include media(lg) {
+      display: none;
+    }
+  }
+  &_4 {
+    overflow: hidden;
+    margin-left: -5px;
+    width: 435px;
+    background: #6683c2;
+    @include media(lg) {
+      width: calc(50% - 10px);
+      margin-left: 0;
+      order: 3;
+    }
+    @include media(xs) {
+      width: 100%;
+    }
+    .offer-progress__title {
+      color: #FFFFFF;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: -41px;
+      right: 15px;
+      width: 345px;
+      height: 224px;
+      @include bg-icon('offer-progress/decor-4.svg');
+      @include media(lg) {
+        top: 0;
+        right: 0;
+        width: 151px;
+        height: 92px;
+        @include bg-icon('offer-progress/decor-4_tablet.svg');
+      }
+    }
+  }
+  &_5 {
+    width: 258px;
+    @include media(lg) {
+      width: calc(50% - 10px);
+      order: 2;
+    }
+    @include media(xs) {
+      width: 100%;
+    }
+    .offer-progress__title {
+      @include media(lg) {
+        max-width: 246px;
+      }
+    }
+  }
+  &_6 {
+    width: 300px;
+    @include bg-icon('offer-progress/bg-6.png');
+    background-size: cover;
+    @include media(lg) {
+      order: 3;
+      width: 100%;
+      @include bg-icon('offer-progress/bg-6_tablet.png');
+    }
+    @include media(xs) {
+      @include bg-icon('offer-progress/bg-6_mob.png');
+    }
+    .offer-progress__title {
+      color: #FFFFFF;
+      @include media(lg) {
+        margin-top: auto;
+      }
+    }
+  }
+}
+
+.offer-progress__icon {
+  margin-bottom: 12px;
+  width: 80px;
+  height: 80px;
+  @include media(lg) {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+.offer-progress__title {
+  margin-top: auto;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #003c56;
+  @include media(lg) {
+    margin-top: 0;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.offer-progress__picture {
+  position: absolute;
+  z-index: -1;
+  top: -98px;
+  right: -196px;
+  width: 476px;
+  height: 377px;
+  @include media(lg) {
+    position: static;
+    width: 330px;
+    height: 253px;
+    margin: auto -20px 0;
+    transform: translateY(7px);
+  }
+  @include media(xs) {
+    margin: 10px auto 0;
+    width: calc(100% + 40px);
+    height: auto;
+    transform: translateX(-20px) translateY(16px);
+  }
+  @include media(xxs) {
+    width: calc(100% + 30px);
+    transform: translateX(-15px) translateY(16px);
+  }
+}
+
+.offer-progress__image {
+
+}

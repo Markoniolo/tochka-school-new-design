@@ -1,0 +1,74 @@
+-
+  const allCoursesFilterListSubjects = [
+    'Математика','Русский язык','Литература','Биология','История',
+    'География','Английский язык','Музыка','Физкультура','ИЗО и технология',
+    'Обществознание','Физика','Химия','Информатика','Окружающий мир','Литературное чтение'
+  ]
+
+.offer-tile#offer-tile
+  .offer-tile__cont.cont
+    h2.offer-tile__title.trial-title Выберите курс
+    .offer-tile__line
+      .offer-tile__filter.offer-tile__filter_class
+        .offer-tile__filter-top
+          .offer-tile__filter-top-text Все классы
+        .offer-tile__filter-wrap
+          .offer-tile__filter-close
+          .offer-tile__filter-headline Выберите класс
+          .offer-tile__filter-list
+            label.offer-tile__filter-item
+              input.offer-tile__filter-input.offer-tile__filter-input_class(type='radio' name='class' value=`all-class` checked)
+              .offer-tile__filter-view Все классы
+            each item, index in ['1 класс','2 класс','3 класс']
+              label.offer-tile__filter-item
+                input.offer-tile__filter-input.offer-tile__filter-input_class(type='radio' name='class' value=`class-id-${index + 1}` data-text=item)
+                .offer-tile__filter-view= `${item}`
+                  img.offer-tile__filter-ticket(src=staticImg('all-courses/all-courses-icon.svg') alt='')
+      .offer-tile__filter.offer-tile__filter_subject
+        .offer-tile__filter-top
+          .offer-tile__filter-top-text Все предметы
+        .offer-tile__filter-wrap
+          .offer-tile__filter-close
+          .offer-tile__filter-headline Выберите предмет
+          .offer-tile__filter-list
+            label.offer-tile__filter-item
+              input.offer-tile__filter-input.offer-tile__filter-input_subject(type='radio' name='subject' value=`all-subjects` checked)
+              .offer-tile__filter-view Все предметы
+            each item, index in allCoursesFilterListSubjects
+              label.offer-tile__filter-item
+                input.offer-tile__filter-input.offer-tile__filter-input_subject(type='radio' name='subject' value=`subject-id-${index + 1}` data-text=item)
+                .offer-tile__filter-view= `${item}`
+                  img.offer-tile__filter-ticket(src=staticImg('all-courses/all-courses-icon.svg') alt='')
+      button.offer-tile__reset-filter Сбросить
+        svg(width='11' height='11' viewbox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M6.41602 5.50004L10.3092 1.60683C10.5625 1.35359 10.5625 0.944119 10.3092 0.690908C10.0559 0.437666 9.64646 0.437666 9.39325 0.690908L5.50001 4.58409L1.60692 0.690908C1.35356 0.437666 0.944241 0.437666 0.690999 0.690908C0.437636 0.944149 0.437636 1.35359 0.690999 1.60683L4.58406 5.50004L0.691029 9.39322C0.437666 9.64646 0.437666 10.0559 0.691029 10.3091C0.751099 10.3694 0.822481 10.4172 0.901073 10.4497C0.979664 10.4823 1.06392 10.499 1.14899 10.4989C1.31478 10.4989 1.48063 10.4355 1.60695 10.3091L5.50001 6.41596L9.39325 10.3091C9.45333 10.3694 9.52471 10.4171 9.6033 10.4497C9.68189 10.4823 9.76614 10.499 9.85121 10.4989C10.017 10.4989 10.1829 10.4355 10.3092 10.3091C10.5625 10.0559 10.5625 9.64646 10.3092 9.39322L6.41602 5.50004Z' fill='white')
+    .offer-tile__tile
+      .tile-loader
+      each item in [1,2,3,4,5,6,7,8,9]
+        .offer-tile__item(class = item === 1 ? 'offer-tile__item_family' : false)
+          .offer-tile__picture
+            if item !== 1
+              img.offer-tile__image(src=staticImg('') alt='')
+          .offer-tile__inner
+            .offer-tile__class-number 1 класс
+            if item !== 1
+              .offer-tile__name Курс по подготовке к ОГЭ по математике «Стандарт»
+              .offer-tile__author Екатерина Щербакова
+              .offer-tile__text Учитель года Кубани 2022. ТОП-15 учителей России в 2022 году. Педагогический стаж ー 6 лет.
+            else
+              .offer-tile__name Семейное обучение
+              .offer-tile__text Получайте школьное образование дома. Онлайн. С лучшими учителями РФ, внимательными тьюторами и аттестацией.
+            .offer-tile__bottom
+              if mod === 'summer'
+                if over
+                  .offer-tile__link.btn-orange.over Продажи завершены
+                else
+                  a.offer-tile__link.btn-orange(href='#') Записаться за 3 090 ₽
+                a.offer-tile__course(href='#') О курсе
+              else
+                if over
+                  .offer-tile__link.btn-orange.over Продажи завершены
+                else
+                  a.offer-tile__link.btn-orange(href='#') Начать обучение
+                .offer-tile__price-current 290 ₽
+                .offer-tile__price-old 1 750 ₽

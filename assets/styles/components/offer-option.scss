@@ -1,0 +1,138 @@
+.offer-option {
+  background: #fff;
+  padding: 74px 0 80px;
+  @include media(lg) {
+    padding: 34px 0 40px;
+  }
+}
+
+.offer-option__caption {
+  margin-bottom: 45px;
+  max-width: 544px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 97%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 25px;
+    max-width: 300px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+}
+
+.offer-option__list {
+  margin-bottom: 35px;
+  border-radius: 20px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+  background: #f1f5fd;
+  padding: 42px 35px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  @include media(lg) {
+    flex-direction: column;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    padding: 25px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  @include media(xxs) {
+    padding: 15px;
+  }
+}
+
+.offer-option__item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #003c56;
+  @include media(lg) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  &:nth-child(1) {
+    width: 425px;
+    @include media(lg) {
+      width: 100%;
+      max-width: 550px;
+    }
+  }
+  &:nth-child(2) {
+    width: 400px;
+    @include media(lg) {
+      width: 100%;
+      max-width: 515px;
+    }
+  }
+  &:nth-child(3) {
+    width: 389px;
+    @include media(lg) {
+      width: 100%;
+      max-width: 382px;
+    }
+  }
+  &::before {
+    content: '';
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    @include bg-icon('icons/ic_point_orange.svg');
+    @include media(lg) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.offer-option__note {
+  margin: 0 auto 35px;
+  max-width: 682px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #003c56;
+  @include media(lg) {
+    margin: 0 auto 25px;
+    max-width: 562px;
+    font-size: 20px;
+    line-height: 25px;
+  }
+}
+
+.offer-option__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  @include media(lg) {
+    gap: 25px;
+  }
+  @include media(xs) {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.offer-option__button {
+  @include media(xs) {
+    width: 100%;
+  }
+  &.btn-orange {
+    padding: 19px 30px;
+    font-size: 16px;
+  }
+  &.btn-border-orange {
+    @include media(lg) {
+      padding: 19px 48px;
+    }
+  }
+}

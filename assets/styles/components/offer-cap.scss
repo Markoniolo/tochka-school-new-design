@@ -1,0 +1,225 @@
+.offer-cap {
+  padding-top: 50px;
+  margin-bottom: 54px;
+  @include media(lg) {
+    padding-top: 0;
+    margin-bottom: 36px;
+    @include bg-icon('offer-cap/bg_tablet.png');
+    background-size: cover;
+    overflow: hidden;
+  }
+  @include media(xs) {
+    @include bg-icon('offer-cap/bg_mob.png');
+    background-size: auto calc(100% - 25px);
+    background-position: top center;
+  }
+}
+
+.offer-cap__wrap {
+  position: relative;
+}
+
+.offer-cap__circle {
+  position: absolute;
+  border-radius: 50%;
+  @include media(lg) {
+    display: none;
+  }
+  &_1 {
+    width: 60px;
+    height: 60px;
+    background-color: #f2c45b;
+    top: 141px;
+    left: -88px;
+  }
+  &_2 {
+    width: 164px;
+    height: 164px;
+    background-color: #7fcbb4;
+    top: -12px;
+    left: -69px;
+  }
+}
+
+.offer-cap__inner {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  border-radius: 31px;
+  padding: 54px 60px;
+  min-height: 518px;
+  @include bg-icon('offer-cap/bg.png');
+  background-size: cover;
+  @include media(lg) {
+    background: transparent;
+    border-radius: 0;
+    padding: 30px 0 45px;
+    min-height: auto;
+    overflow: visible;
+  }
+  @include media(xs) {
+    padding: 30px 0 0;
+  }
+}
+
+.offer-cap__caption {
+  margin-bottom: 54px;
+  max-width: 697px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 112%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 34px;
+    max-width: 360px;
+    font-size: 30px;
+    line-height: 38px;
+  }
+  @include media(xs) {
+    margin: 0 auto 22px;
+    font-size: 27px;
+    line-height: 100%;
+    text-align: center;
+  }
+  @include media(xxs) {
+    font-size: 24px;
+  }
+}
+
+.offer-cap__text {
+  margin-bottom: 55px;
+  max-width: 600px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 34px;
+    max-width: 303px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+  @include media(xs) {
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+.offer-cap__area {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 571px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  transform: rotate(-15deg);
+  @include media(lg) {
+    width: 390px;
+    right: -65px;
+  }
+  @include media(xs) {
+    position: relative;
+    z-index: -1;
+    right: 0;
+    width: 300px;
+    margin: -10px auto -30px;
+    overflow: hidden;
+    height: 365px;
+  }
+  &::before, &::after {
+    @include media(xs) {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 150px;
+    }
+  }
+  &::before {
+    @include media(xs) {
+      top: 0;
+      background: linear-gradient(0deg, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 1) 100%);
+    }
+  }
+  &::after {
+    @include media(xs) {
+      bottom: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 1) 100%);
+    }
+  }
+}
+
+.offer-cap__line {
+  display: flex;
+  flex-direction: column;
+  &:nth-child(1), &:nth-child(3) {
+    .offer-cap__line-box {
+      animation: 20s marquee linear infinite;
+    }
+  }
+  &:nth-child(1) {
+    transform: translateY(-200px);
+  }
+  &:nth-child(2) {
+    transform: translateY(-400px);
+    .offer-cap__line-box {
+      animation: 20s marquee-reverse linear infinite;
+    }
+  }
+  &:nth-child(3) {
+    transform: translateY(-600px);
+  }
+}
+
+.offer-cap__line-box {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.offer-cap__icon {
+  width: 112px;
+  height: 140px;
+  box-shadow: 0 3px 13px 0 rgba(0, 0, 0, 0.05);
+  @include media(lg) {
+    width: 94px;
+    height: 118px;
+  }
+}
+
+.offer-cap__button {
+  display: inline-block;
+  font-size: 16px;
+  padding: 20px 49px;
+  @include media(lg) {
+    padding: 20px 41px;
+  }
+  @include media(xs) {
+    display: block;
+    width: 100%;
+  }
+}

@@ -1,0 +1,18 @@
+.offer-cap
+  .cont
+    .offer-cap__wrap
+      .offer-cap__circle.offer-cap__circle_1
+      .offer-cap__circle.offer-cap__circle_2
+      .offer-cap__inner
+        h1.offer-cap__caption 7 дней занятий в&nbsp;Точке&nbsp;Знаний от 290 ₽
+        .offer-cap__text.
+          Начните учиться с удовольствием. Персональная проверка заданий, уроки
+          от лучших учителей РФ* и доступ ко всем записям с сентября.
+        .offer-cap__area
+          each line in [1,2,3]
+            .offer-cap__line
+              each box in [1,2]
+                .offer-cap__line-box
+                  each icon in [1,2,3,4,5,6,7,8,9,10]
+                    img.offer-cap__icon(src=staticImg(`offer-cap/${icon}.svg`) alt='')
+        a.offer-cap__button.btn-orange(href="#offer-tile" data-role="scroll-to-anchor") Начать обучение

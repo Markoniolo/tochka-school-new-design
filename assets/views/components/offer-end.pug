@@ -1,0 +1,15 @@
+.offer-end
+  .cont
+    .offer-end__wrap
+      h2.offer-end__caption Что будет, когда пробная неделя завершится?
+      p.offer-end__text В течение 7 дней вы оцените качество преподавания наших учителей, увидите, нравится ли ребёнку заниматься.
+      p.offer-end__text Вы получите всё, что получают наши ученики на постоянной основе.
+      .offer-end__area
+        .offer-end__box
+          .offer-end__descr После пробной недели вы сможете продолжить обучение в нашей школе со скидкой:
+          ul.offer-end__list
+            each item in ['-50% на первый месяц обучения','Или -10% при оплате полного курса']
+              li.offer-end__item= item
+        picture.offer-end__picture
+          source(srcset=staticImg('offer-end/decor_tablet.svg') media="(max-width: 1359px)")
+          img.offer-end__image(src=staticImg('offer-end/decor.svg') alt='')

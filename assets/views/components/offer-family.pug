@@ -1,0 +1,37 @@
+-
+  const familyList = [
+    {
+      title: 'Полный комплект предметов',
+      text: 'Математика, русский, физика, английский, история — и все остальные предметы по расписанию вашего класса.'
+    },
+    {
+      title: 'Онлайн-уроки по всем предметам',
+      text: 'Смотрите занятия в прямом эфире или в записи — как удобнее вам и ребёнку.'
+    },
+    {
+      title: 'Поддержка персонального тьютора',
+      text: 'Проверка домашних заданий и обратная связь от тьюторов по выбраным предметам.'
+    },
+    {
+      title: 'Доступ к архивным видео',
+      text: 'Все уроки с начала учебного года, чтобы заполнить любые пробелы.'
+    },
+  ]
+
+article.offer-family
+  .cont
+    .offer-family__wrap
+      .offer-family__inner
+        h2.offer-family__caption А ещё у нас есть полноценное семейное обучение
+        .offer-family__area
+          .offer-family__text-left Хотите оценить не один предмет, а всю школьную программу?
+          .offer-family__text-right Попробуйте пробную неделю семейного обучения
+        .offer-family__box
+          .offer-family__note!= 'Вы получите полный доступ на&nbsp;<span>7&nbsp;дней&nbsp;ко&nbsp;всем&nbsp;предметам</span> школьной&nbsp;программы вашего класса.'
+          .offer-family__tab Всего за 790 рублей
+      ul.offer-family__list
+        each item in familyList
+          li.offer-family__item
+            img.offer-family__icon(src=staticImg('icons/ic_point_orange.svg') alt='')
+            .offer-family__title!= item.title
+            .offer-family__text!= item.text
