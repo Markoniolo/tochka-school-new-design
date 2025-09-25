@@ -1,0 +1,17 @@
+mixin blog-trial(mod,title,text,list=[],imageFormat='png',isBlog)
+  .blog-trial(class=`blog-trial_${mod}`)
+    .cont
+      .blog-trial__wrap
+        .blog-trial__title!= title
+        p.blog-trial__text!= text
+        ul.blog-trial__list
+          each item in list
+            li.blog-trial__item= item
+        picture.blog-trial__picture
+          source(srcset=staticImg(`blog-trial/${mod}_mob.${imageFormat}`) media="(max-width: 743px)")
+          source(srcset=staticImg(`blog-trial/${mod}_tablet.${imageFormat}`) media="(max-width: 1359px)")
+          if isBlog
+            img.blog-trial__image(src=staticImg(`blog-trial/${mod}_blog.${imageFormat}`) alt='')
+          else
+            img.blog-trial__image(src=staticImg(`blog-trial/${mod}.${imageFormat}`) alt='')
+        a.blog-trial__button.btn-orange(href='#') Узнать подробнее

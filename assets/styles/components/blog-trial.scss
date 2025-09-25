@@ -1,0 +1,286 @@
+.blog-trial {
+  margin: 50px 0;
+  @include media(lg) {
+    margin: 30px 0;
+  }
+  &_1 {
+    .blog-trial__wrap {
+      min-height: 502px;
+      padding: 50px 750px 55px 45px;
+      @include bg-icon('blog-trial/bg-1.svg');
+      background-size: cover;
+      background-position: bottom center;
+      @include media(lg) {
+        min-height: 371px;
+        @include bg-icon('blog-trial/bg-1_tablet.svg');
+        background-size: cover;
+        background-position: bottom center;
+        padding: 25px 318px 25px 30px;
+      }
+      @include media(xs) {
+        min-height: auto;
+        @include bg-icon('blog-trial/bg-1_mob.svg');
+        background-size: cover;
+        background-position: bottom center;
+        padding: 20px 20px 25px;
+      }
+      @include media(xxs) {
+        @include bg-icon('blog-trial/bg-1_xxs.svg');
+        background-size: cover;
+        background-position: bottom center;
+        padding: 15px;
+      }
+    }
+    .blog-trial__picture {
+      right: 26px;
+      bottom: 0;
+      width: 660px;
+      height: 502px;
+      @include media(lg) {
+        right: 0;
+        width: 337px;
+        height: 349px;
+      }
+      @include media(xs) {
+        position: relative;
+        width: calc(100% + 40px);
+        height: auto;
+        margin: 0 -20px -70px;
+      }
+      @include media(xxs) {
+        margin: 0 -10px -70px;
+        width: calc(100% + 20px);
+      }
+      &::before {
+        @include media(xs) {
+          content: '';
+          background: linear-gradient(180deg, rgba(50, 66, 102, 0) 0%, #324266 100%);
+          height: 132px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        }
+      }
+    }
+  }
+  &_2 {
+    .blog-trial__wrap {
+      padding: 50px 710px 55px 45px;
+      min-height: 502px;
+      background: linear-gradient(314deg, #7693d0 0%, #5877b8 100%);
+      @include media(lg) {
+        min-height: 371px;
+        padding: 25px 318px 25px 30px;
+      }
+      @include media(xs) {
+        min-height: auto;
+        padding: 20px 20px 25px;
+      }
+      @include media(xxs) {
+        padding: 15px;
+      }
+    }
+    .blog-trial__picture {
+      right: 26px;
+      bottom: 0;
+      width: 614px;
+      height: 495px;
+      @include media(lg) {
+        right: 0;
+        width: 326px;
+        height: 315px;
+      }
+      @include media(xs) {
+        position: relative;
+        width: calc(100% + 40px);
+        height: auto;
+        margin: 0 -20px -78px;
+      }
+      @include media(xxs) {
+        margin: 0 -10px -78px;
+        width: calc(100% + 20px);
+      }
+      &::before {
+        @include media(xs) {
+          content: '';
+          background: linear-gradient(180deg, rgba(102, 131, 194, 0) 0%, #6683c2 100%);
+          height: 132px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        }
+      }
+    }
+    .blog-trial__title {
+      @include media(xs) {
+        max-width: 260px;
+      }
+    }
+    .blog-trial__text {
+      max-width: 548px;
+    }
+  }
+  &_3 {
+    .blog-trial__wrap {
+      padding: 50px 620px 55px 45px;
+      min-height: 502px;
+      background: linear-gradient(314deg, #7693d0 0%, #5877b8 100%);
+      @include media(lg) {
+        min-height: 371px;
+        padding: 25px 318px 25px 30px;
+      }
+      @include media(xs) {
+        min-height: auto;
+        padding: 20px 20px 25px;
+      }
+      @include media(xxs) {
+        padding: 15px;
+      }
+    }
+    .blog-trial__picture {
+      right: 26px;
+      bottom: 0;
+      width: 593px;
+      height: 486px;
+      @include media(lg) {
+        right: 0;
+        width: 326px;
+        height: 316px;
+      }
+      @include media(xs) {
+        position: relative;
+        width: calc(100% + 40px);
+        height: auto;
+        margin: 0 -20px -50px;
+      }
+      @include media(xxs) {
+        margin: 0 -10px -50px;
+        width: calc(100% + 20px);
+      }
+      &::before {
+        @include media(xs) {
+          content: '';
+          background: linear-gradient(180deg, rgba(107, 136, 199, 0) 0%, #6b88c7 100%);
+          height: 132px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        }
+      }
+    }
+    .blog-trial__text {
+      max-width: 540px;
+    }
+  }
+}
+
+.blog-trial__wrap {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.blog-trial__title {
+  margin-bottom: 44px;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 104%;
+  color: #fff;
+  @include media(lg) {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+}
+
+.blog-trial__text {
+  width: 100%;
+  margin-bottom: 34px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #fff;
+  @include media(lg) {
+    margin-bottom: 18px;
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: 400;
+  }
+}
+
+.blog-trial__list {
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.blog-trial__item {
+  display: flex;
+  gap: 10px;
+  position: relative;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  color: #fff;
+  @include media(lg) {
+    gap: 12px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+  &::before {
+    content: '';
+    margin-top: 4px;
+    flex-shrink: 0;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: $orange;
+    @include media(lg) {
+      margin-top: 6px;
+      width: 7px;
+      height: 7px;
+    }
+  }
+}
+
+.blog-trial__picture {
+  position: absolute;
+}
+
+.blog-trial__image {
+  height: 100%;
+}
+
+.blog-trial__button {
+  margin-top: auto;
+  position: relative;
+  z-index: 1;
+  font-size: 18px;
+  line-height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 33px;
+  @include media(lg) {
+    font-size: 16px;
+    padding: 19px 27px 20px;
+  }
+  @include media(xs) {
+    width: 100%;
+    padding: 19px 10px 20px;
+  }
+  &::after {
+    content: '';
+    @include bg-icon('icons/ic_arrow_btn_white.svg');
+    width: 16px;
+    height: 13px;
+  }
+}

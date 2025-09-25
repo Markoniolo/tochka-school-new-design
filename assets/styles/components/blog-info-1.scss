@@ -4,11 +4,13 @@
   border-radius: 20px;
   padding: 40px 50px;
   @include bg-icon('blog-info-1/bg.png');
+  background-size: cover;
   @include media(lg) {
     margin: 30px 0;
     border-radius: 10px;
     padding: 20px 25px 20px;
     @include bg-icon('blog-info-1/bg_tablet.png');
+    background-size: cover;
   }
   @include media(xs) {
     margin: 30px auto;
