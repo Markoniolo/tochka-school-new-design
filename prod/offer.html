@@ -47,17 +47,7 @@
 
 <body>
   <div class="sticky-header">
-    <a class="trial-stretch" href="#" data-role="stretch">
-      <div class="cont">
-        <div class="trial-stretch__area">
-          <div class="trial-stretch__text">Получите пробный доступ
-            <br> к любому курсу <span>от 290₽</span>
-          </div>
-          <div class="trial-stretch__button">Выбрать курс</div>
-        </div>
-      </div>
-    </a>
-    <header class="header short" data-element="header">
+    <header class="header short header_offer" data-element="header">
       <div class="header__cont cont">
         <div class="header__layer"></div>
         <div class="header__area">
@@ -68,49 +58,12 @@
             <button class="header__nav-item header__nav-item_menu">
               <span>Меню</span>
             </button>
-            <div class="header__nav-item active">Все курсы</div>
-            <a class="header__nav-item" href="#">Блог</a>
-            <a class="header__nav-item btn-orange btn-orange_arrow" href="#modal-order-new" data-banner="banner-id-1" data-ftitle="Новый заголовок" data-fancybox data-options="{&quot;touch&quot;: false}">Подобрать занятия</a>
+            <a class="header__nav-item" href="#offer-tile" data-role="scroll-to-anchor">Выбрать курс</a>
+            <a class="header__nav-item" href="#offer-family" data-role="scroll-to-anchor">Семейное обучение</a>
+            <a class="header__nav-item" href="#reviews" data-role="scroll-to-anchor">Отзывы</a>
           </div>
-          <a class="header__login btn-blue" href="#" data-redirect>
-            <span>Войти</span>
-          </a>
+          <a class="header__offer-consult btn-orange btn-orange_arrow" href="#modal-order-new" data-banner="banner-id-1" data-ftitle="Получить консультацию" data-fancybox data-options="{&quot;touch&quot;: false}">Получить консультацию</a>
         </div>
-        <div class="header__bottom">
-          <div class="header__bottom-list">
-            <a class="header__bottom-link" href="#">Математика</a>
-            <a class="header__bottom-link header__bottom-link_family" href="#">Семейное обучение</a>
-            <a class="header__bottom-link" href="#">Летние курсы</a>
-            <a class="header__bottom-link" href="#">ЕГЭ</a>
-            <a class="header__bottom-link" href="#">ОГЭ</a>
-            <a class="header__bottom-link" href="#">IT-курсы</a>
-            <a class="header__bottom-link" href="#">Иностранные языки</a>
-            <a class="header__bottom-link" href="#">Развивающие курсы</a>
-            <a class="header__bottom-link" href="#">Летние курсы</a>
-          </div>
-        </div>
-        <!--.header__open-->
-        <!--  .header__list-->
-        <!--    each item in headerList-->
-        <!--      a.header__link(href='#' class = item.note ? false : 'header__link_teacher')-->
-        <!--        .header__link-name= item.name-->
-        <!--        if item.note-->
-        <!--          .header__link-note= item.note-->
-        <!--        svg(width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg")-->
-        <!--          path(d="M12.59 4.35355C12.7853 4.15829 12.7853 3.84171 12.59 3.64645L9.40803 0.464465C9.21276 0.269203 8.89618 0.269203 8.70092 0.464465C8.50566 0.659728 8.50566 0.97631 8.70092 1.17157L11.5293 4L8.70092 6.82843C8.50566 7.02369 8.50566 7.34027 8.70092 7.53553C8.89618 7.7308 9.21276 7.7308 9.40803 7.53553L12.59 4.35355ZM4.45727e-08 4.5L12.2365 4.5L12.2365 3.5L-4.45727e-08 3.5L4.45727e-08 4.5Z" fill="#6683C2")-->
-        <!--  .header__consult-->
-        <!--    .header__title Нужна консультация?-->
-        <!--    .header__text.-->
-        <!--      Оставьте заявку. Ответим на все-->
-        <!--      вопросы и поможем в выборе.-->
-        <!--    a.header__button.btn-orange.btn-orange_arrow(href='#modal-order-new' data-fancybox data-options='{"touch": false}')-->
-        <!--      | Оставить заявку-->
-        <!--  .header__contacts-->
-        <!--    .header__contacts-box-->
-        <!--      a.header__phone(href='tel:+78612176477') +7 (861) 217-64-77-->
-        <!--    .header__contacts-box-->
-        <!--      a.header__wp(href='https://api.whatsapp.com/send/?phone=79182293194&text&type=phone_number&app_absent=0' target="_blank") Написать в WhatsApp-->
-        <!--      a.header__mail(href='mailto:tochka-school@yandex.ru') tochka-school@yandex.ru-->
         <div class="nav">
           <div class="nav__wrap">
             <div class="nav__close-box">
@@ -796,7 +749,11 @@
             <h1 class="offer-cap__caption">7 дней занятий в&nbsp;Точке&nbsp;Знаний от 290 ₽</h1>
             <div class="offer-cap__text">
               Начните учиться с удовольствием. Персональная проверка заданий, уроки
-              от лучших учителей РФ* и доступ ко всем записям с сентября.
+              от
+              <span>лучших учителей РФ*
+                <div class="offer-cap__text-hover">По результатам всероссийский конкурсов</div>
+              </span>
+              и доступ ко всем записям с сентября.
             </div>
             <div class="offer-cap__area">
               <div class="offer-cap__line">
@@ -897,7 +854,9 @@
             </picture>
           </li>
           <li class="offer-about__item offer-about__item_2">
-            <div class="offer-about__title">Посетит 1-2 онлайн-урока от лучших учителей РФ*</div>
+            <div class="offer-about__title">Посетит 1-2 онлайн-урока от лучших <span>учителей РФ*<div class="offer-about__title-hover">По результатам всероссийский конкурсов</div>
+              </span>
+            </div>
             <picture class="offer-about__picture">
               <source srcset="assets/img/offer-about/2_xxs.svg" media="(max-width: 359px)">
               <source srcset="assets/img/offer-about/2_mob.svg" media="(max-width: 743px)">
@@ -958,8 +917,8 @@
             <img class="offer-progress__icon" src="assets/img/offer-progress/icon-2.svg" alt="">
             <div class="offer-progress__title">Вернуть интерес и почувствовать удовольствие от учёбы</div>
             <picture class="offer-progress__picture">
-              <source srcset="assets/img/offer-progress/decor-2_mob.svg" media="(max-width: 1359px)">
-              <img class="offer-progress__image" src="assets/img/offer-progress/decor-2.svg" alt="">
+              <source srcset="assets/img/offer-progress/decor-2_mob.png" media="(max-width: 1359px)">
+              <img class="offer-progress__image" src="assets/img/offer-progress/decor-2.png" alt="">
             </picture>
           </div>
           <div class="offer-progress__item offer-progress__item_3"></div>
@@ -1022,7 +981,7 @@
         </div>
       </div>
     </div>
-    <article class="offer-family">
+    <article class="offer-family" id="offer-family">
       <div class="cont">
         <div class="offer-family__wrap">
           <div class="offer-family__inner">
@@ -1109,7 +1068,7 @@
             <div class="trial-school__decor trial-school__decor_2"></div>
             <div class="trial-school__decor trial-school__decor_3"></div>
             <div class="trial-school__image-wrap">
-              <img class="trial-school__image" src="assets/img/trial-school/trial-school-teacher.png">
+              <img class="trial-school__image" src="assets/img/trial-school/trial-school-teacher.webp">
             </div>
             <div class="trial-school__info">
               <div class="trial-school__note">Учитель математики
@@ -1193,107 +1152,113 @@
             <div class="offer-tile__filter-wrap">
               <div class="offer-tile__filter-close"></div>
               <div class="offer-tile__filter-headline">Выберите предмет</div>
-              <div class="offer-tile__filter-list">
-                <label class="offer-tile__filter-item">
-                  <input class="offer-tile__filter-input offer-tile__filter-input_subject" type="radio" name="subject" value="all-subjects" checked>
-                  <div class="offer-tile__filter-view">Все предметы</div>
-                </label>
-                <label class="offer-tile__filter-item">
-                  <input class="offer-tile__filter-input offer-tile__filter-input_subject" type="radio" name="subject" value="subject-id-1" data-text="Математика">
-                  <div class="offer-tile__filter-view">Математика
-                    <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                  </div>
-                </label>
-                <label class="offer-tile__filter-item">
-                  <input class="offer-tile__filter-input offer-tile__filter-input_subject" type="radio" name="subject" value="subject-id-2" data-text="Русский язык">
-                  <div class="offer-tile__filter-view">Русский язык
-                    <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                  </div>
-                </label>
-                <label class="offer-tile__filter-item">
-                  <input class="offer-tile__filter-input offer-tile__filter-input_subject" type="radio" name="subject" value="subject-id-3" data-text="Литература">
-                  <div class="offer-tile__filter-view">Литература
-                    <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                  </div>
-                </label>
-                <label class="offer-tile__filter-item">
-                  <input class="offer-tile__filter-input offer-tile__filter-input_subject" type="radio" name="subject" value="subject-id-4" data-text="Биология">
-                  <div class="offer-tile__filter-view">Биология
-                    <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                  </div>
-                </label>
-                <label class="offer-tile__filter-item">
-                  <input class="offer-tile__filter-input offer-tile__filter-input_subject" type="radio" name="subject" value="subject-id-5" data-text="История">
-                  <div class="offer-tile__filter-view">История
-                    <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                  </div>
-                </label>
-                <label class="offer-tile__filter-item">
-                  <input class="offer-tile__filter-input offer-tile__filter-input_subject" type="radio" name="subject" value="subject-id-6" data-text="География">
-                  <div class="offer-tile__filter-view">География
-                    <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                  </div>
-                </label>
-                <label class="offer-tile__filter-item">
-                  <input class="offer-tile__filter-input offer-tile__filter-input_subject" type="radio" name="subject" value="subject-id-7" data-text="Английский язык">
-                  <div class="offer-tile__filter-view">Английский язык
-                    <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                  </div>
-                </label>
-                <label class="offer-tile__filter-item">
-                  <input class="offer-tile__filter-input offer-tile__filter-input_subject" type="radio" name="subject" value="subject-id-8" data-text="Музыка">
-                  <div class="offer-tile__filter-view">Музыка
-                    <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                  </div>
-                </label>
-                <label class="offer-tile__filter-item">
-                  <input class="offer-tile__filter-input offer-tile__filter-input_subject" type="radio" name="subject" value="subject-id-9" data-text="Физкультура">
-                  <div class="offer-tile__filter-view">Физкультура
-                    <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                  </div>
-                </label>
-                <label class="offer-tile__filter-item">
-                  <input class="offer-tile__filter-input offer-tile__filter-input_subject" type="radio" name="subject" value="subject-id-10" data-text="ИЗО и технология">
-                  <div class="offer-tile__filter-view">ИЗО и технология
-                    <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                  </div>
-                </label>
-                <label class="offer-tile__filter-item">
-                  <input class="offer-tile__filter-input offer-tile__filter-input_subject" type="radio" name="subject" value="subject-id-11" data-text="Обществознание">
-                  <div class="offer-tile__filter-view">Обществознание
-                    <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                  </div>
-                </label>
-                <label class="offer-tile__filter-item">
-                  <input class="offer-tile__filter-input offer-tile__filter-input_subject" type="radio" name="subject" value="subject-id-12" data-text="Физика">
-                  <div class="offer-tile__filter-view">Физика
-                    <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                  </div>
-                </label>
-                <label class="offer-tile__filter-item">
-                  <input class="offer-tile__filter-input offer-tile__filter-input_subject" type="radio" name="subject" value="subject-id-13" data-text="Химия">
-                  <div class="offer-tile__filter-view">Химия
-                    <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                  </div>
-                </label>
-                <label class="offer-tile__filter-item">
-                  <input class="offer-tile__filter-input offer-tile__filter-input_subject" type="radio" name="subject" value="subject-id-14" data-text="Информатика">
-                  <div class="offer-tile__filter-view">Информатика
-                    <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                  </div>
-                </label>
-                <label class="offer-tile__filter-item">
-                  <input class="offer-tile__filter-input offer-tile__filter-input_subject" type="radio" name="subject" value="subject-id-15" data-text="Окружающий мир">
-                  <div class="offer-tile__filter-view">Окружающий мир
-                    <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                  </div>
-                </label>
-                <label class="offer-tile__filter-item">
-                  <input class="offer-tile__filter-input offer-tile__filter-input_subject" type="radio" name="subject" value="subject-id-16" data-text="Литературное чтение">
-                  <div class="offer-tile__filter-view">Литературное чтение
-                    <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
-                  </div>
-                </label>
+              <div class="offer-tile__filter-swap">
+                <div class="offer-tile__filter-tabs">
+                  <button class="offer-tile__filter-tab" data-index="0">Школьные предметы</button>
+                  <button class="offer-tile__filter-tab" data-index="1">Семейное обучение</button>
+                  <button class="offer-tile__filter-tab" data-index="2">Иностранные языки</button>
+                  <button class="offer-tile__filter-tab" data-index="3">IT-курсы</button>
+                  <button class="offer-tile__filter-tab" data-index="4">Развивающие курсы</button>
+                  <button class="offer-tile__filter-tab" data-index="5">Подготовка к школе</button>
+                </div>
+                <div class="offer-tile__filter-list">
+                  <label class="offer-tile__filter-item" data-index="0">
+                    <input class="offer-tile__filter-input" type="radio" name="subject" value="subject-id-1" data-element="offer-tile-filter-input">
+                    <div class="offer-tile__filter-view">Математика
+                      <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                    </div>
+                  </label>
+                  <label class="offer-tile__filter-item" data-index="1">
+                    <input class="offer-tile__filter-input" type="radio" name="subject" value="subject-id-2" data-element="offer-tile-filter-input">
+                    <div class="offer-tile__filter-view">Русский язык
+                      <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                    </div>
+                  </label>
+                  <label class="offer-tile__filter-item" data-index="2">
+                    <input class="offer-tile__filter-input" type="radio" name="subject" value="subject-id-3" data-element="offer-tile-filter-input">
+                    <div class="offer-tile__filter-view">Литература
+                      <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                    </div>
+                  </label>
+                  <label class="offer-tile__filter-item" data-index="3">
+                    <input class="offer-tile__filter-input" type="radio" name="subject" value="subject-id-4" data-element="offer-tile-filter-input">
+                    <div class="offer-tile__filter-view">Биология
+                      <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                    </div>
+                  </label>
+                  <label class="offer-tile__filter-item" data-index="4">
+                    <input class="offer-tile__filter-input" type="radio" name="subject" value="subject-id-5" data-element="offer-tile-filter-input">
+                    <div class="offer-tile__filter-view">История
+                      <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                    </div>
+                  </label>
+                  <label class="offer-tile__filter-item" data-index="5">
+                    <input class="offer-tile__filter-input" type="radio" name="subject" value="subject-id-6" data-element="offer-tile-filter-input">
+                    <div class="offer-tile__filter-view">География
+                      <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                    </div>
+                  </label>
+                  <label class="offer-tile__filter-item" data-index="6">
+                    <input class="offer-tile__filter-input" type="radio" name="subject" value="subject-id-7" data-element="offer-tile-filter-input">
+                    <div class="offer-tile__filter-view">Английский язык
+                      <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                    </div>
+                  </label>
+                  <label class="offer-tile__filter-item" data-index="7">
+                    <input class="offer-tile__filter-input" type="radio" name="subject" value="subject-id-8" data-element="offer-tile-filter-input">
+                    <div class="offer-tile__filter-view">Музыка
+                      <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                    </div>
+                  </label>
+                  <label class="offer-tile__filter-item" data-index="8">
+                    <input class="offer-tile__filter-input" type="radio" name="subject" value="subject-id-9" data-element="offer-tile-filter-input">
+                    <div class="offer-tile__filter-view">Физкультура
+                      <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                    </div>
+                  </label>
+                  <label class="offer-tile__filter-item" data-index="9">
+                    <input class="offer-tile__filter-input" type="radio" name="subject" value="subject-id-10" data-element="offer-tile-filter-input">
+                    <div class="offer-tile__filter-view">ИЗО и технология
+                      <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                    </div>
+                  </label>
+                  <label class="offer-tile__filter-item" data-index="10">
+                    <input class="offer-tile__filter-input" type="radio" name="subject" value="subject-id-11" data-element="offer-tile-filter-input">
+                    <div class="offer-tile__filter-view">Обществознание
+                      <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                    </div>
+                  </label>
+                  <label class="offer-tile__filter-item" data-index="11">
+                    <input class="offer-tile__filter-input" type="radio" name="subject" value="subject-id-12" data-element="offer-tile-filter-input">
+                    <div class="offer-tile__filter-view">Физика
+                      <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                    </div>
+                  </label>
+                  <label class="offer-tile__filter-item" data-index="12">
+                    <input class="offer-tile__filter-input" type="radio" name="subject" value="subject-id-13" data-element="offer-tile-filter-input">
+                    <div class="offer-tile__filter-view">Химия
+                      <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                    </div>
+                  </label>
+                  <label class="offer-tile__filter-item" data-index="13">
+                    <input class="offer-tile__filter-input" type="radio" name="subject" value="subject-id-14" data-element="offer-tile-filter-input">
+                    <div class="offer-tile__filter-view">Информатика
+                      <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                    </div>
+                  </label>
+                  <label class="offer-tile__filter-item" data-index="14">
+                    <input class="offer-tile__filter-input" type="radio" name="subject" value="subject-id-15" data-element="offer-tile-filter-input">
+                    <div class="offer-tile__filter-view">Окружающий мир
+                      <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                    </div>
+                  </label>
+                  <label class="offer-tile__filter-item" data-index="15">
+                    <input class="offer-tile__filter-input" type="radio" name="subject" value="subject-id-16" data-element="offer-tile-filter-input">
+                    <div class="offer-tile__filter-view">Литературное чтение
+                      <img class="offer-tile__filter-ticket" src="assets/img/all-courses/all-courses-icon.svg" alt="">
+                    </div>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
@@ -1305,21 +1270,26 @@
         </div>
         <div class="offer-tile__tile">
           <div class="tile-loader"></div>
-          <div class="offer-tile__item offer-tile__item_family">
+          <a class="offer-tile__item offer-tile__item_family" href="#">
             <div class="offer-tile__picture">
             </div>
             <div class="offer-tile__inner">
               <div class="offer-tile__class-number">1 класс</div>
               <div class="offer-tile__name">Семейное обучение</div>
               <div class="offer-tile__text">Получайте школьное образование дома. Онлайн. С лучшими учителями РФ, внимательными тьюторами и аттестацией.</div>
+              <div class="offer-tile__family-tags">
+                <div class="offer-tile__family-tag">Онлайн-уроки по ФГОС</div>
+                <div class="offer-tile__family-tag">Аттестат гос. образца онлайн</div>
+                <div class="offer-tile__family-tag desk">Бесплатное прикрепление к школе</div>
+              </div>
               <div class="offer-tile__bottom">
-                <a class="offer-tile__link btn-orange" href="#">Начать обучение</a>
+                <div class="offer-tile__link btn-orange">Начать обучение</div>
                 <div class="offer-tile__price-current">290 ₽</div>
                 <div class="offer-tile__price-old">1 750 ₽</div>
               </div>
             </div>
-          </div>
-          <div class="offer-tile__item">
+          </a>
+          <a class="offer-tile__item" href="#">
             <div class="offer-tile__picture">
               <img class="offer-tile__image" src="assets/img/" alt="">
             </div>
@@ -1329,13 +1299,13 @@
               <div class="offer-tile__author">Екатерина Щербакова</div>
               <div class="offer-tile__text">Учитель года Кубани 2022. ТОП-15 учителей России в 2022 году. Педагогический стаж ー 6 лет.</div>
               <div class="offer-tile__bottom">
-                <a class="offer-tile__link btn-orange" href="#">Начать обучение</a>
+                <div class="offer-tile__link btn-orange">Начать обучение</div>
                 <div class="offer-tile__price-current">290 ₽</div>
                 <div class="offer-tile__price-old">1 750 ₽</div>
               </div>
             </div>
-          </div>
-          <div class="offer-tile__item">
+          </a>
+          <a class="offer-tile__item" href="#">
             <div class="offer-tile__picture">
               <img class="offer-tile__image" src="assets/img/" alt="">
             </div>
@@ -1345,13 +1315,13 @@
               <div class="offer-tile__author">Екатерина Щербакова</div>
               <div class="offer-tile__text">Учитель года Кубани 2022. ТОП-15 учителей России в 2022 году. Педагогический стаж ー 6 лет.</div>
               <div class="offer-tile__bottom">
-                <a class="offer-tile__link btn-orange" href="#">Начать обучение</a>
+                <div class="offer-tile__link btn-orange">Начать обучение</div>
                 <div class="offer-tile__price-current">290 ₽</div>
                 <div class="offer-tile__price-old">1 750 ₽</div>
               </div>
             </div>
-          </div>
-          <div class="offer-tile__item">
+          </a>
+          <a class="offer-tile__item" href="#">
             <div class="offer-tile__picture">
               <img class="offer-tile__image" src="assets/img/" alt="">
             </div>
@@ -1361,13 +1331,13 @@
               <div class="offer-tile__author">Екатерина Щербакова</div>
               <div class="offer-tile__text">Учитель года Кубани 2022. ТОП-15 учителей России в 2022 году. Педагогический стаж ー 6 лет.</div>
               <div class="offer-tile__bottom">
-                <a class="offer-tile__link btn-orange" href="#">Начать обучение</a>
+                <div class="offer-tile__link btn-orange">Начать обучение</div>
                 <div class="offer-tile__price-current">290 ₽</div>
                 <div class="offer-tile__price-old">1 750 ₽</div>
               </div>
             </div>
-          </div>
-          <div class="offer-tile__item">
+          </a>
+          <a class="offer-tile__item" href="#">
             <div class="offer-tile__picture">
               <img class="offer-tile__image" src="assets/img/" alt="">
             </div>
@@ -1377,13 +1347,13 @@
               <div class="offer-tile__author">Екатерина Щербакова</div>
               <div class="offer-tile__text">Учитель года Кубани 2022. ТОП-15 учителей России в 2022 году. Педагогический стаж ー 6 лет.</div>
               <div class="offer-tile__bottom">
-                <a class="offer-tile__link btn-orange" href="#">Начать обучение</a>
+                <div class="offer-tile__link btn-orange">Начать обучение</div>
                 <div class="offer-tile__price-current">290 ₽</div>
                 <div class="offer-tile__price-old">1 750 ₽</div>
               </div>
             </div>
-          </div>
-          <div class="offer-tile__item">
+          </a>
+          <a class="offer-tile__item" href="#">
             <div class="offer-tile__picture">
               <img class="offer-tile__image" src="assets/img/" alt="">
             </div>
@@ -1393,13 +1363,13 @@
               <div class="offer-tile__author">Екатерина Щербакова</div>
               <div class="offer-tile__text">Учитель года Кубани 2022. ТОП-15 учителей России в 2022 году. Педагогический стаж ー 6 лет.</div>
               <div class="offer-tile__bottom">
-                <a class="offer-tile__link btn-orange" href="#">Начать обучение</a>
+                <div class="offer-tile__link btn-orange">Начать обучение</div>
                 <div class="offer-tile__price-current">290 ₽</div>
                 <div class="offer-tile__price-old">1 750 ₽</div>
               </div>
             </div>
-          </div>
-          <div class="offer-tile__item">
+          </a>
+          <a class="offer-tile__item" href="#">
             <div class="offer-tile__picture">
               <img class="offer-tile__image" src="assets/img/" alt="">
             </div>
@@ -1409,13 +1379,13 @@
               <div class="offer-tile__author">Екатерина Щербакова</div>
               <div class="offer-tile__text">Учитель года Кубани 2022. ТОП-15 учителей России в 2022 году. Педагогический стаж ー 6 лет.</div>
               <div class="offer-tile__bottom">
-                <a class="offer-tile__link btn-orange" href="#">Начать обучение</a>
+                <div class="offer-tile__link btn-orange">Начать обучение</div>
                 <div class="offer-tile__price-current">290 ₽</div>
                 <div class="offer-tile__price-old">1 750 ₽</div>
               </div>
             </div>
-          </div>
-          <div class="offer-tile__item">
+          </a>
+          <a class="offer-tile__item" href="#">
             <div class="offer-tile__picture">
               <img class="offer-tile__image" src="assets/img/" alt="">
             </div>
@@ -1425,13 +1395,13 @@
               <div class="offer-tile__author">Екатерина Щербакова</div>
               <div class="offer-tile__text">Учитель года Кубани 2022. ТОП-15 учителей России в 2022 году. Педагогический стаж ー 6 лет.</div>
               <div class="offer-tile__bottom">
-                <a class="offer-tile__link btn-orange" href="#">Начать обучение</a>
+                <div class="offer-tile__link btn-orange">Начать обучение</div>
                 <div class="offer-tile__price-current">290 ₽</div>
                 <div class="offer-tile__price-old">1 750 ₽</div>
               </div>
             </div>
-          </div>
-          <div class="offer-tile__item">
+          </a>
+          <a class="offer-tile__item" href="#">
             <div class="offer-tile__picture">
               <img class="offer-tile__image" src="assets/img/" alt="">
             </div>
@@ -1441,12 +1411,12 @@
               <div class="offer-tile__author">Екатерина Щербакова</div>
               <div class="offer-tile__text">Учитель года Кубани 2022. ТОП-15 учителей России в 2022 году. Педагогический стаж ー 6 лет.</div>
               <div class="offer-tile__bottom">
-                <a class="offer-tile__link btn-orange" href="#">Начать обучение</a>
+                <div class="offer-tile__link btn-orange">Начать обучение</div>
                 <div class="offer-tile__price-current">290 ₽</div>
                 <div class="offer-tile__price-old">1 750 ₽</div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -1491,11 +1461,10 @@
         </div>
       </div>
     </article>
-    <div class="reviews">
+    <div class="reviews no-reviews-all" id="reviews">
       <div class="cont">
         <div class="reviews__top">
           <h2 class="reviews__caption">Говорят ученики и&nbsp;родители</h2>
-          <a class="reviews__all btn-blue" href="#">Открыть все отзывы</a>
           <div class="reviews__nav">
             <button class="reviews__nav-btn reviews__nav-btn_prev"></button>
             <button class="reviews__nav-btn reviews__nav-btn_next"></button>
@@ -1645,7 +1614,7 @@
           <div class="pre-end__area">
             <h2 class="pre-end__caption pre-caption">Страница подошла к концу :)</h2>
             <p class="pre-end__text">Время принять решение: оставить всё как есть или разобраться в 1-2 темах по&nbsp;предмету за 7 дней.</p>
-            <a class="pre-end__button btn-orange" href="#offerTile" data-role="scroll-to-anchor">Начать обучение за 290 руб</a>
+            <a class="pre-end__button btn-orange" href="#offer-tile" data-role="scroll-to-anchor">Начать обучение за 290 руб</a>
           </div>
         </div>
       </div>
@@ -1744,106 +1713,36 @@
       </div>
     </label>
   </form>
-  <footer class="footer">
-    <div class="footer__cont cont">
-      <div class="footer__area">
-        <div class="footer__box">
-          <div class="footer__logo">
-            <img class="footer__logo-image" src="assets/img/logo_white.svg" alt="">
-          </div>
-          <p class="footer__text">ООО «Точка Знаний»
-            <br>ИНН 2311347344
-            <br>ОГРН 232300017817
-          </p>
-          <p class="footer__text">350016, Краснодарский край,
-            <br>г. Краснодар, ул. Зиповская,
-            <br>д. 45, помещ. 24, ком. 2
-          </p>
-          <p class="footer__text">
-            <a href="https://reestr.digital.gov.ru/reestr/3098277/" target="_blank">В реестре российского
-              <br> ПО №26700 от 28.02.2025
-            </a>
-          </p>
-          <p class="footer__text">Точка Знаний - образовательная
-            <br>платформа, разработанная
-            <br>ООО «Точка Знаний»
-          </p>
-          <a class="footer__about" href="#">Подробнее о платформе</a>
+  <footer class="footer-new">
+    <div class="footer-new__cont cont">
+      <div class="footer-new__area">
+        <div class="footer-new__logo">
+          <img class="footer-new__logo-image" src="assets/img/logo_white.svg" alt="">
         </div>
-        <div class="footer__box">
-          <div class="footer__title" data-element="footer__title">Направления</div>
-          <div class="footer__list">
-            <a class="footer__link" href="#">Дошкольники</a>
-            <a class="footer__link" href="#">Начальная школа 1-4 класс</a>
-            <a class="footer__link" href="#">Средняя школа 5-8 класс</a>
-            <a class="footer__link" href="#">Старшая школа 9-11 класс</a>
-            <div class="footer__space"></div>
-            <a class="footer__link" href="#">Подготовка к ЕГЭ</a>
-            <a class="footer__link" href="#">Подготовка к ОГЭ</a>
-            <div class="footer__space"></div>
-            <a class="footer__link" href="#">Семейное обучение</a>
-            <a class="footer__link" href="#">IT-курсы</a>
-          </div>
-        </div>
-        <div class="footer__box">
-          <div class="footer__title" data-element="footer__title">Документация</div>
-          <div class="footer__list">
-            <a class="footer__link" href="#">Политика обработки персональных данных</a>
-            <a class="footer__link" href="#">Согласие на обработку персональных данных</a>
-            <a class="footer__link" href="#">Согласие на получение информационной и рекламной рассылки</a>
-            <a class="footer__link" href="#">Пользовательское соглашение</a>
-            <a class="footer__link" href="#">Публичная Оферта</a>
-            <a class="footer__link" href="#">Соглашение на семейное обучение</a>
-            <a class="footer__link" href="#">Правила акции</a>
-          </div>
-        </div>
-        <a class="footer__blog footer__blog_mob btn-border" href="#">Блог</a>
-        <div class="footer__contacts">
-          <div class="footer__title">Контакты</div>
-          <div class="footer__contacts-box">
-            <a class="footer__phone" href="tel:+78612176477">+7 (861) 217-64-77</a>
-          </div>
-          <div class="footer__contacts-box">
-            <a class="footer__whatsapp btn-border btn-border_arrow" href="https://api.whatsapp.com/send/?phone=79182293194&amp;text&amp;type=phone_number&amp;app_absent=0">Написать в WhatsApp</a>
-            <a class="footer__email" href="mailto:support@tochka-school.ru">support@tochka-school.ru</a>
-          </div>
-          <div class="footer__social">
-            <div class="footer__headline">Социальные сети:</div>
-            <div class="footer__social-list">
-              <a class="footer__social-link" href="https://t.me/+WMCtnpy5ClRiZWQy" target="_blank">
-                <img class="footer__social-icon" src="https://tochka-school.ru/themes/school-point/assets/img/social-icon3.svg" alt="">
-              </a>
-              <a class="footer__social-link" href="https://vk.com/matematik_andrei" target="_blank">
-                <img class="footer__social-icon" src="https://tochka-school.ru/themes/school-point/assets/img/social-icon4.svg" alt="">
-              </a>
-              <a class="footer__social-link" href="http://www.youtube.com/@matematik_andrei" target="_blank">
-                <img class="footer__social-icon" src="https://tochka-school.ru/themes/school-point/assets/img/social-icon2.svg" alt="">
-              </a>
-              <a class="footer__social-link" href="https://www.tiktok.com/@matematik_andrei" target="_blank">
-                <img class="footer__social-icon" src="https://tochka-school.ru/themes/school-point/assets/img/social-icon1.svg" alt="">
-              </a>
+        <div class="footer-new__box">
+          <div class="footer-new__doc btn-border" data-element="footer-new-doc">Документация</div>
+          <a class="footer-new__whatsapp btn-border btn-border_arrow" href="https://api.whatsapp.com/send/?phone=79182293194&amp;text&amp;type=phone_number&amp;app_absent=0">Написать в WhatsApp</a>
+          <div class="footer-new__wrap">
+            <div class="footer-new__list">
+              <a class="footer-new__link" href="#">Политика обработки персональных данных</a>
+              <a class="footer-new__link" href="#">Согласие на обработку персональных данных</a>
+              <a class="footer-new__link" href="#">Согласие на получение информационной и рекламной рассылки</a>
+              <a class="footer-new__link" href="#">Пользовательское соглашение</a>
+            </div>
+            <div class="footer-new__list">
+              <a class="footer-new__link" href="#">Публичная Оферта</a>
+              <a class="footer-new__link" href="#">Соглашение на семейное обучение</a>
+              <a class="footer-new__link" href="#">Правила акции</a>
+              <a class="footer-new__link" href="#">Сведения об образовательной организации</a>
             </div>
           </div>
-          <a class="footer__blog btn-border" href="#">Блог</a>
         </div>
-      </div>
-      <div class="footer__bottom">
-        <a class="footer__organization" href="https://tochka-school.ru/info" target="_blank">Сведения об образовательной организации</a>
-        <div class="footer__license">Дата предоставления лицензии:
-          <br class="mob">11 мая 2023
-          <br>
-          <a href="https://tochka-school.ru/storage/app/media/reestrovaia_vypiska/reestrovaia-vypiska.pdf" target="_blank">Лицензия № Л035-01218-23/00650937</a>
-        </div>
-        <div class="footer__app">
-          <div class="footer__app-text">Скачивайте наше приложение:</div>
-          <div class="footer__app-links">
-            <a class="footer__app-ru-store" href="https://www.rustore.ru/catalog/app/ru.tochkaschool.lk.droid" target="_blank"></a>
-            <a class="footer__app-app-store" href="https://apps.apple.com/kz/app/%D1%82%D0%BE%D1%87%D0%BA%D0%B0-%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D0%B9/id6503298203" target="_blank"></a>
-          </div>
-        </div>
-        <a class="footer__resident" href="https://sk.ru/" target="_blank">
-          <img class="footer__resident-image" src="https://tochka-school.ru/themes/school-point/assets/img/sk-logo.svg" alt="">
+        <a class="footer-new__resident" href="https://sk.ru/" target="_blank">
+          <img class="footer-new__resident-image" src="https://tochka-school.ru/themes/school-point/assets/img/sk-logo.svg" alt="">
         </a>
+      </div>
+      <div class="footer-new__bottom">
+        <div class="footer-new__copyright">ООО "Точка Знаний" ИНН 2311347344</div>
       </div>
     </div>
   </footer>
