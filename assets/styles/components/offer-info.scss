@@ -171,18 +171,18 @@
     width: 373px;
     height: 278px;
     background-color: #FFFFFF;
-    @include bg-icon('offer-info/bg-1.svg');
+    @include bg-icon('offer-info/bg-1.png');
     background-size: cover;
     @include media(lg) {
       width: 320px;
       height: 230px;
-      @include bg-icon('offer-info/bg-1_tablet.svg');
+      @include bg-icon('offer-info/bg-1_tablet.png');
       background-size: cover;
     }
     @include media(xs) {
       max-width: 320px;
       width: 100%;
-      @include bg-icon('offer-info/bg-1_mob.svg');
+      @include bg-icon('offer-info/bg-1_mob.png');
       background-size: cover;
     }
     .offer-info__note {

@@ -26,10 +26,12 @@
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  align-items: flex-end;
   @include media(lg) {
     gap: 20px;
     position: relative;
     flex-direction: column;
+    align-items: unset;
   }
 }
 
@@ -82,6 +84,7 @@
   &_3 {
     width: 266px;
     height: 256px;
+    min-height: 256px;
     box-shadow: none;
     background-color: transparent;
     @include bg-icon('offer-progress/bg-3.svg');

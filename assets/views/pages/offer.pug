@@ -1,23 +1,34 @@
-extends ../components/_layout/layout
+include ../_variables
+include ../components/_layout/_connect-style
+include ../components/_layout/_title
 
-block head
-  +title('Пробная неделя')
-
-block body
-  include ../components/offer-cap
-  include ../components/offer-about
-  include ../components/offer-progress
-  include ../components/offer-info
-  include ../components/offer-family
-  include ../components/offer-option
-  include ../components/trial-school
-  include ../components/offer-end
-  include ../components/offer-tile
-  include ../components/fam-info
-  include ../components/trial-license
-  +trial-license
-  include ../components/reviews
-  +reviews
-  include ../components/pre-end
-  +pre-end('trial','Время принять решение: оставить всё как есть или разобраться в 1-2 темах по&nbsp;предмету за 7 дней.',
-    'Начать обучение за 290 руб', 'offerTile')
+doctype html
+html(lang='ru')
+  head
+    include ../components/_layout/_head
+    +title('Пробная неделя')
+  body
+    .sticky-header
+      include ../components/_layout/header
+      +header('offer')
+    main.wrapper
+      include ../components/offer-cap
+      include ../components/offer-about
+      include ../components/offer-progress
+      include ../components/offer-info
+      include ../components/offer-family
+      include ../components/offer-option
+      include ../components/trial-school
+      include ../components/offer-end
+      include ../components/offer-tile
+      include ../components/fam-info
+      include ../components/trial-license
+      +trial-license
+      include ../components/reviews
+      +reviews('no-reviews-all','Говорят ученики и&nbsp;родители','reviews')
+      include ../components/pre-end
+      +pre-end('trial','Время принять решение: оставить всё как есть или разобраться в 1-2 темах по&nbsp;предмету за 7 дней.',
+        'Начать обучение за 290 руб', 'offer-tile')
+    include ../components/modals/modal-order-new
+    include ../components/_layout/footer-new
+    include ../components/_layout/scripts

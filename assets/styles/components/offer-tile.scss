@@ -1,7 +1,9 @@
 .offer-tile {
+  padding-top: 74px;
   padding-bottom: 80px;
   @include media(lg) {
     padding-bottom: 40px;
+    padding-top: 36px;
   }
   &.summer {
     padding-bottom: 0;
@@ -164,13 +166,16 @@
   @include media(xs) {
     width: 100%;
   }
+  &.active {
+    z-index: 50;
+  }
   &_class {
     .offer-tile__filter-wrap {
       width: 657px;
       @include media(lg) {
         width: 100%;
         left: 0 !important;
-        top: calc(100% - 4px);
+        top: calc(100% + 10px);
       }
       @include media(xs) {
         width: 100%;
@@ -190,7 +195,7 @@
       @include media(lg) {
         width: 100%;
         left: 0;
-        top: calc(100% - 4px);
+        top: calc(100% + 10px);
       }
     }
     .offer-tile__filter-list {
@@ -219,9 +224,6 @@
     border-radius: 20px;
   }
   &.active {
-    @include media(lg) {
-      border-radius: 20px 20px 0 0;
-    }
     & ~ .offer-tile__filter-wrap {
       opacity: 1;
       pointer-events: all;
@@ -392,7 +394,7 @@
   &_family {
     background: #dae5fe;
     .offer-tile__picture {
-      width: 210px;
+      width: 180px;
       height: 255px;
       @include bg-icon('offer-tile/offer-tile-family.svg');
       @include media(lg) {
@@ -434,7 +436,7 @@
       }
     }
     .offer-tile__text {
-      font-size: 18px;
+      font-size: 16px;
       @include media(xxs) {
         font-size: 15px;
         line-height: 135%;
@@ -538,6 +540,43 @@
   }
 }
 
+.offer-tile__family-tags {
+  margin-bottom: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  @include media(xs) {
+    padding-left: 115px;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+  @include media(xxs) {
+    padding-left: 112px;
+  }
+}
+
+.offer-tile__family-tag {
+  border-radius: 33px;
+  font-weight: 500;
+  font-size: 12px;
+  color: #6683c2;
+  line-height: 100%;
+  min-height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 8px 12px;
+  @include media(xxs) {
+    padding: 4px 12px;
+  }
+  &.desk {
+    @include media(xs) {
+      display: none;
+    }
+  }
+}
+
 .offer-tile__bottom {
   margin-top: auto;
   display: flex;
@@ -548,6 +587,9 @@
   flex-shrink: 0;
   @include media(xs) {
     padding: 14px 20px 16px;
+  }
+  @include media(xxs) {
+    padding: 14px 15px 16px;
   }
 }
 
@@ -561,6 +603,9 @@
     font-size: 18px;
     line-height: 23px;
   }
+  @include media(xxs) {
+    margin-left: 10px;
+  }
 }
 
 .offer-tile__price-old {
@@ -572,6 +617,9 @@
   @include media(lg) {
     font-size: 15px;
     line-height: 19px;
+  }
+  @include media(xxs) {
+    margin-left: 10px;
   }
 }
 
@@ -610,34 +658,35 @@
 }
 
 .offer-tile__line {
-  display: flex;
+  padding: 13px 15px;
+  display: inline-flex;
   align-items: center;
   gap: 25px;
   margin-bottom: 47px;
+  background: rgba(102, 131, 194, 0.17);
+  border-radius: 10px;
   @include media(lg) {
     margin-bottom: 20px;
     gap: 20px;
-    flex-wrap: wrap;
+    padding: 20px;
   }
   @include media(xs) {
+    display: flex;
     margin-bottom: 28px;
     gap: 15px;
     flex-direction: column;
+  }
+  @include media(xxs) {
+    padding: 15px;
   }
 }
 
 .offer-tile__filter {
   position: relative;
-  max-width: 301px;
-  width: 100%;
+  width: 301px;
   z-index: 10;
   @include media(lg) {
-    max-width: 100%;
-    flex-grow: 1;
-  }
-  @include media(xs) {
-    width: 100%;
-    max-width: 100%;
+    width: 240px;
   }
 
   .offer-tile__filter-item {
@@ -856,6 +905,67 @@
   }
 }
 
+.offer-tile__filter-tabs {
+  position: relative;
+  display: flex;
+  gap: 27px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid rgba(102, 131, 194, 0.2);
+  overflow: hidden;
+  @include media(lg) {
+    gap: 20px 40px;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  @include media(xs) {
+    gap: 0;
+    margin: 0 -10px 25px;
+    width: calc(100% + 20px);
+    &::before, &::after {
+      content: '';
+      width: 10px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.offer-tile__filter-tab {
+  font-weight: 500;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0 0 16px;
+  @include media(lg) {
+    padding: 0 0 16px;
+    font-size: 15px;
+    min-width: unset;
+  }
+  @include media(xs) {
+    &:not(:last-child) {
+      margin-right: 24px;
+    }
+  }
+  &.active {
+    position: relative;
+    color: #000;
+    &::before {
+      content: '';
+      height: 2px;
+      background: #6683C2;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
 .offer-tile__filter-list {
   display: flex;
   flex-wrap: wrap;
@@ -901,24 +1011,23 @@
 }
 
 .offer-tile__reset-filter {
+  flex-shrink: 0;
   font-size: 15px;
   line-height: 100%;
   color: #fff;
   border-radius: 34px;
   background: #4d69a7;
-  min-width: 144px;
-  min-height: 53px;
+  width: 154px;
+  height: 55px;
   display: none;
   align-items: center;
   justify-content: center;
   @include media(lg) {
-    width: 100%;
-    min-width: 126px;
-    min-height: 35px;
+    width: 124px;
+    height: 48px;
     font-size: 14px;
   }
   @include media(xs) {
-    min-height: 45px;
     width: 100%;
   }
   &.active {

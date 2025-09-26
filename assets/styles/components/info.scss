@@ -48,6 +48,86 @@
     width: 100%;
     margin: 0 auto;
   }
+  &_offer {
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      bottom: 0;
+      left: 0;
+      @include bg-icon('info/info-decor-circles.svg');
+      width: 235px;
+      height: 155px;
+      @include media(lg) {
+        content: none;
+      }
+    }
+    @include media-up(xl) {
+      background: #FFFFFF;
+      max-width: 428px;
+      padding: 35px;
+      min-height: 596px;
+    }
+    .info__text {
+      @include media-up(xl) {
+        margin-bottom: 25px;
+      }
+    }
+    .info__buttons {
+      @include media-up(xl) {
+        gap: 20px;
+      }
+    }
+    .info__capital {
+      padding: 36px 44px 36px;
+      @include media(lg) {
+        padding: 26px;
+      }
+      @include media(xs) {
+        padding: 24px 15px 40px;
+      }
+      @include media-up(xl) {
+        min-height: 215px;
+        width: 100%;
+        @include bg-icon('info/info-short-bg.png');
+        &::before {
+          content: '';
+          @include bg-icon('info/info-short-decor.svg');
+          width: 253px;
+          height: 203px;
+          position: absolute;
+          top: 0;
+          right: 256px;
+        }
+        .info__text {
+          position: absolute;
+          max-width: 500px;
+          bottom: 32px;
+          left: 352px;
+          margin-bottom: 0;
+        }
+        .info__title {
+          margin-bottom: 42px;
+          max-width: 780px;
+          font-size: 38px;
+          @include media(lg) {
+            font-size: 25px;
+          }
+        }
+        .info__btn_order {
+          padding: 17px 40px 18px;
+        }
+      }
+    }
+    .info__capital-decor {
+      @include media-up(xl) {
+        width: 305px;
+        height: 215px;
+        bottom: 0;
+        right: 45px;
+      }
+    }
+  }
 }
 
 .info__title {

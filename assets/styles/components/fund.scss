@@ -1,59 +1,3 @@
-.cost.capital, .cost.short {
-  .fund {
-    width: 100%;
-    min-height: 215px;
-    padding: 35px 45px;
-    @include media(lg) {
-      min-height: 261px;
-      padding: 25px;
-    }
-    @include media(xs) {
-      padding: 20px 15px;
-    }
-  }
-  .fund__title {
-    margin-bottom: 44px;
-    font-size: 38px;
-    @include media(lg) {
-      margin-bottom: 20px;
-      font-size: 25px;
-    }
-  }
-  .fund__text {
-    position: absolute;
-    left: 352px;
-    top: 112px;
-    max-width: 520px;
-    @include media(lg) {
-      position: static;
-      max-width: 387px;
-    }
-    span {
-      display: inline;
-    }
-  }
-  .fund__decor {
-    right: 66px;
-    width: 296px;
-    height: 215px;
-    @include bg-icon('fund/decor.svg');
-    @include media(lg) {
-      right: 0;
-      width: 267px;
-      height: auto;
-      top: 0;
-      @include bg-icon('fund/decor_tablet.svg');
-      background-position: left center;
-      background-size: cover;
-    }
-    @include media(xs) {
-      width: 251px;
-      height: 184px;
-      @include bg-icon('fund/decor_mob.svg');
-    }
-  }
-}
-
 .fund {
   position: relative;
   border-radius: 20px;
@@ -71,6 +15,59 @@
   }
   @include media(xs) {
     padding: 20px 15px;
+  }
+  &_offer {
+    width: 100%;
+    min-height: 215px;
+    padding: 35px 45px;
+    @include media(lg) {
+      min-height: 261px;
+      padding: 25px;
+    }
+    @include media(xs) {
+      padding: 20px 15px;
+    }
+    .fund__title {
+      margin-bottom: 44px;
+      font-size: 38px;
+      @include media(lg) {
+        margin-bottom: 20px;
+        font-size: 25px;
+      }
+    }
+    .fund__text {
+      position: absolute;
+      left: 352px;
+      top: 112px;
+      max-width: 520px;
+      @include media(lg) {
+        position: static;
+        max-width: 387px;
+      }
+      span {
+        display: inline;
+      }
+    }
+    .fund__decor {
+      right: 66px;
+      width: 296px;
+      height: 215px;
+      @include bg-icon('fund/decor.svg');
+      @include media(lg) {
+        right: 0;
+        width: 267px;
+        height: auto;
+        top: 0;
+        @include bg-icon('fund/decor_tablet.svg');
+        background-position: left center;
+        background-size: cover;
+      }
+      @include media(xs) {
+        width: 251px;
+        height: 184px;
+        @include bg-icon('fund/decor_mob.svg');
+      }
+    }
   }
 }
 

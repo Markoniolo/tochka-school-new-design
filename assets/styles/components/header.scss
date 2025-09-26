@@ -4,6 +4,21 @@
   @include media(xs) {
     position: relative;
   }
+  &_offer {
+    margin-bottom: -60px;
+    @include media(lg) {
+      margin-bottom: 0;
+    }
+    .header__nav-item_menu {
+      margin-left: 0;
+      @include media(md) {
+        margin-left: -35px;
+      }
+      @include media(xs) {
+        margin-left: 0;
+      }
+    }
+  }
   &_white {
     background: #fff;
   }
@@ -313,6 +328,23 @@ a.header__nav-item {
   transition-duration: $transition-duration;
   &:hover {
     color: #6683c2;
+  }
+}
+
+.header__offer-consult {
+  font-size: 16px;
+  padding: 14px 16px 15px;
+  @include media(lg) {
+    color: transparent;
+    overflow: hidden;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    @include bg-icon('icons/ic_phone_white.svg', 19px, 21px);
+    background-color: #F37E60;
+    &:hover {
+      color: transparent;
+    }
   }
 }
 

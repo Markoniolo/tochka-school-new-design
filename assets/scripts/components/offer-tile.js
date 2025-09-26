@@ -4,6 +4,8 @@ if (offerTile) offerTileInit()
 
 function offerTileInit () {
   const offerTileFilterTops = offerTile.querySelectorAll(".offer-tile__filter-top")
+  const filterSubject = offerTile.querySelector(".offer-tile__filter_subject")
+  const filterClass = offerTile.querySelector(".offer-tile__filter_class")
   const stickyHeader = document.querySelector('.sticky-header')
   const body = document.querySelector('body')
 
@@ -25,8 +27,10 @@ function offerTileInit () {
     if (opener.classList.contains('active')) {
       opener.classList.remove('active')
       showHeader()
+      opener.parentElement.classList.remove('active')
     } else {
       opener.classList.add('active')
+      opener.parentElement.classList.add('active')
       hideHeader()
     }
   }
@@ -92,13 +96,14 @@ function offerTileInit () {
   function resetFilters () {
     const items = offerTile.querySelectorAll("input")
     items.forEach((item) => {
-      if (item.hasAttribute('data-default-garde')) {
+      if (item.hasAttribute('data-default-garde') || item.hasAttribute('data-default-subject')) {
         item.checked = true
       }else{
         item.checked = false
       }
     })
     reset.style.display = 'none'
+    classInputText.innerHTML = "Все классы"
     subjectInputText.innerHTML = "Все предметы"
     makeFiltration();
   }
@@ -170,10 +175,9 @@ function offerTileInit () {
       'subject': subjects_result,
       'utm_t': utm_f,
       'promo': promo_f,
-      'oge_ege_type': oge_ege_type,
       'pagePaginate': p_paginate,
     };
-    $.request('DirectionFunctions::onPaginateAllCourses', {
+    $.request('TrialCourseFunctions::onPaginateAllCourses', {
       data: obData
     })
     // if (grade_first > 0){
@@ -182,5 +186,41 @@ function offerTileInit () {
     //   history.replaceState(null, "", url.toString())
     // }
     // }
+  }
+
+  initTabs()
+
+  function initTabs () {
+    const tabsParent = filterSubject.querySelector('.offer-tile__filter-tabs')
+    const tabs = filterSubject.querySelectorAll('.offer-tile__filter-tab')
+    const subjects = filterSubject.querySelectorAll('.offer-tile__filter-item')
+
+    if (!tabs.length || !subjects.length) return
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', changeTab)
+
+      function changeTab (e) {
+        e.stopPropagation()
+        const oldTab = filterSubject.querySelector('.offer-tile__filter-tab.active')
+        if (oldTab) oldTab.classList.remove('active')
+
+        this.classList.add('active')
+
+        subjects.forEach((subject) => {
+          subject.classList.add('hide')
+        })
+
+        const index = this.getAttribute('data-index')
+        const activeSubjects = filterSubject.querySelectorAll('[data-index="' + index + '"]')
+        activeSubjects.forEach((subject) => {
+          subject.classList.remove('hide')
+        })
+
+        tabsParent.scrollLeft = this.offsetLeft - tabsParent.clientWidth/2 + this.clientWidth/2
+      }
+    })
+
+    tabs[0].click()
   }
 }

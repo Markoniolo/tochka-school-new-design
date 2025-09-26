@@ -106,6 +106,50 @@
     margin: 0 auto;
     text-align: center;
   }
+  span {
+    position: relative;
+    font-weight: inherit;
+  }
+  &:hover {
+    .offer-cap__text-hover {
+      opacity: 1;
+    }
+  }
+}
+
+.offer-cap__text-hover {
+  pointer-events: none;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: -42px;
+  transform: translateY(-45px);
+  border-radius: 43px;
+  box-shadow: 0 4px 21px 0 rgba(0, 0, 0, 0.17);
+  background: #fff;
+  color: #000;
+  font-size: 12px;
+  line-height: 100%;
+  width: 279px;
+  padding: 10px 15px 11px;
+  transition-duration: $transition-duration;
+  transition-property: opacity;
+  @include media(lg) {
+    right: -64px;
+    transform: translateY(-42px);
+  }
+  &::before {
+    content: '';
+    @include bg-icon('icons/ic_hint_triangle.svg');
+    width: 73px;
+    height: 71px;
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    @include media(lg) {
+      right: 30px;
+    }
+  }
 }
 
 .offer-cap__area {
@@ -127,7 +171,7 @@
     z-index: -1;
     right: 0;
     width: 300px;
-    margin: -10px auto -30px;
+    margin: 10px auto -50px;
     overflow: hidden;
     height: 365px;
   }
@@ -135,21 +179,22 @@
     @include media(xs) {
       content: '';
       position: absolute;
+      z-index: 1;
       left: 0;
       right: 0;
-      height: 150px;
+      height: 120px;
     }
   }
   &::before {
     @include media(xs) {
       top: 0;
-      background: linear-gradient(0deg, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 1) 100%);
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%);
     }
   }
   &::after {
     @include media(xs) {
       bottom: 0;
-      background: linear-gradient(180deg, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 1) 100%);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%);
     }
   }
 }
@@ -159,7 +204,7 @@
   flex-direction: column;
   &:nth-child(1), &:nth-child(3) {
     .offer-cap__line-box {
-      animation: 20s marquee linear infinite;
+      animation: 40s marquee linear infinite;
     }
   }
   &:nth-child(1) {
@@ -168,7 +213,7 @@
   &:nth-child(2) {
     transform: translateY(-400px);
     .offer-cap__line-box {
-      animation: 20s marquee-reverse linear infinite;
+      animation: 40s marquee-reverse linear infinite;
     }
   }
   &:nth-child(3) {

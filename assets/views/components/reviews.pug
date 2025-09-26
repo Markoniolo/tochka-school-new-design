@@ -1,5 +1,5 @@
-mixin reviews(mod, title='Говорят ученики и&nbsp;родители')
-  .reviews(class = mod ? mod : false)
+mixin reviews(mod, title='Говорят ученики и&nbsp;родители', id)
+  .reviews(class = mod ? mod : false id = id ? id : false)
     .cont
       .reviews__top
         h2.reviews__caption!= title
