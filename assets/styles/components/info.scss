@@ -42,47 +42,11 @@
     @include bg-icon('info/info-bg_tablet.png');
   }
   @include media(xs) {
-    min-height: 573px;
+    min-height: auto;
     padding: 24px 15px 40px;
     @include bg-icon('info/info-bg_mob.png');
     width: 100%;
     margin: 0 auto;
-  }
-  &::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    bottom: 0;
-    left: 0;
-    @include bg-icon('info/info-decor-circles.svg');
-    width: 235px;
-    height: 155px;
-    @include media(lg) {
-      content: none;
-    }
-    @include media(xs) {
-      width: 28px;
-      height: 28px;
-      background: #68ccea;
-      border-radius: 50%;
-      content: '';
-      bottom: unset;
-      top: 161px;
-      left: 60px;
-    }
-  }
-  &::after {
-    @include media(xs) {
-      content: '';
-      width: 55px;
-      height: 55px;
-      background: #7fcbb4;
-      border-radius: 50%;
-      bottom: unset;
-      top: 138px;
-      right: 40px;
-      position: absolute;
-    }
   }
 }
 

@@ -5,6 +5,23 @@
     padding-top: 40px;
     margin-bottom: 40px;
   }
+  &.short {
+    .info__area {
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        left: 0;
+        @include bg-icon('info/info-decor-circles.svg');
+        width: 235px;
+        height: 155px;
+        @include media(lg) {
+          content: none;
+        }
+      }
+    }
+  }
   &.shortest {
     margin-bottom: 40px;
     .info__capital {
@@ -421,6 +438,9 @@
   &_blue {
     background: #6683c2;
     color: #FFFFFF;
+    .cost__name, .cost__price-current {
+      color: #FFFFFF;
+    }
     .cost__price-period {
       color: rgba(255, 255, 255, 0.5);
     }
@@ -441,12 +461,36 @@
       min-height: 104px;
     }
   }
+  &_trial {
+    position: relative;
+    z-index: 1;
+    background: #f3f5fb;
+    overflow: hidden;
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      right: -249px;
+      top: 50%;
+      transform: translateY(-50%);
+      @include bg-icon('cost/cost-box-trial-decor.svg');
+      width: 415px;
+      height: 415px;
+      @include media(xs) {
+        width: 333px;
+        height: 333px;
+        right: -204px;
+      }
+    }
+  }
 }
 
 .cost__name {
   margin-bottom: 12px;
   font-size: 24px;
   line-height: 92%;
+  font-weight: 600;
+  color: #003c56;
   @include media(xs) {
     margin-bottom: 8px;
     font-size: 18px;
@@ -533,6 +577,7 @@
   font-weight: 600;
   font-size: 24px;
   line-height: 92%;
+  color: #003c56;
   @include media(xs) {
     font-size: 18px;
   }

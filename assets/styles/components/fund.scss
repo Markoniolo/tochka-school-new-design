@@ -1,0 +1,148 @@
+.cost.capital, .cost.short {
+  .fund {
+    width: 100%;
+    min-height: 215px;
+    padding: 35px 45px;
+    @include media(lg) {
+      min-height: 261px;
+      padding: 25px;
+    }
+    @include media(xs) {
+      padding: 20px 15px;
+    }
+  }
+  .fund__title {
+    margin-bottom: 44px;
+    font-size: 38px;
+    @include media(lg) {
+      margin-bottom: 20px;
+      font-size: 25px;
+    }
+  }
+  .fund__text {
+    position: absolute;
+    left: 352px;
+    top: 112px;
+    max-width: 520px;
+    @include media(lg) {
+      position: static;
+      max-width: 387px;
+    }
+    span {
+      display: inline;
+    }
+  }
+  .fund__decor {
+    right: 66px;
+    width: 296px;
+    height: 215px;
+    @include bg-icon('fund/decor.svg');
+    @include media(lg) {
+      right: 0;
+      width: 267px;
+      height: auto;
+      top: 0;
+      @include bg-icon('fund/decor_tablet.svg');
+      background-position: left center;
+      background-size: cover;
+    }
+    @include media(xs) {
+      width: 251px;
+      height: 184px;
+      @include bg-icon('fund/decor_mob.svg');
+    }
+  }
+}
+
+.fund {
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
+  background: #fff;
+  padding: 40px 45px;
+  width: 657px;
+  min-height: 451px;
+  overflow: hidden;
+  @include media(lg) {
+    padding: 25px;
+    width: 100%;
+    border-radius: 10px;
+    min-height: 261px;
+  }
+  @include media(xs) {
+    padding: 20px 15px;
+  }
+}
+
+.fund__title {
+  margin-bottom: 30px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 20px;
+    font-size: 25px;
+    max-width: 387px;
+  }
+  @include media(xs) {
+    max-width: 290px;
+    margin: 0 auto 20px;
+    text-align: center;
+  }
+}
+
+.fund__text {
+  margin-bottom: 36px;
+  max-width: 365px;
+  font-size: 16px;
+  line-height: 135%;
+  color: #000;
+  @include media(lg) {
+    max-width: 387px;
+  }
+  @include media(xs) {
+    text-align: center;
+    margin: 0 auto 20px;
+  }
+  span {
+    display: block;
+    @include media(lg) {
+      display: inline;
+    }
+  }
+}
+
+.fund__decor {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  @include bg-icon('fund/decor_big.svg');
+  width: 309px;
+  height: 381px;
+  @include media(lg) {
+    width: 267px;
+    height: auto;
+    top: 0;
+    @include bg-icon('fund/decor_tablet.svg');
+    background-position: left center;
+    background-size: cover;
+  }
+  @include media(xs) {
+    margin: 0 auto 27px;
+    position: static;
+    width: 251px;
+    height: 184px;
+    @include bg-icon('fund/decor_mob.svg');
+  }
+}
+
+.fund__button {
+  display: inline-block;
+  font-size: 16px;
+  padding: 19px 39px;
+  @include media(xs) {
+    display: block;
+    padding: 19px 15px;
+  }
+}
