@@ -1,0 +1,140 @@
+.quiz-so {
+  overflow: hidden;
+  padding: 50px 0 163px;
+}
+
+.quiz-so__wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.quiz-so__inner {
+  position: relative;
+  z-index: 1;
+  @include bg-icon('quiz-so/bg.png');
+  background-size: cover;
+  border-radius: 31px;
+  min-height: 581px;
+  padding: 54px 60px;
+}
+
+.quiz-so__circle {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  &_1 {
+    top: -12px;
+    left: -69px;
+    width: 164px;
+    height: 164px;
+    background: #7fcbb4;
+  }
+  &_2 {
+    top: 141px;
+    left: -88px;
+    width: 60px;
+    height: 60px;
+    background: #f2c45b;
+  }
+}
+
+.quiz-so__picture {
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  right: 0;
+  border-radius: 0 0 31px 0;
+  width: 560px;
+  height: 558px;
+  overflow: hidden;
+}
+
+.quiz-so__image {
+  height: 100%;
+}
+
+.quiz-so__caption {
+  margin-bottom: 38px;
+  max-width: 696px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 112%;
+  color: #003c56;
+}
+
+.quiz-so__text {
+  margin-bottom: 28px;
+  max-width: 696px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #003c56;
+}
+
+.quiz-so__list {
+  margin-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quiz-so__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  line-height: 20px;
+  &::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: $orange;
+  }
+}
+
+.quiz-so__bottom {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 29px;
+}
+
+.quiz-so__button {
+  font-size: 16px;
+  flex-shrink: 0;
+  padding: 19px 41px;
+}
+
+.quiz-so__note {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 582px;
+  padding: 10px 26px 10px 60px;
+  border-radius: 34px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 113%;
+  color: #003c56;
+  background: linear-gradient(90deg, #fff 0%, #dee5f4 27.88%, #fff 60.1%, #dee5f4 100%);
+  &::before {
+    content: '';
+    @include bg-icon('quiz-so/ic_gift.svg');
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &::after {
+    content: '';
+
+  }
+}

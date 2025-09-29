@@ -8,12 +8,18 @@
     padding-bottom: 40px;
     margin-bottom: 40px;
   }
+  &_offer {
+    padding-bottom: 80px;
+    @include media(lg) {
+      padding-bottom: 40px;
+    }
+  }
   & + .reviews {
     @include media(lg) {
       margin-top: -40px;
     }
   }
-  &.summer {
+  &_summer {
     position: relative;
     z-index: 1;
     background: transparent;

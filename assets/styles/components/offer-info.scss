@@ -433,7 +433,7 @@
 }
 
 .offer-info__text {
-  max-width: 840px;
+  max-width: 915px;
   width: 100%;
   margin: 0 auto 24px;
   font-weight: 500;
@@ -441,6 +441,7 @@
   line-height: 23px;
   color: #fff;
   @include media(lg) {
+    max-width: 536px;
     font-size: 15px;
     line-height: 19px;
   }

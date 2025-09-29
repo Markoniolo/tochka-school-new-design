@@ -1,5 +1,5 @@
 mixin trial-license(mod)
-  article.trial-license(class = mod ? mod : false)
+  article.trial-license(class = mod ? `trial-license_${mod}` : false)
     .trial-license__cont.cont
       h2.trial-license__title.trial-title Наша лицензия
       .trial-license__area
