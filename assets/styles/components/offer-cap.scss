@@ -89,7 +89,7 @@
 
 .offer-cap__text {
   margin-bottom: 55px;
-  max-width: 600px;
+  max-width: 602px;
   width: 100%;
   font-weight: 500;
   font-size: 24px;
@@ -97,7 +97,7 @@
   color: #003c56;
   @include media(lg) {
     margin-bottom: 34px;
-    max-width: 303px;
+    max-width: 292px;
     font-size: 15px;
     line-height: 19px;
   }
@@ -208,16 +208,17 @@
     }
   }
   &:nth-child(1) {
-    transform: translateY(-200px);
+    transform: translateY(-100px);
   }
   &:nth-child(2) {
     transform: translateY(-400px);
     .offer-cap__line-box {
+      flex-direction: column-reverse;
       animation: 40s marquee-reverse linear infinite;
     }
   }
   &:nth-child(3) {
-    transform: translateY(-600px);
+    transform: translateY(-700px);
   }
 }
 
