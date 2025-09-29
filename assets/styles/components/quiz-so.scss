@@ -134,6 +134,7 @@
   }
   @include media(xs) {
     margin-bottom: 48px;
+    max-width: 100%;
   }
 }
 
@@ -200,6 +201,13 @@
   line-height: 113%;
   color: #003c56;
   background: linear-gradient(90deg, #fff 0%, #dee5f4 27.88%, #fff 60.1%, #dee5f4 100%);
+  @include media(xs) {
+    padding: 16px 15px 13px;
+    font-size: 13px;
+    line-height: 115%;
+    text-align: center;
+    border-radius: 53px;
+  }
   &::before {
     content: '';
     @include bg-icon('quiz-so/ic_gift.svg');
@@ -209,6 +217,14 @@
     left: 25px;
     top: 50%;
     transform: translateY(-50%);
+    @include media(xs) {
+      width: 16px;
+      height: 17px;
+      top: -10px;
+      left: calc(50% - 9px);
+      transform: none;
+      z-index: 1;
+    }
   }
   &::after {
     content: '';
@@ -219,5 +235,14 @@
     left: -8px;
     top: 50%;
     transform: translateY(-50%);
+    @include media(xs) {
+      border-radius: 12px;
+      background: #f1f4fa;
+      top: -17px;
+      transform: none;
+      left: calc(50% - 15px);
+      width: 31px;
+      height: 34px;
+    }
   }
 }
