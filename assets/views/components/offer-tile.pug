@@ -37,7 +37,7 @@
             .offer-tile__filter-list
               each item, index in allCoursesFilterListSubjects
                 label.offer-tile__filter-item(data-index=index)
-                  input.offer-tile__filter-input(type='radio' name='subject' value=`subject-id-${index + 1}` data-element='offer-tile-filter-input')
+                  input.offer-tile__filter-input.offer-tile__filter-input_subject(type='radio' name='subject' value=`subject-id-${index + 1}` data-element='offer-tile-filter-input')
                   .offer-tile__filter-view= `${item}`
                     img.offer-tile__filter-ticket(src=staticImg('all-courses/all-courses-icon.svg') alt='')
       button.offer-tile__reset-filter Сбросить

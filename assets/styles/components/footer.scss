@@ -283,6 +283,7 @@ a.footer__about {
   @include media(md) {
     display: none;
     margin-top: 16px;
+    text-align: center;
   }
 }
 

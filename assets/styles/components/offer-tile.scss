@@ -195,7 +195,11 @@
       @include media(lg) {
         width: 100%;
         left: 0;
+        right: -164px !important;
         top: calc(100% + 10px);
+      }
+      @include media(lg) {
+        right: 0 !important;
       }
     }
     .offer-tile__filter-list {
@@ -546,12 +550,9 @@
   flex-wrap: wrap;
   gap: 8px 12px;
   @include media(xs) {
-    padding-left: 115px;
+    padding-left: 0;
     gap: 10px;
-    margin-bottom: 0;
-  }
-  @include media(xxs) {
-    padding-left: 112px;
+    margin-bottom: 15px;
   }
 }
 
@@ -902,6 +903,12 @@
     text-align: center;
     font-size: 18px;
     color: #003C56;
+  }
+}
+
+.offer-tile__filter-swap {
+  @include media(xs) {
+    width: 100%;
   }
 }
 
