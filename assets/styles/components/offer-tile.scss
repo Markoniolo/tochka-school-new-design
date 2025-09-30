@@ -419,7 +419,7 @@
     }
     .offer-tile__name {
       margin-bottom: 10px;
-      font-size: 24px;
+      font-size: 18px;
       @include media(xs) {
         padding-left: 162px;
         line-height: 115%;
@@ -550,9 +550,10 @@
   flex-wrap: wrap;
   gap: 8px 12px;
   @include media(xs) {
-    padding-left: 0;
-    gap: 10px;
-    margin-bottom: 15px;
+    position: absolute;
+    top: 85px;
+    padding-left: 162px;
+    gap: 0;
   }
 }
 

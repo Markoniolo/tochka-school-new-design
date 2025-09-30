@@ -1,29 +1,30 @@
 -
-    const quizSoList = [
-        'Онлайн-уроки вживую + доступ к записям и конспектам',
-        'Тьютор проверяет домашние задания и даёт обратную связь',
-        'Куратор помогает с аттестациями и организацией',
-        'Родители видят прогресс на удобной платформе',
-    ]
+  const quizSoList = [
+    'Онлайн-уроки вживую + доступ к записям и конспектам',
+    'Тьютор проверяет домашние задания и даёт обратную связь',
+    'Куратор помогает с аттестациями и организацией',
+    'Родители видят прогресс на удобной платформе',
+  ]
 
 .quiz-so
-    .cont
-        .quiz-so__wrap
-            .quiz-so__circle.quiz-so__circle_1
-            .quiz-so__circle.quiz-so__circle_2
-            .quiz-so__inner
-                picture.quiz-so__picture
-                    source(srcset=staticImg('quiz-so/decor_tablet.svg') media="(max-width: 1339px)")
-                    img.quiz-so__image(src=staticImg('quiz-so/decor.svg') alt='')
-                .quiz-so__caption Школа, где дети учатся с интересом
-                .quiz-so__text.
-                    Ваш ребёнок учится дома в комфортном ритме: 2–4 урока в день,
-                    опытные учителя и индивидуальные тьюторы
-                ul.quiz-so__list
-                    each item in quizSoList
-                        li.quiz-so__item= item
-                .quiz-so__bottom
-                    button.quiz-so__button.btn-orange Подобрать формат
-                    .quiz-so__note.
-                        Пройдите короткий тест и узнайте, какой формат семейного обучения подойдёт
-                        вашему ребёнку и получите подарок + скидку!
+  .cont
+    .quiz-so__wrap
+      .quiz-so__circle.quiz-so__circle_1
+      .quiz-so__circle.quiz-so__circle_2
+      .quiz-so__inner
+        picture.quiz-so__picture
+          source(srcset=staticImg('quiz-so/decor_tablet.svg') media="(max-width: 1339px)")
+          img.quiz-so__image(src=staticImg('quiz-so/decor.svg') alt='')
+        .quiz-so__caption Школа, где дети учатся с интересом
+        .quiz-so__text.
+          Ваш ребёнок учится дома в комфортном ритме: 2–4 урока в день,
+          опытные учителя и индивидуальные тьюторы
+        ul.quiz-so__list
+          each item in quizSoList
+            li.quiz-so__item= item
+        .quiz-so__bottom
+          button.quiz-so__button.btn-orange Подобрать формат
+          .quiz-so__note.
+            Пройдите короткий тест и узнайте, какой формат семейного обучения подойдёт
+            вашему ребёнку и получите подарок + скидку!
+    include ./quiz-so-slide
