@@ -1586,6 +1586,16 @@ function footerNewDocInit () {
   footerNewDoc.addEventListener('click', () => footerNewDoc.classList.toggle('active'))
 }
 
+const footerQuizDocsSpan = document.querySelector('.footer-quiz__docs-span');
+
+if (footerQuizDocsSpan) footerQuizDocsSpanInit()
+
+function footerQuizDocsSpanInit () {
+  footerQuizDocsSpan.addEventListener('click', () => {
+    footerQuizDocsSpan.classList.toggle('footer-quiz__docs-span_active');
+  })
+}
+
 const footerTitleArray = document.querySelectorAll('[data-element="footer__title"]')
 
 if (footerTitleArray.length) footerTitleArrayInit()
