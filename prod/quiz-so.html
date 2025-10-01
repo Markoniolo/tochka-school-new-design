@@ -60,9 +60,9 @@
     </header>
   </div>
   <main class="wrapper">
-    <div class="quiz-so">
+    <form class="quiz-so">
       <div class="cont">
-        <div class="quiz-so__wrap">
+        <div class="quiz-so__wrap active" data-element="quiz-so-slide">
           <div class="quiz-so__circle quiz-so__circle_1"></div>
           <div class="quiz-so__circle quiz-so__circle_2"></div>
           <div class="quiz-so__inner">
@@ -82,7 +82,7 @@
               <li class="quiz-so__item">Родители видят прогресс на удобной платформе</li>
             </ul>
             <div class="quiz-so__bottom">
-              <button class="quiz-so__button btn-orange">Подобрать формат</button>
+              <button class="quiz-so__button btn-orange" type="button" data-element="quiz-so-slide-next">Подобрать формат</button>
               <div class="quiz-so__note">
                 Пройдите короткий тест и узнайте, какой формат семейного обучения подойдёт
                 вашему ребёнку и получите подарок + скидку!
@@ -90,21 +90,715 @@
             </div>
           </div>
         </div>
-        <div class="quiz-so-slide">
-          <div class="cont">
-            <div class="quiz-so-slide__wrap">
-              <div class="quiz-so-slide__area"></div>
-              <div class="quiz-so-slide__sidebar">
-                <div class="quiz-so-slide__sidebar-top">
-                  <img class="quiz-so-slide__sidebar-image" src="assets/img/" alt="">
-                  <div class="quiz-so-slide__sidebar-"></div>
+        <div class="quiz-so-slide" data-element="quiz-so-slide">
+          <div class="quiz-so-slide__wrap">
+            <div class="quiz-so-slide__circle quiz-so-slide__circle_1"></div>
+            <div class="quiz-so-slide__circle quiz-so-slide__circle_2"></div>
+            <div class="quiz-so-slide__area">
+              <div class="quiz-so-slide__tag">Вопрос №1</div>
+              <div class="quiz-so-slide__inner">
+                <div class="quiz-so-slide__caption">В каком классе сейчас ваш ребёнок?</div>
+                <div class="quiz-so-slide__list">
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="radio" name="slide-1" value="Дошкольник">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="7.5" cy="7.5" r="7" stroke="#F37E60"></circle>
+                      <circle class="active" cx="7.5" cy="7.5" r="3.5" fill="#F37E60"></circle>
+                    </svg>
+                    <div class="quiz-so-slide__name">Дошкольник</div>
+                  </label>
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="radio" name="slide-1" value="1–4 класс">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="7.5" cy="7.5" r="7" stroke="#F37E60"></circle>
+                      <circle class="active" cx="7.5" cy="7.5" r="3.5" fill="#F37E60"></circle>
+                    </svg>
+                    <div class="quiz-so-slide__name">1–4 класс</div>
+                  </label>
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="radio" name="slide-1" value="5–8 класс">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="7.5" cy="7.5" r="7" stroke="#F37E60"></circle>
+                      <circle class="active" cx="7.5" cy="7.5" r="3.5" fill="#F37E60"></circle>
+                    </svg>
+                    <div class="quiz-so-slide__name">5–8 класс</div>
+                  </label>
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="radio" name="slide-1" value="9–11 класс">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="7.5" cy="7.5" r="7" stroke="#F37E60"></circle>
+                      <circle class="active" cx="7.5" cy="7.5" r="3.5" fill="#F37E60"></circle>
+                    </svg>
+                    <div class="quiz-so-slide__name">9–11 класс</div>
+                  </label>
+                </div>
+                <div class="quiz-so-slide__bottom">
+                  <div class="quiz-so-slide__counter">
+                    Шаг:
+                    <span class="quiz-so-slide__current">1</span>
+                    из
+                    <span class="quiz-so-slide__length">9</span>
+                  </div>
+                  <div class="quiz-so-slide__loader-mob">15%</div>
+                  <div class="quiz-so-slide__buttons">
+                    <button class="quiz-so-slide__back" type="button" data-element="quiz-so-slide-back"></button>
+                    <button class="quiz-so-slide__next btn-orange btn-orange_arrow" type="button" data-element="quiz-so-slide-next">Далее</button>
+                  </div>
+                </div>
+                <div class="quiz-so-slide__loader">
+                  <div class="quiz-so-slide__loader-fill"></div>
                 </div>
               </div>
+            </div>
+            <div class="quiz-so-slide__sidebar">
+              <div class="quiz-so-slide__sidebar-top">
+                <img class="quiz-so-slide__sidebar-image" src="assets/img/quiz-so-slide/consultant.png" alt="">
+                <div class="quiz-so-slide__sidebar-inner">
+                  <div class="quiz-so-slide__sidebar-name">Ирина Белякова</div>
+                  <div class="quiz-so-slide__sidebar-note">онлайн-консультант</div>
+                </div>
+              </div>
+              <div class="quiz-so-slide__sidebar-box">
+                <div class="quiz-so-slide__sidebar-text">Ответьте на несколько вопросов о вашем ребёнке, и я подберу для него удобный формат обучения.</div>
+                <div class="quiz-so-slide__sidebar-text">После квиза подарим
+                  <br>
+                  <span>чек-лист «4 шага к переходу на СО»</span>
+                </div>
+              </div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_3"></div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_4"></div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_5"></div>
+            </div>
+          </div>
+        </div>
+        <div class="quiz-so-slide" data-element="quiz-so-slide">
+          <div class="quiz-so-slide__wrap">
+            <div class="quiz-so-slide__circle quiz-so-slide__circle_1"></div>
+            <div class="quiz-so-slide__circle quiz-so-slide__circle_2"></div>
+            <div class="quiz-so-slide__area">
+              <div class="quiz-so-slide__tag">Вопрос №2</div>
+              <div class="quiz-so-slide__inner">
+                <div class="quiz-so-slide__caption">Как ребёнок учится сейчас?</div>
+                <div class="quiz-so-slide__list">
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="radio" name="slide-2" value="В обычной школе">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="7.5" cy="7.5" r="7" stroke="#F37E60"></circle>
+                      <circle class="active" cx="7.5" cy="7.5" r="3.5" fill="#F37E60"></circle>
+                    </svg>
+                    <div class="quiz-so-slide__name">В обычной школе</div>
+                  </label>
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="radio" name="slide-2" value="Уже на семейном обучении">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="7.5" cy="7.5" r="7" stroke="#F37E60"></circle>
+                      <circle class="active" cx="7.5" cy="7.5" r="3.5" fill="#F37E60"></circle>
+                    </svg>
+                    <div class="quiz-so-slide__name">Уже на семейном обучении</div>
+                  </label>
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="radio" name="slide-2" value="Только планируем переход">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="7.5" cy="7.5" r="7" stroke="#F37E60"></circle>
+                      <circle class="active" cx="7.5" cy="7.5" r="3.5" fill="#F37E60"></circle>
+                    </svg>
+                    <div class="quiz-so-slide__name">Только планируем переход</div>
+                  </label>
+                </div>
+                <div class="quiz-so-slide__bottom">
+                  <div class="quiz-so-slide__counter">
+                    Шаг:
+                    <span class="quiz-so-slide__current">2</span>
+                    из
+                    <span class="quiz-so-slide__length">9</span>
+                  </div>
+                  <div class="quiz-so-slide__loader-mob">15%</div>
+                  <div class="quiz-so-slide__buttons">
+                    <button class="quiz-so-slide__back" type="button" data-element="quiz-so-slide-back"></button>
+                    <button class="quiz-so-slide__next btn-orange btn-orange_arrow" type="button" data-element="quiz-so-slide-next">Далее</button>
+                  </div>
+                </div>
+                <div class="quiz-so-slide__loader">
+                  <div class="quiz-so-slide__loader-fill"></div>
+                </div>
+              </div>
+            </div>
+            <div class="quiz-so-slide__sidebar">
+              <div class="quiz-so-slide__sidebar-top">
+                <img class="quiz-so-slide__sidebar-image" src="assets/img/quiz-so-slide/consultant.png" alt="">
+                <div class="quiz-so-slide__sidebar-inner">
+                  <div class="quiz-so-slide__sidebar-name">Ирина Белякова</div>
+                  <div class="quiz-so-slide__sidebar-note">онлайн-консультант</div>
+                </div>
+              </div>
+              <div class="quiz-so-slide__sidebar-box">
+                <div class="quiz-so-slide__sidebar-text">Ответьте на несколько вопросов о вашем ребёнке, и я подберу для него удобный формат обучения.</div>
+                <div class="quiz-so-slide__sidebar-text">После квиза подарим
+                  <br>
+                  <span>чек-лист «4 шага к переходу на СО»</span>
+                </div>
+              </div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_3"></div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_4"></div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_5"></div>
+            </div>
+          </div>
+        </div>
+        <div class="quiz-so-slide" data-element="quiz-so-slide">
+          <div class="quiz-so-slide__wrap">
+            <div class="quiz-so-slide__circle quiz-so-slide__circle_1"></div>
+            <div class="quiz-so-slide__circle quiz-so-slide__circle_2"></div>
+            <div class="quiz-so-slide__area">
+              <div class="quiz-so-slide__tag">Вопрос №3</div>
+              <div class="quiz-so-slide__inner">
+                <div class="quiz-so-slide__caption">Ваш ребёнок сталкивается с проблемами в школе?</div>
+                <div class="quiz-so-slide__list">
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="checkbox" name="slide-3" value="Трудно усваивать материал">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="0.5" y="0.5" width="14" height="14" rx="1.5" stroke="#F37E60"></rect>
+                      <path class="active" d="M11.7909 4.22597C11.5124 3.92458 11.0602 3.92477 10.7814 4.22597L6.23808 9.13702L4.21877 6.95437C3.93994 6.65298 3.48796 6.65298 3.20912 6.95437C2.93029 7.25576 2.93029 7.74431 3.20912 8.0457L5.73315 10.7739C5.87248 10.9245 6.05518 11 6.23789 11C6.4206 11 6.60347 10.9247 6.7428 10.7739L11.7909 5.31727C12.0697 5.01609 12.0697 4.52734 11.7909 4.22597Z" fill="#F37E60"></path>
+                    </svg>
+                    <div class="quiz-so-slide__name">Трудно усваивать материал</div>
+                  </label>
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="checkbox" name="slide-3" value="Много пропусков из-за болезней">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="0.5" y="0.5" width="14" height="14" rx="1.5" stroke="#F37E60"></rect>
+                      <path class="active" d="M11.7909 4.22597C11.5124 3.92458 11.0602 3.92477 10.7814 4.22597L6.23808 9.13702L4.21877 6.95437C3.93994 6.65298 3.48796 6.65298 3.20912 6.95437C2.93029 7.25576 2.93029 7.74431 3.20912 8.0457L5.73315 10.7739C5.87248 10.9245 6.05518 11 6.23789 11C6.4206 11 6.60347 10.9247 6.7428 10.7739L11.7909 5.31727C12.0697 5.01609 12.0697 4.52734 11.7909 4.22597Z" fill="#F37E60"></path>
+                    </svg>
+                    <div class="quiz-so-slide__name">Много пропусков из-за болезней</div>
+                  </label>
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="checkbox" name="slide-3" value="Конфликты с одноклассниками">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="0.5" y="0.5" width="14" height="14" rx="1.5" stroke="#F37E60"></rect>
+                      <path class="active" d="M11.7909 4.22597C11.5124 3.92458 11.0602 3.92477 10.7814 4.22597L6.23808 9.13702L4.21877 6.95437C3.93994 6.65298 3.48796 6.65298 3.20912 6.95437C2.93029 7.25576 2.93029 7.74431 3.20912 8.0457L5.73315 10.7739C5.87248 10.9245 6.05518 11 6.23789 11C6.4206 11 6.60347 10.9247 6.7428 10.7739L11.7909 5.31727C12.0697 5.01609 12.0697 4.52734 11.7909 4.22597Z" fill="#F37E60"></path>
+                    </svg>
+                    <div class="quiz-so-slide__name">Конфликты с одноклассниками</div>
+                  </label>
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="checkbox" name="slide-3" value="Всё в порядке">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="0.5" y="0.5" width="14" height="14" rx="1.5" stroke="#F37E60"></rect>
+                      <path class="active" d="M11.7909 4.22597C11.5124 3.92458 11.0602 3.92477 10.7814 4.22597L6.23808 9.13702L4.21877 6.95437C3.93994 6.65298 3.48796 6.65298 3.20912 6.95437C2.93029 7.25576 2.93029 7.74431 3.20912 8.0457L5.73315 10.7739C5.87248 10.9245 6.05518 11 6.23789 11C6.4206 11 6.60347 10.9247 6.7428 10.7739L11.7909 5.31727C12.0697 5.01609 12.0697 4.52734 11.7909 4.22597Z" fill="#F37E60"></path>
+                    </svg>
+                    <div class="quiz-so-slide__name">Всё в порядке</div>
+                  </label>
+                </div>
+                <div class="quiz-so-slide__bottom">
+                  <div class="quiz-so-slide__counter">
+                    Шаг:
+                    <span class="quiz-so-slide__current">3</span>
+                    из
+                    <span class="quiz-so-slide__length">9</span>
+                  </div>
+                  <div class="quiz-so-slide__loader-mob">15%</div>
+                  <div class="quiz-so-slide__buttons">
+                    <button class="quiz-so-slide__back" type="button" data-element="quiz-so-slide-back"></button>
+                    <button class="quiz-so-slide__next btn-orange btn-orange_arrow" type="button" data-element="quiz-so-slide-next">Далее</button>
+                  </div>
+                </div>
+                <div class="quiz-so-slide__loader">
+                  <div class="quiz-so-slide__loader-fill"></div>
+                </div>
+              </div>
+            </div>
+            <div class="quiz-so-slide__sidebar">
+              <div class="quiz-so-slide__sidebar-top">
+                <img class="quiz-so-slide__sidebar-image" src="assets/img/quiz-so-slide/consultant.png" alt="">
+                <div class="quiz-so-slide__sidebar-inner">
+                  <div class="quiz-so-slide__sidebar-name">Ирина Белякова</div>
+                  <div class="quiz-so-slide__sidebar-note">онлайн-консультант</div>
+                </div>
+              </div>
+              <div class="quiz-so-slide__sidebar-box">
+                <div class="quiz-so-slide__sidebar-text">Ответьте на несколько вопросов о вашем ребёнке, и я подберу для него удобный формат обучения.</div>
+                <div class="quiz-so-slide__sidebar-text">После квиза подарим
+                  <br>
+                  <span>чек-лист «4 шага к переходу на СО»</span>
+                </div>
+              </div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_3"></div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_4"></div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_5"></div>
+            </div>
+          </div>
+        </div>
+        <div class="quiz-so-slide" data-element="quiz-so-slide">
+          <div class="quiz-so-slide__wrap">
+            <div class="quiz-so-slide__circle quiz-so-slide__circle_1"></div>
+            <div class="quiz-so-slide__circle quiz-so-slide__circle_2"></div>
+            <div class="quiz-so-slide__area">
+              <div class="quiz-so-slide__tag">Вопрос №4</div>
+              <div class="quiz-so-slide__inner">
+                <div class="quiz-so-slide__caption">Ваш ребёнок с радостью идёт в школу, позитивно отзывается о школьной жизни?</div>
+                <div class="quiz-so-slide__list">
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="radio" name="slide-4" value="Да, с радостью">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="7.5" cy="7.5" r="7" stroke="#F37E60"></circle>
+                      <circle class="active" cx="7.5" cy="7.5" r="3.5" fill="#F37E60"></circle>
+                    </svg>
+                    <div class="quiz-so-slide__name">Да, с радостью</div>
+                  </label>
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="radio" name="slide-4" value="Нейтрально">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="7.5" cy="7.5" r="7" stroke="#F37E60"></circle>
+                      <circle class="active" cx="7.5" cy="7.5" r="3.5" fill="#F37E60"></circle>
+                    </svg>
+                    <div class="quiz-so-slide__name">Нейтрально</div>
+                  </label>
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="radio" name="slide-4" value="Нет, школа вызывает негатив">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="7.5" cy="7.5" r="7" stroke="#F37E60"></circle>
+                      <circle class="active" cx="7.5" cy="7.5" r="3.5" fill="#F37E60"></circle>
+                    </svg>
+                    <div class="quiz-so-slide__name">Нет, школа вызывает негатив</div>
+                  </label>
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="radio" name="slide-4" value="Всё в порядке">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="7.5" cy="7.5" r="7" stroke="#F37E60"></circle>
+                      <circle class="active" cx="7.5" cy="7.5" r="3.5" fill="#F37E60"></circle>
+                    </svg>
+                    <div class="quiz-so-slide__name">Всё в порядке</div>
+                  </label>
+                </div>
+                <div class="quiz-so-slide__bottom">
+                  <div class="quiz-so-slide__counter">
+                    Шаг:
+                    <span class="quiz-so-slide__current">4</span>
+                    из
+                    <span class="quiz-so-slide__length">9</span>
+                  </div>
+                  <div class="quiz-so-slide__loader-mob">15%</div>
+                  <div class="quiz-so-slide__buttons">
+                    <button class="quiz-so-slide__back" type="button" data-element="quiz-so-slide-back"></button>
+                    <button class="quiz-so-slide__next btn-orange btn-orange_arrow" type="button" data-element="quiz-so-slide-next">Далее</button>
+                  </div>
+                </div>
+                <div class="quiz-so-slide__loader">
+                  <div class="quiz-so-slide__loader-fill"></div>
+                </div>
+              </div>
+            </div>
+            <div class="quiz-so-slide__sidebar">
+              <div class="quiz-so-slide__sidebar-top">
+                <img class="quiz-so-slide__sidebar-image" src="assets/img/quiz-so-slide/consultant.png" alt="">
+                <div class="quiz-so-slide__sidebar-inner">
+                  <div class="quiz-so-slide__sidebar-name">Ирина Белякова</div>
+                  <div class="quiz-so-slide__sidebar-note">онлайн-консультант</div>
+                </div>
+              </div>
+              <div class="quiz-so-slide__sidebar-box">
+                <div class="quiz-so-slide__sidebar-text">Ответьте на несколько вопросов о вашем ребёнке, и я подберу для него удобный формат обучения.</div>
+                <div class="quiz-so-slide__sidebar-text">После квиза подарим
+                  <br>
+                  <span>чек-лист «4 шага к переходу на СО»</span>
+                </div>
+              </div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_3"></div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_4"></div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_5"></div>
+            </div>
+          </div>
+        </div>
+        <div class="quiz-so-slide" data-element="quiz-so-slide">
+          <div class="quiz-so-slide__wrap">
+            <div class="quiz-so-slide__circle quiz-so-slide__circle_1"></div>
+            <div class="quiz-so-slide__circle quiz-so-slide__circle_2"></div>
+            <div class="quiz-so-slide__area">
+              <div class="quiz-so-slide__tag">Вопрос №5</div>
+              <div class="quiz-so-slide__inner">
+                <div class="quiz-so-slide__caption">Что для вас главное в семейном обучении?</div>
+                <div class="quiz-so-slide__list">
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="checkbox" name="slide-5" value="Гибкий график">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="0.5" y="0.5" width="14" height="14" rx="1.5" stroke="#F37E60"></rect>
+                      <path class="active" d="M11.7909 4.22597C11.5124 3.92458 11.0602 3.92477 10.7814 4.22597L6.23808 9.13702L4.21877 6.95437C3.93994 6.65298 3.48796 6.65298 3.20912 6.95437C2.93029 7.25576 2.93029 7.74431 3.20912 8.0457L5.73315 10.7739C5.87248 10.9245 6.05518 11 6.23789 11C6.4206 11 6.60347 10.9247 6.7428 10.7739L11.7909 5.31727C12.0697 5.01609 12.0697 4.52734 11.7909 4.22597Z" fill="#F37E60"></path>
+                    </svg>
+                    <div class="quiz-so-slide__name">Гибкий график</div>
+                  </label>
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="checkbox" name="slide-5" value="Индивидуальный подход">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="0.5" y="0.5" width="14" height="14" rx="1.5" stroke="#F37E60"></rect>
+                      <path class="active" d="M11.7909 4.22597C11.5124 3.92458 11.0602 3.92477 10.7814 4.22597L6.23808 9.13702L4.21877 6.95437C3.93994 6.65298 3.48796 6.65298 3.20912 6.95437C2.93029 7.25576 2.93029 7.74431 3.20912 8.0457L5.73315 10.7739C5.87248 10.9245 6.05518 11 6.23789 11C6.4206 11 6.60347 10.9247 6.7428 10.7739L11.7909 5.31727C12.0697 5.01609 12.0697 4.52734 11.7909 4.22597Z" fill="#F37E60"></path>
+                    </svg>
+                    <div class="quiz-so-slide__name">Индивидуальный подход</div>
+                  </label>
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="checkbox" name="slide-5" value="Поддержка тьютора и куратора">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="0.5" y="0.5" width="14" height="14" rx="1.5" stroke="#F37E60"></rect>
+                      <path class="active" d="M11.7909 4.22597C11.5124 3.92458 11.0602 3.92477 10.7814 4.22597L6.23808 9.13702L4.21877 6.95437C3.93994 6.65298 3.48796 6.65298 3.20912 6.95437C2.93029 7.25576 2.93029 7.74431 3.20912 8.0457L5.73315 10.7739C5.87248 10.9245 6.05518 11 6.23789 11C6.4206 11 6.60347 10.9247 6.7428 10.7739L11.7909 5.31727C12.0697 5.01609 12.0697 4.52734 11.7909 4.22597Z" fill="#F37E60"></path>
+                    </svg>
+                    <div class="quiz-so-slide__name">Поддержка тьютора и куратора</div>
+                  </label>
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="checkbox" name="slide-5" value="Аттестации и документы">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="0.5" y="0.5" width="14" height="14" rx="1.5" stroke="#F37E60"></rect>
+                      <path class="active" d="M11.7909 4.22597C11.5124 3.92458 11.0602 3.92477 10.7814 4.22597L6.23808 9.13702L4.21877 6.95437C3.93994 6.65298 3.48796 6.65298 3.20912 6.95437C2.93029 7.25576 2.93029 7.74431 3.20912 8.0457L5.73315 10.7739C5.87248 10.9245 6.05518 11 6.23789 11C6.4206 11 6.60347 10.9247 6.7428 10.7739L11.7909 5.31727C12.0697 5.01609 12.0697 4.52734 11.7909 4.22597Z" fill="#F37E60"></path>
+                    </svg>
+                    <div class="quiz-so-slide__name">Аттестации и документы</div>
+                  </label>
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="checkbox" name="slide-5" value="Подготовка к экзаменам (ОГЭ/ЕГЭ)">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="0.5" y="0.5" width="14" height="14" rx="1.5" stroke="#F37E60"></rect>
+                      <path class="active" d="M11.7909 4.22597C11.5124 3.92458 11.0602 3.92477 10.7814 4.22597L6.23808 9.13702L4.21877 6.95437C3.93994 6.65298 3.48796 6.65298 3.20912 6.95437C2.93029 7.25576 2.93029 7.74431 3.20912 8.0457L5.73315 10.7739C5.87248 10.9245 6.05518 11 6.23789 11C6.4206 11 6.60347 10.9247 6.7428 10.7739L11.7909 5.31727C12.0697 5.01609 12.0697 4.52734 11.7909 4.22597Z" fill="#F37E60"></path>
+                    </svg>
+                    <div class="quiz-so-slide__name">Подготовка к экзаменам (ОГЭ/ЕГЭ)</div>
+                  </label>
+                </div>
+                <div class="quiz-so-slide__bottom">
+                  <div class="quiz-so-slide__counter">
+                    Шаг:
+                    <span class="quiz-so-slide__current">5</span>
+                    из
+                    <span class="quiz-so-slide__length">9</span>
+                  </div>
+                  <div class="quiz-so-slide__loader-mob">15%</div>
+                  <div class="quiz-so-slide__buttons">
+                    <button class="quiz-so-slide__back" type="button" data-element="quiz-so-slide-back"></button>
+                    <button class="quiz-so-slide__next btn-orange btn-orange_arrow" type="button" data-element="quiz-so-slide-next">Далее</button>
+                  </div>
+                </div>
+                <div class="quiz-so-slide__loader">
+                  <div class="quiz-so-slide__loader-fill"></div>
+                </div>
+              </div>
+            </div>
+            <div class="quiz-so-slide__sidebar">
+              <div class="quiz-so-slide__sidebar-top">
+                <img class="quiz-so-slide__sidebar-image" src="assets/img/quiz-so-slide/consultant.png" alt="">
+                <div class="quiz-so-slide__sidebar-inner">
+                  <div class="quiz-so-slide__sidebar-name">Ирина Белякова</div>
+                  <div class="quiz-so-slide__sidebar-note">онлайн-консультант</div>
+                </div>
+              </div>
+              <div class="quiz-so-slide__sidebar-box">
+                <div class="quiz-so-slide__sidebar-text">Расскажите, что вам важно при выборе семейного обучения</div>
+              </div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_3"></div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_4"></div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_5"></div>
+            </div>
+          </div>
+        </div>
+        <div class="quiz-so-slide" data-element="quiz-so-slide">
+          <div class="quiz-so-slide__wrap">
+            <div class="quiz-so-slide__circle quiz-so-slide__circle_1"></div>
+            <div class="quiz-so-slide__circle quiz-so-slide__circle_2"></div>
+            <div class="quiz-so-slide__area">
+              <div class="quiz-so-slide__tag">Вопрос №6</div>
+              <div class="quiz-so-slide__inner">
+                <div class="quiz-so-slide__caption">Какой формат занятий вам ближе?</div>
+                <div class="quiz-so-slide__list">
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="radio" name="slide-6" value="Онлайн-уроки вживую">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="7.5" cy="7.5" r="7" stroke="#F37E60"></circle>
+                      <circle class="active" cx="7.5" cy="7.5" r="3.5" fill="#F37E60"></circle>
+                    </svg>
+                    <div class="quiz-so-slide__name">Онлайн-уроки вживую</div>
+                  </label>
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="radio" name="slide-6" value="Просмотр записей уроков в удобное время">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="7.5" cy="7.5" r="7" stroke="#F37E60"></circle>
+                      <circle class="active" cx="7.5" cy="7.5" r="3.5" fill="#F37E60"></circle>
+                    </svg>
+                    <div class="quiz-so-slide__name">Просмотр записей уроков в удобное время</div>
+                  </label>
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="radio" name="slide-6" value="Смешанный (и онлайн, и записи)">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="7.5" cy="7.5" r="7" stroke="#F37E60"></circle>
+                      <circle class="active" cx="7.5" cy="7.5" r="3.5" fill="#F37E60"></circle>
+                    </svg>
+                    <div class="quiz-so-slide__name">Смешанный (и онлайн, и записи)</div>
+                  </label>
+                </div>
+                <div class="quiz-so-slide__bottom">
+                  <div class="quiz-so-slide__counter">
+                    Шаг:
+                    <span class="quiz-so-slide__current">6</span>
+                    из
+                    <span class="quiz-so-slide__length">9</span>
+                  </div>
+                  <div class="quiz-so-slide__loader-mob">15%</div>
+                  <div class="quiz-so-slide__buttons">
+                    <button class="quiz-so-slide__back" type="button" data-element="quiz-so-slide-back"></button>
+                    <button class="quiz-so-slide__next btn-orange btn-orange_arrow" type="button" data-element="quiz-so-slide-next">Далее</button>
+                  </div>
+                </div>
+                <div class="quiz-so-slide__loader">
+                  <div class="quiz-so-slide__loader-fill"></div>
+                </div>
+              </div>
+            </div>
+            <div class="quiz-so-slide__sidebar">
+              <div class="quiz-so-slide__sidebar-top">
+                <img class="quiz-so-slide__sidebar-image" src="assets/img/quiz-so-slide/consultant.png" alt="">
+                <div class="quiz-so-slide__sidebar-inner">
+                  <div class="quiz-so-slide__sidebar-name">Ирина Белякова</div>
+                  <div class="quiz-so-slide__sidebar-note">онлайн-консультант</div>
+                </div>
+              </div>
+              <div class="quiz-so-slide__sidebar-box">
+                <div class="quiz-so-slide__sidebar-text">Расскажите, что вам важно при выборе семейного обучения</div>
+              </div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_3"></div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_4"></div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_5"></div>
+            </div>
+          </div>
+        </div>
+        <div class="quiz-so-slide" data-element="quiz-so-slide">
+          <div class="quiz-so-slide__wrap">
+            <div class="quiz-so-slide__circle quiz-so-slide__circle_1"></div>
+            <div class="quiz-so-slide__circle quiz-so-slide__circle_2"></div>
+            <div class="quiz-so-slide__area">
+              <div class="quiz-so-slide__tag">Вопрос №7</div>
+              <div class="quiz-so-slide__inner">
+                <div class="quiz-so-slide__caption">Нужна ли помощь с переходом на семейное обучение?</div>
+                <div class="quiz-so-slide__list">
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="radio" name="slide-7" value="Да, нужны документы и прикрепление к школе">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="7.5" cy="7.5" r="7" stroke="#F37E60"></circle>
+                      <circle class="active" cx="7.5" cy="7.5" r="3.5" fill="#F37E60"></circle>
+                    </svg>
+                    <div class="quiz-so-slide__name">Да, нужны документы и прикрепление к школе</div>
+                  </label>
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="radio" name="slide-7" value="Нет, справлюсь сам">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="7.5" cy="7.5" r="7" stroke="#F37E60"></circle>
+                      <circle class="active" cx="7.5" cy="7.5" r="3.5" fill="#F37E60"></circle>
+                    </svg>
+                    <div class="quiz-so-slide__name">Нет, справлюсь сам</div>
+                  </label>
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="radio" name="slide-7" value="Пока только хочу узнать подробнее">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="7.5" cy="7.5" r="7" stroke="#F37E60"></circle>
+                      <circle class="active" cx="7.5" cy="7.5" r="3.5" fill="#F37E60"></circle>
+                    </svg>
+                    <div class="quiz-so-slide__name">Пока только хочу узнать подробнее</div>
+                  </label>
+                </div>
+                <div class="quiz-so-slide__bottom">
+                  <div class="quiz-so-slide__counter">
+                    Шаг:
+                    <span class="quiz-so-slide__current">7</span>
+                    из
+                    <span class="quiz-so-slide__length">9</span>
+                  </div>
+                  <div class="quiz-so-slide__loader-mob">15%</div>
+                  <div class="quiz-so-slide__buttons">
+                    <button class="quiz-so-slide__back" type="button" data-element="quiz-so-slide-back"></button>
+                    <button class="quiz-so-slide__next btn-orange btn-orange_arrow" type="button" data-element="quiz-so-slide-next">Далее</button>
+                  </div>
+                </div>
+                <div class="quiz-so-slide__loader">
+                  <div class="quiz-so-slide__loader-fill"></div>
+                </div>
+              </div>
+            </div>
+            <div class="quiz-so-slide__sidebar">
+              <div class="quiz-so-slide__sidebar-top">
+                <img class="quiz-so-slide__sidebar-image" src="assets/img/quiz-so-slide/consultant.png" alt="">
+                <div class="quiz-so-slide__sidebar-inner">
+                  <div class="quiz-so-slide__sidebar-name">Ирина Белякова</div>
+                  <div class="quiz-so-slide__sidebar-note">онлайн-консультант</div>
+                </div>
+              </div>
+              <div class="quiz-so-slide__sidebar-box">
+                <div class="quiz-so-slide__sidebar-text">Расскажите, что вам важно при выборе семейного обучения</div>
+              </div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_3"></div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_4"></div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_5"></div>
+            </div>
+          </div>
+        </div>
+        <div class="quiz-so-slide" data-element="quiz-so-slide">
+          <div class="quiz-so-slide__wrap">
+            <div class="quiz-so-slide__circle quiz-so-slide__circle_1"></div>
+            <div class="quiz-so-slide__circle quiz-so-slide__circle_2"></div>
+            <div class="quiz-so-slide__area">
+              <div class="quiz-so-slide__tag">Вопрос №8</div>
+              <div class="quiz-so-slide__inner">
+                <div class="quiz-so-slide__caption">Хотите ли оплачивать обучение с помощью материнского капитала или получать налоговый вычет?</div>
+                <div class="quiz-so-slide__list">
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="radio" name="slide-8" value="Да">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="7.5" cy="7.5" r="7" stroke="#F37E60"></circle>
+                      <circle class="active" cx="7.5" cy="7.5" r="3.5" fill="#F37E60"></circle>
+                    </svg>
+                    <div class="quiz-so-slide__name">Да</div>
+                  </label>
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="radio" name="slide-8" value="Нет">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="7.5" cy="7.5" r="7" stroke="#F37E60"></circle>
+                      <circle class="active" cx="7.5" cy="7.5" r="3.5" fill="#F37E60"></circle>
+                    </svg>
+                    <div class="quiz-so-slide__name">Нет</div>
+                  </label>
+                  <label class="quiz-so-slide__label">
+                    <input class="quiz-so-slide__input" type="radio" name="slide-8" value="Хочу уточнить детали">
+                    <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="7.5" cy="7.5" r="7" stroke="#F37E60"></circle>
+                      <circle class="active" cx="7.5" cy="7.5" r="3.5" fill="#F37E60"></circle>
+                    </svg>
+                    <div class="quiz-so-slide__name">Хочу уточнить детали</div>
+                  </label>
+                </div>
+                <div class="quiz-so-slide__bottom">
+                  <div class="quiz-so-slide__counter">
+                    Шаг:
+                    <span class="quiz-so-slide__current">8</span>
+                    из
+                    <span class="quiz-so-slide__length">9</span>
+                  </div>
+                  <div class="quiz-so-slide__loader-mob">15%</div>
+                  <div class="quiz-so-slide__buttons">
+                    <button class="quiz-so-slide__back" type="button" data-element="quiz-so-slide-back"></button>
+                    <button class="quiz-so-slide__next btn-orange btn-orange_arrow" type="button" data-element="quiz-so-slide-next">Далее</button>
+                  </div>
+                </div>
+                <div class="quiz-so-slide__loader">
+                  <div class="quiz-so-slide__loader-fill"></div>
+                </div>
+              </div>
+            </div>
+            <div class="quiz-so-slide__sidebar">
+              <div class="quiz-so-slide__sidebar-top">
+                <img class="quiz-so-slide__sidebar-image" src="assets/img/quiz-so-slide/consultant.png" alt="">
+                <div class="quiz-so-slide__sidebar-inner">
+                  <div class="quiz-so-slide__sidebar-name">Ирина Белякова</div>
+                  <div class="quiz-so-slide__sidebar-note">онлайн-консультант</div>
+                </div>
+              </div>
+              <div class="quiz-so-slide__sidebar-box">
+                <div class="quiz-so-slide__sidebar-text">При покупке в этом месяце сделаем для вас дополнительную <span>скидку 5%</span>
+                </div>
+              </div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_3"></div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_4"></div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_5"></div>
+            </div>
+          </div>
+        </div>
+        <div class="quiz-so-slide" data-element="quiz-so-slide">
+          <div class="quiz-so-slide__wrap">
+            <div class="quiz-so-slide__circle quiz-so-slide__circle_1"></div>
+            <div class="quiz-so-slide__circle quiz-so-slide__circle_2"></div>
+            <div class="quiz-so-slide__area">
+              <div class="quiz-so-slide__tag">Вопрос №9</div>
+              <div class="quiz-so-slide__inner">
+                <div class="quiz-so-slide__caption">Последний шаг</div>
+                <div class="quiz-so-slide__form">
+                  <input class="quiz-so-slide__form-input input-white" name="name" placeholder="Имя родителя" type="text">
+                  <input class="quiz-so-slide__form-input input-white" name="phone" placeholder="Номер телефона" type="tel" required data-element="input-phone-intl">
+                  <input name="tel" type="hidden" required data-element="input-phone-hidden">
+                </div>
+                <div class="quiz-so-slide__line">
+                  <label class="quiz-so-slide__checkbox">
+                    <input class="quiz-so-slide__checkbox-input" name="policy" type="checkbox">
+                    <div class="quiz-so-slide__checkbox-view"></div>
+                    <div class="quiz-so-slide__checkbox-text">
+                      Даю
+                      <a href="https://tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target="_blank">Согласие</a>
+                      на обработку персональных данных в соответствии с
+                      <a href="https://tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf" target="_blank">Политикой.</a>
+                    </div>
+                  </label>
+                  <label class="quiz-so-slide__checkbox">
+                    <input class="quiz-so-slide__checkbox-input" name="news" type="checkbox">
+                    <div class="quiz-so-slide__checkbox-view"></div>
+                    <div class="quiz-so-slide__checkbox-text">
+                      Согласен на
+                      <a href="https://tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf" target="_blank">получение рекламы</a>
+                    </div>
+                  </label>
+                </div>
+                <div class="quiz-so-slide__bottom">
+                  <div class="quiz-so-slide__counter">
+                    Шаг:
+                    <span class="quiz-so-slide__current">9</span>
+                    из
+                    <span class="quiz-so-slide__length">9</span>
+                  </div>
+                  <div class="quiz-so-slide__loader-mob">15%</div>
+                  <div class="quiz-so-slide__buttons">
+                    <button class="quiz-so-slide__back" type="button" data-element="quiz-so-slide-back"></button>
+                    <button class="quiz-so-slide__next btn-orange btn-orange_arrow" type="button" data-element="quiz-so-slide-next">Далее</button>
+                  </div>
+                </div>
+                <div class="quiz-so-slide__loader">
+                  <div class="quiz-so-slide__loader-fill"></div>
+                </div>
+              </div>
+            </div>
+            <div class="quiz-so-slide__sidebar">
+              <div class="quiz-so-slide__sidebar-top">
+                <img class="quiz-so-slide__sidebar-image" src="assets/img/quiz-so-slide/consultant.png" alt="">
+                <div class="quiz-so-slide__sidebar-inner">
+                  <div class="quiz-so-slide__sidebar-name">Ирина Белякова</div>
+                  <div class="quiz-so-slide__sidebar-note">онлайн-консультант</div>
+                </div>
+              </div>
+              <div class="quiz-so-slide__sidebar-box">
+                <div class="quiz-so-slide__sidebar-text">При покупке в этом месяце сделаем для вас дополнительную <span>скидку 5%</span>
+                </div>
+              </div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_3"></div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_4"></div>
+              <div class="quiz-so-slide__circle quiz-so-slide__circle_5"></div>
+            </div>
+          </div>
+        </div>
+        <div class="quiz-so-done" data-element="quiz-so-slide">
+          <div class="quiz-so-done__circle quiz-so-done__circle_1"></div>
+          <div class="quiz-so-done__circle quiz-so-done__circle_2"></div>
+          <div class="quiz-so-done__wrap">
+            <div class="quiz-so-done__gift">Подарок!</div>
+            <div class="quiz-so-done__inner">
+              <div class="quiz-so-done__done">Готово!</div>
+              <div class="quiz-so-done__box">
+                <div class="quiz-so-done__caption">Отлично! 👍</div>
+                <div class="quiz-so-done__title">Мы получили ваши ответы и свяжемся с вами в&nbsp;ближайшее время по телефону или в WhatsApp.</div>
+                <div class="quiz-so-done__tag">Только ответьте на звонок с&nbsp;незнакомого номера</div>
+                <div class="quiz-so-done__note">
+                  А пока скачивайте руководство для родителей
+                  <span>«4 шага к переходу на семейное обучение»</span>
+                </div>
+                <div class="quiz-so-done__text">
+                  В нём вы найдёте шаблоны документов, которые необходимо заполнить в случае перехода на СО,
+                  а также другую полезную информацию об учёбе в новом формате
+                </div>
+              </div>
+              <picture class="quiz-so-done__picture">
+                <source srcset="assets/img/quiz-so-done/decor_mob.png" media="(max-width: 743px)">
+                <source srcset="assets/img/quiz-so-done/decor_tablet.png" media="(max-width: 1359px)">
+                <img class="quiz-so-done__image" src="assets/img/quiz-so-done/decor.png" alt="">
+              </picture>
+              <a class="quiz-so-done__button btn-orange" href="#">Скачать руководство</a>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </form>
   </main>
   <form class="modal-order-new" id="modal-order-new" data-element="order-form" data-docex="/_thanks" data-request-validate>
     <div class="modal-order-new__title" data-default-title="Подобрать занятия">Подобрать занятия</div>
