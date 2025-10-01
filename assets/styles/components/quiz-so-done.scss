@@ -1,5 +1,4 @@
 .quiz-so-done {
-  display: none;
   position: relative;
   padding-top: 50px;
   padding-bottom: 163px;
@@ -9,9 +8,6 @@
   }
   @include media(xs) {
     padding-top: 0;
-  }
-  &.active {
-    display: block;
   }
 }
 
