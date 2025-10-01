@@ -12,6 +12,15 @@
   &.active {
     display: block;
   }
+  .iti {
+    width: calc(50% - 13px);
+    @include media(lg) {
+      width: 100%;
+    }
+    .quiz-so-slide__form-input {
+      width: 100%;
+    }
+  }
 }
 
 .quiz-so-slide__wrap {
@@ -55,6 +64,9 @@
     @include bg-icon('quiz-so-slide/ic_triangle_white.svg');
     width: 17px;
     height: 24px;
+    @include media(lg) {
+      content: none;
+    }
   }
 }
 
@@ -138,6 +150,7 @@
 
 .quiz-so-slide__tag {
   position: absolute;
+  z-index: 1;
   left: 60px;
   top: 0;
   transform: translateY(-50%);
@@ -161,6 +174,7 @@
 }
 
 .quiz-so-slide__inner {
+  position: relative;
   display: flex;
   flex-direction: column;
   border-radius: 20px;
@@ -211,6 +225,10 @@
   &:focus, &:hover {
     border: 1px solid #f37e60;
   }
+  &.error {
+    background: #FFFFFF;
+    border: 1px solid red;
+  }
 }
 
 .quiz-so-slide__line {
@@ -236,11 +254,18 @@
       border: 1px solid $orange;
     }
   }
+  &.error {
+    border: none !important;
+    background: transparent;
+    .quiz-so-slide__checkbox-text {
+      color: red;
+    }
+  }
 }
 
 .quiz-so-slide__checkbox-input {
   display: none;
-  &:checked ~ .modal-order-new__checkbox-view {
+  &:checked ~ .quiz-so-slide__checkbox-view {
     &::before {
       content: '';
       border-radius: 1px;
@@ -431,6 +456,8 @@
   left: 0;
   right: 0;
   height: 5px;
+  border-radius: 0 0 5px 5px;
+  overflow: hidden;
   @include media(xs) {
     display: none;
   }
@@ -439,23 +466,38 @@
 .quiz-so-slide__loader-fill {
   background: $orange;
   width: 100px;
+  height: 100%;
 }
 
 .quiz-so-slide__loader-mob {
   display: none;
   @include media(xs) {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 45px;
     height: 45px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 100%;
   }
 }
 
+.quiz-so-slide__loader-mob-value {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 2px);
+  transform: translate(-50%, -50%);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.quiz-so-slide__loader-mob-progress {
+  stroke-dasharray: 250;
+  stroke-dashoffset: 250;
+}
+
 .quiz-so-slide__sidebar {
+  flex-shrink: 0;
   overflow: hidden;
   position: relative;
   border-radius: 32px;
@@ -471,12 +513,17 @@
     width: 245px;
   }
   @include media(xs) {
-    width: 100%;
+    width: calc(100% + 40px);
     background: #f1f5fd;
     border-radius: 0;
     padding: 12px 20px;
     box-shadow: none;
     min-height: auto;
+    margin: 0 -20px;
+  }
+  @include media(xxs) {
+    width: calc(100% + 20px);
+    margin: 0 -10px;
   }
 }
 

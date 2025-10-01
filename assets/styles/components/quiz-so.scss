@@ -5,8 +5,7 @@
     background-size: cover;
   }
   @include media(xs) {
-    @include bg-icon('quiz-so/bg_mob.png');
-    background-size: cover;
+    background: #f8f8f8;
   }
 }
 
