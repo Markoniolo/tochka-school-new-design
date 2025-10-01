@@ -240,7 +240,7 @@
   height: 255px;
   object-fit: cover;
   @include media(xs) {
-    height: 142px;
+    height: 108px;
   }
 }
 
@@ -300,6 +300,7 @@
 .tile__family-tags {
   margin-bottom: 18px;
   display: flex;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 8px 12px;
   @include media(xs) {
