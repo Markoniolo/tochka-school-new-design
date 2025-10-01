@@ -3932,6 +3932,7 @@ function quizSoInit () {
   const inputName = quizSo.querySelector(".quiz-so-slide__form-input_name")
   const inputHidden = quizSo.querySelector("[data-element='input-phone-hidden']")
   const policyCheckboxes = quizSo.querySelectorAll('.quiz-so-slide__checkbox-input')
+  const linkTo = quizSo.getAttribute("data-docex")
 
   buttonsNext.forEach(button => {
     button.addEventListener('click', nextSlide)
@@ -3949,7 +3950,7 @@ function quizSoInit () {
           input.classList.remove('error')
         })
       }
-    } else if (index === slides.length - 2) {
+    } else if (index === slides.length - 1) {
       if (input && !input?.value?.trim() || !iti?.isValidNumber()) {
         input.classList.add("error")
         return
@@ -3966,10 +3967,7 @@ function quizSoInit () {
         policyCheckboxes[1].parentNode.classList.add("error")
         return
       }
-      console.log('send form')
-      slides[index].classList.remove('active')
-      index += 1
-      slides[index].classList.add('active')
+      sendData()
     } else {
       slides[index].classList.remove('active')
       index += 1
@@ -4029,6 +4027,13 @@ function quizSoInit () {
       }
       inputHidden.value = iti.selectedCountryData.dialCode + ' ' + inputHidden.value
     })
+  }
+
+  function sendData () {
+    quizSo.submit()
+    setTimeout(() => {
+      location.assign(linkTo)
+    }, 100)
   }
 }
 
