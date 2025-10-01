@@ -1,21 +1,29 @@
 .quiz-so {
   overflow: hidden;
-  padding: 50px 0 163px;
   @include media(lg) {
-    padding: 30px 0 50px;
     @include bg-icon('quiz-so/bg_tablet.png');
     background-size: cover;
   }
   @include media(xs) {
-    padding: 30px 0 40px;
     @include bg-icon('quiz-so/bg_mob.png');
     background-size: cover;
   }
 }
 
 .quiz-so__wrap {
+  display: none;
   position: relative;
   z-index: 1;
+  padding: 50px 0 163px;
+  @include media(lg) {
+    padding: 30px 0 50px;
+  }
+  @include media(xs) {
+    padding: 30px 0 40px;
+  }
+  &.active {
+    display: block;
+  }
 }
 
 .quiz-so__inner {
@@ -42,14 +50,14 @@
     display: none;
   }
   &_1 {
-    top: -12px;
+    top: 38px;
     left: -69px;
     width: 164px;
     height: 164px;
     background: #7fcbb4;
   }
   &_2 {
-    top: 141px;
+    top: 191px;
     left: -88px;
     width: 60px;
     height: 60px;

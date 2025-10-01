@@ -1,0 +1,23 @@
+.quiz-so-done(data-element="quiz-so-slide")
+  .quiz-so-done__circle.quiz-so-done__circle_1
+  .quiz-so-done__circle.quiz-so-done__circle_2
+  .quiz-so-done__wrap
+    .quiz-so-done__gift Подарок!
+    .quiz-so-done__inner
+      .quiz-so-done__done Готово!
+      .quiz-so-done__box
+        .quiz-so-done__caption Отлично! 👍
+        .quiz-so-done__title Мы получили ваши ответы и свяжемся с вами в&nbsp;ближайшее время по телефону или в WhatsApp.
+        .quiz-so-done__tag Только ответьте на звонок с&nbsp;незнакомого номера
+        .quiz-so-done__note
+          | А пока скачивайте руководство для родителей
+          |
+          span «4 шага к переходу на семейное обучение»
+        .quiz-so-done__text.
+          В нём вы найдёте шаблоны документов, которые необходимо заполнить в случае перехода на СО,
+          а также другую полезную информацию об учёбе в новом формате
+      picture.quiz-so-done__picture
+        source(srcset=staticImg('quiz-so-done/decor_mob.png') media="(max-width: 743px)")
+        source(srcset=staticImg('quiz-so-done/decor_tablet.png') media="(max-width: 1359px)")
+        img.quiz-so-done__image(src=staticImg('quiz-so-done/decor.png') alt='')
+      a.quiz-so-done__button.btn-orange(href='#') Скачать руководство

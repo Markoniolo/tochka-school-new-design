@@ -47,9 +47,12 @@
       .tile-loader
       each item in [1,2,3,4,5,6,7,8,9]
         a.offer-tile__item(class = item === 1 ? 'offer-tile__item_family' : false href='#')
-          .offer-tile__picture
+          picture.offer-tile__picture
             if item !== 1
               img.offer-tile__image(src=staticImg('') alt='')
+            else
+              source(srcset='https://tochka-school.ru/storage/app/media/Stranica_eksternatov/Foto_minikartochka_SO/GroupSOmobile1.webp' media="(max-width: 743px)")
+              img.offer-tile__image(src='https://tochka-school.ru/storage/app/media/Stranica_eksternatov/Foto_minikartochka_SO/SO_napravleniya_1.webp' alt='')
           .offer-tile__inner
             .offer-tile__class-number 1 класс
             if item !== 1
