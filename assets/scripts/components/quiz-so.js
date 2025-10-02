@@ -7,11 +7,14 @@ function quizSoInit () {
   const slides = quizSo.querySelectorAll('[data-element="quiz-so-slide"]')
   const buttonsNext = quizSo.querySelectorAll('[data-element="quiz-so-slide-next"]')
   const buttonsBack = quizSo.querySelectorAll('[data-element="quiz-so-slide-back"]')
+  const btnSubmit = quizSo.querySelector('.btn-warning')
   const input = quizSo.querySelector("[data-element='input-phone-intl']")
   const inputName = quizSo.querySelector(".quiz-so-slide__form-input_name")
   const inputHidden = quizSo.querySelector("[data-element='input-phone-hidden']")
+  const inputsAll = quizSo.querySelectorAll('input');
   const policyCheckboxes = quizSo.querySelectorAll('.quiz-so-slide__checkbox-input')
   const linkTo = quizSo.getAttribute("data-docex")
+  const utm_input = quizSo.querySelector('[name="utm"]')
 
   buttonsNext.forEach(button => {
     button.addEventListener('click', nextSlide)
@@ -30,23 +33,7 @@ function quizSoInit () {
         })
       }
     } else if (index === slides.length - 1) {
-      if (input && !input?.value?.trim() || !iti?.isValidNumber()) {
-        input.classList.add("error")
-        return
-      }
-      if (!inputName.value) {
-        inputName.classList.add("error")
-        return
-      }
-      if (!policyCheckboxes[0].checked) {
-        policyCheckboxes[0].parentNode.classList.add("error")
-        return
-      }
-      if (!policyCheckboxes[1].checked) {
-        policyCheckboxes[1].parentNode.classList.add("error")
-        return
-      }
-      sendData()
+
     } else {
       slides[index].classList.remove('active')
       index += 1
@@ -107,13 +94,78 @@ function quizSoInit () {
       inputHidden.value = iti.selectedCountryData.dialCode + ' ' + inputHidden.value
     })
   }
+  quizSo.addEventListener('submit', async (e) => {
+    e.preventDefault()
+    let isValid = true
+    if (input && !input?.value?.trim() || !iti?.isValidNumber()) {
+      input.classList.add("error")
+      isValid = false
+    }
+    if (!inputName.value) {
+      inputName.classList.add("error")
+      isValid = false
+    }
+    if (!policyCheckboxes[0].checked) {
+      policyCheckboxes[0].parentNode.classList.add("error")
+      isValid = false
+    }
+    if (!policyCheckboxes[1].checked) {
+      policyCheckboxes[1].parentNode.classList.add("error")
+      isValid = false
+    }
 
-  function sendData () {
-    quizSo.submit()
+    if (!isValid) {
+      return false;
+    }
+    let linkTo_ = linkTo;
+    if (utm_input) {
+      utm_f = utm_input.value;
+      if(utm_f != null && utm_f != '' && utm_f != undefined){
+      }else{
+        utm_f = ''
+      }
+      if (utm_f.length > 0) {
+        linkTo_ = linkTo_ + utm_f;
+      }
+    }
+    btnSubmit.disabled = true;
+    //quizSo.submit()
+    // var obData = {};
+    // const whitelist = [
+    //     'tel',
+    //     'name',
+    //     'policy',
+    //     'news',
+    //     'page_name',
+    //     'utm',
+    //     'class',
+    //     'current-education-plan',
+    //     'has-troubles',
+    //     'school-position',
+    //     'family-education-plan',
+    //     'study-format',
+    //     'need-help',
+    //     'pay-format'];
+
+    // inputsAll.forEach(input => {
+    //   if (input.name && whitelist.includes(input.name)) {
+    //       obData[input.name] = input.value;
+    //   }
+    // });
+
+    // $.request('MainFunctions::onSendQuizSo', {
+    //   data: obData,
+    //     // success: function(data) {
+    //     //     console.log(linkTo)
+    //     //     //location.assign(linkTo)
+    //     // },
+    // })
+
     setTimeout(() => {
-      location.assign(linkTo)
+      location.assign(linkTo_)
     }, 100)
-  }
+
+  })
 
   slides.forEach(slide => {
     const hidden = slide.querySelector('.quiz-so-slide__hidden-checkbox')

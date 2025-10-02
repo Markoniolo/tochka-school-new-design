@@ -22,7 +22,7 @@
   width: calc(25% - 19px);
   padding: 20px 25px;
   overflow: hidden;
-  min-height: 196px;
+  min-height: 183px;
   @include media-up(xl) {
     will-change: transform;
     transition-duration: $transition-duration;
@@ -120,7 +120,7 @@
       min-height: 90px;
     }
     .cap-list__title {
-      max-width: 152px;
+      max-width: 133px;
       width: 100%;
       @include media(lg) {
         max-width: 171px;
@@ -145,9 +145,11 @@
       }
     }
     .cap-list__tags {
+      margin-top: 5px;
       max-width: 276px;
       width: 100%;
       @include media(lg) {
+        margin-top: 0;
         max-width: unset;
       }
     }
@@ -189,7 +191,8 @@
   }
   &_fam {
     background: radial-gradient(80% 170% at 90.82% 82.4%, #a6cfff 0%, #edf7ff 100%);
-    min-height: 196px;
+    min-height: 183px;
+    width: 445px;
     @include media(lg) {
       min-height: 90px;
     }
@@ -199,13 +202,19 @@
     @include media(xxs) {
       min-height: 90px;
     }
+    .cap-list__title {
+      @include media(lg) {
+        font-size: 18px;
+        max-width: 200px;
+      }
+    }
     .cap-list__tag {
       background: rgba(255, 255, 255, 0.39);
     }
     .cap-list__decor {
       position: absolute;
-      width: 236px;
-      height: 172px;
+      width: 238px;
+      height: 170px;
       bottom: 0;
       right: 0;
       @include bg-icon('cap/cap-decor-fam.svg');
@@ -219,16 +228,10 @@
         height: 100px;
         @include bg-icon('cap/cap-decor-fam_mob.svg');
       }
-      @include media(xs) {
-        right: -5px;
-        width: 210px;
-        height: 100px;
-        @include bg-icon('cap/cap-decor-fam_mob.svg');
-      }
       @include media(xxs) {
-        right: -20px;
         width: 189px;
         height: 90px;
+        @include bg-icon('cap/cap-decor-fam_xxs.svg');
       }
     }
     .cap-list__discount {
@@ -248,8 +251,9 @@
     }
   }
   &_it {
+    width: 441px;
     background: radial-gradient(80% 170% at 90.82% 82.4%, #a7bcff 0%, #dfe7ff 100%);
-    min-height: 196px;
+    min-height: 183px;
     @include media(lg) {
       min-height: 90px;
       margin-left: 0;
@@ -259,6 +263,12 @@
     }
     @include media(xxs) {
       min-height: 90px;
+    }
+    .cap-list__title {
+      margin-right: 20px;
+      @include media(lg) {
+        font-size: 18px;
+      }
     }
     .cap-list__tags {
       max-width: 372px;
@@ -278,8 +288,8 @@
     }
     .cap-list__decor {
       position: absolute;
-      width: 350px;
-      height: 196px;
+      width: 312px;
+      height: 183px;
       bottom: 0;
       right: 0;
       @include bg-icon('cap/cap-decor-it.png');
@@ -290,15 +300,15 @@
         @include bg-icon('cap/cap-decor-it_tablet.png');
       }
       @include media(xs) {
-        width: 163px;
+        width: 221px;
         height: 100px;
-        right: 40px;
+        right: 0;
         @include bg-icon('cap/cap-decor-it_mob.png');
       }
       @include media(xxs) {
-        width: 147px;
+        width: 174px;
         height: 90px;
-        right: 35px;
+        @include bg-icon('cap/cap-decor-it_xxs.png');
       }
     }
     .cap-list__discount {
@@ -314,6 +324,76 @@
       @include media(xxs) {
         top: 17px;
         left: 98px;
+      }
+    }
+  }
+  &_search {
+    width: 287px;
+    flex-direction: column;
+    background: linear-gradient(90deg, #f37e60 0%, #ffa791 100%);
+    @include media(lg) {
+      width: 100%;
+      min-height: 58px;
+      justify-content: center;
+      flex-direction: row;
+    }
+    @include media(xs) {
+      flex-direction: column;
+    }
+    .cap-list__title {
+      color: #fff;
+      max-width: 100%;
+      @include media(lg) {
+        margin-right: 15px;
+        margin-bottom: 0;
+        width: auto;
+        flex-shrink: 0;
+        font-size: 18px;
+      }
+      @include media(xs) {
+        margin-bottom: 10px;
+      }
+    }
+    .cap-list__tags {
+
+    }
+    .cap-list__tag {
+      background: rgba(255, 255, 255, 0.22);
+      color: #fff;
+      @include media(lg) {
+        display: block;
+        color: #FFFFFF;
+      }
+    }
+    .cap-list__decor {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 127px;
+      height: 137px;
+      @include bg-icon('cap/cap-decor-search.svg');
+      @include media(lg) {
+        bottom: 0;
+        right: 49px;
+        width: 119px;
+        height: 58px;
+        @include bg-icon('cap/cap-decor-search_tablet.svg');
+      }
+      @include media(xs) {
+        width: 119px;
+        height: 100px;
+        @include bg-icon('cap/cap-decor-search_mob.svg');
+      }
+      @include media(xxs) {
+        right: 27px;
+        width: 119px;
+        height: 90px;
+        @include bg-icon('cap/cap-decor-search_xxs.svg');
+      }
+    }
+    .cap-list__button {
+      @include media(lg) {
+        background: $orange;
       }
     }
   }
@@ -334,7 +414,7 @@
 }
 
 .cap-list__title {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   font-size: 24px;
   line-height: 104%;
   margin-right: 5px;
@@ -343,7 +423,6 @@
   @include media(lg) {
     margin-bottom: 12px;
     font-size: 16px;
-    margin-right: 0;
   }
   @include media(xs) {
     color: #000000;
@@ -369,7 +448,7 @@
   font-size: 14px;
   line-height: 100%;
   color: #6683c2;
-  min-height: 34px;
+  min-height: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -379,6 +458,7 @@
   @include media(lg) {
     min-height: 25px;
     font-size: 12px;
+    border-radius: 10px;
   }
   &.mob {
     display: none;
@@ -405,10 +485,10 @@
       @include bg-icon('cap/cap-decor-1_tablet.svg');
       width: 123px;
       height: 88px;
-      right: 35px;
+      right: 45px;
     }
     @include media(xs) {
-      right: 51px;
+      right: 38px;
       width: 135px;
       height: 92px;
       @include bg-icon('cap/cap-decor-1_mob.svg');
@@ -428,20 +508,21 @@
   }
   &_2 {
     width: 126px;
-    height: 139px;
-    bottom: 0;
+    height: 140px;
+    bottom: -14px;
     right: 0;
     @include bg-icon('cap/cap-decor-2.svg');
     @include media(lg) {
       width: 98px;
       height: 88px;
-      right: 50px;
+      right: 65px;
+      bottom: 0;
       @include bg-icon('cap/cap-decor-2_tablet.svg');
     }
     @include media(xs) {
       width: 98px;
       height: 88px;
-      right: 65px;
+      right: 53px;
       @include bg-icon('cap/cap-decor-2_400.svg');
     }
     @media (max-width: 370.98px) {
@@ -497,7 +578,7 @@
     @include media(lg) {
       width: 123px;
       height: 88px;
-      right: 41px;
+      right: 52px;
       @include bg-icon('cap/cap-decor-4_tablet.svg');
     }
     @include media(xs) {
@@ -581,6 +662,7 @@
 
 .cap-list__button {
   margin-top: 25px;
+  padding: 15px 33px 16px;
   @include media(lg) {
     margin-top: 0;
     position: absolute;

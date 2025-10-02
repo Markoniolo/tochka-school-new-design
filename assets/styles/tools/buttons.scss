@@ -222,6 +222,22 @@
   }
 }
 
+.btn-white {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 100%;
+  color: $orange;
+  background: #fff;
+  border-radius: 34px;
+  padding: 15px 33px 16px;
+  transition-property: background-color, color;
+  transition-duration: $transition-duration;
+  &:hover {
+    color: $orange;
+    background: rgba(255, 255, 255, 0.62);
+  }
+}
+
 .btn-border {
   font-size: 16px;
   color: rgba(#fff, .65);

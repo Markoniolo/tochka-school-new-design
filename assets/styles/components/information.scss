@@ -132,6 +132,7 @@
 
 .information__button {
   display: flex;
+  gap: 10px;
   align-items: center;
   justify-content: flex-start;
   text-align: left;
@@ -143,13 +144,15 @@
   padding: 14px 25px;
   font-weight: 500;
   font-size: 18px;
-  line-height: 100%;
+  line-height: 20px;
   cursor: pointer;
   transition-property: color, background;
   transition-duration: $transition-duration;
   @include media(lg) {
     font-size: 15px;
+    line-height: 17px;
     min-height: 60px;
+    justify-content: center;
   }
   @include media(md) {
     border-radius: 34px;
@@ -160,13 +163,31 @@
   @include media(xs) {
     padding: 12px 18px;
   }
+  svg {
+    flex-shrink: 0;
+    transition-property: transform;
+    transition-duration: $transition-duration;
+    @include media(lg) {
+      width: 12px;
+      height: 7px;
+    }
+  }
   &:hover {
-    background: #aebddd;
+    background: #809EDF;
     color: #fff;
+    path {
+      fill: #fff;
+    }
   }
   &.active {
-    background: #6683c2;
+    background: #809EDF;
     color: #fff;
+    svg {
+      transform: rotate(180deg);
+    }
+    path {
+      fill: #fff;
+    }
     & ~ .information__accordion-box {
       display: flex;
     }
@@ -176,12 +197,36 @@
 .information__accordion-box {
   display: none;
   margin-top: 10px;
+  margin-left: 14px;
   flex-direction: column;
+  gap: 5px;
+  @include media(lg) {
+    margin-top: 8px;
+  }
+  @include media(xs) {
+    margin-left: 10px;
+  }
 }
 
 .information__btn {
-  padding: 5px 31px;
+  padding: 14px 17px;
+  border-radius: 10px;
   text-align: left;
+  background-color: rgba(#6683C2, .1);
+  font-size: 16px;
+  line-height: 100%;
+  transition-property: background-color, color;
+  transition-duration: $transition-duration;
+  &:hover {
+    background-color: #809EDF;
+    color: #fff;
+  }
+  @include media(lg) {
+    font-size: 15px;
+  }
+  @include media(xs) {
+    padding: 7px 12px 9px;
+  }
 }
 
 .information__area {

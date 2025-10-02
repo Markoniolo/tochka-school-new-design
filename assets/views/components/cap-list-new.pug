@@ -13,7 +13,7 @@
     .cap-list__discount
     .cap-list__title!= 'Семейное <br> обучение'
     .cap-list__tags
-      each tag, index in ['Прикрепим к школе-партнеру за 0₽','1-11 класс','Уроки по ФГОС','Аттестат гос. образца']
+      each tag, index in ['Школа-партнер за 0₽','1-11 класс','Уроки по ФГОС','Аттестат гос. образца']
         .cap-list__tag= tag
       .cap-list__tag.mob 1-11 класс
     .cap-list__decor
@@ -23,9 +23,16 @@
     .cap-list__discount
     .cap-list__title IT-курсы
     .cap-list__tags
-      each tag, index in ['Создание сайтов','Phyton','Roblox','Minecraft','Scratch','Figma']
+      each tag, index in ['Создание сайтов','Phyton','Minecraft','Scratch','Figma']
         .cap-list__tag= tag
       .cap-list__tag.mob Все курсы
     .cap-list__decor
     button.cap-list__button.btn-orange
       span Выбрать
+  a.cap-list__item.cap-list__item_wide.cap-list__item_search(href="#")
+    .cap-list__title Найти курс
+    .cap-list__tags
+      .cap-list__tag Поиск по всем классам
+    .cap-list__decor
+    button.cap-list__button.btn-white
+      span Перейти

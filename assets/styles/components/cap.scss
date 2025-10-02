@@ -18,16 +18,10 @@
   padding: 50px 60px 56px;
   box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
   @include media(lg) {
-    @include bg-icon('cap/cap_bg_tablet.png');
-    background-size: cover;
-    border-radius: 10px;
-    padding: 30px 25px 25px;
-  }
-  @include media(xs) {
-    background: unset;
-    padding: 0;
-    box-shadow: unset;
     border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    background: unset;
   }
 }
 
@@ -103,7 +97,7 @@
 }
 
 .cap__headline {
-  margin-bottom: 40px;
+  margin-bottom: 44px;
   font-weight: 500;
   font-size: 32px;
   line-height: 69%;

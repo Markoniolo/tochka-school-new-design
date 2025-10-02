@@ -159,7 +159,7 @@
 
 .ege-cap__tab {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   min-width: 115px;
   border-radius: 34px;
   padding: 10px 40px;
@@ -175,8 +175,9 @@
 }
 
 a.ege-cap__tab {
+  z-index: 1;
   background-color: transparent;
-  color: $black;
+  color: #003C56;
   box-shadow: none;
   position: static;
   &::before {
