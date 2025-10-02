@@ -6,6 +6,8 @@ mixin quiz-so-slide(id,title,type,list=[],texts=[])
       .quiz-so-slide__area
         .quiz-so-slide__tag!= `Вопрос №${id}`
         .quiz-so-slide__inner
+          if type === 'checkbox'
+            input.quiz-so-slide__hidden-checkbox(type='hidden' name=`slide-${id}`)
           .quiz-so-slide__caption!= title
           if id === '9'
             .quiz-so-slide__form
@@ -38,12 +40,13 @@ mixin quiz-so-slide(id,title,type,list=[],texts=[])
             .quiz-so-slide__list
               each item in list
                 label.quiz-so-slide__label
-                  input.quiz-so-slide__input(type=type name=`slide-${id}` value=item)
                   if type === "radio"
+                    input.quiz-so-slide__input(type=type name=`slide-${id}` value=item)
                     svg.quiz-so-slide__view(width='15' height='15' viewbox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg')
                       circle(cx='7.5' cy='7.5' r='7' stroke='#F37E60')
                       circle.active(cx='7.5' cy='7.5' r='3.5' fill='#F37E60')
                   else
+                    input.quiz-so-slide__input(type=type value=item)
                     svg.quiz-so-slide__view(width='15' height='15' viewbox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg')
                       rect(x='0.5' y='0.5' width='14' height='14' rx='1.5' stroke='#F37E60')
                       path.active(d='M11.7909 4.22597C11.5124 3.92458 11.0602 3.92477 10.7814 4.22597L6.23808 9.13702L4.21877 6.95437C3.93994 6.65298 3.48796 6.65298 3.20912 6.95437C2.93029 7.25576 2.93029 7.74431 3.20912 8.0457L5.73315 10.7739C5.87248 10.9245 6.05518 11 6.23789 11C6.4206 11 6.60347 10.9247 6.7428 10.7739L11.7909 5.31727C12.0697 5.01609 12.0697 4.52734 11.7909 4.22597Z' fill='#F37E60')

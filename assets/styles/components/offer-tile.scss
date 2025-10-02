@@ -461,6 +461,9 @@
     top: 15px;
     left: 15px;
   }
+  &_no-background {
+    background: transparent;
+  }
 }
 
 .offer-tile__image {

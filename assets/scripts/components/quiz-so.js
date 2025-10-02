@@ -114,4 +114,21 @@ function quizSoInit () {
       location.assign(linkTo)
     }, 100)
   }
+
+  slides.forEach(slide => {
+    const hidden = slide.querySelector('.quiz-so-slide__hidden-checkbox')
+    if (!hidden) return
+    const inputs = slide.querySelectorAll('.quiz-so-slide__input')
+    for (let i = 0; i < inputs.length; i++) {
+      inputs[i].addEventListener('input', function () {
+        const checked = slide.querySelectorAll("input:checked")
+        let temp = ''
+        for (let j = 0; j < checked.length; j++) {
+          temp += checked[j].value
+          if (j !== checked.length - 1) temp += ', '
+        }
+        hidden.value = temp
+      })
+    }
+  })
 }
