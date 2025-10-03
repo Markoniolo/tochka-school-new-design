@@ -24,9 +24,11 @@ form.quiz-so(data-docex="thanks-so-quiz")
             li.quiz-so__item= item
         .quiz-so__bottom
           button.quiz-so__button.btn-orange(type="button" data-element="quiz-so-slide-next") Подобрать формат
-          .quiz-so__note.
-            Пройдите короткий тест и узнайте, какой формат семейного обучения подойдёт
-            вашему ребёнку и получите подарок + скидку!
+          .quiz-so__note
+            .quiz-so__note-inner
+              .quiz-so__note-bg
+              | Пройдите короткий тест и узнайте, какой формат семейного обучения подойдёт
+              | вашему ребёнку и получите подарок + скидку!
     include ./quiz-so-slide
     +quiz-so-slide('1','В каком классе сейчас ваш ребёнок?','radio',
       ['Дошкольник','1–4 класс','5–8 класс','9–11 класс'],[

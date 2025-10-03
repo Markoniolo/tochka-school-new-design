@@ -209,15 +209,18 @@
   font-size: 15px;
   line-height: 113%;
   color: #003c56;
-  background: linear-gradient(90deg, #fff 0%, #dee5f4 27.88%, #fff 60.1%, #dee5f4 100%);
-  background-size: 200% 100%;
-  animation: quiz-so__note-animation 5s ease infinite;
+  mask-image: url('../img/quiz-so/bg-line.svg');
+  @include media(lg) {
+    padding: 2px 18px 2px 60px;
+    max-width: 430px;
+  }
   @include media(xs) {
-    padding: 16px 15px 13px;
+    max-width: 100%;
+    mask-image: none;
+    padding: 0;
     font-size: 13px;
     line-height: 115%;
     text-align: center;
-    border-radius: 53px;
   }
   &::before {
     content: '';
@@ -238,30 +241,54 @@
     }
   }
   &::after {
-    content: '';
-    @include bg-icon('quiz-so/ic_triangle.svg');
-    width: 12px;
-    height: 15px;
-    position: absolute;
-    left: -8px;
-    top: 50%;
-    transform: translateY(-50%);
     @include media(xs) {
+      content: '';
+      position: absolute;
       border-radius: 12px;
       background: #f1f4fa;
       top: -17px;
-      transform: none;
       left: calc(50% - 15px);
       width: 31px;
       height: 34px;
     }
   }
+}
+
+.quiz-so__note-inner {
+  @include media(xs) {
+    position: relative;
+    overflow: hidden;
+    border-radius: 53px;
+    padding: 16px 15px 13px;
+  }
+}
+
+.quiz-so__note-bg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #fff 0%, #dee5f4 24.04%, #fff 50.96%, #dee5f4 77.88%, #fff 100%);
+    animation: quiz-so__note-animation 5s linear infinite;
+  }
+  &::before {
+    left: -100%;
+  }
   @keyframes quiz-so__note-animation {
     0% {
-      background-position: 0% 0%;
+      transform: translateX(0);
     }
-    50% {
-      background-position: 100% 0%;
+    100% {
+      transform: translateX(100%);
     }
     100% {
       background-position: 0% 0%;

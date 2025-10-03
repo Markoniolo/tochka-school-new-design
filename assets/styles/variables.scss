@@ -59,12 +59,14 @@ $breakpoints: (xxs: 0, xs: 360px, sm: 744px, md: 992px, lg: 1200px, xl: 1360px, 
   }
 }
 
+$version: '?ver=03.10.25';
+
 @mixin bg-img($img) {
-  background-image: url($img-path + $img);
+  background-image: url($img-path + $img + $version);
 }
 
 @mixin bg-icon($img, $w: 100%, $h: 100%) {
-  background-image: url($img-path + $img);
+  background-image: url($img-path + $img + $version);
   background-size: $w $h;
   background-repeat: no-repeat;
   background-position: center center;
