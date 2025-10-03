@@ -3932,14 +3932,18 @@ function quizSoInit () {
   const input = quizSo.querySelector("[data-element='input-phone-intl']")
   const inputName = quizSo.querySelector(".quiz-so-slide__form-input_name")
   const inputHidden = quizSo.querySelector("[data-element='input-phone-hidden']")
-  const inputsAll = quizSo.querySelectorAll('input');
   const policyCheckboxes = quizSo.querySelectorAll('.quiz-so-slide__checkbox-input')
   const linkTo = quizSo.getAttribute("data-docex")
   const utm_input = quizSo.querySelector('[name="utm"]')
+  const inputsRadio = quizSo.querySelectorAll('.quiz-so-slide__input[type="radio"]')
 
   buttonsNext.forEach(button => {
     button.addEventListener('click', nextSlide)
   })
+
+  window.addEventListener('resize', () => {
+    quizSo.style.height = `${slides[index].clientHeight}px`
+  }, { passive: true })
 
   function nextSlide () {
     if (slides[index].querySelector('.quiz-so-slide__input') && !slides[index].querySelector('.quiz-so-slide__input:checked')) {
@@ -3959,6 +3963,7 @@ function quizSoInit () {
       slides[index].classList.remove('active')
       index += 1
       slides[index].classList.add('active')
+      quizSo.style.height = `${slides[index].clientHeight}px`
     }
   }
 
@@ -3981,6 +3986,7 @@ function quizSoInit () {
     slides[index].classList.remove('active')
     index -= 1
     slides[index].classList.add('active')
+    quizSo.style.height = `${slides[index].clientHeight}px`
   }
 
   initLoaders()
@@ -4094,15 +4100,30 @@ function quizSoInit () {
     const inputs = slide.querySelectorAll('.quiz-so-slide__input')
     for (let i = 0; i < inputs.length; i++) {
       inputs[i].addEventListener('input', function () {
-        const checked = slide.querySelectorAll("input:checked")
-        let temp = ''
-        for (let j = 0; j < checked.length; j++) {
-          temp += checked[j].value
-          if (j !== checked.length - 1) temp += ', '
+        if (inputs[i].hasAttribute('data-single-check')) {
+          const checked = slide.querySelectorAll("input:checked")
+          for (let j = 0; j < checked.length; j++) {
+            checked[j].checked = false
+          }
+          inputs[i].checked = true
+          hidden.value = inputs[i].value
+        } else {
+          const inputSingleCheck = slide.querySelector("[data-single-check]")
+          if (inputSingleCheck) inputSingleCheck.checked = false
+          const checked = slide.querySelectorAll("input:checked")
+          let temp = ''
+          for (let j = 0; j < checked.length; j++) {
+            temp += checked[j].value
+            if (j !== checked.length - 1) temp += ', '
+          }
+          hidden.value = temp
         }
-        hidden.value = temp
       })
     }
+  })
+
+  inputsRadio.forEach(input => {
+    input.addEventListener('change', nextSlide)
   })
 }
 
