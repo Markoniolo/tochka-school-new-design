@@ -1,5 +1,7 @@
 .quiz-so {
   overflow: hidden;
+  transition-duration: 1s;
+  transition-property: height;
   @include media(lg) {
     @include bg-icon('quiz-so/bg_tablet.png');
     background-size: cover;
@@ -208,6 +210,8 @@
   line-height: 113%;
   color: #003c56;
   background: linear-gradient(90deg, #fff 0%, #dee5f4 27.88%, #fff 60.1%, #dee5f4 100%);
+  background-size: 200% 100%;
+  animation: quiz-so__note-animation 5s ease infinite;
   @include media(xs) {
     padding: 16px 15px 13px;
     font-size: 13px;
@@ -250,6 +254,17 @@
       left: calc(50% - 15px);
       width: 31px;
       height: 34px;
+    }
+  }
+  @keyframes quiz-so__note-animation {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 0%;
+    }
+    100% {
+      background-position: 0% 0%;
     }
   }
 }

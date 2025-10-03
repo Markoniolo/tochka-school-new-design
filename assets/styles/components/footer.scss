@@ -284,6 +284,7 @@ a.footer__about {
     display: none;
     margin-top: 16px;
     text-align: center;
+    align-items: center;
   }
 }
 
@@ -534,7 +535,7 @@ a.footer__organization {
     position: absolute;
     left: unset;
     right: 84px;
-    top: 534px;
+    bottom: -150px;
     width: 227px;
   }
   @include media(xs) {

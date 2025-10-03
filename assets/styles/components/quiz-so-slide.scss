@@ -1,16 +1,31 @@
 .quiz-so-slide {
-  display: none;
+  position: absolute;
+  top: 106px;
+  opacity: 0;
+  z-index: 0;
   padding-top: 50px;
   padding-bottom: 163px;
+  transition-property: opacity;
+  transition-duration: 1s;
   @include media(lg) {
     padding-top: 35px;
     padding-bottom: 60px;
+    left: 50vw;
+    transform: translateX(-50%);
+  }
+  @include media(md) {
+    top: 80px;
   }
   @include media(xs) {
-    padding-top: 0;
+    width: 100%;
+    padding: 0 20px 60px;
+  }
+  @include media(xxs) {
+    padding: 0 10px 60px;
   }
   &.active {
-    display: block;
+    opacity: 1;
+    z-index: 1;
   }
   .iti {
     width: calc(50% - 13px);
@@ -45,7 +60,7 @@
   z-index: 1;
   @include bg-icon('quiz-so-slide/bg.png');
   @include media(lg) {
-    width: auto;
+    width: 419px;
     flex-grow: 1;
     min-height: 393px;
     border-radius: 0;
@@ -53,6 +68,7 @@
     background: transparent;
   }
   @include media(xs) {
+    width: 100%;
     min-height: auto;
   }
   &::before {
