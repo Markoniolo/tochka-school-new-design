@@ -71,24 +71,41 @@
   line-height: 112%;
   color: #003c56;
   @include media(lg) {
-    margin-bottom: 34px;
+    margin-bottom: 20px;
     max-width: 360px;
     font-size: 30px;
     line-height: 38px;
   }
   @include media(xs) {
-    margin: 0 auto 22px;
+    margin: 0 auto 18px;
     font-size: 27px;
     line-height: 100%;
     text-align: center;
   }
   @include media(xxs) {
     font-size: 24px;
+    line-height: 106%;
   }
 }
 
-.offer-cap__text {
-  margin-bottom: 55px;
+.offer-cap__list {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  @include media(lg) {
+    margin-bottom: 45px;
+    gap: 10px;
+  }
+  @include media(xs) {
+    margin-bottom: 10px;
+    gap: 7px;
+  }
+}
+
+.offer-cap__item {
+  position: relative;
+  padding-left: 25px;
   max-width: 602px;
   width: 100%;
   font-weight: 500;
@@ -96,15 +113,20 @@
   line-height: 30px;
   color: #003c56;
   @include media(lg) {
-    margin-bottom: 34px;
-    max-width: 292px;
+    padding-left: 13px;
+    max-width: 325px;
     font-size: 15px;
     line-height: 19px;
   }
   @include media(xs) {
-    max-width: 300px;
+    max-width: 320px;
     margin: 0 auto;
     text-align: center;
+    font-size: 18px;
+    line-height: 21px;
+  }
+  @include media(xxs) {
+    line-height: 22px;
   }
   span {
     position: relative;
@@ -113,6 +135,25 @@
   &:hover {
     .offer-cap__text-hover {
       opacity: 1;
+    }
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: $orange;
+    @include media(lg) {
+      top: 6px;
+      width: 6px;
+      height: 6px;
+    }
+    @include media(xs) {
+      content: none;
     }
   }
 }
@@ -171,7 +212,7 @@
     z-index: -1;
     right: 0;
     width: 300px;
-    margin: 10px auto -50px;
+    margin: 10px auto -75px;
     overflow: hidden;
     height: 365px;
   }

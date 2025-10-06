@@ -1,0 +1,13 @@
+.pre-k-cap
+  .cont
+    .pre-k-cap__wrap
+      .pre-k-cap__area
+        h1.pre-k-cap__caption Подготовительные онлайн-занятия для дошкольников
+        ul.pre-k-cap__list
+          each item in ['адаптация к школе','увлекательно, без стресса','в игровой форме']
+            li.pre-k-cap__item= item
+        picture.pre-k-cap__picture
+          img.pre-k-cap__image(src=staticImg('') alt='')
+        a.pre-k-cap__button.btn-orange(href='#' data-role="scroll-to-anchor") Выбрать курс
+      include ./ege-cap__form
+      +ege-cap__form('Оставьте заявку, расскажем о курсах подробнее')
