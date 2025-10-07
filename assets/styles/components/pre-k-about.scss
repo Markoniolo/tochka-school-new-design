@@ -1,0 +1,492 @@
+.pre-k-about {
+  padding-top: 117px;
+  padding-bottom: 75px;
+  @include bg-icon('pre-k-about/bg.png');
+  background-size: cover;
+  @include media(lg) {
+    padding-top: 118px;
+    padding-bottom: 40px;
+    @include bg-icon('pre-k-about/bg_tablet.png');
+    background-size: cover;
+  }
+  @include media(xs) {
+    padding-top: 40px;
+    @include bg-icon('pre-k-about/bg_mob.png');
+    background-size: cover;
+  }
+}
+
+.pre-k-about__list {
+  position: relative;
+  padding-bottom: 150px;
+  margin-bottom: -150px;
+  display: flex;
+  align-items: flex-start;
+  @include media(lg) {
+    flex-direction: column;
+    margin-bottom: 36px;
+    padding-bottom: 0;
+    gap: 47px;
+    max-width: 684px;
+  }
+  @include media(xxs) {
+    gap: 40px;
+  }
+  &::before {
+    content: '';
+    @include bg-icon('pre-k-about/line.svg');
+    width: 1346px;
+    height: 168px;
+    position: absolute;
+    bottom: 90px;
+    left: 0;
+    @include media(lg) {
+      @include bg-icon('pre-k-about/line_tablet.svg');
+      width: 230px;
+      height: 358px;
+      left: unset;
+      right: 101px;
+      bottom: 44px;
+    }
+    @include media(xs) {
+      content: none;
+    }
+  }
+}
+
+.pre-k-about__item {
+  position: relative;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+  background: #fff;
+  border-radius: 10px;
+  @include media(lg) {
+    display: flex;
+    align-items: center;
+    z-index: 0;
+  }
+  &_1 {
+    flex-shrink: 0;
+    margin-right: 95px;
+    width: 469px;
+    padding: 16px 20px 16px 150px;
+    @include media(lg) {
+      margin-right: 0;
+      width: 391px;
+      padding: 10px 15px 10px 12px;
+      gap: 11px;
+    }
+    @include media(xs) {
+      width: 100%;
+      padding: 5px 15px 5px 20px;
+    }
+    @include media(xxs) {
+      padding: 11px 15px 11px 8px;
+    }
+    &::before {
+      @include media(xs) {
+        content: '';
+        width: 12px;
+        height: 33px;
+        @include bg-icon('pre-k-about/line_mob.svg');
+        position: absolute;
+        left: 50%;
+        bottom: -8px;
+        transform: translate(-50%, 100%);
+      }
+      @include media(xxs) {
+        height: 28px;
+        bottom: -6px;
+        background-size: contain;
+        background-position: bottom center;
+      }
+    }
+    .pre-k-about__picture {
+      z-index: 0;
+      top: -67px;
+      left: 3px;
+      width: 122px;
+      height: 229px;
+      @include media(lg) {
+        width: 68px;
+        height: 102px;
+      }
+      @include media(xs) {
+        width: 74px;
+        height: 111px;
+      }
+      @include media(xxs) {
+        width: 66px;
+        height: 100px;
+      }
+    }
+  }
+  &_2 {
+    flex-shrink: 0;
+    margin-top: 100px;
+    margin-right: 92px;
+    width: 283px;
+    text-align: center;
+    padding: 16px 20px;
+    @include media(lg) {
+      margin-left: auto;
+      margin-top: 0;
+      margin-right: 0;
+      width: 366px;
+      text-align: left;
+      padding: 9px 12px 9px 23px;
+      gap: 22px;
+    }
+    @include media(xs) {
+      width: 100%;
+      gap: 13px;
+      padding: 12px;
+    }
+    @include media(xxs) {
+      gap: 10px;
+      padding: 12px 10px;
+    }
+    &::before {
+      @include media(xs) {
+        content: '';
+        width: 12px;
+        height: 33px;
+        @include bg-icon('pre-k-about/line_mob.svg');
+        position: absolute;
+        left: 50%;
+        bottom: -8px;
+        transform: translate(-50%, 100%);
+      }
+      @include media(xxs) {
+        height: 28px;
+        bottom: -6px;
+        background-size: contain;
+        background-position: bottom center;
+      }
+    }
+    .pre-k-about__picture {
+      top: -145px;
+      left: 0;
+      right: 0;
+      height: 178px;
+      @include media(lg) {
+        width: 169px;
+        height: 104px;
+      }
+      @include media(xs) {
+        width: 143px;
+        height: 98px;
+      }
+      @include media(xxs) {
+        width: 130px;
+        height: 98px;
+      }
+    }
+  }
+  &_3 {
+    margin-top: 174px;
+    text-align: center;
+    padding: 16px 20px;
+    @include media(lg) {
+      margin-top: 0;
+      width: 425px;
+      text-align: left;
+      padding: 9px 12px 9px 14px;
+      gap: 22px;
+    }
+    @include media(xs) {
+      width: 100%;
+      gap: 13px;
+      padding: 12px 12px 12px 10px;
+    }
+    @include media(xxs) {
+      padding: 12px 10px 12px 11px;
+      gap: 10px;
+    }
+    .pre-k-about__picture {
+      top: -202px;
+      left: -3px;
+      width: 409px;
+      height: 235px;
+      @include media(lg) {
+        width: 152px;
+        height: 104px;
+      }
+      @include media(xs) {
+        width: 118px;
+        height: 98px;
+      }
+      @include media(xxs) {
+        width: 102px;
+        height: 98px;
+      }
+    }
+  }
+}
+
+.pre-k-about__picture {
+  position: absolute;
+  z-index: -1;
+  @include media(lg) {
+    position: static;
+    flex-shrink: 0;
+  }
+}
+
+.pre-k-about__image {
+  height: 100%;
+}
+
+.pre-k-about__text {
+  font-size: 18px;
+  line-height: 23px;
+  color: #003c56;
+  font-weight: 500;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+  }
+}
+
+.pre-k-about__caption {
+  margin-bottom: 45px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 121%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 26px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+}
+
+.pre-k-about__area {
+  display: flex;
+  align-items: flex-end;
+  gap: 30px;
+  flex-wrap: wrap;
+  @include media(lg) {
+    position: relative;
+    gap: 20px;
+    max-width: 684px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  @include media(xxs) {
+    gap: 15px;
+  }
+}
+
+.pre-k-about__box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 20px;
+  @include media(lg) {
+    padding: 20px;
+    border-radius: 10px;
+  }
+  @include media(xs) {
+    padding: 15px;
+  }
+  &_1 {
+    position: relative;
+    z-index: 1;
+    width: 431px;
+    height: 421px;
+    box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+    background: #6683c2;
+    @include media(lg) {
+      width: 320px;
+      height: 314px;
+    }
+    @include media(xs) {
+      width: 100%;
+      height: auto;
+      min-height: 314px;
+    }
+    &::before {
+      content: '';
+      @include bg-icon('pre-k-about/box-1.svg');
+      position: absolute;
+      z-index: -1;
+      top: 22px;
+      right: 0;
+      width: 412px;
+      height: 346px;
+      @include media(lg) {
+        width: 313px;
+        height: 258px;
+        top: 11px;
+      }
+      @include media(xxs) {
+        width: 293px;
+        height: 242px;
+      }
+    }
+    &::after {
+      content: '';
+      background: linear-gradient(180deg, rgba(102, 131, 194, 0) 0%, #6683c2 100%);
+      position: absolute;
+      z-index: -1;
+      width: 431px;
+      height: 236px;
+      bottom: 53px;
+      left: 0;
+      @include media(lg) {
+        width: 320px;
+        height: 180px;
+        bottom: 45px;
+      }
+      @include media(xs) {
+        width: 100%;
+      }
+    }
+    .pre-k-about__box-title, .pre-k-about__box-text {
+      color: #fff;
+    }
+  }
+  &_2 {
+    padding: 30px 522px 30px 30px;
+    box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+    background: #fff;
+    width: 882px;
+    height: 354px;
+    @include media(lg) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 344px;
+      height: 510px;
+      padding: 20px;
+    }
+    @include media(xs) {
+      position: relative;
+      width: 100%;
+      height: auto;
+      padding: 20px 20px 230px;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      right: 0;
+      width: 446px;
+      height: 374px;
+      @include bg-icon('pre-k-about/box-2.svg');
+      @include media(lg) {
+        width: 344px;
+        height: 312px;
+        top: unset;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        @include bg-icon('pre-k-about/box-2_tablet.svg');
+      }
+      @include media(xs) {
+        width: 100%;
+        height: 210px;
+        @include bg-icon('pre-k-about/box-2_mob.svg');
+        background-size: contain;
+      }
+    }
+    .pre-k-about__box-title {
+      @include media(lg) {
+        margin-top: 0;
+      }
+    }
+  }
+  &_3 {
+    margin-right: -30px;
+    width: 364px;
+    height: 272px;
+    @include bg-icon('pre-k-about/box-3.svg');
+    @include media(lg) {
+      display: none;
+    }
+  }
+  &_4 {
+    width: 465px;
+    height: 279px;
+    box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+    background: #fff;
+    @include media(lg) {
+      width: 320px;
+      height: auto;
+    }
+    @include media(xs) {
+      width: 100%;
+    }
+  }
+  &_5 {
+    overflow: hidden;
+    padding: 30px 25px 30px 30px;
+    width: 485px;
+    height: 279px;
+    box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+    background: linear-gradient(90deg, #f37e60 0%, #ffa791 100%);
+    @include media(lg) {
+      width: 100%;
+      height: auto;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: -32px;
+      right: 8px;
+      width: 285px;
+      height: 193px;
+      @include bg-icon('pre-k-about/box-5.svg');
+      @include media(lg) {
+        width: 200px;
+        height: 135px;
+      }
+      @include media(xs) {
+        width: 155px;
+        height: 105px;
+        top: -25px;
+        right: 11px;
+      }
+    }
+    .pre-k-about__box-title, .pre-k-about__box-text {
+      color: #fff;
+    }
+  }
+}
+
+.pre-k-about__icon {
+  margin-bottom: 20px;
+  width: 80px;
+  height: 80px;
+  @include media(lg) {
+    margin-bottom: 15px;
+    width: 55px;
+    height: 55px;
+  }
+}
+
+.pre-k-about__box-title {
+  margin-top: auto;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.pre-k-about__box-text {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #000;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+  }
+}

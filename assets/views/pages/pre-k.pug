@@ -5,3 +5,13 @@ block head
 
 block body
   include ../components/pre-k-cap
+  include ../components/pre-k-about
+  include ../components/pre-k-how
+  include ../components/ege-about
+  +ege-about('pre-k')
+  include ../components/teacher
+  +teacher('pre-k', 'Галина Валерьевна Шевченко', 'Ваш учитель')
+  include ../components/pre-k-tile
+  include ../components/reviews
+  +reviews('blue')
+  include ../components/pre-k-consult

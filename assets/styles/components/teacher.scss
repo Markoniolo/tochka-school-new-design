@@ -8,6 +8,9 @@
   @include media(xs) {
     padding-bottom: 40px;
   }
+  &_pre-k {
+    background: #FFFFFF;
+  }
   &_no-padding {
     @include media(lg) {
       padding-bottom: 0;

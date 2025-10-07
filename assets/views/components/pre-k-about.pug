@@ -1,0 +1,37 @@
+-
+  const preKaboutList = [
+    'Школа ждёт, что первоклассник будет читать, считать, выполнять задания по&nbsp;инструкции и усидчиво работать',
+    'Но без подготовки это даётся трудно',
+    'Наши курсы помогут ребёнку уверенно войти в школьную жизнь — с интересом, а не со слезами',
+  ]
+
+.pre-k-about
+  .cont
+    .pre-k-about__list
+      each item, index in preKaboutList
+        .pre-k-about__item(class=`pre-k-about__item_${index+1}`)
+          picture.pre-k-about__picture
+            source(srcset=staticImg(`pre-k-about/${index+1}_xxs.png`) media="(max-width: 359px)")
+            source(srcset=staticImg(`pre-k-about/${index+1}_mob.png`) media="(max-width: 743px)")
+            source(srcset=staticImg(`pre-k-about/${index+1}_tablet.png`) media="(max-width: 1359px)")
+            img.pre-k-about__image(src=staticImg(`pre-k-about/${index+1}.png`) alt='')
+          .pre-k-about__text!= item
+    h2.pre-k-about__caption Подготовка к школе — это:
+    .pre-k-about__area
+      .pre-k-about__box.pre-k-about__box_1
+        img.pre-k-about__icon(src=staticImg('pre-k-about/icon-1.svg') alt='')
+        .pre-k-about__box-title Лёгкая адаптация
+        .pre-k-about__box-text Ребёнок не потеряется в заданиях 1&nbsp;класса и будет понимать требования&nbsp;учителя.
+      .pre-k-about__box.pre-k-about__box_2
+        img.pre-k-about__icon(src=staticImg('pre-k-about/icon-2.svg') alt='')
+        .pre-k-about__box-title Высокая успеваемость
+        .pre-k-about__box-text Будущий школьник быстрее схватывает материал, может даже «обгонять» программу.
+      .pre-k-about__box.pre-k-about__box_3
+      .pre-k-about__box.pre-k-about__box_4
+        img.pre-k-about__icon(src=staticImg('pre-k-about/icon-4.svg') alt='')
+        .pre-k-about__box-title Уверенность в себе
+        .pre-k-about__box-text Внутреннее состояние важно не меньше навыков чтения и письма.
+      .pre-k-about__box.pre-k-about__box_5
+        img.pre-k-about__icon(src=staticImg('pre-k-about/icon-5.svg') alt='')
+        .pre-k-about__box-title Учёба с интересом
+        .pre-k-about__box-text Школа становится местом интереса и развития, а не стресса и тревоги.

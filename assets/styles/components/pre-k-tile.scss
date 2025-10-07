@@ -1,0 +1,21 @@
+.pre-k-tile {
+  padding-top: 74px;
+  padding-bottom: 74px;
+  @include media(lg) {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+}
+
+.pre-k-tile__caption {
+  margin-bottom: 44px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 97%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 25px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+}

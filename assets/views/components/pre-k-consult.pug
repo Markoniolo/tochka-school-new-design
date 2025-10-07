@@ -1,0 +1,12 @@
+.pre-k-consult
+  .cont
+    .pre-k-consult__wrap
+      .pre-k-consult__area
+        .pre-k-consult__caption Бесплатная консультация
+        .pre-k-consult__text Поможем подобрать курс для вашего ребенка. Оставьте контакты, и мы вам перезвоним.
+        picture.pre-k-consult__picture
+          source(srcset=staticImg('pre-k-consult/decor_mob.png') media="(max-width: 743px)")
+          source(srcset=staticImg('pre-k-consult/decor_tablet.png') media="(max-width: 1359px)")
+          img.pre-k-consult__image(src=staticImg('pre-k-consult/decor.png') alt='')
+      include ./ege-cap__form
+      +ege-cap__form('Оставьте заявку, расскажем о курсах подробнее')

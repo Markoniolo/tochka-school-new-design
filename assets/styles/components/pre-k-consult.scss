@@ -1,0 +1,168 @@
+.pre-k-consult {
+  margin-bottom: 120px;
+  @include media(lg) {
+    margin-bottom: 60px;
+  }
+  .ege-cap__form {
+    @include bg-icon('pre-k-cap/bg-form.png');
+    background-size: cover;
+    @include media(lg) {
+      @include bg-icon('pre-k-cap/bg-form_tablet.png');
+      background-size: cover;
+      position: absolute;
+      bottom: 25px;
+      left: 25px;
+      width: 320px;
+      max-width: 100%;
+    }
+    @include media(xs) {
+      position: static;
+      max-width: 100%;
+      width: 100%;
+      padding: 20px;
+    }
+    @include media(xxs) {
+      padding: 15px;
+    }
+    .iti.iti--allow-dropdown.iti--show-flags {
+      width: 100%;
+    }
+  }
+  .ege-cap__title {
+    color: #003c56;
+  }
+  .ege-cap__inner {
+    @include media(lg) {
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 18px;
+    }
+  }
+  .ege-cap__input {
+    @include media(lg) {
+      width: 100%;
+    }
+  }
+  .ege-cap__label:not(:last-of-type) {
+    @include media(lg) {
+      margin-bottom: 14px;
+      margin-right: 0;
+    }
+  }
+  .ege-cap__checkbox-text {
+    color: #003c56;
+  }
+  .ege-cap__checkbox-view {
+    border: 1px solid #003c56;
+  }
+  .ege-cap__checkbox {
+    &:checked ~ .ege-cap__checkbox-view::before {
+      background-color: $orange;
+    }
+  }
+  .ege-cap__submit {
+    @include media(lg) {
+      margin-top: 10px;
+      width: 100%;
+    }
+  }
+}
+
+.pre-k-consult__wrap {
+  display: flex;
+  gap: 30px;
+  @include media(lg) {
+    position: relative;
+  }
+  @include media(xs) {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.pre-k-consult__area {
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+  padding: 45px 50px;
+  border-radius: 31px;
+  @include bg-icon('pre-k-consult/bg.png');
+  background-size: cover;
+  min-height: 518px;
+  @include media(lg) {
+    @include bg-icon('pre-k-consult/bg_tablet.png');
+    background-size: cover;
+    border-radius: 20px;
+    padding: 25px;
+    min-height: 558px;
+  }
+  @include media(xs) {
+    @include bg-icon('pre-k-consult/bg_mob.png');
+    background-size: cover;
+    border-radius: 10px;
+    padding: 22px 20px 130px;
+    margin-bottom: -170px;
+  }
+}
+
+.pre-k-consult__caption {
+  margin-bottom: 40px;
+  max-width: 530px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 104%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 16px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+  @include media(xs) {
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
+.pre-k-consult__text {
+  max-width: 446px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #003c56;
+  @include media(lg) {
+    max-width: 372px;
+    font-size: 16px;
+    line-height: 132%;
+  }
+  @include media(xs) {
+    text-align: center;
+    max-width: 280px;
+    margin: 0 auto 40px;
+  }
+}
+
+.pre-k-consult__picture {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 384px;
+  height: 454px;
+  @include media(lg) {
+    width: 327px;
+    height: 386px;
+    bottom: 15px;
+    right: 8px;
+  }
+  @include media(xs) {
+    position: static;
+    width: 205px;
+    height: 267px;
+    margin: 0 auto;
+  }
+}
+
+.pre-k-consult__image {
+
+}

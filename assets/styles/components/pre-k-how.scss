@@ -1,0 +1,221 @@
+.pre-k-how {
+  padding-top: 74px;
+  padding-bottom: 80px;
+  @include media(lg) {
+    padding-top: 36px;
+    padding-bottom: 40px;
+  }
+}
+
+.pre-k-how__caption {
+  margin-bottom: 45px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 97%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 25px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+}
+
+.pre-k-how__area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  @include media(lg) {
+    gap: 20px;
+  }
+}
+
+.pre-k-how__box {
+  border-radius: 20px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+  padding: 30px 30px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  @include media(lg) {
+    border-radius: 10px;
+    padding: 20px;
+  }
+  @include media(xxs) {
+    padding: 15px;
+  }
+  &_1 {
+    background: #fff;
+    width: 464px;
+    @include media(lg) {
+      width: calc(50% - 10px);
+      order: 1;
+    }
+    @include media(xs) {
+      width: 100%;
+    }
+  }
+  &_2 {
+    width: 431px;
+    @include bg-icon('pre-k-how/bg-2.svg');
+    background-size: cover;
+    @include media(lg) {
+      width: 100%;
+      order: 3;
+      flex-direction: row-reverse;
+      @include bg-icon('pre-k-how/bg-2_tablet.svg');
+      background-size: cover;
+      justify-content: space-between;
+    }
+    @include media(xs) {
+      @include bg-icon('pre-k-how/bg-2_mob.svg');
+      background-size: cover;
+      width: 100%;
+      order: 2;
+      flex-direction: column;
+    }
+    .pre-k-how__title, .pre-k-how__text {
+      color: #fff;
+    }
+    .pre-k-how__text {
+      max-width: 308px;
+      @include media(lg) {
+        max-width: 260px;
+      }
+    }
+    .pre-k-how__picture {
+      margin-bottom: 41px;
+      @include media(lg) {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &_3 {
+    width: 389px;
+    @include media(lg) {
+      width: calc(50% - 10px);
+      order: 2;
+    }
+    @include media(xs) {
+      width: 100%;
+      order: 3;
+    }
+  }
+  &_4 {
+    width: 819px;
+    flex-direction: row;
+    background: linear-gradient(311deg, rgba(234, 223, 233, 0.7) 0%, rgba(184, 207, 255, 0.7) 100%);
+    @include media(lg) {
+      order: 4;
+      width: 100%;
+    }
+    @include media(xs) {
+      flex-direction: column;
+    }
+    .pre-k-how__picture {
+      width: 290px;
+      @include media(lg) {
+        width: 273px;
+      }
+      @include media(xs) {
+        width: 100%;
+      }
+    }
+    .pre-k-how__title {
+      font-weight: 600;
+    }
+  }
+  &_5 {
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(244deg, rgba(212, 226, 255, 0.7) 0%, rgba(234, 223, 233, 0.7) 100%);
+    width: 494px;
+    @include media(lg) {
+      order: 5;
+      width: 100%;
+    }
+    .pre-k-how__picture {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 292px;
+      height: 193px;
+      @include media(lg) {
+        height: 142px;
+      }
+      @include media(xs) {
+        position: static;
+        width: 100%;
+        height: auto;
+        order: 1;
+      }
+    }
+    .pre-k-how__title {
+      font-weight: 600;
+      @include media(lg) {
+        max-width: 513px;
+      }
+    }
+    .pre-k-how__text {
+      max-width: 268px;
+      @include media(lg) {
+        max-width: 510px;
+      }
+    }
+  }
+}
+
+.pre-k-how__picture {
+  flex-shrink: 0;
+}
+
+.pre-k-how__image {
+
+}
+
+.pre-k-how__inner {
+
+}
+
+.pre-k-how__title {
+  width: 100%;
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 100%;
+  }
+}
+
+.pre-k-how__text {
+  width: 100%;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #000;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+  }
+}
+
+.pre-k-how__list {
+  padding-left: 20px;
+  &:first-of-type {
+    margin-bottom: 25px;
+  }
+}
+
+.pre-k-how__item {
+  list-style-type: disc;
+  font-size: 16px;
+  line-height: 137%;
+  color: #000;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+  }
+}

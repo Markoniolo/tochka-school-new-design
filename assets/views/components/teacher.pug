@@ -13,10 +13,10 @@
     'Автор книги «Делимость с человеческим лицом».',
   ]
 
-mixin teacher(mod, name='Галина Валерьевна Шевченко')
+mixin teacher(mod, name='Галина Валерьевна Шевченко', caption='Учитель курса')
   .teacher(class = mod ? `teacher_${mod}` : false)
     .teacher__cont.cont
-      h2.teacher__caption Учитель курса
+      h2.teacher__caption!= caption
       .teacher__wrap
         .teacher__picture
           if mod === "teacher-course"
