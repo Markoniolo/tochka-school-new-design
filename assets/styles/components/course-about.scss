@@ -290,6 +290,7 @@
 }
 
 .course-about__exams-text {
+  position: relative;
   font-weight: 500;
   font-size: 24px;
   line-height: 30px;
@@ -301,6 +302,46 @@
   @include media(md) {
     font-size: 18px;
     line-height: 23px;
+  }
+  &:hover {
+    .course-about__exams-text-hover {
+      opacity: 1;
+    }
+  }
+}
+
+.course-about__exams-text-hover {
+  pointer-events: none;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: -42px;
+  transform: translateY(-45px);
+  border-radius: 43px;
+  box-shadow: 0 4px 21px 0 rgba(0, 0, 0, 0.17);
+  background: #fff;
+  color: #000;
+  font-size: 12px;
+  line-height: 100%;
+  width: 279px;
+  padding: 10px 15px 11px;
+  transition-duration: $transition-duration;
+  transition-property: opacity;
+  @include media(lg) {
+    right: -64px;
+    transform: translateY(-42px);
+  }
+  &::before {
+    content: '';
+    @include bg-icon('icons/ic_hint_triangle.svg');
+    width: 73px;
+    height: 71px;
+    position: absolute;
+    bottom: -42px;
+    right: 10px;
+    @include media(lg) {
+      right: 30px;
+    }
   }
 }
 

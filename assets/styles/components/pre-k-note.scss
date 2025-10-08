@@ -1,0 +1,242 @@
+.pre-k-note {
+
+}
+
+.pre-k-note__wrap {
+  position: relative;
+  padding-bottom: 49px;
+  @include media(lg) {
+    padding-bottom: 40px;
+  }
+}
+
+.pre-k-note__caption {
+  margin-bottom: 44px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 24px;
+    font-size: 25px;
+  }
+}
+
+.pre-k-note__text {
+  margin-bottom: 30px;
+  max-width: 494px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 40px;
+    max-width: 476px;
+    font-size: 18px;
+    line-height: 23px;
+  }
+}
+
+.pre-k-note__area {
+  width: 712px;
+  height: 460px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  @include media(lg) {
+    width: 320px;
+    height: 333px;
+    bottom: 40px;
+  }
+  @include media(xs) {
+    margin-bottom: 30px;
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.pre-k-note__box {
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+  background: #fff;
+  border-radius: 18px;
+  width: 346px;
+  left: 0;
+  @include media(lg) {
+    width: 100%;
+    border-radius: 10px;
+  }
+  @include media(xs) {
+    position: relative;
+  }
+  &_1 {
+    top: 15px;
+    padding: 25px 20px 15px;
+    @include media(lg) {
+      top: 0;
+      padding: 20px 15px 10px;
+    }
+    @include media(xs) {
+      margin-bottom: 11px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      right: -35px;
+      bottom: -15px;
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      @include media(lg) {
+        width: 12px;
+        height: 12px;
+        bottom: -18px;
+        right: unset;
+        left: 126px;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -29px;
+      right: -53px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      @include media(lg) {
+        width: 6px;
+        height: 6px;
+        bottom: -32px;
+        right: unset;
+        left: 138px;
+      }
+    }
+  }
+  &_2 {
+    top: 149px;
+    padding: 25px 40px 15px;
+    @include media(lg) {
+      top: unset;
+      bottom: 0;
+      padding: 20px 15px 10px;
+    }
+  }
+}
+
+.pre-k-note__tag {
+  border-radius: 33px;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  transform: translateY(-50%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  padding: 8px 17px;
+  @include media(lg) {
+    font-size: 14px;
+    padding: 5px 12px 6px;
+  }
+  @include media(xs) {
+    left: 15px;
+  }
+  &_blue {
+    background: #6683c2;
+  }
+  &_orange {
+    background: #f37e60;
+  }
+}
+
+.pre-k-note__box-text {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+  }
+}
+
+.pre-k-note__picture {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 547px;
+  height: 391px;
+  @include media(lg) {
+    width: 275px;
+    height: 199px;
+    bottom: 58px;
+  }
+  @include media(xs) {
+    width: 100%;
+    height: auto;
+    position: static;
+    margin-bottom: -24px;
+  }
+}
+
+.pre-k-note__image {
+
+}
+
+.pre-k-note__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 572px;
+  width: 100%;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 20px;
+  @include media(lg) {
+    border-radius: 10px;
+    padding: 22px 25px;
+    max-width: 337px;
+    gap: 30px;
+  }
+  @include media(xs) {
+    padding: 16px 18px 16px 15px;
+    max-width: 100%;
+    gap: 10px;
+  }
+  @include media(xxs) {
+    padding: 10px 20px 10px 10px;
+  }
+}
+
+.pre-k-note__item {
+  position: relative;
+  padding-left: 33px;
+  font-size: 18px;
+  line-height: 23px;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+  }
+  &::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &_minus::before {
+    @include bg-icon('icons/ic_point_minus.svg');
+  }
+  &_plus::before {
+    @include bg-icon('icons/ic_point_orange.svg');
+  }
+}

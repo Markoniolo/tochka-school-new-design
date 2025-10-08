@@ -65,6 +65,8 @@ mixin course-about(mod, title='Как проходит этот курс')
             .course-about__exams
               img.course-about__exams-image(src=staticImg(`course-about/exams-${index+1}.svg`) alt='')
               .course-about__exams-text!= text
+                if index === 1
+                  .course-about__exams-text-hover пороговые значения могут отличаться в зависимости от региона
         else
           .course-about__box
             ul.course-about__list
