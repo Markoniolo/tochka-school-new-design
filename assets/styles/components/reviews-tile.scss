@@ -299,10 +299,15 @@
   overflow: hidden;
   font-size: 16px;
   line-height: 135%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   @include media(lg) {
     font-size: 15px;
+    gap: 10px;
   }
   &.hide {
+    position: relative;
     height: 230px;
     @include media(lg) {
       height: 190px;
@@ -310,11 +315,18 @@
     @include media(xs) {
       height: 350px;
     }
-  }
-  p {
-    margin-bottom: 20px;
-    @include media(lg) {
-      margin-bottom: 10px;
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 80px;
+      background: linear-gradient(to top, #f9f9f9, rgba(#f9f9f9, .2));
+      @include media(lg) {
+        background: linear-gradient(to top, #ffffff, rgba(#ffffff, .2));
+      }
     }
   }
 }

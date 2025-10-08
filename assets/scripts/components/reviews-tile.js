@@ -31,7 +31,7 @@ function reviewsTileInit () {
 
     for (let i = 0; i < texts.length; i++) {
       const toggle = texts[i].parentElement.querySelector('.reviews-tile__toggle')
-      if (texts[i].clientHeight > 230 && window.innerWidth >= 1440 || texts[i].clientHeight > 190 && window.innerWidth >= 744 && window.innerWidth < 1440 || texts[i].clientHeight > 350 && window.innerWidth < 744) {
+      if ((texts[i].clientHeight - 230) > 40 && window.innerWidth >= 1440 || (texts[i].clientHeight - 190) > 40 && window.innerWidth >= 744 && window.innerWidth < 1440 || (texts[i].clientHeight - 350) > 40 && window.innerWidth < 744) {
         texts[i].classList.add('hide')
         toggle.addEventListener('click', () => toggleText(texts[i]))
       } else {
