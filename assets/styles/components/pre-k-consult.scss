@@ -9,7 +9,7 @@
     @include media(lg) {
       @include bg-icon('pre-k-cap/bg-form_tablet.png');
       background-size: cover;
-      position: absolute;
+      position: static;
       bottom: 25px;
       left: 25px;
       width: 320px;
@@ -73,10 +73,19 @@
   gap: 30px;
   @include media(lg) {
     position: relative;
+    @include bg-icon('pre-k-consult/bg_tablet.png');
+    background-size: cover;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 25px;
+    gap: 25px;
   }
   @include media(xs) {
     flex-direction: column;
     gap: 0;
+    background: unset;
+    border-radius: 0;
+    padding: 0;
   }
 }
 
@@ -90,11 +99,11 @@
   background-size: cover;
   min-height: 518px;
   @include media(lg) {
-    @include bg-icon('pre-k-consult/bg_tablet.png');
-    background-size: cover;
-    border-radius: 20px;
-    padding: 25px;
-    min-height: 558px;
+    background: unset;
+    border-radius: 0;
+    padding: 0;
+    min-height: unset;
+    position: static;
   }
   @include media(xs) {
     @include bg-icon('pre-k-consult/bg_mob.png');

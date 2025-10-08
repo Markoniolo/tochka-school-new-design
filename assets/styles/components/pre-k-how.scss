@@ -122,6 +122,10 @@
     }
     .pre-k-how__title {
       font-weight: 600;
+      @include media(lg) {
+        font-size: 18px;
+        line-height: 139%;
+      }
     }
   }
   &_5 {
@@ -153,12 +157,22 @@
       font-weight: 600;
       @include media(lg) {
         max-width: 513px;
+        @include media(lg) {
+          font-size: 18px;
+          line-height: 139%;
+        }
       }
     }
     .pre-k-how__text {
       max-width: 268px;
       @include media(lg) {
         max-width: 510px;
+        font-size: 16px;
+        line-height: 137%;
+      }
+      @include media(xs) {
+        font-size: 15px;
+        line-height: 19px;
       }
     }
   }
@@ -187,6 +201,7 @@
     margin-bottom: 8px;
     font-size: 16px;
     line-height: 100%;
+    font-weight: 600;
   }
 }
 
