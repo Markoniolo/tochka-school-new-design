@@ -491,23 +491,6 @@ function allCoursesInit () {
     }
 
   }
-
-  const allCoursesTop = document.querySelector('.all-courses__top')
-  const promo = document.querySelector('.promo')
-
-  if (allCoursesTop) {
-    allCoursesTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
-    if (promo) allCoursesTop.classList.add('active-promo')
-    window.addEventListener('scroll', toggleAllCoursesTop, { passive: true })
-
-    function toggleAllCoursesTop () {
-      if (window.scrollY > 0) {
-        allCoursesTop.classList.add('active')
-      } else {
-        allCoursesTop.classList.remove('active')
-      }
-    }
-  }
 }
 
 const animateCounters = document.querySelectorAll('.animate-counter')
@@ -736,6 +719,28 @@ function btnFixedInit () {
       (top + height) > window.pageYOffset &&
       (left + width) > window.pageXOffset
     )
+  }
+}
+
+const btnScrollToTop = document.querySelector('.btn-scroll-to-top')
+
+if (btnScrollToTop) btnScrollToTopInit()
+
+function btnScrollToTopInit () {
+  const promo = document.querySelector('.promo')
+
+  if (btnScrollToTop) {
+    btnScrollToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
+    if (promo) btnScrollToTop.classList.add('active-promo')
+    window.addEventListener('scroll', toggleAllCoursesTop, { passive: true })
+
+    function toggleAllCoursesTop () {
+      if (window.scrollY > 0) {
+        btnScrollToTop.classList.add('active')
+      } else {
+        btnScrollToTop.classList.remove('active')
+      }
+    }
   }
 }
 
