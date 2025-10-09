@@ -58,6 +58,14 @@
     padding: 20px 20px 25px;
     min-height: auto;
   }
+  @include media-up(xl) {
+    will-change: transform;
+    transition-duration: $transition-duration;
+    transition-property: transform;
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
 }
 
 .blog__image {
