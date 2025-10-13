@@ -205,7 +205,24 @@ function quizSoInit () {
     const link = input.getAttribute('data-redirect-quiz')
     if (link) {
       input.addEventListener('click', function () {
-        location.assign(link)
+        let link_tr = link;
+        if (utm_input) {
+          utm_paramsToInsert = utm_input.value
+          if(utm_paramsToInsert != null && utm_paramsToInsert != '' && utm_paramsToInsert != undefined){
+          }else{
+            utm_paramsToInsert = ''
+          }
+          if (utm_paramsToInsert.length > 0) {
+            const link_parts = link_tr.split('#')
+            if (link_parts.length === 1) {
+              link_tr += utm_paramsToInsert
+            }else{
+              link_tr = `${link_parts[0]}${utm_paramsToInsert}#${link_parts[1]}`;
+            }
+          }
+        }
+
+        location.replace(link_tr)
       })
     } else {
       input.addEventListener('change', nextSlide)
