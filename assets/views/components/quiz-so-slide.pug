@@ -70,8 +70,8 @@ mixin quiz-so-slide(id,title,type,list=[],texts=[], length, last)
                 circle.quiz-so-slide__loader-mob-progress(cx='22.5' cy='22.5' r='21.5' stroke='#f37e60' stroke-width='2')
             .quiz-so-slide__buttons
               button.quiz-so-slide__back(type="button" data-element="quiz-so-slide-back")
-              if id === '9'
-                button.quiz-so-slide__next.quiz-so-slide__next_submit.btn-orange.btn-orange_arrow(type="button" data-element="quiz-so-slide-next") Далее
+              if last
+                button.quiz-so-slide__next.quiz-so-slide__next_submit.btn-orange.btn-orange_arrow(type="submit" data-element="quiz-so-slide-next") Далее
               else
                 button.quiz-so-slide__next.btn-orange.btn-orange_arrow(type="button" data-element="quiz-so-slide-next") Далее
           .quiz-so-slide__loader
