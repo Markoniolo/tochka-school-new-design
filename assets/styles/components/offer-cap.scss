@@ -245,7 +245,7 @@
   flex-direction: column;
   &:nth-child(1), &:nth-child(3) {
     .offer-cap__line-box {
-      animation: 40s marquee linear infinite;
+      animation: 60s marquee linear infinite;
     }
   }
   &:nth-child(1) {
@@ -255,7 +255,7 @@
     transform: translateY(-400px);
     .offer-cap__line-box {
       flex-direction: column-reverse;
-      animation: 40s marquee-reverse linear infinite;
+      animation: 60s marquee-reverse linear infinite;
     }
   }
   &:nth-child(3) {

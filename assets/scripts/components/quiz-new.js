@@ -1,27 +1,27 @@
-const quizSo = document.querySelector('.quiz-so')
+const quizNew = document.querySelector('[data-element="quiz-new"]')
 
-if (quizSo) quizSoInit()
+if (quizNew) quizSoInit()
 
 function quizSoInit () {
   let index = 0
-  const slides = quizSo.querySelectorAll('[data-element="quiz-so-slide"]')
-  const buttonsNext = quizSo.querySelectorAll('[data-element="quiz-so-slide-next"]')
-  const buttonsBack = quizSo.querySelectorAll('[data-element="quiz-so-slide-back"]')
-  const btnSubmit = quizSo.querySelector('.btn-warning')
-  const input = quizSo.querySelector("[data-element='input-phone-intl']")
-  const inputName = quizSo.querySelector(".quiz-so-slide__form-input_name")
-  const inputHidden = quizSo.querySelector("[data-element='input-phone-hidden']")
-  const policyCheckboxes = quizSo.querySelectorAll('.quiz-so-slide__checkbox-input')
-  const linkTo = quizSo.getAttribute("data-docex")
-  const utm_input = quizSo.querySelector('[name="utm"]')
-  const inputsRadio = quizSo.querySelectorAll('.quiz-so-slide__input[type="radio"]')
+  const slides = quizNew.querySelectorAll('[data-element="quiz-so-slide"]')
+  const buttonsNext = quizNew.querySelectorAll('[data-element="quiz-so-slide-next"]')
+  const buttonsBack = quizNew.querySelectorAll('[data-element="quiz-so-slide-back"]')
+  const btnSubmit = quizNew.querySelector('.btn-warning')
+  const input = quizNew.querySelector("[data-element='input-phone-intl']")
+  const inputName = quizNew.querySelector(".quiz-so-slide__form-input_name")
+  const inputHidden = quizNew.querySelector("[data-element='input-phone-hidden']")
+  const policyCheckboxes = quizNew.querySelectorAll('.quiz-so-slide__checkbox-input')
+  const linkTo = quizNew.getAttribute("data-docex")
+  const utm_input = quizNew.querySelector('[name="utm"]')
+  const inputsRadio = quizNew.querySelectorAll('.quiz-so-slide__input[type="radio"]')
 
   buttonsNext.forEach(button => {
     button.addEventListener('click', nextSlide)
   })
 
   window.addEventListener('resize', () => {
-    quizSo.style.height = `${slides[index].clientHeight}px`
+    quizNew.style.height = `${slides[index].clientHeight}px`
   }, { passive: true })
 
   function nextSlide () {
@@ -42,7 +42,7 @@ function quizSoInit () {
       slides[index].classList.remove('active')
       index += 1
       slides[index].classList.add('active')
-      quizSo.style.height = `${slides[index].clientHeight}px`
+      quizNew.style.height = `${slides[index].clientHeight}px`
     }
   }
 
@@ -65,7 +65,7 @@ function quizSoInit () {
     slides[index].classList.remove('active')
     index -= 1
     slides[index].classList.add('active')
-    quizSo.style.height = `${slides[index].clientHeight}px`
+    quizNew.style.height = `${slides[index].clientHeight}px`
   }
 
   initLoaders()
@@ -100,7 +100,7 @@ function quizSoInit () {
       inputHidden.value = iti.selectedCountryData.dialCode + ' ' + inputHidden.value
     })
   }
-  quizSo.addEventListener('submit', async (e) => {
+  quizNew.addEventListener('submit', async (e) => {
     e.preventDefault()
     let isValid = true
     if (input && !input?.value?.trim() || !iti?.isValidNumber()) {

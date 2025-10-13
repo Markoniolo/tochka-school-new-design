@@ -48,6 +48,7 @@ function headerInit () {
 
   const menuBtn = document.querySelector('.header__nav-item_menu')
   const layer = document.querySelector('.header__layer')
+  const stretch = document.querySelector('.trial-stretch')
 
   const navCloseBtns = header.querySelectorAll('.nav__close')
   for (let i = 0; i < navCloseBtns.length; i++) {
@@ -59,12 +60,21 @@ function headerInit () {
 
   function toggleMenu () {
     header.classList.toggle('open')
+    if (header.classList.contains('open') && stretch && stretch?.getBoundingClientRect().top === 0) {
+      header.style.top = stretch.clientHeight + 'px'
+    }
+    if (!header.classList.contains('open') && stretch) {
+      header.style.top = '0'
+    }
     stickyHeader.classList.toggle('open')
     body.classList.toggle('no-scroll')
   }
 
   function closeMenu () {
     header.classList.remove('open')
+    if (stretch) {
+      header.style.top = '0'
+    }
     stickyHeader.classList.remove('open')
     body.classList.remove('no-scroll')
     headerArea.classList.remove('hide')

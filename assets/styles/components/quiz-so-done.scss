@@ -9,6 +9,40 @@
   @include media(xs) {
     padding-top: 0;
   }
+  &_trial {
+    .quiz-so-done__tag {
+      margin-bottom: 116px;
+      @include media(lg) {
+        margin-bottom: 22px;
+      }
+    }
+    .quiz-so-done__note {
+      @include media(lg) {
+        margin-bottom: 102px;
+      }
+      @include media(xs) {
+        margin: 0 auto 30px;
+      }
+    }
+    .quiz-so-done__picture {
+      @include media(lg) {
+        width: 227px;
+        height: 236px;
+        bottom: 12px;
+        right: 5px;
+      }
+      @include media(xs) {
+        margin: 0 auto 10px;
+        right: -28px;
+      }
+      &::after {
+        @include media(lg) {
+          top: 4px;
+          left: -40px;
+        }
+      }
+    }
+  }
 }
 
 .quiz-so-done__wrap {

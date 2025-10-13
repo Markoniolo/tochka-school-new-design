@@ -1,4 +1,4 @@
-mixin quiz-so-slide(id,title,type,list=[],texts=[])
+mixin quiz-so-slide(id,title,type,list=[],texts=[], length, last)
   .quiz-so-slide(data-element="quiz-so-slide")
     .quiz-so-slide__wrap
       .quiz-so-slide__circle.quiz-so-slide__circle_1
@@ -9,7 +9,7 @@ mixin quiz-so-slide(id,title,type,list=[],texts=[])
           if type === 'checkbox'
             input.quiz-so-slide__hidden-checkbox(type='hidden' name=`slide-${id}`)
           .quiz-so-slide__caption!= title
-          if id === '9'
+          if last
             .quiz-so-slide__form
               input.quiz-so-slide__form-input.quiz-so-slide__form-input_name.input-white(name='name' placeholder='Имя родителя' type='text')
               input.quiz-so-slide__form-input.input-white(name='phone' placeholder='Номер телефона' type='tel' required data-element='input-phone-intl')
@@ -62,7 +62,7 @@ mixin quiz-so-slide(id,title,type,list=[],texts=[])
               |
               | из
               |
-              span.quiz-so-slide__length 9
+              span.quiz-so-slide__length= length
             .quiz-so-slide__loader-mob
               .quiz-so-slide__loader-mob-value 15%
               svg(width='45' height='45' viewbox='0 0 45 45' fill='none' xmlns='http://www.w3.org/2000/svg')
