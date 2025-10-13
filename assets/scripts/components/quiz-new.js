@@ -202,6 +202,13 @@ function quizSoInit () {
   })
 
   inputsRadio.forEach(input => {
-    input.addEventListener('change', nextSlide)
+    const link = input.getAttribute('data-redirect-quiz')
+    if (link) {
+      input.addEventListener('click', function () {
+        location.assign(link)
+      })
+    } else {
+      input.addEventListener('change', nextSlide)
+    }
   })
 }

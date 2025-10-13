@@ -41,7 +41,8 @@ mixin quiz-so-slide(id,title,type,list=[],texts=[], length, last)
               each item in list
                 label.quiz-so-slide__label
                   if type === "radio"
-                    input.quiz-so-slide__input(type=type name=`slide-${id}` value=item)
+                    input.quiz-so-slide__input(type=type name=`slide-${id}` value=item
+                      data-redirect-quiz = item === 'Да, выберу курс самостоятельно' ? 'https://tochka-school.ru/trialweek#offer-tile' : false)
                     svg.quiz-so-slide__view(width='15' height='15' viewbox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg')
                       circle(cx='7.5' cy='7.5' r='7' stroke='#F37E60')
                       circle.active(cx='7.5' cy='7.5' r='3.5' fill='#F37E60')
