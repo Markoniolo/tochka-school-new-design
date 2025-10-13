@@ -1949,10 +1949,46 @@
         const advcake_track_id = getCookie('advcake_track_id')
         console.log(advcake_track_id)
       
-        var search = "?" + window.location.search.split("&").filter(function(val) {
-          var value = val.replace(/\\?/, 'matematik-andrei.ru');
-          return value.indexOf("s_") === -1 && value.indexOf("tfc_") === -1;
-        }).join("&").replace(/\\?/, "");
+        var search = "?" + window.location.search.split("&").filter(function (val) {
+          var value = val.replace(/\?/, 'matematik-andrei.ru');
+          //return value.indexOf("s_") === -1 && value.indexOf("tfc_") === -1;
+          if (value.indexOf("s_") !== -1 || value.indexOf("tfc_") !== -1) {
+            return false;
+          }
+          var parts = val.split('=');
+          if (parts.length < 2) {
+            return true;
+          }
+          var paramName = parts[0].replace(/^\?/, '');
+          var paramValue = parts[1];
+          var alphanumericRegex = /^[a-zA-Z0-9]{4,15}$/;
+      
+          if (paramName === 'promo') {
+            if (!alphanumericRegex.test(paramValue)) {
+              var cleanValue = paramValue.replace(/[^a-zA-Z0-9]/g, '');
+              if (cleanValue.length < 4 || cleanValue.length > 15) {
+                return false;
+              }
+              if (cleanValue !== paramValue) {
+                return false;
+              }
+              parts[1] = cleanValue;
+              return true;
+            }
+          }
+          return true;
+        }).join("&").replace(/\?/, "");
+      
+        const isUserFromSearch = document.referrer.includes("google") || document.referrer.includes("yandex")
+        if (!search.includes('utm_source') && !search.includes('utm_campaign') && isUserFromSearch) {
+          const blog_search = "utm_source=blog&utm_campaign=article"
+          if (search.indexOf("?") === -1) {
+            search += blog_search
+          } else {
+            search += blog_search.replace("?", "&")
+          }
+        }
+      
         if (search !== "?") {
           var aLinks = document.querySelectorAll('a');
           var arrayLinks = Array.from(aLinks);

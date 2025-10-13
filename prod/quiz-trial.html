@@ -620,7 +620,7 @@
                 <div class="quiz-so-slide__caption">Готовы попробовать неделю обучения за 290 ₽?</div>
                 <div class="quiz-so-slide__list">
                   <label class="quiz-so-slide__label">
-                    <input class="quiz-so-slide__input" type="radio" name="slide-6" value="Да, выберу курс самостоятельно">
+                    <input class="quiz-so-slide__input" type="radio" name="slide-6" value="Да, выберу курс самостоятельно" data-redirect-quiz="https://tochka-school.ru/trialweek#offer-tile">
                     <svg class="quiz-so-slide__view" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="7.5" cy="7.5" r="7" stroke="#F37E60"></circle>
                       <circle class="active" cx="7.5" cy="7.5" r="3.5" fill="#F37E60"></circle>
@@ -1019,10 +1019,46 @@
         const advcake_track_id = getCookie('advcake_track_id')
         console.log(advcake_track_id)
       
-        var search = "?" + window.location.search.split("&").filter(function(val) {
-          var value = val.replace(/\\?/, 'matematik-andrei.ru');
-          return value.indexOf("s_") === -1 && value.indexOf("tfc_") === -1;
-        }).join("&").replace(/\\?/, "");
+        var search = "?" + window.location.search.split("&").filter(function (val) {
+          var value = val.replace(/\?/, 'matematik-andrei.ru');
+          //return value.indexOf("s_") === -1 && value.indexOf("tfc_") === -1;
+          if (value.indexOf("s_") !== -1 || value.indexOf("tfc_") !== -1) {
+            return false;
+          }
+          var parts = val.split('=');
+          if (parts.length < 2) {
+            return true;
+          }
+          var paramName = parts[0].replace(/^\?/, '');
+          var paramValue = parts[1];
+          var alphanumericRegex = /^[a-zA-Z0-9]{4,15}$/;
+      
+          if (paramName === 'promo') {
+            if (!alphanumericRegex.test(paramValue)) {
+              var cleanValue = paramValue.replace(/[^a-zA-Z0-9]/g, '');
+              if (cleanValue.length < 4 || cleanValue.length > 15) {
+                return false;
+              }
+              if (cleanValue !== paramValue) {
+                return false;
+              }
+              parts[1] = cleanValue;
+              return true;
+            }
+          }
+          return true;
+        }).join("&").replace(/\?/, "");
+      
+        const isUserFromSearch = document.referrer.includes("google") || document.referrer.includes("yandex")
+        if (!search.includes('utm_source') && !search.includes('utm_campaign') && isUserFromSearch) {
+          const blog_search = "utm_source=blog&utm_campaign=article"
+          if (search.indexOf("?") === -1) {
+            search += blog_search
+          } else {
+            search += blog_search.replace("?", "&")
+          }
+        }
+      
         if (search !== "?") {
           var aLinks = document.querySelectorAll('a');
           var arrayLinks = Array.from(aLinks);
