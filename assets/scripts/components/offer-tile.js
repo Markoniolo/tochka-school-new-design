@@ -3,6 +3,24 @@ const offerTile = document.getElementById("offer-tile")
 if (offerTile) offerTileInit()
 
 function offerTileInit () {
+  if (window.location.href.includes('#offer-tile')) {
+    window.addEventListener('load', function() {
+      let offset
+      if (window.innerWidth < 744) {
+        offset = 60
+      } else if (window.innerWidth < 1200) {
+        offset = 80
+      } else {
+        offset = 80
+      }
+      console.log(offerTile.getBoundingClientRect().top + window.scrollY - offset)
+      window.scrollTo({
+        top: offerTile.getBoundingClientRect().top + window.scrollY - offset,
+        behavior: 'smooth'
+      })
+    }, { once: true })
+  }
+
   const offerTileFilterTops = offerTile.querySelectorAll(".offer-tile__filter-top")
   const filterSubject = offerTile.querySelector(".offer-tile__filter_subject")
   const filterClass = offerTile.querySelector(".offer-tile__filter_class")
