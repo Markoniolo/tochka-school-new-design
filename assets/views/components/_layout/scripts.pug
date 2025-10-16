@@ -151,7 +151,7 @@ script.
       return true;
     }).join("&").replace(/\?/, "");
 
-    const isUserFromSearch = document.referrer.includes("google") || document.referrer.includes("yandex") || document.referrer.includes("ya.")
+    const isUserFromSearch = document.referrer.includes("google") || document.referrer.includes("yandex")
     if (!search.includes('utm_source') && !search.includes('utm_campaign') && isUserFromSearch) {
       const blog_search = "utm_source=blog&utm_campaign=article"
       if (search.indexOf("?") === -1) {
