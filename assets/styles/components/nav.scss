@@ -257,7 +257,7 @@
     height: 615px;
   }
   @include media(md) {
-    width: 450px;
+    width: 409px;
     height: 660px;
   }
   @include media(xs) {
@@ -532,7 +532,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  max-width: 536px;
+  max-width: 542px;
   width: 100%;
   @include media(md) {
     max-width: 100%;
@@ -546,6 +546,12 @@
   position: relative;
   @include media(md) {
     width: 100%;
+  }
+  &:nth-child(2) {
+    width: 266px;
+    @include media(md) {
+      width: 100%;
+    }
   }
   &::before {
     content: '';
@@ -929,7 +935,7 @@
     right: 0;
   }
   @include media(md) {
-    width: 725px;
+    width: 684px;
     bottom: -60px;
   }
   @include media(xs) {

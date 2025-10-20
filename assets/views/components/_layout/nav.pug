@@ -134,7 +134,7 @@
 
   const navPrepareArea = [
     {
-      headline: 'Лёгкая адаптация', text: 'Ребёнок не потеряется в заданиях 1 класса и будет понимать требования учителя.'
+      headline: 'Лёгкая адаптация', text: 'Ребёнок не потеряется в&nbsp;заданиях&nbsp;1&nbsp;класса и будет понимать требования учителя.'
     },
     {
       headline: 'Высокая успеваемость', text: 'Будущий школьник быстрее схватывает материал, может даже «обгонять» программу.'
@@ -143,7 +143,7 @@
       headline: 'Уверенность в себе', text: 'Внутреннее состояние важно не меньше навыков чтения и письма.'
     },
     {
-      headline: 'Учёба с интересом', text: 'Школа становится местом интереса и развития, а не стресса и тревоги.'
+      headline: 'Учёба с интересом', text: 'Школа становится местом интереса и&nbsp;развития, а не стресса и тревоги.'
     },
   ]
 
@@ -202,8 +202,8 @@
             .nav__prepare-area
               each box in navPrepareArea
                 .nav__prepare-box
-                  .nav__prepare-headline= box.headline
-                  .nav__prepare-text= box.text
+                  .nav__prepare-headline!= box.headline
+                  .nav__prepare-text!= box.text
             picture.nav__prepare-picture
               source(srcset=staticImg('nav/decor-prepare_tablet.svg') media="(max-width: 1359px)")
               img.nav__prepare-image(src=staticImg('nav/decor-prepare.svg') alt='')
