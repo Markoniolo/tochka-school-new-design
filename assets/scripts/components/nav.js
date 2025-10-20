@@ -6,6 +6,9 @@ function navInit () {
   const buttons = nav.querySelectorAll('button.nav__box-link')
   const headerArea = document.querySelector('.header__area')
   const navBackButtons = nav.querySelectorAll('.nav__back')
+  const navScrollers = nav.querySelectorAll('.nav__scroller')
+  const navLeftScroller = nav.querySelector('.nav__left-scroller')
+
   let timeout
 
   for (let i = 0; i < buttons.length; i++) {
@@ -23,7 +26,7 @@ function navInit () {
     headerArea.classList.remove('hide')
   }
 
-  function toggleArea (e) {
+  function toggleArea () {
     clearTimeout(timeout)
     timeout = setTimeout(() => toggle(this),50)
 
@@ -40,6 +43,17 @@ function navInit () {
       if (area) area.classList.add('active-mob')
       headerArea.classList.add('hide')
       that.classList.add('active')
+    }
+  }
+
+  initSimpleBar()
+
+  function initSimpleBar () {
+    if (window.innerWidth >= 744) {
+      for (let i = 0; i < navScrollers.length; i++) {
+        new SimpleBar(navScrollers[i])
+      }
+      new SimpleBar(navLeftScroller)
     }
   }
 }

@@ -105,7 +105,8 @@
     {
       index: '7',
       title: 'Семейное обучение',
-      menu: ['1 класс','2 класс','3 класс','4 класс','5 класс','6 класс','7 класс','8 класс','9 класс','10 класс','11 класс']
+      menu: ['1 класс','2 класс','3 класс','4 класс','5 класс','6 класс','7 класс','8 класс','9 класс','10 класс','11 класс'],
+      mod: 'so'
     },
     {
       index: '8',
@@ -131,96 +132,139 @@
     },
   ]
 
+  const navPrepareArea = [
+    {
+      headline: 'Лёгкая адаптация', text: 'Ребёнок не потеряется в заданиях 1 класса и будет понимать требования учителя.'
+    },
+    {
+      headline: 'Высокая успеваемость', text: 'Будущий школьник быстрее схватывает материал, может даже «обгонять» программу.'
+    },
+    {
+      headline: 'Уверенность в себе', text: 'Внутреннее состояние важно не меньше навыков чтения и письма.'
+    },
+    {
+      headline: 'Учёба с интересом', text: 'Школа становится местом интереса и развития, а не стресса и тревоги.'
+    },
+  ]
+
 .nav
   .nav__wrap
     .nav__close-box
       button.nav__close.btn-blue Закрыть меню
-    .nav__left
-      .nav__box
-        .nav__box-discount Скидка до 30%
-        a.nav__box-link.nav__box-link_mob(href='#') Дошкольники
-        button.nav__box-link.nav__box-link_desc.active(data-nav-id="0") Дошкольники
-        button.nav__box-link(data-nav-id="1") Начальная школа
-        button.nav__box-link(data-nav-id="2") Средняя школа
-        button.nav__box-link(data-nav-id="3") Старшая школа
-      .nav__box
-        .nav__box-discount Скидка до 30%
-        button.nav__box-link(data-nav-id="4") Подготовка к ЕГЭ
-        button.nav__box-link(data-nav-id="5") Подготовка к ОГЭ
-      .nav__box
-        a.nav__box-link.nav__box-link_mob(href='#') Летние курсы
-        button.nav__box-link.nav__box-link_desc(data-nav-id="6") Летние курсы
-      .nav__box
-        .nav__box-discount Скидка до 30%
-        button.nav__box-link.nav__box-link_family(data-nav-id="7") Семейное обучение
-      .nav__box
-        .nav__box-discount Скидка до 30%
-        button.nav__box-link(data-nav-id="8") Программирование
-        button.nav__box-link(data-nav-id="9") Иностранные языки
-        button.nav__box-link(data-nav-id="10") Развивающие курсы
-      .nav__box
-        a.nav__box-link.nav__box-link_mob(href='#') Курсы для учителей
-        button.nav__box-link.nav__box-link_desc(data-nav-id="11") Курсы для учителей
-      button.nav__close.btn-blue Закрыть меню
-      .nav__contacts.nav__contacts_mob
-        a.nav__phone(href="tel:+78612176477") +7 (861) 217-64-77
-        a.nav__email(href="mailto:support@tochka-school.ru") support@tochka-school.ru
-        a.nav__wp(href="https://api.whatsapp.com/send/?phone=79182293194&text&type=phone_number&app_absent=0" target="_blank") Написать в WhatsApp
+    .nav__left-scroller
+      .nav__left
+        .nav__box
+          .nav__box-discount Скидка до 30%
+          button.nav__box-link.active(data-nav-id="0") Дошкольники
+          button.nav__box-link(data-nav-id="1") Начальная школа
+          button.nav__box-link(data-nav-id="2") Средняя школа
+          button.nav__box-link(data-nav-id="3") Старшая школа
+        .nav__box
+          .nav__box-discount Скидка до 30%
+          button.nav__box-link(data-nav-id="4") Подготовка к ЕГЭ
+          button.nav__box-link(data-nav-id="5") Подготовка к ОГЭ
+        //.nav__box
+        //  a.nav__box-link.nav__box-link_mob(href='#') Летние курсы
+        //  button.nav__box-link.nav__box-link_desc(data-nav-id="6") Летние курсы
+        .nav__box
+          .nav__box-discount Скидка до 30%
+          button.nav__box-link.nav__box-link_family(data-nav-id="7") Семейное обучение
+        .nav__box
+          .nav__box-discount Скидка до 30%
+          button.nav__box-link(data-nav-id="8") Программирование
+          button.nav__box-link(data-nav-id="9") Иностранные языки
+          button.nav__box-link(data-nav-id="10") Развивающие курсы
+        //.nav__box
+        //  a.nav__box-link.nav__box-link_mob(href='#') Курсы для учителей
+        //  button.nav__box-link.nav__box-link_desc(data-nav-id="11") Курсы для учителей
+        a.nav__search(href='#') Найти курс
+        button.nav__close.btn-blue Закрыть меню
+        .nav__contacts.nav__contacts_mob
+          a.nav__phone(href="tel:+78612176477") +7 (861) 217-64-77
+          a.nav__email(href="mailto:support@tochka-school.ru") support@tochka-school.ru
+          a.nav__wp(href="https://api.whatsapp.com/send/?phone=79182293194&text&type=phone_number&app_absent=0" target="_blank") Написать в WhatsApp
     .nav__right
       .nav__area.active(data-nav-area="0" class="nav__area_0")
         button.nav__back
         .nav__title Дошкольники
-        .nav__preschool
-          .nav__preschool-text Подготовка детей к школе 5,5-6 лет
-          .nav__preschool-tags
-            each tag in ['Развитие памяти, мышления и мелкой моторики','Изучение геометрических фигур','Обучение грамоте','Счёт до 10','Знакомство с окружающим миром']
-              .nav__preschool-tag= tag
-                svg(width='18' height='19' viewbox='0 0 18 19' fill='none' xmlns='http://www.w3.org/2000/svg')
-                  circle(cx='9' cy='9.5' r='9' fill='#6683C2')
-                  path(d='M13.7308 6.16544C13.4188 5.85296 12.912 5.85315 12.5995 6.16544L7.50782 11.2573L5.24478 8.99432C4.93229 8.68183 4.42576 8.68183 4.11327 8.99432C3.80078 9.3068 3.80078 9.81334 4.11327 10.1258L6.94195 12.9545C7.09809 13.1106 7.30284 13.1889 7.5076 13.1889C7.71237 13.1889 7.91731 13.1108 8.07346 12.9545L13.7308 7.29693C14.0433 6.98466 14.0433 6.47791 13.7308 6.16544Z' fill='white')
-          a.nav__button.btn-orange.btn-orange_arrow(href="#") Перейти
+        .nav__scroller
+          .nav__preschool
+            .nav__preschool-text Подготовка детей к школе 5,5-6 лет
+            .nav__preschool-tags
+              each tag in ['Развитие памяти, мышления и мелкой моторики','Изучение геометрических фигур','Обучение грамоте','Счёт до 10','Знакомство с окружающим миром']
+                .nav__preschool-tag= tag
+                  svg(width='18' height='19' viewbox='0 0 18 19' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    circle(cx='9' cy='9.5' r='9' fill='#6683C2')
+                    path(d='M13.7308 6.16544C13.4188 5.85296 12.912 5.85315 12.5995 6.16544L7.50782 11.2573L5.24478 8.99432C4.93229 8.68183 4.42576 8.68183 4.11327 8.99432C3.80078 9.3068 3.80078 9.81334 4.11327 10.1258L6.94195 12.9545C7.09809 13.1106 7.30284 13.1889 7.5076 13.1889C7.71237 13.1889 7.91731 13.1108 8.07346 12.9545L13.7308 7.29693C14.0433 6.98466 14.0433 6.47791 13.7308 6.16544Z' fill='white')
+            a.nav__button.btn-orange.btn-orange_arrow(href="#") Перейти
+          .nav__prepare
+            .nav__prepare-title Подготовка к школе — это:
+            .nav__prepare-area
+              each box in navPrepareArea
+                .nav__prepare-box
+                  .nav__prepare-headline= box.headline
+                  .nav__prepare-text= box.text
+            picture.nav__prepare-picture
+              source(srcset=staticImg('nav/decor-prepare_tablet.svg') media="(max-width: 1359px)")
+              img.nav__prepare-image(src=staticImg('nav/decor-prepare.svg') alt='')
       each area in navAreaSchool
         .nav__area(data-nav-area = area.index class=`nav__area_${area.index}`)
           button.nav__back
           .nav__title= area.title
-          .nav__menu
-            each box in area.menu
-              .nav__menu-box
-                a.nav__menu-tag(href="#")= box.tag
-                if box.list.length
-                  .nav__menu-list
-                    each item in box.list
-                      a.nav__menu-link(href="#")= item
-                        img.nav__menu-link-ticket(src=staticImg('all-courses/all-courses-icon.svg') alt='')
+          .nav__scroller
+            .nav__menu
+              each box in area.menu
+                .nav__menu-box
+                  a.nav__menu-tag(href="#")= box.tag
+                  if box.list.length
+                    .nav__menu-list
+                      each item in box.list
+                        a.nav__menu-link(href="#")= item
+                          img.nav__menu-link-ticket(src=staticImg('nav/icon.svg') alt='')
       each area in navAreaSecond
         .nav__area(data-nav-area = area.index class=`nav__area_${area.index}`)
           button.nav__back
           .nav__title= area.title
-          if area.mod === 'summer'
-            .nav__summer
-              .nav__summer-title Пока есть время, на каникулах можно сделать очень много!
-              .nav__summer-list
-                each item in ['Школьные и доп. предметы, 1-11 класс','Записи всех уроков за учебный год','Индивидуальный маршрут и проверка заданий','Обучение в удобном для вас темпе','Старт обучения прямо сейчас']
-                  .nav__summer-item= item
+          .nav__scroller
+            if area.mod === 'summer'
+              .nav__summer
+                .nav__summer-title Пока есть время, на каникулах можно сделать очень много!
+                .nav__summer-list
+                  each item in ['Школьные и доп. предметы, 1-11 класс','Записи всех уроков за учебный год','Индивидуальный маршрут и проверка заданий','Обучение в удобном для вас темпе','Старт обучения прямо сейчас']
+                    .nav__summer-item= item
+                a.nav__button.btn-orange.btn-orange_arrow(href="#") Перейти
+            else if area.mod === 'teacher'
+              .nav__teacher-text Узнайте всё о критериях оценивания и проверке работ экзамена, чтобы ученики сдавали “профиль” на высокий балл.
+              .nav__teacher-area
+                .nav__teacher-box
+                  .nav__teacher-title Что входит
+                  ul.nav__teacher-list
+                    each item in ['7 занятий в записи','Зачетная работа','Сертификат от Точки Знаний','Удостоверение о повышении квалификации']
+                      li.nav__teacher-item= item
+                .nav__teacher-box
+                  .nav__teacher-title Учитель
+                  .nav__teacher-name Георгий Игоревич Вольфсон
+                  .nav__teacher-description Председатель экспертной комиссии по проверке ЕГЭ (с 2018 по 2022 год)
               a.nav__button.btn-orange.btn-orange_arrow(href="#") Перейти
-          else if area.mod === 'teacher'
-            .nav__teacher-text Узнайте всё о критериях оценивания и проверке работ экзамена, чтобы ученики сдавали “профиль” на высокий балл.
-            .nav__teacher-area
-              .nav__teacher-box
-                .nav__teacher-title Что входит
-                ul.nav__teacher-list
-                  each item in ['7 занятий в записи','Зачетная работа','Сертификат от Точки Знаний','Удостоверение о повышении квалификации']
-                    li.nav__teacher-item= item
-              .nav__teacher-box
-                .nav__teacher-title Учитель
-                .nav__teacher-name Георгий Игоревич Вольфсон
-                .nav__teacher-description Председатель экспертной комиссии по проверке ЕГЭ (с 2018 по 2022 год)
-            a.nav__button.btn-orange.btn-orange_arrow(href="#") Перейти
-          else
-            .nav__btns
-              each btn in area.menu
-                a.nav__btn(href="#")= btn
-                  img.nav__btn-ticket(src=staticImg('all-courses/all-courses-icon.svg') alt='')
+            else if area.mod === 'so'
+              .nav__so
+                .nav__white-list
+                  each item in ['1 класс','2 класс','3 класс','4 класс','5 класс','6 класс','7 класс','8 класс','9 класс','10 класс','11 класс']
+                    a.nav__white-item(href='#')= item
+                .nav__so-wrap
+                  .nav__so-title Семейное обучение — альтернатива обычной школе.
+                  .nav__so-area
+                    .nav__so-text Ребёнок не ходит в школу. Вместе с Вами мы организуем его учёбу дома.
+                    .nav__so-text В «Точке Знаний» семейное обучение открыто для учеников 1–11 классов.
+                    .nav__so-text Все предметы — как в обычной школе, согласно государственной образовательной программе.
+                  picture.nav__so-picture
+                    source(srcset=staticImg('nav/decor-so_tablet.svg') media="(max-width: 1359px)")
+                    img.nav__so-image(src=staticImg('nav/decor-so.svg') alt='')
+            else
+              .nav__btns
+                each btn in area.menu
+                  a.nav__btn(href="#")= btn
+                    img.nav__btn-ticket(src=staticImg('all-courses/all-courses-icon.svg') alt='')
       .nav__contacts.nav__contacts_desc
         a.nav__phone(href="tel:+78612176477") +7 (861) 217-64-77
         a.nav__email(href="mailto:support@tochka-school.ru") support@tochka-school.ru

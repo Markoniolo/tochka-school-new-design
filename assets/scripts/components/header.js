@@ -10,6 +10,7 @@ function headerInit () {
   let scrollDown = true
   const headerArea = header.querySelector('.header__area')
   const reviewsTileSidebar = document.querySelector('.reviews-tile__sidebar')
+  const nav = header.querySelector('.nav')
 
   window.addEventListener('scroll', checkHeader, { passive: true })
   window.addEventListener('scroll', checkScrollDirection, { passive: true })
@@ -60,20 +61,35 @@ function headerInit () {
 
   function toggleMenu () {
     header.classList.toggle('open')
+    fixHeaderTop()
+    fixMenuHeight()
+    stickyHeader.classList.toggle('open')
+    body.classList.toggle('no-scroll')
+  }
+
+  function fixHeaderTop () {
     if (header.classList.contains('open') && stretch && stretch?.getBoundingClientRect().top === 0) {
       header.style.top = stretch.clientHeight + 'px'
     }
     if (!header.classList.contains('open') && stretch) {
       header.style.top = '0'
     }
-    stickyHeader.classList.toggle('open')
-    body.classList.toggle('no-scroll')
+  }
+
+  function fixMenuHeight () {
+    if (header.classList.contains('open') && stretch && stretch?.getBoundingClientRect().top === 0 && window.innerWidth < 744) {
+      const vh = document.documentElement.style.getPropertyValue('--vh')
+      nav.style.height = `${(vh.slice(0, -2) * 100) - 80 - stretch.clientHeight}px`
+    } else {
+      nav.removeAttribute('style')
+    }
   }
 
   function closeMenu () {
     header.classList.remove('open')
     if (stretch) {
       header.style.top = '0'
+      nav.removeAttribute('style')
     }
     stickyHeader.classList.remove('open')
     body.classList.remove('no-scroll')
