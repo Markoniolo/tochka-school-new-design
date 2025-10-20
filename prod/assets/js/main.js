@@ -2093,6 +2093,7 @@ function headerInit () {
   let scrollDown = true
   const headerArea = header.querySelector('.header__area')
   const reviewsTileSidebar = document.querySelector('.reviews-tile__sidebar')
+  const nav = header.querySelector('.nav')
 
   window.addEventListener('scroll', checkHeader, { passive: true })
   window.addEventListener('scroll', checkScrollDirection, { passive: true })
@@ -2143,20 +2144,35 @@ function headerInit () {
 
   function toggleMenu () {
     header.classList.toggle('open')
+    fixHeaderTop()
+    fixMenuHeight()
+    stickyHeader.classList.toggle('open')
+    body.classList.toggle('no-scroll')
+  }
+
+  function fixHeaderTop () {
     if (header.classList.contains('open') && stretch && stretch?.getBoundingClientRect().top === 0) {
       header.style.top = stretch.clientHeight + 'px'
     }
     if (!header.classList.contains('open') && stretch) {
       header.style.top = '0'
     }
-    stickyHeader.classList.toggle('open')
-    body.classList.toggle('no-scroll')
+  }
+
+  function fixMenuHeight () {
+    if (header.classList.contains('open') && stretch && stretch?.getBoundingClientRect().top === 0 && window.innerWidth < 744) {
+      const vh = document.documentElement.style.getPropertyValue('--vh')
+      nav.style.height = `${(vh.slice(0, -2) * 100) - 80 - stretch.clientHeight}px`
+    } else {
+      nav.removeAttribute('style')
+    }
   }
 
   function closeMenu () {
     header.classList.remove('open')
     if (stretch) {
       header.style.top = '0'
+      nav.removeAttribute('style')
     }
     stickyHeader.classList.remove('open')
     body.classList.remove('no-scroll')
@@ -3231,6 +3247,9 @@ function navInit () {
   const buttons = nav.querySelectorAll('button.nav__box-link')
   const headerArea = document.querySelector('.header__area')
   const navBackButtons = nav.querySelectorAll('.nav__back')
+  const navScrollers = nav.querySelectorAll('.nav__scroller')
+  const navLeftScroller = nav.querySelector('.nav__left-scroller')
+
   let timeout
 
   for (let i = 0; i < buttons.length; i++) {
@@ -3248,7 +3267,7 @@ function navInit () {
     headerArea.classList.remove('hide')
   }
 
-  function toggleArea (e) {
+  function toggleArea () {
     clearTimeout(timeout)
     timeout = setTimeout(() => toggle(this),50)
 
@@ -3265,6 +3284,17 @@ function navInit () {
       if (area) area.classList.add('active-mob')
       headerArea.classList.add('hide')
       that.classList.add('active')
+    }
+  }
+
+  initSimpleBar()
+
+  function initSimpleBar () {
+    if (window.innerWidth >= 744) {
+      for (let i = 0; i < navScrollers.length; i++) {
+        new SimpleBar(navScrollers[i])
+      }
+      new SimpleBar(navLeftScroller)
     }
   }
 }
