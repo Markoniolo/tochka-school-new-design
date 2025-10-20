@@ -180,7 +180,7 @@
         a.nav__search(href='#') Найти курс
         button.nav__close.btn-blue Закрыть меню
         .nav__contacts.nav__contacts_mob
-          a.nav__phone(href="tel:+78612176477") +7 (861) 217-64-77
+          a.nav__phone(href="tel:+78612176477") 8(861)217-64-77
           a.nav__email(href="mailto:support@tochka-school.ru") support@tochka-school.ru
           a.nav__wp(href="https://api.whatsapp.com/send/?phone=79182293194&text&type=phone_number&app_absent=0" target="_blank") Написать в WhatsApp
     .nav__right
@@ -205,8 +205,8 @@
                   .nav__prepare-headline!= box.headline
                   .nav__prepare-text!= box.text
             picture.nav__prepare-picture
-              source(srcset=staticImg('nav/decor-prepare_tablet.svg') media="(max-width: 1359px)")
-              img.nav__prepare-image(src=staticImg('nav/decor-prepare.svg') alt='')
+              source(srcset=staticImg('nav/decor-prepare_tablet.webp') media="(max-width: 1359px)")
+              img.nav__prepare-image(src=staticImg('nav/decor-prepare.webp') alt='')
       each area in navAreaSchool
         .nav__area(data-nav-area = area.index class=`nav__area_${area.index}`)
           button.nav__back
