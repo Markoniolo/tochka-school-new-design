@@ -164,10 +164,10 @@
   overflow: hidden;
   @include media(lg) {
     border-bottom: none;
-    overflow: visible;
   }
   @include media(md) {
     min-height: 80px;
+    overflow: visible;
   }
   @include media(xs) {
     transition-duration: $transition-duration;
