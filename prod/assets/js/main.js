@@ -4849,6 +4849,12 @@ function reviewsSliderInit () {
     spaceBetween: 15,
     mousewheel: { forceToAxis: true },
     a11y: false,
+    autoplay: {
+      delay: 2500,
+      pauseOnMouseEnter: true,
+      disableOnInteraction: false,
+    },
+    speed: 1000,
     navigation: {
       nextEl: '.reviews__nav-btn.reviews__nav-btn_next',
       prevEl: '.reviews__nav-btn.reviews__nav-btn_prev',
@@ -4866,6 +4872,8 @@ function reviewsSliderInit () {
       }
     }
   })
+
+  if (window.innerWidth < 1440) preReviewsSliderSwiper.autoplay.stop()
 
   const videos = reviewsSlider.querySelectorAll('.reviews__video')
 
@@ -4923,6 +4931,7 @@ function reviewsSliderInit () {
           if (oldVideo) oldVideo.pause()
         }
         createModal(inner, btn)
+        preReviewsSliderSwiper.autoplay.stop()
       } else {
         inner.classList.add('hide')
         btn.innerHTML = 'Читать весь отзыв'
@@ -5026,6 +5035,7 @@ function reviewsSliderInit () {
         btn.innerHTML = 'Читать весь отзыв'
         innerOld.classList.remove('show')
         body.classList.remove('no-scroll-desktop')
+        preReviewsSliderSwiper.autoplay.start()
       }
     }
   }
