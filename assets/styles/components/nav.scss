@@ -316,7 +316,7 @@
       transform: translateX(0);
     }
   }
-  &_0 {
+  &_ed1 {
     .nav__scroller {
       @include media(xs) {
         overflow-y: auto;
@@ -324,7 +324,7 @@
       }
     }
   }
-  &_7 {
+  &_family {
     .nav__scroller {
       @include media(xs) {
         overflow-y: auto;
@@ -339,7 +339,7 @@
       }
     }
   }
-  &_1 {
+  &_ed2 {
     .nav__menu-box {
       &:nth-child(1), &:nth-child(2) {
         width: 205px;
@@ -349,29 +349,13 @@
       }
     }
   }
-  &_2, &_3 {
+  &_ed3, &_ed4 {
     .nav__menu-box {
       &:nth-child(1) {
         width: 205px;
         @include media(md) {
           width: 100%;
         }
-      }
-    }
-  }
-  &_1, &_2, &_3, &_4, &_5, &_7, &_8, &_9, &_10 {
-    &::before {
-      @include media(md) {
-        content: '';
-        background: linear-gradient(180deg, #f3f5fb 0%, rgba(243, 245, 251, 0) 100%);
-        height: 20px;
-        position: absolute;
-        top: 52px;
-        left: 0;
-        right: 10px;
-      }
-      @include media(xs) {
-        top: 108px;
       }
     }
   }

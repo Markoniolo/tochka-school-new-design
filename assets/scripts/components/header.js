@@ -13,6 +13,8 @@ function headerInit () {
   const nav = header.querySelector('.nav')
   const navMenus = header.querySelectorAll('.nav__menu')
   const navBtns = header.querySelectorAll('.nav__btns')
+  const familyScroller = header.querySelector('.nav__area_family .nav__scroller')
+  const ed1Scroller = header.querySelector('.nav__area_ed1 .nav__scroller')
 
   window.addEventListener('scroll', checkHeader, { passive: true })
   window.addEventListener('scroll', checkScrollDirection, { passive: true })
@@ -88,6 +90,8 @@ function headerInit () {
       for (let i = 0; i < navBtns.length; i++) {
         navBtns[i].style.height = `${(vh.slice(0, -2) * 100) - 80 - 70 - stretch.clientHeight}px`
       }
+      if (familyScroller) familyScroller.style.height = `${(vh.slice(0, -2) * 100) - 210 - stretch.clientHeight}px`
+      if (ed1Scroller) ed1Scroller.style.height = `${(vh.slice(0, -2) * 100) - 210 - stretch.clientHeight}px`
     } else {
       nav.removeAttribute('style')
       for (let i = 0; i < navMenus.length; i++) {
@@ -96,6 +100,8 @@ function headerInit () {
       for (let i = 0; i < navBtns.length; i++) {
         navBtns[i].removeAttribute('style')
       }
+      if (familyScroller) familyScroller.removeAttribute('style')
+      if (ed1Scroller) ed1Scroller.removeAttribute('style')
     }
   }
 
@@ -110,6 +116,8 @@ function headerInit () {
       for (let i = 0; i < navBtns.length; i++) {
         navBtns[i].removeAttribute('style')
       }
+      if (familyScroller) familyScroller.removeAttribute('style')
+      if (ed1Scroller) ed1Scroller.removeAttribute('style')
     }
     stickyHeader.classList.remove('open')
     body.classList.remove('no-scroll')

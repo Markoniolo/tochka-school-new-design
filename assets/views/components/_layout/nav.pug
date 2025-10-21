@@ -24,7 +24,7 @@
           tag: 'Иностранные языки',
           list: ['Английский язык', 'Китайский язык', 'Французский язык', 'Испанский язык']
         },
-      ]
+      ], class: 'ed2'
     },
     {
       index: "2",
@@ -49,7 +49,7 @@
           list: ['Ораторское мастерство','Финансовая грамотность','Эмоциональный интеллект','Шахматы','Блогинг'
             ,'Олипиадный русский язык','Олимпиадная математика']
         },
-      ]
+      ], class: 'ed3'
     },
     {
       index: "3",
@@ -81,7 +81,7 @@
           tag: 'Подготовка к ОГЭ',
           list: []
         },
-      ]
+      ], class: 'ed4'
     },
   ]
   const navAreaSecond = [
@@ -89,13 +89,13 @@
       index: '4',
       title: 'Подготовка к ЕГЭ',
       menu: ['Математика','Русский язык','Биологии','Истории','Английский язык','Обществознанию','Физика','Химии',
-        'Информатике','Географии','Литературе']
+        'Информатике','Географии','Литературе'], class: 'tag1'
     },
     {
       index: '5',
       title: 'Подготовка к ОГЭ',
       menu: ['Математика', 'Русский язык', 'Биологии', 'Истории', 'Английский язык', 'Обществознанию', 'Физика', 'Химии',
-        'Информатике', 'Географии', 'Литературе']
+        'Информатике', 'Географии', 'Литературе'], class: 'tag2'
     },
     {
       index: '6',
@@ -106,24 +106,25 @@
       index: '7',
       title: 'Семейное обучение',
       menu: ['1 класс','2 класс','3 класс','4 класс','5 класс','6 класс','7 класс','8 класс','9 класс','10 класс','11 класс'],
-      mod: 'so'
+      mod: 'so', class: 'family'
     },
     {
       index: '8',
       title: 'Программирование',
       menu: ['Программирование на Python','Программирование в Scratch','Программирование в Minecraft','Компьютерная грамотность',
-        'Курс по разработке игр в Roblox','Графический дизайн в Figma','Создание сайтов']
+        'Курс по разработке игр в Roblox','Графический дизайн в Figma','Создание сайтов'], class: 'bsg1'
     },
     {
       index: '9',
       title: 'Иностранные языки',
-      menu: ['Английский язык','Китайский язык','Французский язык','Испанский язык','Немецкий язык']
+      menu: ['Английский язык','Китайский язык','Французский язык','Испанский язык','Немецкий язык'], class: 'bsg2'
     },
     {
       index: '10',
       title: 'Развивающие курсы',
       menu: ['Шахматы','Блогинг','Ораторское мастерство','Финансовая грамотность','Эмоциональный интеллект',
-        'Цифровые профессии','Олимпиадная математика','Олимпиадный русский язык','Перечневые олимпиады по математике']
+        'Цифровые профессии','Олимпиадная математика','Олимпиадный русский язык','Перечневые олимпиады по математике'],
+      class: 'bsg3'
     },
     {
       index: '11',
@@ -184,7 +185,7 @@
           a.nav__email(href="mailto:support@tochka-school.ru") support@tochka-school.ru
           a.nav__wp(href="https://api.whatsapp.com/send/?phone=79182293194&text&type=phone_number&app_absent=0" target="_blank") Написать в WhatsApp
     .nav__right
-      .nav__area.active(data-nav-area="0" class="nav__area_0")
+      .nav__area.active(data-nav-area="0" class="nav__area_ed1")
         button.nav__back
         .nav__title Дошкольники
         .nav__scroller
@@ -208,7 +209,7 @@
               source(srcset=staticImg('nav/decor-prepare_tablet.webp') media="(max-width: 1359px)")
               img.nav__prepare-image(src=staticImg('nav/decor-prepare.webp') alt='')
       each area in navAreaSchool
-        .nav__area(data-nav-area = area.index class=`nav__area_${area.index}`)
+        .nav__area(data-nav-area = area.index class=`nav__area_${area.class}`)
           button.nav__back
           .nav__title= area.title
           .nav__scroller
@@ -222,7 +223,7 @@
                         a.nav__menu-link(href="#")= item
                           img.nav__menu-link-ticket(src=staticImg('nav/icon.svg') alt='')
       each area in navAreaSecond
-        .nav__area(data-nav-area = area.index class=`nav__area_${area.index}`)
+        .nav__area(data-nav-area = area.index class=`nav__area_${area.class}`)
           button.nav__back
           .nav__title= area.title
           .nav__scroller
