@@ -174,11 +174,12 @@
       width: 657px;
       @include media(lg) {
         width: 100%;
-        left: 0 !important;
+        left: -20px !important;
         top: calc(100% + 10px);
       }
       @include media(xs) {
         width: 100%;
+        left: 0 !important;
       }
     }
     .offer-tile__filter-list {
@@ -198,7 +199,7 @@
         right: -164px !important;
         top: calc(100% + 10px);
       }
-      @include media(lg) {
+      @include media(xs) {
         right: 0 !important;
       }
     }
