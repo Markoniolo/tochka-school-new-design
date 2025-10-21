@@ -82,9 +82,9 @@ function allCoursesInit () {
     dataRedirect()
   })
 
-  observer.observe(tile, config)
+  if (tile) observer.observe(tile, config)
 
-  dataRedirect()
+  if (tile) dataRedirect()
 
   function dataRedirect () {
     const dataRedirectLinks = tile.querySelectorAll('[data-redirect]')
@@ -99,7 +99,7 @@ function allCoursesInit () {
     }
   }
 
-  togglePrice()
+  if (tile) togglePrice()
 
   function togglePrice () {
     const items = tile.querySelectorAll(".all-courses__item")
@@ -1034,7 +1034,7 @@ function egeTileFilterInit () {
     dataRedirect()
   })
 
-  togglePrice()
+  if (tile) togglePrice()
 
   function togglePrice () {
     const items = tile.querySelectorAll(".all-courses__item")
@@ -1086,7 +1086,7 @@ function egeTileFilterInit () {
     }
   }
 
-  dataRedirect()
+  if (tile) dataRedirect()
 
   function dataRedirect () {
     const dataRedirectLinks = tile.querySelectorAll('[data-redirect]')
@@ -1102,7 +1102,7 @@ function egeTileFilterInit () {
   }
 
 
-  observer.observe(tile, config)
+  if (tile) observer.observe(tile, config)
 
   const reset = egeTile.querySelector('.ege-tile__reset-filter')
   if (reset) reset.addEventListener('click', resetFilters)
@@ -1169,9 +1169,9 @@ function egeTileFilterInit () {
       })
     }catch(e){}
 
-    let utm_f = tile.getAttribute('data-utm');
-    let promo_f = tile.getAttribute('data-promo');
-    let oge_ege_type = tile.getAttribute('data-oge-ege');
+    let utm_f = tile?.getAttribute('data-utm');
+    let promo_f = tile?.getAttribute('data-promo');
+    let oge_ege_type = tile?.getAttribute('data-oge-ege');
 
     if(p_paginate === 1 ){
       $('.filtered_elements').html("<div class='tile-loader'></div>");
@@ -3419,7 +3419,7 @@ function offerTileInit () {
     }
   }
 
-  dataRedirect()
+  if (tile) dataRedirect()
 
   function dataRedirect () {
     const dataRedirectLinks = tile.querySelectorAll('[data-redirect]')
@@ -3435,7 +3435,7 @@ function offerTileInit () {
   }
 
 
-  observer.observe(tile, config)
+  if (tile) observer.observe(tile, config)
 
   const reset = offerTile.querySelector('.offer-tile__reset-filter')
   if (reset) reset.addEventListener('click', resetFilters)
@@ -3508,9 +3508,9 @@ function offerTileInit () {
       })
     }catch(e){}
 
-    let utm_f = tile.getAttribute('data-utm');
-    let promo_f = tile.getAttribute('data-promo');
-    let oge_ege_type = tile.getAttribute('data-oge-ege');
+    let utm_f = tile?.getAttribute('data-utm');
+    let promo_f = tile?.getAttribute('data-promo');
+    let oge_ege_type = tile?.getAttribute('data-oge-ege');
 
     if(p_paginate === 1 ){
       $('.filtered_elements').html("<div class='tile-loader'></div>");
