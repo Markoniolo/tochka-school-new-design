@@ -2094,6 +2094,8 @@ function headerInit () {
   const headerArea = header.querySelector('.header__area')
   const reviewsTileSidebar = document.querySelector('.reviews-tile__sidebar')
   const nav = header.querySelector('.nav')
+  const navMenus = header.querySelectorAll('.nav__menu')
+  const navBtns = header.querySelectorAll('.nav__btns')
 
   window.addEventListener('scroll', checkHeader, { passive: true })
   window.addEventListener('scroll', checkScrollDirection, { passive: true })
@@ -2163,8 +2165,20 @@ function headerInit () {
     if (header.classList.contains('open') && stretch && stretch?.getBoundingClientRect().top === 0 && window.innerWidth < 744) {
       const vh = document.documentElement.style.getPropertyValue('--vh')
       nav.style.height = `${(vh.slice(0, -2) * 100) - 80 - stretch.clientHeight}px`
+      for (let i = 0; i < navMenus.length; i++) {
+        navMenus[i].style.height = `${(vh.slice(0, -2) * 100) - 80 - 70 - stretch.clientHeight}px`
+      }
+      for (let i = 0; i < navBtns.length; i++) {
+        navBtns[i].style.height = `${(vh.slice(0, -2) * 100) - 80 - 70 - stretch.clientHeight}px`
+      }
     } else {
       nav.removeAttribute('style')
+      for (let i = 0; i < navMenus.length; i++) {
+        navMenus[i].removeAttribute('style')
+      }
+      for (let i = 0; i < navBtns.length; i++) {
+        navBtns[i].removeAttribute('style')
+      }
     }
   }
 
@@ -2173,6 +2187,12 @@ function headerInit () {
     if (stretch) {
       header.style.top = '0'
       nav.removeAttribute('style')
+      for (let i = 0; i < navMenus.length; i++) {
+        navMenus[i].removeAttribute('style')
+      }
+      for (let i = 0; i < navBtns.length; i++) {
+        navBtns[i].removeAttribute('style')
+      }
     }
     stickyHeader.classList.remove('open')
     body.classList.remove('no-scroll')
