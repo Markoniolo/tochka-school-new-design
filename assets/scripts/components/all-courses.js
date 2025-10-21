@@ -82,9 +82,9 @@ function allCoursesInit () {
     dataRedirect()
   })
 
-  observer.observe(tile, config)
+  if (tile) observer.observe(tile, config)
 
-  dataRedirect()
+  if (tile) dataRedirect()
 
   function dataRedirect () {
     const dataRedirectLinks = tile.querySelectorAll('[data-redirect]')
@@ -99,7 +99,7 @@ function allCoursesInit () {
     }
   }
 
-  togglePrice()
+  if (tile) togglePrice()
 
   function togglePrice () {
     const items = tile.querySelectorAll(".all-courses__item")
