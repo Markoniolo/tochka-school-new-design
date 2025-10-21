@@ -55,12 +55,11 @@
     left: 0;
     right: 0;
     overflow-y: auto;
-    padding-bottom: 80px;
-    @include media(md) {
-      padding-bottom: 75px;
+    margin-bottom: -15px;
+    @include media(lg) {
+      margin-bottom: 0;
     }
     @include media(xs) {
-      padding-bottom: 0;
       overflow: hidden;
     }
     &.old {

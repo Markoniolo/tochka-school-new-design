@@ -143,6 +143,12 @@
         top: 50%;
         transform: translateY(-50%);
       }
+      @include media(xs) {
+        right: 20px;
+      }
+      @include media(xxs) {
+        right: 15px;
+      }
     }
     .cap-list__tags {
       margin-top: 5px;

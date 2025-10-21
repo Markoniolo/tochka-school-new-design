@@ -15,7 +15,7 @@
     height: calc(calc(var(--vh) * 100) - 80px);
   }
   @include media(xxs) {
-    padding: 40px 10px 100px;
+    padding: 30px 10px 100px;
   }
 }
 
@@ -97,7 +97,7 @@
   gap: 20px;
   @include media(xs) {
     position: relative;
-    z-index: 1;
+    z-index: 100;
     background: #fff;
     border-radius: 10px;
     padding: 20px 20px 25px;
@@ -222,7 +222,7 @@
     left: 20px;
     right: 20px;
     padding: 15px 20px;
-    z-index: 10;
+    z-index: 101;
   }
   @include media(xxs) {
     left: 10px;
@@ -261,7 +261,7 @@
     height: 660px;
   }
   @include media(xs) {
-    z-index: 1;
+    z-index: 100;
     position: absolute;
     top: 0;
     right: 0;
@@ -1121,32 +1121,6 @@
   @include media(xs) {
     padding: 0;
     height: unset;
-  }
-  &::before {
-    content: '';
-    background: linear-gradient(360deg, rgba(243, 245, 251, 0) 0%, #f3f5fb 80%, #f3f5fb 100%);
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 20px;
-    z-index: 1;
-    @include media(xs) {
-      content: none;
-    }
-  }
-  &::after {
-    content: '';
-    background: linear-gradient(180deg, rgba(243, 245, 251, 0) 0%, #f3f5fb 80%, #f3f5fb 100%);
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    height: 20px;
-    z-index: 1;
-    @include media(xs) {
-      content: none;
-    }
   }
   .simplebar-track {
     right: 10px;
