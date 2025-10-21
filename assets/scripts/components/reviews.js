@@ -47,6 +47,7 @@ function reviewsSliderInit () {
     video.addEventListener('click', stopVideo)
 
     function playVideo () {
+      if (window.innerWidth >= 1440) preReviewsSliderSwiper.autoplay.stop()
       const oldBox = reviewsSlider.querySelector('.reviews__box.active')
       if (oldBox) {
         const oldVideo = oldBox.querySelector('.reviews__video')
@@ -61,6 +62,7 @@ function reviewsSliderInit () {
       e.stopPropagation()
       video.pause()
       box.classList.remove('active')
+      if (window.innerWidth >= 1440) preReviewsSliderSwiper.autoplay.start()
     }
   }
 
