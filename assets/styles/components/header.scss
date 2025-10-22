@@ -86,27 +86,6 @@
       top: 0;
       background: #FFFFFF;
       border: none;
-      &::after {
-        @include bg-icon('icons/ic_header_decor.svg');
-        width: 34px;
-        height: 66px;
-        position: absolute;
-        top: calc(100% - 10px);
-        transform: translateX(-50%);
-        left: 50%;
-        @include media(md) {
-          @include bg-icon('icons/ic_header_decor_mob.svg');
-          width: 34px;
-          height: 43px;
-          top: calc(100% + 13px);
-          content: none;
-        }
-        @include media(xs) {
-          content: '';
-          height: 46px;
-          top: calc(100% - 8px);
-        }
-      }
       &::before {
         content: none;
         @include media(md) {

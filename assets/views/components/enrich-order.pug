@@ -1,0 +1,38 @@
+.enrich-order
+  .cont
+    .enrich-order__wrap
+      .enrich-order__area
+        .enrich-order__caption Поможем подобрать курс для вашего ребенка
+        .enrich-order__text Оставьте контакты, и мы свяжемся с Вами.
+        picture.enrich-order__picture
+          source(srcset=staticImg(`enrich-order/decor_mob.png`) media="(max-width: 743px)")
+          source(srcset=staticImg(`enrich-order/decor_tablet.png`) media="(max-width: 1359px)")
+          img.enrich-order__image(src=staticImg('enrich-order/decor.png') alt='')
+      form.enrich-order__form(data-request-validate data-element="review-form")
+        .enrich-order__title Оставьте заявку, расскажем о&nbsp;курсах подробнее
+        .enrich-order__inner
+          input.input_utm(name='utm' type='hidden' value='')
+          input(type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru/blog/voprosy-dlya-podrostkov-chto-polezno-i-interesno-obsudit-do-15-let")
+          input.enrich-order__input.input-white(placeholder='Имя' type='text' name='name')
+          input.enrich-order__input.input-white(placeholder='Телефон' type='tel' required data-element='input-phone-intl' name='phone')
+          input(name='tel' type='hidden' required data-element='input-phone-hidden')
+          button.enrich-order__submit.btn-orange.btn-warning Оставить заявку
+        label.enrich-order__label.checkbox-white-label
+          input.enrich-order__checkbox.checkbox-white-input(name='policy' type='checkbox')
+          .enrich-order__checkbox-view.checkbox-white-input-view
+          .enrich-order__checkbox-text.checkbox-white-text
+            | Даю
+            |
+            a(href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target='_blank') Согласие
+            |
+            | на обработку персональных
+            | данных в соответствии с
+            |
+            a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf' target='_blank') Политикой
+        label.enrich-order__label.checkbox-white-label
+          input.enrich-order__checkbox.checkbox-white-input(name='news' type='checkbox')
+          .enrich-order__checkbox-view.checkbox-white-input-view
+          .enrich-order__checkbox-text.checkbox-white-text
+            | Согласен на
+            |
+            a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf' target='_blank') получение рекламы

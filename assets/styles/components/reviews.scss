@@ -11,6 +11,9 @@
     padding-bottom: 40px;
     margin-bottom: 40px;
   }
+  &.enrich {
+    background: #d8f2fa;
+  }
   & + .faq {
     margin-top: -80px;
     @include media(lg) {

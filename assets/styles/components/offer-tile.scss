@@ -5,6 +5,11 @@
     padding-bottom: 36px;
     padding-top: 36px;
   }
+  &_enrich {
+    .offer-tile__line {
+      background: rgba(105, 204, 235, 0.45);
+    }
+  }
   &.summer {
     padding-bottom: 0;
     .offer-tile__item {

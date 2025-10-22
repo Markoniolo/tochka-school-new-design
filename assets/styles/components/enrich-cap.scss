@@ -1,0 +1,339 @@
+.enrich-bg {
+  @include media(lg) {
+    background: linear-gradient(180deg, #ddf3fa 0%, #e6f9ff 100%);
+  }
+}
+
+.enrich-cap {
+  overflow: hidden;
+  margin-top: 50px;
+  margin-bottom: 74px;
+  @include media(lg) {
+    padding-top: 30px;
+    margin-top: 0;
+    margin-bottom: 36px;
+  }
+  .ege-cap__form {
+    @include bg-icon('enrich-cap/bg-form.png');
+    @include media(lg) {
+      @include bg-icon('enrich-cap/bg-form_tablet.png');
+    }
+    @include media(xs) {
+      max-width: 100%;
+      @include bg-icon('enrich-cap/bg-form_mob.png');
+    }
+  }
+  .ege-cap__title {
+    color: #003c56;
+  }
+  .ege-cap__checkbox-text {
+    color: #003c56;
+  }
+  .checkbox-white-input-view {
+    border: 1px solid #003C56;
+  }
+  .checkbox-white-input:checked ~ .checkbox-white-input-view::before {
+    background: $orange;
+  }
+}
+
+.enrich-cap__wrap {
+  display: flex;
+  gap: 30px;
+  @include media(lg) {
+    flex-direction: column;
+  }
+}
+
+.enrich-cap__area {
+  position: relative;
+  border-radius: 32px;
+  @include bg-icon('enrich-cap/bg-area.png');
+  padding: 45px 15px 44px 60px;
+  @include media(lg) {
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    min-height: 210px;
+  }
+  @include media(xs) {
+    max-width: 306px;
+    margin: 0 auto;
+    min-height: 327px;
+    padding-bottom: 190px;
+  }
+}
+
+.enrich-cap__title {
+  margin-bottom: 40px;
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 112%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 34px;
+    font-size: 30px;
+    line-height: 113%;
+    max-width: 426px;
+  }
+  @include media(xs) {
+    margin: 0 auto 18px;
+    width: 100%;
+    text-align: center;
+    font-size: 27px;
+  }
+  @include media(xxs) {
+    font-size: 24px;
+  }
+}
+
+.enrich-cap__list {
+  margin-bottom: 108px;
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+  @include media(lg) {
+    margin-bottom: 25px;
+    gap: 10px;
+  }
+  @include media(xs) {
+    align-items: center;
+    max-width: 238px;
+    margin: 0 auto;
+  }
+}
+
+.enrich-cap__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #003c56;
+  @include media(lg) {
+    gap: 6px;
+    font-size: 18px;
+    line-height: 100%;
+  }
+  @include media(xs) {
+    text-align: center;
+  }
+  &:first-child {
+    &::before {
+      @include media(xs) {
+        transform: translateY(-8px);
+      }
+    }
+  }
+  &::before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #F37E60;
+    flex-shrink: 0;
+    transform: translateY(2px);
+    @include media(lg) {
+      width: 6px;
+      height: 6px;
+    }
+  }
+}
+
+.enrich-cap__button {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  box-shadow: 0 4px 27px 0 rgba(0, 0, 0, 0.08);
+  border: 2px solid #f37e60;
+  border-radius: 34px;
+  padding: 18px 61px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  @include media(lg) {
+    display: none;
+  }
+}
+
+.enrich-cap__decor {
+  position: absolute;
+  &_1 {
+    width: 98px;
+    height: 98px;
+    bottom: 86px;
+    right: 277px;
+    @include media(lg) {
+      width: 93px;
+      height: 93px;
+      bottom: 8px;
+      right: 252px;
+    }
+    @include media(xs) {
+      width: 79px;
+      height: 79px;
+      bottom: 8px;
+      right: 252px;
+    }
+  }
+  &_2 {
+    width: 73px;
+    height: 73px;
+    bottom: 210px;
+    right: 238px;
+    @include media(lg) {
+      width: 69px;
+      height: 69px;
+      bottom: 122px;
+      right: 215px;
+    }
+    @include media(xs) {
+      width: 59px;
+      height: 59px;
+      bottom: 96px;
+      right: 186px;
+    }
+  }
+  &_3 {
+    width: 90px;
+    height: 90px;
+    bottom: 214px;
+    right: 33px;
+    @include media(lg) {
+      width: 85px;
+      height: 85px;
+      bottom: 124px;
+      right: 22px;
+    }
+    @include media(xs) {
+      width: 73px;
+      height: 73px;
+      bottom: 64px;
+      right: 102px;
+    }
+  }
+  &_4 {
+    width: 61px;
+    height: 61px;
+    bottom: 140px;
+    right: 147px;
+    @include media(lg) {
+      width: 58px;
+      height: 58px;
+      bottom: 55px;
+      right: 130px;
+    }
+    @include media(xs) {
+      width: 50px;
+      height: 50px;
+      bottom: 124px;
+      right: 52px;
+    }
+  }
+  &_5 {
+    width: 76px;
+    height: 76px;
+    bottom: 27px;
+    right: 196px;
+    @include media(lg) {
+      width: 72px;
+      height: 72px;
+      bottom: -50px;
+      right: 176px;
+    }
+    @include media(xs) {
+      width: 62px;
+      height: 62px;
+      bottom: -8px;
+      right: 132px;
+    }
+  }
+  &_6 {
+    width: 90px;
+    height: 90px;
+    bottom: 36px;
+    right: 84px;
+    @include media(lg) {
+      width: 85px;
+      height: 85px;
+      bottom: -42px;
+      right: 70px;
+    }
+    @include media(xs) {
+      width: 73px;
+      height: 73px;
+      bottom: 15px;
+      right: 34px;
+    }
+  }
+  &_7 {
+    width: 36px;
+    height: 36px;
+    background: #F37E60;
+    bottom: 159px;
+    right: 232px;
+    border-radius: 50%;
+    @include media(lg) {
+      width: 33px;
+      height: 33px;
+      bottom: 72px;
+      right: 210px;
+    }
+    @include media(xs) {
+      display: none;
+    }
+  }
+  &_8 {
+    width: 48px;
+    height: 48px;
+    background: #F2C45B;
+    bottom: 223px;
+    right: 166px;
+    border-radius: 50%;
+    @include media(lg) {
+      width: 45px;
+      height: 45px;
+      bottom: 132px;
+      right: 145px;
+    }
+    @include media(xs) {
+      display: none;
+    }
+  }
+  &_9 {
+    width: 15px;
+    height: 15px;
+    background: #7FCBB4;
+    bottom: 185px;
+    right: 130px;
+    border-radius: 50%;
+    @include media(lg) {
+      width: 14px;
+      height: 14px;
+      bottom: 98px;
+      right: 115px;
+    }
+    @include media(xs) {
+      display: none;
+    }
+  }
+  &_10 {
+    width: 44px;
+    height: 44px;
+    background: #68CCEA;
+    bottom: 147px;
+    right: 57px;
+    border-radius: 50%;
+    @include media(lg) {
+      width: 42px;
+      height: 42px;
+      bottom: 62px;
+      right: 46px;
+
+    }
+    @include media(xs) {
+      display: none;
+    }
+  }
+}

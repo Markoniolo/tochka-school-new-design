@@ -1,0 +1,16 @@
+.enrich-cap
+  .cont
+    .enrich-cap__wrap
+      .enrich-cap__area
+        h1.enrich-cap__title Детские развивающие занятия по интересам
+        ul.enrich-cap__list
+          each item in ['развитие логики, памяти, внимания','раскрытие потенциала','увлечения по душе']
+            li.enrich-cap__item= item
+        a.enrich-cap__button.btn-orange(href='#offer-tile' data-role="scroll-to-anchor") Выбрать курс
+        each item, index in [1,2,3,4,5,6,7,8,9,10]
+          if item > 6
+            .enrich-cap__decor(class=`enrich-cap__decor_${index+1}`)
+          else
+            img.enrich-cap__decor(class=`enrich-cap__decor_${index+1}` src=staticImg(`enrich-cap/decor-${index+1}.svg`) alt='')
+      include ./ege-cap__form
+      +ege-cap__form('Оставьте заявку, и мы поможем с выбором курса')

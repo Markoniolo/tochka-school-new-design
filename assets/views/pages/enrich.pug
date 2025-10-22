@@ -1,0 +1,15 @@
+extends ../components/_layout/layout
+
+block head
+  +title('Развивающие курсы')
+
+block body
+  .enrich-bg
+    include ../components/enrich-cap
+  include ../components/ege-about
+  +ege-about('enrich')
+  include ../components/offer-tile
+  +offer-tile('enrich','Выберите свой курс')
+  include ../components/reviews
+  +reviews('enrich')
+  include ../components/enrich-order

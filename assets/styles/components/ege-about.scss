@@ -14,6 +14,14 @@
       padding-bottom: 36px;
     }
   }
+  &_enrich {
+    .ege-about__wrap {
+      background: radial-gradient(298.09% 67.36% at 50% 61.68%, #abe2f3 0%, #e6f9ff 100%);
+      @include media(lg) {
+        background: linear-gradient(56deg, rgba(171, 226, 243, 0.7) 0%, rgba(230, 249, 255, 0.7) 100%);
+      }
+    }
+  }
 }
 
 .ege-about__wrap {
