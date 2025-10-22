@@ -219,9 +219,9 @@
                   a.nav__menu-tag(href="#")= box.tag
                   if box.list.length
                     .nav__menu-list
-                      each item in box.list
+                      each item, index in box.list
                         a.nav__menu-link(href="#")= item
-                          img.nav__menu-link-ticket(src=staticImg('nav/icon.svg') alt='')
+                          img.nav__menu-link-ticket(src= index === 0 ? staticImg('nav/icon-so.webp') : staticImg('nav/icon.svg') alt='')
       each area in navAreaSecond
         .nav__area(data-nav-area = area.index class=`nav__area_${area.class}`)
           button.nav__back
