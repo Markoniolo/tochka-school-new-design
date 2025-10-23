@@ -1,0 +1,22 @@
+.enrich-info
+  .cont
+    h2.enrich-info__caption Так-так-так, чем бы заняться?&nbsp;🙂
+    .enrich-info__wrap
+      .enrich-info__area.enrich-info__area_1
+        each list in [1,2]
+          .enrich-info__list
+            each item in ['Развить эмоциональный интеллект','Научиться играть в шахматы','Проводить эксперименты','Тренировать логику']
+              .enrich-info__item= item
+            each item in ['Покорить олимпиадную математику','Освоить финансовую грамотность','Изучить ораторское искусство','Стать известным блогером']
+              .enrich-info__item.enrich-info__item_mob= item
+      .enrich-info__box
+        picture.enrich-info__picture
+          source(srcset=staticImg(`enrich-info/decor_mob.png`) media="(max-width: 743px)")
+          source(srcset=staticImg(`enrich-info/decor_tablet.png`) media="(max-width: 1359px)")
+          img.enrich-info__image(src=staticImg('enrich-info/decor.png') alt='')
+        a.enrich-info__button.btn-orange(href='#offer-tile' data-role="scroll-to-anchor") Выбрать курс
+      .enrich-info__area.enrich-info__area_2
+        each list in [1,2]
+          .enrich-info__list
+            each item in ['Покорить олимпиадную математику','Освоить финансовую грамотность','Изучить ораторское искусство','Стать известным блогером']
+              .enrich-info__item= item

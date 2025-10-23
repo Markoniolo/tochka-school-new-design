@@ -15,10 +15,21 @@
     }
   }
   &_enrich {
+    margin-bottom: 0;
+    padding-bottom: 80px;
+    background: #FFFFFF;
+    @include media(lg) {
+      padding-bottom: 40px;
+    }
     .ege-about__wrap {
       background: radial-gradient(298.09% 67.36% at 50% 61.68%, #abe2f3 0%, #e6f9ff 100%);
       @include media(lg) {
         background: linear-gradient(56deg, rgba(171, 226, 243, 0.7) 0%, rgba(230, 249, 255, 0.7) 100%);
+      }
+    }
+    .ege-about__text {
+      &:nth-child(2) {
+        width: 351px;
       }
     }
   }
@@ -134,7 +145,7 @@
     }
   }
   &:nth-child(2) {
-    margin-right: 15px;
+    margin-right: 44px;
     @include media(lg) {
       margin-right: 0;
     }
@@ -147,6 +158,12 @@
     margin-left: 56px;
     @include media(lg) {
       margin-left: 0;
+    }
+  }
+  &:nth-child(6) {
+    margin-right: 29px;
+    @include media(lg) {
+      margin-right: 0;
     }
   }
 }

@@ -1,0 +1,175 @@
+.enrich-how {
+  background: #fff;
+  padding-top: 74px;
+  padding-bottom: 48px;
+  @include media(lg) {
+    padding-top: 34px;
+    padding-bottom: 40px;
+  }
+}
+
+.enrich-how__caption {
+  margin-bottom: 44px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 97%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 24px;
+    font-size: 25px;
+  }
+}
+
+.enrich-how__area {
+  display: flex;
+  gap: 30px;
+  @include media(lg) {
+    gap: 25px;
+    flex-direction: column;
+  }
+}
+
+.enrich-how__box {
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  @include media(lg) {
+    border-radius: 10px;
+  }
+  &_1 {
+    width: 681px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: linear-gradient(56deg, rgba(171, 226, 243, 0.7) 0%, rgba(230, 249, 255, 0.7) 100%);
+    @include media(lg) {
+      width: 100%;
+      padding: 25px 32px 25px 35px;
+    }
+    @include media(xs) {
+      padding: 12px 20px 20px;
+      flex-direction: column-reverse;
+    }
+    @include media(xxs) {
+      padding: 12px 15px 20px;
+    }
+  }
+  &_2 {
+    width: 631px;
+    padding: 30px 35px;
+    background: linear-gradient(321deg, rgba(171, 226, 243, 0.7) 0%, rgba(230, 249, 255, 0.7) 100%);
+    @include media(lg) {
+      width: 100%;
+      padding: 22px 25px;
+    }
+    @include media(xs) {
+      display: flex;
+      flex-direction: column;
+      padding: 12px 20px 20px;
+    }
+    @include media(xxs) {
+      padding: 12px 15px 20px;
+    }
+    .enrich-how__picture {
+      position: absolute;
+      width: 291px;
+      height: 193px;
+      bottom: 0;
+      right: 0;
+      @include media(lg) {
+        width: 292px;
+        height: 142px;
+      }
+      @include media(xs) {
+        order: 1;
+        position: static;
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+.enrich-how__picture {
+  flex-shrink: 0;
+}
+
+.enrich-how__image {
+
+}
+
+.enrich-how__inner {
+
+}
+
+.enrich-how__title {
+  width: 100%;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 16px;
+    font-size: 18px;
+    line-height: 100%;
+    font-weight: 600;
+  }
+  @include media(xs) {
+    margin-bottom: 10px;
+  }
+}
+
+.enrich-how__text {
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 137%;
+  color: #000;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+  }
+  @include media(xs) {
+    max-width: 100%;
+  }
+  &_1 {
+    margin-bottom: 20px;
+    max-width: 495px;
+    @include media(lg) {
+      margin-bottom: 8px;
+    }
+  }
+  &_2 {
+    max-width: 398px;
+    @include media(lg) {
+      max-width: 450px;
+    }
+  }
+}
+
+.enrich-how__list {
+  padding-left: 20px;
+  &:first-of-type {
+    margin-bottom: 16px;
+    @include media(lg) {
+      margin-bottom: 8px;
+    }
+    @include media(xs) {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.enrich-how__item {
+  list-style-type: disc;
+  font-size: 16px;
+  line-height: 137%;
+  color: #000;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+  }
+}

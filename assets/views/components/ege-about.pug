@@ -8,24 +8,24 @@
     'Доп. материалы',
   ]
 
-mixin ege-about(mod)
+mixin ege-about(mod, img='decor-1', list=egeAboutList)
   .ege-about(class = mod ? `ege-about_${mod}` : false)
     .cont
       .ege-about__wrap
         h2.ege-about__title!= 'Платформа <br> обучения 6 в 1'
         picture.ege-about__picture
-          source(srcset=staticImg('ege-about/decor-1_mob.webp') media="(max-width: 743px)")
-          source(srcset=staticImg('ege-about/decor-1_tablet.webp') media="(max-width: 1359px)")
-          img.ege-about__image(src=staticImg('ege-about/decor-1.webp') alt='')
+          source(srcset=staticImg(`ege-about/${img}_mob.webp`) media="(max-width: 743px)")
+          source(srcset=staticImg(`ege-about/${img}_tablet.webp`) media="(max-width: 1359px)")
+          img.ege-about__image(src=staticImg(`ege-about/${img}.webp`) alt='')
         ul.ege-about__list
-          each item, index in egeAboutList
+          each item, index in list
             li.ege-about__item
               .ege-about__item-inner
                 img.ege-about__icon(src=staticImg(`ege-about/point-${index+1}.svg`) alt='')
                 span= item
         .ege-about__box
           .ege-about__text Не нужно искать материалы в интернете или покупать сборники. Мы подготовили всё необходимое для обучения.
-          if mod === 'pre-k'
+          if mod === 'pre-k' || mod === 'enrich'
             .ege-about__text Заниматься можно с компьютера, планшета, смартфона и мобильного приложения
           else
             .ege-about__text Предоставим инструкции о том, как вести себя перед экзаменом и на экзамене (от входа в класс до заполнения бланка ответов)

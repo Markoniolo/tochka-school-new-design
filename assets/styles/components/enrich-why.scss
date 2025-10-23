@@ -1,0 +1,202 @@
+.enrich-why {
+  padding: 74px 0 80px;
+  background: #e6f9ff;
+  @include media(lg) {
+    padding: 34px 0 40px;
+  }
+}
+
+.enrich-why__caption {
+  margin-bottom: 44px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 121%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 22px;
+    font-size: 25px;
+  }
+}
+
+.enrich-why__area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  @include media(lg) {
+    position: relative;
+    gap: 20px;
+    width: 660px;
+    flex-direction: column;
+  }
+  @include media(xs) {
+    width: 100%;
+  }
+}
+
+.enrich-why__box {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 30px;
+  @include media(lg) {
+    padding: 19px;
+    border-radius: 10px;
+  }
+  &_1 {
+    box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+    background: #68ccea;
+    min-height: 354px;
+    width: 485px;
+    @include media(lg) {
+      min-height: 233px;
+      width: 320px;
+    }
+    @include media(xs) {
+      min-height: auto;
+      width: 100%;
+    }
+    .enrich-why__title, .enrich-why__text {
+      color: #fff;
+    }
+  }
+  &_2 {
+    position: relative;
+    box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+    background: #fff;
+    min-height: 354px;
+    width: 829px;
+    padding-right: 390px;
+    @include media(lg) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding-right: 20px;
+      min-height: 506px;
+      width: 320px;
+    }
+    @include media(xs) {
+      position: static;
+      min-height: auto;
+      width: 100%;
+    }
+    @include media(xxs) {
+      padding-right: 15px;
+    }
+    .enrich-why__picture {
+      position: absolute;
+      bottom: 0;
+      right: 5px;
+      width: 396px;
+      height: 332px;
+      @include media(lg) {
+        position: static;
+        width: calc(100% + 40px);
+        height: auto;
+        margin: 40px -20px -20px;
+      }
+    }
+  }
+  &_3 {
+    border-radius: 0;
+    padding: 0;
+    width: 250px;
+    margin-right: -45px;
+    @include media(lg) {
+      display: none;
+    }
+  }
+  &_4 {
+    box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+    background: #fff;
+    min-height: 279px;
+    width: 593px;
+    @include media(lg) {
+      width: 320px;
+      min-height: 253px;
+    }
+    @include media(xs) {
+      min-height: auto;
+      width: 100%;
+    }
+  }
+  &_5 {
+    position: relative;
+    overflow: hidden;
+    padding-right: 95px;
+    box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+    background: linear-gradient(90deg, #f37e60 0%, #ffa791 100%);
+    min-height: 279px;
+    width: 485px;
+    @include media(lg) {
+      padding-right: 140px;
+      width: 100%;
+      min-height: 165px;
+    }
+    @include media(xs) {
+      padding-right: 20px;
+      min-height: auto;
+    }
+    @include media(xxs) {
+      padding-right: 15px;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      width: 285px;
+      height: 193px;
+      top: -32px;
+      right: 8px;
+      @include bg-icon('enrich-why/circles.svg');
+      @include media(xs) {
+        width: 155px;
+        height: 83px;
+        top: 0;
+        right: 11px;
+        @include bg-icon('enrich-why/circles_mob.svg');
+      }
+    }
+    .enrich-why__title, .enrich-why__text {
+      color: #fff;
+    }
+  }
+}
+
+.enrich-why__decor {
+  margin-top: 14px;
+}
+
+.enrich-why__icon {
+  margin-bottom: 28px;
+  width: 80px;
+  height: 80px;
+  @include media(lg) {
+    margin-bottom: 18px;
+    width: 55px;
+    height: 55px;
+  }
+}
+
+.enrich-why__title {
+  margin-top: auto;
+  margin-bottom: 18px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.enrich-why__text {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #000;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+  }
+}

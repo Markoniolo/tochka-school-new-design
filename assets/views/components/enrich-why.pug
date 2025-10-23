@@ -1,0 +1,40 @@
+-
+  const enrichWhyArea = [
+    {
+      title: 'Освоить навыки будущего',
+      text: 'Курсы формируют востребованные навыки которые пригодятся в современной жизни и помогут адаптироваться к переменам и трудностям.'
+    },
+    {
+      title: 'Раскрыть таланты и способности',
+      text: 'Занятия позволят выявить и развить скрытые таланты, творческий или аналитический потенциал ребёнка, который остаётся за рамками обычной школьной программы.'
+    },
+    {
+      title: '',
+      text: ''
+    },
+    {
+      title: 'Развить уверенность и&nbsp;самостоятельность',
+      text: 'Работа с новыми задачами и поддержка тьютора развивают самостоятельность, ответственность, повышают самооценку и помогают ребёнку становиться увереннее.'
+    },
+    {
+      title: 'Найти то, что нравится',
+      text: 'Не попробуешь — не узнаешь. Видеть увлеченного любимым занятием ребёнка — бесценно.'
+    },
+  ]
+
+.enrich-why
+  .cont
+    h2.enrich-why__caption Отличная возможность, чтобы:
+    .enrich-why__area
+      each item, index in enrichWhyArea
+        .enrich-why__box(class = `enrich-why__box_${index+1}`)
+          if index === 2
+            img.enrich-why__decor(src=staticImg('enrich-why/decor.svg') alt='')
+          else
+            img.enrich-why__icon(src=staticImg(`enrich-why/icon-${index+1}.svg`) alt='')
+            .enrich-why__title!= item.title
+            .enrich-why__text!= item.text
+            if index === 1
+              picture.enrich-why__picture
+                source(srcset=staticImg('enrich-why/2_tablet.png') media="(max-width: 1359px)")
+                img.enrich-why__image(src=staticImg('enrich-why/2.png') alt='')

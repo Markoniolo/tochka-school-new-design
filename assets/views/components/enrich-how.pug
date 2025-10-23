@@ -1,0 +1,30 @@
+.enrich-how
+  .cont
+    h2.enrich-how__caption Как проходит обучение
+    .enrich-how__area
+      .enrich-how__box.enrich-how__box_1
+        picture.enrich-how__picture
+          source(srcset=staticImg(`enrich-how/decor-1_mob.svg`) media="(max-width: 743px)")
+          source(srcset=staticImg(`enrich-how/decor-1_tablet.svg`) media="(max-width: 1359px)")
+          img.enrich-how__image(src=staticImg(`enrich-how/decor-1.svg`) alt='')
+        .enrich-how__inner
+          .enrich-how__title На уроке
+          ul.enrich-how__list
+            each item in ['учитель понятно разберёт тему','ответит на все вопросы до последнего','увлечёт и зарядит мотивацией к открытиям']
+              li.enrich-how__item= item
+          .enrich-how__title После урока
+          ul.enrich-how__list
+            each item in ['тьютор проверит задание','объяснит непонятные моменты','бережно укажет на ошибки и поможет их исправить','добьётся понимания каждой темы']
+              li.enrich-how__item= item
+      .enrich-how__box.enrich-how__box_2
+        picture.enrich-how__picture
+          source(srcset=staticImg(`enrich-how/decor-2_mob.svg`) media="(max-width: 743px)")
+          source(srcset=staticImg(`enrich-how/decor-2_tablet.svg`) media="(max-width: 1359px)")
+          img.enrich-how__image(src=staticImg(`enrich-how/decor-2.svg`) alt='')
+        .enrich-how__title Тьютор — дополнительный учитель, который сопровождает ученика
+        .enrich-how__text.enrich-how__text_1.
+          Вне урока у ребёнка есть помощник, к которому всегда можно обратиться,
+          задать неограниченное количество вопросов, получить обратную связь. 5 дней в неделю. Один на один.
+        .enrich-how__text.enrich-how__text_2.
+          Благодаря персональному вниманию тьютора и поддерживающей обратной
+          связи наши ученики достигают высоких результатов и остаются с нами надолго.

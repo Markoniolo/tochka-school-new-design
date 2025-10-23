@@ -6,8 +6,18 @@ block head
 block body
   .enrich-bg
     include ../components/enrich-cap
+  include ../components/enrich-why
+  include ../components/enrich-info
+  include ../components/enrich-how
   include ../components/ege-about
-  +ege-about('enrich')
+  +ege-about('enrich','enrich',[
+    'Онлайн-уроки',
+    'Записи уроков',
+    'Конспекты занятий',
+    'Проверка знаний',
+    'Чат с тьютором',
+    'Доп. материалы',
+  ])
   include ../components/offer-tile
   +offer-tile('enrich','Выберите свой курс')
   include ../components/reviews
