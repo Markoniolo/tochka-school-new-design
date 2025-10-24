@@ -1,0 +1,17 @@
+include ../_variables
+include ../components/_layout/_connect-style
+include ../components/_layout/_title
+
+doctype html
+html(lang='ru')
+  head
+    include ../components/_layout/_head
+    +title('Переходник')
+  body
+    include ../components/_layout/header-tg
+    main.wrapper
+      include ../components/mattg-one-cap
+      include ../components/mattg-one-info
+      include ../components/mattg-one-join
+    include ../components/_layout/footer-quiz
+    include ../components/_layout/scripts

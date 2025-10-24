@@ -30,6 +30,12 @@
     .ege-about__text {
       &:nth-child(2) {
         width: 351px;
+        @include media(lg) {
+          width: calc(50% - 10px);
+        }
+        @include media(xs) {
+          width: 100%;
+        }
       }
     }
   }

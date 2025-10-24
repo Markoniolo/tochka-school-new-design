@@ -871,13 +871,14 @@
 
 .nav__btn {
   border-radius: 15px;
-  width: calc(50% - 8px);
+  width: calc(33.33% - 10px);
   box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
   background: #fff;
-  min-height: 76px;
+  min-height: 55px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   flex-direction: row-reverse;
   gap: 15px;
   font-size: 18px;
@@ -891,6 +892,9 @@
   @include media(lg) {
     min-height: 45px;
     font-size: 15px;
+    padding: 5px 6px;
+    border-radius: 44px;
+    width: 100%;
   }
   @include media(md) {
     width: 100%;

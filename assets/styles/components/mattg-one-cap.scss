@@ -1,0 +1,138 @@
+.mattg-one-cap {
+  overflow: hidden;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -230px;
+    right: 4px;
+    @include bg-icon('mattg-one-cap/decor-2.svg');
+    width: 350px;
+    height: 564px;
+    @include media(lg) {
+      content: none;
+    }
+  }
+}
+
+.mattg-one-cap__wrap {
+  position: relative;
+  padding: 46px 0 80px;
+  @include media(lg) {
+    padding: 35px 0 40px;
+  }
+  @include media(xs) {
+    padding: 30px 0 40px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 293px;
+    height: 248px;
+    top: 83px;
+    left: -49px;
+    @include bg-icon('mattg-one-cap/decor-1.svg');
+    @include media(lg) {
+      top: 31px;
+      left: -69px;
+      width: 189px;
+      height: 160px;
+    }
+    @include media(xs) {
+      top: 0;
+      left: -110px;
+      width: 293px;
+      height: 248px;
+    }
+  }
+}
+
+.mattg-one-cap__caption {
+  margin: 0 auto 18px;
+  max-width: 640px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 118%;
+  text-align: center;
+  color: #003c56;
+  @include media(lg) {
+    margin: 0 auto 16px;
+    max-width: 396px;
+    font-size: 30px;
+    line-height: 38px;
+  }
+  @include media(xs) {
+    max-width: 300px;
+    margin: 0 auto 18px;
+    font-size: 27px;
+    line-height: 100%;
+  }
+}
+
+.mattg-one-cap__title {
+  margin: 0 auto 52px;
+  width: 100%;
+  max-width: 600px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #003c56;
+  @include media(lg) {
+    margin: 0 auto 30px;
+    max-width: 592px;
+  }
+  @include media(xs) {
+    max-width: 320px;
+    margin: 0 auto 18px;
+    font-size: 18px;
+    line-height: 117%;
+  }
+}
+
+.mattg-one-cap__text {
+  margin: 0 auto 60px;
+  max-width: 730px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #003c56;
+  @include media(lg) {
+    max-width: 528px;
+    margin: 0 auto 34px;
+    font-size: 18px;
+    line-height: 23px;
+  }
+  @include media(xs) {
+    max-width: 320px;
+    margin: 0 auto 30px;
+    font-size: 15px;
+    line-height: 140%;
+  }
+}
+
+.mattg-one-cap__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  font-size: 18px;
+  padding: 23px 30px 24px;
+  @include media(lg) {
+    font-size: 16px;
+    padding: 18px 30px 19px;
+  }
+  &::after {
+    content: '';
+    width: 21px;
+    height: 18px;
+    @include bg-icon('icons/ic_tg_white.svg');
+  }
+}
