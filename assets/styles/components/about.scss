@@ -1,11 +1,13 @@
 .about {
-  margin-bottom: 90px;
+  margin-bottom: 75px;
   @include media(lg) {
     margin-bottom: 40px;
   }
   @include media(xs) {
-    margin-bottom: 40px;
     overflow: hidden;
+  }
+  @include media(xxs) {
+    margin-bottom: -30px;
   }
 }
 
@@ -14,20 +16,20 @@
 }
 
 .about__title {
-  margin-bottom: 54px;
+  margin-bottom: 58px;
   font-weight: 500;
   font-size: 45px;
   line-height: 121%;
   color: #003c56;
   @include media(lg) {
-    margin-bottom: 25px;
+    margin-bottom: 18px;
     max-width: 275px;
     width: 100%;
     font-size: 25px;
     line-height: 100%;
   }
   @include media(xs) {
-    margin-bottom: 34px;
+    margin-bottom: 16px;
   }
 }
 
@@ -54,20 +56,19 @@
 
 .about__wrap {
   position: relative;
-  width: 1200px;
-  height: 579px;
-  margin-left: 87px;
+  height: 608px;
   @include media(lg) {
-    margin-left: 50px;
-    width: 597px;
-    height: 366px;
+    height: 350px;
   }
   @include media(xs) {
-    left: 50vw;
-    transform: translateX(calc(-50% - 5px));
-    margin-left: 0;
+    margin: 0 auto;
     width: 353px;
-    height: 511px;
+    height: 734px;
+  }
+  @include media(xxs) {
+    height: 655px;
+    transform: scale(0.8);
+    transform-origin: top left;
   }
 }
 
@@ -81,11 +82,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
+  flex-direction: column;
   transform: scale(0);
   transition-duration: 1s;
   @include media(lg) {
     font-size: 15px;
     line-height: 19px;
+    gap: 6px;
   }
   &.active {
     transform: scale(1);
@@ -94,255 +98,287 @@
     background: #FFFFFF;
     width: 256px;
     height: 256px;
-    top: 317px;
-    left: 154px;
+    top: 352px;
+    left: 220px;
     @include media(lg) {
-      width: 140px;
-      height: 140px;
-      top: 37px;
-      left: 18px;
+      top: 198px;
+      left: 110px;
+      width: 121px;
+      height: 121px;
     }
     @include media(xs) {
-      top: 0;
-      left: 15px;
+      width: 139px;
+      height: 139px;
+      top: 275px;
+      left: 22px;
     }
   }
   &_2 {
     background: #FFFFFF;
-    width: 316px;
-    height: 316px;
-    top: 19px;
-    left: 290px;
+    width: 282px;
+    height: 282px;
+    top: 284px;
+    left: 743px;
     animation-delay: 0.5s;
     @include media(lg) {
-      top: 0;
-      left: 405px;
-      width: 192px;
-      height: 192px;
-      padding: 27px;
+      padding: 15px;
+      top: 173px;
+      left: 337px;
+      width: 176px;
+      height: 176px;
     }
     @include media(xs) {
-      padding: 8px;
-      top: 184px;
-      left: 27px;
-      width: 154px;
-      height: 154px;
+      top: 403px;
+      left: 172px;
+      width: 132px;
+      height: 132px;
     }
   }
   &_3 {
     background: #FFFFFF;
     width: 316px;
     height: 316px;
-    top: 262px;
-    left: 586px;
+    top: 32px;
+    left: 1025px;
     animation-delay: 1s;
     @include media(lg) {
-      width: 202px;
-      height: 202px;
-      top: 67px;
-      left: 182px;
+      top: 0;
+      left: 458px;
+      width: 212px;
+      height: 212px;
+      padding: 10px;
     }
     @include media(xs) {
-      top: 308px;
-      left: 129px;
+      top: 531px;
+      left: 0;
+      width: 202px;
+      height: 202px;
+      padding: 18px;
     }
   }
   &_4 {
     background: #FFFFFF;
     width: 252px;
     height: 252px;
-    top: 0;
-    left: 681px;
+    top: 82px;
+    left: 480px;
     @include media(lg) {
-      width: 161px;
-      height: 161px;
-      top: 205px;
-      left: 28px;
+      top: 47px;
+      left: 218px;
+      width: 154px;
+      height: 154px;
     }
     @include media(xs) {
-      top: 84px;
-      left: 164px;
+      top: 178px;
+      left: 173px;
+      width: 161px;
+      height: 161px;
     }
   }
   &_5 {
-    width: 150px;
-    height: 150px;
-    background: rgba(255, 255, 255, 0.63);
-    top: 80px;
-    left: 56px;
-    animation-delay: 0.5s;
+    width: 92px;
+    height: 92px;
+    top: 378px;
+    left: 118px;
+    background: #fff;
     @include media(lg) {
-      width: 56px;
-      height: 56px;
-      top: 173px;
-      left: 0;
-    }
-    @include media(xs) {
-      width: 78px;
-      height: 78px;
-      top: 336px;
-      left: 4px;
-    }
-  }
-  &_6 {
-    width: 165px;
-    height: 165px;
-    background: #FFFFFF;
-    top: 245px;
-    left: 0;
-    animation-delay: 1s;
-    @include media(lg) {
-      display: none;
-    }
-  }
-  &_7 {
-    width: 102px;
-    height: 102px;
-    background: #68ccea;
-    top: 211px;
-    left: 188px;
-    @include media(lg) {
-      top: 64px;
-      left: 361px;
-      width: 34px;
-      height: 34px;
-    }
-    @include media(xs) {
-      width: 42px;
-      height: 42px;
-      top: 54px;
-      left: 161px;
-    }
-  }
-  &_8 {
-    width: 131px;
-    height: 131px;
-    background: rgba(255, 255, 255, 0.63);
-    top: 448px;
-    left: 410px;
-    animation-delay: 0.5s;
-    @include media(lg) {
-      display: none;
-    }
-  }
-  &_9 {
-    width: 115px;
-    height: 115px;
-    background: #f2c45b;
-    top: 331px;
-    left: 464px;
-    animation-delay: 1s;
-    @include media(lg) {
-      width: 40px;
-      height: 40px;
-      top: 163px;
-      left: 132px;
-    }
-    @include media(xs) {
-      width: 49px;
-      height: 49px;
-      top: 133px;
-      left: 108px;
-    }
-  }
-  &_10 {
-    width: 86px;
-    height: 86px;
-    background: #FFFFFF;
-    top: 185px;
-    left: 613px;
-    @include media(lg) {
-      top: 60px;
-      left: 166px;
-      width: 38px;
-      height: 38px;
+      top: 202px;
+      left: 233px;
+      width: 39px;
+      height: 39px;
       background: rgba(255, 255, 255, 0.63);
     }
     @include media(xs) {
       width: 79px;
       height: 79px;
-      top: 118px;
-      left: -30px;
+      top: 86px;
+      left: 239px;
     }
   }
-  &_11 {
-    width: 69px;
-    height: 69px;
-    background: #7fcbb4;
-    top: 246px;
-    left: 864px;
-    animation-delay: 0.5s;
-    @include media(lg) {
-      top: 265px;
-      left: 198px;
-      width: 49px;
-      height: 49px;
-    }
-    @include media(xs) {
-      width: 42px;
-      height: 42px;
-      top: 247px;
-      left: 195px;
-    }
-  }
-  &_12 {
-    width: 116px;
-    height: 116px;
+  &_6 {
+    width: 97px;
+    height: 97px;
     background: rgba(255, 255, 255, 0.63);
-    top: 52px;
-    left: 949px;
-    animation-delay: 1s;
+    top: 486px;
+    left: 118px;
     @include media(lg) {
-      width: 54px;
-      height: 54px;
-      top: 175px;
-      left: 392px;
-    }
-    @include media(xs) {
-      width: 56px;
-      height: 56px;
-      top: 40px;
-      left: 297px;
-    }
-  }
-  &_13 {
-    width: 162px;
-    height: 162px;
-    background: #ffffff;
-    top: 144px;
-    left: 1038px;
-    @include media(lg) {
-      width: 93px;
-      height: 93px;
-      background: #6683c2;
-      top: 203px;
-      left: 463px;
-    }
-    @include media(xs) {
-      width: 35px;
-      height: 35px;
-      top: 344px;
-      left: 98px;
-    }
-  }
-  &_14 {
-    width: 228px;
-    height: 228px;
-    background: rgba(255, 255, 255, 0.63);
-    top: 305px;
-    left: 924px;
-    animation-delay: 0.5s;
-    @include media(lg) {
-      width: 122px;
-      height: 122px;
-      top: 236px;
-      left: 337px;
+      top: 147px;
+      left: 372px;
+      width: 28px;
+      height: 28px;
+      background: #FFFFFF;
     }
     @include media(xs) {
       width: 78px;
       height: 78px;
-      top: 241px;
-      left: 270px;
+      top: 337px;
+      left: 275px;
+    }
+  }
+  &_7 {
+    width: 132px;
+    height: 132px;
+    background: rgba(255, 255, 255, 0.63);
+    top: 337px;
+    left: 476px;
+    @include media(lg) {
+      width: 44px;
+      height: 44px;
+      top: 218px;
+      left: 520px;
+    }
+    @include media(xs) {
+      width: 53px;
+      height: 53px;
+      top: 478px;
+      left: 102px;
+    }
+  }
+  &_8 {
+    top: 425px;
+    left: 608px;
+    background: rgba(255, 255, 255, 0.63);
+    width: 87px;
+    height: 87px;
+    @include media(lg) {
+      top: 204px;
+      left: 587px;
+    }
+    @include media(xs) {
+      top: 525px;
+      left: 269px;
+      width: 79px;
+      height: 79px;
+    }
+  }
+  &_9 {
+    width: 135px;
+    height: 135px;
+    background: rgba(255, 255, 255, 0.63);
+    top: 144px;
+    left: 749px;
+    @include media(lg) {
+      display: none;
+    }
+  }
+  &_10 {
+    top: 355px;
+    left: 1125px;
+    background: #fff;
+    width: 58px;
+    height: 58px;
+    @include media(lg) {
+      display: none;
+    }
+    @include media(xs) {
+      display: block;
+      width: 22px;
+      height: 22px;
+      background: #68ccea;
+      top: 229px;
+      left: 147px;
+    }
+  }
+  &_11 {
+    width: 116px;
+    height: 116px;
+    background: rgba(255, 255, 255, 0.63);
+    top: 418px;
+    left: 1038px;
+    @include media(lg) {
+      display: none;
+    }
+    @include media(xs) {
+      display: block;
+      background: #6683c2;
+      width: 35px;
+      height: 35px;
+      top: 420px;
+      left: 115px;
+    }
+  }
+  &_12 {
+    width: 115px;
+    height: 115px;
+    background: #f2c45b;
+    top: 233px;
+    left: 362px;
+    @include media(lg) {
+      top: 151px;
+      left: 182px;
+      width: 40px;
+      height: 40px;
+    }
+    @include media(xs) {
+      width: 49px;
+      height: 49px;
+      top: 224px;
+      left: 19px;
+    }
+  }
+  &_13 {
+    top: 331px;
+    left: 647px;
+    width: 81px;
+    height: 81px;
+    background: #7fcbb4;
+    @include media(lg) {
+      width: 43px;
+      height: 43px;
+      top: 123px;
+      left: 412px;
+    }
+    @include media(xs) {
+      top: 334px;
+      left: 196px;
+      width: 42px;
+      height: 42px;
+    }
+  }
+  &_14 {
+    width: 75px;
+    height: 75px;
+    background: #68ccea;
+    top: 328px;
+    left: 1030px;
+    @include media(lg) {
+      top: 205px;
+      left: 306px;
+      width: 31px;
+      height: 31px;
+    }
+    @include media(xs) {
+      width: 57px;
+      height: 57px;
+      top: 547px;
+      left: 201px;
+    }
+  }
+  &_15 {
+    top: 0;
+    left: 0;
+    width: 362px;
+    height: 362px;
+    background: #ffffff;
+    @include media(lg) {
+      padding: 20px;
+      top: 8px;
+      width: 193px;
+      height: 193px;
+    }
+    @include media(xs) {
+      padding: 10px;
+      top: 0;
+      width: 228px;
+      height: 228px;
+    }
+  }
+  span {
+    font-size: 16px;
+    line-height: 100%;
+    @include media(lg) {
+      font-size: 13px;
+      line-height: 16px;
     }
   }
 }
