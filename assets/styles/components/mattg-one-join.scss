@@ -23,6 +23,7 @@
     width: 431px;
     height: 365px;
     position: absolute;
+    z-index: -1;
     bottom: -15px;
     right: -260px;
     @include bg-icon('mattg-one-join/decor.svg');
@@ -54,26 +55,64 @@
 }
 
 .mattg-one-join__picture {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   width: 363px;
+  height: 720px;
   position: absolute;
-  bottom: -120px;
+  bottom: -225px;
   right: 0;
+  @include bg-icon('mattg-one-join/bg.png');
+  background-size: cover;
   @include media(lg) {
     width: 237px;
-    bottom: -42px;
+    height: 471px;
+    bottom: -215px;
+    @include bg-icon('mattg-one-join/bg_tablet.png');
+    background-size: cover;
   }
   @include media(xs) {
+    overflow: hidden;
     margin-bottom: -45px;
-    position: static;
     width: 270px;
+    height: 345px;
+    position: static;
+    @include bg-icon('mattg-one-join/bg_mob.png');
+    background-size: cover;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 210px;
+    height: 100px;
+    background: linear-gradient(180deg, rgba(248, 248, 248, 0) 20%, #f8f8f8 100%);
+    @include media(lg) {
+      bottom: 180px;
+    }
+    @include media(xs) {
+      bottom: 90px;
+    }
   }
 }
 
-.mattg-one-join__image {
-
+.mattg-one-join__video {
+  margin-top: 15px;
+  position: relative;
+  z-index: -1;
+  width: calc(100% - 47px);
+  @include media(lg) {
+    border-radius: 20px;
+    margin-top: 0;
+    width: calc(100% - 30px);
+  }
 }
 
 .mattg-one-join__button {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;

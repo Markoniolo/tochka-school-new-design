@@ -236,10 +236,16 @@ function quizInit () {
   }
 
   function sendData () {
+    if (checkHoneypot()) return
     form.submit()
     setTimeout(() => {
       location.assign(linkTo)
     }, 100)
+  }
+
+  function checkHoneypot() {
+    const honeypots = form.querySelector('.modal-exter__input')
+    return honeypots && honeypots?.value
   }
 
   function generateList (list) {

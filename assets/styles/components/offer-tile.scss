@@ -279,11 +279,6 @@
   }
 }
 
-.offer-tile__filter-top-text {
-  font-size: 14px;
-  line-height: 18px;
-}
-
 .offer-tile__filter-wrap {
   position: absolute;
   z-index: 10;
@@ -307,8 +302,7 @@
   flex-wrap: wrap;
   gap: 15px 15px;
   @include media(lg) {
-    gap: 10px 0;
-    flex-direction: column;
+    gap: 10px;
   }
 }
 
@@ -819,11 +813,13 @@
 
 .offer-tile__filter-top-text {
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 18px;
   color: #003c56;
   @include media(lg) {
-    font-size: 14px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 100%;
   }
 }
 
@@ -1059,7 +1055,7 @@
   background: #fff;
   font-size: 15px;
   line-height: 100%;
-  display: flex;
+  display: inline-flex;
   flex-direction: row-reverse;
   align-items: center;
   justify-content: center;
@@ -1072,5 +1068,6 @@
   }
   @include media(xs) {
     gap: 6px;
+    display: flex;
   }
 }
