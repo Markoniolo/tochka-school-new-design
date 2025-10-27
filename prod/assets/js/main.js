@@ -1961,6 +1961,7 @@ function globalFormInit (form, func_name, type) {
           e.stopPropagation();
           const loader = document.querySelector('.form-loader')
           if (loader) loader.classList.add('active')
+          if (checkHoneypot()) return
           $.request('MainFunctions::onSendPreSubscribeMessage', {
             data: form_data,
           });
@@ -1994,7 +1995,7 @@ function globalFormInit (form, func_name, type) {
 
           // console.log("urlParams: " + urlParams)
           // console.log("utm_f: " + utm_f)
-
+          if (checkHoneypot()) return
           globalForm.submit();
           setTimeout(() => {
             clearForm();
@@ -2030,6 +2031,11 @@ function globalFormInit (form, func_name, type) {
       email.classList.add('error')
       return false
     }
+  }
+
+  function checkHoneypot() {
+    const honeypots = form.querySelector('.modal-exter__input')
+    return honeypots && honeypots?.value
   }
 }
 
@@ -4526,10 +4532,16 @@ function quizInit () {
   }
 
   function sendData () {
+    if (checkHoneypot()) return
     form.submit()
     setTimeout(() => {
       location.assign(linkTo)
     }, 100)
+  }
+
+  function checkHoneypot() {
+    const honeypots = form.querySelector('.modal-exter__input')
+    return honeypots && honeypots?.value
   }
 
   function generateList (list) {
