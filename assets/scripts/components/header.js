@@ -15,6 +15,7 @@ function headerInit () {
   const navBtns = header.querySelectorAll('.nav__btns')
   const familyScroller = header.querySelector('.nav__area_family .nav__scroller')
   const ed1Scroller = header.querySelector('.nav__area_ed1 .nav__scroller')
+  const headerLayer = document.querySelector('.header-layer')
 
   window.addEventListener('scroll', checkHeader, { passive: true })
   window.addEventListener('scroll', checkScrollDirection, { passive: true })
@@ -65,6 +66,7 @@ function headerInit () {
 
   function toggleMenu () {
     header.classList.toggle('open')
+    headerLayer.classList.toggle('active')
     fixHeaderTop()
     fixMenuHeight()
     stickyHeader.classList.toggle('open')
@@ -107,6 +109,7 @@ function headerInit () {
 
   function closeMenu () {
     header.classList.remove('open')
+    headerLayer.classList.remove('active')
     if (stretch) {
       header.style.top = '0'
       nav.removeAttribute('style')

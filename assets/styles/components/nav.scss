@@ -840,7 +840,8 @@
 
 .nav__btn-ticket {
   display: inline-block;
-  width: auto;
+  width: 35px;
+  height: 35px;
   @include media(xs) {
     transform: scale(0.8);
   }

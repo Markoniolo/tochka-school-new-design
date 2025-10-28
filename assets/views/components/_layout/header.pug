@@ -10,6 +10,7 @@
   ]
 
 mixin header(mod)
+  .header-layer
   header.header.short(data-element="header" class = mod === 'offer' ? `header_${mod}` : mod ? mod : false)
     .header__cont.cont
       .header__layer

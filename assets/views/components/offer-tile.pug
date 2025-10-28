@@ -5,8 +5,8 @@
     'Обществознание','Физика','Химия','Информатика','Окружающий мир','Литературное чтение'
   ]
 
-mixin offer-tile(mod, title='Выберите курс')
-  .offer-tile#offer-tile(class = mod ? `offer-tile_${mod}` : false)
+mixin offer-tile(mod, title='Выберите курс', id='offer-tile')
+  .offer-tile(class = mod ? `offer-tile_${mod}` : false id=id)
     .offer-tile__cont.cont
       h2.offer-tile__title.trial-title= title
       .offer-tile__line

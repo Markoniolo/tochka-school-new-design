@@ -1,3 +1,21 @@
+.header-layer {
+  display: none;
+  &.active {
+    @media (min-height: 1080px) and (min-width: 1440px) {
+      display: block;
+      opacity: 1;
+      position: fixed;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.38);
+    }
+  }
+}
+
 .header {
   position: relative;
   background-color: #FFFFFF;
@@ -56,6 +74,9 @@
     right: 0;
     overflow-y: auto;
     margin-bottom: -15px;
+    @media (min-height: 1080px) and (min-width: 1440px) {
+      bottom: unset;
+    }
     @include media(lg) {
       margin-bottom: 0;
     }
