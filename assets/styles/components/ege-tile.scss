@@ -601,5 +601,6 @@ a.ege-tile__toggle-item {
   }
   @include media(xs) {
     gap: 6px;
+    justify-content: flex-end;
   }
 }

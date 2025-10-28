@@ -332,6 +332,9 @@
   color: #000;
   transition-duration: $transition-duration;
   transition-property: background-color;
+  @include media(xs) {
+    justify-content: flex-end;
+  }
 }
 
 .offer-tile__filter-save {
