@@ -3376,6 +3376,8 @@ function offerTileInit () {
     if (!opener.classList.contains('active')) {
       const oldActive = offerTile.querySelector('.offer-tile__filter-top.active')
       if (oldActive) oldActive.classList.remove('active')
+      const oldActiveFilter = offerTile.querySelector('.offer-tile__filter.active')
+      if (oldActiveFilter) oldActiveFilter.classList.remove('active')
     }
     if (opener.classList.contains('active')) {
       opener.classList.remove('active')
