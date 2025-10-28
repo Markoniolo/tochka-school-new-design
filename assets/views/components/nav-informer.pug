@@ -1,0 +1,13 @@
+mixin nav-informer(mod, title, list, image)
+  .nav-informer(class = mod ? `nav-informer_${mod}` : false)
+    .nav-informer__title!= title
+    .nav-informer__area
+      each box in list
+        .nav-informer__box
+          .nav-informer__headline!= box.headline
+          .nav-informer__text!= box.text
+    if image
+      picture.nav-informer__picture
+        source(srcset=staticImg(`nav/${image}_mob.webp`) media="(max-width: 743px)")
+        source(srcset=staticImg(`nav/${image}_tablet.webp`) media="(max-width: 1359px)")
+        img.nav-informer__image(src=staticImg(`nav/${image}.webp`) alt='')
