@@ -836,6 +836,12 @@
   @include media(xs) {
     gap: 10px;
   }
+  &_half {
+    width: calc(50% - 8px);
+    @include media(lg) {
+      width: 100%;
+    }
+  }
 }
 
 .nav__btn-ticket {

@@ -274,7 +274,7 @@ include ../nav-informer
             else
               .nav__btns
                 each btn in area.menu
-                  a.nav__btn(href="#")= btn
+                  a.nav__btn(href="#" class = area.class === "bsg2" ? 'nav__btn_half' : false)= btn
                     img.nav__btn-ticket(src=staticImg('all-courses/all-courses-icon.svg') alt='')
             if area.class === 'tag1'
               +nav-informer('ege', 'Без стресса и на высокий балл', [
