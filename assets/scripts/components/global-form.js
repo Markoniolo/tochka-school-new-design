@@ -201,6 +201,15 @@ function phoneFormData (globalForm) {
 }
 
 function globalFormInit (form, func_name, type) {
+  const captcha = form.querySelector('.captcha')
+  if (window.smartCaptcha && captcha) {
+    window.smartCaptcha.render(captcha, {
+      sitekey: 'ysc1_HDDr4IbZmvxgUK0q1Z0WjUtjJvRQv6UOncPdMKMC2e3c7297',
+      invisible: true,
+      callback: callback
+    })
+  }
+
   const globalForm = form
   const btnSubmit = globalForm.querySelector('.btn-warning')
   const input = globalForm.querySelector("[data-element='input-phone-intl']")
@@ -264,6 +273,14 @@ function globalFormInit (form, func_name, type) {
   globalForm.addEventListener('submit', async (e) => {
     resetError()
     e.preventDefault()
+    if (window.smartCaptcha) {
+      window.smartCaptcha.execute()
+    } else {
+      callback()
+    }
+  })
+
+  function callback () {
     if (input && !input?.value?.trim()) {
       input.classList.add("error")
     } else if (iti?.isValidNumber() || !input || type == 'libraryPopupFormData' || type == 'blogPhoneFormData' || type == 'blogPhoneEmailFormData' || data_phone_pattern_exists) {
@@ -394,8 +411,7 @@ function globalFormInit (form, func_name, type) {
     } else {
       input.classList.add("error")
     }
-
-  })
+  }
 
   function clearForm () {
     const inputs = globalForm.querySelectorAll('input')
