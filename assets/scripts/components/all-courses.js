@@ -7,6 +7,7 @@ function allCoursesInit () {
 
   const stickyHeader = document.querySelector('.sticky-header')
   const body = document.querySelector('body')
+  const wrap = document.querySelector('.all-courses__wrap')
 
   const urlFilter = allCourses.getAttribute('data-item-h')
   const h1Filter = allCourses.getAttribute('data-hname')
@@ -483,12 +484,13 @@ function allCoursesInit () {
   function showHeader () {
     stickyHeader.classList.remove('hide')
     body.classList.remove('no-scroll')
+    wrap.classList.remove('active')
   }
   function hideHeader () {
     if (window.innerWidth < 744) {
       stickyHeader.classList.add('hide')
       body.classList.add('no-scroll')
+      wrap.classList.add('active')
     }
-
   }
 }

@@ -1,0 +1,364 @@
+.black-friday-cap {
+  overflow: hidden;
+  padding-bottom: 700px;
+  margin-bottom: -700px;
+  @include media(lg) {
+    padding-bottom: 660px;
+    margin-bottom: -700px;
+  }
+  @include media(xs) {
+    padding-bottom: 650px;
+  }
+}
+
+.black-friday-cap__wrap {
+  position: relative;
+  padding: 130px 0 196px;
+  @include media(lg) {
+    padding: 40px 0 86px;
+  }
+  &::after {
+    content: '';
+    border-radius: 50%;
+    width: 655px;
+    height: 655px;
+    position: absolute;
+    z-index: -1;
+    top: 411px;
+    right: -514px;
+    background: #f37e60;
+    filter: blur(220px);
+    opacity: 0.4;
+    @include media(lg) {
+      top: 493px;
+      right: -191px;
+      width: 419px;
+      height: 419px;
+      filter: blur(110px);
+    }
+    @include media(xs) {
+      right: -151px;
+      width: 292px;
+      height: 292px;
+    }
+  }
+  &::before {
+    content: '';
+    background-color: #f37e60;
+    filter: blur(225px);
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    top: -528px;
+    left: -670px;
+    width: 811px;
+    height: 811px;
+    opacity: 0.45;
+    @include media(lg) {
+      top: -200px;
+      left: -258px;
+      width: 419px;
+      height: 419px;
+      filter: blur(110px);
+    }
+    @include media(xs) {
+      top: -60px;
+      left: -125px;
+      width: 292px;
+      height: 292px;
+    }
+  }
+}
+
+.black-friday-cap__circle {
+  position: absolute;
+  z-index: -1;
+  right: -254px;
+  top: 45px;
+  width: 776px;
+  height: 651px;
+  @include bg-icon('black-friday-cap/circle.svg');
+  @include media(lg) {
+    top: 0;
+    right: -55px;
+    width: 408px;
+    height: 342px;
+    @include bg-icon('black-friday-cap/circle_tablet.svg');
+  }
+  @include media(xs) {
+    top: -50px;
+    right: -146px;
+  }
+}
+
+.black-friday-cap__caption {
+  margin-bottom: -5px;
+  width: 676px;
+  height: 267px;
+  @include media(lg) {
+    margin: 0 auto -5px;
+    width: 567px;
+    height: 225px;
+  }
+  @include media(xs) {
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 5px;
+  }
+}
+
+.black-friday-cap__subtitle {
+  margin-bottom: 86px;
+  margin-left: 55px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
+  color: #f37e60;
+  @include media(lg) {
+    margin-left: 312px;
+    margin-bottom: 64px;
+    font-size: 34px;
+    line-height: 100%;
+  }
+  @include media(md) {
+    margin-left: 104px;
+  }
+  @include media(xs) {
+    margin-left: 0;
+    margin-bottom: 36px;
+    font-size: 27px;
+    text-align: center;
+    transform: translateX(-18px);
+  }
+}
+
+.black-friday-cap__area {
+  position: absolute;
+  top: 155px;
+  right: 0;
+  width: 415px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include media(lg) {
+    width: 258px;
+    top: unset;
+    bottom: 102px;
+  }
+  @include media(xs) {
+    position: static;
+    margin: 0 auto 46px;
+  }
+}
+
+.black-friday-cap__timer {
+  display: flex;
+  gap: 57px;
+  @include media(lg) {
+    gap: 32px;
+  }
+  @include media(xs) {
+    gap: 23px;
+  }
+}
+
+.black-friday-cap__timer-box {
+
+}
+
+.black-friday-cap__timer-number {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 26px;
+  width: 96px;
+  height: 107px;
+  background-color: #FFFFFF;
+  font-size: 60px;
+  line-height: 100%;
+  @include media(lg) {
+    margin-bottom: 10px;
+    border-radius: 15px;
+    width: 59px;
+    height: 59px;
+    font-size: 34px;
+  }
+  @include media(xs) {
+    margin-bottom: 6px;
+    width: 37px;
+    height: 41px;
+    font-size: 24px;
+    border-radius: 10px;
+  }
+}
+
+.black-friday-cap__timer-note {
+  font-size: 33px;
+  line-height: 100%;
+  text-align: center;
+  color: #fff;
+  @include media(lg) {
+    font-size: 21px;
+  }
+  @include media(xs) {
+    font-size: 15px;
+  }
+}
+
+.black-friday-cap__timer-text {
+  position: relative;
+  margin-top: 58px;
+  @include bg-icon('black-friday-cap/timer-text.svg');
+  width: 260px;
+  height: 31px;
+  @include media(lg) {
+    margin-top: 20px;
+  }
+  @include media(xs) {
+    margin-top: 14px;
+    width: 176px;
+    height: 21px;
+  }
+}
+
+.black-friday-cap__list {
+  margin-left: 10px;
+  display: flex;
+  gap: 48px;
+  @include media(lg) {
+    margin-left: 0;
+    gap: 35px 36px;
+    width: 350px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  @include media(xs) {
+    margin: 0 auto;
+    max-width: 320px;
+    width: 100%;
+    gap: 18px 23px;
+  }
+}
+
+.black-friday-cap__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  @include media(lg) {
+    gap: 8px;
+  }
+  &:nth-child(1) {
+    .black-friday-cap__value {
+      @include bg-icon('black-friday-cap/value-1.svg');
+      width: 165px;
+      height: 48px;
+      @include media(lg) {
+        width: 112px;
+        height: 34px;
+      }
+      @include media(xs) {
+        width: 105px;
+        height: 32px;
+      }
+    }
+  }
+  &:nth-child(2) {
+    .black-friday-cap__value {
+      @include bg-icon('black-friday-cap/value-2.svg');
+      width: 144px;
+      height: 48px;
+      @include media(lg) {
+        width: 112px;
+        height: 34px;
+      }
+      @include media(xs) {
+        width: 105px;
+        height: 32px;
+      }
+    }
+  }
+  &:nth-child(3) {
+    margin-top: -16px;
+    @include media(lg) {
+      margin-top: 0;
+    }
+    .black-friday-cap__value {
+      @include bg-icon('black-friday-cap/value-3.svg');
+      width: 269px;
+      height: 63px;
+      @include media(lg) {
+        width: 184px;
+        height: 43px;
+      }
+      @include media(xs) {
+        width: 173px;
+        height: 40px;
+      }
+    }
+  }
+}
+
+.black-friday-cap__value {
+  font-weight: 800;
+  font-size: 63px;
+  line-height: 97%;
+  text-align: center;
+  color: #f37e60;
+}
+
+.black-friday-cap__note {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 100%;
+  color: #fff;
+  @include media(lg) {
+    font-size: 17px;
+  }
+  @include media(xs) {
+    font-size: 15px;
+  }
+}
+
+.black-friday-cap__line {
+  position: absolute;
+  &_1 {
+    left: -413px;
+    bottom: -95px;
+    @include bg-icon('black-friday-cap/line-1.svg');
+    width: 2227px;
+    height: 232px;
+    @include media(lg) {
+      left: -328px;
+      bottom: -165px;
+    }
+    @include media(xs) {
+      @include bg-icon('black-friday-cap/line-1_mob.svg');
+      width: 1284px;
+      height: 140px;
+      left: -232px;
+      bottom: -22px;
+    }
+  }
+  &_2 {
+    z-index: -1;
+    bottom: 43px;
+    right: -1000px;
+    @include bg-icon('black-friday-cap/line-2.svg');
+    width: 2056px;
+    height: 158px;
+    @include media(lg) {
+      bottom: -12px;
+      right: -1560px;
+    }
+    @include media(xs) {
+      @include bg-icon('black-friday-cap/line-2_mob.svg');
+      width: 1284px;
+      height: 135px;
+      bottom: -54px;
+      right: -621px;
+    }
+  }
+}

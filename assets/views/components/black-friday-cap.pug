@@ -1,0 +1,27 @@
+-
+  const blackFridayList = [
+    { value: '- 70%', note: 'на первый платёж' },
+    { value: '-10%', note: 'на весь абонемент' },
+    { value: 'ЛЮБОЙ', note: 'курс и семейное обучение' },
+  ]
+
+.black-friday-cap
+  .cont
+    .black-friday-cap__wrap
+      .black-friday-cap__circle
+      img.black-friday-cap__caption(src=staticImg('black-friday-cap/caption.svg') alt='')
+      .black-friday-cap__subtitle в «Точке Знаний»
+      .black-friday-cap__area
+        .black-friday-cap__timer(date-end="2025-10-30T12:00:00" data-element="timer")
+          each item in [{number: '15', note: 'час'},{number: '58', note: 'мин'},{number: '19', note: 'сек'}]
+            .black-friday-cap__timer-box
+              .black-friday-cap__timer-number(data-element="timer-number")= item.number
+              .black-friday-cap__timer-note= item.note
+        .black-friday-cap__timer-text
+      ul.black-friday-cap__list
+        each item in blackFridayList
+          li.black-friday-cap__item
+            .black-friday-cap__value
+            .black-friday-cap__note= item.note
+      .black-friday-cap__line.black-friday-cap__line_1
+      .black-friday-cap__line.black-friday-cap__line_2

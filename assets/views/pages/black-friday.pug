@@ -1,7 +1,19 @@
-extends ../components/_layout/layout
+include ../_variables
+include ../components/_layout/_connect-style
+include ../components/_layout/_title
 
-block head
-  +title('Черная пятница')
-
-block body
-  include ../components/black-friday
+doctype html
+html(lang='ru')
+  head
+    include ../components/_layout/_head
+    +title('Черная пятница')
+  body.black-friday
+    .sticky-header.sticky-header_no-margin
+      include ../components/_layout/header
+      +header('offer')
+    main.wrapper
+      include ../components/black-friday-cap
+      include ../components/all-courses
+    include ../components/modals/modal-order-new
+    include ../components/_layout/footer
+    include ../components/_layout/scripts

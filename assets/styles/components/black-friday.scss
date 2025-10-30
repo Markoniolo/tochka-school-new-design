@@ -1,0 +1,293 @@
+.black-friday {
+  background: #0d0d0d;
+  .all-courses {
+    margin-bottom: 0;
+    padding-bottom: 90px;
+    @include bg-icon('black-friday/bg.png');
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+    background-position: top center;
+    @include media(lg) {
+      margin-bottom: 0;
+      padding-bottom: 60px;
+      @include bg-icon('black-friday/bg_tablet.png');
+      background-size: 100% auto;
+      background-repeat: repeat-y;
+      background-position: top center;
+    }
+    @include media(xs) {
+      @include bg-icon('black-friday/bg_mob.png');
+      background-size: 100% auto;
+      background-repeat: repeat-y;
+      background-position: top center;
+    }
+  }
+  .all-courses__wrap {
+    backdrop-filter: blur(7.7px);
+    background: rgba(23, 23, 23, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    @include media(lg) {
+      margin-bottom: 26px;
+    }
+    &.active {
+      backdrop-filter: none;
+    }
+  }
+  .all-courses__caption {
+    color: #FFFFFF;
+    svg {
+      position: relative;
+      z-index: -1;
+    }
+    circle {
+      fill: rgba(255, 255, 255, 0.08);
+      @include media(lg) {
+        fill: rgba(255, 255, 255, 0.24);
+      }
+    }
+    path {
+      fill: #FFFFFF;
+    }
+  }
+  .all-courses__reset {
+    background: #f2c45b;
+    @include media(xs) {
+      background: transparent;
+      circle {
+        fill: #F2C45B;
+      }
+    }
+    path {
+      fill: #000;
+    }
+  }
+  .all-courses__reset-note, .all-courses__reset-note-desc {
+    color: #000;
+  }
+  .all-courses__reset-note {
+    @include media(xs) {
+      color: #FFFFFF;
+    }
+  }
+  .all-courses__item {
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: #1a1a1a;
+    &.family {
+      .all-courses__tag {
+        background: rgba(255, 255, 255, 0.02);
+        color: rgba(255, 255, 255, 0.65);
+        &_class {
+          background: #282828;
+          color: #fff;
+        }
+      }
+      .all-courses__box {
+        background: #282828;
+        @include media(lg) {
+          background: transparent;
+        }
+      }
+      .all-courses__inner {
+        @include media(lg) {
+          background: #282828;
+        }
+        @include media(xs) {
+          background: #282828;
+        }
+      }
+      .all-courses__area {
+        &::before {
+          @include media(xs) {
+            background: linear-gradient(-90deg, rgba(255, 255, 255, 0) 0, #1a1a1a 80%, #1a1a1a 100%);
+          }
+        }
+        &::after {
+          @include media(xs) {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, #1a1a1a 80%, #1a1a1a 100%);
+          }
+        }
+      }
+    }
+  }
+  .all-courses__side-name {
+    color: #FFFFFF;
+  }
+  .all-courses__side-text {
+    color: #FFFFFF;
+  }
+  .all-courses__tag {
+    background: rgba(255, 255, 255, 0.02);
+    color: rgba(255, 255, 255, 0.65);
+    &_class {
+      background: #282828;
+      color: #fff;
+    }
+  }
+  .all-courses__empty {
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: #1a1a1a;
+  }
+  .all-courses__empty-title {
+    color: #FFFFFF;
+  }
+  .all-courses__empty-text {
+    color: #FFFFFF;
+  }
+  .all-courses__title {
+    color: $orange;
+  }
+  .all-courses__text {
+    color: #fff;
+  }
+  .all-courses__radio-text {
+    color: #fff;
+  }
+  .all-courses__info {
+    path {
+      fill: $orange;
+    }
+  }
+  .all-courses__info-span {
+    color: #fff;
+  }
+  .all-courses__box {
+    background: #282828;
+    @include media(lg) {
+      background: transparent;
+    }
+  }
+  .all-courses__headline {
+    color: #fff;
+  }
+  .all-courses__price-current {
+    color: $orange;
+  }
+  .all-courses__price-old {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .all-courses__price-month {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .all-courses__note {
+    color: #fff;
+  }
+  .all-courses__price-full-current {
+    color: $orange;
+  }
+  .all-courses__price-full-old {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .all-courses__button_border {
+    border: 1px solid #f37e60;
+    color: rgba(255, 255, 255, 0.75);
+  }
+  .all-courses__ticket {
+    &, &.blue, &.green {
+      color: #000;
+      background: #f2c45b;
+    }
+  }
+  .all-courses__date {
+    color: #fff;
+    span {
+      color: $orange
+    }
+  }
+  .all-courses__more {
+    margin-top: 60px;
+    @include media(lg) {
+      margin-top: 40px;
+    }
+  }
+  .all-courses__more-button {
+    background: #f2c45b;
+    color: #000;
+    font-weight: 600;
+    &::after {
+      @include bg-icon('icons/ic_arrow_btn_dark.svg');
+      transform: rotate(-90deg);
+    }
+  }
+  .all-courses__filter-wrap {
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: #1f1f1f;
+  }
+  .all-courses__filter-headline {
+    color: #fff;
+  }
+  .all-courses__filter-tab {
+    color: rgba(255, 255, 255, 0.65);
+    &.active {
+      color: #fff;
+      &::before {
+        background: #f2c45b;
+      }
+    }
+  }
+  .all-courses__filter-list {
+    background: #303030;
+  }
+  .all-courses__filter-view {
+    background: #212121;
+    color: #fff;
+  }
+  .all-courses__filter-item {
+    &:hover {
+      .all-courses__filter-view {
+        background: #ffe8b3;
+        color: #000;
+      }
+    }
+  }
+  .all-courses__filter-input:checked ~ .all-courses__filter-view {
+    background: #f2c45b;
+    color: #000;
+  }
+  .all-courses__reset-filter {
+    background: #f2c45b;
+    color: #000;
+    path {
+      fill: #000;
+    }
+  }
+  .all-courses__inner {
+    @include media(lg) {
+      background: #282828;
+    }
+  }
+  .all-courses__mob-name {
+    @include media(lg) {
+      color: #fff;
+    }
+  }
+  .all-courses__no-price .all-courses__inner {
+    @include media(xs) {
+      background: #282828;
+    }
+  }
+  .all-courses__area {
+    &::before {
+      @include media(xs) {
+        background: linear-gradient(-90deg, rgba(255, 255, 255, 0) 0, #1a1a1a 80%, #1a1a1a 100%);
+      }
+    }
+    &::after {
+      @include media(xs) {
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, #1a1a1a 80%, #1a1a1a 100%);
+      }
+    }
+  }
+  .tile-loader {
+    color: $orange;
+  }
+  .all-courses__filter-top.active ~ .all-courses__filter-wrap {
+    @include media(xs) {
+      background: #0d0d0d;
+    }
+  }
+  .all-courses__filter-close {
+    @include media(xs) {
+      @include bg-icon('all-courses/close_black.svg', 23px, 23px);
+    }
+  }
+}

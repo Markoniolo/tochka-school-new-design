@@ -21,17 +21,23 @@ function timersInit (timer) {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
     const seconds = Math.floor((distance % (1000 * 60)) / 1000)
 
-    nodes[0].innerHTML = days
-    nodes[1].innerHTML = hours
-    nodes[2].innerHTML = minutes
-    nodes[3].innerHTML = seconds
+    if (nodes.length < 4) {
+      nodes[0].innerHTML = hours
+      nodes[1].innerHTML = minutes
+      nodes[2].innerHTML = seconds
+    } else {
+      nodes[0].innerHTML = days
+      nodes[1].innerHTML = hours
+      nodes[2].innerHTML = minutes
+      nodes[3].innerHTML = seconds
+    }
 
     if (distance < 0) {
       clearInterval(interval);
       nodes[0].innerHTML = "0"
       nodes[1].innerHTML = "0"
       nodes[2].innerHTML = "0"
-      nodes[3].innerHTML = "0"
+      if (nodes[3]) nodes[3].innerHTML = "0"
     }
   }
 }

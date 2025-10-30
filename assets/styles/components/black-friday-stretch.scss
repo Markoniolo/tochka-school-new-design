@@ -1,0 +1,151 @@
+.black-friday-stretch {
+  background: #0d0d0d;
+  overflow: hidden;
+  display: block;
+}
+
+.black-friday-stretch__area {
+  position: relative;
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  @include media(xs) {
+    justify-content: flex-end;
+  }
+}
+
+.black-friday-stretch__blur {
+  position: absolute;
+  filter: blur(70px);
+  background: #f37e60;
+  opacity: 0.45;
+  &_1 {
+    width: 169px;
+    height: 169px;
+    top: -80px;
+    left: -349px;
+    @include media(lg) {
+      display: none;
+    }
+  }
+  &_2 {
+    width: 169px;
+    height: 169px;
+    top: 32px;
+    left: 299px;
+    @include media(lg) {
+      display: none;
+    }
+  }
+  &_3 {
+    top: -147px;
+    right: 105px;
+    width: 181px;
+    height: 197px;
+    @include media(lg) {
+      top: -149px;
+      right: -10px;
+      width: 169px;
+      height: 169px;
+    }
+    @include media(xs) {
+      width: 121px;
+      height: 121px;
+      top: 56px;
+      right: 66px;
+    }
+  }
+}
+
+.black-friday-stretch__circle {
+  position: absolute;
+  top: -42px;
+  left: -92px;
+  width: 216px;
+  @include media(lg) {
+    width: 181px;
+    left: -14px;
+    top: -28px;
+  }
+  @include media(xs) {
+    width: 150px;
+    height: 126px;
+    left: -35px;
+    top: 3px;
+  }
+}
+
+.black-friday-stretch__caption {
+  position: absolute;
+  top: 10px;
+  left: 145px;
+  width: 154px;
+  @include media(lg) {
+    width: 131px;
+    top: 14px;
+    left: 0;
+  }
+  @include media(xs) {
+    top: 22px;
+    width: 91px;
+  }
+}
+
+.black-friday-stretch__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 144%;
+  color: #fff;
+  @include media(lg) {
+    font-size: 20px;
+  }
+  @include media(xs) {
+    transform: translateY(-12px);
+    font-size: 16px;
+  }
+  @include media(xxs) {
+    font-size: 13px;
+    transform: translateY(-8px);
+  }
+}
+
+.black-friday-stretch__value {
+  margin: 0 11px 0 5px;
+  width: 98px;
+  @include media(lg) {
+    margin: 0 5px;
+    width: 90px;
+  }
+  @include media(xs) {
+    width: 68px;
+  }
+  @include media(xxs) {
+    width: 53px;
+    margin: 0 4px;
+  }
+}
+
+.black-friday-stretch__note {
+  position: absolute;
+  z-index: 1;
+  top: 27px;
+  right: 99px;
+  width: 181px;
+  @include media(lg) {
+    top: 30px;
+    right: 0;
+    width: 125px;
+  }
+  @include media(xs) {
+    right: 52px;
+    top: 50px;
+    width: 107px;
+  }
+  @include media(xxs) {
+    right: 32px;
+    top: 48px;
+  }
+}
