@@ -23,6 +23,8 @@
     }
   }
   .all-courses__wrap {
+    position: relative;
+    z-index: 1;
     backdrop-filter: blur(7.7px);
     background: rgba(23, 23, 23, 0.65);
     border: 1px solid rgba(255, 255, 255, 0.24);

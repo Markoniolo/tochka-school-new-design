@@ -2,7 +2,9 @@
   overflow: hidden;
   padding-bottom: 700px;
   margin-bottom: -700px;
+  margin-top: -60px;
   @include media(lg) {
+    margin-top: 0;
     padding-bottom: 660px;
     margin-bottom: -700px;
   }
@@ -13,7 +15,7 @@
 
 .black-friday-cap__wrap {
   position: relative;
-  padding: 130px 0 196px;
+  padding: 70px 0 196px;
   @include media(lg) {
     padding: 40px 0 86px;
   }
@@ -325,11 +327,11 @@
 .black-friday-cap__line {
   position: absolute;
   &_1 {
-    left: -413px;
-    bottom: -95px;
+    left: -1413px;
+    bottom: -204px;
     @include bg-icon('black-friday-cap/line-1.svg');
-    width: 2227px;
-    height: 232px;
+    width: 4435px;
+    height: 431px;
     @include media(lg) {
       left: -328px;
       bottom: -165px;

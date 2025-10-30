@@ -59,7 +59,7 @@ $breakpoints: (xxs: 0, xs: 360px, sm: 744px, md: 992px, lg: 1200px, xl: 1360px, 
   }
 }
 
-$version: '?ver=20.10.25';
+$version: '?ver=30.10.25';
 
 @mixin bg-img($img) {
   background-image: url($img-path + $img + $version);
