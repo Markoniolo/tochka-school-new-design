@@ -204,7 +204,7 @@ function globalFormInit (form, func_name, type) {
   const captcha = form.querySelector('.captcha')
   if (window.smartCaptcha && captcha) {
     window.smartCaptcha.render(captcha, {
-      sitekey: 'ysc1_HDDr4IbZmvxgUK0q1Z0WjUtjJvRQv6UOncPdMKMC2e3c7297',
+      sitekey: 'ysc1_y2y3Y8WvF9G06BcBNlGlgx4nfWsr2ms4kPjqJ0ite8d30716',
       invisible: true,
       callback: callback
     })
