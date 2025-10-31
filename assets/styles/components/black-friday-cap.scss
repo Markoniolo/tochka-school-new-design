@@ -76,7 +76,7 @@
   position: absolute;
   z-index: -1;
   right: -254px;
-  top: 45px;
+  top: -12px;
   width: 776px;
   height: 651px;
   @include bg-icon('black-friday-cap/circle.svg');
@@ -131,13 +131,12 @@
     margin-bottom: 36px;
     font-size: 27px;
     text-align: center;
-    transform: translateX(-18px);
   }
 }
 
 .black-friday-cap__area {
   position: absolute;
-  top: 155px;
+  top: 142px;
   right: 0;
   width: 415px;
   display: flex;
@@ -156,7 +155,7 @@
 
 .black-friday-cap__timer {
   display: flex;
-  gap: 57px;
+  gap: 53px;
   @include media(lg) {
     gap: 32px;
   }
@@ -170,18 +169,17 @@
 }
 
 .black-friday-cap__timer-number {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 26px;
-  width: 96px;
-  height: 107px;
+  border-radius: 20px;
+  width: 75px;
+  height: 85px;
   background-color: #FFFFFF;
-  font-size: 60px;
+  font-size: 48px;
   line-height: 100%;
   @include media(lg) {
-    margin-bottom: 10px;
     border-radius: 15px;
     width: 59px;
     height: 59px;
@@ -197,7 +195,7 @@
 }
 
 .black-friday-cap__timer-note {
-  font-size: 33px;
+  font-size: 27px;
   line-height: 100%;
   text-align: center;
   color: #fff;
@@ -211,10 +209,10 @@
 
 .black-friday-cap__timer-text {
   position: relative;
-  margin-top: 58px;
+  margin-top: 47px;
   @include bg-icon('black-friday-cap/timer-text.svg');
-  width: 260px;
-  height: 31px;
+  width: 207px;
+  height: 25px;
   @include media(lg) {
     margin-top: 20px;
   }

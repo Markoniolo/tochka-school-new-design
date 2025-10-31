@@ -202,6 +202,15 @@ function phoneFormData (globalForm) {
 
 function globalFormInit (form, func_name, type) {
 
+  const captcha = form.querySelector('.captcha')
+  if (window.smartCaptcha && captcha) {
+    window.smartCaptcha.render(captcha, {
+      sitekey: 'ysc1_y2y3Y8WvF9G06BcBNlGlgx4nfWsr2ms4kPjqJ0ite8d30716',
+      invisible: true,
+      callback: () => callback(token, input)
+    })
+  }
+
   const globalForm = form
   const btnSubmit = globalForm.querySelector('.btn-warning')
   const input = globalForm.querySelector("[data-element='input-phone-intl']")
@@ -266,23 +275,14 @@ function globalFormInit (form, func_name, type) {
     resetError()
     e.preventDefault()
 
-    const captcha = globalForm.querySelector('.captcha')
-    if (window.smartCaptcha && captcha) {
-      window.smartCaptcha.render(captcha, {
-        sitekey: 'ysc1_y2y3Y8WvF9G06BcBNlGlgx4nfWsr2ms4kPjqJ0ite8d30716',
-        invisible: true,
-        callback: callback
-      })
-    }
-
     if (window.smartCaptcha) {
       window.smartCaptcha.execute()
     } else {
-      callback()
+      callback('', input)
     }
   })
 
-  function callback () {
+  function callback (token, input) {
     console.log(input && !input?.value?.trim())
     console.log(iti?.isValidNumber())
     if (input && !input?.value?.trim()) {
