@@ -1249,7 +1249,7 @@
 .all-courses__next {
   font-size: 16px;
   line-height: 100%;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.5);
   @include media(lg) {
     font-size: 14px;
   }
@@ -1336,6 +1336,9 @@
   color: rgba(0, 0, 0, 0.5);
   @include media(lg) {
     font-size: 14px;
+  }
+  span {
+    font-weight: 600;
   }
 }
 

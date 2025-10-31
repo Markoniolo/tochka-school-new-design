@@ -292,4 +292,7 @@
       @include bg-icon('all-courses/close_black.svg', 23px, 23px);
     }
   }
+  .all-courses__next {
+    color: rgba(255, 255, 255, 0.5);
+  }
 }
