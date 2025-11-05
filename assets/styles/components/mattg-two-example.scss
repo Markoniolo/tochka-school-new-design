@@ -1,0 +1,125 @@
+.mattg-two-example {
+  background: linear-gradient(326deg, #e6efff 0%, #bfd4ff 100%);
+}
+
+.mattg-two-example__wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 74px 0 0;
+  @include media(lg) {
+    padding: 38px 0 0;
+  }
+}
+
+.mattg-two-example__caption {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 121%;
+  text-align: center;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 18px;
+    font-size: 25px;
+    line-height: 100%;
+  }
+}
+
+.mattg-two-example__title {
+  margin-bottom: 32px;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 117%;
+  text-align: center;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 30px;
+    font-size: 18px;
+  }
+  @include media(xs) {
+    margin-bottom: 26px;
+  }
+}
+
+.mattg-two-example__image-link {
+  margin-bottom: -16px;
+  display: block;
+  width: 261px;
+  @include media(lg) {
+    margin-bottom: -42px;
+  }
+  @include media(xs) {
+    margin-bottom: -26px;
+  }
+}
+
+.mattg-two-example__image {
+
+}
+
+.mattg-two-example__area {
+  position: absolute;
+  bottom: -105px;
+  width: 644px;
+  border-radius: 20px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
+  background: #fff;
+  padding: 36px 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  @include media(lg) {
+    border-radius: 10px;
+    padding: 20px 18px 17px;
+    width: 396px;
+    bottom: -72px;
+    gap: 12px;
+  }
+  @include media(xs) {
+    width: 320px;
+    bottom: -74px;
+  }
+  @include media(xxs) {
+    width: 300px;
+  }
+}
+
+.mattg-two-example__button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 20px 50px 21px;
+  @include media(lg) {
+    font-size: 16px;
+    padding: 15px 40px 16px;
+  }
+  @include media(xxs) {
+    padding: 15px 32px 16px;
+  }
+  &::after {
+    content: '';
+    width: 24px;
+    height: 24px;
+    @include bg-icon('mattg-two-example/btn-icon.svg')
+  }
+}
+
+.mattg-two-example__text {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #000;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 19px;
+  }
+  @include media(xs) {
+    max-width: 268px;
+  }
+}

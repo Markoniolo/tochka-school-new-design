@@ -1,0 +1,11 @@
+.mattg-two-lessons
+  .cont
+    .mattg-two-lessons__wrap
+      h2.mattg-two-lessons__caption!= "В телеграм-канале бесплатно выходят уроки, где простым языком разбираем темы <br> 5-11 классов"
+      .mattg-two-lessons__text Смотрите вместе с ребенком и&nbsp;Вы&nbsp;тоже полюбите математику
+      ul.mattg-two-lessons__list
+        each item in [5,6,7,8,9,10,11]
+          li.mattg-two-lessons__item
+            .mattg-two-lessons__title!= `${item} класс`
+            a.mattg-two-lessons__button.btn-orange.btn-orange_arrow(href='#') Выбрать
+            .mattg-two-lessons__number= item

@@ -1,0 +1,117 @@
+.mattg-two-teacher {
+  padding: 74px 0 80px;
+  background: #FFFFFF;
+  @include media(lg) {
+    padding: 36px 0 45px;
+  }
+}
+
+.mattg-two-teacher__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mattg-two-teacher__caption {
+  margin-bottom: 36px;
+  max-width: 1162px;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 121%;
+  text-align: center;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 28px;
+    max-width: 684px;
+    font-size: 25px;
+    line-height: 105%;
+  }
+  @include media(xs) {
+    margin-bottom: 22px;
+    max-width: 320px;
+    line-height: 100%;
+  }
+  @include media(xxs) {
+    font-size: 22px;
+    line-height: 114%;
+    max-width: 300px;
+  }
+}
+
+.mattg-two-teacher__tag {
+  margin-bottom: 40px;
+  border-radius: 33px;
+  background: rgba(102, 131, 194, 0.08);
+  padding: 12px 27px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 100%;
+  text-align: center;
+  color: #6683c2;
+  @include media(lg) {
+    margin-bottom: 25px;
+    padding: 9px 15px 10px;
+    font-size: 20px;
+  }
+  @include media(xs) {
+    margin-bottom: 69px;
+    font-size: 16px;
+  }
+}
+
+.mattg-two-teacher__area {
+  width: 740px;
+  display: flex;
+  gap: 29px;
+  align-items: center;
+  padding: 25px;
+  border-radius: 20px;
+  background: #f3f5fb;
+  @include media(lg) {
+    width: 482px;
+    border-radius: 10px;
+    padding: 20px;
+    gap: 20px;
+  }
+  @include media(xs) {
+    position: relative;
+    width: 100%;
+    padding: 34px 28px 21px;
+  }
+  @include media(xxs) {
+    padding: 34px 18px 21px;
+  }
+}
+
+.mattg-two-teacher__image {
+  flex-shrink: 0;
+  width: 101px;
+  height: 100px;
+  @include media(lg) {
+    width: 71px;
+    height: 70px;
+  }
+  @include media(xs) {
+    position: absolute;
+    top: -44px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 69px;
+    height: 68px;
+  }
+}
+
+.mattg-two-teacher__text {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 140%;
+  }
+  @include media(xs) {
+    text-align: center;
+    line-height: 19px;
+  }
+}

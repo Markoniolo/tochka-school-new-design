@@ -1,0 +1,146 @@
+.mattg-two-lessons {
+
+}
+
+.mattg-two-lessons__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 169px 0 100px;
+  @include media(lg) {
+    padding: 106px 0 41px;
+  }
+  @include media(xs) {
+    padding: 104px 0 60px;
+  }
+}
+
+.mattg-two-lessons__caption {
+  margin-bottom: 41px;
+  max-width: 1080px;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 121%;
+  text-align: center;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 20px;
+    max-width: 596px;
+    font-size: 24px;
+    line-height: 104%;
+  }
+  @include media(xs) {
+    max-width: 320px;
+    font-size: 20px;
+    line-height: 125%;
+  }
+  br {
+    @include media(lg) {
+      display: none;
+    }
+    @include media(xs) {
+      display: inline;
+    }
+  }
+}
+
+.mattg-two-lessons__text {
+  margin-bottom: 42px;
+  max-width: 710px;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  text-align: center;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 24px;
+    max-width: 422px;
+    font-size: 18px;
+    line-height: 117%;
+  }
+  @include media(xs) {
+    margin-bottom: 20px;
+    max-width: 320px;
+  }
+}
+
+.mattg-two-lessons__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px 25px;
+  justify-content: center;
+  @include media(lg) {
+    gap: 25px;
+  }
+  @include media(xs) {
+    gap: 15px;
+  }
+}
+
+.mattg-two-lessons__item {
+  overflow: hidden;
+  width: 317px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+  background: #fff;
+  padding: 25px 30px 30px;
+  @include media(lg) {
+    width: calc(50% - 13px);
+  }
+  @include media(xs) {
+    width: 100%;
+    padding: 28px 30px 26px;
+  }
+  @include media(xxs) {
+    padding: 28px 22px 26px;
+  }
+  &:last-child {
+    @include media(lg) {
+      width: 100%;
+    }
+  }
+  &:nth-child(6) {
+    .mattg-two-lessons__number {
+      right: -48px;
+      letter-spacing: -0.1em;
+    }
+  }
+  &:nth-child(7) {
+    .mattg-two-lessons__number {
+      right: -12px;
+      letter-spacing: -0.07em;
+      @include media(lg) {
+        right: 8px;
+      }
+      @include media(xs) {
+        right: -12px;
+      }
+    }
+  }
+}
+
+.mattg-two-lessons__title {
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  color: #003c56;
+}
+
+.mattg-two-lessons__button {
+  display: inline-flex;
+  font-size: 16px;
+  padding: 19px 38px 20px;
+}
+
+.mattg-two-lessons__number {
+  position: absolute;
+  top: -10px;
+  right: -24px;
+  font-weight: 700;
+  font-size: 165px;
+  line-height: 100%;
+  color: #f37e60;
+  opacity: 0.15;
+}
