@@ -10,8 +10,18 @@
     transition-property: bottom;
   }
   &.transition {
-    @include media(xs) {
-      bottom: 120px;
+    @include media(md) {
+      bottom: 80px;
+    }
+  }
+  &.transition-with-cookie-offset {
+    @include media(md) {
+      bottom: 132px;
+    }
+  }
+  &.transition-with-cookie {
+    @include media(md) {
+      bottom: 80px;
     }
   }
   &.active {

@@ -28,6 +28,14 @@
   &.active {
     transform: translateY(0);
   }
+  &.active-with-cookie-offset {
+    @include media(md) {
+      transform: translateY(-46px);
+    }
+    @include media(xs) {
+      transform: translateY(-52px);
+    }
+  }
   &.double {
     .btn-fixed__area {
       max-width: 300px;
