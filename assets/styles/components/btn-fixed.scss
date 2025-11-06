@@ -28,7 +28,7 @@
   &.active {
     transform: translateY(0);
   }
-  &.active-with-cookie-offset {
+  &.active-with-cake-offset {
     @include media(md) {
       transform: translateY(-46px);
     }
