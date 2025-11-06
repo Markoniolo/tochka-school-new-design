@@ -684,22 +684,22 @@ function btnFixedInit () {
   window.addEventListener('scroll', checkBtnFixed, { passive: true })
 
   function checkBtnFixed () {
-    const cookie = document.querySelector('.cookie.cookie_active')
+    const cake = document.querySelector('.cake.cake_active')
     if (window.scrollY > start && body.scrollHeight - window.pageYOffset > end && !checkBtnFixedHide()) {
       btnFixed.classList.add('active')
-      if (cookie) btnFixed.classList.add('active-with-cookie-offset')
+      if (cake) btnFixed.classList.add('active-with-cake-offset')
       if (promo) {
         promo.classList.add('transition')
-        promo.classList.remove('transition-with-cookie')
+        promo.classList.remove('transition-with-cake')
       }
-      if (promo && cookie) promo.classList.add('transition-with-cookie-offset')
+      if (promo && cake) promo.classList.add('transition-with-cake-offset')
     } else {
       btnFixed.classList.remove('active')
-      btnFixed.classList.remove('active-with-cookie-offset')
+      btnFixed.classList.remove('active-with-cake-offset')
       if (promo) promo.classList.remove('transition')
-      if (promo && cookie) {
-        promo.classList.remove('transition-with-cookie-offset')
-        promo.classList.add('transition-with-cookie')
+      if (promo && cake) {
+        promo.classList.remove('transition-with-cake-offset')
+        promo.classList.add('transition-with-cake')
       }
     }
   }
@@ -757,6 +757,40 @@ function btnScrollToTopInit () {
   }
 }
 
+const cake = document.querySelector('.cake')
+
+if (cake) checkCake()
+
+function checkCake() {
+  const cakeButton = cake.querySelector('.cake__button')
+
+  if (!getCookie('cakes_policy')) {
+    cake.classList.add('cake_active')
+
+    cakeButton.addEventListener('click', function () {
+      setCake('cakes_policy', 'true', 365)
+      cake.classList.remove('cake_active')
+      const btnFixed = document.querySelector('[data-element="btn-fixed"]')
+      const promo = document.querySelector('.promo')
+      if (promo) {
+        promo.classList.remove('transition-with-cake')
+        promo.classList.remove('transition-with-cake-offset')
+      }
+      if (btnFixed) btnFixed.classList.remove('active-with-cake-offset')
+    })
+  }
+}
+
+function setCake(name, value, days) {
+  let expires = ""
+  if (days) {
+    let date = new Date()
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000))
+    expires = "; expires=" + date.toUTCString()
+  }
+  document.cookie = name + "=" + (value || "") + expires + "; path=/"
+}
+
 function setViewportProperty() {
   let vh = window.innerHeight * 0.01
   document.documentElement.style.setProperty('--vh', `${vh}px`)
@@ -782,40 +816,6 @@ function cardsInit () {
     if (oldActive) oldActive.classList.remove('active')
     this.classList.add('active')
   }
-}
-
-const cookie = document.querySelector('.cookie')
-
-if (cookie) checkCookies()
-
-function checkCookies() {
-  const cookieButton = cookie.querySelector('.cookie__button')
-
-  if (!getCookie('cookies_policy')) {
-    cookie.classList.add('cookie_active')
-
-    cookieButton.addEventListener('click', function () {
-      setCookie('cookies_policy', 'true', 365)
-      cookie.classList.remove('cookie_active')
-      const btnFixed = document.querySelector('[data-element="btn-fixed"]')
-      const promo = document.querySelector('.promo')
-      if (promo) {
-        promo.classList.remove('transition-with-cookie')
-        promo.classList.remove('transition-with-cookie-offset')
-      }
-      if (btnFixed) btnFixed.classList.remove('active-with-cookie-offset')
-    })
-  }
-}
-
-function setCookie(name, value, days) {
-  let expires = ""
-  if (days) {
-    let date = new Date()
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000))
-    expires = "; expires=" + date.toUTCString()
-  }
-  document.cookie = name + "=" + (value || "") + expires + "; path=/"
 }
 
 const costAreas = document.querySelectorAll('.cost__area')
