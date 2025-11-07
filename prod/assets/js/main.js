@@ -1123,18 +1123,6 @@ function egeTileFilterInit () {
     })
   }
 
-  buttonDataHrefLinksInit()
-
-  function buttonDataHrefLinksInit() {
-    const buttonDataHrefLinks = document.querySelectorAll('button[data-href-link]')
-    for (let i = 0; i < buttonDataHrefLinks.length; i++) {
-      buttonDataHrefLinks[i].addEventListener('click', function (e) {
-        e.preventDefault()
-        window.open(this.getAttribute('data-href-link'), '_blank')
-      })
-    }
-  }
-
   if (tile) dataRedirect()
 
   function dataRedirect () {
@@ -2894,18 +2882,6 @@ function langsTileInit () {
     })
   }
 
-  buttonDataHrefLinksInit()
-
-  function buttonDataHrefLinksInit() {
-    const buttonDataHrefLinks = document.querySelectorAll('button[data-href-link]')
-    for (let i = 0; i < buttonDataHrefLinks.length; i++) {
-      buttonDataHrefLinks[i].addEventListener('click', function (e) {
-        e.preventDefault()
-        window.open(this.getAttribute('data-href-link'), '_blank')
-      })
-    }
-  }
-
   dataRedirect()
 
   function dataRedirect () {
@@ -3734,18 +3710,6 @@ function offerTileInit () {
     buttonDataHrefLinksInit()
     dataRedirect()
   })
-
-  buttonDataHrefLinksInit()
-
-  function buttonDataHrefLinksInit() {
-    const buttonDataHrefLinks = document.querySelectorAll('button[data-href-link]')
-    for (let i = 0; i < buttonDataHrefLinks.length; i++) {
-      buttonDataHrefLinks[i].addEventListener('click', function (e) {
-        e.preventDefault()
-        window.open(this.getAttribute('data-href-link'), '_blank')
-      })
-    }
-  }
 
   if (tile) dataRedirect()
 
