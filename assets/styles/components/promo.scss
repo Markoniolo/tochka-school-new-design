@@ -160,7 +160,7 @@
 
 .promo__hint {
   position: absolute;
-  top: -156px;
+  top: -135px;
   left: -316px;
   width: 335px;
   opacity: 0;
@@ -169,7 +169,7 @@
   transition-property: opacity;
   @include media(lg) {
     width: 300px;
-    top: -140px;
+    top: -122px;
     right: 0;
     left: unset;
   }
