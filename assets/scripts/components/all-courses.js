@@ -1,3 +1,15 @@
+buttonDataHrefLinksInit()
+
+function buttonDataHrefLinksInit() {
+  const buttonDataHrefLinks = document.querySelectorAll('button[data-href-link]')
+  for (let i = 0; i < buttonDataHrefLinks.length; i++) {
+    buttonDataHrefLinks[i].addEventListener('click', function (e) {
+      e.preventDefault()
+      window.open(this.getAttribute('data-href-link'), '_blank')
+    })
+  }
+}
+
 const allCourses = document.querySelector('.all-courses')
 
 if (allCourses) allCoursesInit()
@@ -31,17 +43,7 @@ function allCoursesInit () {
 
   let timerReload = setTimeout(() => window.location.reload(), 300000)
 
-  buttonDataHrefLinksInit()
 
-  function buttonDataHrefLinksInit() {
-    const buttonDataHrefLinks = document.querySelectorAll('button[data-href-link]')
-    for (let i = 0; i < buttonDataHrefLinks.length; i++) {
-      buttonDataHrefLinks[i].addEventListener('click', function (e) {
-        e.preventDefault()
-        window.open(this.getAttribute('data-href-link'), '_blank')
-      })
-    }
-  }
 
 
   if (reset) reset.addEventListener('click', resetFilters)
