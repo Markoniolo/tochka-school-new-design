@@ -1,16 +1,13 @@
 .fam-doc {
   margin-top: -194px;
-  margin-bottom: -245px;
+  margin-bottom: -350px;
   transition-property: margin;
   transition-duration: $transition-duration;
   @include media(lg) {
-    margin-bottom: -336px;
+    margin-bottom: -400px;
   }
   @include media(xs) {
-    margin-bottom: -270px;
-  }
-  @include media(xxs) {
-    margin-bottom: -268px;
+    margin-bottom: -320px;
   }
   &.open {
     margin-bottom: 0;
@@ -222,6 +219,7 @@
 
 .fam-doc__tables {
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
   align-items: flex-start;
   @include media(lg) {
@@ -267,13 +265,56 @@
   border-radius: 10px;
   flex-shrink: 0;
   overflow: hidden;
-  &:nth-child(1) {
-    width: 359px;
+  &_long-desk {
+    width: 100%;
     @include media(lg) {
-      width: 100%;
+      display: none;
+    }
+    td:first-child {
+      font-weight: 500;
     }
   }
-  &:nth-child(2) {
+  &_long-mob {
+    width: 100%;
+    display: none;
+    @include media(lg) {
+      display: block;
+    }
+    tr {
+      @include media(lg) {
+        position: relative;
+        td:first-child {
+          font-weight: 500;
+        }
+      }
+    }
+    .fam-doc__tr-absolute {
+      @include media(lg) {
+        height: 28px;
+      }
+    }
+    .fam-doc__td-absolute-right {
+      @include media(lg) {
+        position: absolute;
+        top: 0;
+        right: 14px;
+      }
+      @include media(xs) {
+        right: 5px;
+      }
+      @include media(xxs) {
+        right: 0;
+      }
+    }
+    .fam-doc__td-absolute-left {
+      @include media(lg) {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+  &:last-child {
     width: 352px;
     @include media(lg) {
       width: 100%;

@@ -22,27 +22,75 @@ mixin fam-doc(mod)
             по ним как результат итоговой аттестации.
         button.fam-doc__button.btn-blue Открыть расписание аттестации
         .fam-doc__tables
-          .fam-doc__table
+          .fam-doc__table.fam-doc__table_long-desk
+            table
+              tr
+                th
+                th Осенняя
+                th Зимняя
+                th Промежуточная
+                th Весенняя
+                th Итоговая
+              tr
+                td 1-8 класс
+                td 10.11 - 16.11
+                td 12.01 - 18.01
+                td
+                td 02.03 - 08.03
+                td 11.05 - 17.05
+              tr
+                td 9-11 класс
+                td 10.11 - 16.11
+                td
+                td 12.01 - 18.01
+                td
+                td 6.04 - 12.04
+          .fam-doc__table.fam-doc__table_long-mob
             table
               tr
                 th
                 th 1-8 класс
                 th 9-11 класс
               tr
-                td
-                  b Осенняя
-                td 17.11 - 23.11
+                td Осенняя
+                td 10.11 - 16.11
                 td 17.11 - 23.11
               tr
+                td Зимняя
+                td 12.01 - 18.01
                 td
-                  b Зимняя
-                td 09.02 - 15.02
-                td 09.02 - 15.02
+              tr.fam-doc__tr-absolute
+                td.fam-doc__td-absolute-left Промежуточная
+                td.fam-doc__td-absolute-right 12.01 - 18.01
               tr
+                td Весенняя
+                td 02.03 - 08.03
                 td
-                  b Итоговая
-                td 11.05 - 20.05
+              tr
+                td Итоговая
+                td 11.05 - 17.05
                 td 6.04 - 12.04
+          //.fam-doc__table
+          //  table
+          //    tr
+          //      th
+          //      th 1-8 класс
+          //      th 9-11 класс
+          //    tr
+          //      td
+          //        b Осенняя
+          //      td 17.11 - 23.11
+          //      td 17.11 - 23.11
+          //    tr
+          //      td
+          //        b Зимняя
+          //      td 09.02 - 15.02
+          //      td 09.02 - 15.02
+          //    tr
+          //      td
+          //        b Итоговая
+          //      td 11.05 - 20.05
+          //      td 6.04 - 12.04
           .fam-doc__table
             table
               tr
