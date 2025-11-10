@@ -1,13 +1,16 @@
 .fam-doc {
   margin-top: -194px;
-  margin-bottom: -585px;
+  margin-bottom: -564px;
   transition-property: margin;
   transition-duration: $transition-duration;
   @include media(lg) {
-    margin-bottom: -708px;
+    margin-bottom: -688px;
   }
   @include media(xs) {
     margin-bottom: -782px;
+  }
+  @include media(xxs) {
+    margin-bottom: -828px;
   }
   &.open {
     margin-bottom: 0;
@@ -26,7 +29,7 @@
   min-height: 1006px;
   margin: 0 auto;
   position: relative;
-  padding: 90px 88px 80px;
+  padding: 90px 88px 60px;
   @include bg-icon('fam-doc/fam-doc-bg.svg');
   background-position: top;
   @include media(lg) {
@@ -34,19 +37,19 @@
     min-height: 1171px;
     @include bg-icon('fam-doc/fam-doc-bg_tablet.svg');
     background-position: top;
-    padding: 46px 50px 40px;
+    padding: 46px 50px 20px;
   }
   @include media(xs) {
     width: 100%;
     max-width: 320px;
     min-height: 1112px;
     margin: 0 auto;
-    @include bg-icon('fam-doc/fam-doc-bg_mob.svg');
+    @include bg-icon('fam-doc/fam-doc-bg_mob.png');
     background-position: top;
-    padding: 30px 30px 40px;
+    padding: 30px 30px 20px;
   }
   @include media(xxs) {
-    padding: 30px 25px 40px;
+    padding: 30px 25px 20px;
     max-width: 300px;
   }
 }
@@ -227,9 +230,6 @@
   tr:first-child {
     background: rgba(102, 131, 194, 0.17);
   }
-  th {
-    font-weight: 500;
-  }
   th, td {
     font-size: 15px;
     line-height: 19px;
@@ -240,14 +240,22 @@
       line-height: 18px;
     }
     @include media(xs) {
-      padding: 7px 5px;
+      padding: 10px 5px;
       font-size: 13px;
       line-height: 100%;
     }
   }
+  th {
+    font-weight: 500;
+  }
   tr {
     &:not(:last-of-type) {
       border-bottom: 1px solid #6683c2;
+    }
+    &:nth-child(4) td, &:nth-child(6) td {
+      @include media(xs) {
+        padding: 4px 5px;
+      }
     }
   }
   b {
