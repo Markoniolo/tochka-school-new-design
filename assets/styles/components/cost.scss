@@ -1,4 +1,7 @@
 .cost {
+  position: relative;
+  z-index: 1;
+  background-color: #f8f8f8;
   padding-top: 80px;
   margin-bottom: 87px;
   @include media(lg) {
