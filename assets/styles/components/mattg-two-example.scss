@@ -1,5 +1,25 @@
 .mattg-two-example {
   background: linear-gradient(326deg, #e6efff 0%, #bfd4ff 100%);
+  &_empty {
+    .mattg-two-example__wrap {
+      padding: 74px 0 80px;
+      @include media(lg) {
+        padding: 34px 0 40px;
+      }
+    }
+    .mattg-two-example__area {
+      position: static;
+    }
+    .mattg-two-example__title {
+      margin-bottom: 44px;
+      @include media(lg) {
+        margin-bottom: 34px;
+      }
+      @include media(xs) {
+        margin-bottom: 26px;
+      }
+    }
+  }
 }
 
 .mattg-two-example__wrap {

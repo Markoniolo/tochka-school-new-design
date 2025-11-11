@@ -1,6 +1,20 @@
 .mattg-two-cap {
   background: linear-gradient(326deg, #e6efff 0%, #bfd4ff 100%);
   overflow: hidden;
+  &_empty {
+    .mattg-two-cap__wrap {
+      &::before, &::after {
+        content: none;
+      }
+    }
+    .mattg-two-cap__area {
+      height: auto;
+      padding: 18px 34px 44px;
+      @include media(lg) {
+        padding: 18px 20px 28px;
+      }
+    }
+  }
 }
 
 .mattg-two-cap__wrap {

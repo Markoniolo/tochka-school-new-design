@@ -6,17 +6,17 @@ doctype html
 html(lang='ru')
   head
     include ../components/_layout/_head
-    +title('Переходник 2')
+    +title('Переходник 2 пустой')
   body
     include ../components/_layout/header-tg-new
     main.wrapper
       include ../components/mattg-two-cap
-      +mattg-two-cap
+      +mattg-two-cap('empty')
       include ../components/mattg-two-teacher
-      +mattg-two-teacher
+      +mattg-two-teacher('empty')
       include ../components/mattg-two-example
-      +mattg-two-example
+      +mattg-two-example('empty')
       include ../components/mattg-two-lessons
-      +mattg-two-lessons
+      +mattg-two-lessons('empty')
     include ../components/_layout/footer-quiz
     include ../components/_layout/scripts

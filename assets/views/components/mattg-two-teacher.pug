@@ -1,10 +1,12 @@
-.mattg-two-teacher
-  .cont
-    .mattg-two-teacher__wrap
-      h2.mattg-two-teacher__caption Умение понятно и&nbsp;интересно объяснить ребенку школьный предмет – редкий дар.
-      .mattg-two-teacher__tag Таких учителей на всех не хватает
-      .mattg-two-teacher__area
-        img.mattg-two-teacher__image(src=staticImg('mattg-two-teacher/teacher.png') alt='')
-        .mattg-two-teacher__text.
-          Андрей Александрович влюблен в&nbsp;математику
-          с детства и обладает талантом объяснять сложные вещи суперпростым языком.
+mixin mattg-two-teacher(mod)
+  .mattg-two-teacher(class = mod ? `mattg-two-teacher_${mod}` : false)
+    .cont
+      .mattg-two-teacher__wrap
+        h2.mattg-two-teacher__caption Умение понятно и&nbsp;интересно объяснить ребенку школьный предмет – редкий дар.
+        .mattg-two-teacher__tag Таких учителей на всех не хватает
+        .mattg-two-teacher__area
+          if mod !== "empty"
+            img.mattg-two-teacher__image(src=staticImg('mattg-two-teacher/teacher.png') alt='')
+          .mattg-two-teacher__text.
+            Андрей Александрович влюблен в&nbsp;математику
+            с детства и обладает талантом объяснять сложные вещи суперпростым языком.

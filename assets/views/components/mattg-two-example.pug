@@ -1,10 +1,12 @@
-.mattg-two-example
-  .cont
-    .mattg-two-example__wrap
-      h2.mattg-two-example__caption Не верите?
-      .mattg-two-example__title Посмотрите короткое видео о том, что такое логарифмы (10 класс):
-      a.mattg-two-example__image-link(href='#')
-        img.mattg-two-example__image(src=staticImg('mattg-two-example/tg.png') alt='')
-      .mattg-two-example__area
-        a.mattg-two-example__button.btn-orange(href='#') Смотреть  в Telegram
-        .mattg-two-example__text Уверены, будет интересно даже взрослым, хотя школа давно позади.
+mixin mattg-two-example(mod)
+  .mattg-two-example(class = mod ? `mattg-two-example_${mod}` : false)
+    .cont
+      .mattg-two-example__wrap
+        h2.mattg-two-example__caption Не верите?
+        .mattg-two-example__title Посмотрите короткое видео о том, что такое логарифмы (10 класс):
+        if mod !== "empty"
+          a.mattg-two-example__image-link(href='#')
+            img.mattg-two-example__image(src=staticImg('mattg-two-example/tg.png') alt='')
+        .mattg-two-example__area
+          a.mattg-two-example__button.btn-orange(href='#') Смотреть  в Telegram
+          .mattg-two-example__text Уверены, будет интересно даже взрослым, хотя школа давно позади.

@@ -1,5 +1,12 @@
 .mattg-two-lessons {
-
+  &_empty {
+    .mattg-two-lessons__wrap {
+      padding: 74px 0 100px;
+      @include media(lg) {
+        padding: 34px 0 72px;
+      }
+    }
+  }
 }
 
 .mattg-two-lessons__wrap {

@@ -4,6 +4,27 @@
   @include media(lg) {
     padding: 36px 0 45px;
   }
+  &_empty {
+    .mattg-two-teacher__area {
+      width: 609px;
+      @include media(lg) {
+        width: 392px;
+      }
+      @include media(xs) {
+        width: 100%;
+        max-width: 320px;
+        padding: 16px 28px;
+      }
+      @include media(xxs) {
+        padding: 16px 18px;
+      }
+    }
+    .mattg-two-teacher__tag {
+      @include media(xs) {
+        margin-bottom: 25px;
+      }
+    }
+  }
 }
 
 .mattg-two-teacher__wrap {
