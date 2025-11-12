@@ -53,6 +53,82 @@
       }
     }
   }
+  &_holiday {
+    &-small {
+      .schedule__box, .schedule__orange {
+        @include media(lg) {
+          width: calc(50% - 13px);
+        }
+        @include media(xs) {
+          width: 100%;
+        }
+      }
+    }
+    .schedule__title {
+      margin-bottom: 0;
+      max-width: unset;
+      width: auto;
+      @include media(lg) {
+        margin-bottom: 30px;
+      }
+    }
+    .schedule__line {
+      flex-shrink: 0;
+    }
+    .schedule__box {
+      margin-right: 40px;
+      @include media(lg) {
+        margin-right: 0;
+      }
+    }
+    .schedule__orange {
+      flex-shrink: 0;
+      overflow: hidden;
+      position: relative;
+      height: 253px;
+      margin-bottom: -200px;
+      justify-content: flex-start;
+      padding: 28px 25px;
+      @include media(lg) {
+        height: auto;
+        margin-bottom: 0;
+        justify-content: center;
+        padding: 14px 20px;
+      }
+      @include media(xs) {
+        padding: 20px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        @include bg-icon('schedule/decor.svg');
+        width: 100%;
+        height: 141px;
+        @include media(lg) {
+          content: none;
+        }
+      }
+    }
+    .schedule__orange-title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 100%;
+      @include media(lg) {
+        font-size: 15px;
+      }
+    }
+    .schedule__orange-text {
+      font-size: 18px;
+      line-height: 122%;
+      @include media(lg) {
+        font-size: 15px;
+        line-height: 133%;
+      }
+    }
+  }
 }
 
 .schedule__cont {
@@ -222,6 +298,88 @@ b.schedule__note {
   font-size: 16px;
   line-height: 137%;
   color: #fff;
+  @include media(lg) {
+    font-size: 15px;
+  }
+  @include media(xs) {
+    max-width: 290px;
+  }
+}
+
+.schedule__holiday {
+  margin-top: 40px;
+  max-width: 1015px;
+  width: 100%;
+  border-radius: 20px;
+  background: #f3f5fb;
+  padding: 18px 54px 20px 35px;
+  display: flex;
+  align-items: center;
+  @include media(lg) {
+    margin-top: 25px;
+    max-width: 100%;
+    padding: 16px 20px;
+    border-radius: 10px;
+  }
+  @include media(xs) {
+    flex-wrap: wrap;
+    gap: 14px 42px;
+  }
+}
+
+.schedule__holiday-title {
+  margin-right: auto;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  color: #003c56;
+  max-width: 299px;
+  width: 100%;
+  @include media(lg) {
+    margin-right: 12px;
+    font-size: 18px;
+    line-height: 23px;
+    max-width: 154px;
+  }
+  @include media(xs) {
+    max-width: 100%;
+  }
+  br {
+    display: none;
+    @include media(xs) {
+      display: inline;
+    }
+  }
+}
+
+.schedule__holiday-box {
+  margin-left: 50px;
+  @include media(lg) {
+    margin-left: 21px;
+  }
+  @include media(xs) {
+    margin-left: 0;
+  }
+  &_mob-last {
+    @include media(xs) {
+      order: 1;
+    }
+  }
+}
+
+.schedule__holiday-value {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  @include media(lg) {
+    font-size: 15px;
+  }
+}
+
+.schedule__holiday-note {
+  font-size: 16px;
+  line-height: 100%;
   @include media(lg) {
     font-size: 15px;
   }
