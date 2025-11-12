@@ -24,8 +24,8 @@
     max-width: 567px;
   }
   @include media(xs) {
-    max-width: 337px;
-    padding: 3px 4px 7px 11px;
+    max-width: 343px;
+    padding: 6px 10px 10px 14px;
   }
 }
 
@@ -38,7 +38,7 @@
   @include media(xs) {
     line-height: 16px;
   }
-  @media(max-width: 374px) {
+  @media(max-width: 383px) {
     font-size: 12px;
     line-height: 100%;
   }
