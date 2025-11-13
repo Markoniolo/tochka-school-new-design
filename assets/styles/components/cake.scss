@@ -24,6 +24,7 @@
     max-width: 567px;
   }
   @include media(xs) {
+    gap: 4px;
     max-width: 343px;
     padding: 6px 10px 10px 14px;
   }
