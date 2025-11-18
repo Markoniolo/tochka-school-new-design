@@ -200,16 +200,30 @@ function phoneFormData (globalForm) {
   };
 }
 
+window.captchaWidget = null;
+
+
+
+let captchaPassed = false;
+
+console.log('📍 Инициализация капчи...');
+window.captchaWidget = window.smartCaptcha.render('captcha-container', {
+  sitekey: 'ysc1_y2y3Y8WvF9G06BcBNlGlgx4nfWsr2ms4kPjqJ0ite8d30716', // <- проверьте ключ!
+  invisible: true,
+  callback: (token) => {
+    console.log('✅ Callback капчи вызван с токеном:', token);
+    captchaToken = token;
+    captchaPassed = true;
+  }
+});
+console.log('📍 Виджет создан:', window.captchaWidget);
+
+
+
+
+
 function globalFormInit (form, func_name, type) {
 
-  const captcha = form.querySelector('.captcha')
-  if (window.smartCaptcha && captcha) {
-    window.smartCaptcha.render(captcha, {
-      sitekey: 'ysc1_y2y3Y8WvF9G06BcBNlGlgx4nfWsr2ms4kPjqJ0ite8d30716',
-      invisible: true,
-      callback: () => callback(token, input)
-    })
-  }
 
   const globalForm = form
   const btnSubmit = globalForm.querySelector('.btn-warning')
@@ -271,18 +285,15 @@ function globalFormInit (form, func_name, type) {
     if (input) input.classList.remove("error")
   }
 
+  let isSubmitting = false;
+
+
   globalForm.addEventListener('submit', async (e) => {
     resetError()
     e.preventDefault()
 
-    if (window.smartCaptcha) {
-      window.smartCaptcha.execute()
-    } else {
-      callback('', input)
-    }
-  })
 
-  function callback (token, input) {
+
     console.log(input && !input?.value?.trim())
     console.log(iti?.isValidNumber())
     if (input && !input?.value?.trim()) {
@@ -329,14 +340,14 @@ function globalFormInit (form, func_name, type) {
       }
       if (news) {
         if (!news.checked) {
-          // news.closest('label').classList.add('error-text')
-          // news.classList.add('error')
+          //   news.closest('label').classList.add('error-text')
+          //   news.classList.add('error')
           isValid = false
         }
       }
       if (policy) {
         if (!policy.checked) {
-          // policy.closest('label').classList.add('error-text')
+          //   policy.closest('label').classList.add('error-text')
           isValid = false
         }
       }
@@ -397,25 +408,111 @@ function globalFormInit (form, func_name, type) {
             }
           }
 
+          if (checkHoneypot()) return
+
           // console.log("urlParams: " + urlParams)
           // console.log("utm_f: " + utm_f)
-          if (checkHoneypot()) return
-          globalForm.submit();
-          setTimeout(() => {
-            clearForm();
-            // location.assign(linkTo + `?cemail=${email_value}`);
-            // location.assign(linkTo + '?email='+email_value)
 
-            location.assign(linkTo_);
+          //console.log("bf globalForm.submit")
 
-          }, 100)
+
+          try {
+            e.stopPropagation();
+            console.log('isSubmitting:', isSubmitting);
+            if (isSubmitting) return false;
+
+            if (!captchaPassed) {
+              // console.log('🔄 Вызов execute...');
+              captchaToken = null;
+              window.smartCaptcha.execute(window.captchaWidget);
+
+              await new Promise((resolve, reject) => {
+                const checkToken = setInterval(() => {
+                  if (captchaToken) {
+                    clearInterval(checkToken);
+                    resolve();
+                  }
+                }, 100);
+
+                setTimeout(() => {
+                  clearInterval(checkToken);
+                  reject(new Error('Таймаут капчи'));
+                }, 100000);
+              });
+
+              // console.log('✅ Токен получен:', captchaToken);
+            } else {
+              // console.log('✅ Капча уже пройдена, пропускаем проверку');
+            }
+
+
+            if (captchaToken) {
+              // console.log(globalForm);
+              isSubmitting = true;
+              //   console.log('Отправка формы:', globalForm);
+
+              const dataRequest = globalForm.getAttribute('data-request');
+              const formData = new FormData(globalForm);
+              const formObject = {};
+              formData.forEach((value, key) => {
+                formObject[key] = value;
+              });
+              formObject['smart-token'] = captchaToken;
+
+              //formObject.captcha_token = captchaToken;
+
+              $.request('MainFunctions::' + dataRequest, {
+                data: formObject,
+                success: function(response) {
+                  // console.log('Ответ:', response);
+                  let hasErrors = false;
+
+                  for (let key in response) {
+                    if (key.startsWith('.')) {
+                      const className = key.substring(1);
+                      const element = document.querySelector('.' + className);
+
+                      if (element) {
+                        element.innerHTML = response[key];
+                        hasErrors = true;
+                        btnSubmit.disabled = false;
+                      }
+                    }
+                  }
+
+                  if (hasErrors) {
+                    isSubmitting = false;
+                    return;
+                  }
+
+                  clearForm();
+                  location.assign(linkTo_);
+                },
+                error: function(error) {
+                  // console.error('❌ Ошибка отправки:', error);
+                  isSubmitting = false;
+                }
+              });
+
+              return false;
+            }else{
+              return false;
+            }
+
+          } catch (error) {
+            // console.error('❌ Ошибка:', error);
+            // alert('Ошибка проверки капчи');
+            return false;
+          }
+
         }
       }
 
     } else {
       input.classList.add("error")
     }
-  }
+
+  })
 
   function clearForm () {
     const inputs = globalForm.querySelectorAll('input')
@@ -435,7 +532,6 @@ function globalFormInit (form, func_name, type) {
       return false
     }
   }
-
   function checkHoneypot() {
     const honeypots = form.querySelector('.modal-exter__input')
     return honeypots && honeypots?.value

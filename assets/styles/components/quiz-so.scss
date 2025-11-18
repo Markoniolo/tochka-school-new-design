@@ -92,7 +92,7 @@
 
 .quiz-so__caption {
   margin-bottom: 38px;
-  max-width: 696px;
+  max-width: 702px;
   width: 100%;
   font-weight: 600;
   font-size: 58px;
@@ -102,11 +102,11 @@
     margin-bottom: 25px;
     font-size: 27px;
     line-height: 100%;
-    max-width: 500px;
+    max-width: 520px;
   }
   @include media(xs) {
     margin: 0 auto 25px;
-    max-width: 306px;
+    max-width: 300px;
     text-align: center;
   }
 }

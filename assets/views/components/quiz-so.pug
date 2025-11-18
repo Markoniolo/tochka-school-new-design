@@ -1,9 +1,9 @@
 -
   const quizSoList = [
-    'Онлайн-уроки вживую + доступ к записям и конспектам',
-    'Тьютор проверяет домашние задания и даёт обратную связь',
-    'Куратор помогает с аттестациями и организацией',
-    'Родители видят прогресс на удобной платформе',
+    'Все предметы — как в обычной школе',
+    'Личный тьютор проверяет задания и даёт обратную связь',
+    'Аттестация онлайн в виде теста',
+    'Вы видите весь прогресс на удобной платформе',
   ]
 
 form.quiz-so(data-docex="thanks-so-quiz" data-element="quiz-new")
@@ -15,10 +15,9 @@ form.quiz-so(data-docex="thanks-so-quiz" data-element="quiz-new")
         picture.quiz-so__picture
           source(srcset=staticImg('quiz-so/decor_tablet.svg') media="(max-width: 1339px)")
           img.quiz-so__image(src=staticImg('quiz-so/decor.svg') alt='')
-        .quiz-so__caption Школа, где дети учатся с интересом
+        .quiz-so__caption Школьное образование дома. Онлайн
         .quiz-so__text.
-          Ваш ребёнок учится дома в комфортном ритме: 2–4 урока в день,
-          опытные учителя и индивидуальные тьюторы
+          Комфортная нагрузка 3-5 уроков в день, опытные учителя и индивидуальный подход
         ul.quiz-so__list
           each item in quizSoList
             li.quiz-so__item= item

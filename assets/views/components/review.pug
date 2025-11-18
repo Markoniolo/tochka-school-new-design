@@ -1,0 +1,192 @@
+mixin review(caption, mod)
+  .review
+    .review__cont.cont
+      .review__mob-bar.review__mob-bar_thanks
+        .review__mob-bar-value.review__mob-bar-value_thanks
+      .review__mob-area.review__mob-area_thanks
+        .review__mob-text Шаг 3/3 Готово!
+      h1.review__caption!= caption
+      .review__caption.review__caption_thanks-1 Спасибо, что поделились опытом!
+      .review__caption.review__caption_thanks-2 Спасибо за ваш отзыв!
+      .review__headline-thanks-1 Дайте вашему мнению реальную силу
+      .review__text-thanks-2
+        span Каждое мнение дает нам стимул двигаться дальше и развиваться.
+        span Мы будем продолжать работать над качеством наших курсов!
+      .review__steps
+        each item, index in ['Анкета','Оценка','Готово']
+          .review__step(class = index === 0 ? 'active' : false)
+            .review__step-number= index+1
+            .review__step-text= item
+      form.review__form(data-request="onSendReview")
+        input.review__exter-input(type="hidden")
+        .review__slide.active
+          .review__wrap
+            .review__left
+              .review__mob-steps
+                .review__mob-bar
+                  .review__mob-bar-value.review__mob-bar-value_1
+                .review__mob-area
+                  .review__mob-text Шаг 1/3 Анкета
+              .review__title Ваши данные
+              .review__box
+                .review__note Кем вы являетесь:
+                .review__role
+                  each item in [{ text: 'Родитель', value: 'parent' }, { text: 'Ученик', value: 'teacher' }]
+                    label.review__role-label
+                      input.review__role-input(type="radio" value=item.value name='parent_or_st')
+                      .review__role-view
+                      .review__role-text= item.text
+              .review__box
+                .review__note Выберите класс:
+                .review__select.review__select_class
+                  .review__select-top
+                    .review__select-top-text Все классы
+                  .review__select-wrap
+                    .review__select-close
+                    .review__select-headline Выберите класс
+                    .review__select-list
+                      each item, index in ['Дошкольник','1 класс','2 класс','3 класс','4 класс','5 класс','6 класс','7 класс','8 класс','9 класс','10 класс','11 класс']
+                        label.review__select-item
+                          input.review__select-input.offer-tile__filter-input_class(type='radio' name='grade' value=`class-id-${index + 1}` data-text=item)
+                          .review__select-view= `${item}`
+              .review__box
+                .review__note Имя ученика:
+                input.review__input.input-white(placeholder='Введите имя' type='text' name='st_name')
+              .review__box
+                .review__note Фамилия ученика:
+                input.review__input.input-white(placeholder='Введите фамилию' type='text' name='st_surname')
+              .review__box
+                .review__note Ваш логин в Точке Знаний:
+                .review__label
+                  input.review__input.input-white(placeholder='Введите логин' type='email' name='email')
+                  .review__hint
+                    .review__hint-text E-mail, который вы использовали при регистрации на платформе
+              button.review__button.btn-orange(type='button') Далее
+            .review__right
+              .review__sidebar
+                .review__sidebar-text-box
+                  .review__sidebar-text Заполните, пожалуйста, ваши личные данные. Они нам нужны для формирования отзыва.
+                  .review__sidebar-text Не переживайте, эти данные останутся только у&nbsp;нас.
+                .review__sidebar-author
+                  .review__sidebar-box
+                    .review__sidebar-note Основатель школы «Точка Знаний»
+                    .review__sidebar-name Андрей Александрович Шелудько
+                  img.review__sidebar-image(src=staticImg('review/author.png') alt='')
+        .review__slide
+          .review__wrap
+            .review__left
+              .review__mob-steps
+                .review__mob-bar
+                  .review__mob-bar-value.review__mob-bar-value_2
+                .review__mob-area
+                  .review__mob-text Шаг 2/3 Анкета
+                  button.review__mob-back(type="button") Вернуться назад
+              if mod === 'teacher'
+                .review__title Оценка преподавателя
+              else
+                .review__title Оценка тьютора
+              .review__box
+                if mod === 'teacher'
+                  .review__note Ваш преподаватель:
+                else
+                  .review__note Ваш тьютор:
+                .review__select(class = mod === 'teacher' ? 'review__select_teacher' : 'review__select_tutor')
+                  .review__select-top
+                    if mod === 'teacher'
+                      .review__select-top-text Выберите преподавателя
+                    else
+                      .review__select-top-text Выберите тьютора
+                    input.review__select-search(placeholder='Начните писать фамилию' type='text')
+                  .review__select-wrap(data-role="review-simplebar")
+                    .review__select-close
+                    if mod === 'teacher'
+                      .review__select-headline Выберите преподавателя
+                    else
+                      .review__select-headline Выберите тьютора
+                    .review__select-list
+                      each item, index in ['Андреева Дина','Скороходова Екатерина','Чамян Яна','Бочкор Ирина','Иванов Игорь','Матвеева Елена','Попов Илья','Чепрасова Наталья','Орестова Нина','Баев Арсений']
+                        label.review__select-item
+                          input.review__select-input.offer-tile__filter-input_class(type='radio' name='tutor' value=`class-id-${index + 1}` data-text=item data-image = mod === 'teacher' ? 'https://cms-dev.tochka-school.ru/storage/app/media/Stranica_kursov/Foto_shapka_kursa_blok/Shevchenko_shapka_kursa1.webp' : false)
+                          .review__select-view= `${item}`
+                            if mod === 'teacher'
+                              img.review__select-ticket(src=staticImg('all-courses/teacher.png') alt='')
+              .review__box
+                .review__note Выберите предмет:
+                .review__select.review__select_subject
+                  .review__select-top
+                    .review__select-top-text Не выбрано
+                  .review__select-wrap(data-role="review-simplebar")
+                    .review__select-close
+                    .review__select-headline Выберите предмет:
+                    .review__select-list
+                      each item, index in ['Математика','Русский язык','Литература','Биология','История','География','Английский язык','Музыка','Физкультура','ИЗО и технология','Обществознание','Физика','Химия','Информатика','Окружающий мир','Литературное чтение']
+                        label.review__select-item
+                          input.review__select-input.offer-tile__filter-input_class(type='radio' name='subject' value=`subject-id-${index + 1}` data-text=item)
+                          .review__select-view= `${item}`
+                            img.review__select-ticket(src=staticImg('all-courses/all-courses-icon.svg') alt='')
+              .review__box
+                input.review__rate-hidden(type='hidden' name='rate')
+                if mod === 'teacher'
+                  .review__note Оцените преподавателя:
+                else
+                  .review__note Оцените тьютора:
+                .review__rate-desktop
+                  each item in [1,2,3,4,5,6,7,8,9,10]
+                    label.review__rate-desktop-label
+                      input.review__rate-desktop-input(type='radio' value=item name='rate-desktop')
+                      .review__rate-desktop-input-view= item
+                label.review__rate-mobile
+                  input.review__rate-range(type="range" min="1" max="10" step="1" value="5")
+                  .review__rate-range-value ?
+                  .review__rate-range-bar
+                .review__rate-bottom
+                  .review__rate-note Плохо :(
+                  .review__rate-note Превосходно!
+            .review__right
+              .review__sidebar-teacher
+                img.review__sidebar-teacher-image(src=staticImg('all-courses/teacher.png') alt='')
+                .review__sidebar-teacher-name Гагаркина Дарья Андреевна
+              .review__sidebar
+                .review__sidebar-text-box
+                  if mod === "teacher"
+                    .review__sidebar-text Здесь, следует выбрать вашего преподавателя и оценить его :)
+                  else
+                    .review__sidebar-text Здесь, следует выбрать вашего тьютора и&nbsp;оценить его :)
+                .review__sidebar-author
+                  .review__sidebar-box
+                    .review__sidebar-note Основатель школы «Точка Знаний»
+                    .review__sidebar-name Андрей Александрович Шелудько
+                  img.review__sidebar-image(src=staticImg('review/author.png') alt='')
+          .review__box
+            .review__note Опишите впечатления:
+            textarea.review__textarea(placeholder='Введите текст' name='content')
+          .review__agree
+            label.review__agree-box
+              input.review__agree-input(name="if_agree_policy" type='checkbox')
+              .review__agree-input-view
+              .review__agree-text Даю согласие на публикацию моего отзыва на веб-сайте tochka-school.ru
+            .review__agree-note Это не обязательно
+          .review__buttons
+            button.review__back.btn-border-orange(type="button") Назад
+            button.review__submit.btn-orange Отправить отзыв
+        .review__slide.review__slide_thanks-1
+          .review__thanks-title Ваш отзыв — ориентир для других родителей.
+          .review__thanks-box
+            .review__thanks-text Многие родители сейчас ищут честные отзывы, чтобы сделать выбор для своего ребенка.
+            .review__thanks-text Ваш отзыв на Отзовике станет для них весомым аргументом, который сэкономит время, деньги и нервы.
+          .review__thanks-headline.review__thanks-headline_1 Пожалуйста, скопируйте свой отзыв и добавьте на Отзовик.
+          .review__thanks-headline.review__thanks-headline_2 Это займёт 2 минуты. Пусть ваш голос поможет с выбором и станет ориентиром.
+          .review__thanks-copy-box
+            button.review__thanks-copy(type="button") Скопировать отзыв
+          picture.review__thanks-picture
+            source(srcset=staticImg('review/site_tablet.png') media="(max-width: 1359px)")
+            img.review__thanks-image(src=staticImg('review/site.png') alt='')
+          .review__thanks-site-box
+            .review__thanks-site-inner
+              a.review__thanks-site-button.btn-orange(href='#') Перейти в отзовик
+          .review__thanks-headline.review__thanks-headline_3 Оставьте отзыв и помогите другим родителям!
+        .review__slide.review__slide_thanks-2
+          .review__thanks-2-title Если вы хотите оставить отзыв на других учителей или тьюторов, нажмите на&nbsp;кнопки ниже
+          .review__thanks-2-btns
+            a.review__thanks-2-btn.btn-orange(href='#') Оставить отзыв об учителе
+            a.review__thanks-2-btn.btn-orange(href='#') Оставить отзыв о тьюторе

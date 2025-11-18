@@ -1,0 +1,22 @@
+include ../_variables
+include ../components/_layout/_connect-style
+include ../components/_layout/_title
+
+doctype html
+html(lang='ru')
+  head
+    include ../components/_layout/_head
+    +title('Форма отзывов тьютор')
+  body
+    .sticky-header.sticky-header_no-margin
+      include ../components/_layout/header-new
+      +header-new('no-btn')
+    main.wrapper
+      include ../components/review
+      +review('Пожалуйста, оставьте отзыв о&nbsp;вашем&nbsp;тьюторе')
+    include ../components/_layout/footer-quiz
+    include ../components/_layout/scripts
+
+
+
+

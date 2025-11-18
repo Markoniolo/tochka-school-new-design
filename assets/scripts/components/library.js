@@ -14,6 +14,14 @@ function libraryCapInit () {
   const filterClassBox = libraryCap.querySelector(".library-cap__filter.library-cap__filter_class")
   const tile = document.querySelector('.library-tile')
 
+  // new
+  const title = document.querySelector('.library-tile__title')
+  const urlFilter = libraryCap.getAttribute('data-item-h')
+  const h1Filter = libraryCap.getAttribute('data-hname')
+  const metaName = libraryCap.getAttribute('data-meta_name')
+  const metaDescription = libraryCap.getAttribute('data-meta_descr')
+  // end new
+
   const observer = new MutationObserver(function() {
     const wrap = openers[1].nextElementSibling
     const items = wrap.querySelectorAll("[data-element='library-cap-filter-input']")
@@ -89,18 +97,26 @@ function libraryCapInit () {
     const grades_items = grades_wrap.querySelectorAll(["input:checked"])
     let grades_result = ''
     let grade_first = 0
+    let grade_h1_part= '' // new
+    let grade_item = '' // new
     grades_items.forEach((item, i) => {
       if (i > 0) grades_result += '|'
       if (grade_first == 0) grade_first = item.value
+      if (grade_item === '') grade_item = item.getAttribute('data-item') // new
+      if (grade_h1_part === '') grade_h1_part = item.getAttribute('data-hname') // new
       grades_result += item.value
     })
     let subjects_result = ''
+    let subject_item = '' // new
+    let subject_h1_part= '' // new
     try{
       const subjects_wrap = subjects.nextElementSibling
       const subjects_items = subjects_wrap.querySelectorAll(["input:checked"])
       subjects_items.forEach((item, i) => {
         if (i > 0) subjects_result += '|'
         subjects_result += item.value
+        if (subject_item === '') subject_item = item.getAttribute('data-item') // new
+        if (subject_h1_part === '') subject_h1_part = item.getAttribute('data-hname') // new
       })
     }catch(e){}
     let utm_f = libraryCap.getAttribute('data-utm');
@@ -113,9 +129,64 @@ function libraryCapInit () {
     //   }
     // })
     if (grade_first > 0){
-      let url = new URL(window.location.href)
-      url.searchParams.set('gr', grade_first);
+      // let url = new URL(window.location.href)
+      // url.searchParams.set('gr', grade_first);
+
+      // new
+      let url = urlFilter
+      if (subject_item !== "") {
+        url = url + '/' + subject_item
+      }
+      if (grade_item !== "") {
+        if (subject_item !== "") {
+        }else{
+          url = url + '/all'
+        }
+        url = url + '/' + grade_item
+      }
+
+      if (grade_item !== "") {
+      }else{
+        if (subject_item !== "") {
+        }else{
+          url = url + '/all'
+        }
+        url = url + '/all'
+      }
+
+      url = url + utm_f
+      // end new
+
       history.replaceState(null, "", url.toString())
+
+      // new
+      if (urlFilter && h1Filter && metaName && metaDescription) {
+        let new_h1 = 'Курсы'
+        let new_title = metaName
+        let new_description = metaDescription
+
+        if (subject_h1_part !== "") {
+          new_h1 = new_h1 + ' по '+ subject_h1_part
+        }else{
+        }
+        if (grade_h1_part !== "") {
+          new_h1 = new_h1 + ' для ' + grade_h1_part
+        }else{
+        }
+        if (new_h1 === 'Курсы' || new_h1 === 'Семейное онлайн-обучение'){
+          new_h1 = h1Filter
+        }
+
+        title.innerHTML = new_h1
+        document.title = new_title
+        const meta= document.getElementsByTagName("meta")
+        for (let i= 0; i < meta.length; i++) {
+          if (meta[i].name.toLowerCase() === "description") {
+            meta[i].content = new_description
+          }
+        }
+      }
+      // end new
     }
     initPosters()
     // }
