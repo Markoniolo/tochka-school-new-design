@@ -32,7 +32,7 @@ function libraryCapInit () {
   initTabs()
 
   const observerPoster = new MutationObserver(function() {
-    initPosters()
+    initLibraryPosters()
     initTabs()
   })
 
@@ -173,8 +173,12 @@ function libraryCapInit () {
           }
         }
       }
+    } else if (urlFilter) {
+      let url = urlFilter
+      url = url + utm_f
+      history.replaceState(null, "", url.toString())
     }
-    initPosters()
+    initLibraryPosters()
     // }
 
   }
@@ -287,18 +291,7 @@ function libraryCapInit () {
     closeFilter(opener)
   }
 
-  initPosters()
-
-  function initPosters () {
-    const videoBoxes = document.querySelectorAll('.library-tile__video-box')
-    for (let i = 0; i < videoBoxes.length; i++) {
-      videoBoxes[i].addEventListener('click', function () {
-        videoBoxes[i].classList.add('active')
-        const iframe = videoBoxes[i].querySelector('iframe')
-        iframe.src = iframe.src.replace('autoplay=0', 'autoplay=1')
-      })
-    }
-  }
+  initLibraryPosters()
 
   function setError () {
     openers[0].parentElement.classList.add('library-cap__filter_error')
@@ -334,6 +327,17 @@ function libraryCapInit () {
       }
     }
   }
+}
 
+initLibraryPosters()
 
+function initLibraryPosters () {
+  const videoBoxes = document.querySelectorAll('.library-tile__video-box')
+  for (let i = 0; i < videoBoxes.length; i++) {
+    videoBoxes[i].addEventListener('click', function () {
+      videoBoxes[i].classList.add('active')
+      const iframe = videoBoxes[i].querySelector('iframe')
+      iframe.src = iframe.src.replace('autoplay=0', 'autoplay=1')
+    })
+  }
 }
