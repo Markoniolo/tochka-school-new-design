@@ -10,17 +10,16 @@ function libraryCapInit () {
   const openers = libraryCap.querySelectorAll("[data-element='library-cap-filter-opener']")
   const grades = libraryCap.querySelector("[data-ftype='class_select']")
   const subjects = libraryCap.querySelector("[data-ftype='class_subjects']")
+  const filterSubjectBox = libraryCap.querySelector(".library-cap__filter.library-cap__filter_subject")
   const filterSubjectsList = libraryCap.querySelector(".library-cap__filter-list.class_subjects")
   const filterClassBox = libraryCap.querySelector(".library-cap__filter.library-cap__filter_class")
   const tile = document.querySelector('.library-tile')
 
-  // new
   const title = document.querySelector('.library-tile__title')
   const urlFilter = libraryCap.getAttribute('data-item-h')
   const h1Filter = libraryCap.getAttribute('data-hname')
   const metaName = libraryCap.getAttribute('data-meta_name')
   const metaDescription = libraryCap.getAttribute('data-meta_descr')
-  // end new
 
   const observer = new MutationObserver(function() {
     const wrap = openers[1].nextElementSibling
@@ -49,6 +48,7 @@ function libraryCapInit () {
       const itemChecked = wrap.querySelector(["input:checked"])
       if (!itemChecked) {
         valid = false
+        openers[i].classList.add('error')
         setError()
       }
     }
@@ -80,6 +80,7 @@ function libraryCapInit () {
   if (reset) reset.addEventListener('click', resetFilters)
 
   function resetFilters () {
+    filterSubjectBox.classList.add('disable')
     for (let i = 0; i < openers.length; i++) {
       const wrap = openers[i].nextElementSibling
       const items = wrap.querySelectorAll("[data-element='library-cap-filter-input']")
@@ -97,71 +98,57 @@ function libraryCapInit () {
     const grades_items = grades_wrap.querySelectorAll(["input:checked"])
     let grades_result = ''
     let grade_first = 0
-    let grade_h1_part= '' // new
-    let grade_item = '' // new
+    let grade_h1_part= ''
+    let grade_item = ''
     grades_items.forEach((item, i) => {
       if (i > 0) grades_result += '|'
       if (grade_first == 0) grade_first = item.value
-      if (grade_item === '') grade_item = item.getAttribute('data-item') // new
-      if (grade_h1_part === '') grade_h1_part = item.getAttribute('data-hname') // new
+      if (grade_item === '') grade_item = item.getAttribute('data-item')
+      if (grade_h1_part === '') grade_h1_part = item.getAttribute('data-hname')
       grades_result += item.value
     })
     let subjects_result = ''
-    let subject_item = '' // new
-    let subject_h1_part= '' // new
+    let subject_item = ''
+    let subject_h1_part= ''
     try{
       const subjects_wrap = subjects.nextElementSibling
       const subjects_items = subjects_wrap.querySelectorAll(["input:checked"])
       subjects_items.forEach((item, i) => {
         if (i > 0) subjects_result += '|'
         subjects_result += item.value
-        if (subject_item === '') subject_item = item.getAttribute('data-item') // new
-        if (subject_h1_part === '') subject_h1_part = item.getAttribute('data-hname') // new
+        if (subject_item === '') subject_item = item.getAttribute('data-item')
+        if (subject_h1_part === '') subject_h1_part = item.getAttribute('data-hname')
       })
     }catch(e){}
     let utm_f = libraryCap.getAttribute('data-utm');
-    // $('.filtered_elements').html("<div class='tile-loader'></div>");
-    // $.request('VideoCourseFunctions::onPaginateAllCourses', {
-    //   data: {
-    //     'grade': grades_result,
-    //     'subject': subjects_result,
-    //     'utm_t': utm_f
-    //   }
-    // })
-    if (grade_first > 0){
+    $('.filtered_elements').html("<div class='tile-loader'></div>");
+    $.request('VideoCourseFunctions::onPaginateAllCourses', {
+      data: {
+        'grade': grades_result,
+        'subject': subjects_result,
+        'utm_t': utm_f
+      }
+    })
+    if (grade_first > 0 && urlFilter){
       // let url = new URL(window.location.href)
       // url.searchParams.set('gr', grade_first);
 
-      // new
       let url = urlFilter
-      if (subject_item !== "") {
-        url = url + '/' + subject_item
-      }
       if (grade_item !== "") {
-        if (subject_item !== "") {
-        }else{
-          url = url + '/all'
-        }
         url = url + '/' + grade_item
+        if (subject_item !== "") {
+          url = url + '/' + subject_item
+        }
+
       }
 
-      if (grade_item !== "") {
-      }else{
-        if (subject_item !== "") {
-        }else{
-          url = url + '/all'
-        }
-        url = url + '/all'
-      }
 
       url = url + utm_f
-      // end new
 
       history.replaceState(null, "", url.toString())
 
-      // new
       if (urlFilter && h1Filter && metaName && metaDescription) {
-        let new_h1 = 'Курсы'
+        let new_h1 = 'Уроки'
         let new_title = metaName
         let new_description = metaDescription
 
@@ -173,7 +160,7 @@ function libraryCapInit () {
           new_h1 = new_h1 + ' для ' + grade_h1_part
         }else{
         }
-        if (new_h1 === 'Курсы' || new_h1 === 'Семейное онлайн-обучение'){
+        if (new_h1 === 'Уроки' ){
           new_h1 = h1Filter
         }
 
@@ -186,10 +173,10 @@ function libraryCapInit () {
           }
         }
       }
-      // end new
     }
     initPosters()
     // }
+
   }
 
   function scrollToTile () {
@@ -199,11 +186,11 @@ function libraryCapInit () {
     const theElement = document.getElementById('library-tile')
     let offset
     if (window.innerWidth < 744) {
-      offset = 100 + bannerHeight
+      offset = 84 + bannerHeight
     } else if (window.innerWidth < 1200) {
-      offset = 120 + bannerHeight
+      offset = 102 + bannerHeight
     } else {
-      offset = 200 + bannerHeight
+      offset = 120 + bannerHeight
     }
     window.scrollTo(0, theElement.getBoundingClientRect().top + scrollY - offset)
   }
@@ -228,7 +215,6 @@ function libraryCapInit () {
     items.forEach((item) => {
       item.addEventListener('change', () => updateFilter(openers[i], wrap))
     })
-
     if (i === 1) {
       window.onload = function() {
         observer.observe(wrap, config)
@@ -274,7 +260,8 @@ function libraryCapInit () {
     resetError()
     if(opener.getAttribute('data-ftype') === 'class_select') {
       filterSubjectsList.innerHTML = "<div class='tile-loader-box'><div class='tile-loader'></div></div>";
-      // makeFiltration()
+      //    makeFiltration()
+      updateFilter(openers[1], openers[1].nextElementSibling, true)
       if (!noFiltration) updateFilter(openers[1], openers[1].nextElementSibling, true)
     } else {
       if (!noFiltration) makeFiltration()
@@ -347,4 +334,6 @@ function libraryCapInit () {
       }
     }
   }
+
+
 }

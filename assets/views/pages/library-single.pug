@@ -6,22 +6,16 @@ doctype html
 html(lang='ru')
   head
     include ../components/_layout/_head
-    +title('Библиотека 500+ уроков')
+    +title('Библиотека Детальная страница')
   body
     .sticky-header
       include ../components/_layout/header
       +header
     main.wrapper
       block body
-        include ../components/library-cap
-        include ../components/library-discount
-        include ../components/library-reg
         include ../components/library-tile
-        +library-tile
-        include ../components/library-why
-        include ../components/library-informer
+        +library-tile('single')
         include ../components/library-consult
-        include ../components/library-popup
     include ../components/modals/modal-order-new
     include ../components/_layout/footer
     include ../components/_layout/scripts
