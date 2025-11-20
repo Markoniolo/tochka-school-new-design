@@ -64,7 +64,7 @@ function reviewInit() {
     }
   }
 
-  inputRange.addEventListener('change', inputRangeChange)
+  inputRange.addEventListener('input', inputRangeChange)
 
   function inputRangeChange () {
     inputRangeValue.innerHTML = inputRange.value
@@ -221,11 +221,10 @@ function reviewInit() {
             }
 
             if (hasErrors) {
-              isSubmitting = false;
-              return;
+              isSubmitting = false
+            } else {
+              afterSuccessSubmit()
             }
-
-            afterSuccessSubmit()
           },
           error: function(error) {
             // console.error('❌ Ошибка отправки:', error);

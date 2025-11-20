@@ -3261,54 +3261,59 @@ function libraryCapInit () {
         'utm_t': utm_f
       }
     })
-    if (grade_first > 0 && urlFilter){
-      // let url = new URL(window.location.href)
-      // url.searchParams.set('gr', grade_first);
-
+    if (urlFilter ) {
       let url = urlFilter
-      if (grade_item !== "") {
-        url = url + '/' + grade_item
-        if (subject_item !== "") {
-          url = url + '/' + subject_item
+      let new_h1 = 'Видеоуроки'
+      let new_title = new_h1
+      let new_description = 'Бесплатные видеоуроки '
+      let base_subject = ''
+      let base_grade = ''
+
+      if (grade_first > 0 ){
+        // let url = new URL(window.location.href)
+        // url.searchParams.set('gr', grade_first);
+
+        if (grade_item !== "") {
+          url = url + '/' + grade_item
+          if (subject_item !== "") {
+            url = url + '/' + subject_item
+          }
+
         }
 
-      }
-
-
-      url = url + utm_f
-
-      history.replaceState(null, "", url.toString())
-
-      if (urlFilter && h1Filter && metaName && metaDescription) {
-        let new_h1 = 'Уроки'
-        let new_title = metaName
-        let new_description = metaDescription
 
         if (subject_h1_part !== "") {
-          new_h1 = new_h1 + ' по '+ subject_h1_part
+          base_subject = ' по '+ subject_h1_part
+          new_h1 = new_h1 + base_subject
+          new_description = new_description + base_subject
         }else{
         }
         if (grade_h1_part !== "") {
-          new_h1 = new_h1 + ' для ' + grade_h1_part
+          base_grade = ' для ' + grade_h1_part
+          new_h1 = new_h1 + base_grade
+          new_description = new_description + base_grade
         }else{
         }
-        if (new_h1 === 'Уроки' ){
-          new_h1 = h1Filter
-        }
-
-        title.innerHTML = new_h1
-        document.title = new_title
-        const meta= document.getElementsByTagName("meta")
-        for (let i= 0; i < meta.length; i++) {
-          if (meta[i].name.toLowerCase() === "description") {
-            meta[i].content = new_description
-          }
-        }
+        try{
+          title.innerHTML = new_h1
+        }catch(lib_er){}
       }
-    } else if (urlFilter) {
-      let url = urlFilter
+
       url = url + utm_f
       history.replaceState(null, "", url.toString())
+
+      new_title = new_h1 + ' в онлайн-школе «Точка Знаний»'
+      new_description = new_description + ' в одном месте. Пошаговые объяснения, разбор сложных тем и примеры решения. Смотрите уроки онлайн в удобном формате!'
+      console.log(new_title);
+
+
+      document.title = new_title
+      const meta= document.getElementsByTagName("meta")
+      for (let i= 0; i < meta.length; i++) {
+        if (meta[i].name.toLowerCase() === "description") {
+          meta[i].content = new_description
+        }
+      }
     }
     initLibraryPosters()
     // }
@@ -3479,6 +3484,7 @@ function initLibraryPosters () {
       iframe.src = iframe.src.replace('autoplay=0', 'autoplay=1')
     })
   }
+
 }
 
 const lottieAnimations = document.querySelectorAll('[data-path]')
@@ -5221,7 +5227,7 @@ function reviewInit() {
     }
   }
 
-  inputRange.addEventListener('change', inputRangeChange)
+  inputRange.addEventListener('input', inputRangeChange)
 
   function inputRangeChange () {
     inputRangeValue.innerHTML = inputRange.value
@@ -5378,11 +5384,10 @@ function reviewInit() {
             }
 
             if (hasErrors) {
-              isSubmitting = false;
-              return;
+              isSubmitting = false
+            } else {
+              afterSuccessSubmit()
             }
-
-            afterSuccessSubmit()
           },
           error: function(error) {
             // console.error('❌ Ошибка отправки:', error);
