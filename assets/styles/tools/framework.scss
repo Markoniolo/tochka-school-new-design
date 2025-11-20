@@ -26,6 +26,11 @@
   &.hide {
     display: none;
   }
+  &.mob-hide {
+    @include media(xs) {
+      display: none;
+    }
+  }
   &_no-margin {
     margin-bottom: 0;
   }

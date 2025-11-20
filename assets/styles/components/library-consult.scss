@@ -1,8 +1,10 @@
 .library-consult {
+  margin-top: 80px;
   padding-bottom: 53px;
   @include media(lg) {
     padding-bottom: 0;
     margin-bottom: 40px;
+    margin-top: 40px;
   }
   & + .pre-reviews, & + .reviews {
     padding-top: 70px;

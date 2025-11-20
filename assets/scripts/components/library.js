@@ -20,6 +20,8 @@ function libraryCapInit () {
   const h1Filter = libraryCap.getAttribute('data-hname')
   const metaName = libraryCap.getAttribute('data-meta_name')
   const metaDescription = libraryCap.getAttribute('data-meta_descr')
+  const stickyHeader = document.querySelector('.sticky-header')
+  const body = document.querySelector('body')
 
   const observer = new MutationObserver(function() {
     const wrap = openers[1].nextElementSibling
@@ -243,6 +245,9 @@ function libraryCapInit () {
         const oldFilter = libraryCap.querySelector(".library-cap__filter.open")
         if (oldFilter) oldFilter.classList.remove('open')
         if (filter) filter.classList.add('open')
+
+        stickyHeader.classList.add('mob-hide')
+        body.classList.add('no-scroll-mob')
       }
     }
   }
@@ -252,12 +257,16 @@ function libraryCapInit () {
   function closeAllFilters () {
     const oldOpen = libraryCap.querySelector(".library-cap__filter-top.active")
     if (oldOpen) oldOpen.classList.remove('active')
+    stickyHeader.classList.remove('mob-hide')
+    body.classList.remove('no-scroll-mob')
   }
 
   function closeFilter (opener) {
     opener.classList.remove('active')
     const filter = opener.parentElement
     if (filter) filter.classList.remove('open')
+    stickyHeader.classList.remove('mob-hide')
+    body.classList.remove('no-scroll-mob')
   }
 
   async function updateFilter (opener, wrap, noScroll, noFiltration) {

@@ -53,7 +53,6 @@ function reviewInit() {
   nameInput.addEventListener('input', () => nameInput.classList.remove('review-error'))
   surnameInput.addEventListener('input', () => surnameInput.classList.remove('review-error'))
   emailInput.addEventListener('input', () => emailInput.classList.remove('review-error'))
-  textarea.addEventListener('input', () => textarea.classList.remove('review-error'))
 
   function validateEmail (email) {
     if (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.value)) {
@@ -86,12 +85,14 @@ function reviewInit() {
   }
 
   selectSearch.addEventListener('input', selectSort)
+  selectSearch.addEventListener('input', () => openSelect(selectSearch.closest('.review__select-top')))
 
   function selectSort () {
-    const searchString = this.value.toLowerCase()
+    const searchString = selectSearch.value.toLowerCase()
     for (let i = 0; i < searchLabels.length; i++) {
       const text = searchLabels[i].querySelector('.review__select-input').getAttribute('data-text').toLowerCase()
-      if (text.startsWith(searchString)) {
+      const words = text.split(' ')
+      if (words[0].startsWith(searchString) || words[1].startsWith(searchString) || text === searchString) {
         searchLabels[i].style.display = 'block'
       } else {
         searchLabels[i].style.display = 'none'
@@ -277,10 +278,6 @@ function reviewInit() {
 
   function validateSecondSlide () {
     let valid = true
-    if (!textarea.value) {
-      valid = false
-      textarea.classList.add('review-error')
-    }
     if (!inputRate.value) {
       valid = false
       rateDesktop.classList.add('review-error')
@@ -316,7 +313,7 @@ function reviewInit() {
   }
 
   for (let i = 0; i < selectTops.length; i += 1) {
-    selectTops[i].addEventListener('click', openSelect)
+    selectTops[i].addEventListener('click', () => openSelect(selectTops[i]))
     const inputs = selectTops[i].parentElement.querySelectorAll('.review__select-input')
     inputs.forEach(input => {
       input.addEventListener('change', () => setSelectValue(selectTops[i]))
@@ -334,20 +331,20 @@ function reviewInit() {
     body.classList.remove('no-scroll-mob')
   })
 
-  function openSelect(e) {
-    if (!this.classList.contains('active')) {
+  function openSelect(that) {
+    if (!that.classList.contains('active')) {
       const activeSelect = review.querySelector('.review__select.active')
       if (activeSelect) activeSelect.classList.remove('active')
       const activeSelectTop = review.querySelector('.review__select-top.active')
       if (activeSelectTop) activeSelectTop.classList.remove('active')
     }
 
-    if (this.parentElement.classList.contains('review__select_tutor') || this.parentElement.classList.contains('review__select_teacher')) {
-      this.classList.add('active')
-      this.parentElement.classList.add('active')
+    if (that.parentElement.classList.contains('review__select_tutor') || that.parentElement.classList.contains('review__select_teacher')) {
+      that.classList.add('active')
+      that.parentElement.classList.add('active')
     } else {
-      this.classList.toggle('active')
-      this.parentElement.classList.toggle('active')
+      that.classList.toggle('active')
+      that.parentElement.classList.toggle('active')
     }
     body.classList.add('no-scroll-mob')
   }
@@ -364,7 +361,10 @@ function reviewInit() {
     const text = selectTop.parentElement.querySelector('input:checked').getAttribute('data-text')
     if (selectText) selectText.innerHTML = text
     const selectSearch = selectTop.querySelector('.review__select-search')
-    if (selectSearch) selectSearch.value = text
+    if (selectSearch) {
+      selectSearch.value = text
+      selectSort()
+    }
     if (selectTop.parentElement.classList.contains('review__select_teacher')) {
       const name = review.querySelector('.review__sidebar-teacher-name')
       if (name) name.innerHTML = text
