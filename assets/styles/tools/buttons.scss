@@ -310,6 +310,11 @@
     right: 10px;
     bottom: 10px;
   }
+  &.active-cake {
+    @include media(xs) {
+      bottom: 80px;
+    }
+  }
   &.active-promo {
     bottom: 210px;
     @include media(lg) {

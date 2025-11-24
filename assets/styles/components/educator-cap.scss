@@ -1,0 +1,108 @@
+.educator-cap {
+  @include media(lg) {
+    @include bg-icon('educator-cap/bg_tablet.png');
+    background-size: cover;
+  }
+  @include media(xs) {
+    @include bg-icon('educator-cap/bg_mob.png');
+    background-size: cover;
+  }
+}
+
+.educator-cap__area {
+  position: relative;
+  border-radius: 31px;
+  @include bg-icon('educator-cap/bg.png');
+  background-size: cover;
+  padding: 54px 70px;
+  @include media(lg) {
+    background: unset;
+  }
+}
+
+.educator-cap__circle {
+  position: absolute;
+  border-radius: 50%;
+  &_1 {
+    top: 357px;
+    left: 493px;
+    background: #F2C45B;
+    width: 216px;
+    height: 216px;
+  }
+  &_2 {
+    top: 281px;
+    left: 583px;
+    background: #68ccea;
+    width: 48px;
+    height: 48px;
+  }
+  &_3 {
+    top: 245px;
+    left: 657px;
+    background: #f37e60;
+    width: 111px;
+    height: 111px;
+  }
+}
+
+.educator-cap__caption {
+  margin-bottom: 40px;
+  max-width: 792px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 112%;
+  color: #003c56;
+}
+
+.educator-cap__tags {
+  display: flex;
+  gap: 16px;
+  @include media(lg) {
+    gap: 10px;
+  }
+}
+
+.educator-cap__tag {
+  border-radius: 33px;
+  padding: 8px 27px;
+  background: rgba(102, 131, 194, 0.08);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  color: #6683c2;
+}
+
+.educator-cap__experience {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 100%;
+  color: #003c56;
+}
+
+.educator-cap__note {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  color: #003c56;
+}
+
+.educator-cap__picture {
+  position: relative;
+  &::before {
+    content: '';
+    width: 513px;
+    height: 513px;
+    background: #6683c2;
+    position: absolute;
+    top: 166px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+  }
+}
+
+.educator-cap__image {
+
+}

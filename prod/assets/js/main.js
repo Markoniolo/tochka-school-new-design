@@ -765,9 +765,10 @@ if (cake) checkCake()
 
 function checkCake() {
   const cakeButton = cake.querySelector('.cake__button')
-
+  const btnScrollToTop = document.querySelector('.btn-scroll-to-top')
   if (!getCookie('cakes_policy')) {
     cake.classList.add('cake_active')
+    if (btnScrollToTop) btnScrollToTop.classList.add('active-cake')
 
     cakeButton.addEventListener('click', function () {
       setCake('cakes_policy', 'true', 365)
@@ -779,6 +780,7 @@ function checkCake() {
         promo.classList.remove('transition-with-cake-offset')
       }
       if (btnFixed) btnFixed.classList.remove('active-with-cake-offset')
+      if (btnScrollToTop) btnScrollToTop.classList.remove('active-cake')
     })
   }
 }
