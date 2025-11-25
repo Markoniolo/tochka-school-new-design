@@ -1,0 +1,19 @@
+-
+  const educatorAchievmentsList = [
+    'Победитель конкурса «Лучшие учителя России» в Тверской области 2024',
+    'Учитель года Твери 2023',
+    'Учитель года Тверской области 2023',
+    'Финалист заключительного этапа Всероссийского конкурса «Учитель года России» 2023',
+    'Благодарность Губернатора Тверской области «За значительный личный вклад в развитие системы образования в Тверской области, а также повышение социальной значимости и престижа профессий сферы образования» 2023 г',
+  ]
+
+.educator-achievments
+  .cont
+    h2.educator-achievments__caption Профессиональные достижения
+    .educator-achievments__area
+      picture.educator-achievments__picture
+        source(srcset=staticImg('educator-achievments/decor_mob.svg') media="(max-width: 743px)")
+        img.educator-achievments__image(src=staticImg('educator-achievments/decor.svg') alt='')
+      ul.educator-achievments__list
+        each item in educatorAchievmentsList
+          li.educator-achievments__item= item

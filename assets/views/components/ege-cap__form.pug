@@ -1,6 +1,6 @@
 mixin ege-cap__form(title)
   form.ege-cap__form(data-request-validate data-element="review-form")
-    .ege-cap__title= title
+    .ege-cap__title!= title
     .ege-cap__inner
       input.input_utm(name='utm' type='hidden' value='')
       input(type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru/blog/voprosy-dlya-podrostkov-chto-polezno-i-interesno-obsudit-do-15-let")

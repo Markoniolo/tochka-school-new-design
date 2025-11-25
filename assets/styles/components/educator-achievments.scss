@@ -1,0 +1,95 @@
+.educator-achievments {
+  margin-bottom: 80px;
+  @include media(lg) {
+    margin-bottom: 40px;
+  }
+}
+
+.educator-achievments__caption {
+  margin-bottom: 45px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 26px;
+    font-size: 25px;
+  }
+}
+
+.educator-achievments__area {
+  border-radius: 20px;
+  padding: 35px 45px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.08);
+  background: #fff;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  @include media(lg) {
+    border-radius: 10px;
+    padding: 21px 25px;
+    gap: 25px;
+  }
+  @include media(xs) {
+    flex-direction: column;
+    gap: 21px;
+    background: unset;
+    padding: 0;
+    box-shadow: none;
+  }
+}
+
+.educator-achievments__picture {
+  flex-shrink: 0;
+  width: 314px;
+  @include media(lg) {
+    width: 197px;
+  }
+  @include media(xs) {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-radius: 10px;
+    background: #f3f5fb;
+    padding: 8px;
+  }
+}
+
+.educator-achievments__image {
+  @include media(xs) {
+    width: 262px;
+  }
+}
+
+.educator-achievments__list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  @include media(lg) {
+    gap: 14px;
+  }
+}
+
+.educator-achievments__item {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  line-height: 30px;
+  gap: 13px;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 123%;
+    gap: 8px;
+  }
+  &::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    @include bg-icon('icons/ic_point_orange.svg');
+    @include media(lg) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}

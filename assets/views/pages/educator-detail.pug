@@ -1,0 +1,13 @@
+extends ../components/_layout/layout
+
+block head
+  +title('Страница учителя')
+
+block body
+  include ../components/educator-cap
+  include ../components/educator-achievments
+  include ../components/educator-skills
+  include ../components/educator-tile
+  include ../components/reviews
+  +reviews('no-reviews-all','Отзывы учителя')
+  include ../components/educator-order

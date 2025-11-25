@@ -1,0 +1,140 @@
+.educator-skills {
+  overflow: hidden;
+  padding: 74px 0;
+  background: radial-gradient(228.28% 137.53% at 85.56% 75.29%, #dae5fe 0%, #bedaff 100%);
+  @include media(lg) {
+    padding: 34px 0;
+  }
+}
+
+.educator-skills__area {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    right: -412px;
+    bottom: -160px;
+    width: 628px;
+    height: 638px;
+    @include bg-icon('educator-skills/circles.svg');
+    @include media(lg) {
+      content: none;
+    }
+  }
+}
+
+.educator-skills__caption {
+  margin-bottom: 64px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 24px;
+    font-size: 25px;
+  }
+}
+
+.educator-skills__list {
+  position: relative;
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  max-width: 1012px;
+  @include media(lg) {
+    max-width: 100%;
+    margin-left: 0;
+    gap: 21px;
+  }
+}
+
+.educator-skills__line {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 161px;
+  width: 4px;
+  background: $orange;
+  @include media(lg) {
+    width: 2px;
+    top: 6px;
+    left: 53px;
+  }
+}
+
+.educator-skills__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  @include media(lg) {
+    align-items: flex-start;
+  }
+  &:first-of-type {
+    align-items: flex-start;
+    &::before {
+      top: 0;
+      transform: none;
+      @include media(lg) {
+        top: 2px;
+      }
+    }
+  }
+  &::before {
+    content: '';
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 147px;
+    top: 50%;
+    transform: translateY(-50%);
+    @include bg-icon('icons/ic_point_orange.svg');
+    @include media(lg) {
+      width: 10px;
+      height: 10px;
+      left: 49px;
+      top: 2px;
+      transform: none;
+    }
+  }
+}
+
+.educator-skills__year {
+  margin-right: 132px;
+  width: 97px;
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 100%;
+  text-align: right;
+  color: #003c56;
+  @include media(lg) {
+    margin-right: 28px;
+    font-size: 16px;
+    width: 40px;
+  }
+}
+
+.educator-skills__box {
+
+}
+
+.educator-skills__title {
+  margin-bottom: 14px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+}
+
+.educator-skills__note {
+  font-size: 18px;
+  line-height: 100%;
+  @include media(lg) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}

@@ -1,0 +1,23 @@
+-
+  const educatorSkillsList = [
+    { year: '1994', title: 'Завершение обучения в КГТУ им. Ленина с красным дипломом', note: 'Специальность: учитель начальных классов' },
+    { year: '1996', title: 'Профессиональная переподгатовка', note: 'На учителя математики' },
+    { year: '1998', title: 'Начала работы в немецкой школе №72 г. Казани', note: 'Учитель начальных классов, классный руководитель' },
+    { year: '2000', title: 'Награда за заслуги перед отечеством', note: 'Лучший учитель начальных классов 2000 года' },
+    { year: '2004', title: 'Профессиональная переподготовка', note: 'Учитель дошкольников' },
+    { year: '2008', title: 'Профессиональная переподгатовка', note: 'На учителя математики' },
+    { year: '2012', title: 'Начала работы в немецкой школе №72 г. Казани', note: 'Учитель начальных классов, классный руководитель' },
+  ]
+
+.educator-skills
+  .cont
+    .educator-skills__area
+      h2.educator-skills__caption Образование и&nbsp;профессиональная подготовка
+      .educator-skills__list
+        .educator-skills__line
+        each item in educatorSkillsList
+          .educator-skills__item
+            .educator-skills__year= item.year
+            .educator-skills__box
+              .educator-skills__title= item.title
+              .educator-skills__note= item.note
