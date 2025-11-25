@@ -5383,7 +5383,7 @@ function reviewInit() {
     }
   }
 
-  inputRange.addEventListener('input', inputRangeChange)
+  inputRange.addEventListener('input', inputRangeChange, { passive: true })
 
   function inputRangeChange () {
     inputRangeValue.innerHTML = inputRange.value
@@ -5391,11 +5391,6 @@ function reviewInit() {
     inputRate.value = inputRange.value
     rateDesktop.classList.remove('review-error')
     rateMobile.classList.remove('review-error')
-    try {
-      navigator.vibrate(300)
-    } catch (e) {
-      console.log(e)
-    }
   }
 
   function calcInputRange (value) {
