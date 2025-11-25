@@ -785,7 +785,6 @@
 
 .review__hint {
   position: absolute;
-  z-index: 2;
   cursor: pointer;
   transform: translateY(-50%);
   top: 50%;
@@ -1050,10 +1049,13 @@
   border: none;
   font-size: 16px;
   line-height: 100%;
-  color: rgba(0, 0, 0, 0.62);
+  color: #000000;
   width: calc(100% - 20px);
   @include media(xs) {
     display: none;
+  }
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.62);
   }
 }
 
