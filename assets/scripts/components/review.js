@@ -72,6 +72,11 @@ function reviewInit() {
     inputRate.value = inputRange.value
     rateDesktop.classList.remove('review-error')
     rateMobile.classList.remove('review-error')
+    try {
+      navigator.vibrate(300)
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   function calcInputRange (value) {
@@ -357,6 +362,7 @@ function reviewInit() {
   function setSelectValue (selectTop) {
     setTimeout(() => closeSelect(selectTop), 100)
     const selectText = selectTop.querySelector('.review__select-top-text')
+    selectText.classList.add('active')
     const text = selectTop.parentElement.querySelector('input:checked').getAttribute('data-text')
     if (selectText) selectText.innerHTML = text
     const selectSearch = selectTop.querySelector('.review__select-search')

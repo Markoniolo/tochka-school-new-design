@@ -1,10 +1,9 @@
-const langsTile = document.querySelector(".langs-tile")
+const educatorTile = document.querySelector('.educator-tile')
 
-if (langsTile) langsTileInit()
+if (educatorTile) educatorTileInit()
 
-function langsTileInit () {
+function educatorTileInit () {
   const config = { attributes: true, childList: true, characterData: true, subtree: true }
-  const subjectInputs = langsTile.querySelectorAll('.langs-tile__filter-input_subject')
 
   const observer = new MutationObserver(function() {
     moreBtnInit()
@@ -16,7 +15,7 @@ function langsTileInit () {
   togglePrice()
 
   function togglePrice () {
-    const items = langsTile.querySelectorAll(".all-courses__item")
+    const items = educatorTile.querySelectorAll(".all-courses__item")
     items.forEach((item) => {
       const toggle = item.querySelectorAll('.all-courses__radio-input')
       if (!toggle.length) return
@@ -56,7 +55,7 @@ function langsTileInit () {
   dataRedirect()
 
   function dataRedirect () {
-    const dataRedirectLinks = langsTile.querySelectorAll('[data-redirect]')
+    const dataRedirectLinks = educatorTile.querySelectorAll('[data-redirect]')
 
     for (let i = 0; i < dataRedirectLinks.length; i++) {
       dataRedirectLinks[i].addEventListener('click', dataRedirect)
@@ -69,36 +68,20 @@ function langsTileInit () {
   }
 
 
-  observer.observe(langsTile, config)
-
-  for (let i = 0; i < subjectInputs.length; i++) {
-    subjectInputs[i].addEventListener('change', updateFilter)
-  }
+  observer.observe(educatorTile, config)
 
   moreBtnInit()
 
   function moreBtnInit () {
-    const moreBtn = langsTile.querySelector('.all-courses__more-button')
+    const moreBtn = educatorTile.querySelector('.all-courses__more-button')
     if (moreBtn) moreBtn.addEventListener('click', () => makeFiltration(moreBtn.getAttribute('data-v')))
   }
 
-  function updateFilter () {
-    makeFiltration()
-  }
-
   function makeFiltration (p_paginate = 1) {
-    let subjects_result = ''
-    try{
-      const subjects_items = langsTile.querySelectorAll('.langs-tile__filter-input_subject:checked')
-      subjects_items.forEach((item, i) => {
-        if (i > 0) subjects_result += '|'
-        subjects_result += item.value
-      })
-    }catch(e){}
 
-    let utm_f = langsTile.getAttribute('data-utm');
-    let promo_f = langsTile.getAttribute('data-promo');
-    let oge_ege_type = langsTile.getAttribute('data-oge-ege');
+    let utm_f = educatorTile.getAttribute('data-utm');
+    let promo_f = educatorTile.getAttribute('data-promo');
+    let oge_ege_type = educatorTile.getAttribute('data-oge-ege');
 
     if(p_paginate === 1 ){
       $('.filtered_elements').html("<div class='tile-loader'></div>");
@@ -106,7 +89,6 @@ function langsTileInit () {
     }
 
     var obData = {
-      'subject': subjects_result,
       'utm_t': utm_f,
       'promo': promo_f,
       'oge_ege_type': oge_ege_type,
