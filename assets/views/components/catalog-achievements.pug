@@ -1,0 +1,14 @@
+.catalog-achievements
+  .cont
+    .catalog-achievements__top
+      h2.catalog-achievements__title Галерея достижений
+      img.catalog-achievements__pointer(src=staticImg('catalog-achievements/pointer.svg') alt='')
+      .catalog-achievements__nav
+        button.catalog-achievements__btn.catalog-achievements__btn_prev
+        button.catalog-achievements__btn.catalog-achievements__btn_next
+    .catalog-achievements__slider
+      .swiper-wrapper
+        each item in [1,2,3,4,5,1,2,3,4,5]
+          .catalog-achievements__slide.swiper-slide()
+            img.catalog-achievements__image(src=staticImg(`catalog-achievements/${item}.png`) alt='' data-src=staticImg(`catalog-achievements/${item}.png`) data-fancybox="catalog-achievements" data-options='{"touch": false}')
+    .catalog-achievements__scrollbar

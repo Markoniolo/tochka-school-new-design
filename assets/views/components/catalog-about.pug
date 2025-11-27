@@ -1,0 +1,47 @@
+-
+  const catalogAboutList = [
+    {
+      title: '<span class="animate-counter" data-animate-counter-end="4" data-to-fixed="0">4</span> года',
+      text: 'Помогаем улучшить оценки и полюбить учёбу'
+    },
+    {
+      title: '<span class="animate-counter" data-animate-counter-end="45" data-to-fixed="0">45</span>',
+      text: 'Преподавателей в Точке Знаний'
+    },
+    {
+      title: '<span class="animate-counter" data-animate-counter-end="4.9" data-to-fixed="1">4.9</span>',
+      text: 'Средняя оценка родителями',
+      icon: 'icon-3.svg'
+    },
+    {
+      title: '<span class="animate-counter" data-animate-counter-end="44000" data-to-fixed="0">44000</span>',
+      text: 'Учеников прошли наше обучение'
+    },
+    {
+      title: '<span class="animate-counter" data-animate-counter-end="97" data-to-fixed="0">97</span>%',
+      text: 'Доля преподавателей высшей категории и&nbsp;научной степени'
+    },
+    {
+      title: '<span class="animate-counter" data-animate-counter-end="85" data-to-fixed="0">85</span>',
+      text: 'Средние балл ОГЭ'
+    },
+    {
+      title: '<span class="animate-counter" data-animate-counter-end="96" data-to-fixed="0">96</span>',
+      text: 'Средние балл ЕГЭ'
+    },
+    {
+      title: '<span class="animate-counter" data-animate-counter-end="9.8" data-to-fixed="1">9.8</span>/10',
+      text: 'Уровень удовлетворенности родителей'
+    },
+  ]
+
+.catalog-about
+  .cont
+    h2.catalog-about__caption Мы в цифрах
+    ul.catalog-about__list
+      each item, index in catalogAboutList
+        li.catalog-about__item(class = `catalog-about__item_${index+1}`)
+          if item.icon
+            img.catalog-about__icon(src=staticImg(`catalog-about/${item.icon}`) alt='')
+          .catalog-about__title!= item.title
+          .catalog-about__text!= item.text

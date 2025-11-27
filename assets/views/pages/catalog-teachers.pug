@@ -1,0 +1,12 @@
+extends ../components/_layout/layout
+
+block head
+  +title('Каталог учиттелей')
+
+block body
+  include ../components/catalog-cap
+  include ../components/catalog-tile
+  include ../components/catalog-about
+  include ../components/catalog-achievements
+  include ../components/reviews
+  +reviews('reviews_no-margin')

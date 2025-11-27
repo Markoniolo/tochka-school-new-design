@@ -18,9 +18,6 @@ function reviewInit() {
   const selectSearch = review.querySelector('.review__select-search')
   const searchLabels = selectSearch.closest('.review__select').querySelectorAll('.review__select-item')
   const simpleBars = review.querySelectorAll('[data-role="review-simplebar"]')
-  const inputRange = review.querySelector('.review__rate-range')
-  const inputRangeValue = review.querySelector('.review__rate-range-value')
-  const inputRangeBar = review.querySelector('.review__rate-range-bar')
   const btnSubmit = form.querySelector('.review__submit')
   const role = review.querySelector('.review__role')
   const roleInputs = review.querySelectorAll('.review__role-input')
@@ -30,7 +27,6 @@ function reviewInit() {
   const selectClass = review.querySelector(".review__select_class")
   const selectClassInputs = selectClass.querySelectorAll(".review__select-input")
   const rateDesktop = review.querySelector(".review__rate-desktop")
-  const rateMobile = review.querySelector(".review__rate-mobile")
   const selectsOnSecondSlide = slides[1].querySelectorAll('.review__select')
 
   for (let i = 0; i < selectsOnSecondSlide.length; i++) {
@@ -62,22 +58,6 @@ function reviewInit() {
       email.classList.add('review-error')
       return false
     }
-  }
-
-  inputRange.addEventListener('input', inputRangeChange, { passive: true })
-
-  function inputRangeChange () {
-    inputRangeValue.innerHTML = inputRange.value
-    calcInputRange(inputRange.value)
-    inputRate.value = inputRange.value
-    rateDesktop.classList.remove('review-error')
-    rateMobile.classList.remove('review-error')
-  }
-
-  function calcInputRange (value) {
-    const left = `${100 * value / 10}%`
-    inputRangeBar.style.width = left
-    inputRangeValue.style.left = left
   }
 
   for (let i = 0; i < simpleBars.length; i++) {
@@ -120,7 +100,6 @@ function reviewInit() {
   function setRateInputValue () {
     inputRate.value = review.querySelector('.review__rate-desktop-input:checked').value
     rateDesktop.classList.remove('review-error')
-    rateMobile.classList.remove('review-error')
   }
 
   buttonNext.addEventListener('click', nextSlide)
@@ -280,7 +259,6 @@ function reviewInit() {
     if (!inputRate.value) {
       valid = false
       rateDesktop.classList.add('review-error')
-      rateMobile.classList.add('review-error')
     }
     for (let i = 0; i < selectsOnSecondSlide.length; i++) {
       const input = selectsOnSecondSlide[i].querySelector('.review__select-input:checked')
