@@ -822,6 +822,213 @@ function cardsInit () {
   }
 }
 
+const catalogAchievementsSlider = document.querySelector(".catalog-achievements__slider")
+
+if (catalogAchievementsSlider) catalogAchievementsSliderInit()
+
+function catalogAchievementsSliderInit () {
+  const pointer = document.querySelector(".catalog-achievements__pointer")
+  const slider = new Swiper(catalogAchievementsSlider, {
+    mousewheel: { forceToAxis: true },
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    a11y: false,
+    navigation: {
+      nextEl: '.catalog-achievements__btn_next',
+      prevEl: '.catalog-achievements__btn_prev',
+    },
+    scrollbar: {
+      el: '.catalog-achievements__scrollbar',
+      draggable: true,
+    },
+  })
+
+  slider.on('slideChange', function () {
+    if (pointer) pointer.style.display = 'none'
+  })
+}
+
+const catalogTile = document.querySelector(".catalog-tile")
+
+if (catalogTile) catalogTileInit()
+
+function catalogTileInit () {
+  const catalogTileFilterTops = catalogTile.querySelectorAll(".catalog-tile__filter-top")
+  const filterSubject = catalogTile.querySelector(".catalog-tile__filter_subject")
+  const stickyHeader = document.querySelector('.sticky-header')
+  const body = document.querySelector('body')
+
+  catalogTileFilterTops[0].addEventListener("click", (e)=> openFilter(catalogTileFilterTops[0], e))
+
+  document.addEventListener('click', function () {
+    catalogTileFilterTops[0].classList.remove('active')
+    showHeader()
+  })
+
+  function openFilter (opener, e) {
+    e.stopPropagation()
+    if (opener.classList.contains('active')) {
+      opener.classList.remove('active')
+      showHeader()
+      opener.parentElement.classList.remove('active')
+    } else {
+      opener.classList.add('active')
+      opener.parentElement.classList.add('active')
+      hideHeader()
+    }
+  }
+
+  function showHeader () {
+    stickyHeader.classList.remove('mob-hide')
+    body.classList.remove('no-scroll-mob')
+  }
+
+  function hideHeader () {
+    stickyHeader.classList.add('mob-hide')
+    body.classList.add('no-scroll-mob')
+  }
+
+  const config = { attributes: true, childList: true, characterData: true, subtree: true }
+  const tile = catalogTile.querySelector('.catalog-tile__list')
+  const subjectInputs = catalogTile.querySelectorAll('.catalog-tile__filter-input_subject')
+  const subjectInputText = catalogTile.querySelector('.catalog-tile__filter_subject .catalog-tile__filter-top-text')
+
+  const observer = new MutationObserver(function() {
+    moreBtnInit()
+    buttonDataHrefLinksInit()
+    dataRedirect()
+  })
+
+  buttonDataHrefLinksInit()
+
+  if (tile) dataRedirect()
+
+  function dataRedirect () {
+    const dataRedirectLinks = tile.querySelectorAll('[data-redirect]')
+
+    for (let i = 0; i < dataRedirectLinks.length; i++) {
+      dataRedirectLinks[i].addEventListener('click', dataRedirect)
+    }
+
+    function dataRedirect (e) {
+      e.preventDefault()
+      window.open(this.href, '_blank');
+    }
+  }
+
+
+  if (tile) observer.observe(tile, config)
+
+  const reset = catalogTile.querySelector('.catalog-tile__reset-filter')
+  if (reset) reset.addEventListener('click', resetFilters)
+
+  function resetFilters () {
+    const items = catalogTile.querySelectorAll("input")
+    items.forEach((item) => {
+      if (item.hasAttribute('data-default-garde') || item.hasAttribute('data-default-subject')) {
+        item.checked = true
+      }else{
+        item.checked = false
+      }
+    })
+    reset.style.display = 'none'
+    subjectInputText.innerHTML = "Все предметы"
+    makeFiltration()
+  }
+
+  for (let i = 0; i < subjectInputs.length; i++) {
+    subjectInputs[i].addEventListener('change', updateFilter)
+    subjectInputs[i].addEventListener('change', changeSubjectInputText)
+  }
+
+  function changeSubjectInputText () {
+    subjectInputText.innerHTML = this.getAttribute('data-text')
+  }
+
+  moreBtnInit()
+
+  function moreBtnInit () {
+    const moreBtn = catalogTile.querySelector('.all-courses__more-button')
+    if (moreBtn) moreBtn.addEventListener('click', () => makeFiltration(moreBtn.getAttribute('data-v')))
+  }
+
+  function updateFilter () {
+    const itemsAll = catalogTile.querySelectorAll(["input:checked"])
+    if (itemsAll.length) {
+      if (reset) reset.style.display = 'flex'
+    } else {
+      if (reset) reset.style.display = 'none'
+    }
+    makeFiltration()
+  }
+
+  function makeFiltration (p_paginate = 1) {
+    let subjects_result = ''
+    try{
+      const subjects_items = catalogTile.querySelectorAll('.catalog-tile__filter-input_subject:checked')
+      subjects_items.forEach((item, i) => {
+        if (i > 0) subjects_result += '|'
+        subjects_result += item.value
+      })
+    }catch(e){}
+
+    let utm_f = tile.getAttribute('data-utm');
+    let promo_f = tile.getAttribute('data-promo');
+
+    if(p_paginate === 1 ){
+      $('.filtered_elements').html("<div class='tile-loader'></div>");
+      $('.more_b').html("");
+    }
+
+    var obData = {
+      'subject': subjects_result,
+      'utm_t': utm_f,
+      'promo': promo_f,
+      'pagePaginate': p_paginate,
+    };
+    $.request('DirectionFunctions::onPaginateAllCourses', {
+      data: obData
+    })
+  }
+
+  initTabs()
+
+  function initTabs () {
+    const tabsParent = filterSubject.querySelector('.catalog-tile__filter-tabs')
+    const tabs = filterSubject.querySelectorAll('.catalog-tile__filter-tab')
+    const subjects = filterSubject.querySelectorAll('.catalog-tile__filter-item')
+
+    if (!tabs.length || !subjects.length) return
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', changeTab)
+
+      function changeTab (e) {
+        e.stopPropagation()
+        const oldTab = filterSubject.querySelector('.catalog-tile__filter-tab.active')
+        if (oldTab) oldTab.classList.remove('active')
+
+        this.classList.add('active')
+
+        subjects.forEach((subject) => {
+          subject.classList.add('hide')
+        })
+
+        const index = this.getAttribute('data-index')
+        const activeSubjects = filterSubject.querySelectorAll('[data-index="' + index + '"]')
+        activeSubjects.forEach((subject) => {
+          subject.classList.remove('hide')
+        })
+
+        tabsParent.scrollLeft = this.offsetLeft - tabsParent.clientWidth/2 + this.clientWidth/2
+      }
+    })
+
+    tabs[0].click()
+  }
+
+}
+
 const costAreas = document.querySelectorAll('.cost__area')
 
 if (costAreas.length) costAreasInit()
@@ -1483,16 +1690,6 @@ function enrichTileInit () {
   }
 
   buttonDataHrefLinksInit()
-
-  function buttonDataHrefLinksInit() {
-    const buttonDataHrefLinks = document.querySelectorAll('button[data-href-link]')
-    for (let i = 0; i < buttonDataHrefLinks.length; i++) {
-      buttonDataHrefLinks[i].addEventListener('click', function (e) {
-        e.preventDefault()
-        window.open(this.getAttribute('data-href-link'), '_blank')
-      })
-    }
-  }
 
   if (tile) dataRedirect()
 
@@ -5337,9 +5534,6 @@ function reviewInit() {
   const selectSearch = review.querySelector('.review__select-search')
   const searchLabels = selectSearch.closest('.review__select').querySelectorAll('.review__select-item')
   const simpleBars = review.querySelectorAll('[data-role="review-simplebar"]')
-  const inputRange = review.querySelector('.review__rate-range')
-  const inputRangeValue = review.querySelector('.review__rate-range-value')
-  const inputRangeBar = review.querySelector('.review__rate-range-bar')
   const btnSubmit = form.querySelector('.review__submit')
   const role = review.querySelector('.review__role')
   const roleInputs = review.querySelectorAll('.review__role-input')
@@ -5349,7 +5543,6 @@ function reviewInit() {
   const selectClass = review.querySelector(".review__select_class")
   const selectClassInputs = selectClass.querySelectorAll(".review__select-input")
   const rateDesktop = review.querySelector(".review__rate-desktop")
-  const rateMobile = review.querySelector(".review__rate-mobile")
   const selectsOnSecondSlide = slides[1].querySelectorAll('.review__select')
 
   for (let i = 0; i < selectsOnSecondSlide.length; i++) {
@@ -5381,22 +5574,6 @@ function reviewInit() {
       email.classList.add('review-error')
       return false
     }
-  }
-
-  inputRange.addEventListener('input', inputRangeChange, { passive: true })
-
-  function inputRangeChange () {
-    inputRangeValue.innerHTML = inputRange.value
-    calcInputRange(inputRange.value)
-    inputRate.value = inputRange.value
-    rateDesktop.classList.remove('review-error')
-    rateMobile.classList.remove('review-error')
-  }
-
-  function calcInputRange (value) {
-    const left = `${100 * value / 10}%`
-    inputRangeBar.style.width = left
-    inputRangeValue.style.left = left
   }
 
   for (let i = 0; i < simpleBars.length; i++) {
@@ -5439,7 +5616,6 @@ function reviewInit() {
   function setRateInputValue () {
     inputRate.value = review.querySelector('.review__rate-desktop-input:checked').value
     rateDesktop.classList.remove('review-error')
-    rateMobile.classList.remove('review-error')
   }
 
   buttonNext.addEventListener('click', nextSlide)
@@ -5599,7 +5775,6 @@ function reviewInit() {
     if (!inputRate.value) {
       valid = false
       rateDesktop.classList.add('review-error')
-      rateMobile.classList.add('review-error')
     }
     for (let i = 0; i < selectsOnSecondSlide.length; i++) {
       const input = selectsOnSecondSlide[i].querySelector('.review__select-input:checked')
