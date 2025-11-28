@@ -437,20 +437,21 @@
 .catalog-tile__list {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px 25px;
-  @include media(lg) {
-    gap: 25px;
-  }
+  gap: 25px;
   @include media(xs) {
     gap: 20px;
   }
 }
 
 .catalog-tile__item {
+  display: flex;
+  flex-direction: column;
   width: 317px;
   border-radius: 20px;
   background: #fff;
   padding: 15px;
+  backface-visibility: hidden;
+  transition: transform 0.2s;
   @include media(lg) {
     width: 320px;
     border-radius: 10px;
@@ -460,6 +461,45 @@
   }
   @include media(xxs) {
     padding: 10px;
+  }
+  &:hover {
+    transform: translateZ(0) scale(1.03);
+  }
+  &:nth-child(12n + 1) .catalog-tile__box {
+    background: linear-gradient(180deg, #6683c2 0%, #8fabe9 100%);
+  }
+  &:nth-child(12n + 2) .catalog-tile__box {
+    background: linear-gradient(180deg, #7fcbb4 0%, #a4e2cf 100%);
+  }
+  &:nth-child(12n + 3) .catalog-tile__box {
+    background: linear-gradient(180deg, #9be4f9 0%, #68ccea 100%);
+  }
+  &:nth-child(12n + 4) .catalog-tile__box {
+    background: linear-gradient(180deg, #eed294 0%, #f2c45b 100%);
+  }
+  &:nth-child(12n + 5) .catalog-tile__box {
+    background: linear-gradient(180deg, #9be4f9 0%, #68ccea 100%);
+  }
+  &:nth-child(12n + 6) .catalog-tile__box {
+    background: linear-gradient(180deg, #eed294 0%, #f2c45b 100%);
+  }
+  &:nth-child(12n + 7) .catalog-tile__box {
+    background: linear-gradient(180deg, #6683c2 0%, #8fabe9 100%);
+  }
+  &:nth-child(12n + 8) .catalog-tile__box {
+    background: linear-gradient(180deg, #7fcbb4 0%, #a4e2cf 100%);
+  }
+  &:nth-child(12n + 9) .catalog-tile__box {
+    background: linear-gradient(180deg, #7fcbb4 0%, #a4e2cf 100%);
+  }
+  &:nth-child(12n + 10) .catalog-tile__box {
+    background: linear-gradient(180deg, #9be4f9 0%, #68ccea 100%);
+  }
+  &:nth-child(12n + 11) .catalog-tile__box {
+    background: linear-gradient(180deg, #eed294 0%, #f2c45b 100%);
+  }
+  &:nth-child(12n) .catalog-tile__box {
+    background: linear-gradient(180deg, #6683c2 0%, #8fabe9 100%);
   }
 }
 
@@ -473,7 +513,6 @@
   align-items: flex-end;
   border-radius: 10px;
   overflow: hidden;
-  background: linear-gradient(180deg, #6683c2 0%, #8fabe9 100%);
   @include media(lg) {
     margin-bottom: 12px;
     height: 369px;
@@ -510,6 +549,8 @@
   line-height: 100%;
   color: #6683c2;
   padding: 8px 17px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   @include media(lg) {
     font-size: 12px;
   }
@@ -521,6 +562,8 @@
   font-size: 18px;
   line-height: 23px;
   color: #003c56;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   @include media(lg) {
     font-size: 16px;
     line-height: 20px;
@@ -528,6 +571,7 @@
 }
 
 .catalog-tile__button {
+  margin-top: auto;
   display: inline-flex;
   text-transform: unset;
   font-size: 16px;

@@ -1,0 +1,97 @@
+.faq-cap {
+  margin-top: 60px;
+  @include media(lg) {
+    @include bg-icon('faq-cap/bg_tablet.png');
+    margin-top: 0;
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+  @include media(xs) {
+    @include bg-icon('faq-cap/bg_mob.png');
+  }
+}
+
+.faq-cap__area {
+  position: relative;
+  overflow: hidden;
+  border-radius: 31px;
+  @include bg-icon('faq-cap/bg.png');
+  padding: 54px 60px 55px;
+  min-height: 285px;
+  @include media(lg) {
+    overflow: visible;
+    background: unset;
+    min-height: 220px;
+    padding: 30px 0;
+    border-radius: 0;
+  }
+  @include media(xs) {
+    min-height: auto;
+    padding: 30px 0 0;
+  }
+}
+
+.faq-cap__caption {
+  margin-bottom: 34px;
+  width: 100%;
+  max-width: 600px;
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 112%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 18px;
+    font-size: 30px;
+    line-height: 113%;
+    max-width: 285px;
+  }
+  @include media(xs) {
+    max-width: 320px;
+    margin: 0 auto 18px;
+    text-align: center;
+    font-size: 27px;
+    line-height: 126%;
+  }
+}
+
+.faq-cap__text {
+  width: 100%;
+  max-width: 600px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    max-width: 232px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+  @include media(xs) {
+    max-width: 232px;
+    margin: 0 auto 16px;
+    text-align: center;
+  }
+}
+
+.faq-cap__picture {
+  position: absolute;
+  width: 450px;
+  height: 275px;
+  bottom: 0;
+  right: 0;
+  @include media(lg) {
+    width: 366px;
+    height: 191px;
+    right: -37px;
+  }
+  @include media(xs) {
+    position: static;
+    margin: 0 auto;
+    width: 279px;
+    height: 168px;
+  }
+}
+
+.faq-cap__image {
+  height: 100%;
+}

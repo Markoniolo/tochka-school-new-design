@@ -28,6 +28,7 @@ function reviewInit() {
   const selectClassInputs = selectClass.querySelectorAll(".review__select-input")
   const rateDesktop = review.querySelector(".review__rate-desktop")
   const selectsOnSecondSlide = slides[1].querySelectorAll('.review__select')
+  const reviewSearchMob = slides[1].querySelector('.review__search-mob')
 
   for (let i = 0; i < selectsOnSecondSlide.length; i++) {
     const inputs = selectsOnSecondSlide[i].querySelectorAll('.review__select-input')
@@ -64,11 +65,17 @@ function reviewInit() {
     new SimpleBar(simpleBars[i])
   }
 
-  selectSearch.addEventListener('input', selectSort)
+  selectSearch.addEventListener('input', () => selectSort(selectSearch))
+  reviewSearchMob.addEventListener('input', () => selectSort(reviewSearchMob))
   selectSearch.addEventListener('input', () => openSelect(selectSearch.closest('.review__select-top')))
 
-  function selectSort () {
-    const searchString = selectSearch.value.toLowerCase()
+  function selectSort (search) {
+    if (search.classList.contains('review__select-search')) {
+      reviewSearchMob.value = search.value
+    } else {
+      selectSearch.value = reviewSearchMob.value
+    }
+    const searchString = search.value.toLowerCase()
     for (let i = 0; i < searchLabels.length; i++) {
       const text = searchLabels[i].querySelector('.review__select-input').getAttribute('data-text').toLowerCase()
       const words = text.split(' ')
@@ -341,7 +348,8 @@ function reviewInit() {
     const selectSearch = selectTop.querySelector('.review__select-search')
     if (selectSearch) {
       selectSearch.value = text
-      selectSort()
+      if (reviewSearchMob) reviewSearchMob.value = text
+      selectSort(selectSearch)
     }
     if (selectTop.parentElement.classList.contains('review__select_teacher')) {
       const name = review.querySelector('.review__sidebar-teacher-name')

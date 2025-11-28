@@ -30,13 +30,13 @@
           path(d='M6.41602 5.50004L10.3092 1.60683C10.5625 1.35359 10.5625 0.944119 10.3092 0.690908C10.0559 0.437666 9.64646 0.437666 9.39325 0.690908L5.50001 4.58409L1.60692 0.690908C1.35356 0.437666 0.944241 0.437666 0.690999 0.690908C0.437636 0.944149 0.437636 1.35359 0.690999 1.60683L4.58406 5.50004L0.691029 9.39322C0.437666 9.64646 0.437666 10.0559 0.691029 10.3091C0.751099 10.3694 0.822481 10.4172 0.901073 10.4497C0.979664 10.4823 1.06392 10.499 1.14899 10.4989C1.31478 10.4989 1.48063 10.4355 1.60695 10.3091L5.50001 6.41596L9.39325 10.3091C9.45333 10.3694 9.52471 10.4171 9.6033 10.4497C9.68189 10.4823 9.76614 10.499 9.85121 10.4989C10.017 10.4989 10.1829 10.4355 10.3092 10.3091C10.5625 10.0559 10.5625 9.64646 10.3092 9.39322L6.41602 5.50004Z' fill='white')
     .catalog-tile__list
       each item in [1,2,3,4,5,6,7,8,9,10,11,12]
-        .catalog-tile__item
+        a.catalog-tile__item(href='#')
           .catalog-tile__box
             img.catalog-tile__image(src='https://cms-dev.tochka-school.ru/storage/app/media/Stranica_kursov/Foto_shapka_kursa_blok/Shevchenko_shapka_kursa1.webp' alt='')
             ul.catalog-tile__tags
               each item in ['Русский язык','Математика','География']
                 li.catalog-tile__tag= item
           .catalog-tile__name Константинова Евгения Владимировна
-          a.catalog-tile__button.btn-orange.btn-orange_arrow(href='#') Подробнее
+          .catalog-tile__button.btn-orange.btn-orange_arrow Подробнее
     .all-courses__more
       button.all-courses__more-button.btn-blue.btn-blue_arrow Показать ещё

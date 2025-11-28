@@ -1,4 +1,11 @@
 -
+  const faqAllList = [
+    'Семейное обучение',
+    'Пробная неделя',
+    'Предзапись',
+    'Вопросы по подписке',
+  ]
+
   const faqList = [
     {
       question: 'Что делать, если мне не подходит расписание?',
@@ -21,23 +28,30 @@
       answer: 'У Вас появится доступ в личный кабинет на учебной платформе. На email придет письмо с логином и паролем.'
     }
   ]
-mixin faq(mod)
-  .faq(class = mod ? mod : false)
-    .faq__cont.cont
-      h2.faq__caption Отвечаем на частые вопросы
-      .faq__wrap
-        .faq__area
-          ul.faq__list
-            each item in faqList
-              li.faq__item(data-element='faq-item')
-                .faq__top= item.question
-                .faq__answer
-                  .faq__answer-inner
-                    p.faq__text= item.answer
-        if mod === 'summer' || mod === 'summer-course' || mod === 'summer-family'
-          img.faq__image(src=staticImg('faq/faq-decor-green.svg') alt='')
-        else if mod === 'it'
-          img.faq__image(src=staticImg('faq/faq-decor-it.webp') alt='' loading="lazy")
-        else
-          img.faq__image(src=staticImg('faq/faq-decor.svg') alt='')
 
+.faq-all
+  .cont
+    .faq-all__wrap
+      .faq-all__sidebar.faq-all__sidebar_mob
+        .faq-all__name Темы вопросов
+        .faq-all__area
+          each item, index in faqAllList
+            a.faq-all__link(href=`#anchor_${index + 1}` data-role="scroll-to-anchor")= item
+        .faq-all__layer.layer
+      .faq-all__main
+        each item, index in faqAllList
+          .faq-all__box(id=`anchor_${index + 1}`)
+            .faq-all__bg
+            .faq-all__title Семейное обучение
+            ul.faq-all__list
+              each item in faqList
+                li.faq-all__item(data-element='faq-item')
+                  .faq-all__top= item.question
+                  .faq-all__answer
+                    .faq-all__answer-inner
+                      p.faq-all__text= item.answer
+      .faq-all__sidebar.faq-all__sidebar_desc
+        .faq-all__name Темы вопросов
+        .faq-all__area
+          each item, index in faqAllList
+            a.faq-all__link(href=`#anchor_${index + 1}` data-role="scroll-to-anchor")= item

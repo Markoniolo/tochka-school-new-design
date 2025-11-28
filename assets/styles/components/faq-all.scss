@@ -1,0 +1,336 @@
+.faq-all {
+  @include media(lg) {
+    margin-bottom: 20px;
+  }
+}
+
+.faq-all__wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 169px;
+  @include media(lg) {
+    display: block;
+  }
+}
+
+.faq-all__main {
+  width: 775px;
+  @include media(lg) {
+    width: 100%;
+  }
+}
+
+.faq-all__box {
+  padding: 74px 0 80px;
+  width: 1344px;
+  @include media(lg) {
+    padding: 34px 0 40px;
+    width: 100%;
+  }
+  &:nth-child(even) {
+    position: relative;
+    z-index: 1;
+    .faq-all__bg {
+      display: block;
+      position: absolute;
+      z-index: -1;
+      width: 100vw;
+      background: #FFFFFF;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      height: 100%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.faq-all__bg {
+  display: none;
+}
+
+.faq-all__title {
+  margin-bottom: 42px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 24px;
+    font-size: 25px;
+  }
+}
+
+.faq-all__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px 0;
+  max-width: 775px;
+  width: 100%;
+  @include media(lg) {
+    gap: 20px 0;
+  }
+}
+
+.faq-all__item {
+  border-radius: 43px;
+  @include media(lg) {
+    border-radius: 20px;
+  }
+  &.active {
+    background: #f3f5fb;
+    box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
+    .faq-all__top {
+      background: #f3f5fb;
+      &:hover {
+        background: #809edf;
+      }
+      &::before {
+        @include bg-icon('faq/ic_faq_minus.svg');
+      }
+    }
+    .faq-all__answer {
+      max-height: 1000px;
+      transition: max-height 1s ease-in-out;
+    }
+  }
+}
+
+.faq-all__top {
+  cursor: pointer;
+  border-radius: 43px;
+  padding: 21px 109px 21px 35px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  background-color: #fff;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.06);
+  min-height: 65px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition-property: background-color, color;
+  transition-duration: $transition-duration;
+  &:hover {
+    background-color: #809edf;
+    color: #fff;
+  }
+  @include media(lg) {
+    border-radius: 20px;
+    font-size: 15px;
+    padding: 21px 70px 21px 35px;
+  }
+  @include media(xs) {
+    padding: 10px 60px 10px 20px;
+    min-height: 80px;
+  }
+  &::before {
+    content: '';
+    width: 33px;
+    height: 33px;
+    @include bg-icon('faq/ic_faq_plus.svg');
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    @include media(lg) {
+      width: 28px;
+      height: 28px;
+      right: 35px;
+    }
+    @include media(xs) {
+      right: 20px;
+    }
+  }
+}
+
+.faq-all__answer {
+  font-size: 16px;
+  line-height: 20px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height .5s cubic-bezier(0,1,0,1);
+  @include media(lg) {
+    font-size: 15px;
+  }
+}
+
+.faq-all__answer-inner {
+  padding: 36px 109px 36px 35px;
+  @include media(lg) {
+    padding: 24px 70px 24px 35px;
+  }
+  @include media(xs) {
+    padding: 24px 60px 24px 20px;
+  }
+}
+
+.faq-all__sidebar {
+  margin: 80px 0;
+  position: sticky;
+  z-index: 1;
+  top: 180px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
+  background: #fff;
+  padding: 30px;
+  flex-shrink: 0;
+  border-radius: 22px;
+  @include media(md) {
+    display: none;
+  }
+  &_mob {
+    display: none;
+    @include media(md) {
+      margin: 30px 0 0;
+      position: static;
+      top: 117px;
+      display: block;
+      max-width: 100%;
+      z-index: 10;
+      padding: 0;
+      background-color: $white;
+    }
+    @include media(xs) {
+      top: 99px;
+    }
+    &.fixed {
+      @include media(md) {
+        position: sticky;
+      }
+    }
+  }
+}
+
+.faq-all__name {
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 92%;
+  cursor: pointer;
+  @include media(md) {
+    z-index: 55;
+    position: relative;
+    font-size: 14px;
+    line-height: 12px;
+    color: #fff;
+    margin-bottom: 0;
+    background: #6683c2;
+    border-radius: 37px;
+    padding: 15px 14px 16px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+  &.active {
+    @include media(md) {
+      & ~ .faq-all__area {
+        display: flex;
+        z-index: 51;
+      }
+      & ~ .faq-all__layer {
+        display: block;
+      }
+    }
+  }
+  &::before {
+    @include media(md) {
+      content: '';
+      @include bg-icon('icons/ic_contents_white.svg');
+      width: 16px;
+      height: 12px;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.faq-all__area {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  @include media(md) {
+    margin-top: -30px;
+    padding-bottom: 10px;
+    display: none;
+    background-color: $white;
+    padding-top: 30px;
+    border-radius: 22px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 5px;
+    background-color: #eceff4;
+    border-radius: 4px;
+    @include media(md) {
+      content: none;
+    }
+  }
+}
+
+.faq-all__layer {
+  display: none;
+}
+
+.faq-all__link {
+  position: relative;
+  padding: 10px 0 10px 28px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 110%;
+  color: #454545;
+  transition-property: color;
+  transition-duration: $transition-duration;
+  @include media(md) {
+    padding: 10px 0 10px 34px;
+    font-size: 15px;
+    line-height: 147%;
+  }
+  &::before {
+    @include media(md) {
+      content: '';
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      position: absolute;
+      top: 19px;
+      bottom: unset;
+      right: unset;
+      left: 20px;
+      background-color: #454545;
+    }
+  }
+  &:hover {
+    color: #6683c2;
+  }
+  &.active {
+    color: #000;
+    pointer-events: none;
+    font-weight: 500;
+    &::before {
+      content: '';
+      background-color: #6683C2;
+      width: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      border-radius: 4px;
+      @include media(md) {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        top: 19px;
+        bottom: unset;
+        right: unset;
+        left: 20px;
+        background-color: #000000;
+      }
+    }
+  }
+}

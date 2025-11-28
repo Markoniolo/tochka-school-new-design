@@ -490,6 +490,9 @@
     }
   }
   &_tutor {
+    .review__select-list {
+      max-height: calc(100 * var(--vh) - 72px - 67px);
+    }
     .review__select-wrap {
       height: 455px;
       @include media(xs) {
@@ -504,6 +507,9 @@
     }
   }
   &_teacher {
+    .review__select-list {
+      max-height: calc(100 * var(--vh) - 72px - 67px);
+    }
     .review__select-wrap {
       height: 455px;
       @include media(xs) {
@@ -690,6 +696,19 @@
   }
 }
 
+.review__search-mob {
+  display: none;
+  @include media(xs) {
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 2px solid $orange;
+    &::placeholder {
+      color: rgba(0, 0, 0, .62);
+    }
+  }
+}
+
 .review__select-list {
   display: flex;
   flex-wrap: wrap;
@@ -700,7 +719,7 @@
     background: #eef1f9;
     padding: 20px 15px 15px;
     border-radius: 10px;
-    max-height: calc(100vh - 72px);
+    max-height: calc(100 * var(--vh) - 72px);
     overflow-y: auto;
   }
   &::-webkit-scrollbar {

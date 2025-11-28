@@ -103,6 +103,7 @@ mixin review(caption, mod)
                       .review__select-headline Выберите преподавателя
                     else
                       .review__select-headline Выберите тьютора
+                    input.review__search-mob.input-white(placeholder='Начните писать фамилию' type='text')
                     .review__select-list
                       each item, index in ['Андреева Дина','Скороходова Екатерина','Чамян Яна','Бочкор Ирина','Иванов Игорь','Матвеева Елена','Попов Илья','Чепрасова Наталья','Орестова Нина','Баев Арсений']
                         label.review__select-item
