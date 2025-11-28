@@ -2220,6 +2220,108 @@ function familyTeachersSliderInit () {
   }
 }
 
+const faqAllBg = document.querySelectorAll('.faq-all__bg')
+
+if (faqAllBg.length) {
+  setFaqAllBgWidth()
+
+  window.addEventListener('resize', setFaqAllBgWidth, { passive: true })
+
+  function setFaqAllBgWidth() {
+    for (let i = 0; i < faqAllBg.length; i++) {
+      faqAllBg[i].style.width = `${document.documentElement.clientWidth - 1}px`
+    }
+  }
+}
+
+const faqAllSidebarDesc = document.querySelector('.faq-all__sidebar_desc')
+
+if (faqAllSidebarDesc) faqAllSidebarDescInit()
+
+function faqAllSidebarDescInit () {
+  const faqAllLinkArray = faqAllSidebarDesc.querySelectorAll('.faq-all__link')
+  const faqAllTitleArray = document.querySelectorAll('.faq-all__title')
+
+  window.addEventListener('scroll', checkScroll, { passive: true })
+
+  function checkScroll () {
+    for (let i = faqAllTitleArray.length - 1; i > -1; i--) {
+      if (faqAllTitleArray[i].getBoundingClientRect().top < 300) {
+        removeOldLinkActive()
+        faqAllLinkArray[i].classList.add('active')
+        break
+      } else {
+        faqAllLinkArray[i].classList.remove('active')
+      }
+    }
+  }
+
+  function removeOldLinkActive () {
+    const oldActive = faqAllSidebarDesc.querySelector('.faq-all__link.active')
+    if (oldActive) oldActive.classList.remove('active')
+  }
+}
+
+const faqAllSidebarMob = document.querySelector('.faq-all__sidebar_mob')
+
+if (faqAllSidebarMob) faqAllSidebarMobInit()
+
+function faqAllSidebarMobInit () {
+  const name = faqAllSidebarMob.querySelector('.faq-all__name')
+  const layer = faqAllSidebarMob.querySelector('.faq-all__layer')
+
+  let scrollDown = true
+  let lastScrollTop = 0
+
+  window.addEventListener('scroll', checkScrollDirection, { passive: true })
+
+  function checkScrollDirection () {
+    const st = window.scrollY
+    if (st - lastScrollTop > 7) {
+      scrollDown = true
+    } else if (st - lastScrollTop < -7) {
+      scrollDown = false
+    }
+    lastScrollTop = st <= 0 ? 0 : st
+    if (scrollDown) {
+      faqAllSidebarMob.classList.remove('fixed')
+    } else {
+      faqAllSidebarMob.classList.add('fixed')
+    }
+  }
+
+  name.addEventListener('click', toggleSidebar)
+  layer.addEventListener('click', closeSidebar)
+
+  function toggleSidebar () {
+    if (name.classList.contains('active')) {
+      closeSidebar()
+    } else {
+      window.removeEventListener('scroll', checkScrollDirection)
+      name.classList.add('active')
+    }
+  }
+
+  function closeSidebar () {
+    name.classList.remove('active')
+    window.addEventListener('scroll', checkScrollDirection, {passive: true})
+  }
+
+  const articleLinkArray = faqAllSidebarMob.querySelectorAll('.faq-all__link')
+
+  for (let i = 0; i < articleLinkArray.length; i++) {
+    articleLinkArray[i].addEventListener('click', toggleLinkActive)
+  }
+
+  function toggleLinkActive () {
+    const oldActive = faqAllSidebarMob.querySelector('.faq-all__link.active')
+    if (oldActive) oldActive.classList.remove('active')
+    this.classList.add('active')
+    name.classList.remove('active')
+    window.addEventListener('scroll', checkScrollDirection, {passive: true})
+  }
+}
+
 const faqItems = document.querySelectorAll("[data-element='faq-item']")
 
 for (let i = 0; i < faqItems.length; i++) {
@@ -5544,6 +5646,7 @@ function reviewInit() {
   const selectClassInputs = selectClass.querySelectorAll(".review__select-input")
   const rateDesktop = review.querySelector(".review__rate-desktop")
   const selectsOnSecondSlide = slides[1].querySelectorAll('.review__select')
+  const reviewSearchMob = slides[1].querySelector('.review__search-mob')
 
   for (let i = 0; i < selectsOnSecondSlide.length; i++) {
     const inputs = selectsOnSecondSlide[i].querySelectorAll('.review__select-input')
@@ -5580,11 +5683,17 @@ function reviewInit() {
     new SimpleBar(simpleBars[i])
   }
 
-  selectSearch.addEventListener('input', selectSort)
+  selectSearch.addEventListener('input', () => selectSort(selectSearch))
+  reviewSearchMob.addEventListener('input', () => selectSort(reviewSearchMob))
   selectSearch.addEventListener('input', () => openSelect(selectSearch.closest('.review__select-top')))
 
-  function selectSort () {
-    const searchString = selectSearch.value.toLowerCase()
+  function selectSort (search) {
+    if (search.classList.contains('review__select-search')) {
+      reviewSearchMob.value = search.value
+    } else {
+      selectSearch.value = reviewSearchMob.value
+    }
+    const searchString = search.value.toLowerCase()
     for (let i = 0; i < searchLabels.length; i++) {
       const text = searchLabels[i].querySelector('.review__select-input').getAttribute('data-text').toLowerCase()
       const words = text.split(' ')
@@ -5857,7 +5966,8 @@ function reviewInit() {
     const selectSearch = selectTop.querySelector('.review__select-search')
     if (selectSearch) {
       selectSearch.value = text
-      selectSort()
+      if (reviewSearchMob) reviewSearchMob.value = text
+      selectSort(selectSearch)
     }
     if (selectTop.parentElement.classList.contains('review__select_teacher')) {
       const name = review.querySelector('.review__sidebar-teacher-name')
