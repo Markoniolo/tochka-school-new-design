@@ -1,10 +1,14 @@
-form.modal-order-new#modal-order-new(data-element='order-form' data-docex="/_thanks" data-request-validate)
+form.modal-order-new#modal-order-new-email(data-element='order-form-email' data-docex="/_thanks" data-request-validate)
   .captcha
   .modal-order-new__title(data-default-title="Подобрать занятия") Подобрать занятия
   input(type='hidden' name="banner_v")
   input.modal-exter__input(type='hidden' value='qwe')
   input.input_utm(name='utm' type='hidden' value='')
   input(type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru")
+  input.modal-order-new__input(name='name' placeholder='Имя родителя' type='text')
+  input.modal-order-new__input(name='phone' placeholder='Номер телефона' type='tel' required data-element='input-phone-intl')
+  input(name='tel' type='hidden' required data-element='input-phone-hidden')
+  input.modal-order-new__input(name='email' placeholder='Электронная почта' type='email' required)
   .modal-order-new__select
     .modal-order-new__select-top
       .modal-order-new__select-placeholder Класс
@@ -20,9 +24,6 @@ form.modal-order-new#modal-order-new(data-element='order-form' data-docex="/_tha
           label.modal-order-new__select-item
             input.modal-order-new__select-input(type="radio" name="modal-order-new-class" value=item)
             .modal-order-new__select-view= item
-  input.modal-order-new__input(name='phone' placeholder='Номер телефона' type='tel' required data-element='input-phone-intl')
-  input(name='tel' type='hidden' required data-element='input-phone-hidden')
-  input.modal-order-new__input(name='name' placeholder='Имя родителя' type='text')
   button.modal-order-new__button.btn-warning Записаться
   label.modal-order-new__checkbox
     input.modal-order-new__checkbox-input(name='policy' type='checkbox')

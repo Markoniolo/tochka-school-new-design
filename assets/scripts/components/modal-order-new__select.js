@@ -1,8 +1,10 @@
-const modalOrderNewSelect = document.querySelector(".modal-order-new__select")
+const modalOrderNewSelects = document.querySelectorAll(".modal-order-new__select")
 
-if (modalOrderNewSelect) modalOrderNewSelectInit()
+for (let i = 0; i < modalOrderNewSelects.length; i++) {
+  modalOrderNewSelectInit(modalOrderNewSelects[i])
+}
 
-function modalOrderNewSelectInit () {
+function modalOrderNewSelectInit (modalOrderNewSelect) {
   const top = modalOrderNewSelect.querySelector('.modal-order-new__select-top')
   const placeholder = modalOrderNewSelect.querySelector('.modal-order-new__select-placeholder')
   const inputs = modalOrderNewSelect.querySelectorAll('.modal-order-new__select-input')

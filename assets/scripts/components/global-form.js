@@ -23,6 +23,9 @@ if (familyOrderForm) globalFormInit(familyOrderForm, 'onSendConsultMessage', 'co
 const orderForm = document.querySelector("[data-element='order-form']")
 if (orderForm) globalFormInit(orderForm, 'onSendOrderMessage', 'orderFormData')
 
+const orderFormEmail = document.querySelector("[data-element='order-form-email']")
+if (orderFormEmail) globalFormInit(orderFormEmail, 'onSendOrderMessage', 'orderFormEmailData')
+
 const orderFormTeacher = document.querySelector("[data-element='order-form-teacher']")
 if (orderFormTeacher) globalFormInit(orderFormTeacher, 'onSendTeacherOrderMessage', 'orderFormTeacherData')
 
@@ -150,6 +153,20 @@ function orderFormData (globalForm) {
     'name': globalForm.querySelector("[name='name']").value,
     'utm': globalForm.querySelector("[name='utm']").value,
     'tel': globalForm.querySelector("[name='tel']").value,
+    //'class_name': globalForm.querySelector("[name='class_name']").options[globalForm.querySelector("[name='class_name']").selectedIndex].value,
+    // 'class_name': globalForm.querySelector("[name='class_name']").value,
+    'class_name': globalForm.querySelector(".modal-order-new__select-input").value,
+    'policy': globalForm.querySelector("[name='policy']").checked,
+    'news': globalForm.querySelector("[name='news']").checked,
+    'page_name': globalForm.querySelector("[name='page_name']").value,
+  };
+}
+function orderFormEmailData (globalForm) {
+  return {
+    'name': globalForm.querySelector("[name='name']").value,
+    'utm': globalForm.querySelector("[name='utm']").value,
+    'tel': globalForm.querySelector("[name='tel']").value,
+    'email': globalForm.querySelector("[name='email']").value,
     //'class_name': globalForm.querySelector("[name='class_name']").options[globalForm.querySelector("[name='class_name']").selectedIndex].value,
     // 'class_name': globalForm.querySelector("[name='class_name']").value,
     'class_name': globalForm.querySelector(".modal-order-new__select-input").value,
@@ -308,6 +325,8 @@ function globalFormInit (form, func_name, type) {
         var form_data = reviewFormData(globalForm);
       } else if (type == 'orderFormData') {
         var form_data = orderFormData(globalForm);
+      } else if (type == 'orderFormEmailData') {
+        var form_data = orderFormEmailData(globalForm);
       } else if (type == 'consultFormData') {
         var form_data = consultFormData(globalForm);
       } else if (type == 'orderFormTeacherData') {
