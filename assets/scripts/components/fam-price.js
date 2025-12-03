@@ -65,7 +65,7 @@ function famPriceInit () {
   togglePrice()
 
   function togglePrice () {
-    const items = tile.querySelectorAll(".all-courses__item")
+    const items = tile?.querySelectorAll(".all-courses__item")
     items.forEach((item) => {
       const toggle = item.querySelectorAll('.all-courses__radio-input')
       if (!toggle.length) return

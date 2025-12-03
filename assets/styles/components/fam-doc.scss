@@ -1,19 +1,20 @@
 .fam-doc {
   margin-top: -194px;
-  margin-bottom: -564px;
-  transition-property: margin;
+  max-height: 770px;
+  overflow: hidden;
+  transition-property: max-height;
   transition-duration: $transition-duration;
   @include media(lg) {
-    margin-bottom: -688px;
+    max-height: 768px;
   }
   @include media(xs) {
-    margin-bottom: -782px;
+    max-height: 875px;
   }
   @include media(xxs) {
-    margin-bottom: -828px;
+    max-height: 890px;
   }
   &.open {
-    margin-bottom: 0;
+    max-height: 2000px;
   }
   &.family {
     margin-top: -280px;

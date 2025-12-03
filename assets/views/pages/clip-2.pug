@@ -6,13 +6,12 @@ doctype html
 html(lang='ru')
   head
     include ../components/_layout/_head
-    +title('Квиз Пробная неделя')
+    +title('Клип 2')
   body
     .sticky-header.sticky-header_no-margin
       include ../components/_layout/header-short
-      +header-short('quiz')
-    main.wrapper
-      include ../components/quiz-trial
-    include ../components/modals/modal-order-new
+      +header-short('clip')
+    main.wrapper.wrapper_clip
+      include ../components/clip-2
     include ../components/_layout/footer-quiz
     include ../components/_layout/scripts

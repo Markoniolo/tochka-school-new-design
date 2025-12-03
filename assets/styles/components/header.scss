@@ -37,6 +37,11 @@
       }
     }
   }
+  &_clip {
+    .header__area {
+      justify-content: center;
+    }
+  }
   &_white {
     background: #fff;
   }

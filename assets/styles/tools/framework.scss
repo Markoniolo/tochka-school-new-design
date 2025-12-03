@@ -310,3 +310,12 @@
 .SmartCaptcha-Shield_position_bottom.SmartCaptcha-Shield_position_right.SmartCaptcha-Shield.SmartCaptcha-Shield_visible {
   display: none !important;
 }
+
+.wrapper {
+  &_clip {
+    background: #c2c2c2;
+    @include media(xs) {
+      background: #F5F5F5;
+    }
+  }
+}
