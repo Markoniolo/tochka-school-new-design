@@ -1,0 +1,19 @@
+include ../_variables
+include ../components/_layout/_connect-style
+include ../components/_layout/_title
+
+doctype html
+html(lang='ru')
+  head
+    include ../components/_layout/_head
+    +title('Новогодние курсы')
+  body.new-year-courses
+    .sticky-header.sticky-header_no-margin
+      include ../components/_layout/header
+      +header('no-bottom')
+    main.wrapper
+      include ../components/new-year-cap
+      include ../components/all-courses
+    include ../components/modals/modal-order-new
+    include ../components/_layout/footer
+    include ../components/_layout/scripts

@@ -1,0 +1,254 @@
+.new-year-courses {
+  background: #082d57;
+  .all-courses {
+    position: relative;
+    z-index: 1;
+  }
+  .all-courses__caption {
+    color: #fff;
+    circle {
+      fill: #FFFFFF;
+      fill-opacity: 0.08;
+    }
+    path {
+      fill: #FFFFFF;
+    }
+  }
+  .all-courses__wrap {
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    box-shadow: 0 7px 30px 0 rgba(146, 184, 226, 0.2);
+    background: #1f3a6b;
+  }
+  .all-courses__reset {
+    border: 1px solid rgba(104, 182, 255, 0.5);
+    background: transparent;
+  }
+  .all-courses__empty {
+    background: #1f3a6b;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+  }
+  .all-courses__empty-title {
+    color: #fff;
+  }
+  .all-courses__empty-text {
+    color: #fff;
+  }
+  .all-courses__item {
+    background: #1f3a6b;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    &.family {
+      .all-courses__tag {
+        color: rgba(255, 255, 255, .65);
+        background: rgba(255, 255, 255, 0.13);
+        &_class {
+          color: #fff;
+          background: rgba(255, 255, 255, 0.33);
+        }
+      }
+      .all-courses__box {
+        background: #173367;
+        @include media(lg) {
+          background: transparent;
+        }
+        @include media(xs) {
+          background: unset;
+        }
+      }
+      .all-courses__inner {
+        @include media(lg) {
+          background: #173367;
+        }
+      }
+      .all-courses__area {
+        &::before {
+          @include media(xs) {
+            background: linear-gradient(-90deg, rgba(255, 255, 255, 0) 0, #1F3A6B 80%, #1F3A6B 100%);
+          }
+        }
+        &::after {
+          @include media(xs) {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, #1F3A6B 80%, #1F3A6B 100%);
+          }
+        }
+      }
+    }
+  }
+  .all-courses__area {
+    &::before {
+      @include media(xs) {
+        background: linear-gradient(-90deg, rgba(255, 255, 255, 0) 0, #1F3A6B 80%, #1F3A6B 100%);
+      }
+    }
+    &::after {
+      @include media(xs) {
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, #1F3A6B 80%, #1F3A6B 100%);
+      }
+    }
+  }
+  .all-courses__inner {
+    @include media(lg) {
+      background: #173367;
+    }
+  }
+  .all-courses__side-name {
+    color: #fff;
+  }
+  .all-courses__side-text {
+    color: #fff;
+  }
+  .all-courses__mob-text {
+    color: #fff;
+  }
+  .all-courses__tag {
+    color: rgba(255, 255, 255, 0.65);
+    background: rgba(255, 255, 255, 0.13);
+    &_class {
+      background: rgba(255, 255, 255, 0.33);
+      color: #fff;
+    }
+  }
+  .all-courses__title {
+    color: #fff;
+  }
+  .all-courses__text {
+    color: #fff;
+  }
+  .all-courses__radio-text {
+    color: #fff;
+  }
+  .all-courses__radio-view {
+    @include bg-icon('all-courses/ic_radio_input_view_blue.svg');
+  }
+  .all-courses__radio-input {
+    display: none;
+    &:checked ~ .all-courses__radio-view {
+      @include bg-icon('all-courses/ic_radio_input_view_active_blue.svg');
+    }
+  }
+  .all-courses__info {
+    path {
+      fill: #68b6ff;
+    }
+  }
+  .all-courses__info-span {
+    color: #fff;
+  }
+  .all-courses__box {
+    background: #173367;
+    @include media(lg) {
+      background: transparent;
+    }
+    @include media(xs) {
+      background: unset;
+    }
+  }
+  .all-courses__headline {
+    color: #fff;
+  }
+  .all-courses__price-current {
+    color: #68b6ff;
+  }
+  .all-courses__price-old {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .all-courses__price-month {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .all-courses__discount {
+    background: #68b6ff;
+  }
+  .all-courses__next {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .all-courses__note {
+    color: #fff;
+  }
+  .all-courses__price-full-current {
+    color: #68b6ff;
+  }
+  .all-courses__price-full-old {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .all-courses__button_border {
+    color: rgba(255, 255, 255, 0.75);
+    border: 1px solid #68b6ff;
+  }
+  .all-courses__more-button {
+    background: #68b6ff;
+  }
+  .all-courses__filter-wrap {
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    backdrop-filter: blur(19.5px);
+    background: rgba(30, 53, 93, 0.62);
+    @include media(xs) {
+      background: #1e355d;
+    }
+  }
+  .all-courses__filter-headline {
+    color: #fff;
+  }
+  .all-courses__filter-list {
+    background: rgba(255, 255, 255, 0.11);
+  }
+  .all-courses__filter-view {
+    color: #FFFFFF;
+    box-shadow: 0 4px 19px 0 rgba(0, 0, 0, 0.05);
+    background: #1e3760;
+    &:hover {
+      background: #95bde2;
+    }
+  }
+  .all-courses__filter-input:checked~.all-courses__filter-view {
+    background: #68b6ff;
+  }
+  .all-courses__reset-filter {
+    border: 1px solid rgba(104, 182, 255, 0.5);
+    background: transparent;
+  }
+  .all-courses__filter-tabs {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  }
+  .all-courses__filter-tab {
+    color: rgba(255, 255, 255, 0.65);
+    &.active {
+      color: #fff;
+    }
+  }
+  .black-friday .all-courses__filter-tab.active::before {
+    background: #68b6ff;
+  }
+  .all-courses__ticket, .black-friday .all-courses__ticket.blue, .black-friday .all-courses__ticket.green {
+    background: #68b6ff;
+    color: #fff;
+  }
+  .all-courses__mob-name {
+    color: #fff;
+  }
+  .all-courses__filter-headline {
+    color: #fff;
+  }
+  .all-courses__filter-close {
+    @include media(xs) {
+      @include bg-icon('all-courses/close_blue.svg', 23px, 23px);
+    }
+  }
+  .all-courses__reset-note {
+    @include media(xs) {
+      color: #fff;
+    }
+  }
+  .all-courses__reset {
+    circle {
+      fill: #68B6FF;
+    }
+    path {
+      fill: #FFFFFF;
+    }
+  }
+  .tile-loader {
+    color: #68B6FF;
+  }
+  .all-courses__date {
+    color: #FFFFFF;
+  }
+}

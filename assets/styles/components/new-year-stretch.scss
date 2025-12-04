@@ -1,0 +1,119 @@
+.new-year-stretch {
+  display: block;
+  @include bg-icon('new-year-stretch/bg.png');
+  background-size: cover;
+  overflow: hidden;
+  @include media(xl) {
+    background-size: 1920px 80px;
+    background-repeat: no-repeat;
+  }
+  @include media(lg) {
+    @include bg-icon('new-year-stretch/bg_tablet.png');
+    background-size: cover;
+  }
+  @include media(xs) {
+    @include bg-icon('new-year-stretch/bg_mob.png');
+    background-size: cover;
+  }
+  @include media(xxs) {
+    @include bg-icon('new-year-stretch/bg_xxs.png');
+    background-size: cover;
+  }
+}
+
+.new-year-stretch__area {
+  height: 80px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.new-year-stretch__logo {
+  margin-left: 190px;
+  width: 174px;
+  height: 74px;
+  @include media(lg) {
+    display: none;
+  }
+}
+
+.new-year-stretch__text {
+  margin-left: 24px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 144%;
+  color: #fff;
+  @include media(lg) {
+    margin-left: 83px;
+    font-size: 20px;
+    line-height: 144%;
+  }
+  @include media(xs) {
+    margin-top: -4px;
+    margin-left: 0;
+    max-width: 166px;
+    width: 100%;
+    font-size: 17px;
+    line-height: 102%;
+    letter-spacing: -0.02em;
+  }
+  span {
+    position: relative;
+    top: 2px;
+    margin: 0 5px 0 4px;
+    font-size: 36px;
+    font-weight: 800;
+    @include media(lg) {
+      margin: 0 0 0 3px;
+      font-size: 34px;
+    }
+    @include media(xs) {
+      margin: 0 1px 0 1px;
+      top: 6px;
+      font-size: 30px;
+    }
+    background: linear-gradient(90deg, #f6b752 0%, #ffdc9f 16.35%, #e6a742 45.19%, #ffdc9f 66.35%, #f6b752 97.12%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.new-year-stretch__decor {
+  position: absolute;
+  top: -20px;
+  right: 189px;
+  width: 186px;
+  height: 195px;
+  @include bg-icon('new-year-stretch/decor.png');
+  @include media(lg) {
+    top: -14px;
+    right: 90px;
+    width: 132px;
+    height: 160px;
+    @include bg-icon('new-year-stretch/decor_tablet.png');
+  }
+  @include media(xs) {
+    top: -13px;
+    right: 9px;
+    width: 152px;
+    @include bg-icon('new-year-stretch/decor_mob.png');
+  }
+  @include media(xxs) {
+    width: 132px;
+    right: 15px;
+    @include bg-icon('new-year-stretch/decor_xxs.png');
+  }
+}
+
+.new-year-stretch__note {
+  margin-left: 193px;
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #fff;
+  @include media(lg) {
+    display: none;
+  }
+}

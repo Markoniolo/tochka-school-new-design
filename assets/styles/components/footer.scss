@@ -14,6 +14,44 @@
   a {
     color: #FFFFFF;
   }
+  &_new-year {
+    padding: 90px 0 54px;
+    @include bg-icon('footer/bg.png');
+    background-size: cover;
+    @include media(lg) {
+      @include bg-icon('footer/bg_tablet.png');
+      background-size: cover;
+    }
+    @include media(md) {
+      padding: 50px 0 200px;
+    }
+    @include media(xs) {
+      @include bg-icon('footer/bg_mob.png');
+      background-size: cover;
+      padding: 50px 0 56px;
+    }
+    &::before {
+      content: '';
+      height: 51px;
+      position: absolute;
+      top: -10px;
+      left: 0;
+      right: 0;
+      @include bg-icon('footer/snow.png');
+      background-size: 1920px 51px;
+      background-repeat: repeat-x;
+      @include media(lg) {
+        @include bg-icon('footer/snow_tablet.png');
+        background-size: contain;
+        background-repeat: repeat-x;
+        height: 44px;
+      }
+      @include media(xs) {
+        background-size: auto 35px;
+        height: 35px;
+      }
+    }
+  }
 }
 
 .footer__cont.cont {

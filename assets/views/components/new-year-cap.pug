@@ -1,0 +1,21 @@
+.new-year-cap
+  .new-year-cap-bg-part-1
+  .new-year-cap-bg-part-2
+  .new-year-cap-bg-part-3
+  .cont
+    .new-year-cap__wrap
+      picture.new-year-cap__logo-picture
+        source(srcset=staticImg('new-year-cap/logo_mob.png') media="(max-width: 743px)")
+        source(srcset=staticImg('new-year-cap/logo_tablet.png') media="(max-width: 1359px)")
+        img.new-year-cap__logo(src=staticImg('new-year-cap/logo.png') alt='')
+      h1.new-year-cap__caption Новогодние скидки в Точке Знаний!
+      .new-year-cap__text С 8 по 11 декабря 2025 года
+      picture.new-year-cap__picture
+        source(srcset=staticImg('new-year-cap/decor_mob.png') media="(max-width: 743px)")
+        source(srcset=staticImg('new-year-cap/decor_tablet.png') media="(max-width: 1359px)")
+        img.new-year-cap__image(src=staticImg('new-year-cap/decor.png') alt='')
+      ul.new-year-cap__list
+        each item in [{value:'- 70%',note:'на первый платёж'},{value:'- 10%',note:'на весь абонемент'},{value:'ЛЮБОЙ',note:'курс и семейное обучение'}]
+          li.new-year-cap__item
+            .new-year-cap__value= item.value
+            .new-year-cap__note= item.note

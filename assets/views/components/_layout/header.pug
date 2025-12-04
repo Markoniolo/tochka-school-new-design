@@ -16,7 +16,7 @@ mixin header(mod)
       .header__layer
       .header__area
         .header__logo
-          img.header__logo-image(src=staticImg('logo.svg') alt='')
+          img.header__logo-image(src=staticImg('logo_new-year.svg') alt='')
         .header__nav
           button.header__nav-item.header__nav-item_menu
             span Меню
@@ -39,7 +39,7 @@ mixin header(mod)
           .header__stages-box
             button.header__stages-button.active(data-stage-id="1") 1 ступень
             button.header__stages-button(data-stage-id="2") 2 ступень
-      else if mod === 'offer'
+      else if mod === 'offer' || mod === 'no-bottom'
 
       else
         .header__bottom

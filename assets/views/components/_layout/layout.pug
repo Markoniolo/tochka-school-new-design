@@ -9,7 +9,8 @@ html(lang='ru')
     block head
   body(class=VIEW === 'preregistration-thanks' ? 'page-thanks' : false)
     .sticky-header
-      //include ../black-friday-stretch
+      if VIEW === 'index'
+        include ../stretches/new-year-stretch
       include header
       +header
     main.wrapper

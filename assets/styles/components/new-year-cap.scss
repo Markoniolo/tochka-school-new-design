@@ -1,0 +1,235 @@
+.new-year-cap {
+  position: relative;
+  margin-bottom: -200px;
+  @include media(xl) {
+    @include bg-icon('new-year-cap/bg.png');
+    background-size: 1920px 665px;
+    background-position: top center;
+    overflow: hidden;
+  }
+  @include media(lg) {
+    @include bg-icon('new-year-cap/bg_tablet.png');
+    background-size: cover;
+    margin-bottom: -50px;
+  }
+  @include media(xs) {
+    @include bg-icon('new-year-cap/bg_mob.png');
+    background-size: cover;
+    background-position: top center;
+    margin-bottom: -35px;
+  }
+}
+
+.new-year-cap-bg-part-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 840px;
+  height: 665px;
+  @include bg-icon('new-year-cap/bg-part-1.png');
+  @include media(xl) {
+    display: none;
+  }
+}
+
+.new-year-cap-bg-part-2 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(calc(-50% + 38px));
+  width: 345px;
+  height: 242px;
+  @include bg-icon('new-year-cap/bg-part-2.png');
+  @include media(xl) {
+    display: none;
+  }
+}
+
+.new-year-cap-bg-part-3 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 648px;
+  height: 665px;
+  @include bg-icon('new-year-cap/bg-part-3.png');
+  @include media(xl) {
+    display: none;
+  }
+}
+
+.new-year-cap__wrap {
+  position: relative;
+  padding: 27px 0 254px;
+  @include media(lg) {
+    padding: 16px 0 40px;
+  }
+  @include media(xs) {
+    padding: 8px 0 35px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    opacity: 0.7;
+    top: -174px;
+    left: -50px;
+    background: #68b6ff;
+    width: 657px;
+    height: 657px;
+    border-radius: 50%;
+    filter: blur(233px);
+    @include media(lg) {
+      width: 299px;
+      height: 299px;
+      top: -90px;
+      left: 31px;
+      filter: blur(105px);
+    }
+    @include media(xs) {
+      width: 160px;
+      height: 160px;
+      top: 5px;
+      left: 50%;
+      filter: blur(55px);
+      opacity: 1;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.new-year-cap__logo-picture {
+  position: relative;
+  margin-left: -38px;
+  margin-bottom: 28px;
+  width: 700px;
+  height: 287px;
+  @include media(lg) {
+    margin-left: -23px;
+    margin-bottom: 25px;
+    width: 388px;
+    height: 148px;
+  }
+  @include media(xs) {
+    margin: 0 auto 15px;
+    width: 304px;
+    height: 116px;
+  }
+}
+
+.new-year-cap__logo {
+
+}
+
+.new-year-cap__caption {
+  position: relative;
+  margin-bottom: 14px;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 100%;
+  color: #fff;
+  @include media(lg) {
+    margin-bottom: 5px;
+    font-size: 24px;
+    line-height: 113%;
+    max-width: 255px;
+  }
+  @include media(xs) {
+    margin: 0 auto 8px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 117%;
+    max-width: 189px;
+  }
+}
+
+.new-year-cap__text {
+  position: relative;
+  margin-bottom: 46px;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 100%;
+  color: #fff;
+  @include media(lg) {
+    margin-bottom: 22px;
+    font-size: 24px;
+    line-height: 113%;
+  }
+  @include media(xs) {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 117%;
+  }
+}
+
+.new-year-cap__picture {
+  position: absolute;
+  top: -18px;
+  right: -265px;
+  width: 906px;
+  height: 771px;
+  @include media(lg) {
+    top: 29px;
+    right: -7px;
+    width: 353px;
+    height: 371px;
+  }
+  @include media(xs) {
+    position: relative;
+    top: unset;
+    right: unset;
+    max-width: 353px;
+    width: 100%;
+    margin: 0 auto -95px;
+    transform: scale(1.1);
+  }
+}
+
+.new-year-cap__image {
+
+}
+
+.new-year-cap__list {
+  position: relative;
+  display: flex;
+  gap: 61px;
+  @include media(lg) {
+    gap: 27px;
+  }
+  @include media(xs) {
+    gap: 25px 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.new-year-cap__item {
+
+}
+
+.new-year-cap__value {
+  margin-bottom: 6px;
+  font-weight: 800;
+  font-size: 63px;
+  line-height: 100%;
+  background: linear-gradient(90deg, #f6b752 0%, #ffdc9f 16.35%, #e6a742 45.19%, #ffdc9f 66.35%, #f6b752 97.12%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @include media(lg) {
+    margin-bottom: 2px;
+    font-size: 42px;
+  }
+}
+
+.new-year-cap__note {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 100%;
+  color: #fff;
+  @include media(lg) {
+    font-size: 16px;
+  }
+  @include media(xs) {
+    font-size: 15px;
+  }
+}
