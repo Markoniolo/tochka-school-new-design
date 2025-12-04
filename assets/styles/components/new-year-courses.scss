@@ -3,6 +3,13 @@
   .all-courses {
     position: relative;
     z-index: 1;
+    overflow: hidden;
+    padding-top: 300px;
+    margin-top: -500px;
+    @include media(lg) {
+      padding-top: 300px;
+      margin-top: -312px;
+    }
   }
   .all-courses__caption {
     color: #fff;
@@ -14,14 +21,56 @@
       fill: #FFFFFF;
     }
   }
+  .all-courses__cont {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: -213px;
+      right: -514px;
+      width: 655px;
+      height: 655px;
+      border-radius: 50%;
+      background: #68b6ff;
+      opacity: 0.7;
+      filter: blur(300px);
+      @include media(lg) {
+        top: 100px;
+        right: -191px;
+        width: 419px;
+        height: 419px;
+        opacity: 1;
+        filter: blur(250px);
+      }
+      @include media(xs) {
+        width: 292px;
+        height: 292px;
+        top: -56px;
+        right: -151px;
+        filter: blur(170px);
+      }
+    }
+  }
   .all-courses__wrap {
+    position: relative;
+    z-index: 1;
     border: 1px solid rgba(255, 255, 255, 0.24);
+    backdrop-filter: blur(10px);
     box-shadow: 0 7px 30px 0 rgba(146, 184, 226, 0.2);
-    background: #1f3a6b;
+    background-color: rgba(121, 168, 253, 0.1);
+    @include bg-icon('all-courses/noise.png');
+    background-size: cover;
+    &.active {
+      backdrop-filter: none;
+    }
   }
   .all-courses__reset {
     border: 1px solid rgba(104, 182, 255, 0.5);
     background: transparent;
+    @include media(lg) {
+      border: none;
+    }
   }
   .all-courses__empty {
     background: #1f3a6b;
@@ -178,8 +227,10 @@
   }
   .all-courses__filter-wrap {
     border: 1px solid rgba(255, 255, 255, 0.24);
-    backdrop-filter: blur(19.5px);
-    background: rgba(30, 53, 93, 0.62);
+    background-color: rgba(30, 53, 93, 1);
+    @include bg-icon('all-courses/noise-blue.png');
+    background-size: auto;
+    background-repeat: repeat;
     @include media(xs) {
       background: #1e355d;
     }
@@ -202,8 +253,7 @@
     background: #68b6ff;
   }
   .all-courses__reset-filter {
-    border: 1px solid rgba(104, 182, 255, 0.5);
-    background: transparent;
+    background: #68b6ff;
   }
   .all-courses__filter-tabs {
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);

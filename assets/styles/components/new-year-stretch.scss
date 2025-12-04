@@ -26,6 +26,12 @@
   position: relative;
   display: flex;
   align-items: center;
+  @include media(xs) {
+    justify-content: center;
+  }
+  @include media(xxs) {
+    justify-content: unset;
+  }
 }
 
 .new-year-stretch__logo {
@@ -50,12 +56,15 @@
   }
   @include media(xs) {
     margin-top: -4px;
-    margin-left: 0;
+    margin-left: -150px;
     max-width: 166px;
     width: 100%;
     font-size: 17px;
     line-height: 102%;
     letter-spacing: -0.02em;
+  }
+  @include media(xxs) {
+    margin-left: 0;
   }
   span {
     position: relative;
