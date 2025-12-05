@@ -93,25 +93,20 @@
   top: -20px;
   right: 189px;
   width: 186px;
-  height: 195px;
+  height: 196px;
   @include bg-icon('new-year-stretch/decor.png');
   @include media(lg) {
     top: -14px;
-    right: 90px;
-    width: 132px;
-    height: 160px;
+    right: 60px;
+    height: 159px;
     @include bg-icon('new-year-stretch/decor_tablet.png');
   }
   @include media(xs) {
     top: -13px;
-    right: 9px;
-    width: 152px;
-    @include bg-icon('new-year-stretch/decor_mob.png');
+    right: -2px;
   }
   @include media(xxs) {
-    width: 132px;
-    right: 15px;
-    @include bg-icon('new-year-stretch/decor_xxs.png');
+    right: -18px;
   }
 }
 
