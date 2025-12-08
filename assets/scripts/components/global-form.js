@@ -309,7 +309,9 @@ function globalFormInit (form, func_name, type) {
     resetError()
     e.preventDefault()
 
-    if (globalForm.classList.contains('form-enter-sms-code') && !globalForm.querySelector('input[name="sms_code"]'?.value)) return
+    if (globalForm.classList.contains('form-enter-sms-code')
+      && !globalForm.querySelector('input[name="sms_code"]'?.value)
+      && !globalForm.querySelector('[data-role="global-form-call-phone"]')) return
 
     console.log(input && !input?.value?.trim())
     console.log(iti?.isValidNumber())
@@ -495,8 +497,10 @@ function globalFormInit (form, func_name, type) {
 
                 if (response['requires_verification']) {
                   showSmsInput(response['message'])
+                  btnSubmit.disabled = false
                 } else if (response['requires_phonecall_verification']) {
                   showFormPhoneCall(response)
+                  btnSubmit.disabled = false
                 } else {
                   clearForm();
                   if (type === 'preFormData') {
