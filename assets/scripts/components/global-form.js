@@ -309,10 +309,6 @@ function globalFormInit (form, func_name, type) {
     resetError()
     e.preventDefault()
 
-    if (globalForm.classList.contains('form-enter-sms-code')
-      && !globalForm.querySelector('input[name="sms_code"]'?.value)
-      && !globalForm.querySelector('[data-role="global-form-call-phone"]')) return
-
     console.log(input && !input?.value?.trim())
     console.log(iti?.isValidNumber())
     if (input && !input?.value?.trim()) {
@@ -326,7 +322,7 @@ function globalFormInit (form, func_name, type) {
       } else if (type == 'reviewFormData') {
         var form_data = reviewFormData(globalForm);
       } else if (type == 'orderFormData') {
-        inputSms = `<input class="modal-order-new__input modal-order-new__input_sms" name="sms_code" type="text" placeholder="Код подтверждения">`
+        inputSms = `<input class="modal-order-new__input modal-order-new__input_sms" required name="sms_code" type="text" placeholder="Код подтверждения">`
         var form_data = orderFormData(globalForm);
       } else if (type == 'orderFormEmailData') {
         var form_data = orderFormEmailData(globalForm);
