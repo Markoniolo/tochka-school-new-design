@@ -2668,8 +2668,8 @@ function globalFormInit (form, func_name, type) {
     if (input) input.classList.remove("error")
   }
 
+  let inputSms
   let isSubmitting = false;
-
 
   globalForm.addEventListener('submit', async (e) => {
     resetError()
@@ -2690,6 +2690,7 @@ function globalFormInit (form, func_name, type) {
       } else if (type == 'reviewFormData') {
         var form_data = reviewFormData(globalForm);
       } else if (type == 'orderFormData') {
+        inputSms = `<input class="modal-order-new__input modal-order-new__input_sms" name="sms_code" type="text" placeholder="Код подтверждения">`
         var form_data = orderFormData(globalForm);
       } else if (type == 'orderFormEmailData') {
         var form_data = orderFormEmailData(globalForm);
@@ -2892,7 +2893,10 @@ function globalFormInit (form, func_name, type) {
 
   function showSmsInput (message) {
     const title = globalForm.querySelector('.modal-order-new__title')
-    if (title) title.innerHTML = message
+    if (title) {
+      title.innerHTML = message
+      if (inputSms) title.insertAdjacentHTML('afterend', inputSms)
+    }
     globalForm.classList.add('form-enter-sms-code')
   }
 
