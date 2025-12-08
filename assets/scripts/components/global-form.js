@@ -391,139 +391,130 @@ function globalFormInit (form, func_name, type) {
         }
 
         btnSubmit.disabled = true;
-        if (type === 'preFormData') {
+
+        let linkTo_ = linkTo;
+        let linkTo_base = linkTo_;
+        if (utm_input) {
+          utm_f = utm_input.value;
+          if(utm_f != null && utm_f != '' && utm_f != undefined){
+          }else{
+            utm_f = ''
+          }
+          if (utm_f.length > 0) {
+            linkTo_ = linkTo_ + utm_f;
+          }
+        }
+        if (isTargetLink(linkTo_base)) {
+          if (cookieParams) {
+            linkTo_ += (linkTo_.includes("?") ? "&" : "?") + cookieParams;
+          }
+        }
+
+        if (checkHoneypot()) return
+
+        // console.log("urlParams: " + urlParams)
+        // console.log("utm_f: " + utm_f)
+
+        //console.log("bf globalForm.submit")
+
+
+        try {
           e.stopPropagation();
-          const loader = document.querySelector('.form-loader')
-          if (loader) loader.classList.add('active')
-          if (checkHoneypot()) return
-          $.request('MainFunctions::onSendPreSubscribeMessage', {
-            data: form_data,
-          });
-          location.assign(linkTo + `?cemail=${email_value}`);
-          // setTimeout(() => {
-          //     globalForm.submit();
-          //     setTimeout(() => {
-          //       clearForm();
-          //         location.assign(linkTo + `?cemail=${email_value}`);
-          //         // location.assign(linkTo + '?email='+email_value)
-          //     }, 100)
-          // }, 100)
-        } else {
-          let linkTo_ = linkTo;
-          let linkTo_base = linkTo_;
-          if (utm_input) {
-            utm_f = utm_input.value;
-            if(utm_f != null && utm_f != '' && utm_f != undefined){
-            }else{
-              utm_f = ''
-            }
-            if (utm_f.length > 0) {
-              linkTo_ = linkTo_ + utm_f;
-            }
-          }
-          if (isTargetLink(linkTo_base)) {
-            if (cookieParams) {
-              linkTo_ += (linkTo_.includes("?") ? "&" : "?") + cookieParams;
-            }
-          }
+          console.log('isSubmitting:', isSubmitting);
+          if (isSubmitting) return false;
 
-          if (checkHoneypot()) return
+          if (!captchaPassed) {
+            // console.log('🔄 Вызов execute...');
+            captchaToken = null;
+            window.smartCaptcha.execute(window.captchaWidget);
 
-          // console.log("urlParams: " + urlParams)
-          // console.log("utm_f: " + utm_f)
-
-          //console.log("bf globalForm.submit")
-
-
-          try {
-            e.stopPropagation();
-            console.log('isSubmitting:', isSubmitting);
-            if (isSubmitting) return false;
-
-            if (!captchaPassed) {
-              // console.log('🔄 Вызов execute...');
-              captchaToken = null;
-              window.smartCaptcha.execute(window.captchaWidget);
-
-              await new Promise((resolve, reject) => {
-                const checkToken = setInterval(() => {
-                  if (captchaToken) {
-                    clearInterval(checkToken);
-                    resolve();
-                  }
-                }, 100);
-
-                setTimeout(() => {
+            await new Promise((resolve, reject) => {
+              const checkToken = setInterval(() => {
+                if (captchaToken) {
                   clearInterval(checkToken);
-                  reject(new Error('Таймаут капчи'));
-                }, 100000);
-              });
+                  resolve();
+                }
+              }, 100);
 
-              // console.log('✅ Токен получен:', captchaToken);
-            } else {
-              // console.log('✅ Капча уже пройдена, пропускаем проверку');
-            }
+              setTimeout(() => {
+                clearInterval(checkToken);
+                reject(new Error('Таймаут капчи'));
+              }, 100000);
+            });
+
+            // console.log('✅ Токен получен:', captchaToken);
+          } else {
+            // console.log('✅ Капча уже пройдена, пропускаем проверку');
+          }
 
 
-            if (captchaToken) {
-              // console.log(globalForm);
-              isSubmitting = true;
-              //   console.log('Отправка формы:', globalForm);
+          if (captchaToken) {
+            // console.log(globalForm);
+            isSubmitting = true;
+            //   console.log('Отправка формы:', globalForm);
 
-              const dataRequest = globalForm.getAttribute('data-request');
-              const formData = new FormData(globalForm);
-              const formObject = {};
-              formData.forEach((value, key) => {
-                formObject[key] = value;
-              });
-              formObject['smart-token'] = captchaToken;
+            const dataRequest = globalForm.getAttribute('data-request');
+            const formData = new FormData(globalForm);
+            const formObject = {};
+            formData.forEach((value, key) => {
+              formObject[key] = value;
+            });
+            formObject['smart-token'] = captchaToken;
+            const sms_code = globalForm.querySelector('input[name="sms_code"]')?.value
+            if (sms_code) formObject['sms_code'] = sms_code
 
-              //formObject.captcha_token = captchaToken;
+            //formObject.captcha_token = captchaToken;
 
-              $.request('MainFunctions::' + dataRequest, {
-                data: formObject,
-                success: function(response) {
-                  // console.log('Ответ:', response);
-                  let hasErrors = false;
+            $.request('MainFunctions::' + dataRequest, {
+              data: formObject,
+              success: function(response) {
+                // console.log('Ответ:', response);
+                let hasErrors = false;
 
-                  for (let key in response) {
-                    if (key.startsWith('.')) {
-                      const className = key.substring(1);
-                      const element = document.querySelector('.' + className);
+                for (let key in response) {
+                  if (key.startsWith('.')) {
+                    const className = key.substring(1);
+                    const element = document.querySelector('.' + className);
 
-                      if (element) {
-                        element.innerHTML = response[key];
-                        hasErrors = true;
-                        btnSubmit.disabled = false;
-                      }
+                    if (element) {
+                      element.innerHTML = response[key];
+                      hasErrors = true;
+                      btnSubmit.disabled = false;
                     }
                   }
-
-                  if (hasErrors) {
-                    isSubmitting = false;
-                    return;
-                  }
-
-                  clearForm();
-                  location.assign(linkTo_);
-                },
-                error: function(error) {
-                  // console.error('❌ Ошибка отправки:', error);
-                  isSubmitting = false;
                 }
-              });
 
-              return false;
-            }else{
-              return false;
-            }
+                if (hasErrors) {
+                  isSubmitting = false;
+                  return;
+                }
 
-          } catch (error) {
-            // console.error('❌ Ошибка:', error);
-            // alert('Ошибка проверки капчи');
+                if (response['requires_verification']) {
+                  showSmsInput(response['message'])
+                } else {
+                  clearForm();
+                  if (type === 'preFormData') {
+                    location.assign(linkTo + `?cemail=${email_value}`);
+                  } else {
+                    location.assign(linkTo_);
+                  }
+                }
+              },
+              error: function(error) {
+                // console.error('❌ Ошибка отправки:', error);
+                isSubmitting = false;
+              }
+            });
+
+            return false;
+          }else{
             return false;
           }
 
+        } catch (error) {
+          // console.error('❌ Ошибка:', error);
+          // alert('Ошибка проверки капчи');
+          return false;
         }
       }
 
@@ -532,6 +523,12 @@ function globalFormInit (form, func_name, type) {
     }
 
   })
+
+  function showSmsInput (message) {
+    const title = globalForm.querySelector('.modal-order-new__title')
+    if (title) title.innerHTML = message
+    globalForm.classList.add('form-enter-sms-code')
+  }
 
   function clearForm () {
     const inputs = globalForm.querySelectorAll('input')

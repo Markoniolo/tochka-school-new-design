@@ -1,6 +1,7 @@
 .modal-order-new {
   display: none;
   max-width: 420px;
+  width: 100%;
   border-radius: 20px;
   background: #f6f6f6;
   padding: 21px 28px 34px;
@@ -63,6 +64,21 @@
   .modal-order-new__input.iti__tel-input {
     padding-left: 100px !important;
   }
+  &.form-enter-sms-code {
+    padding: 21px 28px;
+    @include media(xs) {
+      padding: 28px 20px;
+    }
+    @include media(xxs) {
+      padding: 28px 10px;
+    }
+    .modal-order-new__select, .iti.iti--allow-dropdown.iti--show-flags, .modal-order-new__input, .modal-order-new__checkbox {
+      display: none;
+    }
+    .modal-order-new__input_sms {
+      display: block;
+    }
+  }
 }
 
 .modal-order-new__title {
@@ -111,6 +127,9 @@
   }
   &::placeholder {
     color: rgba(0, 0, 0, 0.42);
+  }
+  &_sms {
+    display: none;
   }
 }
 
