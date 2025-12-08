@@ -309,7 +309,7 @@ function globalFormInit (form, func_name, type) {
     resetError()
     e.preventDefault()
 
-
+    if (globalForm.classList.contains('form-enter-sms-code') && !globalForm.querySelector('input[name="sms_code"]'?.value)) return
 
     console.log(input && !input?.value?.trim())
     console.log(iti?.isValidNumber())
