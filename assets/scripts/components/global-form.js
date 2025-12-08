@@ -464,6 +464,9 @@ function globalFormInit (form, func_name, type) {
             const sms_code = globalForm.querySelector('input[name="sms_code"]')?.value
             if (sms_code) formObject['sms_code'] = sms_code
 
+            const callPhoneButton = globalForm.querySelector('[data-role="global-form-call-phone"]')
+            if (callPhoneButton) formObject['already_call'] = true
+
             //formObject.captcha_token = captchaToken;
 
             $.request('MainFunctions::' + dataRequest, {
@@ -492,6 +495,8 @@ function globalFormInit (form, func_name, type) {
 
                 if (response['requires_verification']) {
                   showSmsInput(response['message'])
+                } else if (response['requires_phonecall_verification']) {
+                  showFormPhoneCall(response)
                 } else {
                   clearForm();
                   if (type === 'preFormData') {
@@ -524,6 +529,17 @@ function globalFormInit (form, func_name, type) {
     }
 
   })
+
+  function showFormPhoneCall (response) {
+    globalForm.classList.add('form-enter-sms-code')
+    const submitButton = globalForm.querySelector('.modal-order-new__button')
+    if (submitButton) submitButton.innerHTML = 'Уже позвонил'
+    const title = globalForm.querySelector('.modal-order-new__title')
+    if (title) {
+      title.innerHTML = response['message'] + ' ' +  response['call_phone_pretty']
+      title.insertAdjacentHTML('afterend', `<a href="callto:${response['call_phone']}" class="modal-order-new__button btn-warning" data-role="global-form-call-phone" type="button">Позвонить</a>`)
+    }
+  }
 
   function showSmsInput (message) {
     const title = globalForm.querySelector('.modal-order-new__title')
