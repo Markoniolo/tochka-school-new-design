@@ -2860,9 +2860,11 @@ function globalFormInit (form, func_name, type) {
                 if (response['requires_verification']) {
                   showSmsInput(response['message'])
                   btnSubmit.disabled = false
+                  isSubmitting = false
                 } else if (response['requires_phonecall_verification']) {
                   showFormPhoneCall(response)
                   btnSubmit.disabled = false
+                  isSubmitting = false
                 } else {
                   clearForm();
                   if (type === 'preFormData') {
