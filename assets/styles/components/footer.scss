@@ -90,7 +90,7 @@
 
 .footer__box {
   &:nth-child(1) {
-    max-width: 262px;
+    max-width: 272px;
     width: 100%;
     @include media(md) {
       position: absolute;
@@ -234,7 +234,7 @@ a.footer__lk {
     line-height: 146%;
   }
   @include media(xs) {
-    max-width: 248px;
+    max-width: 255px;
     width: 100%;
     line-height: 154%;
     margin-top: 21px;
@@ -508,7 +508,7 @@ a.footer__organization {
     font-size: 15px;
     position: absolute;
     left: 48px;
-    top: 448px;
+    top: 486px;
   }
   @include media(xs) {
     max-width: 232px;
@@ -542,7 +542,7 @@ a.footer__organization {
     font-size: 15px;
     width: 100%;
     order: 1;
-    top: 522px;
+    top: 560px;
     max-width: 332px;
     left: 48px;
   }
