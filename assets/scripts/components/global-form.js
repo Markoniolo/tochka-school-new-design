@@ -552,7 +552,8 @@ function globalFormInit (form, func_name, type) {
     if (submitButton) submitButton.innerHTML = 'Уже позвонил'
     const title = globalForm.querySelector('.modal-order-new__title') ||
       globalForm.querySelector('.ege-cap__title') ||
-      globalForm.querySelector('.pre-cap__headline')
+      globalForm.querySelector('.pre-cap__headline') ||
+      globalForm.querySelector('[data-element="form-enter-sms-title"]')
     if (title) {
       title.innerHTML = response['message'] + ' ' +  response['call_phone_pretty']
     }
@@ -562,7 +563,8 @@ function globalFormInit (form, func_name, type) {
   function showSmsInput (message) {
     const title = globalForm.querySelector('.modal-order-new__title') ||
       globalForm.querySelector('.ege-cap__title') ||
-      globalForm.querySelector('.pre-cap__headline')
+      globalForm.querySelector('.pre-cap__headline') ||
+      globalForm.querySelector('[data-element="form-enter-sms-title"]')
     if (title) {
       title.innerHTML = message
     }
