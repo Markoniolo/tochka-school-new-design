@@ -499,6 +499,27 @@ a.ege-cap__tab {
   .iti__selected-country {
     padding-left: 22px;
   }
+  .modal-order-new__button {
+    @include media(lg) {
+      margin: 0;
+    }
+    @include media(xs) {
+      margin-bottom: 16px;
+    }
+  }
+  .modal-order-new__input {
+    @include media(lg) {
+      margin-bottom: 0;
+    }
+    @include media(xs) {
+      margin-bottom: 20px;
+    }
+  }
+  &.form-enter-sms-code {
+    .ege-cap__input, .iti.iti--allow-dropdown.iti--show-flags, .ege-cap__labels {
+      display: none;
+    }
+  }
 }
 
 .ege-cap__title {
@@ -564,6 +585,7 @@ a.ege-cap__tab {
     margin-bottom: 0;
     margin-top: 0;
     width: calc(33.33% - 9px);
+    flex-shrink: 0;
   }
   @include media(xs) {
     margin-top: 10px;

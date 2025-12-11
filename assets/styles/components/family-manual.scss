@@ -129,6 +129,11 @@
   .iti__selected-country {
     padding-left: 22px;
   }
+  &.form-enter-sms-code {
+    .family-manual__label, .family-manual__input, .iti.iti--allow-dropdown.iti--show-flags {
+      display: none;
+    }
+  }
 }
 
 .family-manual__inner {
