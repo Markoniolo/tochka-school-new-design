@@ -550,11 +550,13 @@ function globalFormInit (form, func_name, type) {
     const submitButton = globalForm.querySelector('.btn-warning') ||
       globalForm.querySelector('.btn-orange')
     if (submitButton) submitButton.innerHTML = 'Уже позвонил'
-    const title = globalForm.querySelector('.modal-order-new__title')
+    const title = globalForm.querySelector('.modal-order-new__title') ||
+      globalForm.querySelector('.ege-cap__title') ||
+      globalForm.querySelector('.pre-cap__headline')
     if (title) {
       title.innerHTML = response['message'] + ' ' +  response['call_phone_pretty']
     }
-    if (submitButton) submitButton.insertAdjacentHTML('beforeend', `<a href="callto:${response['call_phone']}" class="modal-order-new__button btn-warning" data-role="global-form-call-phone" type="button">Позвонить</a>`)
+    if (submitButton) submitButton.insertAdjacentHTML('beforebegin', `<a href="callto:${response['call_phone']}" class="modal-order-new__button btn-warning" data-role="global-form-call-phone" type="button">Позвонить</a>`)
   }
 
   function showSmsInput (message) {
@@ -566,7 +568,7 @@ function globalFormInit (form, func_name, type) {
     }
     const submitBtn = globalForm.querySelector('.btn-warning') ||
       globalForm.querySelector('.btn-orange')
-    if (inputSms) submitBtn.insertAdjacentHTML('beforeend', inputSms)
+    if (inputSms) submitBtn.insertAdjacentHTML('beforebegin', inputSms)
     globalForm.classList.add('form-enter-sms-code')
   }
 

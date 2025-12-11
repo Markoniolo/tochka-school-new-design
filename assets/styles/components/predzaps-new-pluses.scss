@@ -45,11 +45,26 @@
   flex-direction: column;
   gap: 22px;
   width: calc(33.33% - 25px);
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
   @include media(lg) {
     width: calc(50% - 25px);
+    gap: 12px;
+    border-radius: 10px;
   }
   &_1 {
     @include bg-icon('predzaps-new-pluses/bg-1.svg');
+    @include media(lg) {
+      @include bg-icon('predzaps-new-pluses/bg-1_tablet.svg');
+    }
+    @include media(xs) {
+      @include bg-icon('predzaps-new-pluses/bg-1_mob.svg');
+      background-size: cover;
+    }
+    @include media(xxs) {
+      @include bg-icon('predzaps-new-pluses/bg-1_xxs.svg');
+      background-size: cover;
+    }
     .predzaps-new-pluses__text {
       max-width: 362px;
       @include media(lg) {
@@ -59,6 +74,17 @@
   }
   &_2 {
     @include bg-icon('predzaps-new-pluses/bg-2.svg');
+    @include media(lg) {
+      @include bg-icon('predzaps-new-pluses/bg-2_tablet.svg');
+    }
+    @include media(xs) {
+      @include bg-icon('predzaps-new-pluses/bg-2_mob.svg');
+      background-size: cover;
+    }
+    @include media(xxs) {
+      @include bg-icon('predzaps-new-pluses/bg-2_xxs.svg');
+      background-size: cover;
+    }
     .predzaps-new-pluses__text {
       max-width: 318px;
       @include media(lg) {
@@ -68,6 +94,17 @@
   }
   &_3 {
     @include bg-icon('predzaps-new-pluses/bg-3.svg');
+    @include media(lg) {
+      @include bg-icon('predzaps-new-pluses/bg-3_tablet.svg');
+    }
+    @include media(xs) {
+      @include bg-icon('predzaps-new-pluses/bg-3_mob.svg');
+      background-size: cover;
+    }
+    @include media(xxs) {
+      @include bg-icon('predzaps-new-pluses/bg-3_xxs.svg');
+      background-size: cover;
+    }
     .predzaps-new-pluses__text {
       max-width: 365px;
       @include media(lg) {
@@ -77,6 +114,17 @@
   }
   &_4 {
     @include bg-icon('predzaps-new-pluses/bg-4.svg');
+    @include media(lg) {
+      @include bg-icon('predzaps-new-pluses/bg-4_tablet.svg');
+    }
+    @include media(xs) {
+      @include bg-icon('predzaps-new-pluses/bg-4_mob.svg');
+      background-size: cover;
+    }
+    @include media(xxs) {
+      @include bg-icon('predzaps-new-pluses/bg-4_xxs.svg');
+      background-size: cover;
+    }
     .predzaps-new-pluses__text {
       max-width: 338px;
       @include media(lg) {
@@ -86,6 +134,17 @@
   }
   &_5 {
     @include bg-icon('predzaps-new-pluses/bg-5.svg');
+    @include media(lg) {
+      @include bg-icon('predzaps-new-pluses/bg-5_tablet.svg');
+    }
+    @include media(xs) {
+      @include bg-icon('predzaps-new-pluses/bg-5_mob.svg');
+      background-size: cover;
+    }
+    @include media(xxs) {
+      @include bg-icon('predzaps-new-pluses/bg-5_xxs.svg');
+      background-size: cover;
+    }
     .predzaps-new-pluses__text {
       max-width: 376px;
       @include media(lg) {
@@ -95,6 +154,17 @@
   }
   &_6 {
     @include bg-icon('predzaps-new-pluses/bg-6.svg');
+    @include media(lg) {
+      @include bg-icon('predzaps-new-pluses/bg-6_tablet.svg');
+    }
+    @include media(xs) {
+      @include bg-icon('predzaps-new-pluses/bg-6_mob.svg');
+      background-size: cover;
+    }
+    @include media(xxs) {
+      @include bg-icon('predzaps-new-pluses/bg-6_xxs.svg');
+      background-size: cover;
+    }
     .predzaps-new-pluses__text {
       max-width: 345px;
       @include media(lg) {
