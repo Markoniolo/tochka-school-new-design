@@ -4,6 +4,14 @@
   @include media(lg) {
     margin-bottom: 40px;
   }
+  &_predzaps-new {
+    @include media(lg) {
+      margin-top: 130px;
+    }
+    @include media(xs) {
+      margin-top: 230px;
+    }
+  }
 }
 
 .pre-about__cont {

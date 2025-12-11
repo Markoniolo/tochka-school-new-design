@@ -1,0 +1,337 @@
+.predzaps-new-cap {
+  margin-top: 60px;
+  margin-bottom: 54px;
+  @include media(lg) {
+    margin-top: 0;
+    padding: 30px 0 0;
+    background: linear-gradient(270deg, #c3d4f6 0%, #ebf2ff 100%);
+  }
+  @include media(xs) {
+    padding: 25px 0;
+  }
+}
+
+.predzaps-new-cap__wrap {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  @include media(lg) {
+    flex-direction: column;
+    gap: 38px;
+  }
+  @include media(xs) {
+    gap: 30px;
+  }
+  &::before, &::after {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    @include media(lg) {
+      content: none;
+    }
+  }
+  &::before {
+    top: 9px;
+    left: -60px;
+    background: #7fcbb4;
+    width: 164px;
+    height: 164px;
+  }
+  &::after {
+    top: 162px;
+    left: -79px;
+    width: 60px;
+    height: 60px;
+    background: #f2c45b;
+  }
+}
+
+.predzaps-new-cap__area {
+  position: relative;
+  border-radius: 31px;
+  background: linear-gradient(270deg, #c3d4f6 0%, #ebf2ff 100%);
+  padding: 52px 31px 60px 60px;
+  @include media(lg) {
+    border-radius: 0;
+    background: unset;
+    padding: 0;
+  }
+  &:before {
+    content: '';
+    @include bg-icon('predzaps-new-cap/circles.svg');
+    width: 239px;
+    height: 271px;
+    position: absolute;
+    top: 256px;
+    right: 36px;
+    @include media(lg) {
+      top: 30px;
+      right: 14px;
+    }
+    @include media(xs) {
+      content: none;
+    }
+  }
+}
+
+.predzaps-new-cap__tag {
+  position: absolute;
+  left: 65px;
+  top: 0;
+  transform: translateY(-50%);
+  border-radius: 33px;
+  padding: 6px 20px;
+  background: linear-gradient(90deg, #96abd7 0%, #6683c2 100%);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  color: #fff;
+  @include media(lg) {
+    margin-bottom: 18px;
+    position: static;
+    transform: none;
+    font-size: 14px;
+    padding: 4px 12px;
+    display: inline-block;
+  }
+  @include media(xs) {
+    display: block;
+    width: 184px;
+    margin: 0 auto 18px;
+    padding: 4px;
+    font-size: 12px;
+    line-height: 100%;
+    text-align: center;
+  }
+}
+
+.predzaps-new-cap__caption {
+  margin-bottom: 40px;
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 107%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 18px;
+    font-size: 30px;
+    line-height: 113%;
+    max-width: 420px;
+    width: 100%;
+  }
+  @include media(xs) {
+    margin: 0 auto 22px;
+    text-align: center;
+    max-width: 320px;
+    width: 100%;
+    font-size: 27px;
+    line-height: 104%;
+  }
+  @include media(xxs) {
+    font-size: 25px;
+    line-height: 112%;
+  }
+}
+
+.predzaps-new-cap__list {
+  margin-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  @include media(lg) {
+    margin-bottom: 30px;
+    gap: 10px;
+  }
+}
+
+.predzaps-new-cap__item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    gap: 8px;
+    font-size: 15px;
+    line-height: 107%;
+  }
+  @include media(xs) {
+    font-size: 14px;
+    line-height: 114%;
+  }
+  &::before {
+    content: '';
+    width: 23px;
+    height: 23px;
+    @include bg-icon('icons/ic_point_orange.svg');
+    flex-shrink: 0;
+    @include media(lg) {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+.predzaps-new-cap__counter {
+  border: 1px solid rgba(108, 136, 197, 0.57);
+  border-radius: 20px;
+  padding: 20px 25px;
+  display: inline-block;
+  @include media(lg) {
+    padding: 4px 20px;
+    border-radius: 10px;
+  }
+  @include media(xs) {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4px 16px;
+    max-width: 183px;
+    width: 100%;
+  }
+}
+
+.predzaps-new-cap__counter-value {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 100%;
+  color: #f37e60;
+  @include media(lg) {
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+}
+
+.predzaps-new-cap__counter-note {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 12px;
+  }
+}
+
+.predzaps-new-cap__form {
+  padding: 36px 40px;
+  max-width: 413px;
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 32px;
+  background: linear-gradient(90deg, #6683c2 0%, #96abd7 100%);
+  @include media(lg) {
+    margin-bottom: -106px;
+    border-radius: 10px;
+    max-width: 100%;
+    padding: 12px 20px 30px;
+  }
+  @include media(xs) {
+    margin-bottom: -233px;
+  }
+  @include media(xxs) {
+    padding: 12px 15px 30px;
+  }
+  .iti {
+    margin-bottom: 20px;
+    width: 100%;
+    @include media(lg) {
+      margin-bottom: 0;
+      width: calc(33.33% - 12px);
+    }
+    @include media(xs) {
+      margin-bottom: 15px;
+      width: 100%;
+    }
+    input {
+      width: 100%;
+    }
+  }
+}
+
+.predzaps-new-cap__headline {
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 24px;
+  color: #fff;
+  @include media(lg) {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+}
+
+.predzaps-new-cap__inner {
+  @include media(lg) {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 23px 13px;
+  }
+  @include media(xs) {
+    display: block;
+  }
+}
+
+.predzaps-new-cap__input {
+  padding: 16px 30px;
+  width: 100%;
+  @include media(lg) {
+    width: calc(33.33% - 12px);
+    padding: 11px 25px;
+  }
+  @include media(xs) {
+    width: 100%;
+  }
+  &:not(:last-of-type) {
+    margin-bottom: 25px;
+    @include media(lg) {
+      margin-bottom: 0;
+    }
+    @include media(xs) {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.predzaps-new-cap__submit {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  padding: 19px 30px 20px;
+  @include media(lg) {
+    width: calc(33.33% - 12px);
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 15px;
+    padding: 15px 30px;
+  }
+  @include media(xs) {
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+}
+
+.predzaps-new-cap__label {
+  @include media(lg) {
+    width: calc(33.33% - 12px);
+  }
+  @include media(xs) {
+    width: 100%;
+  }
+  &:not(:last-of-type) {
+    margin-bottom: 15px;
+    @include media(lg) {
+      margin-bottom: 0;
+    }
+    @include media(xs) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.predzaps-new-cap__checkbox-text {
+  color: rgba(255, 255, 255, 0.6);
+}

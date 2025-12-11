@@ -1,0 +1,32 @@
+-
+  const predzapsNewPlusesList1 = [
+    'Самая большая в году скидка на&nbsp;обучение (до 30%)',
+    'Гарантированное место на&nbsp;курсах',
+    'Возможность записаться на&nbsp;занятия раньше остальных',
+  ]
+  const predzapsNewPlusesList2 = [
+    'Спланировать нагрузку на&nbsp;следующий учебный год',
+    'Понимать потенциальное количество учеников на курсах',
+    'Найти новых учителей и&nbsp;тьюторов',
+  ]
+
+.predzaps-new-pluses
+  .cont
+    h2.predzaps-new-pluses__caption Предзапись — это win-win
+    .predzaps-new-pluses__title Ваши преимущества:
+    ul.predzaps-new-pluses__list
+      each item, index in predzapsNewPlusesList1
+        li.predzaps-new-pluses__item(class=`predzaps-new-pluses__item_${index+1}`)
+          img.predzaps-new-pluses__icon(src=staticImg('predzaps-new-pluses/icon.svg') alt='')
+          .predzaps-new-pluses__text!= item
+    .predzaps-new-pluses__title Наши возможности:
+      ul.predzaps-new-pluses__list
+        each item in predzapsNewPlusesList2
+          li.predzaps-new-pluses__item(class=`predzaps-new-pluses__item_${index+1+3}`)
+            img.predzaps-new-pluses__icon(src=staticImg('predzaps-new-pluses/icon.svg') alt='')
+            .predzaps-new-pluses__text!= item
+    .predzaps-new-pluses__headline.
+      Сотрудничество школы и родителей позволяет поддерживать качество обучения на высоком уровне, делать уроки живыми
+      и интересными, достигать новых высот в учёбе.
+    .predzaps-new-pluses__button-box
+      a.predzaps-new-pluses__button.btn-orange(href='#') Записаться

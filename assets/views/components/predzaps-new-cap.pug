@@ -1,0 +1,43 @@
+.predzaps-new-cap
+  .cont
+    .predzaps-new-cap__wrap
+      .predzaps-new-cap__area
+        .predzaps-new-cap__tag Долгожданное событие для&nbsp;учеников и родителей
+        h1.predzaps-new-cap__caption!= 'Предзапись на занятия в&nbsp;следующем учебном&nbsp;году'
+        ul.predzaps-new-cap__list
+          li.predzaps-new-cap__item Получить самую большую скидку в году
+          li.predzaps-new-cap__item Сэкономить от 8 000 до 53 000 рублей
+          li.predzaps-new-cap__item Занять место на обучении раньше остальных
+        .predzaps-new-cap__counter
+          .predzaps-new-cap__counter-value 10 542
+          .predzaps-new-cap__counter-note Человек уже записалось
+      form.predzaps-new-cap__form(data-request-validate)
+        .predzaps-new-cap__headline Быстрая регистрация
+        .predzaps-new-cap__inner
+          input.input_utm(name='utm' type='hidden' value='')
+          input(type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru/blog/voprosy-dlya-podrostkov-chto-polezno-i-interesno-obsudit-do-15-let")
+          input.predzaps-new-cap__input.input-white(placeholder='Имя родителя' type='text' name='name')
+          input.predzaps-new-cap__input.input-white(placeholder='Телефон родителя' data-phone-pattern type='tel' required data-element='input-phone-intl' name='phone')
+          input(name='tel' type='hidden' required data-element='input-phone-hidden')
+          input.predzaps-new-cap__input.input-white(placeholder='E-mail родителя' type='email' name='email')
+          button.predzaps-new-cap__submit.btn-orange.btn-warning Оставить заявку
+          label.predzaps-new-cap__label.checkbox-white-label
+            input.predzaps-new-cap__checkbox.checkbox-white-input(name='policy' type='checkbox')
+            .predzaps-new-cap__checkbox-view.checkbox-white-input-view
+            .predzaps-new-cap__checkbox-text.checkbox-white-text
+              | Даю
+              |
+              a(href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target='_blank') Согласие
+              |
+              | на обработку персональных
+              | данных в соответствии с
+              |
+              a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf' target='_blank') Политикой
+          label.predzaps-new-cap__label.checkbox-white-label
+            input.predzaps-new-cap__checkbox.checkbox-white-input(name='news' type='checkbox')
+            .predzaps-new-cap__checkbox-view.checkbox-white-input-view
+            .predzaps-new-cap__checkbox-text.checkbox-white-text
+              | Согласие на получение
+              |
+              a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf' target='_blank') информационной рассылки
+              | . Мы напомним Вам о самой низкой цене в году
