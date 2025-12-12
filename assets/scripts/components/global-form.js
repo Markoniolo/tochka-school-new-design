@@ -475,6 +475,8 @@ function globalFormInit (form, func_name, type) {
             const isResend = globalForm.querySelector('.form-enter-sms-resend.active')
             if (isResend) {
               formObject['resend_sms'] = true
+              const timer = globalForm.querySelector('.form-enter-sms-resend')
+              timer.classList.remove('active')
             } else {
               const sms_code = globalForm.querySelector('input[name="sms_code"]')?.value
               if (sms_code) formObject['sms_code'] = sms_code
@@ -510,7 +512,7 @@ function globalFormInit (form, func_name, type) {
                 }
 
                 if (response['requires_verification']) {
-                  showSmsInput(response)
+                  if (!globalForm.classList.contains('form-enter-sms-code')) showSmsInput(response)
                   btnSubmit.disabled = false
                   isSubmitting = false;
                 } else if (response['requires_phonecall_verification']) {
@@ -614,7 +616,6 @@ function globalFormInit (form, func_name, type) {
         timer.addEventListener('click', () => {
           const sms_code = globalForm.querySelector('input[name="sms_code"]')
           if (sms_code) sms_code.value = ''
-          timer.classList.remove('active')
           timer.innerHTML = 'Получить новый код через <span>02:00</span>'
           initResendSmsTimer()
           const submitEvent = new SubmitEvent("submit")
