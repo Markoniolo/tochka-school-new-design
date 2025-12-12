@@ -522,6 +522,19 @@ a.ege-cap__tab {
     .modal-order-new__input_sms {
       display: block;
     }
+    .ege-cap__inner {
+      @include media(lg) {
+        flex-wrap: wrap;
+      }
+    }
+    .ege-cap__submit {
+      @include media(lg) {
+        width: 100%;
+      }
+    }
+    .form-enter-sms-text, .form-enter-sms-resend, .form-enter-sms-phone, .form-enter-sms-call, .form-enter-sms-note {
+      color: #fff;
+    }
   }
 }
 

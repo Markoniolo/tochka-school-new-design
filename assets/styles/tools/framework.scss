@@ -319,3 +319,91 @@
     }
   }
 }
+
+.iti.iti--container.iti--fullscreen-popup {
+  z-index: 99999;
+}
+
+.form-enter-sms-text {
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 100%;
+  font-weight: 500;
+  @include media(lg) {
+    font-size: 13px;
+  }
+}
+
+.form-enter-sms-resend {
+  display: block;
+  width: 100%;
+  margin-top: 23px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+  @include media(lg) {
+    margin-top: 18px;
+    font-size: 15px;
+  }
+  &.active {
+    pointer-events: unset;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+  }
+  span {
+    font-weight: inherit;
+  }
+}
+
+.form-enter-sms-btn-transparent {
+  border: 2px solid $orange !important;
+  background: transparent !important;
+  color: #000 !important;
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.form-enter-sms-call {
+  margin-bottom: 36px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #000;
+  width: 100%;
+  max-width: 300px;
+  @include media(lg) {
+    margin-bottom: 22px;
+    font-size: 13px;
+    line-height: 16px;
+    max-width: 258px;
+  }
+  @include media(xs) {
+    max-width: 300px;
+  }
+}
+
+.form-enter-sms-note {
+  margin-top: 12px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  @include media(lg) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.form-enter-sms-phone {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #6683c2;
+}

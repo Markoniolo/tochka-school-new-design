@@ -359,7 +359,7 @@ function globalFormInit (form, func_name, type) {
         var form_data = blogPhoneEmailFormData(globalForm);
       }
 
-      inputSms = `<input class="modal-order-new__input modal-order-new__input_sms" required name="sms_code" type="text" placeholder="Код подтверждения">`
+      inputSms = `<input class="modal-order-new__input modal-order-new__input_sms" required name="sms_code" type="text" placeholder="Введите код из смс">`
 
       const email = globalForm.querySelector('[name="email"]')
 
@@ -472,14 +472,19 @@ function globalFormInit (form, func_name, type) {
               formObject[key] = value;
             });
             formObject['smart-token'] = captchaToken;
-            const sms_code = globalForm.querySelector('input[name="sms_code"]')?.value
-            if (sms_code) formObject['sms_code'] = sms_code
+            const isResend = globalForm.querySelector('.form-enter-sms-resend.active')
+            if (isResend) {
+              formObject['resend_sms'] = true
+            } else {
+              const sms_code = globalForm.querySelector('input[name="sms_code"]')?.value
+              if (sms_code) formObject['sms_code'] = sms_code
+            }
 
             const callPhoneButton = globalForm.querySelector('[data-role="global-form-call-phone"]')
             if (callPhoneButton) formObject['already_call'] = true
 
             //formObject.captcha_token = captchaToken;
-
+            clearErrorMessages(globalForm)
             $.request('MainFunctions::' + dataRequest, {
               data: formObject,
               success: function(response) {
@@ -505,7 +510,7 @@ function globalFormInit (form, func_name, type) {
                 }
 
                 if (response['requires_verification']) {
-                  showSmsInput(response['message'])
+                  showSmsInput(response)
                   btnSubmit.disabled = false
                   isSubmitting = false;
                 } else if (response['requires_phonecall_verification']) {
@@ -545,33 +550,84 @@ function globalFormInit (form, func_name, type) {
 
   })
 
+  function clearErrorMessages (form) {
+    const v_message_block = form.querySelector('.v_message_block')
+    if (!v_message_block) return
+    v_message_block.innerHTML = ''
+  }
+
   function showFormPhoneCall (response) {
     globalForm.classList.add('form-enter-sms-code')
     const submitButton = globalForm.querySelector('.btn-warning') ||
       globalForm.querySelector('.btn-orange')
-    if (submitButton) submitButton.innerHTML = 'Уже позвонил'
+    if (submitButton) {
+      submitButton.innerHTML = 'Уже позвонил'
+      submitButton.classList.add('form-enter-sms-btn-transparent')
+      submitButton.insertAdjacentHTML('beforebegin', `<div class="form-enter-sms-call">Пожалуйста, позвоните по этому бесплатному номеру для прохождения верификации!</div>`)
+      submitButton.insertAdjacentHTML('beforebegin', `<a href="tel:${response['call_phone']}" class="modal-order-new__button btn-warning" data-role="global-form-call-phone" type="button">Позвонить</a>`)
+      submitButton.insertAdjacentHTML('afterend', `<div class="form-enter-sms-note">Ожидаем звонок с номера <br> ${inputHidden.value}</div>`)
+
+    }
     const title = globalForm.querySelector('.modal-order-new__title') ||
       globalForm.querySelector('.ege-cap__title') ||
       globalForm.querySelector('.pre-cap__headline') ||
       globalForm.querySelector('[data-element="form-enter-sms-title"]')
     if (title) {
-      title.innerHTML = response['message'] + ' ' +  response['call_phone_pretty']
+      title.innerHTML = `<a href="tel:${response['call_phone']}" class="form-enter-sms-phone">${response['call_phone_pretty']}</a>`
     }
-    if (submitButton) submitButton.insertAdjacentHTML('beforebegin', `<a href="callto:${response['call_phone']}" class="modal-order-new__button btn-warning" data-role="global-form-call-phone" type="button">Позвонить</a>`)
   }
 
-  function showSmsInput (message) {
+  function showSmsInput () {
     const title = globalForm.querySelector('.modal-order-new__title') ||
       globalForm.querySelector('.ege-cap__title') ||
       globalForm.querySelector('.pre-cap__headline') ||
       globalForm.querySelector('[data-element="form-enter-sms-title"]')
     if (title) {
-      title.innerHTML = message
+      title.innerHTML = 'Введите код подтверждения'
     }
     const submitBtn = globalForm.querySelector('.btn-warning') ||
       globalForm.querySelector('.btn-orange')
+    submitBtn.insertAdjacentHTML('beforebegin', `<div class="form-enter-sms-text">Отправили код на номер ${inputHidden.value}</div>`)
     if (inputSms) submitBtn.insertAdjacentHTML('beforebegin', inputSms)
+    submitBtn.insertAdjacentHTML('afterend', `<button type="button" class="form-enter-sms-resend">Получить новый код через <span>02:00</span></button>`)
     globalForm.classList.add('form-enter-sms-code')
+    initResendSmsTimer()
+  }
+
+  function initResendSmsTimer () {
+    const timer = globalForm.querySelector('.form-enter-sms-resend')
+    const timerSpan = globalForm.querySelector('.form-enter-sms-resend span')
+    if (!timer || !timerSpan) return
+
+    let timeInSecs
+    let ticker
+
+    // timeInSecs = 2 * 60
+    timeInSecs = 4
+    ticker = setInterval(tick, 1000)
+
+    function tick() {
+      let secs = timeInSecs
+      if (secs <= 0) {
+        clearInterval(ticker)
+        timer.classList.add('active')
+        timer.innerHTML = 'Получить новый код'
+        timer.addEventListener('click', () => {
+          const submitEvent = new SubmitEvent("submit")
+          globalForm.dispatchEvent(submitEvent)
+        })
+        return
+      }
+      timeInSecs--
+
+      let mins = Math.floor(secs / 60)
+      secs %= 60
+
+      let displayMins = (mins < 10) ? "0" + mins : mins
+      let displaySecs = (secs < 10) ? "0" + secs : secs
+
+      timerSpan.innerHTML = displayMins + ":" + displaySecs
+    }
   }
 
 

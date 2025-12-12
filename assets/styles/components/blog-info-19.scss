@@ -27,6 +27,20 @@
     font-family: $font_main;
   }
   &.form-enter-sms-code {
+    .blog-info-19__top {
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .form-enter-sms-resend {
+      width: auto;
+    }
+    .form-enter-sms-text, .form-enter-sms-resend, .form-enter-sms-phone, .form-enter-sms-call, .form-enter-sms-note {
+      color: #fff;
+    }
+    .form-enter-sms-btn-transparent {
+      color: #fff !important;
+    }
     .input-white, .iti.iti--allow-dropdown.iti--show-flags {
       display: none;
     }

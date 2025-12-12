@@ -162,6 +162,9 @@
     .modal-order-new__input_sms {
       display: block;
     }
+    .form-enter-sms-text, .form-enter-sms-resend, .form-enter-sms-phone, .form-enter-sms-call, .form-enter-sms-note {
+      color: #fff;
+    }
   }
 }
 

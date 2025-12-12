@@ -27,6 +27,20 @@
     @include media(lg) {
       min-height: auto;
     }
+    .blog-info-5__top {
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .form-enter-sms-resend {
+      width: auto;
+    }
+    .form-enter-sms-text, .form-enter-sms-resend, .form-enter-sms-phone, .form-enter-sms-call, .form-enter-sms-note {
+      color: #fff;
+    }
+    .form-enter-sms-btn-transparent {
+      color: #fff !important;
+    }
     .blog-info-5__title {
       min-height: 135px;
       @include media(lg) {

@@ -65,7 +65,7 @@
     padding-left: 100px !important;
   }
   &.form-enter-sms-code {
-    padding: 21px 28px;
+    padding: 21px 28px 26px;
     @include media(xs) {
       padding: 28px 20px;
     }
@@ -76,7 +76,16 @@
       display: none;
     }
     .modal-order-new__input_sms {
+      margin-bottom: 35px;
       display: block;
+    }
+    .modal-order-new__title {
+      @include media(xs) {
+        font-size: 16px;
+      }
+    }
+    .form-enter-sms-resend.active {
+      color: #6683c2;
     }
   }
 }
@@ -92,10 +101,15 @@
   }
   @include media(xs) {
     margin-bottom: 26px;
+    padding-right: 45px;
   }
   @include media(xxs) {
     margin-bottom: 22px;
     font-size: 16px;
+    padding-right: 35px;
+  }
+  a {
+    display: block;
   }
 }
 
@@ -130,6 +144,9 @@
   }
   &_sms {
     display: none;
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.62);
+    }
   }
 }
 
@@ -336,8 +353,12 @@
   border: none;
   @include media(lg) {
     font-size: 15px;
-    padding: 17px 20px 18px;
+    padding: 10px 20px;
     margin-bottom: 12px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   @include media(xs) {
     margin-bottom: 16px;
@@ -345,6 +366,11 @@
   &:hover {
     background: #FF9C83;
     border: none;
+    color: #fff;
+  }
+  &:focus {
+    box-shadow: none;
+    background: $orange;
     color: #fff;
   }
 }

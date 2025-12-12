@@ -26,6 +26,14 @@
     font-family: $font_main;
   }
   &.form-enter-sms-code {
+    .blog-info-6__top {
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .form-enter-sms-resend {
+      width: auto;
+    }
     .input-white, .iti.iti--allow-dropdown.iti--show-flags {
       display: none;
     }

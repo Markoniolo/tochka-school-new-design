@@ -1,0 +1,76 @@
+-
+  const predzapsNewHowList = [
+    {
+      title: 'Сильные учителя, лучшие в&nbsp;стране',
+      texts: ['Наши педагоги — победители конкурса “Учитель года России”, председатели экспертных комиссий ОГЭ и ЕГЭ, кандидаты наук и авторы многих учебников.',
+        'Они объяснят любую тему простым языком и покажут, что учёба может быть увлекательной.']
+    },
+    {
+      title: 'Проверка знаний',
+      texts: ['На старте обучения проводим входное тестирование, чтобы понять реальный уровень знаний.',
+      'В процессе обучение проводим промежуточные тестирования, чтобы отследить прогресс.']
+    },
+    {
+      title: 'Родительский контроль',
+      texts: ['Вы видите прогресс ребёнка по каждому курсу: количество просмотренных уроков и выполненных заданий.',
+        'Можете наблюдать общение ребенка с тьютором и понимать, насколько активно работает ребенок и какие комментарии ему дает тьютор. ']
+    },
+    {
+      title: 'Интерес с первого урока',
+      texts: ['На уроках проводим опыты, эксперименты, раскрываем тайны мира и показываем как применить знания на практике.']
+    }
+  ]
+
+.predzaps-new-how
+  .cont
+    h2.predzaps-new-how__caption Как проходит обучение
+    .predzaps-new-how__info
+      .predzaps-new-how__circle.predzaps-new-how__circle_1
+      .predzaps-new-how__circle.predzaps-new-how__circle_2
+      .predzaps-new-how__circle.predzaps-new-how__circle_3
+      picture.predzaps-new-how__info-picture
+        source(srcset=staticImg('predzaps-new-how/info_tablet.svg') media="(max-width: 1339px)")
+        img.predzaps-new-how__info-image(src=staticImg('predzaps-new-how/info.svg') alt='')
+      .predzaps-new-how__info-box.predzaps-new-how__info-box_1
+        .predzaps-new-how__info-title На уроке
+        .predzaps-new-how__info-text.
+          Учитель в онлайн-режиме объясняет тему, ученики могут задавать вопросы в чат.
+        .predzaps-new-how__info-text.
+          Потом переходим к практике: ученики активно участвуют в обсуждениях, выдвигают гипотезы.
+        .predzaps-new-how__info-text!= 'Часто обсуждения действительно бурные: в&nbsp;отличие от обычной школы ребята могут высказывать мнение одновременно — удобно, когда нужно собрать сразу несколько точек зрения.'
+        .predzaps-new-how__info-text.
+          Ученики занимаются без камеры, они не видят и не слышат друг друга.
+      .predzaps-new-how__info-box.predzaps-new-how__info-box_2
+        .predzaps-new-how__info-title После урока
+        .predzaps-new-how__info-text!= 'После урока ученику доступно домашнее задание: тестовая часть проверяется автоматически, а развернутая часть выполняется в тетради, так же, как в обычной школе. Затем работа фотографируется и&nbsp;отправляется на проверку тьютору.'
+        .predzaps-new-how__info-text.
+          Тьютор проверяет домашнюю работу, указывает
+          на ошибки (или наталкивает ученика на их поиск)
+          и подробно объясняет, как их исправить. Даёт возможность выполнить работу над ошибками.
+    .predzaps-new-how__tutor
+      .predzaps-new-how__tutor-inner
+        .predzaps-new-how__tutor-title Личный тьютор = индивидуальный подход!
+        .predzaps-new-how__tutor-headline Тьютор — дополнительный учитель по каждому предмету.
+        .predzaps-new-how__tutor-text.predzaps-new-how__tutor-text_1.predzaps-new-how__tutor-text_bold.
+          Он сопровождает ребёнка в учебном чате 5 дней в неделю вне онлайн-уроков.
+        ul.predzaps-new-how__tutor-list
+          li.predzaps-new-how__tutor-item Проверяет домашнюю работу
+          li.predzaps-new-how__tutor-item Отвечает на неограниченное количество вопросов
+          li.predzaps-new-how__tutor-item Помогает исправлять ошибки
+          li.predzaps-new-how__tutor-item Добивается понимания каждой темы
+        .predzaps-new-how__tutor-text.predzaps-new-how__tutor-text_2
+          span Тьютор знает уровень знаний  своего ученика, учитывает особенности ребёнка.
+          span Таким образом реализуется индивидуальный подход
+      picture.predzaps-new-how__tutor-picture
+        source(srcset=staticImg('predzaps-new-how/tutor_mob.svg') media="(max-width: 743px)")
+        source(srcset=staticImg('predzaps-new-how/tutor_tablet.svg') media="(max-width: 1339px)")
+        img.predzaps-new-how__tutor-image(src=staticImg('predzaps-new-how/tutor.svg') alt='')
+    ul.predzaps-new-how__list
+      each item, index in predzapsNewHowList
+        li.predzaps-new-how__item(class=`predzaps-new-how__item_${index+1}`)
+          img.predzaps-new-how__icon(src=staticImg('predzaps-new-how/icon.svg') alt='')
+          .predzaps-new-how__title!= item.title
+          each text, index in item.texts
+            p.predzaps-new-how__text(class=`predzaps-new-how__text_${index+1}`)!= text
+    .predzaps-new-how__button-box
+      a.predzaps-new-how__button.btn-orange(href='#' data-role="scroll-to-anchor") Записаться
