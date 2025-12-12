@@ -2968,8 +2968,7 @@ function globalFormInit (form, func_name, type) {
     let timeInSecs
     let ticker
 
-    // timeInSecs = 2 * 60
-    timeInSecs = 4
+    timeInSecs = 2 * 60
     ticker = setInterval(tick, 1000)
 
     function tick() {
@@ -2979,6 +2978,11 @@ function globalFormInit (form, func_name, type) {
         timer.classList.add('active')
         timer.innerHTML = 'Получить новый код'
         timer.addEventListener('click', () => {
+          const sms_code = globalForm.querySelector('input[name="sms_code"]')
+          if (sms_code) sms_code.value = ''
+          timer.classList.remove('active')
+          timer.innerHTML = 'Получить новый код через <span>02:00</span>'
+          initResendSmsTimer()
           const submitEvent = new SubmitEvent("submit")
           globalForm.dispatchEvent(submitEvent)
         })
