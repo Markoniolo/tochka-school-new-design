@@ -1,0 +1,74 @@
+-
+  const allCoursesFilterListSubjects = [
+    'Математика','Русский язык','Литература','Биология','История',
+    'География','Английский язык','Музыка','Физкультура','ИЗО и технология',
+    'Обществознание','Физика','Химия','Информатика','Окружающий мир','Литературное чтение'
+  ]
+
+.predzaps-thanks
+  .cont
+    form.predzaps-thanks__slide.predzaps-thanks__slide_form.active
+      .predzaps-thanks__form-wrap
+        h1.predzaps-thanks__caption.predzaps-thanks__caption_form!= 'Поздравляем! <span>👍</span>'
+        .predzaps-thanks__form-title!= 'Ваш номер <br> в предзаписи: <span>3814</span>'
+        .predzaps-thanks__form-headline Давайте продолжим регистрацию 👇
+        .predzaps-thanks__form-area
+          .predzaps-thanks__form-text.
+            Выберите класс и предметы, которые вы рассматриваете для обучения ребёнка в следующем учебном году.
+          .predzaps-thanks__form-lines
+            .predzaps-thanks__form-line-inner
+              .predzaps-thanks__form-line-name Ребенок 1
+              .predzaps-thanks__form-line
+                input.predzaps-thanks__form-input.input-white(placeholder='Имя ребенка' name='name')
+                .all-courses__filter.all-courses__filter_class
+                  .all-courses__filter-top(data-element='all-courses-filter-opener' data-default-text='Все классы' data-ftype='class_select')
+                    .all-courses__filter-top-text Все классы
+                  .all-courses__filter-wrap
+                    .all-courses__filter-close
+                    .all-courses__filter-headline Выберите класс
+                    .all-courses__filter-list
+                      label.all-courses__filter-item
+                        input.all-courses__filter-input(type='radio' name='class' value=`subject-id-0` data-element='all-courses-filter-input')
+                        .all-courses__filter-view Дошкольники
+                      each item, index in [1,2,3,4,5,6,7,8,9,10,11]
+                        label.all-courses__filter-item
+                          input.all-courses__filter-input(type='radio' name='class' value=`subject-id-${index + 1}` data-element='all-courses-filter-input')
+                          .all-courses__filter-view= `${item} класс`
+                    button.all-courses__confirm.btn-blue(type='button') Подтвердить
+                .all-courses__filter.all-courses__filter_subject
+                  .all-courses__filter-top(data-element='all-courses-filter-opener' data-default-text='Все предметы' data-ftype='class_subjects')
+                    .all-courses__filter-top-text Все предметы
+                  .all-courses__filter-wrap.all-courses__filter-wrap_subject
+                    .all-courses__filter-close
+                    .all-courses__filter-headline Выберите предмет
+                    .all-courses__filter-swap.class_subjects
+                      .all-courses__filter-tabs
+                        each item, index in ['Школьные предметы','Семейное обучение','Иностранные языки','IT-курсы','Развивающие курсы','Подготовка к школе']
+                          button.all-courses__filter-tab(data-index=index type='button')= item
+                      .all-courses__filter-list
+                        each item, index in allCoursesFilterListSubjects
+                          label.all-courses__filter-item(data-index=index)
+                            input.all-courses__filter-input(type='checkbox' name='subject' value=`subject-id-${index + 1}` data-element='all-courses-filter-input')
+                            .all-courses__filter-view= `${item}`
+                              img.all-courses__filter-ticket(src=staticImg('all-courses/all-courses-icon.svg') alt='')
+                    button.all-courses__confirm.btn-blue(type='button') Подтвердить
+          button.predzaps-thanks__form-add(type='button')
+            span Добавить ещё ребёнка
+          button.predzaps-thanks__form-submit.btn-orange Отправить
+    .predzaps-thanks__slide.predzaps-thanks__slide_tg
+      .predzaps-thanks__caption.predzaps-thanks__caption_tg Отлично! 🤩 Рады,&nbsp;что&nbsp;вы&nbsp;с&nbsp;нами!
+      .predzaps-thanks__tg-title.
+        Ссылка на оплату с самой большой скидкой и важная информация для участников будет в закрытом телеграм-канале.
+      .predzaps-thanks__tg-text.
+        Обязательно добавляйтесь в канал, чтобы завершить регистрацию и получить лучшую цену на обучение.
+      button.predzaps-thanks__tg-button.btn-orange(data-href-link="#") Перейти в канал
+      .predzaps-thanks__tg-note.
+        Закрепите канал 📌 Так вы точно сможете занять место на обучении по самой низкой цене в году.
+    .predzaps-thanks__slide.predzaps-thanks__slide_last
+      .predzaps-thanks__caption.predzaps-thanks__caption_last На всякий случай
+      .predzaps-thanks__last-text Наши резервные каналы. Присоединяйтесь, чтобы быть на&nbsp;связи в случае блокировки Телеграм.
+      .predzaps-thanks__last-links
+        each item in ['max','vk']
+          button.predzaps-thanks__last-link(data-href-link="#")
+            img.predzaps-thanks__last-icon(src=staticImg(`predzaps-thanks/${item}.svg`) alt='')
+            .predzaps-thanks__last-subscribe Подписаться

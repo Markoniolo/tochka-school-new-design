@@ -493,6 +493,18 @@
   }
 }
 
+.all-courses__confirm {
+  margin-top: 15px;
+  margin-left: auto;
+  font-size: 15px;
+  line-height: 100%;
+  padding: 17px 30px 18px;
+  @include media(xs) {
+    display: block;
+    width: 100%;
+  }
+}
+
 .all-courses__filter-item {
   cursor: pointer;
   &:hover {
@@ -516,7 +528,8 @@
 
 .all-courses__filter-ticket {
   display: inline-block;
-  width: auto;
+  width: 25px;
+  height: 25px;
   @include media(xs) {
     transform: scale(0.8);
   }
