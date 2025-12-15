@@ -1,0 +1,24 @@
+-
+  const predzapsNewModalTags = [
+    'Аттестат гос. образца', 'от 2 до 5 уроков в день', 'Онлайн-аттестация',
+    'Бесплатные доп. курсы', 'Прикрепление к школе-партнеру', 'Помощь в оформлении документов ',
+  ]
+  const predzapsNewModalList = [
+    'В конце учебного года вы получите аттестационный лист с оценками по всем предметам.',
+    'Перейти на «семейное» можно в любой момент. Но начать обучение в семейном формате можно и без ухода из обычной школы.',
+    'Забрать документы и прикрепиться к новой школе можно позже.',
+    'Поможем с оформлением документов и переходом на семейное обучение в комфортном для вас темпе',
+  ]
+
+.predzaps-new-modal#predzaps-new-modal
+  .predzaps-new-modal__caption Семейное обучение, 1-11 класс
+  .predzaps-new-modal__tags
+    each tag in predzapsNewModalTags
+      .predzaps-new-modal__tag= tag
+  .predzaps-new-modal__title.
+    Семейное обучение — законная альтернатива обычной школе. Ребёнок не ходит в школу.
+    Вместе с Вами мы организуем его учёбу дома.
+  ul.predzaps-new-modal__list
+    each item in predzapsNewModalList
+      li.predzaps-new-modal__item= item
+  a.predzaps-new-modal__button.btn-orange(href='#predzaps-new-order' data-role='scroll-to-anchor' data-fancybox-close scroll-duration="instant") Записаться

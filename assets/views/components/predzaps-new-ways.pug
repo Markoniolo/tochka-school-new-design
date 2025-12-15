@@ -1,0 +1,42 @@
+-
+  const predzapsNewWaysArea = [
+    { title: 'Школьные предметы, 1-11 кл', type: 'svg' },
+    { title: 'Подготовка к ОГЭ и ЕГЭ', type: 'png'},
+    { title: 'Дополнительные предметы', type: 'svg'},
+    { title: 'Направление IT', type: 'svg'},
+    { title: 'Семейное обучение, 1-11 класс', type: 'svg'},
+  ]
+  const predzapsNewWaysLabels = [
+    'Аттестат гос. образца', 'от 2 до 5 уроков в день', 'Онлайн-аттестация',
+    'Бесплатные доп. курсы', 'Прикрепление к школе-партнеру', 'Помощь в оформлении документов ',
+  ]
+  const predzapsNewWaysTags = [
+    'Математика', 'Русский язык', 'Информатика', 'Окружающий мир', 'Физика', 'Английский язык', 'История',
+    'Математика', 'Русский язык', 'Информатика', 'Окружающий мир', 'Физика', 'Английский язык', 'История',
+  ]
+
+.predzaps-new-ways
+  .cont
+    h2.predzaps-new-ways__caption Предзапись распространяется на все направления
+    .predzaps-new-ways__area
+      each box, index in predzapsNewWaysArea
+        .predzaps-new-ways__box(class=`predzaps-new-ways__box_${index+1}`)
+          picture.predzaps-new-ways__picture
+            source(srcset=staticImg(`predzaps-new-ways/decor-${index+1}_mob.${box.type}`) media="(max-width: 743px)")
+            source(srcset=staticImg(`predzaps-new-ways/decor-${index+1}_tablet.${box.type}`) media="(max-width: 1359px)")
+            img.predzaps-new-ways__image(src=staticImg(`predzaps-new-ways/decor-${index+1}.${box.type}`) alt='')
+          if index === 4
+            .predzaps-new-ways__headline= box.title
+            .predzaps-new-ways__labels
+              each label in predzapsNewWaysLabels
+                .predzaps-new-ways__label= label
+            a.predzaps-new-ways__more.btn-blue(href='#predzaps-new-modal' data-fancybox data-options='{"touch": false}') Подробнее
+          else
+            .predzaps-new-ways__title= box.title
+            .predzaps-new-ways__wrap
+              .predzaps-new-ways__inner
+                .predzaps-new-ways__tags
+                  each tag in predzapsNewWaysTags
+                    .predzaps-new-ways__tag= tag
+                      img.predzaps-new-ways__icon(src='https://cms-dev.tochka-school.ru/storage/app/media/Stranica_kursov/Ikonki_predmetov/s_fonom/fon_matematika.svg' alt='')
+                button.predzaps-new-ways__toggle Показать ещё

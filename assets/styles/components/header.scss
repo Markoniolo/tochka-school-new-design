@@ -22,6 +22,34 @@
   @include media(xs) {
     position: relative;
   }
+  &_predzaps-new-short {
+    .header__area {
+      @include media(lg) {
+        justify-content: center;
+      }
+    }
+  }
+  &_predzaps-new {
+    .header__offer-consult {
+      padding: 14px 40px 15px;
+      @include media(lg) {
+        width: unset;
+        height: unset;
+        border-radius: 34px;
+        background-image: none;
+        color: white;
+        padding: 14px 30px 15px;
+      }
+      @include media(xs) {
+        display: none;
+      }
+    }
+    .header__area {
+      @include media(xs) {
+        justify-content: center;
+      }
+    }
+  }
   &_offer {
     margin-bottom: -60px;
     @include media(lg) {

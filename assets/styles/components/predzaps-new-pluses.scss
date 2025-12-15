@@ -43,8 +43,6 @@
   @include media(lg) {
     margin-bottom: 20px;
     gap: 20px 25px;
-    max-width: 625px;
-    width: 100%;
     flex-wrap: wrap;
   }
 }

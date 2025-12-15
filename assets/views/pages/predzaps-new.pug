@@ -1,0 +1,36 @@
+include ../_variables
+include ../components/_layout/_connect-style
+include ../components/_layout/_title
+
+doctype html
+html(lang='ru')
+  head
+    include ../components/_layout/_head
+    +title('Предзапись новая')
+  body
+    .sticky-header.sticky-header_no-margin
+      include ../components/_layout/header-short
+      +header-short('predzaps-new')
+    main.wrapper
+      include ../components/predzaps-new-cap
+      +predzaps-new-cap
+      include ../components/pre-about
+      +pre-about('predzaps-new')
+      include ../components/predzaps-new-pluses
+      include ../components/predzaps-new-how
+      include ../components/predzaps-new-info
+      include ../components/predzaps-new-ways
+      include ../components/predzaps-new-format
+      include ../components/predzaps-new-important
+      include ../components/predzaps-new-order
+      include ../components/faq
+      +faq('predzaps-new')
+      include ../components/reviews
+      +reviews
+      include ../components/pre-end
+      +pre-end(false,'Время принять решение: оставить всё как есть, или зарегистрироваться в предзапись и получить приоритетное место на курсе, а также самую низкую цену.',
+        'Запишите меня')
+      include ../components/modals/predzaps-new-modal
+    include ../components/modals/modal-order-new
+    include ../components/_layout/footer-quiz
+    include ../components/_layout/scripts

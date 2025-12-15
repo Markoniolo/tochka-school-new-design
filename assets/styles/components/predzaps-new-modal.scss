@@ -1,0 +1,143 @@
+.predzaps-new-modal {
+  display: none;
+  max-width: 875px;
+  width: 100%;
+  border-radius: 20px;
+  @include media(lg) {
+    border-radius: 10px;
+  }
+  @include media(xs) {
+    border-radius: 0;
+  }
+  &.fancybox-content {
+    padding: 34px 40px 40px;
+    @include media(lg) {
+      padding: 24px 30px 30px;
+    }
+    @include media(xs) {
+      padding: 20px;
+    }
+  }
+  .fancybox-button {
+    width: 36px;
+    height: 36px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: rgba(#fff, 0.19);
+    right: -46px;
+    top: -46px;
+    @include media(xs) {
+      background-color: rgba(#000, 0.03);
+      top: 5px;
+      right: 5px;
+    }
+    @include media(xxs) {
+      width: 28px;
+      height: 28px;
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+    svg path {
+      fill: #fff;
+      @include media(xs) {
+        fill: #000;
+      }
+    }
+  }
+}
+
+.predzaps-new-modal__caption {
+  margin-bottom: 30px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
+  @include media(xs) {
+    margin-bottom: 13px;
+  }
+}
+
+.predzaps-new-modal__tags {
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  @include media(lg) {
+    margin-bottom: 22px;
+    gap: 7px;
+  }
+}
+
+.predzaps-new-modal__tag {
+  box-shadow: 0 5px 21px 0 rgba(102, 131, 194, 0.19);
+  background: #fff;
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 100%;
+  color: #23617c;
+  padding: 11px 9px;
+}
+
+.predzaps-new-modal__title {
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 18px;
+    line-height: 139%;
+  }
+  @include media(xs) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.predzaps-new-modal__list {
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.predzaps-new-modal__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  line-height: 106%;
+  color: #003c56;
+  @include media(lg) {
+    gap: 8px;
+    font-size: 15px;
+    line-height: 123%;
+  }
+  &::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    @include bg-icon('icons/ic_point_orange.svg');
+    @include media(lg) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.predzaps-new-modal__button {
+  display: inline-block;
+  font-size: 16px;
+  padding: 19px 72px 20px;
+  @include media(xs) {
+    width: 100%;
+    display: block;
+  }
+}

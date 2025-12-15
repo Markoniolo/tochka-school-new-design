@@ -1,0 +1,23 @@
+-
+  const predzapsNewImportantList = [
+    'Самая быстрорастущая онлайн-школа в сегменте школьных предметов по версии «Smart500»',
+    'Школа №1 в 2024 в рейтинге школ на внешних платформах по версии «SmartRanking»',
+    'Резидент «Сколково». Аккредитованная IT-компания',
+    'Образовательная лицензия',
+    'Средняя оценка родителей: 4,9',
+    'Онлайн-школа года 2024 по версии «GetCourse»',
+    '44 000+ учеников',
+    'Школа №1 по математике 2023 согласно рейтингу «GetCourse»',
+    'Можно оплачивать занятия материнским капиталом, а&nbsp;также получить налоговый вычет за обучение',
+  ]
+
+.predzaps-new-important
+  .cont
+    .predzaps-new-important__area
+      each circle in [1,2,3,4]
+        .predzaps-new-important__circle(class=`predzaps-new-important__circle_${circle}`)
+      h2.predzaps-new-important__title!= 'Самое важное <br> о&nbsp;«Точке Знаний»'
+      ul.predzaps-new-important__list
+        each item, index in predzapsNewImportantList
+          li.predzaps-new-important__item(class=`predzaps-new-important__item_${index+1}`)
+            .predzaps-new-important__text!= item

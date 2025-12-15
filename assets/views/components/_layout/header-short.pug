@@ -7,3 +7,5 @@ mixin header-short(mod)
           img.header__logo-image(src=staticImg('logo_new-year.svg') alt='')
         if mod === 'quiz'
           a.header__offer-consult.btn-orange.btn-orange_arrow(href='#modal-order-new' data-banner="banner-id-1" data-ftitle="Связаться с нами" data-fancybox data-options='{"touch": false}') Связаться с нами
+        if mod === 'predzaps-new'
+          a.header__offer-consult.btn-orange(href='#predzaps-new-order' data-role='scroll-to-anchor') Оставить заявку

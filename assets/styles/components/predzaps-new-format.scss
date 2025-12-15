@@ -1,0 +1,126 @@
+.predzaps-new-format {
+  padding: 74px 0 80px;
+  @include media(lg) {
+    padding: 34px 0 40px;
+  }
+}
+
+.predzaps-new-format__title {
+  margin-bottom: 50px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    margin-bottom: 24px;
+    font-size: 25px;
+  }
+}
+
+.predzaps-new-format__wrap {
+  position: relative;
+  border-radius: 20px;
+  padding: 38px 90px 38px 570px;
+  box-shadow: 0 4px 31px 0 rgba(0, 0, 0, 0.04);
+  background: linear-gradient(270deg, #a6bff0 0%, #cedfff 100%);
+  @include media(lg) {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 24px 20px 25px 25px;
+    gap: 17px;
+  }
+  @include media(xs) {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 15px 20px;
+  }
+  @include media(xxs) {
+    gap: 12px;
+    padding: 14px 10px 10px;
+  }
+}
+
+.predzaps-new-format__picture {
+  position: absolute;
+  top: -10px;
+  left: 54px;
+  width: 455px;
+  height: 345px;
+  @include media(lg) {
+    flex-shrink: 0;
+    position: static;
+    width: 283px;
+    height: 243px;
+  }
+  @include media(xs) {
+    max-width: 280px;
+    width: 100%;
+    height: unset;
+  }
+}
+
+.predzaps-new-format__image {
+
+}
+
+.predzaps-new-format__area {
+
+}
+
+.predzaps-new-format__list {
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  @include media(lg) {
+    margin-bottom: 16px;
+    gap: 10px;
+  }
+}
+
+.predzaps-new-format__item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #003c56;
+  @include media(lg) {
+    gap: 8px;
+    font-size: 15px;
+    line-height: 123%;
+  }
+  &::before {
+    content: '';
+    flex-shrink: 0;
+    width: 29px;
+    height: 29px;
+    @include bg-icon('icons/ic_point_orange.svg');
+    @include media(lg) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+  &:nth-child(2), &:nth-child(3) {
+    max-width: 570px;
+    width: 100%;
+    @include media(lg) {
+      max-width: 100%;
+    }
+  }
+}
+
+.predzaps-new-format__button {
+  display: inline-block;
+  font-size: 16px;
+  padding: 19px 72px 20px;
+  @include media(lg) {
+    padding: 19px 77px 20px;
+  }
+  @include media(xs) {
+    display: block;
+  }
+}

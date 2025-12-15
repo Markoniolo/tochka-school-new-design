@@ -477,6 +477,7 @@ function globalFormInit (form, func_name, type) {
               formObject['resend_sms'] = true
               const timer = globalForm.querySelector('.form-enter-sms-resend')
               timer.classList.remove('active')
+              timer.innerHTML = 'Получить новый код через <span>02:00</span>'
             } else {
               const sms_code = globalForm.querySelector('input[name="sms_code"]')?.value
               if (sms_code) formObject['sms_code'] = sms_code
@@ -580,6 +581,7 @@ function globalFormInit (form, func_name, type) {
   }
 
   function showSmsInput () {
+    if (globalForm.classList.contains('form-enter-sms-code')) return
     const title = globalForm.querySelector('.modal-order-new__title') ||
       globalForm.querySelector('.ege-cap__title') ||
       globalForm.querySelector('.pre-cap__headline') ||
@@ -612,6 +614,7 @@ function globalFormInit (form, func_name, type) {
       if (secs <= 0) {
         clearInterval(ticker)
         timer.classList.add('active')
+        globalForm.classList.add('f')
         timer.innerHTML = 'Получить новый код'
         timer.addEventListener('click', () => {
           const sms_code = globalForm.querySelector('input[name="sms_code"]')

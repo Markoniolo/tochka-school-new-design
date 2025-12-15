@@ -1,0 +1,21 @@
+-
+  const predzapsNewFormatList = [
+    'Онлайн-уроки проходят на учебной платформе в формате вебинаров. Запись урока доступна уже через 30 минут после завершения.',
+    'Уроки сопровождаются конспектами, тестами и другими учебными материалами.',
+    'Заниматься можно с ноутбука или со смартфона через мобильное приложение.',
+  ]
+
+.predzaps-new-format
+  .cont
+    h2.predzaps-new-format__title Формат занятий
+    .predzaps-new-format__wrap
+      picture.predzaps-new-format__picture
+        source(srcset=staticImg('predzaps-new-format/decor_mob.png') media="(max-width: 743px)")
+        source(srcset=staticImg('predzaps-new-format/decor_tablet.png') media="(max-width: 1359px)")
+        img.predzaps-new-format__image(src=staticImg('predzaps-new-format/decor.png') alt='')
+      .predzaps-new-format__area
+        ul.predzaps-new-format__list
+          each item in predzapsNewFormatList
+            li.predzaps-new-format__item= item
+        a.predzaps-new-format__button.btn-orange(href='#predzaps-new-order' data-role="scroll-to-anchor") Записаться
+

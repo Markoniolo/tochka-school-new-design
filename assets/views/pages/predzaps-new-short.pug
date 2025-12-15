@@ -1,0 +1,19 @@
+include ../_variables
+include ../components/_layout/_connect-style
+include ../components/_layout/_title
+
+doctype html
+html(lang='ru')
+  head
+    include ../components/_layout/_head
+    +title('Предзапись новая короткая')
+  body
+    .sticky-header.sticky-header_no-margin
+      include ../components/_layout/header-short
+      +header-short('predzaps-new-short')
+    main.wrapper
+      include ../components/predzaps-new-cap
+      +predzaps-new-cap('short')
+    include ../components/modals/modal-order-new
+    include ../components/_layout/footer-quiz
+    include ../components/_layout/scripts

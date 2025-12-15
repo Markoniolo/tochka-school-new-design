@@ -9,6 +9,15 @@
   @include media(xs) {
     padding: 25px 0;
   }
+  &_short {
+    margin-bottom: 100px;
+    @include media(lg) {
+      margin-bottom: 160px;
+    }
+    @include media(xs) {
+      margin-bottom: 270px;
+    }
+  }
 }
 
 .predzaps-new-cap__wrap {

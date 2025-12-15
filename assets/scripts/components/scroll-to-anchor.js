@@ -17,10 +17,11 @@ function clickOnTheScrollElement (event) {
   else elementId = this.getAttribute('scroll-to-anchor-id')?.substr(1)
   const element = document.getElementById(elementId)
   const offset = this.getAttribute('scroll-offset')
-  if (element) animateScrollToAnchor(element, offset)
+  const duration = this.getAttribute('scroll-duration')
+  if (element) animateScrollToAnchor(element, offset, duration)
 }
 
-function animateScrollToAnchor (theElement, offset) {
+function animateScrollToAnchor (theElement, offset, duration) {
   if (!offset) {
     const banner = document.querySelector('.discount')
     const bannerHeight = banner ? banner.clientHeight : 0
@@ -34,18 +35,22 @@ function animateScrollToAnchor (theElement, offset) {
   }
   const positionNow = window.pageYOffset
   const positionElement = theElement.getBoundingClientRect().top + scrollY - offset
-  const duration = 200
-  const step = positionElement - positionNow
-  const start = performance.now()
+  if (duration === 'instant') {
+    window.scrollTo({left: 0, top: positionElement, behavior: 'instant'})
+  } else {
+    duration = 200
+    const step = positionElement - positionNow
+    const start = performance.now()
 
-  requestAnimationFrame(function animate (time) {
-    const timePassed = time - start
+    requestAnimationFrame(function animate (time) {
+      const timePassed = time - start
 
-    if (timePassed > duration) {
-      window.scrollTo(0, positionElement)
-    } else {
-      window.scrollTo(0, positionNow + step * (timePassed / duration))
-      requestAnimationFrame(animate)
-    }
-  })
+      if (timePassed > duration) {
+        window.scrollTo(0, positionElement)
+      } else {
+        window.scrollTo(0, positionNow + step * (timePassed / duration))
+        requestAnimationFrame(animate)
+      }
+    })
+  }
 }

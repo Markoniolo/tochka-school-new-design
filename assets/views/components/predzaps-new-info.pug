@@ -1,0 +1,18 @@
+-
+  const predzapsNewInfoList = [
+    'Тьютору можно задавать неограниченное количество вопросов',
+    'По запросу тьютор составит индивидуальный курс по предмету: выберет те темы и задания, которые нуждаются в изучении в первую очередь',
+    'В абонемент входит курс прошлого года в записи (удобно, когда темы в обычной школе идут в другом порядке)',
+    'Если нужно повторить прошедшие темы и закрыть пробелы, всегда можно обратиться к&nbsp;курсу на класс младше',
+  ]
+
+.predzaps-new-info
+  .cont
+    h2.predzaps-new-info__title За руку к&nbsp;отличным&nbsp;оценкам
+    .predzaps-new-info__wrap
+      ul.predzaps-new-info__list
+        each item in predzapsNewInfoList
+          li.predzaps-new-info__item!= item
+      picture.predzaps-new-info__picture
+        source(srcset=staticImg('predzaps-new-info/decor_tablet.svg') media="(max-width: 1359px)")
+        img.predzaps-new-info__image(src=staticImg('predzaps-new-info/decor.svg') alt='')
