@@ -2769,147 +2769,161 @@ function globalFormInit (form, func_name, type) {
         }
 
         btnSubmit.disabled = true;
-
-        let linkTo_ = linkTo;
-        let linkTo_base = linkTo_;
-        if (utm_input) {
-          utm_f = utm_input.value;
-          if(utm_f != null && utm_f != '' && utm_f != undefined){
-          }else{
-            utm_f = ''
-          }
-          if (utm_f.length > 0) {
-            linkTo_ = linkTo_ + utm_f;
-          }
-        }
-        if (isTargetLink(linkTo_base)) {
-          if (cookieParams) {
-            linkTo_ += (linkTo_.includes("?") ? "&" : "?") + cookieParams;
-          }
-        }
-
-        if (checkHoneypot()) return
-
-        // console.log("urlParams: " + urlParams)
-        // console.log("utm_f: " + utm_f)
-
-        //console.log("bf globalForm.submit")
-
-
-        try {
+        if (type === 'preFormData') {
           e.stopPropagation();
-          console.log('isSubmitting:', isSubmitting);
-          if (isSubmitting) return false;
-
-          if (!captchaPassed) {
-            // console.log('🔄 Вызов execute...');
-            captchaToken = null;
-            window.smartCaptcha.execute(window.captchaWidget);
-
-            await new Promise((resolve, reject) => {
-              const checkToken = setInterval(() => {
-                if (captchaToken) {
-                  clearInterval(checkToken);
-                  resolve();
-                }
-              }, 100);
-
-              setTimeout(() => {
-                clearInterval(checkToken);
-                reject(new Error('Таймаут капчи'));
-              }, 100000);
-            });
-
-            // console.log('✅ Токен получен:', captchaToken);
-          } else {
-            // console.log('✅ Капча уже пройдена, пропускаем проверку');
+          const loader = document.querySelector('.form-loader')
+          if (loader) loader.classList.add('active')
+          if (checkHoneypot()) return
+          $.request('MainFunctions::onSendPreSubscribeMessage', {
+            data: form_data,
+          });
+          location.assign(linkTo + `?cemail=${email_value}`);
+          // setTimeout(() => {
+          //     globalForm.submit();
+          //     setTimeout(() => {
+          //       clearForm();
+          //         location.assign(linkTo + `?cemail=${email_value}`);
+          //         // location.assign(linkTo + '?email='+email_value)
+          //     }, 100)
+          // }, 100)
+        } else {
+          let linkTo_ = linkTo;
+          let linkTo_base = linkTo_;
+          if (utm_input) {
+            utm_f = utm_input.value;
+            if (utm_f != null && utm_f != '' && utm_f != undefined) {
+            } else {
+              utm_f = ''
+            }
+            if (utm_f.length > 0) {
+              linkTo_ = linkTo_ + utm_f;
+            }
+          }
+          if (isTargetLink(linkTo_base)) {
+            if (cookieParams) {
+              linkTo_ += (linkTo_.includes("?") ? "&" : "?") + cookieParams;
+            }
           }
 
+          if (checkHoneypot()) return
 
-          if (captchaToken) {
-            // console.log(globalForm);
-            isSubmitting = true;
-            //   console.log('Отправка формы:', globalForm);
+          // console.log("urlParams: " + urlParams)
+          // console.log("utm_f: " + utm_f)
 
-            const dataRequest = globalForm.getAttribute('data-request');
-            const formData = new FormData(globalForm);
-            const formObject = {};
-            formData.forEach((value, key) => {
-              formObject[key] = value;
-            });
-            formObject['smart-token'] = captchaToken;
-            const isResend = globalForm.querySelector('.form-enter-sms-resend.active')
-            if (isResend) {
-              formObject['resend_sms'] = true
-              const timer = globalForm.querySelector('.form-enter-sms-resend')
-              timer.classList.remove('active')
-              timer.innerHTML = 'Получить новый код через <span>02:00</span>'
+          //console.log("bf globalForm.submit")
+
+
+          try {
+            e.stopPropagation();
+            console.log('isSubmitting:', isSubmitting);
+            if (isSubmitting) return false;
+
+            if (!captchaPassed) {
+              // console.log('🔄 Вызов execute...');
+              captchaToken = null;
+              window.smartCaptcha.execute(window.captchaWidget);
+
+              await new Promise((resolve, reject) => {
+                const checkToken = setInterval(() => {
+                  if (captchaToken) {
+                    clearInterval(checkToken);
+                    resolve();
+                  }
+                }, 100);
+
+                setTimeout(() => {
+                  clearInterval(checkToken);
+                  reject(new Error('Таймаут капчи'));
+                }, 100000);
+              });
+
+              // console.log('✅ Токен получен:', captchaToken);
             } else {
-              const sms_code = globalForm.querySelector('input[name="sms_code"]')?.value
-              if (sms_code) formObject['sms_code'] = sms_code
+              // console.log('✅ Капча уже пройдена, пропускаем проверку');
             }
 
-            const callPhoneButton = globalForm.querySelector('[data-role="global-form-call-phone"]')
-            if (callPhoneButton) formObject['already_call'] = true
 
-            //formObject.captcha_token = captchaToken;
-            clearErrorMessages(globalForm)
-            $.request('MainFunctions::' + dataRequest, {
-              data: formObject,
-              success: function(response) {
-                // console.log('Ответ:', response);
-                let hasErrors = false;
+            if (captchaToken) {
+              // console.log(globalForm);
+              isSubmitting = true;
+              //   console.log('Отправка формы:', globalForm);
 
-                for (let key in response) {
-                  if (key.startsWith('.')) {
-                    const className = key.substring(1);
-                    const element = document.querySelector('.' + className);
+              const dataRequest = globalForm.getAttribute('data-request');
+              const formData = new FormData(globalForm);
+              const formObject = {};
+              formData.forEach((value, key) => {
+                formObject[key] = value;
+              });
+              formObject['smart-token'] = captchaToken;
+              const isResend = globalForm.querySelector('.form-enter-sms-resend.active')
+              if (isResend) {
+                formObject['resend_sms'] = true
+                const timer = globalForm.querySelector('.form-enter-sms-resend')
+                timer.classList.remove('active')
+                timer.innerHTML = 'Получить новый код через <span>02:00</span>'
+              } else {
+                const sms_code = globalForm.querySelector('input[name="sms_code"]')?.value
+                if (sms_code) formObject['sms_code'] = sms_code
+              }
 
-                    if (element) {
-                      element.innerHTML = response[key];
-                      hasErrors = true;
-                      btnSubmit.disabled = false;
+              const callPhoneButton = globalForm.querySelector('[data-role="global-form-call-phone"]')
+              if (callPhoneButton) formObject['already_call'] = true
+
+              //formObject.captcha_token = captchaToken;
+              clearErrorMessages(globalForm)
+              $.request('MainFunctions::' + dataRequest, {
+                data: formObject,
+                success: function (response) {
+                  // console.log('Ответ:', response);
+                  let hasErrors = false;
+
+                  for (let key in response) {
+                    if (key.startsWith('.')) {
+                      const className = key.substring(1);
+                      const element = document.querySelector('.' + className);
+
+                      if (element) {
+                        element.innerHTML = response[key];
+                        hasErrors = true;
+                        btnSubmit.disabled = false;
+                      }
                     }
                   }
-                }
 
-                if (hasErrors) {
-                  isSubmitting = false;
-                  return;
-                }
+                  if (hasErrors) {
+                    isSubmitting = false;
+                    return;
+                  }
 
-                if (response['requires_verification']) {
-                  if (!globalForm.classList.contains('form-enter-sms-code')) showSmsInput(response)
-                  btnSubmit.disabled = false
-                  isSubmitting = false;
-                } else if (response['requires_phonecall_verification']) {
-                  showFormPhoneCall(response)
-                  btnSubmit.disabled = false
-                  isSubmitting = false;
-                } else {
-                  clearForm();
-                  if (type === 'preFormData') {
-                    location.assign(linkTo + `?cemail=${email_value}`);
+                  if (response['requires_verification']) {
+                    if (!globalForm.classList.contains('form-enter-sms-code')) showSmsInput(response)
+                    btnSubmit.disabled = false
+                    isSubmitting = false;
+                  } else if (response['requires_phonecall_verification']) {
+                    showFormPhoneCall(response)
+                    btnSubmit.disabled = false
+                    isSubmitting = false;
                   } else {
+                    clearForm();
                     location.assign(linkTo_);
                   }
+                },
+                error: function (error) {
+                  // console.error('❌ Ошибка отправки:', error);
+                  isSubmitting = false;
                 }
-              },
-              error: function(error) {
-                // console.error('❌ Ошибка отправки:', error);
-                isSubmitting = false;
-              }
-            });
+              });
 
-            return false;
-          }else{
+              return false;
+            } else {
+              return false;
+            }
+
+          } catch (error) {
+            // console.error('❌ Ошибка:', error);
+            // alert('Ошибка проверки капчи');
             return false;
           }
-
-        } catch (error) {
-          // console.error('❌ Ошибка:', error);
-          // alert('Ошибка проверки капчи');
-          return false;
         }
       }
 
@@ -5017,6 +5031,250 @@ function predzapsNewWaysInnerInit (inner) {
       }
     }
     return counter
+  }
+}
+
+const predzapsThanks = document.querySelector('.predzaps-thanks')
+
+if (predzapsThanks) predzapsThanksInit()
+
+function predzapsThanksInit () {
+  const form = predzapsThanks.querySelector('.predzaps-thanks__slide_form')
+  const tgSlide = predzapsThanks.querySelector('.predzaps-thanks__slide_tg')
+  const lastSlide = predzapsThanks.querySelector('.predzaps-thanks__slide_last')
+  const tgButton = predzapsThanks.querySelector('.predzaps-thanks__tg-button')
+  const stickyHeader = document.querySelector('.sticky-header')
+  const body = document.querySelector('body')
+  const addButton = predzapsThanks.querySelector(".predzaps-thanks__form-add")
+  const inner = predzapsThanks.querySelector('.predzaps-thanks__form-line-inner')
+  const lines = predzapsThanks.querySelector(".predzaps-thanks__form-lines")
+  const innerCleanCopy = inner.cloneNode(true)
+  let counter = 1
+
+  function initOpeners (inner) {
+    const openers = inner.querySelectorAll("[data-element='all-courses-filter-opener']")
+    for (let i = 0; i < openers.length; i++) {
+      openers[i].addEventListener("click", (e)=> openFilter(openers[i], e))
+
+      const wrap = openers[i].nextElementSibling
+
+      const closeBtn = wrap.querySelector('.all-courses__filter-close')
+      if (closeBtn) closeBtn.addEventListener('click', () => closeFilter(openers[i]))
+
+      const items = wrap.querySelectorAll("[data-element='all-courses-filter-input']")
+      items.forEach((item) => {
+        item.addEventListener('change', () => updateFilter(openers[i], wrap))
+      })
+
+      const confirm = wrap.querySelector('.all-courses__confirm')
+      if (confirm) confirm.addEventListener('click', () => closeFilter(openers[i]))
+    }
+  }
+
+  function removeInputNameError (inner) {
+    const input = inner.querySelector('.predzaps-thanks__form-input')
+    input.addEventListener('input', () => input.classList.remove('error-input'))
+  }
+
+  removeInputNameError(inner)
+  initTabs(inner)
+  initOpeners(inner)
+
+  function initTabs (inner) {
+    const filterSubjectWrap = inner.querySelector('.all-courses__filter-wrap_subject')
+    const tabsParent = filterSubjectWrap.querySelector('.all-courses__filter-tabs')
+    const tabs = filterSubjectWrap.querySelectorAll('.all-courses__filter-tab')
+    const subjects = filterSubjectWrap.querySelectorAll('.all-courses__filter-item')
+
+    if (!tabs.length || !subjects.length) return
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', changeTab)
+
+      function changeTab (e) {
+        e.stopPropagation()
+        const oldTab = filterSubjectWrap.querySelector('.all-courses__filter-tab.active')
+        if (oldTab) oldTab.classList.remove('active')
+
+        this.classList.add('active')
+
+        subjects.forEach((subject) => {
+          subject.classList.add('hide')
+        })
+
+        const index = this.getAttribute('data-index')
+        const activeSubjects = filterSubjectWrap.querySelectorAll('[data-index="' + index + '"]')
+        activeSubjects.forEach((subject) => {
+          subject.classList.remove('hide')
+        })
+
+        tabsParent.scrollLeft = this.offsetLeft - tabsParent.clientWidth/2 + this.clientWidth/2
+      }
+    })
+
+    tabs[0].click()
+  }
+
+  function updateFilter(opener, wrap) {
+    opener.classList.remove('error-input')
+    if (opener.getAttribute('data-ftype') === 'class_select') {
+      const text = opener.querySelector('.all-courses__filter-top-text')
+      text.style.color = '#000'
+      text.innerHTML = wrap.querySelector('.all-courses__filter-input:checked').nextElementSibling.textContent
+    }
+    if (opener.getAttribute('data-ftype') === 'class_subjects') {
+      const headline = wrap.querySelector('.all-courses__filter-headline')
+      headline.innerHTML = `Выбрано предметов: ${wrap.querySelectorAll('.all-courses__filter-input:checked').length}`
+      const text = opener.querySelector('.all-courses__filter-top-text')
+      text.style.color = '#000'
+      text.innerHTML = `Выбрано предметов: ${wrap.querySelectorAll('.all-courses__filter-input:checked').length}`
+    }
+  }
+
+  function openFilter (opener, e) {
+    e.stopPropagation()
+    if (opener.classList.contains('active')) {
+      closeFilter(opener)
+    } else {
+      const oldOpen = predzapsThanks.querySelector(".all-courses__filter-top.active")
+      if (oldOpen) oldOpen.classList.remove('active')
+      opener.classList.add('active')
+
+      const filter = opener.parentElement
+      const oldFilter = predzapsThanks.querySelector(".all-courses__filter.open")
+      if (oldFilter) oldFilter.classList.remove('open')
+      if (filter) filter.classList.add('open')
+    }
+    hideHeader()
+  }
+
+  function closeFilter (opener) {
+    opener.classList.remove('active')
+    const filter = opener.parentElement
+    if (filter) filter.classList.remove('open')
+    showHeader()
+  }
+
+  function showHeader () {
+    stickyHeader.classList.remove('hide')
+    body.classList.remove('no-scroll')
+  }
+  function hideHeader () {
+    if (window.innerWidth < 744) {
+      stickyHeader.classList.add('hide')
+      body.classList.add('no-scroll')
+    }
+  }
+
+  tgButton.addEventListener('click', () => {
+    setTimeout(() => {
+      tgSlide.classList.remove('active')
+      lastSlide.classList.add('active')
+    }, 10000)
+  })
+
+  form.addEventListener('submit', submitForm)
+
+  function createSendData () {
+    const names = []
+    const nameInputs = form.querySelectorAll('.predzaps-thanks__form-input')
+    nameInputs.forEach(nameInput => {
+      names.push(nameInput.value)
+    })
+    const classes = []
+    const classInputs = form.querySelectorAll('.all-courses__filter_class input:checked')
+    classInputs.forEach(classInput => {
+      classes.push(classInput.value)
+    })
+    const subjects = []
+    const inners = form.querySelectorAll('.predzaps-thanks__form-line-inner')
+
+    inners.forEach(inner => {
+      const subjectsOneChild = inner.querySelectorAll('.all-courses__filter_subject input:checked')
+      const temp = []
+      subjectsOneChild.forEach(subject => {
+        temp.push(subject.value)
+      })
+      subjects.push(temp)
+    })
+    return {
+      childrens: {
+        name: names,
+        class: classes,
+        subjects: subjects,
+      }
+    }
+  }
+
+  function submitForm (e) {
+    e.preventDefault()
+    if (validate()) {
+      const data = createSendData()
+      console.log(data)
+      $.request('MainFunctions::' + 'dataRequest', {
+        data: data,
+        success: function () {
+          form.classList.remove('active')
+          tgSlide.classList.add('active')
+        },
+        error: function (error) {
+          // console.error('❌ Ошибка отправки:', error);
+        }
+      });
+    }
+  }
+
+  addButton.addEventListener('click', addLine)
+
+  function addLine () {
+    if (validate()) {
+      counter += 1
+      lines.append(innerCleanCopy.cloneNode(true))
+      const inners = predzapsThanks.querySelectorAll('.predzaps-thanks__form-line-inner')
+      const inner = inners[inners.length - 1]
+      removeInputNameError(inner)
+      updateNames(inner)
+      initTabs(inner)
+      initOpeners(inner)
+    }
+  }
+
+  function updateNames (inner) {
+    const lineName = inner.querySelector('.predzaps-thanks__form-line-name')
+    lineName.innerHTML = `Ребенок ${counter}`
+    const inputs = inner.querySelectorAll('input')
+    for (let i = 0; i < inputs.length; i++) {
+      inputs[i].name = `${inputs[i].name}-${counter}`
+    }
+  }
+
+  function validate () {
+    const inners = predzapsThanks.querySelectorAll('.predzaps-thanks__form-line-inner')
+    for (let i = 0; i < inners.length; i++) {
+      const isValid = checkInputs(inners[i])
+      if (!isValid) return false
+    }
+    function checkInputs(inner) {
+      const nameInput = inner.querySelector(".predzaps-thanks__form-input")
+      if (!nameInput.value) {
+        nameInput.classList.add('error-input')
+        return false
+      }
+      const classInput = inner.querySelector(".all-courses__filter_class input:checked")
+      if (!classInput) {
+        const top = inner.querySelector(".all-courses__filter_class .all-courses__filter-top")
+        top.classList.add('error-input')
+        return false
+      }
+      const subjectInput = inner.querySelector(".all-courses__filter_subject input:checked")
+      if (!subjectInput) {
+        const top = inner.querySelector(".all-courses__filter_subject .all-courses__filter-top")
+        top.classList.add('error-input')
+        return false
+      }
+      return true
+    }
+    return true
   }
 }
 
