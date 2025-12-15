@@ -2843,6 +2843,7 @@ function globalFormInit (form, func_name, type) {
               formObject['resend_sms'] = true
               const timer = globalForm.querySelector('.form-enter-sms-resend')
               timer.classList.remove('active')
+              timer.innerHTML = 'Получить новый код через <span>02:00</span>'
             } else {
               const sms_code = globalForm.querySelector('input[name="sms_code"]')?.value
               if (sms_code) formObject['sms_code'] = sms_code
@@ -2946,6 +2947,7 @@ function globalFormInit (form, func_name, type) {
   }
 
   function showSmsInput () {
+    if (globalForm.classList.contains('form-enter-sms-code')) return
     const title = globalForm.querySelector('.modal-order-new__title') ||
       globalForm.querySelector('.ege-cap__title') ||
       globalForm.querySelector('.pre-cap__headline') ||
@@ -2978,6 +2980,7 @@ function globalFormInit (form, func_name, type) {
       if (secs <= 0) {
         clearInterval(ticker)
         timer.classList.add('active')
+        globalForm.classList.add('f')
         timer.innerHTML = 'Получить новый код'
         timer.addEventListener('click', () => {
           const sms_code = globalForm.querySelector('input[name="sms_code"]')
@@ -4978,6 +4981,45 @@ function preWaysSliderInit () {
   }
 }
 
+const predzapsNewWaysInners = document.querySelectorAll('.predzaps-new-ways__inner')
+
+for (let i = 0; i < predzapsNewWaysInners.length; i++) {
+  predzapsNewWaysInnerInit(predzapsNewWaysInners[i])
+}
+
+function predzapsNewWaysInnerInit (inner) {
+  const tags = inner.querySelectorAll('.predzaps-new-ways__tag')
+
+  const toggle = inner.querySelector('.predzaps-new-ways__toggle')
+  if (toggle) toggle.addEventListener('click', toggleTags)
+
+  if (getCountOfHiddenTags() === 0) {
+    toggle.style.display = 'none'
+  } else {
+    toggle.innerHTML = `Показать ещё +${getCountOfHiddenTags()}`
+  }
+
+  function toggleTags () {
+    if (inner.classList.contains('active')) {
+      inner.classList.remove('active')
+      toggle.innerHTML = `Показать ещё +${getCountOfHiddenTags()}`
+    } else {
+      inner.classList.add('active')
+      toggle.innerHTML = 'Свернуть'
+    }
+  }
+
+  function getCountOfHiddenTags () {
+    let counter = 0
+    for (let i = 0; i < tags.length; i++) {
+      if (tags[i].getBoundingClientRect().top - inner.getBoundingClientRect().top >= 135) {
+        counter += 1
+      }
+    }
+    return counter
+  }
+}
+
 const predzapsTop = document.querySelector('.predzaps-top')
 
 if (predzapsTop) predzapsTopInit()
@@ -6489,10 +6531,11 @@ function clickOnTheScrollElement (event) {
   else elementId = this.getAttribute('scroll-to-anchor-id')?.substr(1)
   const element = document.getElementById(elementId)
   const offset = this.getAttribute('scroll-offset')
-  if (element) animateScrollToAnchor(element, offset)
+  const duration = this.getAttribute('scroll-duration')
+  if (element) animateScrollToAnchor(element, offset, duration)
 }
 
-function animateScrollToAnchor (theElement, offset) {
+function animateScrollToAnchor (theElement, offset, duration) {
   if (!offset) {
     const banner = document.querySelector('.discount')
     const bannerHeight = banner ? banner.clientHeight : 0
@@ -6506,20 +6549,24 @@ function animateScrollToAnchor (theElement, offset) {
   }
   const positionNow = window.pageYOffset
   const positionElement = theElement.getBoundingClientRect().top + scrollY - offset
-  const duration = 200
-  const step = positionElement - positionNow
-  const start = performance.now()
+  if (duration === 'instant') {
+    window.scrollTo({left: 0, top: positionElement, behavior: 'instant'})
+  } else {
+    duration = 200
+    const step = positionElement - positionNow
+    const start = performance.now()
 
-  requestAnimationFrame(function animate (time) {
-    const timePassed = time - start
+    requestAnimationFrame(function animate (time) {
+      const timePassed = time - start
 
-    if (timePassed > duration) {
-      window.scrollTo(0, positionElement)
-    } else {
-      window.scrollTo(0, positionNow + step * (timePassed / duration))
-      requestAnimationFrame(animate)
-    }
-  })
+      if (timePassed > duration) {
+        window.scrollTo(0, positionElement)
+      } else {
+        window.scrollTo(0, positionNow + step * (timePassed / duration))
+        requestAnimationFrame(animate)
+      }
+    })
+  }
 }
 
 const stageToggles = document.querySelectorAll('.header__stages-button')
