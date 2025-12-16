@@ -12,13 +12,13 @@ mixin predzaps-new-cap(mod)
           .predzaps-new-cap__counter
             .predzaps-new-cap__counter-value 10 542
             .predzaps-new-cap__counter-note Человек уже записалось
-        form.predzaps-new-cap__form(data-request-validate)
+        form.predzaps-new-cap__form(data-request-validate data-element='pre-cap__form')
           .predzaps-new-cap__headline Быстрая регистрация
           .predzaps-new-cap__inner
             input.input_utm(name='utm' type='hidden' value='')
             input(type="hidden" id="page_name" name="page_name" value="https://cms-dev.tochka-school.ru/blog/voprosy-dlya-podrostkov-chto-polezno-i-interesno-obsudit-do-15-let")
             input.predzaps-new-cap__input.input-white(placeholder='Имя родителя' type='text' name='name')
-            input.predzaps-new-cap__input.input-white(placeholder='Телефон родителя' data-phone-pattern type='tel' required data-element='input-phone-intl' name='phone')
+            input.predzaps-new-cap__input.input-white(placeholder='Телефон родителя' type='tel' required data-element='input-phone-intl' name='phone')
             input(name='tel' type='hidden' required data-element='input-phone-hidden')
             input.predzaps-new-cap__input.input-white(placeholder='E-mail родителя' type='email' name='email')
             button.predzaps-new-cap__submit.btn-orange.btn-warning Оставить заявку

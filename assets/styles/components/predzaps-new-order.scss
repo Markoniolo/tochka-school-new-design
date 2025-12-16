@@ -147,6 +147,12 @@
     @include bg-icon('predzaps-new-order/bg-form_mob.png');
     background-size: cover;
   }
+  .iti__selected-country {
+    padding-left: 22px;
+    @include media(lg) {
+      padding-left: 18px;
+    }
+  }
 }
 
 .predzaps-new-order__headline {

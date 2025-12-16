@@ -257,6 +257,12 @@
       width: 100%;
     }
   }
+  .iti__selected-country {
+    padding-left: 22px;
+    @include media(lg) {
+      padding-left: 18px;
+    }
+  }
 }
 
 .predzaps-new-cap__headline {

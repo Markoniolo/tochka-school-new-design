@@ -17,7 +17,7 @@
             Выберите класс и предметы, которые вы рассматриваете для обучения ребёнка в следующем учебном году.
           .predzaps-thanks__form-lines
             .predzaps-thanks__form-line-inner
-              .predzaps-thanks__form-line-name Ребенок 1
+              .predzaps-thanks__form-line-name Ребёнок 1
               .predzaps-thanks__form-line
                 input.predzaps-thanks__form-input.input-white(placeholder='Имя ребенка' name='name')
                 .all-courses__filter.all-courses__filter_class
@@ -52,7 +52,7 @@
                             .all-courses__filter-view= `${item}`
                               img.all-courses__filter-ticket(src=staticImg('all-courses/all-courses-icon.svg') alt='')
                     button.all-courses__confirm.btn-blue(type='button') Подтвердить
-                button.predzaps-thanks__form-delete(type="button")
+                button.predzaps-thanks__form-delete(type="button" data-counter="1") Удалить
           button.predzaps-thanks__form-add(type='button')
             span Добавить ещё ребёнка
           button.predzaps-thanks__form-submit.btn-orange Отправить

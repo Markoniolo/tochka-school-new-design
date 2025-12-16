@@ -26,11 +26,10 @@ html(lang='ru')
       include ../components/faq
       +faq('predzaps-new')
       include ../components/reviews
-      +reviews
+      +reviews('no-reviews-all')
       include ../components/pre-end
       +pre-end(false,'Время принять решение: оставить всё как есть, или зарегистрироваться в предзапись и получить приоритетное место на курсе, а также самую низкую цену.',
-        'Запишите меня')
+        'Запишите меня', 'predzaps-new-order')
       include ../components/modals/predzaps-new-modal
-    include ../components/modals/modal-order-new
     include ../components/_layout/footer
     include ../components/_layout/scripts

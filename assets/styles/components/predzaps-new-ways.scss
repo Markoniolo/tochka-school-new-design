@@ -211,7 +211,7 @@
     padding: 0 15px 8px;
   }
   @include media(xs) {
-    max-height: 250px;
+    max-height: 256px;
     height: unset;
   }
   @include media(xxs) {
