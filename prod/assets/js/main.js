@@ -4996,14 +4996,13 @@ function preWaysSliderInit () {
 }
 
 const predzapsNewWaysInners = document.querySelectorAll('.predzaps-new-ways__inner')
-
+let predzapsNewWaysInnerTimer
 for (let i = 0; i < predzapsNewWaysInners.length; i++) {
   predzapsNewWaysInnerInit(predzapsNewWaysInners[i])
 }
 
 function predzapsNewWaysInnerInit (inner) {
   const tags = inner.querySelectorAll('.predzaps-new-ways__tag')
-
   const toggle = inner.querySelector('.predzaps-new-ways__toggle')
   if (toggle) toggle.addEventListener('click', toggleTags)
 
@@ -5017,10 +5016,31 @@ function predzapsNewWaysInnerInit (inner) {
     if (inner.classList.contains('active')) {
       inner.classList.remove('active')
       toggle.innerHTML = `Показать ещё +${getCountOfHiddenTags()}`
+      if (predzapsNewWaysInnerTimer) clearInterval(predzapsNewWaysInnerTimer)
     } else {
+      const oldActiveInner = document.querySelector('.predzaps-new-ways__inner.active')
+      if (oldActiveInner) {
+        oldActiveInner.classList.remove('active')
+        const oldToggle = oldActiveInner.querySelector('.predzaps-new-ways__toggle')
+        oldToggle.innerHTML = `Показать ещё +${getCountOfHiddenTags()}`
+      }
       inner.classList.add('active')
       toggle.innerHTML = 'Свернуть'
+      toggleTimer()
     }
+  }
+
+  function toggleTimer () {
+    if (predzapsNewWaysInnerTimer) clearInterval(predzapsNewWaysInnerTimer)
+
+    predzapsNewWaysInnerTimer = setInterval(() => {
+      const oldActiveInner = document.querySelector('.predzaps-new-ways__inner.active')
+      if (oldActiveInner) {
+        oldActiveInner.classList.remove('active')
+        const oldToggle = oldActiveInner.querySelector('.predzaps-new-ways__toggle')
+        oldToggle.innerHTML = `Показать ещё +${getCountOfHiddenTags()}`
+      }
+    }, 10000)
   }
 
   function getCountOfHiddenTags () {
@@ -5084,9 +5104,29 @@ function predzapsThanksInit () {
   function initDeleteButton (inner) {
     const buttonDelete = inner.querySelector('.predzaps-thanks__form-delete')
     buttonDelete.addEventListener('click', () => {
+      const dataCounter = buttonDelete.getAttribute('data-counter')
       inner.remove()
       counter -= 1
+      updateCounter(dataCounter)
     })
+  }
+
+  function updateCounter (dataCounter) {
+    const inners = document.querySelectorAll('.predzaps-thanks__form-line-inner')
+    for (let i = dataCounter - 1; i < inners.length; i++) {
+      const lineName = inners[i].querySelector('.predzaps-thanks__form-line-name')
+      if (lineName) lineName.innerHTML = `Ребёнок ${i+1}`
+      const inputName = inners[i].querySelector('.predzaps-thanks__form-input')
+      if (inputName) inputName.setAttribute('name', `name-${i+1}`)
+      const classInputs = inners[i].querySelectorAll('.all-courses__filter_class input')
+      classInputs.forEach((input) => {
+        input.setAttribute('name', `class-${i+1}`)
+      })
+      const subjectInputs = inners[i].querySelectorAll('.all-courses__filter_subject input')
+      subjectInputs.forEach((input) => {
+        input.setAttribute('name', `subject-${i+1}`)
+      })
+    }
   }
 
   function initTabs (inner) {
@@ -5278,7 +5318,7 @@ function predzapsThanksInit () {
             //   isSubmitting = false;
             return;
           }
-
+          removeParameterFromUrl('cemail')
           form.classList.remove('active')
           tgSlide.classList.add('active')
         },
@@ -5286,6 +5326,15 @@ function predzapsThanksInit () {
           // console.error('❌ Ошибка отправки:', error);
         }
       });
+    }
+  }
+
+  function removeParameterFromUrl () {
+    function removeUrlParameter(keyToRemove) {
+      const url = new URL(window.location.href)
+      const params = url.searchParams
+      params.delete(keyToRemove)
+      window.history.replaceState({}, document.title, url.toString())
     }
   }
 
@@ -5312,6 +5361,8 @@ function predzapsThanksInit () {
     for (let i = 0; i < inputs.length; i++) {
       inputs[i].name = `${inputs[i].name}-${counter}`
     }
+    const deleteButton = inner.querySelector('.predzaps-thanks__form-delete')
+    if (deleteButton) deleteButton.setAttribute('data-counter', counter)
   }
 
   function validate () {
