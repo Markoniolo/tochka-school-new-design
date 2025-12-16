@@ -202,11 +202,36 @@
     max-width: 358px;
     width: 100%;
     margin: 0 auto;
+    gap: 30px;
   }
 }
 
 .predzaps-thanks__form-line-inner {
+  position: relative;
+  &:last-child:not(:first-child) {
+    .predzaps-thanks__form-delete {
+      display: block;
+    }
+  }
+}
 
+.predzaps-thanks__form-delete {
+  display: none;
+  position: absolute;
+  top: 24px;
+  right: -68px;
+  width: 55px;
+  height: 55px;
+  flex-shrink: 0;
+  @include bg-icon('all-courses/close.svg', 35px, 35px);
+  @include media(lg) {
+    top: -8px;
+    right: 0;
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+    @include bg-icon('all-courses/close.svg', 25px, 25px);
+  }
 }
 
 .predzaps-thanks__form-line-name {
@@ -217,7 +242,7 @@
   color: rgba(0, 0, 0, 0.62);
   text-align: left;
   @include media(lg) {
-    margin-bottom: 8px;
+    margin-bottom: 15px;
   }
 }
 
