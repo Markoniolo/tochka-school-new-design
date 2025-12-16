@@ -18,6 +18,34 @@
       margin-bottom: 270px;
     }
   }
+  &_summer {
+    .predzaps-new-cap__label:not(:last-of-type) {
+      @include media(lg) {
+        order: 2;
+        width: 285px;
+      }
+      @include media(xs) {
+        width: 100%;
+      }
+    }
+    .predzaps-new-cap__label:last-of-type {
+      @include media(lg) {
+        order: 3;
+        width: 336px;
+      }
+      @include media(xs) {
+        width: 100%;
+      }
+    }
+    .predzaps-new-cap__submit {
+      @include media(lg) {
+        margin-top: 10px;
+      }
+      @include media(xs) {
+        margin-top: 20px;
+      }
+    }
+  }
 }
 
 .predzaps-new-cap__wrap {
@@ -60,6 +88,9 @@
   border-radius: 31px;
   background: linear-gradient(270deg, #c3d4f6 0%, #ebf2ff 100%);
   padding: 52px 31px 60px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   @include media(lg) {
     border-radius: 0;
     background: unset;
@@ -71,9 +102,11 @@
     width: 239px;
     height: 271px;
     position: absolute;
-    top: 256px;
+    top: unset;
+    bottom: 40px;
     right: 36px;
     @include media(lg) {
+      bottom: unset;
       top: 30px;
       right: 14px;
     }
@@ -150,6 +183,11 @@
     margin-bottom: 30px;
     gap: 10px;
   }
+  @include media(xs) {
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto 30px;
+  }
 }
 
 .predzaps-new-cap__item {
@@ -165,7 +203,7 @@
     font-size: 15px;
     line-height: 107%;
   }
-  @include media(xs) {
+  @include media(xxs) {
     font-size: 14px;
     line-height: 114%;
   }
@@ -183,6 +221,7 @@
 }
 
 .predzaps-new-cap__counter {
+  margin-top: auto;
   border: 1px solid rgba(108, 136, 197, 0.57);
   border-radius: 20px;
   padding: 20px 25px;
@@ -234,20 +273,21 @@
     margin-bottom: -106px;
     border-radius: 10px;
     max-width: 100%;
-    padding: 12px 20px 30px;
+    padding: 12px 20px 20px;
   }
   @include media(xs) {
     margin-bottom: -233px;
+    padding: 12px 20px 20px;
   }
   @include media(xxs) {
-    padding: 12px 15px 30px;
+    padding: 12px 15px 20px;
   }
   .iti {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     width: 100%;
     @include media(lg) {
       margin-bottom: 0;
-      width: calc(33.33% - 12px);
+      width: calc(33.33% - 9px);
     }
     @include media(xs) {
       margin-bottom: 15px;
@@ -292,7 +332,7 @@
   padding: 16px 30px;
   width: 100%;
   @include media(lg) {
-    width: calc(33.33% - 12px);
+    width: calc(33.33% - 9px);
     padding: 11px 25px;
   }
   @include media(xs) {
@@ -306,6 +346,62 @@
     @include media(xs) {
       margin-bottom: 15px;
     }
+  }
+}
+
+.predzaps-new-cap__summer {
+  margin-top: 20px;
+  margin-bottom: -7px;
+  padding: 12px 15px;
+  background: rgba(30, 39, 56, 0.09);
+  border-radius: 10px;
+  @include media(lg) {
+    margin: 0;
+    flex-grow: 1;
+    padding: 10px 13px;
+    order: 1;
+    transform: translateX(20px);
+    border-radius: 10px 0 0 10px;
+  }
+  @include media(xs) {
+    transform: none;
+    margin-top: 18px;
+    border-radius: 10px;
+    padding: 9px 13px;
+  }
+}
+
+.predzaps-new-cap__summer-note {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  color: #fff;
+  @include media(lg) {
+    margin-bottom: 13px;
+    font-size: 15px;
+  }
+  @include media(xxs) {
+    margin-bottom: 11px;
+  }
+  br {
+    @include media(lg) {
+      display: none;
+    }
+    @include media(xs) {
+      display: inline;
+    }
+  }
+}
+
+.predzaps-new-cap__summer-line {
+  display: flex;
+  gap: 24px;
+  @include media(xs) {
+    gap: 20px;
+  }
+  @include media(xxs) {
+    gap: 14px;
   }
 }
 

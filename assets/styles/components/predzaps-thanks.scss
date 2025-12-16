@@ -156,6 +156,7 @@
 }
 
 .predzaps-thanks__form-area {
+  position: relative;
   margin: 0 auto;
   padding: 36px 100px 55px;
   max-width: 1095px;
@@ -344,6 +345,7 @@
 
 .predzaps-thanks__form-add {
   margin-top: 18px;
+  top: 200px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -444,7 +446,7 @@
     content: '';
     width: 21px;
     height: 18px;
-    @include bg-icon('icons/ic_tg_white.svg');
+    @include bg-icon('icons/ic_tg_new_white.svg');
   }
 }
 

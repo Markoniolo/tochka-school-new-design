@@ -16,43 +16,43 @@
           .predzaps-thanks__form-text.
             Выберите класс и предметы, которые вы рассматриваете для обучения ребёнка в следующем учебном году.
           .predzaps-thanks__form-lines
-            .predzaps-thanks__form-line-inner
-              .predzaps-thanks__form-line-name Ребёнок 1
-              .predzaps-thanks__form-line
-                input.predzaps-thanks__form-input.input-white(placeholder='Имя ребенка' name='name')
-                .all-courses__filter.all-courses__filter_class
-                  .all-courses__filter-top(data-element='all-courses-filter-opener' data-default-text='Все классы' data-ftype='class_select')
-                    .all-courses__filter-top-text Все классы
-                  .all-courses__filter-wrap
-                    .all-courses__filter-close
-                    .all-courses__filter-headline Выберите класс
-                    .all-courses__filter-list
-                      label.all-courses__filter-item
-                        input.all-courses__filter-input(type='radio' name='class' value=`subject-id-0` data-element='all-courses-filter-input')
-                        .all-courses__filter-view Дошкольники
-                      each item, index in [1,2,3,4,5,6,7,8,9,10,11]
-                        label.all-courses__filter-item
-                          input.all-courses__filter-input(type='radio' name='class' value=`subject-id-${index + 1}` data-element='all-courses-filter-input')
-                          .all-courses__filter-view= `${item} класс`
-                    button.all-courses__confirm.btn-blue(type='button') Подтвердить
-                .all-courses__filter.all-courses__filter_subject
-                  .all-courses__filter-top(data-element='all-courses-filter-opener' data-default-text='Все предметы' data-ftype='class_subjects')
-                    .all-courses__filter-top-text Все предметы
-                  .all-courses__filter-wrap.all-courses__filter-wrap_subject
-                    .all-courses__filter-close
-                    .all-courses__filter-headline Выберите предмет
-                    .all-courses__filter-swap.class_subjects
-                      .all-courses__filter-tabs
-                        each item, index in ['Школьные предметы','Семейное обучение','Иностранные языки','IT-курсы','Развивающие курсы','Подготовка к школе']
-                          button.all-courses__filter-tab(data-index=index type='button')= item
+            each line, index in [1,2,'']
+              .predzaps-thanks__form-line-inner
+                .predzaps-thanks__form-line-name!= `Ребёнок ${index+1}`
+                .predzaps-thanks__form-line
+                  input.predzaps-thanks__form-input.input-white(placeholder='Имя ребенка' name=`name${line}`)
+                  .all-courses__filter.all-courses__filter_class
+                    .all-courses__filter-top(data-element='all-courses-filter-opener' data-default-text='Все классы' data-ftype='class_select')
+                      .all-courses__filter-top-text Все классы
+                    .all-courses__filter-wrap
+                      .all-courses__filter-close
+                      .all-courses__filter-headline Выберите класс
                       .all-courses__filter-list
-                        each item, index in allCoursesFilterListSubjects
-                          label.all-courses__filter-item(data-index=index)
-                            input.all-courses__filter-input(type='checkbox' name='subject' value=`subject-id-${index + 1}` data-element='all-courses-filter-input')
-                            .all-courses__filter-view= `${item}`
-                              img.all-courses__filter-ticket(src=staticImg('all-courses/all-courses-icon.svg') alt='')
-                    button.all-courses__confirm.btn-blue(type='button') Подтвердить
-                button.predzaps-thanks__form-delete(type="button" data-counter="1") Удалить
+                        label.all-courses__filter-item
+                          input.all-courses__filter-input(type='radio' name=`grade${line}` value=`subject-id-0` data-element='all-courses-filter-input')
+                          .all-courses__filter-view Дошкольники
+                        each item, index in [1,2,3,4,5,6,7,8,9,10,11]
+                          label.all-courses__filter-item
+                            input.all-courses__filter-input(type='radio' name=`grade${line}` value=`subject-id-${index + 1}` data-element='all-courses-filter-input')
+                            .all-courses__filter-view= `${item} класс`
+                  .all-courses__filter.all-courses__filter_subject
+                    .all-courses__filter-top(data-element='all-courses-filter-opener' data-default-text='Все предметы' data-ftype='class_subjects')
+                      .all-courses__filter-top-text Все предметы
+                    .all-courses__filter-wrap.all-courses__filter-wrap_subject
+                      .all-courses__filter-close
+                      .all-courses__filter-headline Выберите предмет
+                      .all-courses__filter-swap.class_subjects
+                        .all-courses__filter-tabs
+                          each item, index in ['Школьные предметы','Семейное обучение','Иностранные языки','IT-курсы','Развивающие курсы','Подготовка к школе']
+                            button.all-courses__filter-tab(data-index=index type='button')= item
+                        .all-courses__filter-list
+                          each item, index in allCoursesFilterListSubjects
+                            label.all-courses__filter-item(data-index=index)
+                              input.all-courses__filter-input(type='checkbox' name=`subject${line}` value=`subject-id-${index + 1}` data-element='all-courses-filter-input')
+                              .all-courses__filter-view= `${item}`
+                                img.all-courses__filter-ticket(src=staticImg('all-courses/all-courses-icon.svg') alt='')
+                      button.all-courses__confirm.btn-blue(type='button') Подтвердить
+                  button.predzaps-thanks__form-delete(type="button" data-counter=`${index+1}`) Удалить
           button.predzaps-thanks__form-add(type='button')
             span Добавить ещё ребёнка
           button.predzaps-thanks__form-submit.btn-orange Отправить

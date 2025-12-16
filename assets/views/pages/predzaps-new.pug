@@ -14,6 +14,7 @@ html(lang='ru')
     main.wrapper
       include ../components/predzaps-new-cap
       +predzaps-new-cap
+      +predzaps-new-cap('summer')
       include ../components/pre-about
       +pre-about('predzaps-new')
       include ../components/predzaps-new-pluses
@@ -23,13 +24,15 @@ html(lang='ru')
       include ../components/predzaps-new-format
       include ../components/predzaps-new-important
       include ../components/predzaps-new-order
+      +predzaps-new-order
+      +predzaps-new-order('summer')
       include ../components/faq
       +faq('predzaps-new')
       include ../components/reviews
       +reviews('no-reviews-all')
       include ../components/pre-end
       +pre-end(false,'Время принять решение: оставить всё как есть, или зарегистрироваться в предзапись и получить приоритетное место на курсе, а также самую низкую цену.',
-        'Запишите меня', 'predzaps-new-order')
+        'Записаться', 'predzaps-new-order')
       include ../components/modals/predzaps-new-modal
     include ../components/_layout/footer
     include ../components/_layout/scripts

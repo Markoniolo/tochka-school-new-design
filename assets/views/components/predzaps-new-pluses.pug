@@ -17,13 +17,13 @@
     ul.predzaps-new-pluses__list
       each item, index in predzapsNewPlusesList1
         li.predzaps-new-pluses__item(class=`predzaps-new-pluses__item_${index+1}`)
-          img.predzaps-new-pluses__icon(src=staticImg('predzaps-new-pluses/icon.svg') alt='')
+          img.predzaps-new-pluses__icon(src=staticImg(`predzaps-new-pluses/icon-${index+1}.svg`) alt='')
           .predzaps-new-pluses__text!= item
     .predzaps-new-pluses__title Наши возможности:
     ul.predzaps-new-pluses__list
       each item, index in predzapsNewPlusesList2
         li.predzaps-new-pluses__item(class=`predzaps-new-pluses__item_${index+1+3}`)
-          img.predzaps-new-pluses__icon(src=staticImg('predzaps-new-pluses/icon.svg') alt='')
+          img.predzaps-new-pluses__icon(src=staticImg(`predzaps-new-pluses/icon-${index+1+3}.svg`) alt='')
           .predzaps-new-pluses__text!= item
     .predzaps-new-pluses__headline.
       Сотрудничество школы и родителей позволяет поддерживать качество обучения на высоком уровне, делать уроки живыми

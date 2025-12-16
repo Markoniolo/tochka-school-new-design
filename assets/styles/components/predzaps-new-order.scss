@@ -147,6 +147,13 @@
     @include bg-icon('predzaps-new-order/bg-form_mob.png');
     background-size: cover;
   }
+  .iti {
+    margin-bottom: 25px;
+    display: block;
+    @include media(lg) {
+      margin-bottom: 20px;
+    }
+  }
   .iti__selected-country {
     padding-left: 22px;
     @include media(lg) {
@@ -179,6 +186,51 @@
     font-size: 14px;
     line-height: 100%;
     padding: 11px 25px 13px;
+  }
+}
+
+.predzaps-new-order__summer {
+  margin-top: -5px;
+  margin-bottom: 8px;
+  padding: 12px 15px;
+  background: rgba(30, 39, 56, 0.09);
+  border-radius: 10px;
+  @include media(lg) {
+    margin-top: 0;
+    margin-bottom: 10px;
+    flex-grow: 1;
+    padding: 10px 13px;
+    order: 1;
+  }
+  @include media(xs) {
+    transform: none;
+    padding: 9px 13px;
+  }
+}
+
+.predzaps-new-order__summer-note {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  color: #fff;
+  @include media(lg) {
+    margin-bottom: 13px;
+    font-size: 15px;
+  }
+  @include media(xxs) {
+    margin-bottom: 11px;
+  }
+}
+
+.predzaps-new-order__summer-line {
+  display: flex;
+  gap: 24px;
+  @include media(xs) {
+    gap: 20px;
+  }
+  @include media(xxs) {
+    gap: 14px;
   }
 }
 

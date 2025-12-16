@@ -10,10 +10,10 @@ function predzapsThanksInit () {
   const stickyHeader = document.querySelector('.sticky-header')
   const body = document.querySelector('body')
   const addButton = predzapsThanks.querySelector(".predzaps-thanks__form-add")
-  const inner = predzapsThanks.querySelector('.predzaps-thanks__form-line-inner')
+  const inners = predzapsThanks.querySelectorAll('.predzaps-thanks__form-line-inner')
   const lines = predzapsThanks.querySelector(".predzaps-thanks__form-lines")
-  const innerCleanCopy = inner.cloneNode(true)
-  let counter = 1
+  const innerCleanCopy = inners[inners.length - 1].cloneNode(true)
+  let counter = inners.length
 
   function initOpeners (inner) {
     const openers = inner.querySelectorAll("[data-element='all-courses-filter-opener']")
@@ -40,10 +40,12 @@ function predzapsThanksInit () {
     input.addEventListener('input', () => input.classList.remove('error-input'))
   }
 
-  removeInputNameError(inner)
-  initTabs(inner)
-  initOpeners(inner)
-  initDeleteButton(inner)
+  inners.forEach(inner => {
+    removeInputNameError(inner)
+    initTabs(inner)
+    initOpeners(inner)
+    initDeleteButton(inner)
+  })
 
   function initDeleteButton (inner) {
     const buttonDelete = inner.querySelector('.predzaps-thanks__form-delete')
@@ -61,15 +63,17 @@ function predzapsThanksInit () {
       const lineName = inners[i].querySelector('.predzaps-thanks__form-line-name')
       if (lineName) lineName.innerHTML = `Ребёнок ${i+1}`
       const inputName = inners[i].querySelector('.predzaps-thanks__form-input')
-      if (inputName) inputName.setAttribute('name', `name-${i+1}`)
+      if (inputName) inputName.setAttribute('name', `name${i+1}`)
       const classInputs = inners[i].querySelectorAll('.all-courses__filter_class input')
       classInputs.forEach((input) => {
-        input.setAttribute('name', `class-${i+1}`)
+        input.setAttribute('name', `grade${i+1}`)
       })
       const subjectInputs = inners[i].querySelectorAll('.all-courses__filter_subject input')
       subjectInputs.forEach((input) => {
-        input.setAttribute('name', `subject-${i+1}`)
+        input.setAttribute('name', `subject${i+1}`)
       })
+      const deleteButton = inners[i].querySelector('.predzaps-thanks__form-delete')
+      if (deleteButton) deleteButton.setAttribute('data-counter', i+1)
     }
   }
 
@@ -114,6 +118,7 @@ function predzapsThanksInit () {
       const text = opener.querySelector('.all-courses__filter-top-text')
       text.style.color = '#000'
       text.innerHTML = wrap.querySelector('.all-courses__filter-input:checked').nextElementSibling.textContent
+      closeFilter(opener, wrap)
     }
     if (opener.getAttribute('data-ftype') === 'class_subjects') {
       const headline = wrap.querySelector('.all-courses__filter-headline')
@@ -273,13 +278,11 @@ function predzapsThanksInit () {
     }
   }
 
-  function removeParameterFromUrl () {
-    function removeUrlParameter(keyToRemove) {
-      const url = new URL(window.location.href)
-      const params = url.searchParams
-      params.delete(keyToRemove)
-      window.history.replaceState({}, document.title, url.toString())
-    }
+  function removeParameterFromUrl (keyToRemove) {
+    const url = new URL(window.location.href)
+    const params = url.searchParams
+    params.delete(keyToRemove)
+    window.history.replaceState({}, document.title, url.toString())
   }
 
   addButton.addEventListener('click', addLine)
@@ -303,7 +306,7 @@ function predzapsThanksInit () {
     lineName.innerHTML = `Ребенок ${counter}`
     const inputs = inner.querySelectorAll('input')
     for (let i = 0; i < inputs.length; i++) {
-      inputs[i].name = `${inputs[i].name}-${counter}`
+      inputs[i].name = `${inputs[i].name}${counter}`
     }
     const deleteButton = inner.querySelector('.predzaps-thanks__form-delete')
     if (deleteButton) deleteButton.setAttribute('data-counter', counter)

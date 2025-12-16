@@ -21,6 +21,18 @@ mixin predzaps-new-cap(mod)
             input.predzaps-new-cap__input.input-white(placeholder='Телефон родителя' type='tel' required data-element='input-phone-intl' name='phone')
             input(name='tel' type='hidden' required data-element='input-phone-hidden')
             input.predzaps-new-cap__input.input-white(placeholder='E-mail родителя' type='email' name='email')
+            if mod === 'summer'
+              .predzaps-new-cap__summer
+                .predzaps-new-cap__summer-note!= 'Хотите в предзапись ещё <br> и на летние курсы?'
+                .predzaps-new-cap__summer-line
+                  label.predzaps-new-cap__summer-label.checkbox-white-label
+                    input.predzaps-new-cap__summer-checkbox.checkbox-white-input(name='summer' type='radio')
+                    .predzaps-new-cap__summer-view.checkbox-white-input-view
+                    .predzaps-new-cap__summer-text.checkbox-white-text Да, записать
+                  label.predzaps-new-cap__summer-label.checkbox-white-label
+                    input.predzaps-new-cap__summer-checkbox.checkbox-white-input(name='summer' type='radio')
+                    .predzaps-new-cap__summer-view.checkbox-white-input-view
+                    .predzaps-new-cap__summer-text.checkbox-white-text Нет, не нужно
             button.predzaps-new-cap__submit.btn-orange.btn-warning Оставить заявку
             label.predzaps-new-cap__label.checkbox-white-label
               input.predzaps-new-cap__checkbox.checkbox-white-input(name='policy' type='checkbox')
@@ -31,7 +43,7 @@ mixin predzaps-new-cap(mod)
                 a(href="https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_obrabotku_personalnih_dannih_OOO.pdf" target='_blank') Согласие
                 |
                 | на обработку персональных
-                | данных в соответствии с
+                | данных в&nbsp;соответствии с
                 |
                 a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Politika_obrabotki_personalnih_dannih_OOO.pdf' target='_blank') Политикой
             label.predzaps-new-cap__label.checkbox-white-label
@@ -41,4 +53,4 @@ mixin predzaps-new-cap(mod)
                 | Согласие на получение
                 |
                 a(href='https://cms-dev.tochka-school.ru/storage/app/media/Dokumenti/Soglasie_na_reklamnuyu_rassilku_OOO.pdf' target='_blank') информационной рассылки
-                | . Мы напомним Вам о самой низкой цене в году
+                | . Мы&nbsp;напомним Вам о самой низкой цене в году
