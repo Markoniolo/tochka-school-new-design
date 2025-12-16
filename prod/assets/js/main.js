@@ -5079,6 +5079,15 @@ function predzapsThanksInit () {
   removeInputNameError(inner)
   initTabs(inner)
   initOpeners(inner)
+  initDeleteButton(inner)
+
+  function initDeleteButton (inner) {
+    const buttonDelete = inner.querySelector('.predzaps-thanks__form-delete')
+    buttonDelete.addEventListener('click', () => {
+      inner.remove()
+      counter -= 1
+    })
+  }
 
   function initTabs (inner) {
     const filterSubjectWrap = inner.querySelector('.all-courses__filter-wrap_subject')
@@ -5184,7 +5193,7 @@ function predzapsThanksInit () {
     const classes = []
     const classInputs = form.querySelectorAll('.all-courses__filter_class input:checked')
     classInputs.forEach(classInput => {
-      classes.push(classInput.value)
+      classes.push(classInput.dataset.text)
     })
     const subjects = []
     const inners = form.querySelectorAll('.predzaps-thanks__form-line-inner')
@@ -5193,17 +5202,50 @@ function predzapsThanksInit () {
       const subjectsOneChild = inner.querySelectorAll('.all-courses__filter_subject input:checked')
       const temp = []
       subjectsOneChild.forEach(subject => {
-        temp.push(subject.value)
+        temp.push(subject.dataset.text)
       })
       subjects.push(temp)
     })
-    return {
-      childrens: {
-        name: names,
-        class: classes,
-        subjects: subjects,
+
+    const formData = new FormData(form);
+    const formObject = {};
+    const childrenFieldNames = new Set();
+
+    nameInputs.forEach(input => childrenFieldNames.add(input.name));
+    classInputs.forEach(input => childrenFieldNames.add(input.name));
+    inners.forEach(inner => {
+      inner.querySelectorAll('.all-courses__filter_subject input').forEach(input => {
+        childrenFieldNames.add(input.name);
+      });
+    });
+
+    formData.forEach((value, key) => {
+      if (!childrenFieldNames.has(key)) {
+        if (key in formObject) {
+          if (Array.isArray(formObject[key])) {
+            formObject[key].push(value);
+          } else {
+            formObject[key] = [formObject[key], value];
+          }
+        } else {
+          formObject[key] = value;
+        }
       }
+    });
+    const children = [];
+    const maxLen = Math.max(names.length, classes.length, subjects.length);
+
+    for (let i = 0; i < maxLen; i++) {
+      children.push({
+        name: names[i] ?? null,
+        class: classes[i] ?? null,
+        subjects: subjects[i] ?? [],
+      });
     }
+
+    formObject.children = children;
+
+    return formObject;
   }
 
   function submitForm (e) {
@@ -5211,9 +5253,32 @@ function predzapsThanksInit () {
     if (validate()) {
       const data = createSendData()
       console.log(data)
-      $.request('MainFunctions::' + 'dataRequest', {
+      const dataRequest = form.getAttribute('data-request');
+      $.request('MainFunctions::' + dataRequest, {
         data: data,
-        success: function () {
+        success: function(response) {
+          // console.log('Ответ:', response);
+          let hasErrors = false;
+
+          for (let key in response) {
+            if (key.startsWith('.')) {
+              const className = key.substring(1);
+              const element = document.querySelector('.' + className);
+
+              if (element) {
+                element.innerHTML = response[key];
+                hasErrors = true;
+              }
+            }
+          }
+
+
+
+          if (hasErrors) {
+            //   isSubmitting = false;
+            return;
+          }
+
           form.classList.remove('active')
           tgSlide.classList.add('active')
         },
@@ -5236,6 +5301,7 @@ function predzapsThanksInit () {
       updateNames(inner)
       initTabs(inner)
       initOpeners(inner)
+      initDeleteButton(inner)
     }
   }
 
