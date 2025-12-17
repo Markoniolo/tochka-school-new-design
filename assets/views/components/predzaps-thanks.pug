@@ -39,12 +39,13 @@
                     .all-courses__filter-top(data-element='all-courses-filter-opener' data-default-text='Все предметы' data-ftype='class_subjects')
                       .all-courses__filter-top-text Все предметы
                     .all-courses__filter-wrap.all-courses__filter-wrap_subject
-                      .all-courses__filter-close
-                      .all-courses__filter-headline Выберите предмет
-                      .all-courses__filter-swap.class_subjects
+                      .all-courses__filter-container
+                        .all-courses__filter-close
+                        .all-courses__filter-headline Выберите предмет
                         .all-courses__filter-tabs
                           each item, index in ['Школьные предметы','Семейное обучение','Иностранные языки','IT-курсы','Развивающие курсы','Подготовка к школе']
                             button.all-courses__filter-tab(data-index=index type='button')= item
+                      .all-courses__filter-swap.class_subjects
                         .all-courses__filter-list
                           each item, index in allCoursesFilterListSubjects
                             label.all-courses__filter-item(data-index=index)

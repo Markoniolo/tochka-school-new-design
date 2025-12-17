@@ -362,6 +362,19 @@
   }
 }
 
+.all-courses__filter-container {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  background: white;
+  .all-courses__filter-close {
+    @include media(xs) {
+      top: -8px;
+      right: -10px;
+    }
+  }
+}
+
 .all-courses__filter-icon {
   display: none;
   @include media(xs) {
