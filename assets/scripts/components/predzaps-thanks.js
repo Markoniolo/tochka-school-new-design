@@ -285,6 +285,7 @@ function predzapsThanksInit () {
           removeParameterFromUrl('cemail')
           form.classList.remove('active')
           tgSlide.classList.add('active')
+          window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
         },
         error: function (error) {
           // console.error('❌ Ошибка отправки:', error);
@@ -314,6 +315,10 @@ function predzapsThanksInit () {
       initTabs(inner)
       initOpeners(inner)
       initDeleteButton(inner)
+      window.scrollTo({
+        top: window.scrollY + inner.getBoundingClientRect().top - 120,
+        behavior: 'smooth'
+      });
     }
   }
 
