@@ -51,10 +51,33 @@
   @include media(xs) {
     width: 100%;
   }
+  &_1 {
+    .predzaps-new-ways__picture {
+      background: linear-gradient(270deg, #7fcbb4 0%, #b7eedd 100%);
+    }
+  }
+  &_2 {
+    .predzaps-new-ways__picture {
+      background: linear-gradient(90deg, #96abd7 0%, #6683c2 100%);
+    }
+  }
+  &_3 {
+    .predzaps-new-ways__picture {
+      background: linear-gradient(269deg, #68cceb 0%, #caf3ff 100%);
+    }
+  }
+  &_4 {
+    .predzaps-new-ways__picture {
+      background: linear-gradient(90deg, #ffe6ae 0%, #f3c55c 100%);
+    }
+  }
   &_5 {
     width: 888px;
     @include media(lg) {
       width: 100%;
+    }
+    .predzaps-new-ways__picture {
+      background: linear-gradient(270deg, #bbb9f8 0%, #e3e1f9 100%);
     }
   }
 }
@@ -62,9 +85,11 @@
 .predzaps-new-ways__picture {
   margin-bottom: 22px;
   height: 150px;
+  border-radius: 20px 20px 0 0;
   @include media(lg) {
     margin-bottom: 18px;
     height: 50px;
+    border-radius: 10px 10px 0 0;
   }
 }
 
