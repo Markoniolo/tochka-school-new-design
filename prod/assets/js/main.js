@@ -2769,15 +2769,61 @@ function globalFormInit (form, func_name, type) {
         }
 
         btnSubmit.disabled = true;
+        const dataRequest = globalForm.getAttribute('data-request');
         if (type === 'preFormData') {
           e.stopPropagation();
           const loader = document.querySelector('.form-loader')
           if (loader) loader.classList.add('active')
           if (checkHoneypot()) return
-          $.request('MainFunctions::onSendPreSubscribeMessage', {
-            data: form_data,
+          const formData = new FormData(globalForm);
+          const formObject = {};
+          formData.forEach((value, key) => {
+            formObject[key] = value;
           });
-          location.assign(linkTo + `?cemail=${email_value}`);
+          $.request('MainFunctions::' + dataRequest, {
+            data: formObject,
+            success: function(response) {
+              // console.log('Ответ:', response);
+              let hasErrors = false;
+
+              for (let key in response) {
+                if (key.startsWith('.')) {
+                  const className = key.substring(1);
+                  const element = document.querySelector('.' + className);
+
+                  if (element) {
+                    element.innerHTML = response[key];
+                    hasErrors = true;
+                    btnSubmit.disabled = false;
+                  }
+                }
+              }
+              if (hasErrors) {
+                isSubmitting = false;
+                return;
+              }
+
+
+              const utmValue = utm_input ? utm_input.value.trim() : '';
+              clearForm();
+              const params = new URLSearchParams();
+              params.set('cemail', email_value);
+              const utmParams = new URLSearchParams(utmValue.replace(/^\?+/, ''));
+              utmParams.forEach((value, key) => {
+                params.set(key, value);
+              });
+              const finalLink = linkTo + '?' + params.toString();
+              location.assign(finalLink);
+              // location.assign(linkTo + `?cemail=${email_value}`);
+            },
+            error: function(error) {
+              // console.error('❌ Ошибка отправки:', error);
+              isSubmitting = false;
+              return false;
+            }
+          });
+          return false;
+
           // setTimeout(() => {
           //     globalForm.submit();
           //     setTimeout(() => {
@@ -2791,8 +2837,8 @@ function globalFormInit (form, func_name, type) {
           let linkTo_base = linkTo_;
           if (utm_input) {
             utm_f = utm_input.value;
-            if (utm_f != null && utm_f != '' && utm_f != undefined) {
-            } else {
+            if(utm_f != null && utm_f != '' && utm_f != undefined){
+            }else{
               utm_f = ''
             }
             if (utm_f.length > 0) {
@@ -2870,10 +2916,11 @@ function globalFormInit (form, func_name, type) {
               if (callPhoneButton) formObject['already_call'] = true
 
               //formObject.captcha_token = captchaToken;
+
               clearErrorMessages(globalForm)
               $.request('MainFunctions::' + dataRequest, {
                 data: formObject,
-                success: function (response) {
+                success: function(response) {
                   // console.log('Ответ:', response);
                   let hasErrors = false;
 
@@ -2886,9 +2933,15 @@ function globalFormInit (form, func_name, type) {
                         element.innerHTML = response[key];
                         hasErrors = true;
                         btnSubmit.disabled = false;
+                        const isResendBlockReady = globalForm.querySelector('.form-enter-sms-resend.ready')
+                        if (isResendBlockReady) {
+                          isResendBlockReady.classList.add('active')
+                        }
                       }
                     }
                   }
+
+
 
                   if (hasErrors) {
                     isSubmitting = false;
@@ -2896,6 +2949,7 @@ function globalFormInit (form, func_name, type) {
                   }
 
                   if (response['requires_verification']) {
+                    showSmsInput(response)
                     if (!globalForm.classList.contains('form-enter-sms-code')) showSmsInput(response)
                     btnSubmit.disabled = false
                     isSubmitting = false;
@@ -2905,17 +2959,21 @@ function globalFormInit (form, func_name, type) {
                     isSubmitting = false;
                   } else {
                     clearForm();
-                    location.assign(linkTo_);
+                    if (type === 'preFormData') {
+                      location.assign(linkTo + `?cemail=${email_value}`);
+                    } else {
+                      location.assign(linkTo_);
+                    }
                   }
                 },
-                error: function (error) {
+                error: function(error) {
                   // console.error('❌ Ошибка отправки:', error);
                   isSubmitting = false;
                 }
               });
 
               return false;
-            } else {
+            }else{
               return false;
             }
 
@@ -2987,6 +3045,7 @@ function globalFormInit (form, func_name, type) {
     let ticker
 
     timeInSecs = 2 * 60
+    // timeInSecs = 4
     ticker = setInterval(tick, 1000)
 
     function tick() {
@@ -2994,12 +3053,13 @@ function globalFormInit (form, func_name, type) {
       if (secs <= 0) {
         clearInterval(ticker)
         timer.classList.add('active')
-        globalForm.classList.add('f')
+        timer.classList.add('ready')
         timer.innerHTML = 'Получить новый код'
         timer.addEventListener('click', () => {
           const sms_code = globalForm.querySelector('input[name="sms_code"]')
           if (sms_code) sms_code.value = ''
           timer.innerHTML = 'Получить новый код через <span>02:00</span>'
+          timer.classList.remove('ready')
           initResendSmsTimer()
           const submitEvent = new SubmitEvent("submit")
           globalForm.dispatchEvent(submitEvent)
@@ -5133,6 +5193,7 @@ function predzapsThanksInit () {
     }
   }
 
+
   function initTabs (inner) {
     const filterSubjectWrap = inner.querySelector('.all-courses__filter-wrap_subject')
     const tabsParent = filterSubjectWrap.querySelector('.all-courses__filter-tabs')
@@ -5236,20 +5297,26 @@ function predzapsThanksInit () {
       names.push(nameInput.value)
     })
     const classes = []
+    const classes_ids = []
     const classInputs = form.querySelectorAll('.all-courses__filter_class input:checked')
     classInputs.forEach(classInput => {
       classes.push(classInput.dataset.text)
+      classes_ids.push(classInput.value)
     })
     const subjects = []
+    const subjects_ids = []
     const inners = form.querySelectorAll('.predzaps-thanks__form-line-inner')
 
     inners.forEach(inner => {
       const subjectsOneChild = inner.querySelectorAll('.all-courses__filter_subject input:checked')
       const temp = []
+      const temp_ids = []
       subjectsOneChild.forEach(subject => {
         temp.push(subject.dataset.text)
+        temp_ids.push(subject.value)
       })
       subjects.push(temp)
+      subjects_ids.push(temp_ids)
     })
 
     const formData = new FormData(form);
@@ -5278,6 +5345,7 @@ function predzapsThanksInit () {
       }
     });
     const children = [];
+    const children_ids = [];
     const maxLen = Math.max(names.length, classes.length, subjects.length);
 
     for (let i = 0; i < maxLen; i++) {
@@ -5286,15 +5354,22 @@ function predzapsThanksInit () {
         class: classes[i] ?? null,
         subjects: subjects[i] ?? [],
       });
+      children_ids.push({
+        name: names[i] ?? null,
+        class: classes_ids[i] ?? null,
+        subjects: subjects_ids[i] ?? [],
+      });
     }
 
     formObject.children = children;
+    formObject.children_ids = children_ids;
 
     return formObject;
   }
 
   function submitForm (e) {
     e.preventDefault()
+    e.stopPropagation()
     if (validate()) {
       const data = createSendData()
       console.log(data)
@@ -5340,6 +5415,7 @@ function predzapsThanksInit () {
     params.delete(keyToRemove)
     window.history.replaceState({}, document.title, url.toString())
   }
+
 
   addButton.addEventListener('click', addLine)
 

@@ -77,6 +77,7 @@ function predzapsThanksInit () {
     }
   }
 
+
   function initTabs (inner) {
     const filterSubjectWrap = inner.querySelector('.all-courses__filter-wrap_subject')
     const tabsParent = filterSubjectWrap.querySelector('.all-courses__filter-tabs')
@@ -180,20 +181,26 @@ function predzapsThanksInit () {
       names.push(nameInput.value)
     })
     const classes = []
+    const classes_ids = []
     const classInputs = form.querySelectorAll('.all-courses__filter_class input:checked')
     classInputs.forEach(classInput => {
       classes.push(classInput.dataset.text)
+      classes_ids.push(classInput.value)
     })
     const subjects = []
+    const subjects_ids = []
     const inners = form.querySelectorAll('.predzaps-thanks__form-line-inner')
 
     inners.forEach(inner => {
       const subjectsOneChild = inner.querySelectorAll('.all-courses__filter_subject input:checked')
       const temp = []
+      const temp_ids = []
       subjectsOneChild.forEach(subject => {
         temp.push(subject.dataset.text)
+        temp_ids.push(subject.value)
       })
       subjects.push(temp)
+      subjects_ids.push(temp_ids)
     })
 
     const formData = new FormData(form);
@@ -222,6 +229,7 @@ function predzapsThanksInit () {
       }
     });
     const children = [];
+    const children_ids = [];
     const maxLen = Math.max(names.length, classes.length, subjects.length);
 
     for (let i = 0; i < maxLen; i++) {
@@ -230,15 +238,22 @@ function predzapsThanksInit () {
         class: classes[i] ?? null,
         subjects: subjects[i] ?? [],
       });
+      children_ids.push({
+        name: names[i] ?? null,
+        class: classes_ids[i] ?? null,
+        subjects: subjects_ids[i] ?? [],
+      });
     }
 
     formObject.children = children;
+    formObject.children_ids = children_ids;
 
     return formObject;
   }
 
   function submitForm (e) {
     e.preventDefault()
+    e.stopPropagation()
     if (validate()) {
       const data = createSendData()
       console.log(data)
@@ -284,6 +299,7 @@ function predzapsThanksInit () {
     params.delete(keyToRemove)
     window.history.replaceState({}, document.title, url.toString())
   }
+
 
   addButton.addEventListener('click', addLine)
 

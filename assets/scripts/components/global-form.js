@@ -403,15 +403,61 @@ function globalFormInit (form, func_name, type) {
         }
 
         btnSubmit.disabled = true;
+        const dataRequest = globalForm.getAttribute('data-request');
         if (type === 'preFormData') {
           e.stopPropagation();
           const loader = document.querySelector('.form-loader')
           if (loader) loader.classList.add('active')
           if (checkHoneypot()) return
-          $.request('MainFunctions::onSendPreSubscribeMessage', {
-            data: form_data,
+          const formData = new FormData(globalForm);
+          const formObject = {};
+          formData.forEach((value, key) => {
+            formObject[key] = value;
           });
-          location.assign(linkTo + `?cemail=${email_value}`);
+          $.request('MainFunctions::' + dataRequest, {
+            data: formObject,
+            success: function(response) {
+              // console.log('Ответ:', response);
+              let hasErrors = false;
+
+              for (let key in response) {
+                if (key.startsWith('.')) {
+                  const className = key.substring(1);
+                  const element = document.querySelector('.' + className);
+
+                  if (element) {
+                    element.innerHTML = response[key];
+                    hasErrors = true;
+                    btnSubmit.disabled = false;
+                  }
+                }
+              }
+              if (hasErrors) {
+                isSubmitting = false;
+                return;
+              }
+
+
+              const utmValue = utm_input ? utm_input.value.trim() : '';
+              clearForm();
+              const params = new URLSearchParams();
+              params.set('cemail', email_value);
+              const utmParams = new URLSearchParams(utmValue.replace(/^\?+/, ''));
+              utmParams.forEach((value, key) => {
+                params.set(key, value);
+              });
+              const finalLink = linkTo + '?' + params.toString();
+              location.assign(finalLink);
+              // location.assign(linkTo + `?cemail=${email_value}`);
+            },
+            error: function(error) {
+              // console.error('❌ Ошибка отправки:', error);
+              isSubmitting = false;
+              return false;
+            }
+          });
+          return false;
+
           // setTimeout(() => {
           //     globalForm.submit();
           //     setTimeout(() => {
@@ -425,8 +471,8 @@ function globalFormInit (form, func_name, type) {
           let linkTo_base = linkTo_;
           if (utm_input) {
             utm_f = utm_input.value;
-            if (utm_f != null && utm_f != '' && utm_f != undefined) {
-            } else {
+            if(utm_f != null && utm_f != '' && utm_f != undefined){
+            }else{
               utm_f = ''
             }
             if (utm_f.length > 0) {
@@ -504,10 +550,11 @@ function globalFormInit (form, func_name, type) {
               if (callPhoneButton) formObject['already_call'] = true
 
               //formObject.captcha_token = captchaToken;
+
               clearErrorMessages(globalForm)
               $.request('MainFunctions::' + dataRequest, {
                 data: formObject,
-                success: function (response) {
+                success: function(response) {
                   // console.log('Ответ:', response);
                   let hasErrors = false;
 
@@ -520,9 +567,15 @@ function globalFormInit (form, func_name, type) {
                         element.innerHTML = response[key];
                         hasErrors = true;
                         btnSubmit.disabled = false;
+                        const isResendBlockReady = globalForm.querySelector('.form-enter-sms-resend.ready')
+                        if (isResendBlockReady) {
+                          isResendBlockReady.classList.add('active')
+                        }
                       }
                     }
                   }
+
+
 
                   if (hasErrors) {
                     isSubmitting = false;
@@ -530,6 +583,7 @@ function globalFormInit (form, func_name, type) {
                   }
 
                   if (response['requires_verification']) {
+                    showSmsInput(response)
                     if (!globalForm.classList.contains('form-enter-sms-code')) showSmsInput(response)
                     btnSubmit.disabled = false
                     isSubmitting = false;
@@ -539,17 +593,21 @@ function globalFormInit (form, func_name, type) {
                     isSubmitting = false;
                   } else {
                     clearForm();
-                    location.assign(linkTo_);
+                    if (type === 'preFormData') {
+                      location.assign(linkTo + `?cemail=${email_value}`);
+                    } else {
+                      location.assign(linkTo_);
+                    }
                   }
                 },
-                error: function (error) {
+                error: function(error) {
                   // console.error('❌ Ошибка отправки:', error);
                   isSubmitting = false;
                 }
               });
 
               return false;
-            } else {
+            }else{
               return false;
             }
 
@@ -621,6 +679,7 @@ function globalFormInit (form, func_name, type) {
     let ticker
 
     timeInSecs = 2 * 60
+    // timeInSecs = 4
     ticker = setInterval(tick, 1000)
 
     function tick() {
@@ -628,12 +687,13 @@ function globalFormInit (form, func_name, type) {
       if (secs <= 0) {
         clearInterval(ticker)
         timer.classList.add('active')
-        globalForm.classList.add('f')
+        timer.classList.add('ready')
         timer.innerHTML = 'Получить новый код'
         timer.addEventListener('click', () => {
           const sms_code = globalForm.querySelector('input[name="sms_code"]')
           if (sms_code) sms_code.value = ''
           timer.innerHTML = 'Получить новый код через <span>02:00</span>'
+          timer.classList.remove('ready')
           initResendSmsTimer()
           const submitEvent = new SubmitEvent("submit")
           globalForm.dispatchEvent(submitEvent)
