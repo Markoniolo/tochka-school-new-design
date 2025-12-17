@@ -315,10 +315,12 @@ function predzapsThanksInit () {
       initTabs(inner)
       initOpeners(inner)
       initDeleteButton(inner)
-      window.scrollTo({
-        top: window.scrollY + inner.getBoundingClientRect().top - 120,
-        behavior: 'smooth'
-      });
+      if (window.innerHeight - inner.getBoundingClientRect().bottom < 0) {
+        inner.scrollIntoView({
+          behavior: 'smooth',
+          block: 'end'
+        })
+      }
     }
   }
 

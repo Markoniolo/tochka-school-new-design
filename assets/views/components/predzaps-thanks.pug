@@ -53,6 +53,10 @@
                                 img.all-courses__filter-ticket(src=staticImg('all-courses/all-courses-icon.svg') alt='')
                       button.all-courses__confirm.btn-blue(type='button') Подтвердить
                   button.predzaps-thanks__form-delete(type="button" data-counter=`${index+1}`) Удалить
+                label.predzaps-thanks__summer
+                  input.predzaps-thanks__summer-input(name=`summer_predzaps${line}` type='checkbox')
+                  .predzaps-thanks__summer-view
+                  .predzaps-thanks__summer-text Записаться и на летние курсы&nbsp;тоже
           button.predzaps-thanks__form-add(type='button')
             span Добавить ещё ребёнка
           button.predzaps-thanks__form-submit.btn-orange Отправить
