@@ -47,9 +47,10 @@ function predzapsNewWaysInnerInit (inner) {
   }
 
   function getCountOfHiddenTags () {
+    const height = inner.querySelector('.predzaps-new-ways__tags').clientHeight
     let counter = 0
     for (let i = 0; i < tags.length; i++) {
-      if (tags[i].getBoundingClientRect().top - inner.getBoundingClientRect().top >= 135) {
+      if (tags[i].getBoundingClientRect().top - inner.getBoundingClientRect().top >= height) {
         counter += 1
       }
     }
