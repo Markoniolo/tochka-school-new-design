@@ -367,9 +367,14 @@
   z-index: 1;
   top: 0;
   background: white;
+  @include media(xs) {
+    padding-top: 15px;
+    transform: translateY(-15px);
+    margin-bottom: -15px;
+  }
   .all-courses__filter-close {
     @include media(xs) {
-      top: -8px;
+      top: 7px;
       right: -10px;
     }
   }
