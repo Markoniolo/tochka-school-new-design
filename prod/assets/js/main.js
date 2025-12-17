@@ -5171,6 +5171,7 @@ function predzapsThanksInit () {
       inner.remove()
       counter -= 1
       updateCounter(dataCounter)
+      if (counter < 7) addButton.disabled = false
     })
   }
 
@@ -5438,6 +5439,7 @@ function predzapsThanksInit () {
           block: 'end'
         })
       }
+      if (counter >= 7) addButton.disabled = true
     }
   }
 
