@@ -427,6 +427,14 @@
     color: #6683c2;
     flex-shrink: 0;
   }
+  &:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+    color: grey;
+    &::before {
+      color: grey;
+    }
+  }
 }
 
 .predzaps-thanks__form-submit {

@@ -107,7 +107,7 @@
     right: 36px;
     @include media(lg) {
       bottom: unset;
-      top: 30px;
+      top: 0;
       right: 14px;
     }
     @include media(xs) {
@@ -180,7 +180,7 @@
   flex-direction: column;
   gap: 20px;
   @include media(lg) {
-    margin-bottom: 30px;
+    margin-bottom: 0;
     gap: 10px;
   }
   @include media(xs) {
@@ -229,11 +229,15 @@
   @include media(lg) {
     padding: 4px 20px;
     border-radius: 10px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    text-align: center;
   }
   @include media(xs) {
+    position: static;
     display: block;
     margin: 0 auto;
-    text-align: center;
     padding: 4px 16px;
     max-width: 183px;
     width: 100%;
@@ -274,6 +278,7 @@
     border-radius: 10px;
     max-width: 100%;
     padding: 12px 20px 20px;
+    background: radial-gradient(56.77% 58.48% at 80.15% 24.42%, #96abd7 0%, #6683c2 100%);
   }
   @include media(xs) {
     margin-bottom: -233px;
