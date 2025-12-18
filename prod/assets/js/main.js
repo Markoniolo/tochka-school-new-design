@@ -2772,6 +2772,9 @@ function globalFormInit (form, func_name, type) {
         const dataRequest = globalForm.getAttribute('data-request');
         if (type === 'preFormData') {
           e.stopPropagation();
+          if (globalForm.classList.contains('predzaps-new-cap__form') || globalForm.classList.contains('predzaps-new-order__form')) {
+            btnSubmit.classList.add('loading')
+          }
           const loader = document.querySelector('.form-loader')
           if (loader) loader.classList.add('active')
           if (checkHoneypot()) return
@@ -2795,6 +2798,9 @@ function globalFormInit (form, func_name, type) {
                     element.innerHTML = response[key];
                     hasErrors = true;
                     btnSubmit.disabled = false;
+                    if (globalForm.classList.contains('predzaps-new-cap__form') || globalForm.classList.contains('predzaps-new-order__form')) {
+                      btnSubmit.classList.remove('loading')
+                    }
                   }
                 }
               }
