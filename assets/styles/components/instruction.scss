@@ -73,20 +73,32 @@
     right: unset;
     width: 100%;
     height: auto;
+    padding-bottom: 56%;
   }
-  &::before {
-    content: '';
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 98px;
-    height: 98px;
-    @include bg-icon('library-tile/ic_play.svg');
-    @include media(lg) {
-      width: 55px;
-      height: 55px;
+  &_with-btn {
+    @include media(xs) {
+      padding-bottom: 0;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 98px;
+      height: 98px;
+      @include bg-icon('library-tile/ic_play.svg');
+      @include media(lg) {
+        width: 55px;
+        height: 55px;
+      }
+    }
+    .instruction__video {
+      @include media(xs) {
+        position: static;
+        height: auto;
+      }
     }
   }
   &.active {
@@ -121,12 +133,10 @@
   bottom: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   border-radius: 20px;
   @include media(lg) {
     border-radius: 10px;
-  }
-  @include media(xs) {
-    position: static;
   }
 }
 
