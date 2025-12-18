@@ -153,6 +153,10 @@
     position: relative;
     overflow: hidden;
     text-indent: 9999px;
+    white-space: nowrap;
+    color: transparent;
+    background: $orange;
+    opacity: 1;
     &::before {
       content: '';
       position: absolute;

@@ -1,9 +1,11 @@
 .tutor-family {
   padding-top: 75px;
+  padding-bottom: 80px;
   background: #FFFFFF;
   overflow: hidden;
   @include media(lg) {
     padding-top: 36px;
+    padding-bottom: 40px;
     background: #FFFFFF;
   }
   & + .fam-doc {
@@ -131,8 +133,8 @@
   gap: 20px;
   @include media(lg) {
     width: 320px;
-    padding: 12px;
     gap: 16px;
+    padding: 12px 17px 12px 12px;
   }
   @include media(xs) {
     width: 100%;
@@ -197,7 +199,7 @@
     @include media(lg) {
       width: 412px;
       height: 412px;
-      bottom: -178px;
+      bottom: -102px;
       left: 63px;
     }
     @include media(xs) {
@@ -252,5 +254,136 @@
   @include media(xxs) {
     position: static;
     width: calc(100% + 50px);
+  }
+}
+
+.tutor-family__wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 30px;
+  @include media(lg) {
+    flex-direction: column;
+    gap: 25px;
+  }
+  @include media(xs) {
+    gap: 20px;
+  }
+}
+
+.tutor-family__info {
+  border-radius: 20px;
+  background-color: $orange;
+  padding: 46px 0 50px;
+  text-align: center;
+  width: 764px;
+  @include bg-icon('tutor-family/bg-info.svg');
+  background-size: cover;
+  @include media(lg) {
+    @include bg-icon('tutor-family/bg-info_tablet.svg');
+    background-size: cover;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px 13px;
+  }
+  @include media(xs) {
+    @include bg-icon('tutor-family/bg-info_mob.svg');
+    background-size: cover;
+  }
+}
+
+.tutor-family__info-title {
+  margin-bottom: 28px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 116%;
+  color: #fff;
+  @include media(lg) {
+    font-size: 22px;
+    line-height: 114%;
+    max-width: 412px;
+    margin: 0 auto 16px;
+  }
+}
+
+.tutor-family__info-text {
+  max-width: 540px;
+  width: 100%;
+  margin: 0 auto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #fff;
+  @include media(lg) {
+    max-width: 528px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+}
+
+.tutor-family__more {
+  border-radius: 20px;
+  width: 549px;
+  padding: 30px 35px;
+  background: #f5f8ff;
+  @include bg-icon('tutor-family/bg-more.svg');
+  background-size: cover;
+  @include media(lg) {
+    @include bg-icon('tutor-family/bg-more_tablet.svg');
+    background-size: cover;
+    border-radius: 10px;
+    width: 100%;
+    padding: 22px 20px;
+  }
+  @include media(xs) {
+    @include bg-icon('tutor-family/bg-more_mob.svg');
+    background-size: cover;
+  }
+}
+
+.tutor-family__more-title {
+  margin-bottom: 25px;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 100%;
+  color: #003c56;
+  @include media(lg) {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}
+
+.tutor-family__more-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  @include media(lg) {
+    gap: 16px;
+  }
+  @include media(xs) {
+    gap: 14px;
+  }
+}
+
+.tutor-family__more-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 20px;
+  line-height: 115%;
+  @include media(lg) {
+    font-size: 15px;
+    line-height: 100%;
+  }
+  &::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    @include bg-icon('icons/ic_point_orange.svg');
+    flex-shrink: 0;
+    @include media(lg) {
+      width: 14px;
+      height: 14px;
+    }
   }
 }

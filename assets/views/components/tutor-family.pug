@@ -1,3 +1,9 @@
+-
+  const tutorFamilyList = [
+    'Каждый предмет ребёнку будет помогать усваивать&nbsp;тьютор. Тьютор - профессиональный преподаватель по выбранному предмету.',
+    'Тьютор проверит домашнюю работу, разберет вместе с ребенком ошибки, поможет их исправить и&nbsp;всегда будет на связи.',
+    'С тьютором невозможна ситуация «я не понял тему»'
+  ]
 mixin tutor-family(mod)
   .tutor-family(class = mod ? mod : false)
     .cont
@@ -5,7 +11,7 @@ mixin tutor-family(mod)
       .tutor-family__area
         .tutor-family__left
           ul.tutor-family__list
-            each item in ['Тьютор проверит домашнюю работу, разберет вместе с ребенком ошибки, поможет их исправить и&nbsp;всегда будет на связи.', 'С тьютором невозможна ситуация «я не понял тему»','Вы сможете назначить 8 тьюторов по школьным предметам. Дополнительных тьюторов можно добавить из расчёта 400 ₽/мес за&nbsp;1&nbsp;тьютора.']
+            each item in tutorFamilyList
               li.tutor-family__item!= item
         .tutor-family__box
           picture.tutor-family__picture
@@ -13,3 +19,13 @@ mixin tutor-family(mod)
             source(srcset=staticImg('tutor-family/tutor_tablet.png') media="(max-width: 1359px)")
             img.tutor-family__image(src=staticImg('tutor-family/tutor.png') alt='')
           .tutor-family__animation(data-path='assets/files/tutor-course.json')
+      .tutor-family__wrap
+        .tutor-family__info
+          .tutor-family__info-title По запросу тьютор составит для вас индивидуальную программу
+          .tutor-family__info-text Если темы уроков в школе не совпадают с темами уроков курса, у вас будет доступ к урокам прошлого года в записи.
+        .tutor-family__more
+          .tutor-family__more-title И ещё!
+          ul.tutor-family__more-list
+            li.tutor-family__more-item Добьёмся понимания каждой темы
+            li.tutor-family__more-item Уделим столько времени — сколько нужно
+            li.tutor-family__more-item Тьютор ответит на неограниченное количество вопросов
