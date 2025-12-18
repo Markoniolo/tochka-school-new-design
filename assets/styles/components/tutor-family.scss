@@ -1,15 +1,19 @@
 .tutor-family {
   padding-top: 75px;
-  padding-bottom: 80px;
   background: #FFFFFF;
   overflow: hidden;
   @include media(lg) {
     padding-top: 36px;
-    padding-bottom: 40px;
     background: #FFFFFF;
   }
   & + .fam-doc {
     margin-top: 0;
+  }
+  &.extended {
+    padding-bottom: 80px;
+    @include media(lg) {
+      padding-bottom: 40px;
+    }
   }
   &.blue {
     position: relative;
