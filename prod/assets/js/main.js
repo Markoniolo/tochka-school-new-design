@@ -5136,6 +5136,7 @@ function predzapsThanksInit () {
   const stickyHeader = document.querySelector('.sticky-header')
   const body = document.querySelector('body')
   const addButton = predzapsThanks.querySelector(".predzaps-thanks__form-add")
+  const btnSubmit = predzapsThanks.querySelector(".predzaps-thanks__form-submit")
   const inners = predzapsThanks.querySelectorAll('.predzaps-thanks__form-line-inner')
   const lines = predzapsThanks.querySelector(".predzaps-thanks__form-lines")
   const innerCleanCopy = inners[inners.length - 1].cloneNode(true)
@@ -5330,6 +5331,12 @@ function predzapsThanksInit () {
       subjects_ids.push(temp_ids)
     })
 
+    const summer_answers = []
+    const checkboxes = form.querySelectorAll('.predzaps-thanks__summer-input')
+    checkboxes.forEach(checkbox => {
+      summer_answers.push(checkbox.checked ? 'да' : 'нет')
+    })
+
     const formData = new FormData(form);
     const formObject = {};
     const childrenFieldNames = new Set();
@@ -5357,18 +5364,20 @@ function predzapsThanksInit () {
     });
     const children = [];
     const children_ids = [];
-    const maxLen = Math.max(names.length, classes.length, subjects.length);
+    const maxLen = Math.max(names.length, classes.length, subjects.length, summer_answers.length);
 
     for (let i = 0; i < maxLen; i++) {
       children.push({
         name: names[i] ?? null,
         class: classes[i] ?? null,
         subjects: subjects[i] ?? [],
+        summer_answer: summer_answers[i] ?? null,
       });
       children_ids.push({
         name: names[i] ?? null,
         class: classes_ids[i] ?? null,
         subjects: subjects_ids[i] ?? [],
+        summer_answer: summer_answers[i] ?? null,
       });
     }
 
@@ -5382,6 +5391,8 @@ function predzapsThanksInit () {
     e.preventDefault()
     e.stopPropagation()
     if (validate()) {
+      btnSubmit.disabled = true
+      btnSubmit.classList.add('loading')
       const data = createSendData()
       console.log(data)
       const dataRequest = form.getAttribute('data-request');
@@ -5399,6 +5410,8 @@ function predzapsThanksInit () {
               if (element) {
                 element.innerHTML = response[key];
                 hasErrors = true;
+                btnSubmit.disabled = false
+                btnSubmit.classList.remove('loading')
               }
             }
           }
