@@ -82,33 +82,53 @@ function predzapsThanksInit () {
 
   function initTabs (inner) {
     const filterSubjectWrap = inner.querySelector('.all-courses__filter-wrap_subject')
+    const list = filterSubjectWrap.querySelector('.all-courses__filter-list')
     const tabsParent = filterSubjectWrap.querySelector('.all-courses__filter-tabs')
     const tabs = filterSubjectWrap.querySelectorAll('.all-courses__filter-tab')
-    const subjects = filterSubjectWrap.querySelectorAll('.all-courses__filter-item')
+    const subjectsBoxes = filterSubjectWrap.querySelectorAll('.all-courses__filter-box')
 
-    if (!tabs.length || !subjects.length) return
+    if (!tabs.length || !subjectsBoxes.length) return
+
+    filterSubjectWrap.addEventListener('scroll', wrapScrollHandler, { passive: true })
+
+    function wrapScrollHandler () {
+      subjectsBoxes.forEach((subjectBox) => {
+        if (filterSubjectWrap.scrollTop >= subjectBox.offsetTop - 90 - 65) {
+          const oldTab = filterSubjectWrap.querySelector('.all-courses__filter-tab.active')
+          if (oldTab) oldTab.classList.remove('active')
+          const index = subjectBox.getAttribute('data-index')
+          const tab = filterSubjectWrap.querySelector('[data-index="' + index + '"]')
+          if (tab) {
+            tabsParent.scrollLeft = tab.offsetLeft - tabsParent.clientWidth/2 + tab.clientWidth/2
+            tab.classList.add('active')
+          }
+        }
+      })
+    }
 
     tabs.forEach((tab) => {
       tab.addEventListener('click', changeTab)
 
       function changeTab (e) {
         e.stopPropagation()
+        filterSubjectWrap.removeEventListener('scroll', wrapScrollHandler, { passive: true })
         const oldTab = filterSubjectWrap.querySelector('.all-courses__filter-tab.active')
         if (oldTab) oldTab.classList.remove('active')
 
         this.classList.add('active')
 
-        subjects.forEach((subject) => {
-          subject.classList.add('hide')
+        subjectsBoxes.forEach((subjectsBox) => {
+          subjectsBox.classList.add('hide')
         })
 
         const index = this.getAttribute('data-index')
-        const activeSubjects = filterSubjectWrap.querySelectorAll('[data-index="' + index + '"]')
-        activeSubjects.forEach((subject) => {
-          subject.classList.remove('hide')
-        })
+        const activeSubjectsBox = list.querySelector('[data-index="' + index + '"]')
+        activeSubjectsBox.classList.remove('hide')
+
+        filterSubjectWrap.scrollTop = activeSubjectsBox.offsetTop - 90 - 60
 
         tabsParent.scrollLeft = this.offsetLeft - tabsParent.clientWidth/2 + this.clientWidth/2
+        setTimeout(() => filterSubjectWrap.addEventListener('scroll', wrapScrollHandler, { passive: true }), 1000)
       }
     })
 

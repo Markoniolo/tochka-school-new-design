@@ -1,8 +1,29 @@
 -
   const allCoursesFilterListSubjects = [
-    'Математика','Русский язык','Литература','Биология','История',
-    'География','Английский язык','Музыка','Физкультура','ИЗО и технология',
-    'Обществознание','Физика','Химия','Информатика','Окружающий мир','Литературное чтение'
+    {
+      title: 'Школьные предметы',
+      subjects: ['Математика','Русский язык']
+    },
+    {
+      title: 'Семейное обучение',
+      subjects: ['Литература','Биология','История']
+    },
+    {
+      title: 'Иностранные языки',
+      subjects: ['География','Английский язык']
+    },
+    {
+      title: 'IT-курсы',
+      subjects: ['Музыка','Физкультура','ИЗО и технология']
+    },
+    {
+      title: 'Развивающие курсы',
+      subjects: ['Обществознание','Физика','Химия']
+    },
+    {
+      title: 'Подготовка к школе',
+      subjects: ['Информатика','Окружающий мир','Литературное чтение']
+    }
   ]
 
 .predzaps-thanks
@@ -47,12 +68,16 @@
                             button.all-courses__filter-tab(data-index=index type='button')= item
                       .all-courses__filter-swap.class_subjects
                         .all-courses__filter-list
-                          each item, index in allCoursesFilterListSubjects
-                            label.all-courses__filter-item(data-index=index)
-                              input.all-courses__filter-input(type='checkbox' name=`subject${line}` value=`subject-id-${index + 1}` data-element='all-courses-filter-input')
-                              .all-courses__filter-view= `${item}`
-                                img.all-courses__filter-ticket(src=staticImg('all-courses/all-courses-icon.svg') alt='')
-                      button.all-courses__confirm.btn-blue(type='button') Подтвердить
+                          each box, index in allCoursesFilterListSubjects
+                            .all-courses__filter-box-title= box.title
+                            .all-courses__filter-box(data-index=index)
+                              each item, i in box.subjects
+                                label.all-courses__filter-item
+                                  input.all-courses__filter-input(type='checkbox' name=`subject${line}` value=`subject-id-${index + 1}-${i}` data-element='all-courses-filter-input')
+                                  .all-courses__filter-view= `${item}`
+                                    img.all-courses__filter-ticket(src=staticImg('all-courses/all-courses-icon.svg') alt='')
+                      .all-courses__confirm-box
+                        button.all-courses__confirm.btn-orange(type='button') Подтвердить
                   button.predzaps-thanks__form-delete(type="button" data-counter=`${index+1}`) Удалить
                 label.predzaps-thanks__summer
                   input.predzaps-thanks__summer-input(name=`summer_predzaps${line}` type='checkbox')
