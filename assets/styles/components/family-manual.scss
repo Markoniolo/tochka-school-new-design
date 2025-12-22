@@ -139,6 +139,21 @@
     .form-enter-sms-text, .form-enter-sms-resend, .form-enter-sms-phone, .form-enter-sms-call, .form-enter-sms-note {
       color: #fff;
     }
+    .modal-order-new__input {
+      padding: 11px 30px;
+      @include media(lg) {
+        padding: 11px 25px;
+      }
+    }
+    .form-enter-sms-text {
+      font-size: 20px;
+      @include media(lg) {
+        font-size: 18px;
+      }
+      span {
+        display: block;
+      }
+    }
   }
 }
 

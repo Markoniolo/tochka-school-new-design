@@ -3055,7 +3055,7 @@ function globalFormInit (form, func_name, type) {
     }
     const submitBtn = globalForm.querySelector('.btn-warning') ||
       globalForm.querySelector('.btn-orange')
-    submitBtn.insertAdjacentHTML('beforebegin', `<div class="form-enter-sms-text">Отправили код на номер ${inputHidden.value}</div>`)
+    submitBtn.insertAdjacentHTML('beforebegin', `<div class="form-enter-sms-text">Отправили код на номер <span>${inputHidden.value}</span></div>`)
     if (inputSms) submitBtn.insertAdjacentHTML('beforebegin', inputSms)
     submitBtn.insertAdjacentHTML('afterend', `<button type="button" class="form-enter-sms-resend">Получить новый код через <span>02:00</span></button>`)
     globalForm.classList.add('form-enter-sms-code')
