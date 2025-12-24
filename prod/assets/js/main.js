@@ -3049,6 +3049,7 @@ function globalFormInit (form, func_name, type) {
     const title = globalForm.querySelector('.modal-order-new__title') ||
       globalForm.querySelector('.ege-cap__title') ||
       globalForm.querySelector('.pre-cap__headline') ||
+      globalForm.querySelector('.ege-order__title') ||
       globalForm.querySelector('[data-element="form-enter-sms-title"]')
     if (title) {
       title.innerHTML = 'Введите код подтверждения'
