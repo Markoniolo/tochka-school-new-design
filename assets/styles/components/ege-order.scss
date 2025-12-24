@@ -196,6 +196,64 @@
   .modal-order-new__input.iti__tel-input {
     padding-left: 100px !important;
   }
+  &.form-enter-sms-code {
+    .form-enter-sms-btn-transparent {
+      color: #fff !important;
+      @include media(lg) {
+        height: 45px;
+      }
+      @include media(xs) {
+        margin-top: 0;
+      }
+    }
+    .form-enter-sms-call {
+      color: #fff;
+      @include media(lg) {
+        font-size: 16px;
+        line-height: 125%;
+      }
+    }
+    .form-enter-sms-note {
+      color: #fff;
+      margin-top: 25px;
+      @include media(xs) {
+        margin-top: 20px;
+      }
+    }
+    .form-enter-sms-text {
+      color: #FFFFFF;
+      order: -1;
+    }
+    .ege-order__label {
+      display: none;
+    }
+    .form-enter-sms-resend {
+      color: #FFFFFF;
+      margin-top: 25px;
+      @include media(xs) {
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+    }
+    .ege-order__submit {
+      margin-bottom: 0;
+    }
+    .ege-order__input, .iti {
+      display: none;
+    }
+    .modal-order-new__input_sms {
+      display: block;
+    }
+    .modal-order-new__input {
+      margin-bottom: 10px;
+      @include media(lg) {
+        padding: 12px 25px;
+      }
+    }
+    .form-enter-sms-text {
+      margin-bottom: 20px;
+    }
+  }
 }
 
 .ege-order__title {
@@ -212,7 +270,8 @@
 }
 
 .ege-order__inner {
-
+  display: flex;
+  flex-direction: column;
 }
 
 .ege-order__input {

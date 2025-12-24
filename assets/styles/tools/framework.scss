@@ -332,6 +332,9 @@
   @include media(lg) {
     font-size: 13px;
   }
+  span {
+    font-weight: inherit;
+  }
 }
 
 .form-enter-sms-resend {

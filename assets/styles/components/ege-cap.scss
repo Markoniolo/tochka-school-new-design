@@ -535,6 +535,34 @@ a.ege-cap__tab {
     .form-enter-sms-text, .form-enter-sms-resend, .form-enter-sms-phone, .form-enter-sms-call, .form-enter-sms-note {
       color: #fff;
     }
+    .modal-order-new__input {
+      @include media(lg) {
+        padding: 13px 25px;
+      }
+      @include media(xs) {
+        margin-bottom: 15px;
+      }
+    }
+    .form-enter-sms-btn-transparent {
+      color: #fff !important;
+      @include media(lg) {
+        height: 45px;
+      }
+      @include media(xs) {
+        margin-top: 0;
+      }
+    }
+    .form-enter-sms-call {
+      @include media(lg) {
+        font-size: 16px;
+        line-height: 125%;
+      }
+    }
+    .form-enter-sms-note {
+      @include media(lg) {
+        text-align: left;
+      }
+    }
   }
 }
 

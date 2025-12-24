@@ -31,6 +31,41 @@
       top: 0;
     }
   }
+  &.form-enter-sms-code {
+    .newsletter__line {
+      flex-direction: column;
+      margin-bottom: 10px;
+      @include media(xs) {
+        display: flex;
+      }
+    }
+    .form-enter-sms-text {
+      margin-bottom: 20px;
+      order: -1;
+      @include media(xs) {
+        line-height: 125%;
+      }
+      span {
+        @include media(xs) {
+          display: block;
+        }
+      }
+    }
+    .newsletter__input {
+      margin-right: 0;
+      margin-bottom: 15px;
+      display: none;
+    }
+    .newsletter__label {
+      display: none;
+    }
+    .form-enter-sms-call {
+      margin-bottom: 20px;
+    }
+    .modal-order-new__button {
+      padding: 16px 20px 17px;
+    }
+  }
 }
 
 .newsletter__title {
@@ -94,6 +129,7 @@
 }
 
 .newsletter__button {
+  padding: 16px 30px;
   @include media(xs) {
     width: 100%;
   }
