@@ -9,6 +9,6 @@ mixin instruction(mod='video')
             video.instruction__video(src=`${pathStatics}/files/Shevchenko_1_klass.mov` controls='true')
         else if mod === 'iframe'
           .instruction__video-box
-            iframe.instruction__video(src='https://runtime.video.cloud.yandex.net/player/video/vplvoj6pch3bf6lpgsdi?mute=0&autoplay=0')
+            iframe.instruction__video(src='https://runtime.video.cloud.yandex.net/player/video/vplvoj6pch3bf6lpgsdi?mute=0&autoplay=0' allow="fullscreen" allowfullscreen)
         .instruction__text По возникшим вопросам обращайтесь в отдел сервиса. Ответим, поможем, направим :)
         a.instruction__button.btn-orange(href='#') Написать в отдел сервиса
