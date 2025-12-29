@@ -26,23 +26,30 @@
     },
   ]
 
-.result
-  .cont
-    h2.result__caption Как мы придем к&nbsp;результату
-    .result__list
-      each item, index in resultList
-        .result__item
-          img.result__image(src=staticImg(`result/result-decor-${index+1}.png`) alt='')
-          .result__box
-            .result__title= item.title
-            .result__text= item.text
-    .result__wrap
-      .result__add
-        .result__add-headline Дополнительно
-        .result__add-list
-          each item in ['Тьютор пришлёт видеоразбор “пробника” при необходимости;','Предоставим справочник со всеми формулами, необходимыми для сдачи ОГЭ;','Разберём структуру экзамена и предоставим инструкции о том, как вести себя перед экзаменом и на экзамене (от входа в класс до заполнения бланка ответов).']
-            .result__add-item= item
-      .result__start
-        .result__start-title Начать обучение можно в&nbsp;любое время
-        .result__start-text Тьютор составит персональный курс и&nbsp;проконсультирует, как лучше построить подготовку.
-
+mixin result(mod,text,notes)
+  .result(class = mod ? `result_${mod}` : false)
+    .cont
+      h2.result__caption Как мы придем к&nbsp;результату
+      .result__list
+        each item, index in resultList
+          .result__item
+            img.result__image(src=staticImg(`result/result-decor-${index+1}.png`) alt='')
+            .result__box
+              .result__title= item.title
+              .result__text= item.text
+      .result__wrap
+        .result__add
+          .result__add-headline Дополнительно
+          .result__add-list
+            each item in ['Тьютор пришлёт видеоразбор “пробника” при необходимости;','Предоставим справочник со всеми формулами, необходимыми для сдачи ОГЭ;','Разберём структуру экзамена и предоставим инструкции о том, как вести себя перед экзаменом и на экзамене (от входа в класс до заполнения бланка ответов).']
+              .result__add-item= item
+        .result__start
+          .result__start-title Начать обучение можно в&nbsp;любое время
+          .result__start-text Тьютор составит персональный курс и&nbsp;проконсультирует, как лучше построить подготовку.
+      if text && notes
+        .result__alert
+          .result__alert-text!= text
+          .result__alert-note
+            each note in notes
+              p!= note
+        .result__headline Такой подход — залог высокого балла на экзамене.
